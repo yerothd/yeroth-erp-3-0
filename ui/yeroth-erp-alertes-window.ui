@@ -946,7 +946,7 @@
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab_5_bon_commande">
+    <widget class="QWidget" name="tab_ALERTES">
      <attribute name="title">
       <string>Alertes</string>
      </attribute>
@@ -1950,7 +1950,7 @@ background-color: rgb(0, 0, 0); </string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_4_alertes">
+    <widget class="QWidget" name="tab_details_alerte">
      <attribute name="title">
       <string>Afficher au détail</string>
      </attribute>

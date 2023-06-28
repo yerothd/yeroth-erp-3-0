@@ -4332,9 +4332,9 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_5_bon_commande">
+    <widget class="QWidget" name="tab_5_CHARGES_FINANCIERES">
      <attribute name="title">
-      <string>Bon de commande</string>
+      <string>CHARGES FINANCIÈRES*</string>
      </attribute>
     </widget>
     <widget class="QWidget" name="tab_3_categories">
