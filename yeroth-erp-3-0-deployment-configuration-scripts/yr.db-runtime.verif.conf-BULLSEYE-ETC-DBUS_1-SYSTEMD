@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
+
+<!DOCTYPE busconfig PUBLIC
+ "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+
+  <!-- Only root can own the service -->
+  <policy user="root">
+    <allow own="yr.db-runtime.verif"/>
+    <allow send_destination="yr.db-runtime.verif"/>
+    <allow send_interface="yr.db-runtime.verif"/>
+  </policy>
+
+  <policy at_console="true">
+    <allow own="yr.db-runtime.verif"/>
+    <allow send_destination="yr.db-runtime.verif"/>
+    <allow send_interface="yr.db-runtime.verif"/>
+  </policy>
+
+  <policy context="default">
+    <allow own="yr.db-runtime.verif"/>
+    <allow send_destination="yr.db-runtime.verif"/>
+    <allow send_interface="yr.db-runtime.verif"/>
+  </policy>
+
+</busconfig>

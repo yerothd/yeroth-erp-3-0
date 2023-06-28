@@ -1,0 +1,1 @@
+create table LIGNES_BUDGETAIRES (id int primary key, intitule_de_la_ligne_budgetaire varchar(256) UNIQUE NOT NULL, montant_de_la_ligne_budgetaire double NOT NULL, montant_RESTANT_de_la_ligne_budgetaire double NOT NULL, intitule_du_compte_bancaire varchar(256), description_ligne_budgetaire varchar(256));

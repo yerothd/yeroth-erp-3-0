@@ -1,0 +1,123 @@
+/*
+ * yeroth-erp-creer-UN-GROUPE-DE-PAIE-hr-window.hpp
+ *
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ */
+
+#ifndef YEROTH_CREER_UN_GROUPE_DE_PAIE_WINDOW_HPP_
+#define YEROTH_CREER_UN_GROUPE_DE_PAIE_WINDOW_HPP_
+
+#include "../../../ui_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.h"
+
+#include <QtWidgets/QMessageBox>
+#include "src/windows/yeroth-erp-window-commons.hpp"
+
+class YerothERPWindows;
+class YerothSqlTableModel;
+
+class YerothCreerUnGroupeDePaieWindow : public YerothWindowsCommons,
+    									private Ui_YerothCreerUnGroupeDePaieWindow
+{
+	Q_OBJECT
+
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	YerothCreerUnGroupeDePaieWindow();
+
+    inline ~YerothCreerUnGroupeDePaieWindow()
+    {
+        delete _logger;
+    }
+
+    inline virtual QToolBar *getQMainWindowToolBar()
+    {
+        return toolBar_YerothCreerGroupeDePaieWindow;
+    }
+
+    inline virtual void definirCaissier()
+    {
+        definirPasDeRole();
+    }
+
+    virtual void definirManager();
+
+    inline virtual void definirVendeur()
+    {
+        definirPasDeRole();
+    }
+
+    inline virtual void definirGestionaireDesStocks()
+    {
+        definirPasDeRole();
+    }
+
+    inline virtual void definirMagasinier()
+    {
+        definirPasDeRole();
+    }
+
+    virtual void definirPasDeRole();
+
+    virtual void rendreInvisible();
+
+    virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
+
+public slots:
+
+    inline virtual void apropos()
+    {
+        YerothWindowsCommons::apropos(this);
+    }
+
+    inline virtual void help()
+    {
+        YerothQMessageBox::information(this,
+                                       QObject::tr("aide"),
+                                       QObject::tr("Remplisser le formulaire, et ensuite cliquer "
+                                    		   	   "sur enregistrer !"));
+    }
+
+    void deconnecter_utilisateur();
+
+protected:
+
+    virtual void setupShortcuts();
+
+private slots:
+
+    void annuler_la_creation_dun_GROUPE_DE_PAIE_hr();
+
+    bool creerEnregistrerUnGroupeDePaieHr();
+
+private:
+
+    bool payGroupAlreadyExists();
+
+    bool check_fields();
+
+    void clear_all_fields();
+
+    void updatePopulateComboBoxes();
+
+    inline void populateComboBoxes()
+    {
+        comboBox_creer_un_GroupeDePaie_localisation
+			->populateComboBoxRawString(YerothDatabase::LOCALISATIONS,
+										YerothDatabaseTableColumn::NOM_LOCALISATION);
+    }
+
+    inline virtual void setupLineEdits()
+    {
+    	lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL->
+    	    setValidator(&YerothUtils::POSITIVE_DoubleValidator);
+    }
+
+    int _last_selected_table_widget_row;
+
+    YerothLogger *_logger;
+};
+
+
+#endif /* YEROTH_CREER_UN_GROUPE_DE_PAIE_WINDOW_HPP_ */

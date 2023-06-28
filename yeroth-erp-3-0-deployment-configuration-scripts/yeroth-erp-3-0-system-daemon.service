@@ -1,0 +1,15 @@
+[Unit]
+Description=YEROTH-ERP-PGI-3.0 SYSTEM DAEMON SERVICE
+After=mariadb.target
+
+[Service]
+Type=forking
+ExecStart=/etc/init.d/yeroth-erp-3-0-system-daemon-initd.sh start
+ExecStop=/etc/init.d/yeroth-erp-3-0-system-daemon-initd.sh stop
+ExecReload=/etc/init.d/yeroth-erp-3-0-system-daemon-initd.sh reload
+KillMode=mixed
+PrivateTmp=true
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

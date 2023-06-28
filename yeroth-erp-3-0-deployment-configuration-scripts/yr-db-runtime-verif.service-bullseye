@@ -1,0 +1,15 @@
+[Unit]
+Description=YEROTH-ERP-PGI-3.0 RUNTIME VERIFICATION DAEMON SERVICE
+After=mysql.target
+
+[Service]
+Type=exec
+ExecStart=/etc/init.d/yr-db-runtime-verif.sh start
+ExecStop=/etc/init.d/yr-db-runtime-verif.sh stop
+ExecReload=/etc/init.d/yr-db-runtime-verif.sh force-reload
+KillMode=mixed
+PrivateTmp=true
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

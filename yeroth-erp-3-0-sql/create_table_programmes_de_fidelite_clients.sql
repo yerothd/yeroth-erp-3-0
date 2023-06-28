@@ -1,0 +1,1 @@
+create table programmes_de_fidelite_clients (id int primary key, date_creation date, reference_programme_de_fidelite_clients varchar(256), designation varchar(256) NOT NULL UNIQUE, localisation varchar(256), description_programme_de_fidelite_clients varchar(256) NOT NULL, pourcentage_du_rabais double);

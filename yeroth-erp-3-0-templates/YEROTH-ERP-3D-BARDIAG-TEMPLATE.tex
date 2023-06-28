@@ -1,0 +1,61 @@
+YEROTHDEFINETOPCOLUMNCOLORS
+
+%-------------------------------------------------------
+%This is the way to redefine styles
+% \newpsstyle{mytickstyle}{linewidth=1pt,linecolor=blue}
+%
+% Style of the foreground frame
+\newpsstyle{diagframestyle}{linewidth=1pt,linecolor=black,fillcolor=white}
+% Style of the background frame
+\newpsstyle{diagbgframestyle}{linewidth=1pt,linecolor=black,fillcolor=yerothColorGray}
+
+% Use 3D bars
+\renewcommand{\ActiveBarPrimitive}{\barTDRect}
+% Make frame 3D
+\renewcommand{\frameTD}{1}
+
+% Put ticks and levellines each 100 yunits
+\renewcommand{\betweenticks}{100}
+
+% Color of the numbers on the bar-items 
+\renewcommand\numbercolor{\black\bf}
+% Where to put the number. Can be \bottom,\belowtop,\overtop
+\renewcommand{\placenumber}{\bottom}
+
+\renewcommand{\tdx}{1.2} % depth of 3d
+\renewcommand{\tdy}{6}
+
+% Start the diagram
+% #1 diagram height (number)
+% #2 diagram width (number)
+% #3 bottom height (length, use cm, in,. . . )
+% #4 bar width (number)
+% #5 distance between (groups) of bars
+% #6 x unit length (cm, in,. . . )
+% #7 y unit length (cm, in,. . . )
+\bardiagrambegin{18.9}{900}{2cm}{1}{5}{0.8cm}{0.01cm}
+YEROTHDEFINEBARSUBTOPBARITEMS
+\drawlevellines
+    % Legend
+    %  Let's make the background white
+    %  and gray frame-line of 0.5pt
+    \diagLegendoptions{white}{gray}{0.5pt}
+    % 
+    %\renewcommand{\legendShadowColor}{yerothColorGray}
+    %
+    \diagLegendbegin{12}{882}{9}
+      YEROTHBASELEGEND
+      YEROTHTOPLEGEND
+    \diagLegendend
+    % End of the legend
+\setlength{\captionoffset}{2cm}
+\bardiagramend{\parbox{11cm}{{\centering \vspace{2.5cm} YEROTHX\\[0.3cm] 
+   \hspace{0cm}
+   \begin{tabular}{p{3.2cm}p{4.0cm}p{3.2cm}}
+      YEROTHSUBGROUPS
+   \end{tabular}
+   \vspace{-0.3em}
+  }}}
+  {\large YEROTHZ}
+  \vspace{3em}
+  

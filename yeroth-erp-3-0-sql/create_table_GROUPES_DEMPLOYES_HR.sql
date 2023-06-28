@@ -1,0 +1,1 @@
+create table groupes_demployes_hr (id int primary key, date_creation date, reference_groupe_demployes_hr varchar(256), designation varchar(256) NOT NULL UNIQUE, description_groupe_demployes_hr varchar(256), groupe_de_paie_hr varchar(256), maximum_de_membres int(3), membres_du_groupe_db_ID varchar(5000));

@@ -1,0 +1,1 @@
+ALTER TABLE LIGNES_BUDGETAIRES ADD column montant_RESTANT_de_la_ligne_budgetaire double default 0 AFTER montant_de_la_ligne_budgetaire;

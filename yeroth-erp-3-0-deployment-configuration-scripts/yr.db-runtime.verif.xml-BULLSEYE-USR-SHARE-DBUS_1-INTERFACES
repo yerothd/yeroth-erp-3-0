@@ -1,0 +1,17 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="local.YR_DB_RUNTIME_VERIF_DBusClient">
+    <method name="slot_refresh_INSERT_DB_MYSQL">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="slot_refresh_SELECT_DB_MYSQL">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="slot_refresh_DELETE_DB_MYSQL">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="slot_refresh_app_parameters">
+      <arg type="b" direction="out"/>
+    </method>
+  </interface>
+</node>

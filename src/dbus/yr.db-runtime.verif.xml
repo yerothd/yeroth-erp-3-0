@@ -1,0 +1,42 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+	"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/YRruntimeverification">
+	<interface name="com.yeroth.rd.IYRruntimeverification">
+		<method name="YR_slot_refresh_INSERT_DB_MYSQL">	
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QString"/>
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="uint"/>	
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="bool"/>		  
+		  <arg type="QString" direction="in"/>
+		  <arg type="uint" direction="in"/>
+		  <arg type="bool" direction="out"/>		  			
+		</method>
+		
+		<method name="YR_slot_refresh_SELECT_DB_MYSQL">		
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QString"/>
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="uint"/>		
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="bool"/>		  	
+		  <arg type="QString" direction="in"/>
+		  <arg type="uint" direction="in"/>
+		  <arg type="bool" direction="out"/>		  
+		</method>
+				
+		<method name="YR_slot_refresh_UPDATE_DB_MYSQL">		
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QString"/>
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="uint"/>	
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="bool"/>		  		
+		  <arg type="QString" direction="in"/>
+		  <arg type="uint" direction="in"/>
+		  <arg type="bool" direction="out"/>		  
+		</method>
+				
+		<method name="YR_slot_refresh_DELETE_DB_MYSQL">		
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QString"/>
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="uint"/>
+		  <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="bool"/>		  			
+		  <arg type="QString" direction="in"/>
+		  <arg type="uint" direction="in"/>
+		  <arg type="bool" direction="out"/>
+		</method>
+	</interface>
+</node>
+
