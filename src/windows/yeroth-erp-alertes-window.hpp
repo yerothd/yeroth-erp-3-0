@@ -109,6 +109,7 @@ public slots:
     void handle_visibilite_autres_elements(bool aBoolValue);
 
 protected slots:
+
     void handleCurrentTabChanged(int index);
 
     void handleComboBoxClients_courriers_alertes_resolue_oui_OU_non(const

@@ -70,7 +70,8 @@ YerothAlertesWindow::YerothAlertesWindow()
 
     _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT
         << pushButton_afficher_detail
-        << pushButton_marquer_resolue << pushButton_supprimer;
+        << pushButton_marquer_resolue
+		<< pushButton_supprimer;
 
 
     _list_actions_to_enable_on_positive_tableview_ROW_COUNT
