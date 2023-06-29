@@ -1,4 +1,4 @@
-###<u>COMPILING 'YEROTH-ERP-3.0'</u>
+### <u>COMPILING 'YEROTH-ERP-3.0'</u>
 
  1. SERVER CONFIGURATION
    use 'bash' script yr_compile_server.sh, e.g.:
