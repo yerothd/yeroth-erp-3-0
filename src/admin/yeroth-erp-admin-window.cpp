@@ -237,7 +237,7 @@ YerothAdminWindow::YerothAdminWindow():YerothPOSAdminWindowsCommons(QObject::tr(
     _sujetActionsToConst->insert(ALERTE, SUJET_ACTION_ALERTE);
 
     _sujetActionsToConst->insert(BON_DE_COMMANDE,
-                                 SUJET_ACTION_BON_DE_COMMANDE);
+                                 SUJET_ACTION_CHARGE_FINANCIERE);
 
     _sujetActionsToConst->insert(CATEGORIE, SUJET_ACTION_CATEGORIE);
 
@@ -729,32 +729,25 @@ void YerothAdminWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
         label_OFFLINE->setVisible(true);
     }
 
-    _allWindows->_adminListerWindow->lister_remise(&_allWindows->
-                                                   getSqlTableModel_remises
-                                                   ());
-    _allWindows->_adminListerWindow->lister_alerte(&_allWindows->
-                                                   getSqlTableModel_alertes
-                                                   ());
-    _allWindows->_adminListerWindow->lister_compte_bancaire(&_allWindows->
-                                                            getSqlTableModel_comptes_bancaires
-                                                            ());
-    _allWindows->_adminListerWindow->lister_categorie(&_allWindows->
-                                                      getSqlTableModel_categories
-                                                      ());
+    _allWindows->_adminListerWindow->lister_remise(&_allWindows->getSqlTableModel_remises());
 
-    _allWindows->_adminListerWindow->lister_LIGNE_BUDGETAIRE
-		(&_allWindows->getSqlTableModel_lignes_budgetaires());
+    _allWindows->_adminListerWindow->lister_alerte(&_allWindows->getSqlTableModel_alertes());
 
-    _allWindows->_adminListerWindow->lister_utilisateur(&_allWindows->
-                                                        getSqlTableModel_users
-                                                        ());
-    _allWindows->_adminListerWindow->
-    lister_departements_de_produits(&_allWindows->
-                                    getSqlTableModel_departements_produits
-                                    ());
-    _allWindows->_adminListerWindow->lister_localisation(&_allWindows->
-                                                         getSqlTableModel_localisations
-                                                         ());
+    _allWindows->_adminListerWindow
+		->lister_compte_bancaire(&_allWindows->getSqlTableModel_comptes_bancaires());
+
+    _allWindows->_adminListerWindow->lister_categorie(&_allWindows->getSqlTableModel_categories());
+
+    _allWindows->_adminListerWindow
+		->lister_LIGNE_BUDGETAIRE(&_allWindows->getSqlTableModel_lignes_budgetaires());
+
+    _allWindows->_adminListerWindow->lister_utilisateur(&_allWindows->getSqlTableModel_users());
+
+    _allWindows->_adminListerWindow
+		->lister_departements_de_produits(&_allWindows->getSqlTableModel_departements_produits());
+
+    _allWindows->_adminListerWindow
+		->lister_localisation(&_allWindows->getSqlTableModel_localisations());
 
     handleTabChanged(tabWidget_administration->currentIndex());
 
@@ -1994,8 +1987,8 @@ void YerothAdminWindow::action_creer()
     case SUJET_ACTION_REMISE:
         creer(SUJET_ACTION_REMISE);
         break;
-    case SUJET_ACTION_BON_DE_COMMANDE:
-        creer(SUJET_ACTION_BON_DE_COMMANDE);
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+        creer(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
     default:
         break;
@@ -2032,8 +2025,8 @@ void YerothAdminWindow::action_lister()
     case SUJET_ACTION_REMISE:
         lister(SUJET_ACTION_REMISE);
         break;
-    case SUJET_ACTION_BON_DE_COMMANDE:
-        lister(SUJET_ACTION_BON_DE_COMMANDE);
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+        lister(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
     default:
         break;
@@ -2067,8 +2060,8 @@ void YerothAdminWindow::action_modifier()
     case SUJET_ACTION_ALERTE:
         modifier(SUJET_ACTION_ALERTE);
         break;
-    case SUJET_ACTION_BON_DE_COMMANDE:
-        modifier(SUJET_ACTION_BON_DE_COMMANDE);
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+        modifier(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
     default:
         break;
@@ -2105,8 +2098,8 @@ void YerothAdminWindow::action_supprimer()
     case SUJET_ACTION_REMISE:
         modifier(SUJET_ACTION_REMISE);
         break;
-    case SUJET_ACTION_BON_DE_COMMANDE:
-        modifier(SUJET_ACTION_BON_DE_COMMANDE);
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+        modifier(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
     default:
         break;

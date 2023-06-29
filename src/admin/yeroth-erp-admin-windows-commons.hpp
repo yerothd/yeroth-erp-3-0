@@ -9,6 +9,8 @@
 
 #include "src/include/yeroth-erp-3-0-software.text-configuration.hpp"
 
+#include "src/windows/yeroth-erp-window-commons.hpp"
+
 #include "src/users/yeroth-erp-users.hpp"
 
 #include "src/utils/yeroth-erp-logger.hpp"
@@ -22,7 +24,7 @@
 
 class YerothERPWindows;
 
-class YerothPOSAdminWindowsCommons : public QMainWindow
+class YerothPOSAdminWindowsCommons : public YerothWindowsCommons
 {
 	Q_OBJECT
 
@@ -115,11 +117,6 @@ public slots:
     virtual void menu();
 
     virtual void retour_menu_principal();
-
-    inline virtual bool imprimer_pdf_document()
-    {
-        return false;
-    }
 
     virtual void changer_utilisateur();
 

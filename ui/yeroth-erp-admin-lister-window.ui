@@ -1453,7 +1453,7 @@
      <attribute name="title">
       <string>CHARGES FINANCIÈRES*</string>
      </attribute>
-     <widget class="YerothERPAlertTableView" name="tableView_lister_charges_financieres">
+     <widget class="YerothERPFinancialExpenseTableView" name="tableView_lister_charges_financieres">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -10216,6 +10216,13 @@
      <string>Outils</string>
     </property>
     <addaction name="actionQui_suis_je"/>
+    <addaction name="separator"/>
+    <addaction name="actionAUGMENTER_LA_POLICE_DU_TABLEAU"/>
+    <addaction name="separator"/>
+    <addaction name="actiondiminuer_la_police_du_tableau"/>
+    <addaction name="separator"/>
+    <addaction name="actionReinitialiserChampsDBVisible"/>
+    <addaction name="actionChampsDBVisible"/>
    </widget>
    <addaction name="menu_adminListerWindow"/>
    <addaction name="menuOutils"/>
@@ -10690,6 +10697,11 @@
    <addaction name="actionChanger_utilisateur"/>
    <addaction name="actionDeconnecter_utilisateur"/>
    <addaction name="actionAppeler_aide"/>
+   <addaction name="actiondiminuer_la_police_du_tableau"/>
+   <addaction name="actionAUGMENTER_LA_POLICE_DU_TABLEAU"/>
+   <addaction name="actionChampsDBVisible"/>
+   <addaction name="actionReinitialiserChampsDBVisible"/>
+   <addaction name="action_parametrer_les_impressions"/>
    <addaction name="actionAfficherPDF"/>
    <addaction name="actionRetournerMenuPrincipal"/>
   </widget>
@@ -10881,6 +10893,80 @@
     </font>
    </property>
   </action>
+  <action name="action_parametrer_les_impressions">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3-0-printing-settings.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Paramétrer les impressions PDF</string>
+   </property>
+   <property name="toolTip">
+    <string>Paramétrer les impressions PDF</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionAUGMENTER_LA_POLICE_DU_TABLEAU">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3-0-font_size_UP.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>AUGMENTER LA POLICE DU TABLEAU</string>
+   </property>
+  </action>
+  <action name="actiondiminuer_la_police_du_tableau">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3-0-font_size_DOWN.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>diminuer la police du tableau</string>
+   </property>
+  </action>
+  <action name="actionChampsDBVisible">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3.0-select-database-table-column-icon.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Sélectionner les  champs (base de données) visible</string>
+   </property>
+   <property name="toolTip">
+    <string>Sélectionner les  champs (base de données) visible</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionReinitialiserChampsDBVisible">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3.0-reset-database-table-column-selection-icon.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Réinitialiser les  champs (base de données) visible</string>
+   </property>
+   <property name="toolTip">
+    <string>Réinitialiser les  champs (base de données) visible</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -10920,6 +11006,11 @@
    <class>YerothERPProductDepartmentTableView</class>
    <extends>QTableView</extends>
    <header>src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>YerothERPFinancialExpenseTableView</class>
+   <extends>QTableView</extends>
+   <header>src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp</header>
   </customwidget>
  </customwidgets>
  <tabstops>

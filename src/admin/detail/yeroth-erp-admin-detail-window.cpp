@@ -230,7 +230,7 @@ void YerothAdminDetailWindow::modifier()
     case SUJET_ACTION_ALERTE:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_ALERTE);
         break;
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
     default:
         break;

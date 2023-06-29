@@ -246,9 +246,9 @@ void YerothAdminModifierWindow::rendreVisible(enum AdminSujetAction selectedSuje
         setupEditRemise();
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
-        tabWidget_modifier->setCurrentIndex(SUJET_ACTION_BON_DE_COMMANDE);
-        enableOtherTabs(SUJET_ACTION_BON_DE_COMMANDE, false);
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+        tabWidget_modifier->setCurrentIndex(SUJET_ACTION_CHARGE_FINANCIERE);
+        enableOtherTabs(SUJET_ACTION_CHARGE_FINANCIERE, false);
         break;
 
     default:
@@ -358,7 +358,7 @@ void YerothAdminModifierWindow::annuler()
         retourListerRemise();
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
 
     default:

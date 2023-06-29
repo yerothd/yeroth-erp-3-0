@@ -49,6 +49,19 @@ YerothAdminListerWindow::YerothAdminListerWindow()
 
     mySetupUi(this);
 
+    setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_alerte);
+
+
+    _list_actions_to_enable_on_positive_tableview_ROW_COUNT
+		<< actionAUGMENTER_LA_POLICE_DU_TABLEAU
+		<< actiondiminuer_la_police_du_tableau
+        << action_parametrer_les_impressions
+        << actionAfficherPDF;
+
+
+    setup_select_configure_dbcolumn(YerothDatabase::ALERTES);
+
+
     QMESSAGE_BOX_STYLE_SHEET =
                     QString("QMessageBox {background-color: rgb(%1);}"
                             "QMessageBox QLabel {color: rgb(%2);}").arg
@@ -104,6 +117,40 @@ YerothAdminListerWindow::YerothAdminListerWindow()
 
     connect(actionAfficher, SIGNAL(triggered()), this,
             SLOT(afficher_au_detail()));
+
+
+    connect(actionReinitialiserChampsDBVisible,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(slot_reinitialiser_colones_db_visibles()));
+
+    connect(actionChampsDBVisible,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(selectionner_champs_db_visibles()));
+
+
+    connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,
+    		SIGNAL(triggered()),
+    		this,
+            SLOT(incrementFontSize__OF_TABLE()));
+
+    connect(actiondiminuer_la_police_du_tableau,
+    		SIGNAL(triggered()),
+    		this,
+            SLOT(decrementFontSize__OF_TABLE()));
+
+
+    connect(action_parametrer_les_impressions,
+    		SIGNAL(triggered()),
+			this,
+            SLOT(setup_print()));
+
+    connect(actionAfficherPDF,
+    		SIGNAL(triggered()),
+			this,
+            SLOT(print_PDF_PREVIOUSLY_SETUP()));
+
 
     connect(actionCreer, SIGNAL(triggered()), this, SLOT(creer()));
 
@@ -300,7 +347,7 @@ void YerothAdminListerWindow::rendreVisible(unsigned selectedSujetAction)
         }
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
 
     default:
@@ -358,7 +405,6 @@ void YerothAdminListerWindow::set_admin_rechercher_font()
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
-
     	MACRO_SET_ADMIN_RECHERCHER_FONT(_userCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_utilisateur"));
 
@@ -406,7 +452,7 @@ void YerothAdminListerWindow::set_admin_rechercher_font()
 
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
     	setWindowTitle(_windowName_WITH_NO_MAINTENANCE);
         break;
 
@@ -624,7 +670,6 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
         tableView_lister_categorie->lister_les_elements_du_tableau(*sqlTableModel);
     }
 
-
     _LISTER_tab_TO_tabTitle.insert("lister_categorie", _windowName);
 
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_categorie"));
@@ -812,6 +857,47 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
 }
 
 
+bool YerothAdminListerWindow::imprimer_pdf_document()
+{
+	bool result = false;
+
+	switch (tabWidget_lister->currentIndex())
+	{
+	case SUJET_ACTION_COMPTE_UTILISATEUR:
+		break;
+
+	case SUJET_ACTION_LOCALISATION:
+		break;
+
+	case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+		break;
+
+	case SUJET_ACTION_CATEGORIE:
+		break;
+
+	case SUJET_ACTION_ligne_budgetaire:
+		break;
+
+	case SUJET_ACTION_COMPTE_BANCAIRE:
+		break;
+
+	case SUJET_ACTION_REMISE:
+		break;
+
+	case SUJET_ACTION_ALERTE:
+		break;
+
+	case SUJET_ACTION_CHARGE_FINANCIERE:
+		break;
+
+	default:
+		break;
+	}
+
+	return result;
+}
+
+
 void YerothAdminListerWindow::creer()
 {
     _allWindows->_adminCreateWindow->rendreVisible(tabWidget_lister->
@@ -905,8 +991,8 @@ void YerothAdminListerWindow::modifier()
         }
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
-        //_allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_BON_DE_COMMANDE);
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+        //_allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE);
         //rendreInvisible();
         break;
 
@@ -952,7 +1038,7 @@ void YerothAdminListerWindow::afficher_au_detail()
         afficher_detail_alerte();
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
 
     default:
@@ -1066,7 +1152,7 @@ void YerothAdminListerWindow::supprimer()
         supprimer_alerte();
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
 
     default:
@@ -1764,3 +1850,172 @@ void YerothAdminListerWindow::supprimer_alerte()
         }
     }
 }
+
+
+QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
+{
+	QDEBUG_STRING_OUTPUT_1("YerothAdminListerWindow::get_latex_template_print_pdf_content");
+
+    _documentSpecificElements_FOR_PDF_LATEX_PRINTING.clear();
+
+    switch (tabWidget_lister->currentIndex())
+    {
+    case SUJET_ACTION_COMPTE_UTILISATEUR:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+		break;
+
+    case SUJET_ACTION_LOCALISATION:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        break;
+
+    case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+		break;
+
+    case SUJET_ACTION_CATEGORIE:
+    	QDEBUG_STRING_OUTPUT_1("YerothAdminListerWindow::get_latex_template_print_pdf_content - SUJET_ACTION_CATEGORIE");
+
+    	if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHOBJECT",
+						"Category");
+
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHSUBJECT",
+						"CATEGORY LISTING");
+        }
+        else
+        {
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHOBJECT",
+						"Catégories");
+
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHSUBJECT",
+						"1 LISTE DE CATÉGORIES");
+        }
+
+        break;
+
+    case SUJET_ACTION_ligne_budgetaire:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        break;
+
+    case SUJET_ACTION_COMPTE_BANCAIRE:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        break;
+
+    case SUJET_ACTION_REMISE:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        break;
+
+    case SUJET_ACTION_ALERTE:
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        break;
+
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+    	setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
+
+    	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_charges_financieres);
+
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHOBJECT",
+						"Financial expense");
+
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHSUBJECT",
+						"FINANCIAL EXPENSE LISTING");
+        }
+        else
+        {
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHOBJECT",
+						"Charges financières");
+
+    		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
+				.insert("YEROTHSUBJECT",
+						"1 LISTE DE CHARGES FINANCIÈRES");
+        }
+        break;
+
+    default:
+        break;
+    }
+
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+    	QDEBUG_STRING_OUTPUT_1("YerothAdminListerWindow::get_latex_template_print_pdf_content - 3");
+    	_latex_template_print_pdf_content = YerothUtils::EN_template_lister_admin_objects_TEX;
+    }
+    else
+    {
+    	_latex_template_print_pdf_content = YerothUtils::FR_template_lister_admin_objects_TEX;
+    }
+
+
+    return _latex_template_print_pdf_content;
+}
+
+
+
+

@@ -76,9 +76,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         _curSqlTableModel = &_allWindows->getSqlTableModel_alertes();
         break;
 
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
 
-        _curSujetAction = SUJET_ACTION_BON_DE_COMMANDE;
+        _curSujetAction = SUJET_ACTION_CHARGE_FINANCIERE;
         break;
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
@@ -203,7 +203,7 @@ void YerothAdminSearchForm::rechercher(const QString &itemName)
                         GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::DESIGNATION_ALERTE,
                                              searchString);
         break;
-    case SUJET_ACTION_BON_DE_COMMANDE:
+    case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
         filter =
@@ -259,7 +259,7 @@ void YerothAdminSearchForm::rechercher(const QString &itemName)
                 lister_alerte(_curSqlTableModel);
                 break;
 
-            case SUJET_ACTION_BON_DE_COMMANDE:
+            case SUJET_ACTION_CHARGE_FINANCIERE:
                 break;
 
             case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:

@@ -64,6 +64,9 @@ public:
     }
 
 public slots:
+
+	virtual bool imprimer_pdf_document();
+
     inline void handleCurrentChanged(int index)
     {
         set_admin_rechercher_font();
@@ -125,6 +128,8 @@ public slots:
     void supprimer_remise();
 
     void supprimer_alerte();
+
+    virtual QString get_latex_template_print_pdf_content();
 
     inline void annuler()
     {
