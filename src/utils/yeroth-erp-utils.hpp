@@ -1138,6 +1138,10 @@ public:
 
     static QString EN_template_carte_de_fidelite_client_TEMPLATE_tex;
 
+    static QString FR_template_lister_admin_objects_TEX;
+
+    static QString EN_template_lister_admin_objects_TEX;
+
     static QString FR_template_EMPLOYEE_GROUP_LISTING_tex;
 
     static QString EN_template_EMPLOYEE_GROUP_LISTING_tex;

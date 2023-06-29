@@ -6114,6 +6114,8 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-templates/EN_template-liste-des-mouvements-de-stocks.tex \
 		yeroth-erp-3-0-templates/EN_template-bilan-comptable.tex \
 		yeroth-erp-3-0-templates/FR_template_PAY_GROUP_LISTING.tex \
+		yeroth-erp-3-0-templates/EN_template-lister-admin-objects.tex \
+		yeroth-erp-3-0-templates/FR_template-lister-admin-objects.tex \
 		yeroth-erp-3-0-templates/EN_template-fournisseurs.tex \
 		yeroth-erp-3-0-templates/EN_template_recu-grand.tex \
 		yeroth-erp-3-0-templates/FR_template-marchandises.tex \

@@ -38,8 +38,8 @@
 #define SUBJECT_ADMIN_OPERATIONS_ALERT_EN				"an alert"
 #define SUBJECT_ADMIN_OPERATIONS_ALERT_FR				"une alerte"
 
-#define SUBJECT_ADMIN_OPERATIONS_COMMAND_SHEET_EN			"a command sheet"
-#define SUBJECT_ADMIN_OPERATIONS_COMMAND_SHEET_FR			"un bon de commande"
+#define SUBJECT_ADMIN_OPERATIONS_FINANCIAL_EXPENSE_EN			"a financial expense"
+#define SUBJECT_ADMIN_OPERATIONS_FINANCIAL_EXPENSE_FR			"une charge financière"
 
 #define SUBJECT_ADMIN_OPERATIONS_SUPPLIER_EN				"a supplier"
 #define SUBJECT_ADMIN_OPERATIONS_SUPPLIER_FR				"un fournisseur"

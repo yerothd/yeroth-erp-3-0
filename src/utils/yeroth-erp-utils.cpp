@@ -104,6 +104,10 @@ QString YerothUtils::FR_template_carte_de_fidelite_client_TEMPLATE_tex("");
 
 QString YerothUtils::EN_template_carte_de_fidelite_client_TEMPLATE_tex("");
 
+QString YerothUtils::FR_template_lister_admin_objects_TEX("");
+
+QString YerothUtils::EN_template_lister_admin_objects_TEX("");
+
 QString YerothUtils::FR_template_EMPLOYEE_GROUP_LISTING_tex("");
 
 QString YerothUtils::EN_template_EMPLOYEE_GROUP_LISTING_tex("");

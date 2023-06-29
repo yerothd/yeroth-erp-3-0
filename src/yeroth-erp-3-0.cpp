@@ -98,6 +98,20 @@ void readTexTemplateFiles(YerothLogger &logger)
 
 
     {
+    	// FR_template-lister-admin-objects.tex
+    	QFile file_FR_template_lister_admin_objects(FILE_YEROTH_ERP_3_0_TEMPLATE_LISTE_ADMIN_OBJECTS_FR);
+
+    	YerothUtils::YEROTH_READ_FILE_CONTENT(file_FR_template_lister_admin_objects,
+    			YerothUtils::FR_template_lister_admin_objects_TEX);
+
+    	// EN_template-lister-admin-objects.tex
+    	QFile file_EN_template_lister_admin_objects(FILE_YEROTH_ERP_3_0_TEMPLATE_LISTE_ADMIN_OBJECTS_EN);
+
+    	YerothUtils::YEROTH_READ_FILE_CONTENT(file_EN_template_lister_admin_objects,
+    			YerothUtils::EN_template_lister_admin_objects_TEX);
+    }
+
+    {
     	// FR_template_employee_GROUP_LISTING_tex
     	QFile fileEMPLOYEE_GroupTemplateFR(FILE_YEROTH_ERP_3_0_TEMPLATE_EMPLOYEES_GROUPS_HR_FR);
 

@@ -97,7 +97,7 @@ const QString YerothAdminWindow::LIGNE_BUDGETAIRE(QObject::
 const QString YerothAdminWindow::ALERTE(QObject::
                                         trUtf8(SUBJECT_ADMIN_OPERATIONS_ALERT_FR));
 const QString YerothAdminWindow::BON_DE_COMMANDE(QObject::tr
-                                                 (SUBJECT_ADMIN_OPERATIONS_COMMAND_SHEET_FR));
+                                                 (SUBJECT_ADMIN_OPERATIONS_FINANCIAL_EXPENSE_FR));
 const QString YerothAdminWindow::COMPTE_BANCAIRE(QObject::tr
                                                  (SUBJECT_ADMIN_OPERATIONS_BANK_ACCOUNT_FR));
 const QString YerothAdminWindow::REMISE(QObject::
@@ -122,7 +122,7 @@ const QString YerothAdminWindow::LIGNE_BUDGETAIRE(QObject::
                                            tr(SUBJECT_ADMIN_OPERATIONS_BUDGET_LINE_EN));
 const QString YerothAdminWindow::ALERTE(QObject::tr(SUBJECT_ADMIN_OPERATIONS_ALERT_EN));
 const QString YerothAdminWindow::BON_DE_COMMANDE(QObject::tr
-                                                 (SUBJECT_ADMIN_OPERATIONS_COMMAND_SHEET_EN));
+                                                 (SUBJECT_ADMIN_OPERATIONS_FINANCIAL_EXPENSE_EN));
 const QString YerothAdminWindow::COMPTE_BANCAIRE(QObject::tr
                                                  (SUBJECT_ADMIN_OPERATIONS_BANK_ACCOUNT_EN));
 const QString YerothAdminWindow::REMISE(QObject::
