@@ -112,9 +112,7 @@ protected slots:
 
     void handleCurrentTabChanged(int index);
 
-    void handleComboBoxClients_courriers_alertes_resolue_oui_OU_non(const
-                                                                    QString &
-                                                                    currentText);
+    void handleComboBoxClients_courriers_alertes_resolue_oui_OU_non(const QString &currentText);
 
 protected:
 
