@@ -28,9 +28,9 @@ const QString YerothTableViewPRINT_UTILITIES_TEX_TABLE::_A4PAGE_LANDSCAPE_SPECIF
 
 
 YerothTableViewPRINT_UTILITIES_TEX_TABLE::
-	YerothTableViewPRINT_UTILITIES_TEX_TABLE(const QString &output_pdf_file_name_out,
-											 YerothWindowsCommons &aYerothWindowTableOutputView,
-											 YerothTableView &aYerothTableView)
+	YerothTableViewPRINT_UTILITIES_TEX_TABLE(const QString 			&output_pdf_file_name_out,
+											 YerothWindowsCommons 	&aYerothWindowTableOutputView,
+											 YerothTableView 		&aYerothTableView)
 :_LATEX_A4_PAPER_SPEC(_A4PAGE_LANDSCAPE_SPECIFICATION),
  _MAX_TABLE_ROW_COUNT(20),
  _output_pdf_file_name(output_pdf_file_name_out),
@@ -121,20 +121,25 @@ void YerothTableViewPRINT_UTILITIES_TEX_TABLE::SET_HORIZONTAL_PRINT_POSITION()
 }
 
 
-QString
-YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
-(uint pageFROM, uint pageTO,
- const QString &aLatex_template_document_string, QMap < QString,
- QString > *documentSpecificElements /* = 0 */)
+QString YerothTableViewPRINT_UTILITIES_TEX_TABLE::
+			print_YEROTH_document_from_TableView(uint 					pageFROM,
+												 uint 					pageTO,
+												 const QString 			&aLatex_template_document_string,
+												 QMap<QString, QString> *documentSpecificElements /* = 0 */)
 {
     _tex_template_document_string.clear();
+
     _tex_template_document_string.append(aLatex_template_document_string);
+
 
     QString latexFileNamePrefix(_output_pdf_file_name);
 
+
     QList <int>dbTableColumnsToIgnore_in_out;
 
+
     _yerothWindowTableOutputView->fill_table_columns_to_ignore(dbTableColumnsToIgnore_in_out);
+
 
     QString pdfBuyingsFileName;
 
@@ -147,9 +152,12 @@ YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
     	latexFileNamePrefix.append("_french");
     }
 
+
     QStandardItemModel *tableModel = _yerothTableView->getStandardItemModel();
 
+
     int tableModelRowCount = tableModel->rowCount();
+
 
     if (tableModelRowCount <= 0 										||
         tableModel->columnCount() <= dbTableColumnsToIgnore_in_out.count())
@@ -160,6 +168,7 @@ YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
 
         return YerothUtils::EMPTY_STRING;
     }
+
 
     int fromRowIndex = 0;
 
@@ -173,7 +182,9 @@ YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
 
     int currentProgressBarCount = 25;
 
+
     emit _yerothWindowTableOutputView->SIGNAL_INCREMENT_PROGRESS_BAR(currentProgressBarCount);
+
 
     if (tableModelRowCount > MAX_TABLE_ROW_COUNT_first_page())
     {
@@ -193,17 +204,19 @@ YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
                 //qDebug() << QString("## fromRowIndex: %1, toRowIndex: %2")
                 //          .arg(QString::number(fromRowIndex), QString::number(toRowIndex));
                 get_YEROTH_TableViewListingTexDocumentString
-					(dbTableColumnsToIgnore_in_out,
-                	 latexTable_in_out,
-					 (fromRowIndex >= tableModelRowCount) ? tableModelRowCount : fromRowIndex,
-				     (toRowIndex >= tableModelRowCount) ? (tableModelRowCount + 1) : toRowIndex,
-				     k == pageNumber);
+							(dbTableColumnsToIgnore_in_out,
+							 latexTable_in_out,
+							 (fromRowIndex >= tableModelRowCount) ? tableModelRowCount : fromRowIndex,
+							 (toRowIndex >= tableModelRowCount) ? (tableModelRowCount + 1) : toRowIndex, k == pageNumber);
             }
 
             fromRowIndex = toRowIndex;
 
-            toRowIndex =
-             (fromRowIndex >= tableModelRowCount) ? (fromRowIndex + 1) : fromRowIndex + _MAX_TABLE_ROW_COUNT;
+
+            toRowIndex = (fromRowIndex >= tableModelRowCount) ?
+            				(fromRowIndex + 1) :
+							fromRowIndex + _MAX_TABLE_ROW_COUNT;
+
 
             currentProgressBarCount += abs((((k + 1) / pageNumber) * 100) - 4);
 
@@ -229,9 +242,9 @@ YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
         get_YEROTH_TableViewListingTexDocumentString
         	(dbTableColumnsToIgnore_in_out, latexTable_in_out,
         	 (fromRowIndex >= tableModelRowCount) ? tableModelRowCount : fromRowIndex,
-        	 (toRowIndex >= tableModelRowCount) ? (tableModelRowCount + 1) : toRowIndex,
-        	 k == pageNumber);
+        	 (toRowIndex >= tableModelRowCount) ? (tableModelRowCount + 1) : toRowIndex, k == pageNumber);
     }
+
 
     YerothInfoEntreprise &infoEntreprise = YerothUtils::getAllWindows()->getInfoEntreprise();
 
@@ -240,10 +253,12 @@ YerothTableViewPRINT_UTILITIES_TEX_TABLE::print_YEROTH_document_from_TableView
     get_YEROTH_ListingTex_TEMPLATE_DocumentString(texDocument,
                                                   latexTable_in_out);
 
-    QString factureDate
-				(YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX()));
+    QString factureDate =
+    		YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX());
+
 
     YerothUtils::getCurrentLocaleDate(factureDate);
+
 
     if (0 != documentSpecificElements)
     {
@@ -475,15 +490,15 @@ QString YerothTableViewPRINT_UTILITIES_TEX_TABLE::
 
     QString yerothPrefixFileName;
 
-    yerothPrefixFileName.append
-    (YerothUtils::getUniquePrefixFileInTemporaryFilesDir
-     (latexFileNamePrefix));
+    yerothPrefixFileName
+		.append(YerothUtils::getUniquePrefixFileInTemporaryFilesDir(latexFileNamePrefix));
 
     //qDebug() << "++\n" << texDocument;
 
     QFile tmpLatexFile(QString("%1tex").arg(yerothPrefixFileName));
 
-    YerothUtils::writeStringToQFilewithUTF8Encoding(tmpLatexFile, texDocument);
+    YerothUtils::writeStringToQFilewithUTF8Encoding(tmpLatexFile,
+    												texDocument);
 
     emit _yerothWindowTableOutputView->SIGNAL_INCREMENT_PROGRESS_BAR(94);
 

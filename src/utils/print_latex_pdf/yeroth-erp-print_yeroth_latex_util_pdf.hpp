@@ -17,16 +17,17 @@
 #include <QtCore/QCryptographicHash>
 
 
-class YerothTableViewPRINT_UTILITIES_TEX_TABLE:public QObject
+class YerothTableViewPRINT_UTILITIES_TEX_TABLE : public QObject
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothTableViewPRINT_UTILITIES_TEX_TABLE(const QString &
-                                                                    output_pdf_file_name_out,
-                                                                    YerothWindowsCommons &
-                                                                    aYerothWindowTableOutputView,
-                                                                    YerothTableView &
-                                                                    aYerothTableView);
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	YerothTableViewPRINT_UTILITIES_TEX_TABLE(const QString 			&output_pdf_file_name_out,
+                                             YerothWindowsCommons 	&aYerothWindowTableOutputView,
+                                             YerothTableView 		&aYerothTableView);
 
     void setYerothTableView(YerothTableView *aYerothTableView);
 
@@ -53,37 +54,24 @@ Q_OBJECT public:
 
     void SET_HORIZONTAL_PRINT_POSITION();
 
-    QString print_YEROTH_document_from_TableView(uint pageFROM,
-                                                 uint pageTO,
-                                                 const QString &
-                                                 aLatex_template_document_string,
-                                                 QMap < QString,
-                                                 QString >
-                                                 *documentSpecificElements =
-                                                                 0);
+    QString print_YEROTH_document_from_TableView(uint 					pageFROM,
+                                                 uint 					pageTO,
+                                                 const QString 			&aLatex_template_document_string,
+                                                 QMap<QString, QString> *documentSpecificElements = 0);
 
-    QString print_YEROTH_document_from_TableView(const QString &
-                                                 aLatex_template_document_string,
-                                                 QMap < QString,
-                                                 QString >
-                                                 *documentSpecificElements =
-                                                                 0);
+    QString print_YEROTH_document_from_TableView(const QString 			&aLatex_template_document_string,
+                                                 QMap<QString, QString> *documentSpecificElements = 0);
 
 protected:
 
-    void get_YEROTH_ListingTex_TEMPLATE_DocumentString(QString &
-                                                       output_tex_document_string_in_out,
-                                                       const QString &
-                                                       append_string);
+    void get_YEROTH_ListingTex_TEMPLATE_DocumentString(QString 			&output_tex_document_string_in_out,
+                                                       const QString 	&append_string);
 
-    void get_YEROTH_TableViewListingTexDocumentString(const QList <
-                                                      int
-                                                      >&aDBTableColumnsToIgnore_in_out,
-                                                      QString &
-                                                      latexTable_in_out,
-                                                      int fromRowIndex,
-                                                      int toRowIndex,
-                                                      bool lastPage);
+    void get_YEROTH_TableViewListingTexDocumentString(const QList<int>	&aDBTableColumnsToIgnore_in_out,
+                                                      QString 			&latexTable_in_out,
+                                                      int 				fromRowIndex,
+                                                      int 				toRowIndex,
+                                                      bool 				lastPage);
 
 public:
 
@@ -105,11 +93,11 @@ protected:
 
     QString _tex_template_document_string;
 
-    QSet < int >_dbCENTER_TO_ALIGN_FieldName;
+    QSet<int> _dbCENTER_TO_ALIGN_FieldName;
 
-    QSet < int >_dbRIGHT_TO_ALIGN_FieldName;
+    QSet<int> _dbRIGHT_TO_ALIGN_FieldName;
 
-    QSet < int >_dbLEFT_TO_ALIGN_FieldName;
+    QSet<int> _dbLEFT_TO_ALIGN_FieldName;
 
     YerothWindowsCommons *_yerothWindowTableOutputView;
 
