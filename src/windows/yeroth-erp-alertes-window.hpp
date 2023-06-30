@@ -92,8 +92,7 @@ public slots:
 
     void resetFilter(YerothSqlTableModel *alertesSqlTableModel);
 
-    virtual void lister_les_elements_du_tableau(YerothSqlTableModel &
-                                                alertesSqlTableModel);
+    virtual void lister_les_elements_du_tableau(YerothSqlTableModel &alertesSqlTableModel);
 
     inline void lister_les_elements_du_tableau()
     {

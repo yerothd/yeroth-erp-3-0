@@ -85,13 +85,17 @@ YerothAlertesWindow::YerothAlertesWindow()
 
 
     MACRO_TO_DEFINE_CURRENT_VIEW_WINDOW_FOR_TABLE_PAGINATION(tableView_alertes)
+
+
     QMESSAGE_BOX_STYLE_SHEET =
                     QString("QMessageBox {background-color: rgb(%1);}"
                             "QMessageBox QLabel {color: rgb(%2);}").arg
                     (COLOUR_RGB_STRING_YEROTH_ALERT_BLUE_52_101_164,
                      COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
+
     setup_select_configure_dbcolumn(YerothDatabase::COURRIERS_ALERTES);
+
 
     _lineEditsToANDContentForSearch.insert(&lineEdit_alertes_terme_recherche,
                                            YerothUtils::EMPTY_STRING);
@@ -1278,11 +1282,9 @@ void YerothAlertesWindow::resetFilter(YerothSqlTableModel *alertesSqlTableModel)
 }
 
 
-void YerothAlertesWindow::lister_les_elements_du_tableau(YerothSqlTableModel &
-                                                         alertesSqlTableModel)
+void YerothAlertesWindow::lister_les_elements_du_tableau(YerothSqlTableModel &alertesSqlTableModel)
 {
-    tableView_alertes->queryYerothTableViewCurrentPageContentRow
-    (alertesSqlTableModel);
+    tableView_alertes->queryYerothTableViewCurrentPageContentRow(alertesSqlTableModel);
 
     tableView_show_or_hide_columns(*tableView_alertes);
 
