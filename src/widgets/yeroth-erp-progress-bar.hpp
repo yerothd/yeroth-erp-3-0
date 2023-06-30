@@ -34,13 +34,13 @@ public:
     }
 
     template <class classType, typename parameterType, typename returnType>
-    inline void operator()(classType *erpStockImport,
-                           parameterType *aParamValue_ONE,
-                           parameterType *aParamValue_TWO,
+    inline void operator()(classType 		*erpStockImport,
+                           parameterType 	*aParamValue_ONE,
+                           parameterType 	*aParamValue_TWO,
                            returnType(classType::*func)(parameterType *,
                                                         parameterType *),
-                           returnType *aRetValue = 0,
-						   unsigned int progressBarMaximum = 100)
+                           returnType 		*aRetValue = 0,
+						   unsigned int 	progressBarMaximum = 100)
     {
         call_funtion_with_progress_bar_updates(erpStockImport,
                                                aParamValue_ONE,
@@ -51,11 +51,11 @@ public:
     }
 
     template <class classType, typename parameterType, typename returnType>
-    inline void operator()(classType *erpStockImport,
-                           parameterType *aParamValue,
+    inline void operator()(classType 		*erpStockImport,
+                           parameterType 	*aParamValue,
                            returnType(classType::*func)(parameterType *),
-                           returnType *aRetValue = 0,
-						   unsigned int progressBarMaximum = 100)
+                           returnType 		*aRetValue = 0,
+						   unsigned int 	progressBarMaximum = 100)
     {
         call_funtion_with_progress_bar_updates(erpStockImport,
                                                aParamValue,
@@ -64,17 +64,18 @@ public:
                                                progressBarMaximum);
     }
 
-    template < class classType, typename returnType >
-    inline void operator()(classType *erpStockImport,
+    template <class classType, typename returnType>
+    inline void operator()(classType 		*erpStockImport,
                            returnType(classType::*func)(),
-                           returnType *aRetValue = 0,
-                           unsigned int progressBarMaximum = 100)
+                           returnType 		*aRetValue = 0,
+                           unsigned int 	progressBarMaximum = 100)
     {
         call_funtion_with_progress_bar_updates(erpStockImport,
                                                func,
                                                aRetValue,
                                                progressBarMaximum);
     }
+
 
 public slots:
 
@@ -83,6 +84,7 @@ public slots:
         setValue(v + 2);
     }
 
+
 protected:
 
     template <class classType, typename parameterType, typename returnType>
@@ -90,24 +92,23 @@ protected:
                                                 parameterType 	*aParamValue_ONE,
                                                 parameterType 	*aParamValue_TWO,
                                                 returnType(classType::*func)(parameterType *, parameterType *),
-                                                returnType *aRetValue,
-                                                unsigned int
-                                                progressBarMaximum);
+                                                returnType 		*aRetValue,
+                                                unsigned int 	progressBarMaximum);
+
 
     template <class classType, typename parameterType, typename returnType>
-    void call_funtion_with_progress_bar_updates(classType *erpStockImport,
-                                                parameterType *aParamValue,
+    void call_funtion_with_progress_bar_updates(classType 		*erpStockImport,
+                                                parameterType 	*aParamValue,
                                                 returnType(classType::*func)(parameterType *),
-                                                returnType *aRetValue,
-                                                unsigned int
-                                                progressBarMaximum);
+                                                returnType 		*aRetValue,
+                                                unsigned int	progressBarMaximum);
+
 
     template < class classType, typename returnType >
-    void call_funtion_with_progress_bar_updates(classType *erpStockImport,
+    void call_funtion_with_progress_bar_updates(classType 		*erpStockImport,
                                                 returnType(classType::*func)(),
-												returnType *aRetValue,
-                                                unsigned int
-                                                progressBarMaximum);
+												returnType 		*aRetValue,
+                                                unsigned int	progressBarMaximum);
 
 private:
 
@@ -120,12 +121,12 @@ private:
  */
 template <class classType, typename parameterType, typename returnType>
 void YerothProgressBar::
-		call_funtion_with_progress_bar_updates(classType *aClassInstanceRef,
-											   parameterType *aParamValue_ONE,
-											   parameterType *aParamValue_TWO,
+		call_funtion_with_progress_bar_updates(classType 		*aClassInstanceRef,
+											   parameterType 	*aParamValue_ONE,
+											   parameterType 	*aParamValue_TWO,
 											   returnType(classType::*func)(parameterType *, parameterType *),
-											   returnType *aRetValue,
-											   unsigned int progressBarMaximum)
+											   returnType 		*aRetValue,
+											   unsigned int 	progressBarMaximum)
 {
     if (0 == aParamValue_ONE || 0 == aParamValue_TWO)
     {
@@ -136,7 +137,8 @@ void YerothProgressBar::
     {
         connect(aClassInstanceRef,
                 SIGNAL(SIGNAL_INCREMENT_PROGRESS_BAR(int)),
-                this, SLOT(SLOT_UPDATE_PROGRESS_BAR_VALUE(int)));
+                this,
+				SLOT(SLOT_UPDATE_PROGRESS_BAR_VALUE(int)));
 
         _setup = true;
     }
@@ -145,8 +147,7 @@ void YerothProgressBar::
 
     setVisible(true);
 
-    returnType retValue =
-                    (aClassInstanceRef->*func)(aParamValue_ONE, aParamValue_TWO);
+    returnType retValue = (aClassInstanceRef->*func)(aParamValue_ONE, aParamValue_TWO);
 
     setVisible(false);
 
@@ -162,23 +163,18 @@ void YerothProgressBar::
  * MUST STAY IN HEADER FILE !
  */
 template <class classType, typename parameterType, typename returnType>
-void YerothProgressBar::call_funtion_with_progress_bar_updates(classType *
-        aClassInstanceRef,
-        parameterType *
-        aParamValue,
-        returnType
-        (classType::*func)
-        (parameterType *),
-        returnType *
-        aRetValue,
-        unsigned int
-        progressBarMaximum)
+void YerothProgressBar::call_funtion_with_progress_bar_updates(classType 		*aClassInstanceRef,
+        													   parameterType 	*aParamValue,
+															   returnType (classType::*func)(parameterType *),
+															   returnType 		*aRetValue,
+															   unsigned int 	progressBarMaximum)
 {
     if (!_setup)
     {
         connect(aClassInstanceRef,
                 SIGNAL(SIGNAL_INCREMENT_PROGRESS_BAR(int)),
-                this, SLOT(SLOT_UPDATE_PROGRESS_BAR_VALUE(int)));
+                this,
+				SLOT(SLOT_UPDATE_PROGRESS_BAR_VALUE(int)));
 
         _setup = true;
     }
@@ -201,21 +197,18 @@ void YerothProgressBar::call_funtion_with_progress_bar_updates(classType *
 /*
  * MUST STAY IN HEADER FILE !
  */
-template < class classType, typename returnType > void YerothProgressBar::call_funtion_with_progress_bar_updates(classType *
-                                                                                                                 aClassInstanceRef,
-                                                                                                                 returnType
-                                                                                                                 (classType::*func)
-                                                                                                                 (),
-                                                                                                                 returnType *
-                                                                                                                 aRetValue,
-                                                                                                                 unsigned int
-                                                                                                                 progressBarMaximum)
+template <class classType, typename returnType>
+void YerothProgressBar::call_funtion_with_progress_bar_updates(classType 	*aClassInstanceRef,
+                                                               returnType (classType::*func)(),
+                                                               returnType 	* aRetValue,
+                                                               unsigned int progressBarMaximum)
 {
     if (!_setup)
     {
         connect(aClassInstanceRef,
                 SIGNAL(SIGNAL_INCREMENT_PROGRESS_BAR(int)),
-                this, SLOT(SLOT_UPDATE_PROGRESS_BAR_VALUE(int)));
+                this,
+				SLOT(SLOT_UPDATE_PROGRESS_BAR_VALUE(int)));
 
         _setup = true;
     }
