@@ -11,22 +11,21 @@
 #include "src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp"
 
 
-class
-    YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION:public
-    YerothTableViewWITHpagination
+class YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION : public YerothTableViewWITHpagination
 {
-Q_OBJECT public:
+	Q_OBJECT
+
+public:
 
     YEROTH_CLASS_OPERATORS
-    inline
-    YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION
-    ():YerothTableViewWITHpagination()
+
+    inline YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION()
+    :YerothTableViewWITHpagination()
     {
     }
 
-    inline
-    YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION
-    (QWidget *parent):YerothTableViewWITHpagination(parent)
+    inline YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION(QWidget *parent)
+    :YerothTableViewWITHpagination(parent)
     {
     }
 
@@ -35,12 +34,10 @@ Q_OBJECT public:
     }
 
 protected slots:
-    virtual void handle_yeroth_header_view_position_changed(int
-                                                            logicalIndex,
-                                                            int
-                                                            oldVisualIndex,
-                                                            int
-                                                            newVisualIndex);
+
+    virtual void handle_yeroth_header_view_position_changed(int logicalIndex,
+                                                            int oldVisualIndex,
+                                                            int newVisualIndex);
 };
 
 
