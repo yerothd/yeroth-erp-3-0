@@ -27,6 +27,7 @@ class YerothERPAlertesTableView : public YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_
 public:
 
     YEROTH_CLASS_OPERATORS
+
     inline YerothERPAlertesTableView()
     :YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION()
     {
@@ -43,8 +44,7 @@ public:
     {
     }
 
-    virtual void lister_les_elements_du_tableau(YerothSqlTableModel &
-                                                alertesSqlTableModel);
+    virtual void lister_les_elements_du_tableau(YerothSqlTableModel &alertesSqlTableModel);
 
 protected:
 
