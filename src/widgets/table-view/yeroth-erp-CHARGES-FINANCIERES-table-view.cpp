@@ -50,11 +50,9 @@ void YerothERP_CHARGES_FINANCIERES_TableView::
     }
 
     int rows = tableModel.rowCount();
-
     int columns = tableModel.columnCount();
 
     _stdItemModel->setRowCount(rows);
-
     _stdItemModel->setColumnCount(columns);
 
 
@@ -62,7 +60,7 @@ void YerothERP_CHARGES_FINANCIERES_TableView::
                                          *_stdItemModel,
                                          _tableModelHeaders,
                                          _tableModelRawHeaders_IN_OUT,
-										 *_currentViewWindow,
+										 _currentViewWindow,
 										 true);
 
 

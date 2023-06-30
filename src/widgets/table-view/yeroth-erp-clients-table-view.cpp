@@ -57,7 +57,7 @@ void YerothERPClientsTableView::lister_les_elements_du_tableau(YerothSqlTableMod
                                          *_stdItemModel,
                                          _tableModelHeaders,
                                          _tableModelRawHeaders_IN_OUT,
-										 *_currentViewWindow);
+										 _currentViewWindow);
 
     _stdItemModel->setColumnCount(_tableModelRawHeaders_IN_OUT.size());
 

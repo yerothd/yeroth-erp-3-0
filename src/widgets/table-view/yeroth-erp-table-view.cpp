@@ -242,8 +242,7 @@ void YerothTableView::lister_les_elements_du_tableau(YerothSqlTableModel &
     bool IS_USER_TABLE = false;
 
     if (YerothUtils::isEqualCaseInsensitive(YerothDatabase::USERS,
-                                            _stdItemModel->_curSqlTableModel->
-                                            sqlTableName()))
+                                            _stdItemModel->_curSqlTableModel->sqlTableName()))
     {
         IS_USER_TABLE = true;
     }
@@ -268,17 +267,20 @@ void YerothTableView::lister_les_elements_du_tableau(YerothSqlTableModel &
 							(QString("%1;%2;%3")
 								.arg(tableModel.sqlTableName(),
 									 "src/widgets/table-view/yeroth-erp-table-view.cpp",
-									 QString::number(258)));
+									 QString::number(257)));
         }
 #endif
 
     int rows = tableModel.rowCount();
+
     int columns = tableModel.columnCount();
 
     _stdItemModel->setRowCount(rows);
+
     _stdItemModel->setColumnCount(columns);
 
     QStringList tableModelRawHeaders;
+
 
     YerothUtils::createTableModelHeaders_DEPRECATED(tableModel,
                                          	 	    *_stdItemModel,
@@ -403,8 +405,7 @@ void YerothTableView::lister_les_elements_du_tableau(YerothSqlTableModel &
 }
 
 
-void
-YerothTableView::construire_le_MAPPING_ORIGINAL_db_ID_VERS_db_row_Nr(YerothSqlTableModel &tableModel)
+void YerothTableView::construire_le_MAPPING_ORIGINAL_db_ID_VERS_db_row_Nr(YerothSqlTableModel &tableModel)
 {
     _MAP_ORIGINAL_NON_FILTERED_DB_ID__TO__ORIGINAL_DB_ROW.clear();
 

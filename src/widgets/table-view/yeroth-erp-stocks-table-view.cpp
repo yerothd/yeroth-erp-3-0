@@ -190,7 +190,7 @@ void YerothERPStocksTableView::lister_les_elements_du_tableau(YerothSqlTableMode
     	                                     *_stdItemModel,
     	                                      _tableModelHeaders,
     	                                      _tableModelRawHeaders_IN_OUT,
-    										  *_currentViewWindow);
+    										  _currentViewWindow);
     }
     else
     {

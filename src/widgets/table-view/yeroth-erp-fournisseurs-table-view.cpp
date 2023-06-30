@@ -39,21 +39,17 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
 {
     _stdItemModel->_curSqlTableModel = &tableModel;
 
-    emit
-    signal_lister(tableModel);
+    emit signal_lister(tableModel);
 
-    bool
-    s = true;
+    bool s = true;
 
     if (_needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING)
     {
         s = tableModel.select();
     }
 
-    int
-    rows = tableModel.rowCount();
-    int
-    columns = tableModel.columnCount();
+    int rows = tableModel.rowCount();
+    int columns = tableModel.columnCount();
 
     _stdItemModel->setRowCount(rows);
     _stdItemModel->setColumnCount(columns);
@@ -62,7 +58,7 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
                                          *_stdItemModel,
                                          _tableModelHeaders,
                                          _tableModelRawHeaders_IN_OUT,
-										 *_currentViewWindow);
+										 _currentViewWindow);
 
     _stdItemModel->setColumnCount(_tableModelRawHeaders_IN_OUT.size());
 

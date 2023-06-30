@@ -48,18 +48,16 @@ void YerothERPGroupesDePaieHRTableView::
     }
 
     int rows = tableModel.rowCount();
-
     int columns = tableModel.columnCount();
 
     _stdItemModel->setRowCount(rows);
-
     _stdItemModel->setColumnCount(columns);
 
     YerothUtils::createTableModelHeaders(tableModel,
                                          *_stdItemModel,
                                          _tableModelHeaders,
                                          _tableModelRawHeaders_IN_OUT,
-										 *_currentViewWindow);
+										 _currentViewWindow);
 
 
     if (!s 										||

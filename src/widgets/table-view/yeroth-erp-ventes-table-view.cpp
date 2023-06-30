@@ -35,8 +35,7 @@
 #include <QtSql/QSqlError>
 
 
-void YerothERPVentesTableView::lister_les_elements_du_tableau(YerothSqlTableModel
-                                                              & tableModel)
+void YerothERPVentesTableView::lister_les_elements_du_tableau(YerothSqlTableModel &tableModel)
 {
     _stdItemModel->_curSqlTableModel = &tableModel;
 
@@ -59,12 +58,12 @@ void YerothERPVentesTableView::lister_les_elements_du_tableau(YerothSqlTableMode
                                          *_stdItemModel,
                                          _tableModelHeaders,
                                          _tableModelRawHeaders_IN_OUT,
-										 *_currentViewWindow);
+										 _currentViewWindow);
 
     _stdItemModel->setColumnCount(_tableModelRawHeaders_IN_OUT.size());
 
-    if (!s || (0 == _tableModelHeaders.size())
-            || (0 == _tableModelRawHeaders_IN_OUT.size()))
+    if (!s || (0 == _tableModelHeaders.size()) ||
+    	(0 == _tableModelRawHeaders_IN_OUT.size()))
     {
         return;
     }
