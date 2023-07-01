@@ -10,6 +10,9 @@
 #include "../../../ui_yeroth-erp-admin-lister-window.h"
 
 
+#include "src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp"
+
+
 #include "src/admin/yeroth-erp-admin-windows-commons.hpp"
 
 #include "src/admin/admin-actions-subjects.hpp"
@@ -71,6 +74,11 @@ public:
 public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_lister_categorie)
+
+	int LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(YerothTableViewWITHpagination  &a_table_view_to_list_show,
+							  	  	  	  	 YerothSqlTableModel 			&aSqlTableModel);
+
+	virtual YerothTableViewWITHpagination *GET_CURRENT_TABLEVIEW();
 
 	virtual void lister_les_elements_du_tableau(YerothSqlTableModel &aSqlTableModel);
 

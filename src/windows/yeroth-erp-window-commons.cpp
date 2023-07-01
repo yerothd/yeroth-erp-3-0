@@ -72,8 +72,7 @@ YerothWindowsCommons::~YerothWindowsCommons()
 
     _visibleQCheckboxs.clear();
 
-    YEROTH_DELETE_FREE_POINTER_NOW
-    (_WRITE_READ_YEROTH_SEMAPHORE_APPLY_USER_SETTING_FILE_PROPERTIES);
+    YEROTH_DELETE_FREE_POINTER_NOW(_WRITE_READ_YEROTH_SEMAPHORE_APPLY_USER_SETTING_FILE_PROPERTIES);
 }
 
 
@@ -1010,7 +1009,9 @@ void YerothWindowsCommons::decrementFontSize__OF_TABLE()
 }
 
 
-void YerothWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG()
+void YerothWindowsCommons::
+		CLOSE_SELECT_EXPORT_DB_DIALOG(YerothSqlTableModel 			*aSqlTableModel /* = 0 */,
+									  YerothTableViewWITHpagination *a_table_view_to_list_show /* = 0 */)
 {
 	if (0 != _selectExportDBQDialog)
 	{

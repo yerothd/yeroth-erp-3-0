@@ -417,58 +417,68 @@ void YerothAdminListerWindow::set_admin_rechercher_font()
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_users();
     	MACRO_SET_ADMIN_RECHERCHER_FONT(_userCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_utilisateur"));
 
 		break;
 
     case SUJET_ACTION_LOCALISATION:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_localisations();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_siteCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_localisation"));
 
         break;
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_departements_produits();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_productDepartmentCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_departements_de_produits"));
 
 		break;
 
     case SUJET_ACTION_CATEGORIE:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_categories();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_categoryCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_categorie"));
 
         break;
 
     case SUJET_ACTION_ligne_budgetaire:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_lignes_budgetaires();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_LIGNE_BUDGETAIRE_CurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_LIGNE_BUDGETAIRE"));
 
         break;
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_comptes_bancaires();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_bankAccountCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_compte_bancaire"));
 
         break;
 
     case SUJET_ACTION_REMISE:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_remises();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_discountCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_remise"));
 
         break;
 
     case SUJET_ACTION_ALERTE:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_alertes();
         MACRO_SET_ADMIN_RECHERCHER_FONT(_alertCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_alerte"));
 
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_charges_financieres();
     	setWindowTitle(_windowName_WITH_NO_MAINTENANCE);
         break;
 
     default:
+    	_curSearchSqlTableModel = 0;
     	setWindowTitle(_windowName_WITH_NO_MAINTENANCE);
         break;
     }
@@ -477,8 +487,7 @@ void YerothAdminListerWindow::set_admin_rechercher_font()
 }
 
 
-void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *
-                                                 aSqlTableModel)
+void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *aSqlTableModel)
 {
     _windowName = QString("%1 - %2")
                 			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
@@ -486,8 +495,8 @@ void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *
 
     //In case, for e.g. there is filtering applied to aSqlTableModel
     if (0 != aSqlTableModel &&
-            true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::USERS,
-                                                        aSqlTableModel->sqlTableName()))
+        true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::USERS,
+                                                    aSqlTableModel->sqlTableName()))
     {
         tableView_lister_utilisateur->lister_les_elements_du_tableau(*aSqlTableModel);
 
@@ -534,10 +543,9 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
                 			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
                 				 QObject::tr("administration ~ lister ~ localisations"));
 
-    if (aSqlTableModel
-            && YerothUtils::isEqualCaseInsensitive(YerothDatabase::LOCALISATIONS,
-                                                   aSqlTableModel->sqlTableName
-                                                   ()))
+    if (aSqlTableModel &&
+    	YerothUtils::isEqualCaseInsensitive(YerothDatabase::LOCALISATIONS,
+                                            aSqlTableModel->sqlTableName()))
     {
         tableView_lister_localisation->lister_les_elements_du_tableau(*aSqlTableModel);
 
@@ -583,9 +591,8 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
     int toSelectRow = 0;
 
     if (0 != aSqlTableModel &&
-            YerothUtils::isEqualCaseInsensitive(YerothDatabase::
-                                                DEPARTEMENTS_PRODUITS,
-                                                aSqlTableModel->sqlTableName()))
+        YerothUtils::isEqualCaseInsensitive(YerothDatabase::DEPARTEMENTS_PRODUITS,
+                                            aSqlTableModel->sqlTableName()))
     {
         tableView_lister_departements_produits
 			->lister_les_elements_du_tableau(*aSqlTableModel);
@@ -660,6 +667,23 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
 
 	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_categorie);
 
+
+	static bool first_time_CALL = true;
+
+	if (first_time_CALL)
+	{
+	    _visibleDBColumnNameStrList.clear();
+
+	    _visibleDBColumnNameStrList
+	            << YerothDatabaseTableColumn::ID
+	            << YerothDatabaseTableColumn::NOM_CATEGORIE
+	            << YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT
+	            << YerothDatabaseTableColumn::DESCRIPTION_CATEGORIE;
+
+		first_time_CALL = false;
+	}
+
+
 	setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
 
     _windowName = QString("%1 - %2")
@@ -673,14 +697,10 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
         true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::CATEGORIES,
                                                     aSqlTableModel->sqlTableName()))
     {
-        tableView_lister_categorie->queryYerothTableViewCurrentPageContentRow(*aSqlTableModel);
+    	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_categorie,
+    										 *aSqlTableModel);
 
-        tableView_show_or_hide_columns(*tableView_lister_categorie);
-
-        int rowCount = tableView_lister_categorie->rowCount();
-
-//
-//        _curSearchSqlTableModel = aSqlTableModel;
+        _curSearchSqlTableModel = aSqlTableModel;
 //        //qDebug() << QString("++ lister_categorie | setting new _curSearchSqlTableModel| sql table filter: %1")
 //        //                              .arg(_curSearchSqlTableModel->filter());
     }
@@ -690,13 +710,8 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
 
         YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_categories();
 
-        tableView_lister_categorie->queryYerothTableViewCurrentPageContentRow(sqlTableModel);
-
-        tableView_show_or_hide_columns(*tableView_lister_categorie);
-
-        int rowCount = tableView_lister_categorie->rowCount();
-
-        tableView_lister_categorie->lister_les_elements_du_tableau(sqlTableModel);
+    	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_categorie,
+    										 sqlTableModel);
     }
 
     _LISTER_tab_TO_tabTitle.insert("lister_categorie", _windowName);
@@ -705,8 +720,6 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
 
     //qDebug() << QString("++ lister_categorie | sql table filter: %1")
     //                      .arg(_curSearchSqlTableModel->filter());
-
-    tableView_lister_categorie->hideColumn(0);
 
     _lastItemSelectedForModification = toSelectRow;
 
@@ -726,7 +739,7 @@ void YerothAdminListerWindow::lister_LIGNE_BUDGETAIRE(YerothSqlTableModel *aSqlT
 
 	if (0 != aSqlTableModel &&
 		true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::LIGNES_BUDGETAIRES,
-				aSqlTableModel->sqlTableName()))
+													aSqlTableModel->sqlTableName()))
 	{
 		tableView_lister_LIGNE_BUDGETAIRE->lister_les_elements_du_tableau(*aSqlTableModel);
 
@@ -770,9 +783,8 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
     int toSelectRow = 0;
 
     if (0 != aSqlTableModel &&
-            true ==
-            YerothUtils::isEqualCaseInsensitive(YerothDatabase::COMPTES_BANCAIRES,
-                                                aSqlTableModel->sqlTableName()))
+        true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::COMPTES_BANCAIRES,
+                                                	aSqlTableModel->sqlTableName()))
     {
         tableView_lister_compte_bancaire->lister_les_elements_du_tableau(*aSqlTableModel);
 
@@ -809,10 +821,9 @@ void YerothAdminListerWindow::lister_alerte(YerothSqlTableModel *aSqlTableModel)
                 	.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
                 		 QObject::tr("administration ~ lister ~ alertes"));
 
-    if (aSqlTableModel
-            && YerothUtils::isEqualCaseInsensitive(YerothDatabase::ALERTES,
-                                                   aSqlTableModel->sqlTableName
-                                                   ()))
+    if (aSqlTableModel &&
+    	YerothUtils::isEqualCaseInsensitive(YerothDatabase::ALERTES,
+                                            aSqlTableModel->sqlTableName()))
     {
         tableView_lister_alerte->lister_les_elements_du_tableau(*aSqlTableModel);
 
@@ -883,6 +894,72 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
     set_admin_rechercher_font();
 
     tableView_lister_remise->selectRow(_lastItemSelectedForModification);
+}
+
+
+int YerothAdminListerWindow::
+		LIST_SHOW_TABLE_VIEW_WITH_PAGINATION
+			(YerothTableViewWITHpagination  &a_table_view_to_list_show,
+			 YerothSqlTableModel 			&aSqlTableModel)
+{
+    a_table_view_to_list_show
+		.queryYerothTableViewCurrentPageContentRow(aSqlTableModel);
+
+    tableView_show_or_hide_columns(a_table_view_to_list_show);
+
+    int rowCount = a_table_view_to_list_show.rowCount();
+
+    return rowCount;
+}
+
+
+YerothTableViewWITHpagination *YerothAdminListerWindow::GET_CURRENT_TABLEVIEW()
+{
+	YerothTableViewWITHpagination *result = 0;
+
+	switch (tabWidget_lister->currentIndex())
+	    {
+	    case SUJET_ACTION_COMPTE_UTILISATEUR:
+//	    	result = tableView_lister_utilisateur;
+	        break;
+
+	    case SUJET_ACTION_LOCALISATION:
+//	    	result = tableView_lister_localisation;
+	        break;
+
+	    case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+//	    	result = tableView_lister_departements_produits;
+	        break;
+
+	    case SUJET_ACTION_CATEGORIE:
+	    	result = tableView_lister_categorie;
+	        break;
+
+	    case SUJET_ACTION_ligne_budgetaire:
+//	    	result = tableView_lister_LIGNE_BUDGETAIRE;
+	        break;
+
+	    case SUJET_ACTION_COMPTE_BANCAIRE:
+//	    	result = tableView_lister_compte_bancaire;
+	        break;
+
+	    case SUJET_ACTION_ALERTE:
+//	    	result = tableView_lister_alerte;
+	        break;
+
+	    case SUJET_ACTION_REMISE:
+//	    	result = tableView_lister_remise;
+	        break;
+
+	    case SUJET_ACTION_CHARGE_FINANCIERE:
+//	    	result = tableView_lister_charges_financieres;
+	        break;
+
+	    default:
+	        break;
+	    }
+
+	return result;
 }
 
 
@@ -1204,10 +1281,9 @@ void YerothAdminListerWindow::supprimer_utilisateur()
 
     YerothSqlTableModel *usersTableModel = 0;
 
-    if (_curSearchSqlTableModel
-            && YerothUtils::isEqualCaseInsensitive(YerothDatabase::USERS,
-                                                   _curSearchSqlTableModel->
-                                                   sqlTableName()))
+    if (_curSearchSqlTableModel &&
+    	YerothUtils::isEqualCaseInsensitive(YerothDatabase::USERS,
+                                            _curSearchSqlTableModel->sqlTableName()))
     {
         usersTableModel = _curSearchSqlTableModel;
     }

@@ -59,8 +59,7 @@ public:
         _selectExportDBQDialog(0),
         _is_pdf_printing_initialized(false),
         _yeroth_PRINT_UTILITIES_TEX_TABLE(0),
-        _output_print_pdf_latexFileNamePrefix
-        (anOutput_print_pdf_latexFileNamePrefix),
+        _output_print_pdf_latexFileNamePrefix(anOutput_print_pdf_latexFileNamePrefix),
         _yeroth_QComboBox_SearchDBFieldColumnString(0),
         _yeroth_QLineEdit_SearchDBFieldColumnString(0),
 		_curStocksTableModel(0),
@@ -332,7 +331,8 @@ public slots:
 
 	virtual void decrementFontSize__OF_TABLE();
 
-	virtual void CLOSE_SELECT_EXPORT_DB_DIALOG();
+	virtual void CLOSE_SELECT_EXPORT_DB_DIALOG(YerothSqlTableModel 			 *aSqlTableModel = 0,
+											   YerothTableViewWITHpagination *a_table_view_to_list_show = 0);
 
 	inline virtual void selectionner_champs_db_visibles_CHARGES_FINANCIERES()
 	{

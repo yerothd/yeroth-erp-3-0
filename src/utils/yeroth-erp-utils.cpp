@@ -2736,8 +2736,6 @@ void YerothUtils::createTableModelHeaders(YerothSqlTableModel 	&tableModel,
 		{
 			A_CALLING_WINDOW->selectionner_champs_db_visibles(false, true);
 		}
-
-		A_CALLING_WINDOW->CLOSE_SELECT_EXPORT_DB_DIALOG();
 	}
 
 

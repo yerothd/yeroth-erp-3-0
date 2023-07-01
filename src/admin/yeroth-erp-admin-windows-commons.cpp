@@ -58,7 +58,9 @@ void YerothPOSAdminWindowsCommons::retour_menu_principal()
 }
 
 
-void YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG()
+void YerothPOSAdminWindowsCommons::
+		CLOSE_SELECT_EXPORT_DB_DIALOG(YerothSqlTableModel 			*aSqlTableModel /* = 0 */,
+									  YerothTableViewWITHpagination *a_table_view_to_list_show /* = 0 */)
 {
 	YerothERPGenericSelectDBFieldDialog *cur_dbfield_dialog = 0;
 
@@ -70,6 +72,14 @@ void YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG()
 		{
 			cur_dbfield_dialog->close();
 		}
+	}
+
+	if (0 != aSqlTableModel 		&&
+		0 != a_table_view_to_list_show)
+	{
+		_allWindows->_adminListerWindow
+			->LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*a_table_view_to_list_show,
+				 	 	 	 	 	 	 	   	   *aSqlTableModel);
 	}
 }
 
@@ -229,10 +239,12 @@ void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString
 	{
 		is_PALETTE_COLOR_SET = false;
 
-	    _selectExportDBQDialog = new YerothERPGenericSelectDBFieldDialog(_allWindows,
-	    																 this);
+	    _selectExportDBQDialog =
+	    		new YerothERPGenericSelectDBFieldDialog(_allWindows,
+	    												this);
 
-	    sqlTableName__TO__selectDBFieldDialog.insert(aSqlTableName, _selectExportDBQDialog);
+	    sqlTableName__TO__selectDBFieldDialog.insert(aSqlTableName,
+	    											 _selectExportDBQDialog);
 	}
 
 
@@ -340,8 +352,7 @@ void YerothPOSAdminWindowsCommons::deconnecter_utilisateur()
 }
 
 
-void YerothPOSAdminWindowsCommons::rendreVisible(YerothSqlTableModel *
-                                                 stocksTableModel)
+void YerothPOSAdminWindowsCommons::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
     _curStocksTableModel = stocksTableModel;
     setVisible(true);

@@ -132,7 +132,8 @@ public slots:
                                  YerothUtils::APROPOS_MSG);
     }
 
-    virtual void CLOSE_SELECT_EXPORT_DB_DIALOG();
+    virtual void CLOSE_SELECT_EXPORT_DB_DIALOG(YerothSqlTableModel 			 *aSqlTableModel = 0,
+    										   YerothTableViewWITHpagination *a_table_view_to_list_show = 0);
 
 	virtual void selectionner_champs_db_visibles(bool SETUP_DIALOG_BOX_GEOMETRY = true,
 												 bool CHARGES_FINANCIERES_WINDOW = false);
