@@ -14,11 +14,18 @@
 #include <QtWidgets/QCheckBox>
 
 
-class YerothERPQCheckBox:public QCheckBox
+class YerothERPQCheckBox : public QCheckBox
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothERPQCheckBox(QWidget *parent);
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	inline YerothERPQCheckBox(QWidget *parent)
+	:QCheckBox(parent)
+	{
+	}
 
     inline virtual ~YerothERPQCheckBox()
     {
@@ -26,8 +33,8 @@ Q_OBJECT public:
 
     void setReadOnly(bool isReadOnly);
 
-    void setYerothChecked(bool checked, const QString &text =
-                                          YerothUtils::EMPTY_STRING);
+    void setYerothChecked(bool checked,
+    					  const QString &text = YerothUtils::EMPTY_STRING);
 
     void setYerothEnabled(bool isEnabled);
 };

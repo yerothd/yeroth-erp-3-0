@@ -11,15 +11,14 @@
 #include <QtCore/QDebug>
 
 
-YerothSelectDBQCheckBox::YerothSelectDBQCheckBox(QWidget *parent, QStringList *visibleDBFieldColumnStrList):YerothERPQCheckBox(parent),
-    _visibleDBFieldColumnStrList
-    (visibleDBFieldColumnStrList)
+YerothSelectDBQCheckBox::YerothSelectDBQCheckBox(QWidget *parent, QStringList *visibleDBFieldColumnStrList)
+:YerothERPQCheckBox(parent),
+ _visibleDBFieldColumnStrList(visibleDBFieldColumnStrList)
 {
 }
 
 
-void YerothSelectDBQCheckBox::handle_visible_db_field_checkBox(bool
-                                                               checkBoxClicked)
+void YerothSelectDBQCheckBox::handle_visible_db_field_checkBox(bool checkBoxClicked)
 {
     if (0 != _visibleDBFieldColumnStrList)
     {
@@ -36,3 +35,5 @@ void YerothSelectDBQCheckBox::handle_visible_db_field_checkBox(bool
         }
     }
 }
+
+

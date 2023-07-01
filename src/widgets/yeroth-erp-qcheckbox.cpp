@@ -11,10 +11,6 @@
 #include <QtCore/QDebug>
 
 
-YerothERPQCheckBox::YerothERPQCheckBox(QWidget *parent):QCheckBox(parent)
-{
-}
-
 
 void YerothERPQCheckBox::setReadOnly(bool isReadOnly)
 {
@@ -31,10 +27,11 @@ void YerothERPQCheckBox::setReadOnly(bool isReadOnly)
 }
 
 
-void YerothERPQCheckBox::setYerothChecked(bool checked, const QString &text
-                                          /*= YerothUtils::EMPTY_STRING*/)
+void YerothERPQCheckBox::
+		setYerothChecked(bool checked, const QString &text /*= YerothUtils::EMPTY_STRING*/)
 {
-    if (!YerothUtils::isEqualCaseInsensitive(text, YerothUtils::EMPTY_STRING))
+    if (!YerothUtils::isEqualCaseInsensitive(text,
+    										 YerothUtils::EMPTY_STRING))
     {
         setText(text);
     }
@@ -56,3 +53,6 @@ void YerothERPQCheckBox::setYerothEnabled(bool isEnabled)
         setEnabled(false);
     }
 }
+
+
+

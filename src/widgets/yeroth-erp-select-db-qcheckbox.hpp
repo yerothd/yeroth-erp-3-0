@@ -11,19 +11,24 @@
 #include "src/widgets/yeroth-erp-qcheckbox.hpp"
 
 
-class YerothSelectDBQCheckBox:public YerothERPQCheckBox
+class YerothSelectDBQCheckBox : public YerothERPQCheckBox
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothSelectDBQCheckBox(QWidget *parent,
-                                                   QStringList *visibleDBFieldColumnStrList);
+public:
 
-    virtual ~YerothSelectDBQCheckBox()
+    YEROTH_CLASS_OPERATORS
+
+	YerothSelectDBQCheckBox(QWidget *parent,
+							QStringList *visibleDBFieldColumnStrList);
+
+
+    inline virtual ~YerothSelectDBQCheckBox()
     {
     }
 
-
 public slots:
+
     void handle_visible_db_field_checkBox(bool clicked);
 
 
