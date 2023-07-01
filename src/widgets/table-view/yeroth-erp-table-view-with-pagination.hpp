@@ -15,34 +15,37 @@
 #include "src/widgets/table-view/yeroth-erp-table-view.hpp"
 
 
-class YerothTableViewWITHpagination:public YerothTableView
+class YerothTableViewWITHpagination : public YerothTableView
 {
-Q_OBJECT public:
+	Q_OBJECT
+
+public:
 
     YEROTH_CLASS_OPERATORS
-    inline YerothTableViewWITHpagination():YerothTableView(),
-        _currentViewWindow(0),
-        _needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING(false),
-        _yerothSqlTableModelTotalRowCount(0),
-        _yerothTableViewLastPageNumber(1),
-        _yerothTableViewCurPageNumber(1),
-        _yerothTableViewPageCount(1),
-        _yerothTableViewPageRowCount
-        (YerothERPConfig::pagination_number_of_table_rows),
-        _allWindows(YerothUtils::getAllWindows()), _curYerothSqlTableModel(0)
+
+    inline YerothTableViewWITHpagination()
+    :YerothTableView(),
+     _currentViewWindow(0),
+     _needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING(false),
+     _yerothSqlTableModelTotalRowCount(0),
+     _yerothTableViewLastPageNumber(1),
+     _yerothTableViewCurPageNumber(1),
+     _yerothTableViewPageCount(1),
+     _yerothTableViewPageRowCount(YerothERPConfig::pagination_number_of_table_rows),
+     _allWindows(YerothUtils::getAllWindows()),
+	  _curYerothSqlTableModel(0)
     {
     }
 
-
-    inline YerothTableViewWITHpagination(QWidget *
-                                         parent):YerothTableView(parent),
-        _currentViewWindow(0),
-        _needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING(false),
-        _yerothSqlTableModelTotalRowCount(0), _yerothTableViewLastPageNumber(1),
-        _yerothTableViewCurPageNumber(1), _yerothTableViewPageCount(1),
-        _yerothTableViewPageRowCount
-        (YerothERPConfig::pagination_number_of_table_rows),
-        _allWindows(YerothUtils::getAllWindows()), _curYerothSqlTableModel(0)
+    inline YerothTableViewWITHpagination(QWidget *parent)
+    :YerothTableView(parent),
+     _currentViewWindow(0),
+     _needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING(false),
+     _yerothSqlTableModelTotalRowCount(0), _yerothTableViewLastPageNumber(1),
+     _yerothTableViewCurPageNumber(1), _yerothTableViewPageCount(1),
+     _yerothTableViewPageRowCount(YerothERPConfig::pagination_number_of_table_rows),
+     _allWindows(YerothUtils::getAllWindows()),
+	 _curYerothSqlTableModel(0)
     {
     }
 
@@ -70,48 +73,32 @@ Q_OBJECT public:
         return _needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING;
     }
 
-    inline void setNEEDExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING(bool
-                                                                         aBooleanValue)
+    inline void setNEEDExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING(bool aBooleanValue)
     {
         _needExecSelectStatement_FOR_TABLE_VIEW_PAGING_LISTING = aBooleanValue;
     }
 
     virtual void setYerothTableViewPageRowCount(uint rowCount);
 
-    void calculate_and_set_YerothViewLastPageNumber(YerothSqlTableModel &
-                                                    curYerothSqlTableModel_IN);
+    void calculate_and_set_YerothViewLastPageNumber(YerothSqlTableModel &curYerothSqlTableModel_IN);
 
-    virtual void displayYerothTableViewPageContentRowLimit(YerothSqlTableModel
-                                                           &
-                                                           curYerothSqlTableModel,
-                                                           QString
-                                                           aListingStrategy =
-                                                                           YerothUtils::
-                                                                           EMPTY_STRING);
+    virtual void displayYerothTableViewPageContentRowLimit(YerothSqlTableModel  &curYerothSqlTableModel,
+                                                           QString 				aListingStrategy = YerothUtils::EMPTY_STRING);
 
-    virtual void queryYerothTableViewCurrentPageContentRow(YerothSqlTableModel
-                                                           &
-                                                           curYerothSqlTableModel_IN,
-                                                           QString
-                                                           aListingStrategy =
-                                                                           YerothUtils::
-                                                                           EMPTY_STRING);
+    virtual void queryYerothTableViewCurrentPageContentRow(YerothSqlTableModel 	&curYerothSqlTableModel_IN,
+                                                           QString 				aListingStrategy = YerothUtils::EMPTY_STRING);
 
 public slots:
-    virtual void slot_set_page_view_row_count(const QString &
-                                              pageTableViewRowCountText);
 
-    virtual void viewYerothTableViewFirstPage(YerothSqlTableModel &
-                                              curYerothSqlTableModel_IN);
+    virtual void slot_set_page_view_row_count(const QString &pageTableViewRowCountText);
 
-    virtual void viewYerothTableViewLastPage(YerothSqlTableModel &
-                                             curYerothSqlTableModel_IN);
+    virtual void viewYerothTableViewFirstPage(YerothSqlTableModel &curYerothSqlTableModel_IN);
 
-    virtual void viewYerothTableViewPreviousPage(YerothSqlTableModel &
-                                                 curYerothSqlTableModel_IN);
+    virtual void viewYerothTableViewLastPage(YerothSqlTableModel &curYerothSqlTableModel_IN);
 
-    virtual void viewYerothTableViewNextPage(YerothSqlTableModel &
-                                             curYerothSqlTableModel_IN);
+    virtual void viewYerothTableViewPreviousPage(YerothSqlTableModel &curYerothSqlTableModel_IN);
+
+    virtual void viewYerothTableViewNextPage(YerothSqlTableModel &curYerothSqlTableModel_IN);
 
 public:
 
