@@ -11,7 +11,7 @@
 
 #include "src/widgets/yeroth-erp-qstandard-item-model.hpp"
 
-#include "src/widgets/table-view/yeroth-erp-table-view.hpp"
+#include "src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp"
 
 
 #include <QtSql/QSqlTableModel>
@@ -20,16 +20,22 @@ class YerothSqlTableModel;
 
 class YerothPOSQStandardItemModel;
 
-class YerothERPCategoryTableView:public YerothTableView
+class YerothERPCategoryTableView : public YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothERPCategoryTableView():YerothTableView()
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	inline YerothERPCategoryTableView()
+    :YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION()
     {
         _stdItemModel->_curTableView = this;
     }
 
-    YerothERPCategoryTableView(QWidget *parent):YerothTableView(parent)
+    inline YerothERPCategoryTableView(QWidget *parent)
+    :YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION(parent)
     {
         _stdItemModel->_curTableView = this;
     }
@@ -37,6 +43,8 @@ Q_OBJECT public:
     inline virtual ~YerothERPCategoryTableView()
     {
     }
+
+    virtual void lister_les_elements_du_tableau(YerothSqlTableModel &categoriesSqlTableModel);
 };
 
 

@@ -315,21 +315,21 @@ private:
 
     QStringList _curCsvFileToImportContentWordList;
 
-    QList < YerothERPDatabaseTableColumnInfo *> _allDatabaseTableColumnInfo;
+    QList <YerothERPDatabaseTableColumnInfo *> _allDatabaseTableColumnInfo;
 
-    QMap < QString, bool >_dbTableColumnToIsNotNULL;
+    QMap<QString, bool> _dbTableColumnToIsNotNULL;
 
-    QMap < QString, QString > _dbTableColumnToType;
+    QMap<QString, QString> _dbTableColumnToType;
 
-    QMap < int, YerothERPDatabaseTableColumnInfo *> _csvContentIdxToDatabaseTableColumnInfo;
+    QMap<int, YerothERPDatabaseTableColumnInfo *> _csvContentIdxToDatabaseTableColumnInfo;
 
-    QMap < int, YerothComboBox * >_csvContentIdxToSQLTableImportHeader;
+    QMap<int, YerothComboBox *> _csvContentIdxToSQLTableImportHeader;
 
-    QMap < int, QLabel * >_csvContentIdxToCsvFileContentImportHeader;
+    QMap<int, QLabel * > _csvContentIdxToCsvFileContentImportHeader;
 
-    QMap < QString, AdminAction > *_actionsToConst;
+    QMap<QString, AdminAction > *_actionsToConst;
 
-    QMap < QString, AdminSujetAction > *_sujetActionsToConst;
+    QMap<QString, AdminSujetAction > *_sujetActionsToConst;
 
     QString _current_selected_import_table;
 

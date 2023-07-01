@@ -129,14 +129,16 @@ const QString YerothAdminWindow::REMISE(QObject::
                                         tr(SUBJECT_ADMIN_OPERATIONS_DISCOUNT_EN));
 #endif
 
-YerothAdminWindow::YerothAdminWindow():YerothPOSAdminWindowsCommons(QObject::tr("administration ~ acceuil")),
-    _logger(new YerothLogger("YerothAdminWindow")),
-    _importer_parlant(false),
-    _curAdminAction(ACTION_CREER),
-    _curAdminSujetAction(SUJET_ACTION_COMPTE_UTILISATEUR),
-    _curAdminMaintainAction(ACTION_EXPORTER),
-    _curAdminSujetsMaintainAction(SUJET_ACTION_DB),
-    _actionsToConst(0), _sujetActionsToConst(0)
+YerothAdminWindow::YerothAdminWindow()
+:YerothPOSAdminWindowsCommons(QObject::tr("administration ~ acceuil")),
+ _logger(new YerothLogger("YerothAdminWindow")),
+ _importer_parlant(false),
+ _curAdminAction(ACTION_CREER),
+ _curAdminSujetAction(SUJET_ACTION_COMPTE_UTILISATEUR),
+ _curAdminMaintainAction(ACTION_EXPORTER),
+ _curAdminSujetsMaintainAction(SUJET_ACTION_DB),
+ _actionsToConst(0),
+ _sujetActionsToConst(0)
 {
     setupUi(this);
 

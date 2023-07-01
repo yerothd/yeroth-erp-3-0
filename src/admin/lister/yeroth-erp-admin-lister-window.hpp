@@ -51,6 +51,11 @@ public:
 
     void self_reset_view(int currentIndex);
 
+
+    MACRO_TO_DEFINE_VIEWING_PAGE_NUMBER_FOR_TABLEVIEW(label_numero_page_derniere,
+    												  label_numero_page_courante)
+
+
     void rendreVisible(unsigned selectedSujetAction);
 
     inline void setCurSearchSqlTableModel(YerothSqlTableModel *aSqlTableModel)
@@ -65,7 +70,9 @@ public:
 
 public slots:
 
-	virtual bool imprimer_pdf_document();
+	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_lister_categorie)
+
+	virtual void lister_les_elements_du_tableau(YerothSqlTableModel &aSqlTableModel);
 
     inline void handleCurrentChanged(int index)
     {
@@ -80,8 +87,7 @@ public slots:
 
     void lister_localisation(YerothSqlTableModel *aSqlTableModel = 0);
 
-    void lister_departements_de_produits(YerothSqlTableModel *aSqlTableModel =
-                                                         0);
+    void lister_departements_de_produits(YerothSqlTableModel *aSqlTableModel = 0);
 
     void lister_categorie(YerothSqlTableModel *aSqlTableModel = 0);
 

@@ -37,15 +37,15 @@
 YerothERPWindows *YerothWindowsCommons::_allWindows(0);
 
 
-QString
-YerothWindowsCommons::
-_yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__ID;
+
+const uint YerothWindowsCommons::CHECKBOX_YEROTH_FOR_DB_TABLE_COLUMN_FILTERING_WIDTH_SIZE = 250;
+
+
+QString YerothWindowsCommons::_yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__ID;
+
 
 QPoint *YerothWindowsCommons::_centerPosition(new QPoint);
 
-const uint
-YerothWindowsCommons::
-CHECKBOX_YEROTH_FOR_DB_TABLE_COLUMN_FILTERING_WIDTH_SIZE = 250;
 
 
 YerothWindowsCommons::~YerothWindowsCommons()
@@ -134,10 +134,9 @@ void YerothWindowsCommons::YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(QAction *
 }
 
 
-void YerothWindowsCommons::setYerothTableView_FROM_WINDOWS_COMMONS(const QList <
-                                                                   YerothTableView
-                                                                   *
-                                                                   >&aYerothTableView_FROM_WINDOWS_COMMONS_QLIST)
+void YerothWindowsCommons::
+	setYerothTableView_FROM_WINDOWS_COMMONS
+		(const QList <YerothTableView *> &aYerothTableView_FROM_WINDOWS_COMMONS_QLIST)
 {
     if (aYerothTableView_FROM_WINDOWS_COMMONS_QLIST.size() <= 0)
     {
@@ -161,14 +160,12 @@ void YerothWindowsCommons::setYerothTableView_FROM_WINDOWS_COMMONS(const QList <
             connect(curTableView,
                     SIGNAL(clicked(const QModelIndex &)),
                     this,
-                    SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID
-                         (const QModelIndex &)));
+                    SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(const QModelIndex &)));
 
             connect(curTableView,
                     SIGNAL(pressed(const QModelIndex &)),
                     this,
-                    SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID
-                         (const QModelIndex &)));
+                    SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(const QModelIndex &)));
         }
     }
 }
@@ -192,14 +189,12 @@ void YerothWindowsCommons::
         connect(_yerothTableView_FROM_WINDOWS_COMMONS,
                 SIGNAL(clicked(const QModelIndex &)),
                 this,
-                SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID
-                     (const QModelIndex &)));
+                SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(const QModelIndex &)));
 
         connect(_yerothTableView_FROM_WINDOWS_COMMONS,
                 SIGNAL(pressed(const QModelIndex &)),
                 this,
-                SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID
-                     (const QModelIndex &)));
+                SLOT(setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(const QModelIndex &)));
     }
 
     if (0 != _yeroth_PRINT_UTILITIES_TEX_TABLE)
@@ -353,19 +348,15 @@ void YerothWindowsCommons::resizeEvent(QResizeEvent *event)
 }
 
 
-void
-YerothWindowsCommons::
-YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED_AUTOMATIC_CONSTRUCTOR_ONLY()
+void YerothWindowsCommons::YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED_AUTOMATIC_CONSTRUCTOR_ONLY()
 {
-    QAction *
-    current_qaction = 0;
+    QAction *current_qaction = 0;
 
     for (uint i = 0;
-            i < _list_actions_to_enable_on_positive_tableview_ROW_COUNT.size();
-            ++i)
+         i < _list_actions_to_enable_on_positive_tableview_ROW_COUNT.size();
+         ++i)
     {
-        current_qaction =
-                        _list_actions_to_enable_on_positive_tableview_ROW_COUNT.at(i);
+        current_qaction = _list_actions_to_enable_on_positive_tableview_ROW_COUNT.at(i);
 
         if (0 != current_qaction)
         {
@@ -1178,10 +1169,8 @@ void YerothWindowsCommons::handle_some_actions_tools_enabled()
     {
         QAction *anAction = 0;
 
-        QMapIterator < QAction *,
-                     bool
-                     >j
-                     (_MAP_actions_to_enable_on_positive_tableview_ROW_COUNT__TO__AUTHORIZED_FOR_CURRENT_USER);
+        QMapIterator<QAction *, bool>
+        	j(_MAP_actions_to_enable_on_positive_tableview_ROW_COUNT__TO__AUTHORIZED_FOR_CURRENT_USER);
 
         while (j.hasNext())
         {
@@ -1655,15 +1644,11 @@ void YerothWindowsCommons::setup_print()
 
 void YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP()
 {
-	QDEBUG_STRING_OUTPUT_1("YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP()");
-
     if (0 == _yeroth_PRINT_UTILITIES_TEX_TABLE)
     {
         INITIALIZE_PDF_PRINTING_AT_ONCE();
 //              return ;
     }
-
-    QDEBUG_STRING_OUTPUT_1("** YerothWindowsCommons::INITIALIZE_PDF_PRINTING_AT_ONCE()");
 
     if (0 != _yeroth_PRINT_UTILITIES_TEX_TABLE)
     {
@@ -1672,11 +1657,8 @@ void YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP()
         _yeroth_PRINT_UTILITIES_TEX_TABLE
 			->_LATEX_A4_PAPER_SPEC =_a4paper_printing_position;
 
-        QDEBUG_STRING_OUTPUT_1("*** YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP");
-
         if (-1 == _page_from || -1 == _page_to)
         {
-        	QDEBUG_STRING_OUTPUT_1("**** YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP");
             imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR();
 
             return;
@@ -1692,15 +1674,11 @@ void YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP()
                 return;
             }
 
-            QDEBUG_STRING_OUTPUT_1("***** YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP");
-
             imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR(_page_from,
                                                              _page_to);
             return;
         }
     }
-
-    QDEBUG_STRING_OUTPUT_1("****** YerothWindowsCommons::print_PDF_PREVIOUSLY_SETUP");
 }
 
 
@@ -1868,15 +1846,15 @@ bool YerothWindowsCommons::imprimer_pdf_document_WITH_PAGES_SPECIFICATION(int *p
 
     if (_latex_template_print_pdf_content.isEmpty())
     {
-        _latex_template_print_pdf_content = get_latex_template_print_pdf_content();
+    	_latex_template_print_pdf_content = get_latex_template_print_pdf_content();
     }
-
 
     if (_latex_template_print_pdf_content.isEmpty() ||
         0 == _yerothTableView_FROM_WINDOWS_COMMONS)
     {
         return false;
     }
+
 
     static bool first_time_call = true;
 
@@ -1930,7 +1908,6 @@ bool YerothWindowsCommons::imprimer_pdf_document_WITH_PAGES_SPECIFICATION(int *p
 													   _latex_template_print_pdf_content,
                          	 	 	 	 	 	 	   &_documentSpecificElements_FOR_PDF_LATEX_PRINTING);
     }
-
 
     if (pdfOutputFileName.isEmpty())
     {
@@ -2156,8 +2133,9 @@ void YerothWindowsCommons::setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(const
 
     _yerothTableView_FROM_WINDOWS_COMMONS->selectRow(modelIndex.row());
 
-    _yerothTableView_FROM_WINDOWS_COMMONS->_MAP_lastSelected_Row__TO__DB_ID.
-    insert(QString::number(modelIndex.row()), db_ID);
+    _yerothTableView_FROM_WINDOWS_COMMONS->_MAP_lastSelected_Row__TO__DB_ID
+		.insert(QString::number(modelIndex.row()),
+				db_ID);
 
     _yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__ID = db_ID;
 }

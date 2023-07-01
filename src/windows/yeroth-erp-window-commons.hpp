@@ -714,13 +714,14 @@ protected:
     YerothLineEdit *_QLINEEDIT_nombre_de_lignes_par_page;
 
 
+    static const uint CHECKBOX_YEROTH_FOR_DB_TABLE_COLUMN_FILTERING_WIDTH_SIZE;
+
+
 private:
 
     static QString _yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__ID;
 
     static QPoint *_centerPosition;
-
-    static const uint CHECKBOX_YEROTH_FOR_DB_TABLE_COLUMN_FILTERING_WIDTH_SIZE;
 };
 
 

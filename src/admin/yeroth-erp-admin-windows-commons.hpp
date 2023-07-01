@@ -39,9 +39,7 @@ public:
     {
     }
 
-    inline ~YerothPOSAdminWindowsCommons()
-    {
-    }
+    ~YerothPOSAdminWindowsCommons();
 
     inline virtual QString qMessageBoxStyleSheet()
     {
@@ -53,15 +51,10 @@ public:
         return _windowName;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
-    {
-        return 0;
-    }
+    virtual QToolBar *getQMainWindowToolBar() = 0;
 
-    inline virtual void YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(QAction *
-                                                                     anAction,
-                                                                     bool
-                                                                     aBooleanValue)
+    inline virtual void YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(QAction 	*anAction,
+                                                                     bool		aBooleanValue)
     {
         anAction->setVisible(aBooleanValue);
     }
@@ -76,27 +69,27 @@ public:
         _allWindows = allWindows;
     }
 
-    virtual void definirCaissier()
+    inline virtual void definirCaissier()
     {
     }
 
-    virtual void definirManager()
+    inline virtual void definirManager()
     {
     }
 
-    virtual void definirVendeur()
+    inline virtual void definirVendeur()
     {
     }
 
-    virtual void definirGestionaireDesStocks()
+    inline virtual void definirGestionaireDesStocks()
     {
     }
 
-    virtual void definirMagasinier()
+    inline virtual void definirMagasinier()
     {
     }
 
-    virtual void definirPasDeRole()
+    inline virtual void definirPasDeRole()
     {
     }
 
@@ -134,9 +127,17 @@ public slots:
 
     inline virtual void apropos()
     {
-        YerothQMessageBox::about(this, YerothUtils::APPLICATION_NAME,
+        YerothQMessageBox::about(this,
+        						 YerothUtils::APPLICATION_NAME,
                                  YerothUtils::APROPOS_MSG);
     }
+
+    virtual void CLOSE_SELECT_EXPORT_DB_DIALOG();
+
+	virtual void selectionner_champs_db_visibles(bool SETUP_DIALOG_BOX_GEOMETRY = true,
+												 bool CHARGES_FINANCIERES_WINDOW = false);
+
+    virtual void setup_select_configure_dbcolumn(const QString &aSqlTableName);
 
     virtual void infosEntreprise();
 
@@ -161,6 +162,8 @@ protected:
     QString _windowName_WITH_NO_MAINTENANCE;
 
     QString _windowName;
+
+    QMap<QString, YerothERPGenericSelectDBFieldDialog *> sqlTableName__TO__selectDBFieldDialog;
 
     static QPoint *_centerPosition;
 };

@@ -59,7 +59,7 @@ YerothAdminListerWindow::YerothAdminListerWindow()
         << actionAfficherPDF;
 
 
-    setup_select_configure_dbcolumn(YerothDatabase::ALERTES);
+    setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
 
 
     QMESSAGE_BOX_STYLE_SHEET =
@@ -76,6 +76,10 @@ YerothAdminListerWindow::YerothAdminListerWindow()
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
 
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
+
+
+    MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
+
 
     tableView_lister_utilisateur->setSqlTableName(&YerothDatabase::USERS);
 
@@ -253,6 +257,8 @@ void YerothAdminListerWindow::definirPasDeRole()
                                                  false);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  false);
+
+    MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
 }
 
 
@@ -263,6 +269,9 @@ void YerothAdminListerWindow::definirAdministrateur()
                                                  true);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  false);
+
+    MACRO_TO_ENABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS(this,
+    														   _curSearchSqlTableModel)
 }
 
 
@@ -273,6 +282,9 @@ void YerothAdminListerWindow::definirManager()
                                                  true);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  true);
+
+    MACRO_TO_ENABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS(this,
+    														   _curSearchSqlTableModel)
 }
 
 
@@ -374,8 +386,8 @@ void YerothAdminListerWindow::reinitialiser()
 
     if (_curSearchSqlTableModel)
     {
-        _curSearchSqlTableModel->resetFilter("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 325);
-        _curSearchSqlTableModel->easySelect("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 326);
+        _curSearchSqlTableModel->resetFilter("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 389);
+        _curSearchSqlTableModel->easySelect("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 390);
     }
 
     lister_utilisateur();
@@ -644,30 +656,47 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
 
 void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableModel)
 {
+	tableView_lister_categorie->_currentViewWindow = this;
+
+	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_categorie);
+
+	setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
+
     _windowName = QString("%1 - %2")
                 			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
                 				 QObject::tr("administration ~ lister ~ catégories"));
 
     int toSelectRow = 0;
 
+
     if (0 != aSqlTableModel &&
         true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::CATEGORIES,
                                                     aSqlTableModel->sqlTableName()))
     {
-        tableView_lister_categorie->lister_les_elements_du_tableau
-        (*aSqlTableModel);
+        tableView_lister_categorie->queryYerothTableViewCurrentPageContentRow(*aSqlTableModel);
 
-        _curSearchSqlTableModel = aSqlTableModel;
-        //qDebug() << QString("++ lister_categorie | setting new _curSearchSqlTableModel| sql table filter: %1")
-        //                              .arg(_curSearchSqlTableModel->filter());
+        tableView_show_or_hide_columns(*tableView_lister_categorie);
+
+        int rowCount = tableView_lister_categorie->rowCount();
+
+//
+//        _curSearchSqlTableModel = aSqlTableModel;
+//        //qDebug() << QString("++ lister_categorie | setting new _curSearchSqlTableModel| sql table filter: %1")
+//        //                              .arg(_curSearchSqlTableModel->filter());
     }
     else
     {
         setCategoryCurrentlyFiltered(false);
 
-        YerothSqlTableModel *sqlTableModel = &_allWindows->getSqlTableModel_categories();
+        YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_categories();
 
-        tableView_lister_categorie->lister_les_elements_du_tableau(*sqlTableModel);
+        tableView_lister_categorie->queryYerothTableViewCurrentPageContentRow(sqlTableModel);
+
+        tableView_show_or_hide_columns(*tableView_lister_categorie);
+
+        int rowCount = tableView_lister_categorie->rowCount();
+
+        tableView_lister_categorie->lister_les_elements_du_tableau(sqlTableModel);
     }
 
     _LISTER_tab_TO_tabTitle.insert("lister_categorie", _windowName);
@@ -857,44 +886,52 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
 }
 
 
-bool YerothAdminListerWindow::imprimer_pdf_document()
+void YerothAdminListerWindow::
+		lister_les_elements_du_tableau(YerothSqlTableModel &aSqlTableModel)
 {
-	bool result = false;
+    switch (tabWidget_lister->currentIndex())
+    {
+    case SUJET_ACTION_COMPTE_UTILISATEUR:
+    	tableView_lister_utilisateur->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	switch (tabWidget_lister->currentIndex())
-	{
-	case SUJET_ACTION_COMPTE_UTILISATEUR:
-		break;
+    case SUJET_ACTION_LOCALISATION:
+    	tableView_lister_localisation->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_LOCALISATION:
-		break;
+    case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+    	tableView_lister_departements_produits->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
-		break;
+    case SUJET_ACTION_CATEGORIE:
+    	tableView_lister_categorie->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_CATEGORIE:
-		break;
+    case SUJET_ACTION_ligne_budgetaire:
+    	tableView_lister_LIGNE_BUDGETAIRE->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_ligne_budgetaire:
-		break;
+    case SUJET_ACTION_COMPTE_BANCAIRE:
+    	tableView_lister_compte_bancaire->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_COMPTE_BANCAIRE:
-		break;
+    case SUJET_ACTION_ALERTE:
+    	tableView_lister_alerte->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_REMISE:
-		break;
+    case SUJET_ACTION_REMISE:
+    	tableView_lister_remise->lister_les_elements_du_tableau(aSqlTableModel);
+        break;
 
-	case SUJET_ACTION_ALERTE:
-		break;
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+    	tableView_lister_charges_financieres->lister_les_elements_du_tableau(aSqlTableModel);
+        //_allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE);
+        //rendreInvisible();
+        break;
 
-	case SUJET_ACTION_CHARGE_FINANCIERE:
-		break;
-
-	default:
-		break;
-	}
-
-	return result;
+    default:
+        break;
+    }
 }
 
 
@@ -1854,8 +1891,6 @@ void YerothAdminListerWindow::supprimer_alerte()
 
 QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
 {
-	QDEBUG_STRING_OUTPUT_1("YerothAdminListerWindow::get_latex_template_print_pdf_content");
-
     _documentSpecificElements_FOR_PDF_LATEX_PRINTING.clear();
 
     switch (tabWidget_lister->currentIndex())
@@ -1897,7 +1932,7 @@ QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
 		break;
 
     case SUJET_ACTION_CATEGORIE:
-    	QDEBUG_STRING_OUTPUT_1("YerothAdminListerWindow::get_latex_template_print_pdf_content - SUJET_ACTION_CATEGORIE");
+    	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_categorie);
 
     	if (YerothMainWindow::LANGUE_ANGLAISE)
         {
@@ -1971,8 +2006,6 @@ QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
-    	setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
-
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_charges_financieres);
 
         if (YerothMainWindow::LANGUE_ANGLAISE)
@@ -2004,7 +2037,6 @@ QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
 
     if (YerothMainWindow::LANGUE_ANGLAISE)
     {
-    	QDEBUG_STRING_OUTPUT_1("YerothAdminListerWindow::get_latex_template_print_pdf_content - 3");
     	_latex_template_print_pdf_content = YerothUtils::EN_template_lister_admin_objects_TEX;
     }
     else

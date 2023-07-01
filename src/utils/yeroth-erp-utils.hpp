@@ -420,17 +420,17 @@ public:
         return tableModelRawHeaders.indexOf(databaseTableColumnRAW_NAME);
     }
 
-    static void createTableModelHeaders_DEPRECATED(YerothSqlTableModel &tableModel,
-                                        		   QStandardItemModel &stdItemModel,
-												   QStringList &tableModelHeaders,
-												   QStringList &tableModelRawHeaders_IN_OUT);
+    static void createTableModelHeaders_DEPRECATED(YerothSqlTableModel 	&tableModel,
+                                        		   QStandardItemModel 	&stdItemModel,
+												   QStringList 			&tableModelHeaders,
+												   QStringList 			&tableModelRawHeaders_IN_OUT);
 
-    static void createTableModelHeaders(YerothSqlTableModel &tableModel,
-                                        QStandardItemModel &stdItemModel,
-                                        QStringList &tableModelHeaders,
-                                        QStringList &tableModelRawHeaders_IN_OUT,
-										YerothWindowsCommons &A_CALLING_WINDOW,
-										bool CHARGES_FINANCIERES_WINDOW = false);
+    static void createTableModelHeaders(YerothSqlTableModel 	&tableModel,
+                                        QStandardItemModel 		&stdItemModel,
+                                        QStringList 			&tableModelHeaders,
+                                        QStringList 			&tableModelRawHeaders_IN_OUT,
+										YerothWindowsCommons 	*A_CALLING_WINDOW,
+										bool 					CHARGES_FINANCIERES_WINDOW = false);
 
     inline static QString toUtf8String(QString &str)
     {

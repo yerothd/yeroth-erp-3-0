@@ -2674,10 +2674,10 @@ void YerothUtils::getCenterPosition(unsigned desktopWidth,
 	result.setY(y);
 }
 
-void YerothUtils::createTableModelHeaders_DEPRECATED(
-		YerothSqlTableModel &tableModel, QStandardItemModel &stdItemModel,
-		QStringList &tableModelHeaders,
-		QStringList &tableModelRawHeaders_IN_OUT)
+void YerothUtils::createTableModelHeaders_DEPRECATED(YerothSqlTableModel 	&tableModel,
+												     QStandardItemModel 	&stdItemModel,
+													 QStringList 			&tableModelHeaders,
+													 QStringList 			&tableModelRawHeaders_IN_OUT)
 {
 	tableModelRawHeaders_IN_OUT.clear();
 
@@ -2686,55 +2686,6 @@ void YerothUtils::createTableModelHeaders_DEPRECATED(
 	QString viewStrHdr;
 
 	QString strHdr;
-
-	//Nous mettons les noms des colones
-	for (unsigned k = 0; k < tableModel.columnCount(); ++k)
-	{
-		strHdr = tableModel.record(0).fieldName(k);
-
-		if (!YerothERPConfig::SHOW_DATABASE_RAW)
-		{
-			viewStrHdr = YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING(
-					strHdr);
-		}
-		else
-		{
-			viewStrHdr = strHdr;
-		}
-
-		tableModelRawHeaders_IN_OUT.append(strHdr);
-
-		tableModelHeaders.append(viewStrHdr);
-
-		stdItemModel.setHeaderData(k, Qt::Horizontal, viewStrHdr);
-	}
-}
-
-void YerothUtils::createTableModelHeaders(YerothSqlTableModel 	&tableModel,
-										  QStandardItemModel 	&stdItemModel,
-										  QStringList 			&tableModelHeaders,
-										  QStringList 			&tableModelRawHeaders_IN_OUT,
-										  YerothWindowsCommons 	&A_CALLING_WINDOW,
-										  bool 					CHARGES_FINANCIERES_WINDOW /* = false*/)
-{
-	tableModelRawHeaders_IN_OUT.clear();
-
-	tableModelHeaders.clear();
-
-	QString viewStrHdr;
-
-	QString strHdr;
-
-	if (!CHARGES_FINANCIERES_WINDOW)
-	{
-		A_CALLING_WINDOW.selectionner_champs_db_visibles(false, false);
-	}
-	else
-	{
-		A_CALLING_WINDOW.selectionner_champs_db_visibles(false, true);
-	}
-
-	A_CALLING_WINDOW.CLOSE_SELECT_EXPORT_DB_DIALOG();
 
 	//Nous mettons les noms des colones
 	for (unsigned k = 0; k < tableModel.columnCount(); ++k)
@@ -2757,6 +2708,61 @@ void YerothUtils::createTableModelHeaders(YerothSqlTableModel 	&tableModel,
 		stdItemModel.setHeaderData(k, Qt::Horizontal, viewStrHdr);
 	}
 }
+
+
+void YerothUtils::createTableModelHeaders(YerothSqlTableModel 	&tableModel,
+										  QStandardItemModel 	&stdItemModel,
+										  QStringList 			&tableModelHeaders,
+										  QStringList 			&tableModelRawHeaders_IN_OUT,
+										  YerothWindowsCommons 	*A_CALLING_WINDOW,
+										  bool 					CHARGES_FINANCIERES_WINDOW /* = false*/)
+{
+	tableModelRawHeaders_IN_OUT.clear();
+
+	tableModelHeaders.clear();
+
+	QString viewStrHdr;
+
+	QString strHdr;
+
+
+	if (0 != A_CALLING_WINDOW)
+	{
+		if (!CHARGES_FINANCIERES_WINDOW)
+		{
+			A_CALLING_WINDOW->selectionner_champs_db_visibles(false, false);
+		}
+		else
+		{
+			A_CALLING_WINDOW->selectionner_champs_db_visibles(false, true);
+		}
+
+		A_CALLING_WINDOW->CLOSE_SELECT_EXPORT_DB_DIALOG();
+	}
+
+
+	//Nous mettons les noms des colones
+	for (unsigned k = 0; k < tableModel.columnCount(); ++k)
+	{
+		strHdr = tableModel.record(0).fieldName(k);
+
+		if (!YerothERPConfig::SHOW_DATABASE_RAW)
+		{
+			viewStrHdr = YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING(strHdr);
+		}
+		else
+		{
+			viewStrHdr = strHdr;
+		}
+
+		tableModelRawHeaders_IN_OUT.append(strHdr);
+
+		tableModelHeaders.append(viewStrHdr);
+
+		stdItemModel.setHeaderData(k, Qt::Horizontal, viewStrHdr);
+	}
+}
+
 
 QString YerothUtils::generateSqlLike__AS_IS(QString sqlTableColumn,
 		QString searchStr)
