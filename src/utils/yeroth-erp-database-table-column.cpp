@@ -82,10 +82,10 @@ QString YerothDatabaseTableColumn::COMPTE_CLIENT("compte_client");
 const QString
 YerothDatabaseTableColumn::DETTE_MAXIMALE_COMPTE_CLIENT
 ("dette_maximale_compte_client");
-const
-QString
-YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT
-("nom_departement_produit");
+
+const QString YerothDatabaseTableColumn::NUMERO_UNIQUE("numero_unique");
+
+const QString YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT("nom_departement_produit");
 const
 QString YerothDatabaseTableColumn::CATEGORIE("categorie");
 const QString YerothDatabaseTableColumn::QUANTITE("quantite");
@@ -537,6 +537,10 @@ void YerothDatabaseTableColumn::RETRANSLATE()
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::DETTE_MAXIMALE_COMPTE_CLIENT,
            QObject::tr("Dette maximale"));
+
+    _tableColumnToUserViewString.
+    insert(YerothDatabaseTableColumn::NUMERO_UNIQUE,
+           QObject::tr("Numéro unique"));
 
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
