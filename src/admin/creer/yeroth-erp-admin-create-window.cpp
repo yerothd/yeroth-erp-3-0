@@ -88,13 +88,11 @@ YerothAdminCreateWindow::YerothAdminCreateWindow():YerothPOSAdminWindowsCommons(
 
     pushButton_lister->enable(this, SLOT(lister()));
     pushButton_modifier->enable(this, SLOT(lister()));
-    pushButton_supprimer->enable(this, SLOT(lister()));
 
 
     connect(actionStocks, SIGNAL(triggered()), this, SLOT(lister()));
     connect(actionMenu, SIGNAL(triggered()), this, SLOT(menu()));
     connect(actionModifier, SIGNAL(triggered()), this, SLOT(lister()));
-    connect(actionSupprimer, SIGNAL(triggered()), this, SLOT(lister()));
 
     /** Menu actions */
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this,
