@@ -75,13 +75,6 @@ public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_lister_categorie)
 
-	int LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(YerothTableViewWITHpagination  &a_table_view_to_list_show,
-							  	  	  	  	 YerothSqlTableModel 			&aSqlTableModel);
-
-	virtual YerothTableViewWITHpagination *GET_CURRENT_TABLEVIEW();
-
-	virtual void lister_les_elements_du_tableau(YerothSqlTableModel &aSqlTableModel);
-
     inline void handleCurrentChanged(int index)
     {
         set_admin_rechercher_font();
@@ -90,6 +83,13 @@ public slots:
     void creer();
 
     void modifier();
+
+	int LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(YerothTableViewWITHpagination  &a_table_view_to_list_show,
+							  	  	  	  	 YerothSqlTableModel 			&aSqlTableModel);
+
+	virtual YerothTableViewWITHpagination *GET_CURRENT_TABLEVIEW();
+
+	virtual void SETUP_PRINT();
 
     void lister_utilisateur(YerothSqlTableModel *aSqlTableModel = 0);
 

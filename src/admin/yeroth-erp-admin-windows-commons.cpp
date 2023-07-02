@@ -73,10 +73,13 @@ void YerothPOSAdminWindowsCommons::
 			cur_dbfield_dialog->close();
 		}
 	}
-
+	QDEBUG_STRING_OUTPUT_1("YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG");
 	if (0 != aSqlTableModel 		&&
 		0 != a_table_view_to_list_show)
 	{
+		QDEBUG_STRING_OUTPUT_1("YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG - 3");
+		QDEBUG_STRING_OUTPUT_2("YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG - 3",
+								aSqlTableModel->sqlTableName());
 		_allWindows->_adminListerWindow
 			->LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*a_table_view_to_list_show,
 				 	 	 	 	 	 	 	   	   *aSqlTableModel);
@@ -255,6 +258,16 @@ void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString
 	}
 
 	_selectExportDBQDialog->setStyleSheet(qMessageBoxStyleSheet());
+
+
+	_varchar_dbtable_column_name_list.clear();
+
+	_DBFieldNamesToPrintLeftAligned.clear();
+
+	_DBFieldNamesToPrintRightAligned.clear();
+
+	_dbtablecolumnNameToDBColumnIndex.clear();
+
 
 	QString strShowColumnQuery = QString("SHOW COLUMNS FROM %1")
     												.arg(aSqlTableName);

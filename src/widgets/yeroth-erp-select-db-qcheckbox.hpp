@@ -27,6 +27,11 @@ public:
     {
     }
 
+    inline virtual void set_visibleDBFieldColumnStrList(QStringList *A_visibleDBFieldColumnStrList)
+    {
+    	_visibleDBFieldColumnStrList = A_visibleDBFieldColumnStrList;
+    }
+
 public slots:
 
     void handle_visible_db_field_checkBox(bool clicked);
