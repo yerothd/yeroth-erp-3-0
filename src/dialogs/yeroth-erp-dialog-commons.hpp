@@ -13,13 +13,16 @@
 
 class YerothERPWindows;
 
-class YerothPOSDialogCommons:public QDialog
+class YerothPOSDialogCommons : public QDialog
 {
-Q_OBJECT public:
+	Q_OBJECT
+
+public:
 
     YEROTH_CLASS_OPERATORS
-    inline YerothPOSDialogCommons(QString
-                                  dialogName):_dialogName(dialogName)
+
+    inline YerothPOSDialogCommons(QString dialogName)
+    :_dialogName(dialogName)
     {
     }
 
