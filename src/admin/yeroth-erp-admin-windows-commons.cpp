@@ -73,13 +73,10 @@ void YerothPOSAdminWindowsCommons::
 			cur_dbfield_dialog->close();
 		}
 	}
-	QDEBUG_STRING_OUTPUT_1("YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG");
+
 	if (0 != aSqlTableModel 		&&
 		0 != a_table_view_to_list_show)
 	{
-		QDEBUG_STRING_OUTPUT_1("YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG - 3");
-		QDEBUG_STRING_OUTPUT_2("YerothPOSAdminWindowsCommons::CLOSE_SELECT_EXPORT_DB_DIALOG - 3",
-								aSqlTableModel->sqlTableName());
 		_allWindows->_adminListerWindow
 			->LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*a_table_view_to_list_show,
 				 	 	 	 	 	 	 	   	   *aSqlTableModel);
@@ -287,20 +284,20 @@ void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString
 		columnIdx = columnIdx + 1;
 
 		if (type.contains(YerothUtils::DATABASE_MYSQL_VARCHAR_TYPE_STRING) ||
-				YerothUtils::isEqualCaseInsensitive(fieldName,
-						YerothDatabaseTableColumn::ID))
+			YerothUtils::isEqualCaseInsensitive(fieldName,
+												YerothDatabaseTableColumn::ID))
 		{
 			_varchar_dbtable_column_name_list.insert(fieldName);
 		}
 
 		if (type.contains(YerothUtils::DATABASE_MYSQL_CHAR_TYPE_STRING) ||
-				type.contains(YerothUtils::DATABASE_MYSQL_TIME_TYPE_STRING) ||
-				type.contains(YerothUtils::DATABASE_MYSQL_DATE_TYPE_STRING))
+			type.contains(YerothUtils::DATABASE_MYSQL_TIME_TYPE_STRING) ||
+			type.contains(YerothUtils::DATABASE_MYSQL_DATE_TYPE_STRING))
 		{
 			_DBFieldNamesToPrintLeftAligned.insert(columnIdx);
 		}
 		else if (type.contains(YerothUtils::DATABASE_MYSQL_DOUBLE_TYPE_STRING) ||
-				type.contains(YerothUtils::DATABASE_MYSQL_INT_TYPE_STRING))
+				 type.contains(YerothUtils::DATABASE_MYSQL_INT_TYPE_STRING))
 		{
 			_DBFieldNamesToPrintRightAligned.insert(columnIdx);
 		}
