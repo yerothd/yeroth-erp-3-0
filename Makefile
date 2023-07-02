@@ -194,6 +194,7 @@ SOURCES       = src/yeroth-erp-3-0.cpp \
 		src/admin/yeroth-erp-admin-windows-commons.cpp \
 		src/admin/yeroth-erp-admin-window.cpp \
 		src/admin/yeroth-erp-admin-search-form.cpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp \
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp \
@@ -314,6 +315,7 @@ SOURCES       = src/yeroth-erp-3-0.cpp \
 		moc/moc_yeroth-erp-admin-windows-commons.cpp \
 		moc/moc_yeroth-erp-admin-window.cpp \
 		moc/moc_yeroth-erp-admin-search-form.cpp \
+		moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp \
 		moc/moc_yeroth-erp-financial-expense-table-view.cpp \
 		moc/moc_yeroth-erp-product-department-table-view.cpp \
 		moc/moc_yeroth-erp-alert-table-view.cpp \
@@ -468,6 +470,7 @@ OBJECTS       = obj/yeroth-erp-3-0.o \
 		obj/yeroth-erp-admin-windows-commons.o \
 		obj/yeroth-erp-admin-window.o \
 		obj/yeroth-erp-admin-search-form.o \
+		obj/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o \
 		obj/yeroth-erp-financial-expense-table-view.o \
 		obj/yeroth-erp-product-department-table-view.o \
 		obj/yeroth-erp-alert-table-view.o \
@@ -589,6 +592,7 @@ OBJECTS       = obj/yeroth-erp-3-0.o \
 		obj/moc_yeroth-erp-admin-windows-commons.o \
 		obj/moc_yeroth-erp-admin-window.o \
 		obj/moc_yeroth-erp-admin-search-form.o \
+		obj/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o \
 		obj/moc_yeroth-erp-financial-expense-table-view.o \
 		obj/moc_yeroth-erp-product-department-table-view.o \
 		obj/moc_yeroth-erp-alert-table-view.o \
@@ -845,6 +849,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/admin/yeroth-erp-admin-window.hpp \
 		src/admin/yeroth-erp-admin-search-form.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
@@ -997,6 +1002,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/admin/yeroth-erp-admin-windows-commons.cpp \
 		src/admin/yeroth-erp-admin-window.cpp \
 		src/admin/yeroth-erp-admin-search-form.cpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp \
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp \
@@ -1222,9 +1228,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/include/yeroth-erp-3-0-precompiled-header.hpp src/YRruntimeverification_adaptor.h src/IYRruntimeverificationAdaptor_interface.h src/yeroth-erp-windows.hpp src/imports/yeroth-erp-database-table-import-info.hpp src/imports/yeroth-erp-marchandise-import.hpp src/imports/yeroth-erp-stock-import.hpp src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp src/include/yeroth-erp-3-0-definition-colour-rgb.hpp src/include/yeroth-erp-3-0-definition-user-manual.hpp src/include/yeroth-erp-3-0-definition-file-folder.hpp src/include/yeroth-erp-3-0-definition-format-date-time.hpp src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp src/include/yeroth-erp-3-0-definition-month.hpp src/include/yeroth-erp-3-0-definition-shortcut.hpp src/include/yeroth-erp-3-0-software.text-configuration.hpp src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp src/widgets/yeroth-erp-push-button-PASSWORD.hpp src/widgets/yeroth-erp-progress-bar.hpp src/widgets/yeroth-erp-qcolumn-view.hpp src/widgets/widgets-table/yeroth-erp-tab-widget.hpp src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp src/widgets/widgets-table/yeroth-erp-table-widget.hpp src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp src/widgets/widgets-table/yeroth-erp-tab-widget.hpp src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp src/widgets/table-view/yeroth-erp-table-view.hpp src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp src/widgets/table-view/yeroth-erp-paiements-table-view.hpp src/widgets/table-view/yeroth-erp-stocks-table-view.hpp src/widgets/table-view/yeroth-erp-ventes-table-view.hpp src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp src/widgets/table-view/yeroth-erp-clients-table-view.hpp src/widgets/table-view/yeroth-erp-alertes-table-view.hpp src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp src/widgets/table-view/yeroth-erp-achats-table-view.hpp src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp src/widgets/yeroth-erp-line-edit.hpp src/widgets/yeroth-erp-radio-button.hpp src/widgets/yeroth-erp-qmessage-box.hpp src/widgets/yeroth-erp-push-button.hpp src/widgets/yeroth-erp-text-edit.hpp src/widgets/yeroth-erp-combo-box.hpp src/widgets/yeroth-erp-qstandard-item-model.hpp src/widgets/yeroth-erp-qstandard-item.hpp src/widgets/yeroth-erp-spinbox.hpp src/widgets/yeroth-erp-datetime-edit.hpp src/widgets/yeroth-erp-qcheckbox.hpp src/widgets/yeroth-erp-select-db-qcheckbox.hpp src/process/yeroth-erp-process-info.hpp src/process/yeroth-erp-process.hpp src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp src/dialogs/yeroth-erp-dialog-commons.hpp src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp src/windows/crm/details/yeroth-erp-clients-detail-window.hpp src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp src/windows/crm/yeroth-erp-clients-window.hpp src/windows/crm/yeroth-erp-payer-compte-client-window.hpp src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp src/windows/yeroth-erp-entrer-window.hpp src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp src/windows/stocks/yeroth-erp-modifier-window.hpp src/windows/stocks/yeroth-erp-marchandises-window.hpp src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp src/windows/stocks/yeroth-erp-sortir-window.hpp src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp src/windows/stocks/yeroth-erp-stock-detail-window.hpp src/windows/stocks/yeroth-erp-stocks-window.hpp src/windows/yeroth-erp-charges-financieres-window.hpp src/windows/yeroth-erp-charges-financieres-detail-window.hpp src/windows/purchase/yeroth-erp-achats-detail-window.hpp src/windows/purchase/yeroth-erp-achats-window.hpp src/windows/pos/yeroth-erp-pointdevente-window.hpp src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp src/windows/supplier/yeroth-erp-fournisseurs-window.hpp src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp src/windows/yeroth-erp-comptabilite-window.hpp src/windows/yeroth-erp-recherche-conditionnelle-window.hpp src/windows/yeroth-erp-window-commons.hpp src/windows/yeroth-erp-main-window.hpp src/windows/yeroth-erp-alertes-window.hpp src/windows/yeroth-erp-tableaux-de-bord-window.hpp src/windows/yeroth-erp-paiements-window.hpp src/windows/yeroth-erp-ventes-window.hpp src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp src/tests/yeroth-erp-test-yeroth-erp-windows.hpp src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp src/tests/utils/yeroth-erp-test-utils.hpp src/users/yeroth-erp-user-settings.hpp src/users/yeroth-erp-users.hpp src/users/yeroth-erp-user-vendeur.hpp src/users/yeroth-erp-user-gestionaire-des-stocks.hpp src/users/yeroth-erp-user-manager.hpp src/users/yeroth-erp-user-magasinier.hpp src/users/yeroth-erp-user-caissier.hpp src/users/yeroth-erp-user-administrateur.hpp src/dbus/YRruntimeverification_adaptor.h src/dbus/YEROTH_RUNTIME_VERIFIER.hpp src/utils/credit-card/yeroth-erp-carte-credit-info.hpp src/utils/windows/yeroth-erp-abstract-class-detail-view-window.hpp src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp src/utils/yeroth-erp-spell-numbers.hpp src/utils/yeroth-erp-sqltable-model.hpp src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.hpp src/utils/yeroth-erp-map-COMPLEX-ITEM.hpp src/utils/yeroth-erp-payment-processing-information.hpp src/utils/yeroth-erp-config.hpp src/utils/yeroth-erp-service-stock-marchandise-data.hpp src/utils/yeroth-erp-utils.hpp src/utils/yeroth-erp-database.hpp src/utils/yeroth-erp-logger.hpp src/utils/yeroth-erp-historique-stock.hpp src/utils/yeroth-erp-info-entreprise.hpp src/utils/yeroth-erp-article-vente-info.hpp src/utils/yeroth-erp-database-table-column.hpp src/utils/yeroth-erp-command-line-parser.hpp src/utils/yeroth-erp-style.hpp src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp src/utils/yeroth-erp-client-account-sale-info.cpp src/admin/yeroth-erp-admin-windows-commons.hpp src/admin/yeroth-erp-admin-window.hpp src/admin/yeroth-erp-admin-search-form.hpp src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp src/admin/creer/yeroth-erp-admin-create-window.hpp src/admin/lister/yeroth-erp-admin-lister-window.hpp src/admin/detail/yeroth-erp-admin-detail-window.hpp src/admin/modifier/yeroth-erp-admin-modifier-window.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/include/yeroth-erp-3-0-precompiled-header.hpp src/YRruntimeverification_adaptor.h src/IYRruntimeverificationAdaptor_interface.h src/yeroth-erp-windows.hpp src/imports/yeroth-erp-database-table-import-info.hpp src/imports/yeroth-erp-marchandise-import.hpp src/imports/yeroth-erp-stock-import.hpp src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp src/include/yeroth-erp-3-0-definition-colour-rgb.hpp src/include/yeroth-erp-3-0-definition-user-manual.hpp src/include/yeroth-erp-3-0-definition-file-folder.hpp src/include/yeroth-erp-3-0-definition-format-date-time.hpp src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp src/include/yeroth-erp-3-0-definition-month.hpp src/include/yeroth-erp-3-0-definition-shortcut.hpp src/include/yeroth-erp-3-0-software.text-configuration.hpp src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp src/widgets/yeroth-erp-push-button-PASSWORD.hpp src/widgets/yeroth-erp-progress-bar.hpp src/widgets/yeroth-erp-qcolumn-view.hpp src/widgets/widgets-table/yeroth-erp-tab-widget.hpp src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp src/widgets/widgets-table/yeroth-erp-table-widget.hpp src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp src/widgets/widgets-table/yeroth-erp-tab-widget.hpp src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp src/widgets/table-view/yeroth-erp-table-view.hpp src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp src/widgets/table-view/yeroth-erp-paiements-table-view.hpp src/widgets/table-view/yeroth-erp-stocks-table-view.hpp src/widgets/table-view/yeroth-erp-ventes-table-view.hpp src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp src/widgets/table-view/yeroth-erp-clients-table-view.hpp src/widgets/table-view/yeroth-erp-alertes-table-view.hpp src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp src/widgets/table-view/yeroth-erp-achats-table-view.hpp src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp src/widgets/yeroth-erp-line-edit.hpp src/widgets/yeroth-erp-radio-button.hpp src/widgets/yeroth-erp-qmessage-box.hpp src/widgets/yeroth-erp-push-button.hpp src/widgets/yeroth-erp-text-edit.hpp src/widgets/yeroth-erp-combo-box.hpp src/widgets/yeroth-erp-qstandard-item-model.hpp src/widgets/yeroth-erp-qstandard-item.hpp src/widgets/yeroth-erp-spinbox.hpp src/widgets/yeroth-erp-datetime-edit.hpp src/widgets/yeroth-erp-qcheckbox.hpp src/widgets/yeroth-erp-select-db-qcheckbox.hpp src/process/yeroth-erp-process-info.hpp src/process/yeroth-erp-process.hpp src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp src/dialogs/yeroth-erp-dialog-commons.hpp src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp src/windows/crm/details/yeroth-erp-clients-detail-window.hpp src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp src/windows/crm/yeroth-erp-clients-window.hpp src/windows/crm/yeroth-erp-payer-compte-client-window.hpp src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp src/windows/yeroth-erp-entrer-window.hpp src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp src/windows/stocks/yeroth-erp-modifier-window.hpp src/windows/stocks/yeroth-erp-marchandises-window.hpp src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp src/windows/stocks/yeroth-erp-sortir-window.hpp src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp src/windows/stocks/yeroth-erp-stock-detail-window.hpp src/windows/stocks/yeroth-erp-stocks-window.hpp src/windows/yeroth-erp-charges-financieres-window.hpp src/windows/yeroth-erp-charges-financieres-detail-window.hpp src/windows/purchase/yeroth-erp-achats-detail-window.hpp src/windows/purchase/yeroth-erp-achats-window.hpp src/windows/pos/yeroth-erp-pointdevente-window.hpp src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp src/windows/supplier/yeroth-erp-fournisseurs-window.hpp src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp src/windows/yeroth-erp-comptabilite-window.hpp src/windows/yeroth-erp-recherche-conditionnelle-window.hpp src/windows/yeroth-erp-window-commons.hpp src/windows/yeroth-erp-main-window.hpp src/windows/yeroth-erp-alertes-window.hpp src/windows/yeroth-erp-tableaux-de-bord-window.hpp src/windows/yeroth-erp-paiements-window.hpp src/windows/yeroth-erp-ventes-window.hpp src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp src/tests/yeroth-erp-test-yeroth-erp-windows.hpp src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp src/tests/utils/yeroth-erp-test-utils.hpp src/users/yeroth-erp-user-settings.hpp src/users/yeroth-erp-users.hpp src/users/yeroth-erp-user-vendeur.hpp src/users/yeroth-erp-user-gestionaire-des-stocks.hpp src/users/yeroth-erp-user-manager.hpp src/users/yeroth-erp-user-magasinier.hpp src/users/yeroth-erp-user-caissier.hpp src/users/yeroth-erp-user-administrateur.hpp src/dbus/YRruntimeverification_adaptor.h src/dbus/YEROTH_RUNTIME_VERIFIER.hpp src/utils/credit-card/yeroth-erp-carte-credit-info.hpp src/utils/windows/yeroth-erp-abstract-class-detail-view-window.hpp src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp src/utils/yeroth-erp-spell-numbers.hpp src/utils/yeroth-erp-sqltable-model.hpp src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.hpp src/utils/yeroth-erp-map-COMPLEX-ITEM.hpp src/utils/yeroth-erp-payment-processing-information.hpp src/utils/yeroth-erp-config.hpp src/utils/yeroth-erp-service-stock-marchandise-data.hpp src/utils/yeroth-erp-utils.hpp src/utils/yeroth-erp-database.hpp src/utils/yeroth-erp-logger.hpp src/utils/yeroth-erp-historique-stock.hpp src/utils/yeroth-erp-info-entreprise.hpp src/utils/yeroth-erp-article-vente-info.hpp src/utils/yeroth-erp-database-table-column.hpp src/utils/yeroth-erp-command-line-parser.hpp src/utils/yeroth-erp-style.hpp src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp src/utils/yeroth-erp-client-account-sale-info.cpp src/admin/yeroth-erp-admin-windows-commons.hpp src/admin/yeroth-erp-admin-window.hpp src/admin/yeroth-erp-admin-search-form.hpp src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp src/admin/creer/yeroth-erp-admin-create-window.hpp src/admin/lister/yeroth-erp-admin-lister-window.hpp src/admin/detail/yeroth-erp-admin-detail-window.hpp src/admin/modifier/yeroth-erp-admin-modifier-window.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents yeroth-erp-3-0.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents src/yeroth-erp-3-0.cpp src/YRruntimeverification_adaptor.cpp src/IYRruntimeverificationAdaptor_interface.cpp src/yeroth-erp-windows.cpp src/imports/yeroth-erp-marchandise-import.cpp src/imports/yeroth-erp-stock-import.cpp src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp src/widgets/yeroth-erp-push-button-PASSWORD.cpp src/widgets/yeroth-erp-progress-bar.cpp src/widgets/yeroth-erp-qcolumn-view.cpp src/widgets/table-view/yeroth-erp-table-view-with-pagination.cpp src/widgets/table-view/yeroth-erp-table-view.cpp src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.cpp src/widgets/table-view/yeroth-erp-paiements-table-view.cpp src/widgets/table-view/yeroth-erp-stocks-table-view.cpp src/widgets/table-view/yeroth-erp-ventes-table-view.cpp src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.cpp src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp src/widgets/table-view/yeroth-erp-fournisseurs-table-view.cpp src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.cpp src/widgets/table-view/yeroth-erp-clients-table-view.cpp src/widgets/table-view/yeroth-erp-alertes-table-view.cpp src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.cpp src/widgets/table-view/yeroth-erp-achats-table-view.cpp src/widgets/table-view/yeroth-erp-marchandises-table-view.cpp src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.cpp src/widgets/yeroth-erp-line-edit.cpp src/widgets/yeroth-erp-push-button.cpp src/widgets/yeroth-erp-text-edit.cpp src/widgets/yeroth-erp-combo-box.cpp src/widgets/yeroth-erp-radio-button.cpp src/widgets/yeroth-erp-qmessage-box.cpp src/widgets/yeroth-erp-qstandard-item-model.cpp src/widgets/yeroth-erp-qstandard-item.cpp src/widgets/yeroth-erp-spinbox.cpp src/widgets/yeroth-erp-datetime-edit.cpp src/widgets/yeroth-erp-qcheckbox.cpp src/widgets/yeroth-erp-select-db-qcheckbox.cpp src/widgets/widgets-table/yeroth-erp-tab-widget.cpp src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.cpp src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.cpp src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.cpp src/widgets/widgets-table/yeroth-erp-table-widget.cpp src/widgets/widgets-table/yeroth-erp-qtable-widget-item.cpp src/widgets/widgets-table/yeroth-erp-tab-widget.cpp src/process/yeroth-erp-process-info.cpp src/process/yeroth-erp-process.cpp src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp src/dialogs/yeroth-erp-dialog-commons.cpp src/dialogs/yeroth-erp-generic-select-db-field-dialog.cpp src/dialogs/yeroth-erp-changer-utilisateur-dialog.cpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.cpp src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp src/windows/yeroth-erp-comptabilite-window.cpp src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp src/windows/crm/creer/yeroth-erp-creer-compte-client-window.cpp src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.cpp src/windows/crm/details/yeroth-erp-clients-detail-window.cpp src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp src/windows/crm/yeroth-erp-clients-window.cpp src/windows/crm/yeroth-erp-payer-compte-client-window.cpp src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.cpp src/windows/yeroth-erp-entrer-window.cpp src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp src/windows/stocks/yeroth-erp-modifier-window.cpp src/windows/stocks/yeroth-erp-marchandises-window.cpp src/windows/stocks/yeroth-erp-sortir-liststocks-window.cpp src/windows/stocks/yeroth-erp-sortir-window.cpp src/windows/stocks/yeroth-erp-historique-du-stock-window.cpp src/windows/stocks/yeroth-erp-stock-detail-window.cpp src/windows/stocks/yeroth-erp-stocks-window.cpp src/windows/yeroth-erp-charges-financieres-window.cpp src/windows/yeroth-erp-charges-financieres-detail-window.cpp src/windows/purchase/yeroth-erp-achats-detail-window.cpp src/windows/purchase/yeroth-erp-achats-window.cpp src/windows/pos/yeroth-erp-pointdevente-window.cpp src/windows/pos/yeroth-erp-pointdevente-liststocks-window.cpp src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp src/windows/supplier/yeroth-erp-fournisseurs-window.cpp src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp src/windows/yeroth-erp-recherche-conditionnelle-window.cpp src/windows/yeroth-erp-window-commons.cpp src/windows/yeroth-erp-main-window.cpp src/windows/yeroth-erp-alertes-window.cpp src/windows/yeroth-erp-tableaux-de-bord-window.cpp src/windows/yeroth-erp-paiements-window.cpp src/windows/yeroth-erp-ventes-window.cpp src/tests/utils/yeroth-erp-test-yeroth-erp-utils.cpp src/tests/yeroth-erp-test-yeroth-erp-table-view.cpp src/tests/yeroth-erp-test-yeroth-erp-windows.cpp src/tests/utils/yeroth-erp-test-import-csv-file-data.cpp src/tests/utils/yeroth-erp-test-utils.cpp src/users/yeroth-erp-user-settings.cpp src/users/yeroth-erp-users.cpp src/users/yeroth-erp-user-vendeur.cpp src/users/yeroth-erp-user-gestionaire-des-stocks.cpp src/users/yeroth-erp-user-manager.cpp src/users/yeroth-erp-user-magasinier.cpp src/users/yeroth-erp-user-caissier.cpp src/users/yeroth-erp-user-administrateur.cpp src/dbus/YEROTH_RUNTIME_VERIFIER.cpp src/utils/credit-card/yeroth-erp-carte-credit-info.cpp src/utils/windows/yeroth-erp-abstract-class-detail-view-window.cpp src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.cpp src/utils/virtual-keyboard/yeroth-erp-key-emitter.cpp src/utils/yeroth-erp-spell-numbers.cpp src/utils/yeroth-erp-sqltable-model.cpp src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.cpp src/utils/yeroth-erp-map-COMPLEX-ITEM.cpp src/utils/yeroth-erp-payment-processing-information.cpp src/utils/yeroth-erp-config.cpp src/utils/yeroth-erp-utils.cpp src/utils/yeroth-erp-database.cpp src/utils/yeroth-erp-logger.cpp src/utils/yeroth-erp-historique-stock.cpp src/utils/yeroth-erp-info-entreprise.cpp src/utils/yeroth-erp-article-vente-info.cpp src/utils/yeroth-erp-database-table-column.cpp src/utils/yeroth-erp-command-line-parser.cpp src/utils/yeroth-erp-style.cpp src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp src/admin/yeroth-erp-admin-windows-commons.cpp src/admin/yeroth-erp-admin-window.cpp src/admin/yeroth-erp-admin-search-form.cpp src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp src/admin/widgets/table-view/yeroth-erp-site-table-view.cpp src/admin/widgets/table-view/yeroth-erp-user-table-view.cpp src/admin/widgets/table-view/yeroth-erp-category-table-view.cpp src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.cpp src/admin/creer/yeroth-erp-admin-create-window.cpp src/admin/lister/yeroth-erp-admin-lister-window.cpp src/admin/detail/yeroth-erp-admin-detail-window.cpp src/admin/modifier/yeroth-erp-admin-modifier-window.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/yeroth-erp-3-0.cpp src/YRruntimeverification_adaptor.cpp src/IYRruntimeverificationAdaptor_interface.cpp src/yeroth-erp-windows.cpp src/imports/yeroth-erp-marchandise-import.cpp src/imports/yeroth-erp-stock-import.cpp src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp src/widgets/yeroth-erp-push-button-PASSWORD.cpp src/widgets/yeroth-erp-progress-bar.cpp src/widgets/yeroth-erp-qcolumn-view.cpp src/widgets/table-view/yeroth-erp-table-view-with-pagination.cpp src/widgets/table-view/yeroth-erp-table-view.cpp src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.cpp src/widgets/table-view/yeroth-erp-paiements-table-view.cpp src/widgets/table-view/yeroth-erp-stocks-table-view.cpp src/widgets/table-view/yeroth-erp-ventes-table-view.cpp src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.cpp src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp src/widgets/table-view/yeroth-erp-fournisseurs-table-view.cpp src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.cpp src/widgets/table-view/yeroth-erp-clients-table-view.cpp src/widgets/table-view/yeroth-erp-alertes-table-view.cpp src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.cpp src/widgets/table-view/yeroth-erp-achats-table-view.cpp src/widgets/table-view/yeroth-erp-marchandises-table-view.cpp src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.cpp src/widgets/yeroth-erp-line-edit.cpp src/widgets/yeroth-erp-push-button.cpp src/widgets/yeroth-erp-text-edit.cpp src/widgets/yeroth-erp-combo-box.cpp src/widgets/yeroth-erp-radio-button.cpp src/widgets/yeroth-erp-qmessage-box.cpp src/widgets/yeroth-erp-qstandard-item-model.cpp src/widgets/yeroth-erp-qstandard-item.cpp src/widgets/yeroth-erp-spinbox.cpp src/widgets/yeroth-erp-datetime-edit.cpp src/widgets/yeroth-erp-qcheckbox.cpp src/widgets/yeroth-erp-select-db-qcheckbox.cpp src/widgets/widgets-table/yeroth-erp-tab-widget.cpp src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.cpp src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.cpp src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.cpp src/widgets/widgets-table/yeroth-erp-table-widget.cpp src/widgets/widgets-table/yeroth-erp-qtable-widget-item.cpp src/widgets/widgets-table/yeroth-erp-tab-widget.cpp src/process/yeroth-erp-process-info.cpp src/process/yeroth-erp-process.cpp src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp src/dialogs/yeroth-erp-dialog-commons.cpp src/dialogs/yeroth-erp-generic-select-db-field-dialog.cpp src/dialogs/yeroth-erp-changer-utilisateur-dialog.cpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.cpp src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp src/windows/yeroth-erp-comptabilite-window.cpp src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp src/windows/crm/creer/yeroth-erp-creer-compte-client-window.cpp src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.cpp src/windows/crm/details/yeroth-erp-clients-detail-window.cpp src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp src/windows/crm/yeroth-erp-clients-window.cpp src/windows/crm/yeroth-erp-payer-compte-client-window.cpp src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.cpp src/windows/yeroth-erp-entrer-window.cpp src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp src/windows/stocks/yeroth-erp-modifier-window.cpp src/windows/stocks/yeroth-erp-marchandises-window.cpp src/windows/stocks/yeroth-erp-sortir-liststocks-window.cpp src/windows/stocks/yeroth-erp-sortir-window.cpp src/windows/stocks/yeroth-erp-historique-du-stock-window.cpp src/windows/stocks/yeroth-erp-stock-detail-window.cpp src/windows/stocks/yeroth-erp-stocks-window.cpp src/windows/yeroth-erp-charges-financieres-window.cpp src/windows/yeroth-erp-charges-financieres-detail-window.cpp src/windows/purchase/yeroth-erp-achats-detail-window.cpp src/windows/purchase/yeroth-erp-achats-window.cpp src/windows/pos/yeroth-erp-pointdevente-window.cpp src/windows/pos/yeroth-erp-pointdevente-liststocks-window.cpp src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp src/windows/supplier/yeroth-erp-fournisseurs-window.cpp src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp src/windows/yeroth-erp-recherche-conditionnelle-window.cpp src/windows/yeroth-erp-window-commons.cpp src/windows/yeroth-erp-main-window.cpp src/windows/yeroth-erp-alertes-window.cpp src/windows/yeroth-erp-tableaux-de-bord-window.cpp src/windows/yeroth-erp-paiements-window.cpp src/windows/yeroth-erp-ventes-window.cpp src/tests/utils/yeroth-erp-test-yeroth-erp-utils.cpp src/tests/yeroth-erp-test-yeroth-erp-table-view.cpp src/tests/yeroth-erp-test-yeroth-erp-windows.cpp src/tests/utils/yeroth-erp-test-import-csv-file-data.cpp src/tests/utils/yeroth-erp-test-utils.cpp src/users/yeroth-erp-user-settings.cpp src/users/yeroth-erp-users.cpp src/users/yeroth-erp-user-vendeur.cpp src/users/yeroth-erp-user-gestionaire-des-stocks.cpp src/users/yeroth-erp-user-manager.cpp src/users/yeroth-erp-user-magasinier.cpp src/users/yeroth-erp-user-caissier.cpp src/users/yeroth-erp-user-administrateur.cpp src/dbus/YEROTH_RUNTIME_VERIFIER.cpp src/utils/credit-card/yeroth-erp-carte-credit-info.cpp src/utils/windows/yeroth-erp-abstract-class-detail-view-window.cpp src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.cpp src/utils/virtual-keyboard/yeroth-erp-key-emitter.cpp src/utils/yeroth-erp-spell-numbers.cpp src/utils/yeroth-erp-sqltable-model.cpp src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.cpp src/utils/yeroth-erp-map-COMPLEX-ITEM.cpp src/utils/yeroth-erp-payment-processing-information.cpp src/utils/yeroth-erp-config.cpp src/utils/yeroth-erp-utils.cpp src/utils/yeroth-erp-database.cpp src/utils/yeroth-erp-logger.cpp src/utils/yeroth-erp-historique-stock.cpp src/utils/yeroth-erp-info-entreprise.cpp src/utils/yeroth-erp-article-vente-info.cpp src/utils/yeroth-erp-database-table-column.cpp src/utils/yeroth-erp-command-line-parser.cpp src/utils/yeroth-erp-style.cpp src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp src/admin/yeroth-erp-admin-windows-commons.cpp src/admin/yeroth-erp-admin-window.cpp src/admin/yeroth-erp-admin-search-form.cpp src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp src/admin/widgets/table-view/yeroth-erp-site-table-view.cpp src/admin/widgets/table-view/yeroth-erp-user-table-view.cpp src/admin/widgets/table-view/yeroth-erp-category-table-view.cpp src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.cpp src/admin/creer/yeroth-erp-admin-create-window.cpp src/admin/lister/yeroth-erp-admin-lister-window.cpp src/admin/detail/yeroth-erp-admin-detail-window.cpp src/admin/modifier/yeroth-erp-admin-modifier-window.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/yeroth-erp-main-window.ui ui/yeroth-erp-recherche-conditionnelle-window.ui ui/yeroth-erp-imprimer-dialog.ui ui/yeroth-erp-comptabilite-window.ui ui/stocks/yeroth-erp-sortir-window.ui ui/yeroth-erp-entrer-window.ui ui/stocks/yeroth-erp-mouvements_de_stocks-window.ui ui/stocks/yeroth-erp-marchandises-window.ui ui/stocks/yeroth-erp-modifier-window.ui ui/stocks/yeroth-erp-historique-du-stock-window.ui ui/stocks/yeroth-erp-stocks-window.ui ui/stocks/yeroth-erp-sortir-liststocks-window.ui ui/stocks/yeroth-erp-stock-detail-window.ui ui/pos/yeroth-erp-pointdevente-liststocks-window.ui ui/pos/yeroth-erp-pointdevente-window.ui ui/pos/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui ui/pos/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui ui/pos/yeroth-erp-pointdevente-methode-paiement-dialog.ui ui/purchase/yeroth-erp-achats-detail-window.ui ui/purchase/yeroth-erp-achats-window.ui ui/yeroth-erp-charges-financieres-window.ui ui/yeroth-erp-charges-financieres-detail-window.ui ui/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui ui/supplier/yeroth-erp-modifier-fournisseur-window.ui ui/supplier/yeroth-erp-creer-fournisseur-window.ui ui/supplier/yeroth-erp-fournisseur-details-window.ui ui/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui ui/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui ui/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui ui/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui ui/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.ui ui/supplier/yeroth-erp-fournisseurs-window.ui ui/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui ui/crm/creer/yeroth-erp-creer-compte-client-window.ui ui/crm/creer/yeroth-erp-creer-groupe-de-clients-window.ui ui/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.ui ui/crm/details/yeroth-erp-clients-detail-window.ui ui/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui ui/crm/yeroth-erp-tableau-des-transactions-du-client-window.ui ui/crm/modifier/yeroth-erp-modifier-compte-client-window.ui ui/crm/modifier/yeroth-erp-modifier-groupe-de-clients-window.ui ui/crm/modifier/yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui ui/crm/yeroth-erp-payer-compte-client-window.ui ui/crm/yeroth-erp-programmes-de-fidelite-clients-window.ui ui/crm/yeroth-erp-groupes-de-clients-window.ui ui/crm/yeroth-erp-groupes-dun-client-window.ui ui/crm/yeroth-erp-clients-window.ui ui/yeroth-erp-paiements-window.ui ui/yeroth-erp-ventes-window.ui ui/yeroth-erp-tableaux-de-bord-window.ui ui/yeroth-erp-alertes-window.ui ui/yeroth-erp-changer-utilisateur-dialog.ui ui/yeroth-erp-admin-window.ui ui/yeroth-erp-admin-search-form.ui ui/yeroth-erp-admin-create-window.ui ui/yeroth-erp-admin-lister-window.ui ui/yeroth-erp-admin-detail-window.ui ui/yeroth-erp-admin-modifier-window.ui $(DISTDIR)/
 	$(COPY_FILE) --parents yeroth-erp-3-0_english.ts $(DISTDIR)/
 
@@ -1267,11 +1273,11 @@ moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 		obj/yeroth-erp-3-0.gch/c++
 	g++ -pipe -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc/moc_YRruntimeverification_adaptor.cpp moc/moc_IYRruntimeverificationAdaptor_interface.cpp moc/moc_yeroth-erp-windows.cpp moc/moc_yeroth-erp-marchandise-import.cpp moc/moc_yeroth-erp-stock-import.cpp moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp moc/moc_yeroth-erp-push-button-PASSWORD.cpp moc/moc_yeroth-erp-progress-bar.cpp moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp moc/moc_yeroth-erp-point-de-vente-table-widget.cpp moc/moc_yeroth-erp-table-widget.cpp moc/moc_yeroth-erp-table-view-with-pagination.cpp moc/moc_yeroth-erp-table-view.cpp moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp moc/moc_yeroth-erp-paiements-table-view.cpp moc/moc_yeroth-erp-stocks-table-view.cpp moc/moc_yeroth-erp-ventes-table-view.cpp moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp moc/moc_yeroth-erp-fournisseurs-table-view.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp moc/moc_yeroth-erp-clients-table-view.cpp moc/moc_yeroth-erp-alertes-table-view.cpp moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp moc/moc_yeroth-erp-achats-table-view.cpp moc/moc_yeroth-erp-marchandises-table-view.cpp moc/moc_yeroth-erp-line-edit.cpp moc/moc_yeroth-erp-push-button.cpp moc/moc_yeroth-erp-combo-box.cpp moc/moc_yeroth-erp-datetime-edit.cpp moc/moc_yeroth-erp-qcheckbox.cpp moc/moc_yeroth-erp-select-db-qcheckbox.cpp moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp moc/moc_yeroth-erp-dialog-commons.cpp moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-creer-compte-client-window.cpp moc/moc_yeroth-erp-modifier-compte-client-window.cpp moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp moc/moc_yeroth-erp-clients-detail-window.cpp moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-groupes-de-clients-window.cpp moc/moc_yeroth-erp-groupes-dun-client-window.cpp moc/moc_yeroth-erp-clients-window.cpp moc/moc_yeroth-erp-payer-compte-client-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp moc/moc_yeroth-erp-entrer-window.cpp moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp moc/moc_yeroth-erp-modifier-window.cpp moc/moc_yeroth-erp-marchandises-window.cpp moc/moc_yeroth-erp-sortir-liststocks-window.cpp moc/moc_yeroth-erp-sortir-window.cpp moc/moc_yeroth-erp-historique-du-stock-window.cpp moc/moc_yeroth-erp-stock-detail-window.cpp moc/moc_yeroth-erp-stocks-window.cpp moc/moc_yeroth-erp-charges-financieres-window.cpp moc/moc_yeroth-erp-charges-financieres-detail-window.cpp moc/moc_yeroth-erp-achats-detail-window.cpp moc/moc_yeroth-erp-achats-window.cpp moc/moc_yeroth-erp-pointdevente-window.cpp moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp moc/moc_yeroth-erp-modifier-fournisseur-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-fournisseurs-window.cpp moc/moc_yeroth-erp-creer-fournisseur-window.cpp moc/moc_yeroth-erp-fournisseur-details-window.cpp moc/moc_yeroth-erp-comptabilite-window.cpp moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp moc/moc_yeroth-erp-window-commons.cpp moc/moc_yeroth-erp-main-window.cpp moc/moc_yeroth-erp-alertes-window.cpp moc/moc_yeroth-erp-tableaux-de-bord-window.cpp moc/moc_yeroth-erp-paiements-window.cpp moc/moc_yeroth-erp-ventes-window.cpp moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp moc/moc_yeroth-erp-test-import-csv-file-data.cpp moc/moc_yeroth-erp-test-utils.cpp moc/moc_yeroth-erp-users.cpp moc/moc_yeroth-erp-user-vendeur.cpp moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp moc/moc_yeroth-erp-user-manager.cpp moc/moc_yeroth-erp-user-magasinier.cpp moc/moc_yeroth-erp-user-caissier.cpp moc/moc_yeroth-erp-user-administrateur.cpp moc/moc_YEROTH_RUNTIME_VERIFIER.cpp moc/moc_yeroth-erp-key-emitter.cpp moc/moc_yeroth-erp-spell-numbers.cpp moc/moc_yeroth-erp-utils.cpp moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp moc/moc_yeroth-erp-admin-windows-commons.cpp moc/moc_yeroth-erp-admin-window.cpp moc/moc_yeroth-erp-admin-search-form.cpp moc/moc_yeroth-erp-financial-expense-table-view.cpp moc/moc_yeroth-erp-product-department-table-view.cpp moc/moc_yeroth-erp-alert-table-view.cpp moc/moc_yeroth-erp-site-table-view.cpp moc/moc_yeroth-erp-user-table-view.cpp moc/moc_yeroth-erp-category-table-view.cpp moc/moc_yeroth-erp-bank-account-table-view.cpp moc/moc_yeroth-erp-admin-create-window.cpp moc/moc_yeroth-erp-admin-lister-window.cpp moc/moc_yeroth-erp-admin-detail-window.cpp moc/moc_yeroth-erp-admin-modifier-window.cpp
+compiler_moc_header_make_all: moc/moc_YRruntimeverification_adaptor.cpp moc/moc_IYRruntimeverificationAdaptor_interface.cpp moc/moc_yeroth-erp-windows.cpp moc/moc_yeroth-erp-marchandise-import.cpp moc/moc_yeroth-erp-stock-import.cpp moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp moc/moc_yeroth-erp-push-button-PASSWORD.cpp moc/moc_yeroth-erp-progress-bar.cpp moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp moc/moc_yeroth-erp-point-de-vente-table-widget.cpp moc/moc_yeroth-erp-table-widget.cpp moc/moc_yeroth-erp-table-view-with-pagination.cpp moc/moc_yeroth-erp-table-view.cpp moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp moc/moc_yeroth-erp-paiements-table-view.cpp moc/moc_yeroth-erp-stocks-table-view.cpp moc/moc_yeroth-erp-ventes-table-view.cpp moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp moc/moc_yeroth-erp-fournisseurs-table-view.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp moc/moc_yeroth-erp-clients-table-view.cpp moc/moc_yeroth-erp-alertes-table-view.cpp moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp moc/moc_yeroth-erp-achats-table-view.cpp moc/moc_yeroth-erp-marchandises-table-view.cpp moc/moc_yeroth-erp-line-edit.cpp moc/moc_yeroth-erp-push-button.cpp moc/moc_yeroth-erp-combo-box.cpp moc/moc_yeroth-erp-datetime-edit.cpp moc/moc_yeroth-erp-qcheckbox.cpp moc/moc_yeroth-erp-select-db-qcheckbox.cpp moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp moc/moc_yeroth-erp-dialog-commons.cpp moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-creer-compte-client-window.cpp moc/moc_yeroth-erp-modifier-compte-client-window.cpp moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp moc/moc_yeroth-erp-clients-detail-window.cpp moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-groupes-de-clients-window.cpp moc/moc_yeroth-erp-groupes-dun-client-window.cpp moc/moc_yeroth-erp-clients-window.cpp moc/moc_yeroth-erp-payer-compte-client-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp moc/moc_yeroth-erp-entrer-window.cpp moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp moc/moc_yeroth-erp-modifier-window.cpp moc/moc_yeroth-erp-marchandises-window.cpp moc/moc_yeroth-erp-sortir-liststocks-window.cpp moc/moc_yeroth-erp-sortir-window.cpp moc/moc_yeroth-erp-historique-du-stock-window.cpp moc/moc_yeroth-erp-stock-detail-window.cpp moc/moc_yeroth-erp-stocks-window.cpp moc/moc_yeroth-erp-charges-financieres-window.cpp moc/moc_yeroth-erp-charges-financieres-detail-window.cpp moc/moc_yeroth-erp-achats-detail-window.cpp moc/moc_yeroth-erp-achats-window.cpp moc/moc_yeroth-erp-pointdevente-window.cpp moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp moc/moc_yeroth-erp-modifier-fournisseur-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-fournisseurs-window.cpp moc/moc_yeroth-erp-creer-fournisseur-window.cpp moc/moc_yeroth-erp-fournisseur-details-window.cpp moc/moc_yeroth-erp-comptabilite-window.cpp moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp moc/moc_yeroth-erp-window-commons.cpp moc/moc_yeroth-erp-main-window.cpp moc/moc_yeroth-erp-alertes-window.cpp moc/moc_yeroth-erp-tableaux-de-bord-window.cpp moc/moc_yeroth-erp-paiements-window.cpp moc/moc_yeroth-erp-ventes-window.cpp moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp moc/moc_yeroth-erp-test-import-csv-file-data.cpp moc/moc_yeroth-erp-test-utils.cpp moc/moc_yeroth-erp-users.cpp moc/moc_yeroth-erp-user-vendeur.cpp moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp moc/moc_yeroth-erp-user-manager.cpp moc/moc_yeroth-erp-user-magasinier.cpp moc/moc_yeroth-erp-user-caissier.cpp moc/moc_yeroth-erp-user-administrateur.cpp moc/moc_YEROTH_RUNTIME_VERIFIER.cpp moc/moc_yeroth-erp-key-emitter.cpp moc/moc_yeroth-erp-spell-numbers.cpp moc/moc_yeroth-erp-utils.cpp moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp moc/moc_yeroth-erp-admin-windows-commons.cpp moc/moc_yeroth-erp-admin-window.cpp moc/moc_yeroth-erp-admin-search-form.cpp moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp moc/moc_yeroth-erp-financial-expense-table-view.cpp moc/moc_yeroth-erp-product-department-table-view.cpp moc/moc_yeroth-erp-alert-table-view.cpp moc/moc_yeroth-erp-site-table-view.cpp moc/moc_yeroth-erp-user-table-view.cpp moc/moc_yeroth-erp-category-table-view.cpp moc/moc_yeroth-erp-bank-account-table-view.cpp moc/moc_yeroth-erp-admin-create-window.cpp moc/moc_yeroth-erp-admin-lister-window.cpp moc/moc_yeroth-erp-admin-detail-window.cpp moc/moc_yeroth-erp-admin-modifier-window.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc/moc_YRruntimeverification_adaptor.cpp moc/moc_IYRruntimeverificationAdaptor_interface.cpp moc/moc_yeroth-erp-windows.cpp moc/moc_yeroth-erp-marchandise-import.cpp moc/moc_yeroth-erp-stock-import.cpp moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp moc/moc_yeroth-erp-push-button-PASSWORD.cpp moc/moc_yeroth-erp-progress-bar.cpp moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp moc/moc_yeroth-erp-point-de-vente-table-widget.cpp moc/moc_yeroth-erp-table-widget.cpp moc/moc_yeroth-erp-table-view-with-pagination.cpp moc/moc_yeroth-erp-table-view.cpp moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp moc/moc_yeroth-erp-paiements-table-view.cpp moc/moc_yeroth-erp-stocks-table-view.cpp moc/moc_yeroth-erp-ventes-table-view.cpp moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp moc/moc_yeroth-erp-fournisseurs-table-view.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp moc/moc_yeroth-erp-clients-table-view.cpp moc/moc_yeroth-erp-alertes-table-view.cpp moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp moc/moc_yeroth-erp-achats-table-view.cpp moc/moc_yeroth-erp-marchandises-table-view.cpp moc/moc_yeroth-erp-line-edit.cpp moc/moc_yeroth-erp-push-button.cpp moc/moc_yeroth-erp-combo-box.cpp moc/moc_yeroth-erp-datetime-edit.cpp moc/moc_yeroth-erp-qcheckbox.cpp moc/moc_yeroth-erp-select-db-qcheckbox.cpp moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp moc/moc_yeroth-erp-dialog-commons.cpp moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp
 	-$(DEL_FILE) moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-creer-compte-client-window.cpp moc/moc_yeroth-erp-modifier-compte-client-window.cpp moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp moc/moc_yeroth-erp-clients-detail-window.cpp moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-groupes-de-clients-window.cpp moc/moc_yeroth-erp-groupes-dun-client-window.cpp moc/moc_yeroth-erp-clients-window.cpp moc/moc_yeroth-erp-payer-compte-client-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp moc/moc_yeroth-erp-entrer-window.cpp moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp moc/moc_yeroth-erp-modifier-window.cpp moc/moc_yeroth-erp-marchandises-window.cpp moc/moc_yeroth-erp-sortir-liststocks-window.cpp moc/moc_yeroth-erp-sortir-window.cpp moc/moc_yeroth-erp-historique-du-stock-window.cpp moc/moc_yeroth-erp-stock-detail-window.cpp moc/moc_yeroth-erp-stocks-window.cpp moc/moc_yeroth-erp-charges-financieres-window.cpp moc/moc_yeroth-erp-charges-financieres-detail-window.cpp moc/moc_yeroth-erp-achats-detail-window.cpp moc/moc_yeroth-erp-achats-window.cpp moc/moc_yeroth-erp-pointdevente-window.cpp moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp moc/moc_yeroth-erp-modifier-fournisseur-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-fournisseurs-window.cpp moc/moc_yeroth-erp-creer-fournisseur-window.cpp moc/moc_yeroth-erp-fournisseur-details-window.cpp
-	-$(DEL_FILE) moc/moc_yeroth-erp-comptabilite-window.cpp moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp moc/moc_yeroth-erp-window-commons.cpp moc/moc_yeroth-erp-main-window.cpp moc/moc_yeroth-erp-alertes-window.cpp moc/moc_yeroth-erp-tableaux-de-bord-window.cpp moc/moc_yeroth-erp-paiements-window.cpp moc/moc_yeroth-erp-ventes-window.cpp moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp moc/moc_yeroth-erp-test-import-csv-file-data.cpp moc/moc_yeroth-erp-test-utils.cpp moc/moc_yeroth-erp-users.cpp moc/moc_yeroth-erp-user-vendeur.cpp moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp moc/moc_yeroth-erp-user-manager.cpp moc/moc_yeroth-erp-user-magasinier.cpp moc/moc_yeroth-erp-user-caissier.cpp moc/moc_yeroth-erp-user-administrateur.cpp moc/moc_YEROTH_RUNTIME_VERIFIER.cpp moc/moc_yeroth-erp-key-emitter.cpp moc/moc_yeroth-erp-spell-numbers.cpp moc/moc_yeroth-erp-utils.cpp moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp moc/moc_yeroth-erp-admin-windows-commons.cpp moc/moc_yeroth-erp-admin-window.cpp moc/moc_yeroth-erp-admin-search-form.cpp moc/moc_yeroth-erp-financial-expense-table-view.cpp moc/moc_yeroth-erp-product-department-table-view.cpp moc/moc_yeroth-erp-alert-table-view.cpp moc/moc_yeroth-erp-site-table-view.cpp moc/moc_yeroth-erp-user-table-view.cpp moc/moc_yeroth-erp-category-table-view.cpp moc/moc_yeroth-erp-bank-account-table-view.cpp moc/moc_yeroth-erp-admin-create-window.cpp moc/moc_yeroth-erp-admin-lister-window.cpp moc/moc_yeroth-erp-admin-detail-window.cpp moc/moc_yeroth-erp-admin-modifier-window.cpp
+	-$(DEL_FILE) moc/moc_yeroth-erp-comptabilite-window.cpp moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp moc/moc_yeroth-erp-window-commons.cpp moc/moc_yeroth-erp-main-window.cpp moc/moc_yeroth-erp-alertes-window.cpp moc/moc_yeroth-erp-tableaux-de-bord-window.cpp moc/moc_yeroth-erp-paiements-window.cpp moc/moc_yeroth-erp-ventes-window.cpp moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp moc/moc_yeroth-erp-test-import-csv-file-data.cpp moc/moc_yeroth-erp-test-utils.cpp moc/moc_yeroth-erp-users.cpp moc/moc_yeroth-erp-user-vendeur.cpp moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp moc/moc_yeroth-erp-user-manager.cpp moc/moc_yeroth-erp-user-magasinier.cpp moc/moc_yeroth-erp-user-caissier.cpp moc/moc_yeroth-erp-user-administrateur.cpp moc/moc_YEROTH_RUNTIME_VERIFIER.cpp moc/moc_yeroth-erp-key-emitter.cpp moc/moc_yeroth-erp-spell-numbers.cpp moc/moc_yeroth-erp-utils.cpp moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp moc/moc_yeroth-erp-admin-windows-commons.cpp moc/moc_yeroth-erp-admin-window.cpp moc/moc_yeroth-erp-admin-search-form.cpp moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp moc/moc_yeroth-erp-financial-expense-table-view.cpp moc/moc_yeroth-erp-product-department-table-view.cpp moc/moc_yeroth-erp-alert-table-view.cpp moc/moc_yeroth-erp-site-table-view.cpp moc/moc_yeroth-erp-user-table-view.cpp moc/moc_yeroth-erp-category-table-view.cpp moc/moc_yeroth-erp-bank-account-table-view.cpp moc/moc_yeroth-erp-admin-create-window.cpp moc/moc_yeroth-erp-admin-lister-window.cpp moc/moc_yeroth-erp-admin-detail-window.cpp moc/moc_yeroth-erp-admin-modifier-window.cpp
 moc/moc_YRruntimeverification_adaptor.cpp: src/YRruntimeverification_adaptor.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -1465,6 +1471,7 @@ moc/moc_yeroth-erp-windows.cpp: src/yeroth-erp-windows.hpp \
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -3218,6 +3225,7 @@ moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp: src/windows/cr
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -3640,6 +3648,7 @@ moc/moc_yeroth-erp-historique-du-stock-window.cpp: src/windows/stocks/yeroth-erp
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -4099,6 +4108,7 @@ moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp: src/windows/pos/yeroth-er
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -4776,6 +4786,7 @@ moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp: src/windows/yeroth-erp-r
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -5702,6 +5713,7 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -5749,6 +5761,35 @@ moc/moc_yeroth-erp-admin-search-form.cpp: src/admin/yeroth-erp-admin-search-form
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-search-form.hpp -o moc/moc_yeroth-erp-admin-search-form.cpp
+
+moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp: src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
+		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
+		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
+		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
+		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
+		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
+		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
+		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
+		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
+		src/include/yeroth-erp-3-0-definition-month.hpp \
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-utils.hpp \
+		src/utils/yeroth-erp-spell-numbers.hpp \
+		src/utils/yeroth-erp-client-account-sale-info.hpp \
+		src/utils/yeroth-erp-database.hpp \
+		src/utils/yeroth-erp-config.hpp \
+		src/utils/yeroth-erp-database-table-column.hpp \
+		src/widgets/yeroth-erp-qmessage-box.hpp \
+		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp -o moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
 
 moc/moc_yeroth-erp-financial-expense-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5853,6 +5894,7 @@ moc/moc_yeroth-erp-category-table-view.cpp: src/admin/widgets/table-view/yeroth-
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -5946,6 +5988,7 @@ moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-li
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -11959,6 +12002,7 @@ ui_yeroth-erp-admin-lister-window.h: ui/yeroth-erp-admin-lister-window.ui \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -12542,6 +12586,7 @@ obj/yeroth-erp-3-0.o: src/yeroth-erp-3-0.cpp src/dbus/YEROTH_RUNTIME_VERIFIER.hp
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -12752,6 +12797,7 @@ obj/yeroth-erp-windows.o: src/yeroth-erp-windows.cpp src/yeroth-erp-windows.hpp 
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -12956,6 +13002,7 @@ obj/yeroth-erp-marchandise-import.o: src/imports/yeroth-erp-marchandise-import.c
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -13153,6 +13200,7 @@ obj/yeroth-erp-stock-import.o: src/imports/yeroth-erp-stock-import.cpp src/impor
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -13347,6 +13395,7 @@ obj/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.o: src
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -13632,6 +13681,7 @@ obj/yeroth-erp-table-view-with-pagination.o: src/widgets/table-view/yeroth-erp-t
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -13826,6 +13876,7 @@ obj/yeroth-erp-table-view.o: src/widgets/table-view/yeroth-erp-table-view.cpp sr
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -14024,6 +14075,7 @@ obj/yeroth-erp-comptes-doperations-comptabilite-table-view.o: src/widgets/table-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -14220,6 +14272,7 @@ obj/yeroth-erp-paiements-table-view.o: src/widgets/table-view/yeroth-erp-paiemen
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -14416,6 +14469,7 @@ obj/yeroth-erp-stocks-table-view.o: src/widgets/table-view/yeroth-erp-stocks-tab
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -14612,6 +14666,7 @@ obj/yeroth-erp-ventes-table-view.o: src/widgets/table-view/yeroth-erp-ventes-tab
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -14808,6 +14863,7 @@ obj/yeroth-erp-mouvements_de_stocks-table-view.o: src/widgets/table-view/yeroth-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -15004,6 +15060,7 @@ obj/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.o: src/widgets/table-view/yeroth-er
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -15199,6 +15256,7 @@ obj/yeroth-erp-fournisseurs-table-view.o: src/widgets/table-view/yeroth-erp-four
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -15394,6 +15452,7 @@ obj/yeroth-erp-groupes-de-clients-table-view.o: src/widgets/table-view/yeroth-er
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -15589,6 +15648,7 @@ obj/yeroth-erp-clients-table-view.o: src/widgets/table-view/yeroth-erp-clients-t
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -15784,6 +15844,7 @@ obj/yeroth-erp-alertes-table-view.o: src/widgets/table-view/yeroth-erp-alertes-t
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -15980,6 +16041,7 @@ obj/yeroth-erp-CHARGES-FINANCIERES-table-view.o: src/widgets/table-view/yeroth-e
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -16176,6 +16238,7 @@ obj/yeroth-erp-achats-table-view.o: src/widgets/table-view/yeroth-erp-achats-tab
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -16372,6 +16435,7 @@ obj/yeroth-erp-marchandises-table-view.o: src/widgets/table-view/yeroth-erp-marc
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -16570,6 +16634,7 @@ obj/yeroth-erp-programmes-de-fidelite-clients-table-view.o: src/widgets/table-vi
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -16923,6 +16988,7 @@ obj/yeroth-erp-qstandard-item-model.o: src/widgets/yeroth-erp-qstandard-item-mod
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -17169,6 +17235,7 @@ obj/yeroth-erp-datetime-edit.o: src/widgets/yeroth-erp-datetime-edit.cpp src/wid
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -17663,6 +17730,7 @@ obj/yeroth-erp-process.o: src/process/yeroth-erp-process.cpp src/process/yeroth-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -17858,6 +17926,7 @@ obj/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.o: src/dialogs/yeroth-erp-IMPRESSIO
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -18052,6 +18121,7 @@ obj/yeroth-erp-dialog-commons.o: src/dialogs/yeroth-erp-dialog-commons.cpp src/d
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -18247,6 +18317,7 @@ obj/yeroth-erp-generic-select-db-field-dialog.o: src/dialogs/yeroth-erp-generic-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -18441,6 +18512,7 @@ obj/yeroth-erp-changer-utilisateur-dialog.o: src/dialogs/yeroth-erp-changer-util
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -18641,6 +18713,7 @@ obj/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.o: src/dialogs/
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -18835,6 +18908,7 @@ obj/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.o: src/dialo
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -19029,6 +19103,7 @@ obj/yeroth-erp-pointdevente-methode-paiement-dialog.o: src/dialogs/yeroth-erp-po
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -19223,6 +19298,7 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/includ
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -19418,6 +19494,7 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.o: src/windows/include/Y
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -19613,6 +19690,7 @@ obj/yeroth-erp-comptabilite-window.o: src/windows/yeroth-erp-comptabilite-window
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -19812,6 +19890,7 @@ obj/yeroth-erp-creer-groupe-de-clients-window.o: src/windows/crm/creer/yeroth-er
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -20007,6 +20086,7 @@ obj/yeroth-erp-creer-un-programme-de-fidelite-clients-window.o: src/windows/crm/
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -20202,6 +20282,7 @@ obj/yeroth-erp-creer-compte-client-window.o: src/windows/crm/creer/yeroth-erp-cr
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -20397,6 +20478,7 @@ obj/yeroth-erp-details-dun-groupe-de-clients-window.o: src/windows/crm/details/y
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -20592,6 +20674,7 @@ obj/yeroth-erp-clients-detail-window.o: src/windows/crm/details/yeroth-erp-clien
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -20787,6 +20870,7 @@ obj/yeroth-erp-details-dun-programme-de-fidelite-clients-window.o: src/windows/c
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -20982,6 +21066,7 @@ obj/yeroth-erp-modifier-compte-client-window.o: src/windows/crm/modifier/yeroth-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -21176,6 +21261,7 @@ obj/yeroth-erp-programmes-de-fidelite-clients-window.o: src/windows/crm/yeroth-e
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -21374,6 +21460,7 @@ obj/yeroth-erp-groupes-de-clients-window.o: src/windows/crm/yeroth-erp-groupes-d
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -21572,6 +21659,7 @@ obj/yeroth-erp-groupes-dun-client-window.o: src/windows/crm/yeroth-erp-groupes-d
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -21767,6 +21855,7 @@ obj/yeroth-erp-clients-window.o: src/windows/crm/yeroth-erp-clients-window.cpp s
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -21963,6 +22052,7 @@ obj/yeroth-erp-payer-compte-client-window.o: src/windows/crm/yeroth-erp-payer-co
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -22160,6 +22250,7 @@ obj/yeroth-erp-tableau-des-transactions-du-client-window.o: src/windows/crm/yero
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -22356,6 +22447,7 @@ obj/yeroth-erp-entrer-window.o: src/windows/yeroth-erp-entrer-window.cpp src/win
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -22552,6 +22644,7 @@ obj/yeroth-erp-mouvements_de_stocks-window.o: src/windows/stocks/yeroth-erp-mouv
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -22748,6 +22841,7 @@ obj/yeroth-erp-modifier-window.o: src/windows/stocks/yeroth-erp-modifier-window.
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -22943,6 +23037,7 @@ obj/yeroth-erp-marchandises-window.o: src/windows/stocks/yeroth-erp-marchandises
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -23139,6 +23234,7 @@ obj/yeroth-erp-sortir-liststocks-window.o: src/windows/stocks/yeroth-erp-sortir-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -23333,6 +23429,7 @@ obj/yeroth-erp-sortir-window.o: src/windows/stocks/yeroth-erp-sortir-window.cpp 
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -23529,6 +23626,7 @@ obj/yeroth-erp-historique-du-stock-window.o: src/windows/stocks/yeroth-erp-histo
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -23726,6 +23824,7 @@ obj/yeroth-erp-stock-detail-window.o: src/windows/stocks/yeroth-erp-stock-detail
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -23920,6 +24019,7 @@ obj/yeroth-erp-stocks-window.o: src/windows/stocks/yeroth-erp-stocks-window.cpp 
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -24118,6 +24218,7 @@ obj/yeroth-erp-charges-financieres-window.o: src/windows/yeroth-erp-charges-fina
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -24314,6 +24415,7 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -24508,6 +24610,7 @@ obj/yeroth-erp-achats-detail-window.o: src/windows/purchase/yeroth-erp-achats-de
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -24702,6 +24805,7 @@ obj/yeroth-erp-achats-window.o: src/windows/purchase/yeroth-erp-achats-window.cp
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -24899,6 +25003,7 @@ obj/yeroth-erp-pointdevente-window.o: src/windows/pos/yeroth-erp-pointdevente-wi
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -25096,6 +25201,7 @@ obj/yeroth-erp-pointdevente-liststocks-window.o: src/windows/pos/yeroth-erp-poin
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -25290,6 +25396,7 @@ obj/yeroth-erp-tableau-des-transactions-du-fournisseur-window.o: src/windows/sup
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -25486,6 +25593,7 @@ obj/yeroth-erp-modifier-fournisseur-window.o: src/windows/supplier/yeroth-erp-mo
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -25680,6 +25788,7 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yero
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -25875,6 +25984,7 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.o: src/windows/supplier/ye
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -26070,6 +26180,7 @@ obj/yeroth-erp-GROUPES-dun-employe-hr-window.o: src/windows/supplier/yeroth-erp-
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -26265,6 +26376,7 @@ obj/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -26460,6 +26572,7 @@ obj/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-e
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -26655,6 +26768,7 @@ obj/yeroth-erp-GROUPES-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-erp-GR
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -26853,6 +26967,7 @@ obj/yeroth-erp-GROUPES-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp-GROU
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -27051,6 +27166,7 @@ obj/yeroth-erp-fournisseurs-window.o: src/windows/supplier/yeroth-erp-fournisseu
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -27247,6 +27363,7 @@ obj/yeroth-erp-creer-fournisseur-window.o: src/windows/supplier/yeroth-erp-creer
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -27442,6 +27559,7 @@ obj/yeroth-erp-fournisseur-details-window.o: src/windows/supplier/yeroth-erp-fou
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -27637,6 +27755,7 @@ obj/yeroth-erp-recherche-conditionnelle-window.o: src/windows/yeroth-erp-recherc
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -27835,6 +27954,7 @@ obj/yeroth-erp-window-commons.o: src/windows/yeroth-erp-window-commons.cpp src/w
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -28029,6 +28149,7 @@ obj/yeroth-erp-main-window.o: src/windows/yeroth-erp-main-window.cpp src/windows
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -28227,6 +28348,7 @@ obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/w
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -28423,6 +28545,7 @@ obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bor
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -28623,6 +28746,7 @@ obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp s
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -28818,6 +28942,7 @@ obj/yeroth-erp-ventes-window.o: src/windows/yeroth-erp-ventes-window.cpp src/win
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -29048,6 +29173,7 @@ obj/yeroth-erp-test-yeroth-erp-table-view.o: src/tests/yeroth-erp-test-yeroth-er
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -29243,6 +29369,7 @@ obj/yeroth-erp-test-yeroth-erp-windows.o: src/tests/yeroth-erp-test-yeroth-erp-w
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -29441,6 +29568,7 @@ obj/yeroth-erp-test-import-csv-file-data.o: src/tests/utils/yeroth-erp-test-impo
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -29663,6 +29791,7 @@ obj/yeroth-erp-user-settings.o: src/users/yeroth-erp-user-settings.cpp src/users
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -29857,6 +29986,7 @@ obj/yeroth-erp-users.o: src/users/yeroth-erp-users.cpp src/users/yeroth-erp-user
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -30386,6 +30516,7 @@ obj/yeroth-erp-sqltable-model.o: src/utils/yeroth-erp-sqltable-model.cpp src/uti
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -30624,6 +30755,7 @@ obj/yeroth-erp-payment-processing-information.o: src/utils/yeroth-erp-payment-pr
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -30846,6 +30978,7 @@ obj/yeroth-erp-utils.o: src/utils/yeroth-erp-utils.cpp src/utils/yeroth-erp-util
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -31065,6 +31198,7 @@ obj/yeroth-erp-logger.o: src/utils/yeroth-erp-logger.cpp src/utils/yeroth-erp-lo
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -31260,6 +31394,7 @@ obj/yeroth-erp-historique-stock.o: src/utils/yeroth-erp-historique-stock.cpp src
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -31455,6 +31590,7 @@ obj/yeroth-erp-info-entreprise.o: src/utils/yeroth-erp-info-entreprise.cpp src/u
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -31729,6 +31865,7 @@ obj/yeroth-erp-print_yeroth_latex_util_pdf.o: src/utils/print_latex_pdf/yeroth-e
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -31922,6 +32059,7 @@ obj/yeroth-erp-admin-windows-commons.o: src/admin/yeroth-erp-admin-windows-commo
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -32117,6 +32255,7 @@ obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/y
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -32321,6 +32460,7 @@ obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp s
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -32332,6 +32472,202 @@ obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp s
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		obj/yeroth-erp-3-0.gch/c++
 	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/yeroth-erp-admin-search-form.o src/admin/yeroth-erp-admin-search-form.cpp
+
+obj/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o: src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
+		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
+		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
+		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
+		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
+		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
+		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
+		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
+		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
+		src/include/yeroth-erp-3-0-definition-month.hpp \
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-utils.hpp \
+		src/utils/yeroth-erp-spell-numbers.hpp \
+		src/utils/yeroth-erp-client-account-sale-info.hpp \
+		src/utils/yeroth-erp-database.hpp \
+		src/utils/yeroth-erp-config.hpp \
+		src/utils/yeroth-erp-database-table-column.hpp \
+		src/widgets/yeroth-erp-qmessage-box.hpp \
+		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
+		src/yeroth-erp-windows.hpp \
+		src/windows/yeroth-erp-main-window.hpp \
+		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
+		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
+		ui_yeroth-erp-recherche-conditionnelle-window.h \
+		src/windows/yeroth-erp-paiements-window.hpp \
+		ui_yeroth-erp-paiements-window.h \
+		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
+		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
+		ui_yeroth-erp-tableaux-de-bord-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
+		src/windows/yeroth-erp-comptabilite-window.hpp \
+		ui_yeroth-erp-comptabilite-window.h \
+		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/windows/yeroth-erp-alertes-window.hpp \
+		ui_yeroth-erp-alertes-window.h \
+		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
+		src/windows/yeroth-erp-ventes-window.hpp \
+		ui_yeroth-erp-ventes-window.h \
+		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
+		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
+		ui_yeroth-erp-mouvements_de_stocks-window.h \
+		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/windows/yeroth-erp-entrer-window.hpp \
+		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-radio-button.hpp \
+		src/widgets/yeroth-erp-spinbox.hpp \
+		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
+		ui_yeroth-erp-historique-du-stock-window.h \
+		src/widgets/table-view/yeroth-erp-stocks-table-view.hpp \
+		src/windows/stocks/yeroth-erp-marchandises-window.hpp \
+		ui_yeroth-erp-marchandises-window.h \
+		src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp \
+		src/windows/stocks/yeroth-erp-modifier-window.hpp \
+		ui_yeroth-erp-modifier-window.h \
+		src/windows/stocks/yeroth-erp-stock-detail-window.hpp \
+		ui_yeroth-erp-stock-detail-window.h \
+		src/utils/windows/yeroth-erp-abstract-class-detail-view-window.hpp \
+		src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp \
+		ui_yeroth-erp-sortir-liststocks-window.h \
+		src/windows/stocks/yeroth-erp-stocks-window.hpp \
+		ui_yeroth-erp-stocks-window.h \
+		src/windows/stocks/yeroth-erp-sortir-window.hpp \
+		ui_yeroth-erp-sortir-window.h \
+		src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp \
+		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
+		src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp \
+		src/utils/yeroth-erp-article-vente-info.hpp \
+		src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp \
+		ui_yeroth-erp-changer-utilisateur-dialog.h \
+		src/widgets/yeroth-erp-push-button-PASSWORD.hpp \
+		src/dialogs/yeroth-erp-dialog-commons.hpp \
+		src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp \
+		ui_yeroth-erp-imprimer-dialog.h \
+		src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp \
+		ui_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.h \
+		src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp \
+		ui_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.h \
+		src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp \
+		ui_yeroth-erp-pointdevente-methode-paiement-dialog.h \
+		src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp \
+		ui_yeroth-erp-pointdevente-liststocks-window.h \
+		src/windows/pos/yeroth-erp-pointdevente-window.hpp \
+		ui_yeroth-erp-pointdevente-window.h \
+		src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.hpp \
+		src/utils/yeroth-erp-map-COMPLEX-ITEM.hpp \
+		src/utils/credit-card/yeroth-erp-carte-credit-info.hpp \
+		src/windows/yeroth-erp-charges-financieres-window.hpp \
+		ui_yeroth-erp-charges-financieres-window.h \
+		src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp \
+		src/windows/yeroth-erp-charges-financieres-detail-window.hpp \
+		ui_yeroth-erp-charges-financieres-detail-window.h \
+		src/windows/purchase/yeroth-erp-achats-window.hpp \
+		ui_yeroth-erp-achats-window.h \
+		src/widgets/table-view/yeroth-erp-achats-table-view.hpp \
+		src/windows/purchase/yeroth-erp-achats-detail-window.hpp \
+		ui_yeroth-erp-achats-detail-window.h \
+		src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp \
+		ui_yeroth-erp-tableau-des-transactions-du-fournisseur-window.h \
+		src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp \
+		ui_yeroth-erp-fournisseur-details-window.h \
+		src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp \
+		ui_yeroth-erp-GROUPES-dun-employe-hr-window.h \
+		src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp \
+		src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp \
+		ui_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.h \
+		src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp \
+		src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp \
+		ui_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.h \
+		src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp \
+		ui_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.h \
+		src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp \
+		ui_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.h \
+		src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp \
+		ui_yeroth-erp-GROUPES-DEMPLOYES-hr-window.h \
+		src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp \
+		src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp \
+		ui_yeroth-erp-GROUPES-DE-PAIE-hr-window.h \
+		src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp \
+		src/windows/supplier/yeroth-erp-fournisseurs-window.hpp \
+		ui_yeroth-erp-fournisseurs-window.h \
+		src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp \
+		src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp \
+		ui_yeroth-erp-creer-fournisseur-window.h \
+		src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp \
+		ui_yeroth-erp-modifier-fournisseur-window.h \
+		src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp \
+		ui_yeroth-erp-creer-un-programme-de-fidelite-clients-window.h \
+		src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp \
+		ui_yeroth-erp-creer-groupe-de-clients-window.h \
+		src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp \
+		ui_yeroth-erp-creer-compte-client-window.h \
+		src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp \
+		ui_yeroth-erp-details-dun-groupe-de-clients-window.h \
+		src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp \
+		ui_yeroth-erp-details-dun-programme-de-fidelite-clients-window.h \
+		src/windows/crm/details/yeroth-erp-clients-detail-window.hpp \
+		ui_yeroth-erp-clients-detail-window.h \
+		src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp \
+		ui_yeroth-erp-modifier-compte-client-window.h \
+		src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp \
+		ui_yeroth-erp-programmes-de-fidelite-clients-window.h \
+		src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp \
+		src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp \
+		ui_yeroth-erp-groupes-de-clients-window.h \
+		src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp \
+		ui_yeroth-erp-groupes-dun-client-window.h \
+		src/windows/crm/yeroth-erp-clients-window.hpp \
+		ui_yeroth-erp-clients-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
+		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
+		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
+		ui_yeroth-erp-payer-compte-client-window.h \
+		src/admin/yeroth-erp-admin-window.hpp \
+		ui_yeroth-erp-admin-window.h \
+		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/users/yeroth-erp-users.hpp \
+		src/users/yeroth-erp-user-settings.hpp \
+		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
+		src/admin/admin-actions-subjects.hpp \
+		src/admin/creer/yeroth-erp-admin-create-window.hpp \
+		ui_yeroth-erp-admin-create-window.h \
+		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
+		ui_yeroth-erp-admin-lister-window.h \
+		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
+		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
+		ui_yeroth-erp-admin-detail-window.h \
+		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
+		ui_yeroth-erp-admin-modifier-window.h \
+		src/utils/yeroth-erp-info-entreprise.hpp \
+		src/widgets/yeroth-erp-qstandard-item.hpp \
+		obj/yeroth-erp-3-0.gch/c++
+	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
 
 obj/yeroth-erp-financial-expense-table-view.o: src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -32431,6 +32767,7 @@ obj/yeroth-erp-category-table-view.o: src/admin/widgets/table-view/yeroth-erp-ca
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -32812,6 +33149,7 @@ obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-wi
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -32850,6 +33188,7 @@ obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-w
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -33214,6 +33553,7 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -33408,6 +33748,7 @@ obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modi
 		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
+		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
@@ -33756,6 +34097,9 @@ obj/moc_yeroth-erp-admin-window.o: moc/moc_yeroth-erp-admin-window.cpp obj/yerot
 obj/moc_yeroth-erp-admin-search-form.o: moc/moc_yeroth-erp-admin-search-form.cpp obj/yeroth-erp-3-0.gch/c++
 	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/moc_yeroth-erp-admin-search-form.o moc/moc_yeroth-erp-admin-search-form.cpp
 
+obj/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o: moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp obj/yeroth-erp-3-0.gch/c++
+	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
+
 obj/moc_yeroth-erp-financial-expense-table-view.o: moc/moc_yeroth-erp-financial-expense-table-view.cpp obj/yeroth-erp-3-0.gch/c++
 	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/moc_yeroth-erp-financial-expense-table-view.o moc/moc_yeroth-erp-financial-expense-table-view.cpp
 
@@ -33952,6 +34296,7 @@ install_sources: first FORCE
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-windows-commons.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.cpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.cpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-search-form.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.cpp
+	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.cpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.cpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.cpp
@@ -34115,6 +34460,7 @@ install_sources: first FORCE
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-windows-commons.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.hpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.hpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-search-form.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.hpp
+	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.hpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.hpp
 	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.hpp
@@ -34263,6 +34609,7 @@ uninstall_sources: FORCE
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.hpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.hpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.hpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.hpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.hpp
@@ -34426,6 +34773,7 @@ uninstall_sources: FORCE
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.cpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.cpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.cpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.cpp
 	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.cpp
