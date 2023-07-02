@@ -422,8 +422,6 @@ void YerothAdminListerWindow::reinitialiser()
 
 void YerothAdminListerWindow::set_admin_rechercher_font()
 {
-	SETUP_PRINT();
-
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
@@ -1032,8 +1030,6 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
                 			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
                 				 QObject::tr("administration ~ lister ~ comptes bancaires"));
 
-    int toSelectRow = 0;
-
     if (0 != aSqlTableModel &&
         true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::COMPTES_BANCAIRES,
                                                 	aSqlTableModel->sqlTableName()))
@@ -1057,7 +1053,7 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_compte_bancaire"));
 
 
-    _lastItemSelectedForModification = toSelectRow;
+    _lastItemSelectedForModification = 0;
 
     set_admin_rechercher_font();
 
@@ -1139,6 +1135,60 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
     set_admin_rechercher_font();
 
     tableView_lister_remise->selectRow(_lastItemSelectedForModification);
+}
+
+
+void YerothAdminListerWindow::handleCurrentChanged(int index)
+{
+    switch (tabWidget_lister->currentIndex())
+    {
+    case SUJET_ACTION_COMPTE_UTILISATEUR:
+    	lister_utilisateur(_curSearchSqlTableModel);
+
+		break;
+
+    case SUJET_ACTION_LOCALISATION:
+    	lister_localisation(_curSearchSqlTableModel);
+
+        break;
+
+    case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+    	lister_departements_de_produits(_curSearchSqlTableModel);
+
+		break;
+
+    case SUJET_ACTION_CATEGORIE:
+    	lister_categorie(_curSearchSqlTableModel);
+
+        break;
+
+    case SUJET_ACTION_ligne_budgetaire:
+    	lister_LIGNE_BUDGETAIRE(_curSearchSqlTableModel);
+
+        break;
+
+    case SUJET_ACTION_COMPTE_BANCAIRE:
+    	lister_compte_bancaire(_curSearchSqlTableModel);
+
+        break;
+
+    case SUJET_ACTION_REMISE:
+    	lister_remise(_curSearchSqlTableModel);
+
+        break;
+
+    case SUJET_ACTION_ALERTE:
+    	lister_alerte(_curSearchSqlTableModel);
+
+        break;
+
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+    	//lister_CHARGES_FINANCIERES(_curSearchSqlTableModel);
+        break;
+
+    default:
+        break;
+    }
 }
 
 

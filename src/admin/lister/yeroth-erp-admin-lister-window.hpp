@@ -75,10 +75,7 @@ public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_lister_categorie)
 
-    inline void handleCurrentChanged(int index)
-    {
-        set_admin_rechercher_font();
-    }
+    void handleCurrentChanged(int index);
 
     void creer();
 
