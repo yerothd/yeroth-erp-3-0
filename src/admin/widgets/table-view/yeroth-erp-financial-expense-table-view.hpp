@@ -11,7 +11,7 @@
 
 #include "src/widgets/yeroth-erp-qstandard-item-model.hpp"
 
-#include "src/widgets/table-view/yeroth-erp-table-view.hpp"
+#include "src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp"
 
 
 #include <QtSql/QSqlTableModel>
@@ -20,7 +20,7 @@ class YerothSqlTableModel;
 
 class YerothPOSQStandardItemModel;
 
-class YerothERPFinancialExpenseTableView : public YerothTableView
+class YerothERPFinancialExpenseTableView : public yerothERPAdminUpperTableViewClass
 {
 	Q_OBJECT
 
@@ -29,13 +29,13 @@ public:
     YEROTH_CLASS_OPERATORS
 
 	inline YerothERPFinancialExpenseTableView()
-    :YerothTableView()
+    :yerothERPAdminUpperTableViewClass()
     {
         _stdItemModel->_curTableView = this;
     }
 
     inline YerothERPFinancialExpenseTableView(QWidget *parent)
-    :YerothTableView(parent)
+    :yerothERPAdminUpperTableViewClass(parent)
     {
         _stdItemModel->_curTableView = this;
     }

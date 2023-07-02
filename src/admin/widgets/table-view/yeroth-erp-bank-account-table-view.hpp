@@ -11,25 +11,33 @@
 
 #include "src/widgets/yeroth-erp-qstandard-item-model.hpp"
 
-#include "src/widgets/table-view/yeroth-erp-table-view.hpp"
+#include "src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp"
 
 
 #include <QtSql/QSqlTableModel>
+
 
 class YerothSqlTableModel;
 
 class YerothPOSQStandardItemModel;
 
-class YerothERPBankAccountTableView:public YerothTableView
-{
-Q_OBJECT public:
 
-    YEROTH_CLASS_OPERATORS YerothERPBankAccountTableView():YerothTableView()
+class YerothERPBankAccountTableView : public yerothERPAdminUpperTableViewClass
+{
+	Q_OBJECT
+
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	YerothERPBankAccountTableView()
+    :yerothERPAdminUpperTableViewClass()
     {
         _stdItemModel->_curTableView = this;
     }
 
-    YerothERPBankAccountTableView(QWidget *parent):YerothTableView(parent)
+    YerothERPBankAccountTableView(QWidget *parent)
+    :yerothERPAdminUpperTableViewClass(parent)
     {
         _stdItemModel->_curTableView = this;
     }
