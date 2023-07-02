@@ -88,6 +88,8 @@ public slots:
 
 	virtual void SETUP_PRINT();
 
+	void LISTER_CHARGES_FINANCIERES(YerothSqlTableModel *aSqlTableModel = 0);
+
     void lister_utilisateur(YerothSqlTableModel *aSqlTableModel = 0);
 
     void lister_localisation(YerothSqlTableModel *aSqlTableModel = 0);
@@ -105,6 +107,8 @@ public slots:
     void lister_remise(YerothSqlTableModel *aSqlTableModel = 0);
 
     void afficher_au_detail();
+
+    void afficher_detail_CHARGE_FINANCIERE();
 
     void afficher_detail_utilisateur();
 
@@ -195,6 +199,11 @@ public slots:
         return _userCurrentlyFiltered;
     }
 
+    inline bool isCharge_financieres_CurrentlyFiltered() const
+    {
+        return _charges_financieres_CurrentlyFiltered;
+    }
+
     inline bool isDiscountCurrentlyFiltered() const
     {
         return _discountCurrentlyFiltered;
@@ -235,6 +244,11 @@ public slots:
         _siteCurrentlyFiltered = siteCurrentlyFiltered;
     }
 
+    inline void setCharge_financieres_CurrentlyFiltered(bool charges_financieres_CurrentlyFiltered)
+    {
+    	_charges_financieres_CurrentlyFiltered = charges_financieres_CurrentlyFiltered;
+    }
+
     inline void setUserCurrentlyFiltered(bool userCurrentlyFiltered)
     {
         _userCurrentlyFiltered = userCurrentlyFiltered;
@@ -255,6 +269,8 @@ private:
     bool _userCurrentlyFiltered;
 
     bool _siteCurrentlyFiltered;
+
+    bool _charges_financieres_CurrentlyFiltered;
 
     bool _discountCurrentlyFiltered;
 

@@ -19,6 +19,8 @@
 
 #include "src/utils/yeroth-erp-utils.hpp"
 
+#include <tuple>
+
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMessageBox>
 
@@ -138,6 +140,8 @@ public slots:
 	virtual void selectionner_champs_db_visibles(bool SETUP_DIALOG_BOX_GEOMETRY = true,
 												 bool CHARGES_FINANCIERES_WINDOW = false);
 
+	virtual YerothERPGenericSelectDBFieldDialog *GET__LOCALIZED__generic_selectdbfield__DIALOG__(QString aSqlTableName);
+
     virtual void setup_select_configure_dbcolumn(const QString &aSqlTableName);
 
     virtual void infosEntreprise();
@@ -152,7 +156,7 @@ public slots:
 
     inline YerothERPGenericSelectDBFieldDialog *GET_ERP_GENERIC_SELECTDBFIELD_DIALOG(QString sqlTableName)
     {
-    	return sqlTableName__TO__selectDBFieldDialog.value(sqlTableName);
+    	return GET__LOCALIZED__generic_selectdbfield__DIALOG__(sqlTableName);
     }
 
 protected:
@@ -169,7 +173,7 @@ protected:
 
     QString _windowName;
 
-    QMap<QString, YerothERPGenericSelectDBFieldDialog *> sqlTableName__TO__selectDBFieldDialog;
+    QMap<QString, std::tuple<bool, YerothERPGenericSelectDBFieldDialog *>> sqlTableName__TO__selectDBFieldDialog;
 
     static QPoint *_centerPosition;
 };

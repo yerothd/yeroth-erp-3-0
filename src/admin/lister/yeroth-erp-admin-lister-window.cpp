@@ -38,6 +38,7 @@ YerothAdminListerWindow::YerothAdminListerWindow()
  _bankAccountCurrentlyFiltered(false),
  _userCurrentlyFiltered(false),
  _siteCurrentlyFiltered(false),
+ _charges_financieres_CurrentlyFiltered(false),
  _discountCurrentlyFiltered(false),
  _pushButton_admin_rechercher_font(0),
  _logger(new YerothLogger("YerothAdminListerWindow")),
@@ -368,6 +369,10 @@ void YerothAdminListerWindow::rendreVisible(unsigned selectedSujetAction)
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+        if (false == isCharge_financieres_CurrentlyFiltered())
+        {
+        	LISTER_CHARGES_FINANCIERES();
+        }
         break;
 
     default:
@@ -375,6 +380,7 @@ void YerothAdminListerWindow::rendreVisible(unsigned selectedSujetAction)
     }
 
     tabWidget_lister->setCurrentIndex(selectedSujetAction);
+
     setVisible(true);
 }
 
@@ -486,7 +492,9 @@ void YerothAdminListerWindow::set_admin_rechercher_font()
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_charges_financieres();
-    	setWindowTitle(_windowName_WITH_NO_MAINTENANCE);
+        MACRO_SET_ADMIN_RECHERCHER_FONT(_charges_financieres_CurrentlyFiltered)
+		setWindowTitle(_LISTER_tab_TO_tabTitle.value("LISTER_CHARGES_FINANCIERES"));
+
         break;
 
     default:
@@ -761,12 +769,71 @@ void YerothAdminListerWindow::SETUP_PRINT()
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+    	tableView_lister_charges_financieres->_currentViewWindow = this;
 
+    	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_charges_financieres);
+
+    	setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
+
+    	{
+    	    _visibleDBColumnNameStrList.clear();
+
+    	    _visibleDBColumnNameStrList
+    				<< YerothDatabaseTableColumn::DESIGNATION
+					<< YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR
+					<< YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT
+    				<< YerothDatabaseTableColumn::PRIX_DACHAT
+    				<< YerothDatabaseTableColumn::PRIX_UNITAIRE
+    				<< YerothDatabaseTableColumn::DATE_DE_RECEPTION
+    				<< YerothDatabaseTableColumn::LOCALISATION;
+    	}
+
+    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_charges_financieres();
         break;
 
     default:
         break;
     }
+}
+
+
+void YerothAdminListerWindow::
+	LISTER_CHARGES_FINANCIERES(YerothSqlTableModel *aSqlTableModel /* = 0 */)
+{
+	SETUP_PRINT();
+
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ lister ~ CHARGES FINANCIÈRES"));
+
+    //In case, for e.g. there is filtering applied to aSqlTableModel
+    if (0 != aSqlTableModel &&
+        true == YerothUtils::isEqualCaseInsensitive(YerothDatabase::CHARGES_FINANCIERES,
+                                                    aSqlTableModel->sqlTableName()))
+    {
+    	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_charges_financieres,
+    										 *aSqlTableModel);
+    }
+    else
+    {
+        setUserCurrentlyFiltered(false);
+
+        YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_charges_financieres();
+
+    	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_charges_financieres,
+    										 sqlTableModel);
+    }
+
+    _LISTER_tab_TO_tabTitle.insert("LISTER_CHARGES_FINANCIERES", _windowName);
+
+    setWindowTitle(_LISTER_tab_TO_tabTitle.value("LISTER_CHARGES_FINANCIERES"));
+
+
+    _lastItemSelectedForModification = 0;
+
+    set_admin_rechercher_font();
+
+    tableView_lister_charges_financieres->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -839,14 +906,6 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
 
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_localisation"));
 
-
-    tableView_lister_localisation->hideColumn(0);
-    tableView_lister_localisation->hideColumn(3);
-    tableView_lister_localisation->hideColumn(5);
-    tableView_lister_localisation->hideColumn(11);
-    tableView_lister_localisation->hideColumn(12);
-    tableView_lister_localisation->hideColumn(13);
-    tableView_lister_localisation->hideColumn(14);
 
     _lastItemSelectedForModification = 0;
 
@@ -925,6 +984,7 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
     //qDebug() << QString("++ lister_categorie | sql table filter: %1")
     //                      .arg(_curSearchSqlTableModel->filter());
 
+
     _lastItemSelectedForModification = 0;
 
     set_admin_rechercher_font();
@@ -968,6 +1028,7 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
 
     //qDebug() << QString("++ lister_categorie | sql table filter: %1")
     //                      .arg(_curSearchSqlTableModel->filter());
+
 
     _lastItemSelectedForModification = 0;
 
@@ -1183,7 +1244,7 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
-    	//lister_CHARGES_FINANCIERES(_curSearchSqlTableModel);
+    	LISTER_CHARGES_FINANCIERES(_curSearchSqlTableModel);
         break;
 
     default:
@@ -1286,8 +1347,11 @@ void YerothAdminListerWindow::modifier()
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
-        //_allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE);
-        //rendreInvisible();
+        if (tableView_lister_charges_financieres->rowCount() > 0)
+        {
+            _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE);
+            rendreInvisible();
+        }
         break;
 
     default:
@@ -1333,11 +1397,20 @@ void YerothAdminListerWindow::afficher_au_detail()
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+    	afficher_detail_CHARGE_FINANCIERE();
         break;
 
     default:
         break;
     }
+}
+
+void YerothAdminListerWindow::afficher_detail_CHARGE_FINANCIERE()
+{
+//    _allWindows->_adminDetailWindow
+//		->rendreVisibleChargeFinanciere(lastSelectedItemForModification());
+//
+//    rendreInvisible();
 }
 
 

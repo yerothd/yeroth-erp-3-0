@@ -31,15 +31,20 @@ YerothPOSAdminWindowsCommons::~YerothPOSAdminWindowsCommons()
 {
 	YerothERPGenericSelectDBFieldDialog *cur_dbfield_dialog = 0;
 
-	for (uint i = 0;
-		 i < sqlTableName__TO__selectDBFieldDialog.size();
-		 ++i)
-	{
-		if (0 != cur_dbfield_dialog)
-		{
-			delete cur_dbfield_dialog;
-		}
-	}
+	 QMapIterator<QString, std::tuple<bool, YerothERPGenericSelectDBFieldDialog *>>
+	 	 iterator_yr_selectfield_dialog(sqlTableName__TO__selectDBFieldDialog);
+
+	 while (iterator_yr_selectfield_dialog.hasNext())
+	 {
+		 iterator_yr_selectfield_dialog.next();
+
+		 cur_dbfield_dialog = std::get<1>(iterator_yr_selectfield_dialog.value());
+
+		 if (0 != cur_dbfield_dialog)
+		 {
+			 delete cur_dbfield_dialog;
+		 }
+	 }
 }
 
 
@@ -220,6 +225,87 @@ void YerothPOSAdminWindowsCommons::
 }
 
 
+/**
+ * !!! TEMPORARY SOLUTION:
+ * 1. FRENCH LANGUAGE SETTING ALWAYS RE-CREATE A
+ *    SELECT DATABASE COLUMN FIELD DIALOG.
+ * 2. TODO: generaliye with previous and new saved
+ *    language setting !
+ */
+YerothERPGenericSelectDBFieldDialog *YerothPOSAdminWindowsCommons::
+			GET__LOCALIZED__generic_selectdbfield__DIALOG__(QString aSqlTableName)
+{
+	YerothERPGenericSelectDBFieldDialog *result__LOCALIZED__selectdbfield__DIALOG = 0;
+
+
+	if (sqlTableName__TO__selectDBFieldDialog.contains(aSqlTableName))
+	{
+
+		bool previous_setting_ENGLISH_LANGUAGE =
+				(YerothMainWindow::LANGUE_ANGLAISE == std::get<0>(sqlTableName__TO__selectDBFieldDialog.value(aSqlTableName)));
+
+
+		YerothERPGenericSelectDBFieldDialog *CURRENT_SELECTDBFIELD_DIALOG =
+				std::get<1>(sqlTableName__TO__selectDBFieldDialog.value(aSqlTableName));
+
+
+		if (previous_setting_ENGLISH_LANGUAGE)
+		{
+			result__LOCALIZED__selectdbfield__DIALOG = CURRENT_SELECTDBFIELD_DIALOG;
+		}
+		else
+		{
+			YEROTH_DELETE_FREE_POINTER_NOW(CURRENT_SELECTDBFIELD_DIALOG);
+
+			CURRENT_SELECTDBFIELD_DIALOG = 0;
+
+			result__LOCALIZED__selectdbfield__DIALOG = 0;
+		}
+
+		if (0 == result__LOCALIZED__selectdbfield__DIALOG)
+		{
+		    _selectExportDBQDialog =
+		    		new YerothERPGenericSelectDBFieldDialog(_allWindows,
+		    												this);
+
+			if (0 != getQMainWindowToolBar())
+			{
+				_selectExportDBQDialog->setPalette(getQMainWindowToolBar()->palette());
+			}
+
+		    result__LOCALIZED__selectdbfield__DIALOG = _selectExportDBQDialog;
+
+		    sqlTableName__TO__selectDBFieldDialog.remove(aSqlTableName);
+
+		    sqlTableName__TO__selectDBFieldDialog.insert(aSqlTableName,
+		    											 std::make_tuple(YerothMainWindow::LANGUE_ANGLAISE,
+		    													 	 	 _selectExportDBQDialog));
+		}
+	}
+	else
+	{
+	    _selectExportDBQDialog =
+	    		new YerothERPGenericSelectDBFieldDialog(_allWindows,
+	    												this);
+
+		if (0 != getQMainWindowToolBar())
+		{
+			_selectExportDBQDialog->setPalette(getQMainWindowToolBar()->palette());
+		}
+
+	    result__LOCALIZED__selectdbfield__DIALOG = _selectExportDBQDialog;
+
+	    sqlTableName__TO__selectDBFieldDialog.remove(aSqlTableName);
+
+	    sqlTableName__TO__selectDBFieldDialog.insert(aSqlTableName,
+	    											 std::make_tuple(YerothMainWindow::LANGUE_ANGLAISE,
+	    													 	 	 _selectExportDBQDialog));
+	}
+
+	return result__LOCALIZED__selectdbfield__DIALOG;
+}
+
+
 void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString &aSqlTableName)
 {
 	if (aSqlTableName.isEmpty())
@@ -227,32 +313,8 @@ void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString
 		return ;
 	}
 
-
-	bool is_PALETTE_COLOR_SET = true;
-
-
-	if (sqlTableName__TO__selectDBFieldDialog.contains(aSqlTableName))
-	{
-	    _selectExportDBQDialog = sqlTableName__TO__selectDBFieldDialog.value(aSqlTableName);
-	}
-	else
-	{
-		is_PALETTE_COLOR_SET = false;
-
-	    _selectExportDBQDialog =
-	    		new YerothERPGenericSelectDBFieldDialog(_allWindows,
-	    												this);
-
-	    sqlTableName__TO__selectDBFieldDialog.insert(aSqlTableName,
-	    											 _selectExportDBQDialog);
-	}
-
-
-	if (!is_PALETTE_COLOR_SET  	  &&
-		0 != getQMainWindowToolBar())
-	{
-		_selectExportDBQDialog->setPalette(getQMainWindowToolBar()->palette());
-	}
+	_selectExportDBQDialog =
+			GET__LOCALIZED__generic_selectdbfield__DIALOG__(aSqlTableName);
 
 	_selectExportDBQDialog->setStyleSheet(qMessageBoxStyleSheet());
 
@@ -290,8 +352,9 @@ void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString
 			_varchar_dbtable_column_name_list.insert(fieldName);
 		}
 
-		if (type.contains(YerothUtils::DATABASE_MYSQL_CHAR_TYPE_STRING) ||
-			type.contains(YerothUtils::DATABASE_MYSQL_TIME_TYPE_STRING) ||
+		if (type.contains(YerothUtils::DATABASE_MYSQL_VARCHAR_TYPE_STRING)  ||
+			type.contains(YerothUtils::DATABASE_MYSQL_CHAR_TYPE_STRING) 	||
+			type.contains(YerothUtils::DATABASE_MYSQL_TIME_TYPE_STRING) 	||
 			type.contains(YerothUtils::DATABASE_MYSQL_DATE_TYPE_STRING))
 		{
 			_DBFieldNamesToPrintLeftAligned.insert(columnIdx);
@@ -302,7 +365,8 @@ void YerothPOSAdminWindowsCommons::setup_select_configure_dbcolumn(const QString
 			_DBFieldNamesToPrintRightAligned.insert(columnIdx);
 		}
 
-		_dbtablecolumnNameToDBColumnIndex.insert(fieldName, columnIdx);
+		_dbtablecolumnNameToDBColumnIndex.insert(fieldName,
+												 columnIdx);
 	}
 }
 
