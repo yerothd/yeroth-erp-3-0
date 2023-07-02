@@ -150,6 +150,11 @@ public slots:
 
     void getManuelUtilisateurPDF();
 
+    inline YerothERPGenericSelectDBFieldDialog *GET_ERP_GENERIC_SELECTDBFIELD_DIALOG(QString sqlTableName)
+    {
+    	return sqlTableName__TO__selectDBFieldDialog.value(sqlTableName);
+    }
+
 protected:
 
     void mySetupUi(QMainWindow *aWindow);
