@@ -11,27 +11,33 @@
 
 #include <QtCore/QPoint>
 
-YerothDateTimeEdit::YerothDateTimeEdit(QWidget *parent):QDateTimeEdit(parent),
-    _logger(new YerothLogger("YerothDateTimeEdit")),
-    _calendarWidget(new QCalendarWidget)
+YerothDateTimeEdit::YerothDateTimeEdit(QWidget *parent)
+:QDateTimeEdit(parent),
+ _logger(new YerothLogger("YerothDateTimeEdit")),
+ _calendarWidget(new QCalendarWidget)
 {
     _calendarWidget->setMinimumDate(QDate(1900, 1, 1));
+
     _calendarWidget->setMaximumDate(QDate(70000, 1, 1));
+
     _calendarWidget->setGridVisible(true);
+
 
     setCalendarPopup(true);
 
+
     setCalendarWidget(_calendarWidget);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
 
-    setLocale(YerothUtils::frenchLocale);
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+    	setLocale(YerothUtils::englishLocale);
+    }
+    else
+    {
+    	setLocale(YerothUtils::frenchLocale);
+    }
 
-#else //YEROTH_ENGLISH_LANGUAGE
-
-    setLocale(YerothUtils::englishLocale);
-
-#endif
 
     setYerothERPDateTimeEditDisplayFormat();
 }
@@ -50,11 +56,13 @@ void YerothDateTimeEdit::setYerothERPDateTimeEditDisplayFormat()
     if (isReadOnly())
     {
         setAlignment(Qt::AlignCenter);
+
         setPalette(YerothUtils::YEROTH_BLACK_PALETTE);
     }
     else
     {
         setAlignment(Qt::AlignLeft);
+
         setPalette(YerothUtils::YEROTH_WHITE_PALETTE);
     }
 }
@@ -63,5 +71,6 @@ void YerothDateTimeEdit::setYerothERPDateTimeEditDisplayFormat()
 void YerothDateTimeEdit::setStartDate(QDate startDate)
 {
     _startDate = startDate;
+
     setDate(_startDate);
 }

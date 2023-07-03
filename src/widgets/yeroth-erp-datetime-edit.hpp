@@ -20,11 +20,15 @@ class QMainWindow;
 class YerothERPWindows;
 class YerothLogger;
 
-class YerothDateTimeEdit:public QDateTimeEdit
+class YerothDateTimeEdit : public QDateTimeEdit
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothDateTimeEdit(QWidget *parent = 0);
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	YerothDateTimeEdit(QWidget *parent = 0);
 
     inline ~YerothDateTimeEdit()
     {
@@ -48,6 +52,7 @@ Q_OBJECT public:
     }
 
 public slots:
+
     inline void reset()
     {
         setDate(_startDate);
@@ -58,6 +63,7 @@ private:
     YerothLogger *_logger;
 
     QDate _startDate;
+
     QCalendarWidget *_calendarWidget;
 };
 
