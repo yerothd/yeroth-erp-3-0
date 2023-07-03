@@ -81,6 +81,7 @@ YerothChargesFinancieresDetailsWindow::YerothChargesFinancieresDetailsWindow()
 
 void YerothChargesFinancieresDetailsWindow::setupLineEdits()
 {
+	dateEdit_date_de_commande->setYerothEnabled(false);
     lineEdit_reference_produit->setYerothEnabled(false);
     lineEdit_designation->setYerothEnabled(false);
     lineEdit_quantite->setYerothEnabled(false);
@@ -232,6 +233,7 @@ void YerothChargesFinancieresDetailsWindow::definirMagasinier()
 
 void YerothChargesFinancieresDetailsWindow::rendreInvisible()
 {
+	dateEdit_date_de_commande->reset();
     lineEdit_reference_produit->clear();
     lineEdit_designation->clear();
     lineEdit_categorie_produit->clear();
@@ -265,29 +267,38 @@ void YerothChargesFinancieresDetailsWindow::rendreVisible(YerothSqlTableModel *s
 
 void YerothChargesFinancieresDetailsWindow::showItem()
 {
-    _cur_CHARGES_FINANCIERESTableModel->yerothSetFilter_WITH_where_clause
-    (QString("%1 = '%2'").arg
-     (YerothDatabaseTableColumn::ID,
-      YerothERPWindows::get_last_lister_selected_row_ID()));
+    _cur_CHARGES_FINANCIERESTableModel
+		->yerothSetFilter_WITH_where_clause
+			(QString("%1 = '%2'")
+				.arg(YerothDatabaseTableColumn::ID,
+					 YerothERPWindows::get_last_lister_selected_row_ID()));
+
 
     QSqlRecord record = _cur_CHARGES_FINANCIERESTableModel->record(0);
 
-    lineEdit_reference_produit->setText(GET_SQL_RECORD_DATA
-                                        (record,
-                                         YerothDatabaseTableColumn::REFERENCE));
-    lineEdit_designation->setText(GET_SQL_RECORD_DATA
-                                  (record,
-                                   YerothDatabaseTableColumn::DESIGNATION));
-    lineEdit_categorie_produit->setText(GET_SQL_RECORD_DATA
-                                        (record,
-                                         YerothDatabaseTableColumn::CATEGORIE));
-    lineEdit_nom_entreprise_fournisseur->setText(GET_SQL_RECORD_DATA
-                                                 (record,
-                                                  YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR));
+    dateEdit_date_de_commande
+		->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_COMMANDE).toDate());
+
+    lineEdit_reference_produit
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::REFERENCE));
+
+    lineEdit_designation
+		->setText(GET_SQL_RECORD_DATA(record,
+                                   	  YerothDatabaseTableColumn::DESIGNATION));
+
+    lineEdit_categorie_produit
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::CATEGORIE));
+
+    lineEdit_nom_entreprise_fournisseur
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR));
+
 
     double prix_unitaire = GET_SQL_RECORD_DATA(record,
-                                               YerothDatabaseTableColumn::PRIX_UNITAIRE).
-                           toDouble();
+                                               YerothDatabaseTableColumn::PRIX_UNITAIRE).toDouble();
+
 
     lineEdit_prix_unitaire->setText(GET_CURRENCY_STRING_NUM(prix_unitaire));
 
@@ -300,17 +311,18 @@ void YerothChargesFinancieresDetailsWindow::showItem()
         if (currentUser->isManager() || currentUser->isGestionaireDesStocks())
         {
             prix_dachat =
-                            GET_SQL_RECORD_DATA(record,
-                                                YerothDatabaseTableColumn::PRIX_DACHAT).
-                            toDouble();
+            		GET_SQL_RECORD_DATA(record,
+                                        YerothDatabaseTableColumn::PRIX_DACHAT).toDouble();
         }
     }
 
+
     lineEdit_prix_dachat->setText(GET_CURRENCY_STRING_NUM(prix_dachat));
 
-    double quantite_restante = GET_SQL_RECORD_DATA(record,
-                                                   YerothDatabaseTableColumn::QUANTITE_TOTALE).
-                               toDouble();
+
+    double quantite_restante =
+    		GET_SQL_RECORD_DATA(record,
+                                YerothDatabaseTableColumn::QUANTITE_TOTALE).toDouble();
 
     lineEdit_quantite->setText(GET_DOUBLE_STRING_P(quantite_restante, 0));
 

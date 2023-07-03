@@ -3776,8 +3776,7 @@ moc/moc_yeroth-erp-charges-financieres-window.cpp: src/windows/yeroth-erp-charge
 
 moc/moc_yeroth-erp-charges-financieres-detail-window.cpp: src/windows/yeroth-erp-charges-financieres-detail-window.hpp \
 		ui_yeroth-erp-charges-financieres-detail-window.h \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -3788,6 +3787,8 @@ moc/moc_yeroth-erp-charges-financieres-detail-window.cpp: src/windows/yeroth-erp
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -8242,6 +8243,7 @@ ui_yeroth-erp-charges-financieres-detail-window.h: ui/yeroth-erp-charges-financi
 		/usr/lib/qt5/bin/uic \
 		src/widgets/yeroth-erp-push-button.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -8290,7 +8292,17 @@ ui_yeroth-erp-charges-financieres-detail-window.h: ui/yeroth-erp-charges-financi
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-combo-box.hpp
+		src/widgets/yeroth-erp-combo-box.hpp \
+		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
+		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
+		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
+		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
+		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
+		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
+		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
+		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
+		src/include/yeroth-erp-3-0-definition-month.hpp \
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp
 	/usr/lib/qt5/bin/uic ui/yeroth-erp-charges-financieres-detail-window.ui -o ui_yeroth-erp-charges-financieres-detail-window.h
 
 ui_yeroth-erp-tableau-des-transactions-du-fournisseur-window.h: ui/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui \
@@ -24379,8 +24391,7 @@ obj/yeroth-erp-charges-financieres-window.o: src/windows/yeroth-erp-charges-fina
 
 obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charges-financieres-detail-window.cpp src/windows/yeroth-erp-charges-financieres-detail-window.hpp \
 		ui_yeroth-erp-charges-financieres-detail-window.h \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -24391,6 +24402,8 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -24418,7 +24431,6 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \

@@ -2781,7 +2781,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>35</y>
+       <y>59</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -3241,7 +3241,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>8</x>
-       <y>37</y>
+       <y>58</y>
        <width>171</width>
        <height>21</height>
       </rect>
@@ -3265,7 +3265,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>8</x>
-       <y>58</y>
+       <y>82</y>
        <width>171</width>
        <height>21</height>
       </rect>
@@ -3289,7 +3289,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>59</y>
+       <y>83</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -3746,7 +3746,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>8</x>
-       <y>82</y>
+       <y>106</y>
        <width>171</width>
        <height>21</height>
       </rect>
@@ -3770,7 +3770,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>58</x>
-       <y>130</y>
+       <y>154</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -3794,7 +3794,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>131</y>
+       <y>155</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -4254,7 +4254,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>8</x>
-       <y>106</y>
+       <y>130</y>
        <width>171</width>
        <height>21</height>
       </rect>
@@ -4278,7 +4278,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>155</y>
+       <y>179</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -4740,7 +4740,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>83</y>
+       <y>107</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -5197,7 +5197,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>107</y>
+       <y>131</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -5654,7 +5654,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>184</x>
-       <y>179</y>
+       <y>203</y>
        <width>437</width>
        <height>21</height>
       </rect>
@@ -6117,7 +6117,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>8</x>
-       <y>178</y>
+       <y>202</y>
        <width>171</width>
        <height>21</height>
       </rect>
@@ -6141,7 +6141,7 @@ un service</string>
      <property name="geometry">
       <rect>
        <x>8</x>
-       <y>154</y>
+       <y>178</y>
        <width>171</width>
        <height>21</height>
       </rect>
@@ -6159,6 +6159,57 @@ un service</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_DATE_DE_COMMANDE">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>36</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>date de commande</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="YerothDateTimeEdit" name="dateEdit_date_de_commande">
+     <property name="geometry">
+      <rect>
+       <x>184</x>
+       <y>37</y>
+       <width>437</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="displayFormat">
+      <string>dd/MM/yyyy</string>
+     </property>
+     <property name="date">
+      <date>
+       <year>2016</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
      </property>
     </widget>
    </widget>
@@ -8195,6 +8246,11 @@ un service</string>
    <class>YerothLineEdit</class>
    <extends>QLineEdit</extends>
    <header>src/widgets/yeroth-erp-line-edit.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>YerothDateTimeEdit</class>
+   <extends>QDateEdit</extends>
+   <header>src/widgets/yeroth-erp-datetime-edit.hpp</header>
   </customwidget>
  </customwidgets>
  <tabstops>
