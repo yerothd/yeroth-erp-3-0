@@ -2227,6 +2227,11 @@ QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
     case SUJET_ACTION_COMPTE_UTILISATEUR:
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_utilisateur);
 
+
+    	_DBFieldNamesToPrintLeftAligned.insert(5);
+    	_DBFieldNamesToPrintLeftAligned.insert(6);
+
+
     	if (YerothMainWindow::LANGUE_ANGLAISE)
         {
     		_documentSpecificElements_FOR_PDF_LATEX_PRINTING
