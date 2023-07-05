@@ -43,7 +43,6 @@ void YerothERPGenericSelectDBFieldDialog::show()
 
 void YerothERPGenericSelectDBFieldDialog::closeEvent(QCloseEvent *closeEvent)
 {
-	QDEBUG_STRING_OUTPUT_1("YerothERPGenericSelectDBFieldDialog::closeEvent - I");
     /*
      * Works fine only if this dialog is set as modal.
      */
