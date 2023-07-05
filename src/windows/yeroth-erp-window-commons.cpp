@@ -223,7 +223,7 @@ bool YerothWindowsCommons::RESIZE_CHILD_OBJECT(QResizeEvent *event,
 //      QDEBUG_STRING_OUTPUT_1("YerothWindowsCommons::RESIZE_CHILD_OBJECT");
     {
         YerothComboBox *a_combo_box_child_object =
-                        dynamic_cast < YerothComboBox * >(a_child_widget);
+                        dynamic_cast<YerothComboBox *>(a_child_widget);
         if (0 != a_combo_box_child_object)
         {
             YerothUtils::YEROTH_resizeEvent(*a_combo_box_child_object,
@@ -235,7 +235,7 @@ bool YerothWindowsCommons::RESIZE_CHILD_OBJECT(QResizeEvent *event,
 
     {
         YerothLineEdit *a_line_edit_child_object =
-                        dynamic_cast < YerothLineEdit * >(a_child_widget);
+                        dynamic_cast<YerothLineEdit *>(a_child_widget);
         if (0 != a_line_edit_child_object)
         {
             YerothUtils::YEROTH_resizeEvent(*a_line_edit_child_object,
@@ -247,7 +247,7 @@ bool YerothWindowsCommons::RESIZE_CHILD_OBJECT(QResizeEvent *event,
 
     {
         YerothPushButton *a_pushbutton_child_object =
-                        dynamic_cast < YerothPushButton * >(a_child_widget);
+                        dynamic_cast<YerothPushButton *>(a_child_widget);
         if (0 != a_pushbutton_child_object)
         {
             YerothUtils::YEROTH_resizeEvent(*a_pushbutton_child_object,
@@ -258,7 +258,7 @@ bool YerothWindowsCommons::RESIZE_CHILD_OBJECT(QResizeEvent *event,
     }
 
     {
-        QLabel *a_qlabel_child_object = dynamic_cast < QLabel * >(a_child_widget);
+        QLabel *a_qlabel_child_object = dynamic_cast<QLabel *>(a_child_widget);
         if (0 != a_qlabel_child_object)
         {
             YerothUtils::YEROTH_resizeEvent(*a_qlabel_child_object,
@@ -270,7 +270,7 @@ bool YerothWindowsCommons::RESIZE_CHILD_OBJECT(QResizeEvent *event,
 
     {
         YerothTableView *a_table_view_child_object =
-                        dynamic_cast < YerothTableView * >(a_child_widget);
+                        dynamic_cast<YerothTableView *>(a_child_widget);
         if (0 != a_table_view_child_object)
         {
             a_table_view_child_object->YEROTH_resizeEvent(event);
@@ -317,7 +317,7 @@ void YerothWindowsCommons::resizeEvent(QResizeEvent *event)
             continue;
         }
 
-        a_child_widget = dynamic_cast < QWidget * >(a_child_object);
+        a_child_widget = dynamic_cast<QWidget *>(a_child_object);
 
         if (0 != a_child_widget)
         {
@@ -332,7 +332,7 @@ void YerothWindowsCommons::resizeEvent(QResizeEvent *event)
 //                                      QDEBUG_STRING_OUTPUT_1("a_grand_child_object");
 
                     a_grand_child_widget =
-                                    dynamic_cast < QWidget * >(a_grand_child_object);
+                                    dynamic_cast<QWidget *>(a_grand_child_object);
 
                     if (0 != a_grand_child_widget)
                     {

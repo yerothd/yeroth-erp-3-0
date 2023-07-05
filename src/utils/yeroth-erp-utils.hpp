@@ -1887,7 +1887,7 @@ template < class aTableViewClassType > bool YerothUtils::instanceOf__YerothTable
     bool result = false;
 
     YerothTableViewWITHpagination *aType =
-                    dynamic_cast < YerothTableViewWITHpagination * >(aTableView);
+                    dynamic_cast<YerothTableViewWITHpagination *>(aTableView);
 
     if (0 != aType)
     {

@@ -1280,7 +1280,7 @@ void YerothStocksWindow::rendreVisible(YerothSqlTableModel *stocksTableModel,
                 continue;
             }
 
-            a_child_widget_QACTION = dynamic_cast < QAction * >(a_child_object);
+            a_child_widget_QACTION = dynamic_cast<QAction *>(a_child_object);
 
             if (0 != a_child_widget_QACTION)
             {

@@ -43,6 +43,7 @@ void YerothERPGenericSelectDBFieldDialog::show()
 
 void YerothERPGenericSelectDBFieldDialog::closeEvent(QCloseEvent *closeEvent)
 {
+	QDEBUG_STRING_OUTPUT_1("YerothERPGenericSelectDBFieldDialog::closeEvent - I");
     /*
      * Works fine only if this dialog is set as modal.
      */
@@ -64,7 +65,7 @@ void YerothERPGenericSelectDBFieldDialog::closeEvent(QCloseEvent *closeEvent)
         }
 
         YerothPOSAdminWindowsCommons *ADMIN_ERP_WINDOWS_COMMONS_INSTANCE
-			= static_cast<YerothPOSAdminWindowsCommons *>(_associatedWindow);
+			= dynamic_cast<YerothPOSAdminWindowsCommons *>(_associatedWindow);
 
         if (0 != ADMIN_ERP_WINDOWS_COMMONS_INSTANCE)
         {
@@ -77,10 +78,8 @@ void YerothERPGenericSelectDBFieldDialog::closeEvent(QCloseEvent *closeEvent)
         }
         else
         {
-        	_associatedWindow->CLOSE_SELECT_EXPORT_DB_DIALOG();
+        	_associatedWindow->rendreVisible(_associatedWindow->getCurStocksTableModel());
         }
-
-        //_associatedWindow->rendreVisible(_associatedWindow->getCurStocksTableModel());
     }
 
 
