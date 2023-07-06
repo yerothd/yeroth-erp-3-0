@@ -382,6 +382,9 @@ void YerothAdminListerWindow::rendreVisible(unsigned selectedSujetAction)
     tabWidget_lister->setCurrentIndex(selectedSujetAction);
 
     setVisible(true);
+
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -579,6 +582,186 @@ YerothTableViewWITHpagination *YerothAdminListerWindow::GET_CURRENT_TABLEVIEW()
 }
 
 
+void YerothAdminListerWindow::RESET_VIEW_CHARGES_FINANCIERES()
+{
+    _visibleDBColumnNameStrList.clear();
+
+    _visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::DESIGNATION
+		<< YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR
+		<< YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT
+		<< YerothDatabaseTableColumn::PRIX_DACHAT
+		<< YerothDatabaseTableColumn::PRIX_UNITAIRE
+		<< YerothDatabaseTableColumn::DATE_DE_RECEPTION
+		<< YerothDatabaseTableColumn::LOCALISATION;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_charges_financieres();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_charges_financieres,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_utilisateur()
+{
+	_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.clear();
+
+	if (!_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.contains(YerothDatabaseTableColumn::MOT_PASSE))
+	{
+		_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME
+		.append(YerothDatabaseTableColumn::MOT_PASSE);
+	}
+
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::PRENOM
+		<< YerothDatabaseTableColumn::NOM
+		<< YerothDatabaseTableColumn::TITRE
+		<< YerothDatabaseTableColumn::ROLE
+		<< YerothDatabaseTableColumn::LOCALISATION;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_users();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_utilisateur,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_localisation()
+{
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::NUMERO_UNIQUE
+		<< YerothDatabaseTableColumn::ADRESSE_IP
+		<< YerothDatabaseTableColumn::NOM_LOCALISATION
+		<< YerothDatabaseTableColumn::QUARTIER
+		<< YerothDatabaseTableColumn::VILLE
+		<< YerothDatabaseTableColumn::NUMERO_TELEPHONE_1;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_localisations();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_localisation,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_departements_de_produits()
+{
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT
+		<< YerothDatabaseTableColumn::DESCRIPTION_DEPARTEMENT_PRODUIT;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_departements_produits();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_departements_produits,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_categorie()
+{
+    _visibleDBColumnNameStrList.clear();
+
+    _visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::NOM_CATEGORIE
+		<< YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT
+		<< YerothDatabaseTableColumn::DESCRIPTION_CATEGORIE;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_categories();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_categorie,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_LIGNE_BUDGETAIRE()
+{
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire
+		<< YerothDatabaseTableColumn::montant_de_la_ligne_budgetaire
+		<< YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE
+		<< YerothDatabaseTableColumn::DESCRIPTION_ligne_budgetaire;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_lignes_budgetaires();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_LIGNE_BUDGETAIRE,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_compte_bancaire()
+{
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::REFERENCE_DU_COMPTE_BANCAIRE
+		<< YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE
+		<< YerothDatabaseTableColumn::INSTITUT_BANCAIRE
+		<< YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_BANCAIRE;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_comptes_bancaires();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_compte_bancaire,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_alerte()
+{
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::STOCKS_ID
+		<< YerothDatabaseTableColumn::DESIGNATION_ALERTE
+		<< YerothDatabaseTableColumn::DESIGNATION
+		<< YerothDatabaseTableColumn::DATE_DEBUT
+		<< YerothDatabaseTableColumn::DATE_FIN
+		<< YerothDatabaseTableColumn::DESTINATAIRE
+		<< YerothDatabaseTableColumn::DATE_CREATION
+		<< YerothDatabaseTableColumn::ALERTE_RESOLUE;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_alertes();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_alerte,
+										 sqlTableModel);
+}
+
+
+void YerothAdminListerWindow::RESET_VIEW_remise()
+{
+	_visibleDBColumnNameStrList.clear();
+
+	_visibleDBColumnNameStrList
+		<< YerothDatabaseTableColumn::ID
+		<< YerothDatabaseTableColumn::STOCKS_ID
+		<< YerothDatabaseTableColumn::DESIGNATION_ALERTE
+		<< YerothDatabaseTableColumn::DESIGNATION
+		<< YerothDatabaseTableColumn::DATE_DEBUT
+		<< YerothDatabaseTableColumn::DATE_FIN
+		<< YerothDatabaseTableColumn::DESTINATAIRE
+		<< YerothDatabaseTableColumn::DATE_CREATION
+		<< YerothDatabaseTableColumn::ALERTE_RESOLUE;
+
+	YerothSqlTableModel &sqlTableModel = _allWindows->getSqlTableModel_remises();
+
+	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_remise,
+										 sqlTableModel);
+}
+
+
 void YerothAdminListerWindow::SETUP_PRINT()
 {
     switch (tabWidget_lister->currentIndex())
@@ -590,26 +773,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::USERS);
 
-    	{
-    		_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.clear();
-
-    		if (!_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.contains(YerothDatabaseTableColumn::MOT_PASSE))
-    		{
-        		_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME
-    				.append(YerothDatabaseTableColumn::MOT_PASSE);
-    		}
-
-
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    				<< YerothDatabaseTableColumn::PRENOM
-    				<< YerothDatabaseTableColumn::NOM
-    				<< YerothDatabaseTableColumn::TITRE
-    				<< YerothDatabaseTableColumn::ROLE
-    				<< YerothDatabaseTableColumn::LOCALISATION;
-    	}
+    	RESET_VIEW_utilisateur();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_users();
         break;
@@ -621,18 +785,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::LOCALISATIONS);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    				<< YerothDatabaseTableColumn::NUMERO_UNIQUE
-    	            << YerothDatabaseTableColumn::ADRESSE_IP
-    				<< YerothDatabaseTableColumn::NOM_LOCALISATION
-    				<< YerothDatabaseTableColumn::QUARTIER
-    				<< YerothDatabaseTableColumn::VILLE
-    				<< YerothDatabaseTableColumn::NUMERO_TELEPHONE_1;
-    	}
+    	RESET_VIEW_localisation();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_localisations();
         break;
@@ -644,14 +797,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::DEPARTEMENTS_PRODUITS);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    	            << YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT
-    	            << YerothDatabaseTableColumn::DESCRIPTION_DEPARTEMENT_PRODUIT;
-    	}
+    	RESET_VIEW_departements_de_produits();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_departements_produits();
         break;
@@ -663,15 +809,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    	            << YerothDatabaseTableColumn::NOM_CATEGORIE
-    	            << YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT
-    	            << YerothDatabaseTableColumn::DESCRIPTION_CATEGORIE;
-    	}
+    	RESET_VIEW_categorie();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_categories();
         break;
@@ -683,16 +821,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::LIGNES_BUDGETAIRES);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    	            << YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire
-    	            << YerothDatabaseTableColumn::montant_de_la_ligne_budgetaire
-    	            << YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE
-    				<< YerothDatabaseTableColumn::DESCRIPTION_ligne_budgetaire;
-    	}
+    	RESET_VIEW_LIGNE_BUDGETAIRE();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_lignes_budgetaires();
         break;
@@ -704,16 +833,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::COMPTES_BANCAIRES);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    	            << YerothDatabaseTableColumn::REFERENCE_DU_COMPTE_BANCAIRE
-    	            << YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE
-    	            << YerothDatabaseTableColumn::INSTITUT_BANCAIRE
-    				<< YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_BANCAIRE;
-    	}
+    	RESET_VIEW_compte_bancaire();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_comptes_bancaires();
         break;
@@ -725,20 +845,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::ALERTES);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    	            << YerothDatabaseTableColumn::STOCKS_ID
-    	            << YerothDatabaseTableColumn::DESIGNATION_ALERTE
-    				<< YerothDatabaseTableColumn::DESIGNATION
-    				<< YerothDatabaseTableColumn::DATE_DEBUT
-    				<< YerothDatabaseTableColumn::DATE_FIN
-    				<< YerothDatabaseTableColumn::DESTINATAIRE
-    				<< YerothDatabaseTableColumn::DATE_CREATION
-    				<< YerothDatabaseTableColumn::ALERTE_RESOLUE;
-    	}
+    	RESET_VIEW_alerte();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_alertes();
         break;
@@ -750,20 +857,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::REMISES);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    	            << YerothDatabaseTableColumn::ID
-    	            << YerothDatabaseTableColumn::STOCKS_ID
-    	            << YerothDatabaseTableColumn::DESIGNATION_ALERTE
-    				<< YerothDatabaseTableColumn::DESIGNATION
-    				<< YerothDatabaseTableColumn::DATE_DEBUT
-    				<< YerothDatabaseTableColumn::DATE_FIN
-    				<< YerothDatabaseTableColumn::DESTINATAIRE
-    				<< YerothDatabaseTableColumn::DATE_CREATION
-    				<< YerothDatabaseTableColumn::ALERTE_RESOLUE;
-    	}
+    	RESET_VIEW_remise();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_remises();
         break;
@@ -775,18 +869,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
 
-    	{
-    	    _visibleDBColumnNameStrList.clear();
-
-    	    _visibleDBColumnNameStrList
-    				<< YerothDatabaseTableColumn::DESIGNATION
-					<< YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR
-					<< YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT
-    				<< YerothDatabaseTableColumn::PRIX_DACHAT
-    				<< YerothDatabaseTableColumn::PRIX_UNITAIRE
-    				<< YerothDatabaseTableColumn::DATE_DE_RECEPTION
-    				<< YerothDatabaseTableColumn::LOCALISATION;
-    	}
+    	RESET_VIEW_CHARGES_FINANCIERES();
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_charges_financieres();
         break;
@@ -1204,46 +1287,109 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_utilisateur()));
+
     	lister_utilisateur(_curSearchSqlTableModel);
 
 		break;
 
     case SUJET_ACTION_LOCALISATION:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_localisation()));
+
     	lister_localisation(_curSearchSqlTableModel);
 
         break;
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_departements_de_produits()));
+
     	lister_departements_de_produits(_curSearchSqlTableModel);
 
 		break;
 
     case SUJET_ACTION_CATEGORIE:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_categorie()));
+
     	lister_categorie(_curSearchSqlTableModel);
 
         break;
 
     case SUJET_ACTION_ligne_budgetaire:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_LIGNE_BUDGETAIRE()));
+
     	lister_LIGNE_BUDGETAIRE(_curSearchSqlTableModel);
 
         break;
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_compte_bancaire()));
+
     	lister_compte_bancaire(_curSearchSqlTableModel);
 
         break;
 
     case SUJET_ACTION_REMISE:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_remise()));
+
     	lister_remise(_curSearchSqlTableModel);
 
         break;
 
     case SUJET_ACTION_ALERTE:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_alerte()));
+
     	lister_alerte(_curSearchSqlTableModel);
 
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+    	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
+
+        connect(actionReinitialiserChampsDBVisible,
+        		SIGNAL(triggered()),
+				this,
+                SLOT(RESET_VIEW_CHARGES_FINANCIERES()));
+
     	LISTER_CHARGES_FINANCIERES(_curSearchSqlTableModel);
         break;
 

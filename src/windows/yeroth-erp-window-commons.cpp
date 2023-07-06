@@ -52,8 +52,6 @@ YerothWindowsCommons::~YerothWindowsCommons()
 {
     if (0 != _selectExportDBQDialog)
     {
-        _selectExportDBQDialog->close();
-
         delete _selectExportDBQDialog;
     }
 

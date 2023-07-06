@@ -86,7 +86,28 @@ public slots:
 
 	virtual YerothTableViewWITHpagination *GET_CURRENT_TABLEVIEW();
 
+
+	void RESET_VIEW_CHARGES_FINANCIERES();
+
+    void RESET_VIEW_utilisateur();
+
+    void RESET_VIEW_localisation();
+
+    void RESET_VIEW_departements_de_produits();
+
+    void RESET_VIEW_categorie();
+
+    void RESET_VIEW_LIGNE_BUDGETAIRE();
+
+    void RESET_VIEW_compte_bancaire();
+
+    void RESET_VIEW_alerte();
+
+    void RESET_VIEW_remise();
+
+
 	virtual void SETUP_PRINT();
+
 
 	void LISTER_CHARGES_FINANCIERES(YerothSqlTableModel *aSqlTableModel = 0);
 
