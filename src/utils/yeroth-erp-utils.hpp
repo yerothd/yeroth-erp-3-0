@@ -777,6 +777,8 @@ public:
         return _logFileName;
     }
 
+    static QString GET_YEROTH_QT_OBJECT_NAME(QObject *an_object);
+
     static bool checkIf_KEYWORD_ALREADY_EXISTS(YerothWindowsCommons &
                                                aCallingWindow,
                                                YerothSqlTableModel &
@@ -1661,7 +1663,7 @@ YerothQMessageBox::information(this, QObject::tr(DIALOG_BOX_TITLE), msg); }
 
 #define EXPR_IS_POSITIV(X)	(0 <= X)
 
-#define YEROTH_QT_OBJECT_NAME(X) ((0 != X) ? X->objectName().toUpper() : YerothUtils::EMPTY_STRING)
+#define YEROTH_QT_OBJECT_NAME(X) YerothUtils::GET_YEROTH_QT_OBJECT_NAME(X)
 
 #define BOOLEAN_STRING_TRUE "True"
 

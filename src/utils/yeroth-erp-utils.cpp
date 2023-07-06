@@ -2915,6 +2915,45 @@ void YerothUtils::getColumnListString(QStringList &columnStringList,
 	}
 }
 
+
+QString YerothUtils::GET_YEROTH_QT_OBJECT_NAME(QObject *an_object)
+{
+	QString YR_OBJECT_NAME;
+
+	if (0 != an_object)
+	{
+		YerothAdminListerWindow *admin_lister_window
+			= dynamic_cast<YerothAdminListerWindow *>(an_object);
+
+		if (0 != admin_lister_window)
+		{
+			QTabWidget *YR_tabWidget_lister =
+					admin_lister_window->get_tabwidget_lister();
+
+
+			assert(0 != YR_tabWidget_lister);
+
+
+			QString a_current_tab_index_STRING = QString::number(YR_tabWidget_lister->currentIndex());
+
+
+			YR_OBJECT_NAME = QString("%1__%2")
+							  .arg(admin_lister_window->objectName().trimmed(),
+								   a_current_tab_index_STRING);
+
+
+			YR_OBJECT_NAME = YR_OBJECT_NAME.toUpper();
+		}
+		else
+		{
+			YR_OBJECT_NAME = an_object->objectName().toUpper();
+		}
+	}
+
+	return YR_OBJECT_NAME;
+}
+
+
 bool YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(
 		YerothWindowsCommons &aCallingWindow,
 		YerothSqlTableModel &aSqlTableModel,
