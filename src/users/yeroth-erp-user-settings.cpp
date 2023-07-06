@@ -203,10 +203,10 @@ RESULT_PRINTING_PARAMETER YerothERPUserSettings::
 }
 
 
-bool YerothERPUserSettings::enregistrer_les_parametres_locaux(
-		const QString & user_local_personal_setting_full_file_path,
-		enum RESULT_PRINTING_PARAMETER a_result_printing_parameter /* = READ_PRINTING_PARAMETER_SUCCESSFUL */
-                                                             )
+bool YerothERPUserSettings::
+	enregistrer_les_parametres_locaux
+		(const QString & user_local_personal_setting_full_file_path,
+		 enum RESULT_PRINTING_PARAMETER a_result_printing_parameter /* = READ_PRINTING_PARAMETER_SUCCESSFUL */)
 {
     //      _logger->log("enregistrer_les_parametres_locaux");
     //      QDEBUG_STRING_OUTPUT_2("user_local_personal_setting_full_file_path", user_local_personal_setting_full_file_path);
@@ -364,10 +364,11 @@ bool YerothERPUserSettings::enregistrer_les_parametres_locaux(
 }
 
 
-bool YerothERPUserSettings::enregistrer_les_parametres_locaux__QTABLEWIDGET(
-		const QString 					&user_local_personal_setting_full_file_path,
-		YerothWindowsCommons 			*a_current_window_to_table_print_as_parameter,
-		enum RESULT_PRINTING_PARAMETER 	 a_result_printing_parameter /* = READ_PRINTING_PARAMETER_SUCCESSFUL */)
+bool YerothERPUserSettings::
+	enregistrer_les_parametres_locaux__QTABLEWIDGET
+		(const QString 					&user_local_personal_setting_full_file_path,
+		 YerothWindowsCommons 			*a_current_window_to_table_print_as_parameter,
+		 enum RESULT_PRINTING_PARAMETER a_result_printing_parameter /* = READ_PRINTING_PARAMETER_SUCCESSFUL */)
 {
     //      _logger->log("enregistrer_les_parametres_locaux");
     //      QDEBUG_STRING_OUTPUT_2("user_local_personal_setting_full_file_path", user_local_personal_setting_full_file_path);
