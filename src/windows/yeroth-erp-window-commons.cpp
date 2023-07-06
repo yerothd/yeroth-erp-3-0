@@ -557,47 +557,53 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS()
         {
             allWindows->_impressionDeDocumentDialog->_current_window_to_print = this;
 
+
             aUser->read_user_personal_PRINTING_PARAMETER_settings(this);
+
 
             QString yeroth_qt_THIS_object_name = YEROTH_QT_OBJECT_NAME(this);
 
+
             QString pageFrom_STRING =
-                            aUser->get_PRINTING_PARAMETER_VALUE_page_from
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PRINTING_PARAMETER_VALUE_page_from
+						(yeroth_qt_THIS_object_name);
 
             QString pageTo_STRING =
-                            aUser->get_PRINTING_PARAMETER_VALUE_page_to
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PRINTING_PARAMETER_VALUE_page_to
+						(yeroth_qt_THIS_object_name);
 
             QString pageTABLE_FONT_SIZE_STRING =
-                            aUser->get_PARAMETER_VALUE_table_font_size
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PARAMETER_VALUE_table_font_size
+						(yeroth_qt_THIS_object_name);
 
             QString pageTablePrintRowCount_STRING =
-                            aUser->get_PRINTING_PARAMETER_VALUE_print_table_row_count
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PRINTING_PARAMETER_VALUE_print_table_row_count
+						(yeroth_qt_THIS_object_name);
 
             QString pageTableRowCount_STRING =
-                            aUser->get_PRINTING_PARAMETER_VALUE_USERSQL_table_row_count
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PRINTING_PARAMETER_VALUE_USERSQL_table_row_count
+						(yeroth_qt_THIS_object_name);
 
             QString pageTableColumnOrder_STRING =
-                            aUser->get_PARAMETER_VALUE_table_column_order
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PARAMETER_VALUE_table_column_order
+						(yeroth_qt_THIS_object_name);
 
             QString pagePagePrinting_STRING =
-                            aUser->get_PRINTING_PARAMETER_VALUE_printing_position
-                            (yeroth_qt_THIS_object_name);
+            		aUser->get_PRINTING_PARAMETER_VALUE_printing_position
+						(yeroth_qt_THIS_object_name);
+
 
             if (!pageFrom_STRING.isEmpty())
             {
                 _page_from = pageFrom_STRING.toInt();
             }
 
+
             if (!pageTo_STRING.isEmpty())
             {
                 _page_to = pageTo_STRING.toInt();
             }
+
 
             if (!pageTABLE_FONT_SIZE_STRING.isEmpty())
             {
@@ -614,16 +620,18 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS()
             	}
             }
 
+
             if (!pageTableRowCount_STRING.isEmpty())
             {
                 _USERSQL_table_row_count = pageTableRowCount_STRING.toUInt();
 
                 if (0 != _QLINEEDIT_nombre_de_lignes_par_page)
                 {
-                    _QLINEEDIT_nombre_de_lignes_par_page->setText
-                    (pageTableRowCount_STRING);
+                    _QLINEEDIT_nombre_de_lignes_par_page
+						->setText(pageTableRowCount_STRING);
                 }
             }
+
 
             if (!pageTablePrintRowCount_STRING.isEmpty())
             {
@@ -631,16 +639,19 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS()
                                 pageTablePrintRowCount_STRING.toUInt();
             }
 
+
             if (!pageTableColumnOrder_STRING.isEmpty())
             {
                 APPLY_USER_LOCAL_SETTINGS_PARAMETERS_TABLE_COLUMN_ORDER_from_settings_parameters
-                (pageTableColumnOrder_STRING);
+					(pageTableColumnOrder_STRING);
             }
+
 
             if (!pagePagePrinting_STRING.isEmpty())
             {
                 _a4paper_printing_position = pagePagePrinting_STRING;
             }
+
 
             tableView_show_or_hide_columns(*_yerothTableView_FROM_WINDOWS_COMMONS);
         }
@@ -1716,8 +1727,7 @@ void YerothWindowsCommons::setYerothLineEditQCompleterSearchFilter(QString &aYer
 }
 
 
-void YerothWindowsCommons::tableView_show_or_hide_columns(YerothTableView &
-                                                          tableView_in_out)
+void YerothWindowsCommons::tableView_show_or_hide_columns(YerothTableView &tableView_in_out)
 {
     const QStringList &NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME =
                     get_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME();
@@ -1737,10 +1747,9 @@ void YerothWindowsCommons::tableView_show_or_hide_columns(YerothTableView &
 
         db_table_column_name.append(it.key());
 
-        if (!NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.contains
-                (db_table_column_name)
-                && tableView_in_out_RAW_HEADERS.contains(db_table_column_name)
-                && _visibleDBColumnNameStrList.contains(db_table_column_name))
+        if (!NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.contains(db_table_column_name) &&
+        	tableView_in_out_RAW_HEADERS.contains(db_table_column_name)				  &&
+			_visibleDBColumnNameStrList.contains(db_table_column_name))
         {
             tableView_in_out.showColumn(it.value());
         }
