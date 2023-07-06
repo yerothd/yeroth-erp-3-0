@@ -1324,29 +1324,26 @@ moc/moc_yeroth-erp-windows.cpp: src/yeroth-erp-windows.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -1451,14 +1448,13 @@ moc/moc_yeroth-erp-windows.cpp: src/yeroth-erp-windows.hpp \
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -1468,14 +1464,6 @@ moc/moc_yeroth-erp-windows.cpp: src/yeroth-erp-windows.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -2423,8 +2411,7 @@ moc/moc_yeroth-erp-dialog-commons.cpp: src/dialogs/yeroth-erp-dialog-commons.hpp
 
 moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp: src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -2435,31 +2422,14 @@ moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp: src/dialogs/yeroth-erp-ge
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/utils/yeroth-erp-spell-numbers.hpp \
-		src/utils/yeroth-erp-client-account-sale-info.hpp \
-		src/utils/yeroth-erp-database.hpp \
-		src/utils/yeroth-erp-config.hpp \
-		src/utils/yeroth-erp-database-table-column.hpp \
-		src/widgets/yeroth-erp-qmessage-box.hpp \
-		src/widgets/table-view/yeroth-erp-table-view.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
-		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp -o moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp
 
 moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp: src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/widgets/yeroth-erp-push-button-PASSWORD.hpp \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -2470,6 +2440,10 @@ moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp: src/dialogs/yeroth-erp-change
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -2480,13 +2454,9 @@ moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp: src/dialogs/yeroth-erp-change
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-push-button-PASSWORD.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -2972,7 +2942,7 @@ moc/moc_yeroth-erp-groupes-dun-client-window.cpp: src/windows/crm/yeroth-erp-gro
 
 moc/moc_yeroth-erp-clients-window.cpp: src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -2983,9 +2953,8 @@ moc/moc_yeroth-erp-clients-window.cpp: src/windows/crm/yeroth-erp-clients-window
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -2994,14 +2963,12 @@ moc/moc_yeroth-erp-clients-window.cpp: src/windows/crm/yeroth-erp-clients-window
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-clients-window.hpp -o moc/moc_yeroth-erp-clients-window.cpp
@@ -3081,28 +3048,25 @@ moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp: src/windows/cr
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -3212,7 +3176,6 @@ moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp: src/windows/cr
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -3222,14 +3185,6 @@ moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp: src/windows/cr
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -3504,28 +3459,25 @@ moc/moc_yeroth-erp-historique-du-stock-window.cpp: src/windows/stocks/yeroth-erp
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -3628,14 +3580,13 @@ moc/moc_yeroth-erp-historique-du-stock-window.cpp: src/windows/stocks/yeroth-erp
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -3645,14 +3596,6 @@ moc/moc_yeroth-erp-historique-du-stock-window.cpp: src/windows/stocks/yeroth-erp
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -3965,28 +3908,25 @@ moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp: src/windows/pos/yeroth-er
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -4089,14 +4029,13 @@ moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp: src/windows/pos/yeroth-er
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -4106,14 +4045,6 @@ moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp: src/windows/pos/yeroth-er
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -4640,29 +4571,26 @@ moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp: src/windows/yeroth-erp-r
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -4767,14 +4695,13 @@ moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp: src/windows/yeroth-erp-r
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -4784,14 +4711,6 @@ moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp: src/windows/yeroth-erp-r
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -4868,7 +4787,7 @@ moc/moc_yeroth-erp-main-window.cpp: src/windows/yeroth-erp-main-window.hpp \
 
 moc/moc_yeroth-erp-alertes-window.cpp: src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -4879,10 +4798,8 @@ moc/moc_yeroth-erp-alertes-window.cpp: src/windows/yeroth-erp-alertes-window.hpp
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -4891,25 +4808,19 @@ moc/moc_yeroth-erp-alertes-window.cpp: src/windows/yeroth-erp-alertes-window.hpp
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-alertes-window.hpp -o moc/moc_yeroth-erp-alertes-window.cpp
 
 moc/moc_yeroth-erp-tableaux-de-bord-window.cpp: src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -4920,6 +4831,9 @@ moc/moc_yeroth-erp-tableaux-de-bord-window.cpp: src/windows/yeroth-erp-tableaux-
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -4930,21 +4844,16 @@ moc/moc_yeroth-erp-tableaux-de-bord-window.cpp: src/windows/yeroth-erp-tableaux-
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-tableaux-de-bord-window.hpp -o moc/moc_yeroth-erp-tableaux-de-bord-window.cpp
 
 moc/moc_yeroth-erp-paiements-window.cpp: src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
+		src/utils/yeroth-erp-logger.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -4955,10 +4864,8 @@ moc/moc_yeroth-erp-paiements-window.cpp: src/windows/yeroth-erp-paiements-window
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -4967,24 +4874,19 @@ moc/moc_yeroth-erp-paiements-window.cpp: src/windows/yeroth-erp-paiements-window
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-paiements-window.hpp -o moc/moc_yeroth-erp-paiements-window.cpp
 
 moc/moc_yeroth-erp-ventes-window.cpp: src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
+		src/utils/yeroth-erp-logger.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -4995,10 +4897,8 @@ moc/moc_yeroth-erp-ventes-window.cpp: src/windows/yeroth-erp-ventes-window.hpp \
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -5007,16 +4907,12 @@ moc/moc_yeroth-erp-ventes-window.cpp: src/windows/yeroth-erp-ventes-window.hpp \
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-ventes-window.hpp -o moc/moc_yeroth-erp-ventes-window.cpp
@@ -5533,8 +5429,7 @@ moc/moc_yeroth-erp-admin-windows-commons.cpp: src/admin/yeroth-erp-admin-windows
 
 moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
-		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -5545,8 +5440,9 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp \
-		src/utils/yeroth-erp-article-vente-info.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -5559,46 +5455,39 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -5619,6 +5508,9 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		src/windows/stocks/yeroth-erp-sortir-window.hpp \
 		ui_yeroth-erp-sortir-window.h \
 		src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp \
+		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
+		src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp \
+		src/utils/yeroth-erp-article-vente-info.hpp \
 		src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
 		src/widgets/yeroth-erp-push-button-PASSWORD.hpp \
@@ -5700,9 +5592,9 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
@@ -5711,14 +5603,6 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -5730,34 +5614,6 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 
 moc/moc_yeroth-erp-admin-search-form.cpp: src/admin/yeroth-erp-admin-search-form.hpp \
 		ui_yeroth-erp-admin-search-form.h \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/utils/yeroth-erp-utils.hpp \
-		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
-		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
-		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
-		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
-		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
-		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
-		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
-		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
-		src/include/yeroth-erp-3-0-definition-month.hpp \
-		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/utils/yeroth-erp-spell-numbers.hpp \
-		src/utils/yeroth-erp-client-account-sale-info.hpp \
-		src/utils/yeroth-erp-database.hpp \
-		src/utils/yeroth-erp-config.hpp \
-		src/utils/yeroth-erp-database-table-column.hpp \
-		src/widgets/yeroth-erp-qmessage-box.hpp \
-		src/widgets/table-view/yeroth-erp-table-view.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
-		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -6004,8 +5860,7 @@ moc/moc_yeroth-erp-bank-account-table-view.cpp: src/admin/widgets/table-view/yer
 
 moc/moc_yeroth-erp-admin-create-window.cpp: src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -6016,6 +5871,10 @@ moc/moc_yeroth-erp-admin-create-window.cpp: src/admin/creer/yeroth-erp-admin-cre
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -6026,16 +5885,9 @@ moc/moc_yeroth-erp-admin-create-window.cpp: src/admin/creer/yeroth-erp-admin-cre
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-spinbox.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -6045,7 +5897,8 @@ moc/moc_yeroth-erp-admin-create-window.cpp: src/admin/creer/yeroth-erp-admin-cre
 
 moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -6056,12 +5909,6 @@ moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-li
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -6069,21 +5916,16 @@ moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-li
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/windows/yeroth-erp-window-commons.hpp \
 		src/utils/yeroth-erp-logger.hpp \
 		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -6094,8 +5936,7 @@ moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-li
 
 moc/moc_yeroth-erp-admin-detail-window.cpp: src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -6106,6 +5947,10 @@ moc/moc_yeroth-erp-admin-detail-window.cpp: src/admin/detail/yeroth-erp-admin-de
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -6116,16 +5961,9 @@ moc/moc_yeroth-erp-admin-detail-window.cpp: src/admin/detail/yeroth-erp-admin-de
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-spinbox.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -6136,8 +5974,7 @@ moc/moc_yeroth-erp-admin-detail-window.cpp: src/admin/detail/yeroth-erp-admin-de
 
 moc/moc_yeroth-erp-admin-modifier-window.cpp: src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -6148,6 +5985,10 @@ moc/moc_yeroth-erp-admin-modifier-window.cpp: src/admin/modifier/yeroth-erp-admi
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -6158,16 +5999,9 @@ moc/moc_yeroth-erp-admin-modifier-window.cpp: src/admin/modifier/yeroth-erp-admi
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-spinbox.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -12598,29 +12432,26 @@ obj/yeroth-erp-3-0.o: src/yeroth-erp-3-0.cpp src/dbus/YEROTH_RUNTIME_VERIFIER.hp
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -12725,28 +12556,19 @@ obj/yeroth-erp-3-0.o: src/yeroth-erp-3-0.cpp src/dbus/YEROTH_RUNTIME_VERIFIER.hp
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -12806,29 +12628,26 @@ obj/yeroth-erp-windows.o: src/yeroth-erp-windows.cpp src/yeroth-erp-windows.hpp 
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -12933,14 +12752,13 @@ obj/yeroth-erp-windows.o: src/yeroth-erp-windows.cpp src/yeroth-erp-windows.hpp 
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -12950,14 +12768,6 @@ obj/yeroth-erp-windows.o: src/yeroth-erp-windows.cpp src/yeroth-erp-windows.hpp 
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -13011,29 +12821,26 @@ obj/yeroth-erp-marchandise-import.o: src/imports/yeroth-erp-marchandise-import.c
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -13138,14 +12945,13 @@ obj/yeroth-erp-marchandise-import.o: src/imports/yeroth-erp-marchandise-import.c
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -13155,14 +12961,6 @@ obj/yeroth-erp-marchandise-import.o: src/imports/yeroth-erp-marchandise-import.c
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -13209,29 +13007,26 @@ obj/yeroth-erp-stock-import.o: src/imports/yeroth-erp-stock-import.cpp src/impor
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -13336,14 +13131,13 @@ obj/yeroth-erp-stock-import.o: src/imports/yeroth-erp-stock-import.cpp src/impor
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -13353,14 +13147,6 @@ obj/yeroth-erp-stock-import.o: src/imports/yeroth-erp-stock-import.cpp src/impor
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -13406,27 +13192,24 @@ obj/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.o: src
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -13531,14 +13314,13 @@ obj/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.o: src
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -13548,14 +13330,6 @@ obj/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.o: src
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -13691,28 +13465,25 @@ obj/yeroth-erp-table-view-with-pagination.o: src/widgets/table-view/yeroth-erp-t
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -13817,14 +13588,13 @@ obj/yeroth-erp-table-view-with-pagination.o: src/widgets/table-view/yeroth-erp-t
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -13834,14 +13604,6 @@ obj/yeroth-erp-table-view-with-pagination.o: src/widgets/table-view/yeroth-erp-t
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -13885,29 +13647,26 @@ obj/yeroth-erp-table-view.o: src/widgets/table-view/yeroth-erp-table-view.cpp sr
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -14012,14 +13771,13 @@ obj/yeroth-erp-table-view.o: src/widgets/table-view/yeroth-erp-table-view.cpp sr
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -14029,14 +13787,6 @@ obj/yeroth-erp-table-view.o: src/widgets/table-view/yeroth-erp-table-view.cpp sr
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -14086,27 +13836,24 @@ obj/yeroth-erp-comptes-doperations-comptabilite-table-view.o: src/widgets/table-
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -14211,14 +13958,13 @@ obj/yeroth-erp-comptes-doperations-comptabilite-table-view.o: src/widgets/table-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -14228,14 +13974,6 @@ obj/yeroth-erp-comptes-doperations-comptabilite-table-view.o: src/widgets/table-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -14284,26 +14022,24 @@ obj/yeroth-erp-paiements-table-view.o: src/widgets/table-view/yeroth-erp-paiemen
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -14408,14 +14144,13 @@ obj/yeroth-erp-paiements-table-view.o: src/widgets/table-view/yeroth-erp-paiemen
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -14425,14 +14160,6 @@ obj/yeroth-erp-paiements-table-view.o: src/widgets/table-view/yeroth-erp-paiemen
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -14480,28 +14207,25 @@ obj/yeroth-erp-stocks-table-view.o: src/widgets/table-view/yeroth-erp-stocks-tab
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -14605,14 +14329,13 @@ obj/yeroth-erp-stocks-table-view.o: src/widgets/table-view/yeroth-erp-stocks-tab
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -14622,14 +14345,6 @@ obj/yeroth-erp-stocks-table-view.o: src/widgets/table-view/yeroth-erp-stocks-tab
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -14678,26 +14393,24 @@ obj/yeroth-erp-ventes-table-view.o: src/widgets/table-view/yeroth-erp-ventes-tab
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -14802,14 +14515,13 @@ obj/yeroth-erp-ventes-table-view.o: src/widgets/table-view/yeroth-erp-ventes-tab
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -14819,14 +14531,6 @@ obj/yeroth-erp-ventes-table-view.o: src/widgets/table-view/yeroth-erp-ventes-tab
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -14875,26 +14579,23 @@ obj/yeroth-erp-mouvements_de_stocks-table-view.o: src/widgets/table-view/yeroth-
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -14999,14 +14700,13 @@ obj/yeroth-erp-mouvements_de_stocks-table-view.o: src/widgets/table-view/yeroth-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -15016,14 +14716,6 @@ obj/yeroth-erp-mouvements_de_stocks-table-view.o: src/widgets/table-view/yeroth-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -15071,28 +14763,25 @@ obj/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.o: src/widgets/table-view/yeroth-er
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -15196,14 +14885,13 @@ obj/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.o: src/widgets/table-view/yeroth-er
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -15213,14 +14901,6 @@ obj/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.o: src/widgets/table-view/yeroth-er
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -15267,28 +14947,25 @@ obj/yeroth-erp-fournisseurs-table-view.o: src/widgets/table-view/yeroth-erp-four
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -15392,14 +15069,13 @@ obj/yeroth-erp-fournisseurs-table-view.o: src/widgets/table-view/yeroth-erp-four
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -15409,14 +15085,6 @@ obj/yeroth-erp-fournisseurs-table-view.o: src/widgets/table-view/yeroth-erp-four
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -15463,28 +15131,25 @@ obj/yeroth-erp-groupes-de-clients-table-view.o: src/widgets/table-view/yeroth-er
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -15588,14 +15253,13 @@ obj/yeroth-erp-groupes-de-clients-table-view.o: src/widgets/table-view/yeroth-er
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -15605,14 +15269,6 @@ obj/yeroth-erp-groupes-de-clients-table-view.o: src/widgets/table-view/yeroth-er
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -15659,28 +15315,25 @@ obj/yeroth-erp-clients-table-view.o: src/widgets/table-view/yeroth-erp-clients-t
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -15791,7 +15444,6 @@ obj/yeroth-erp-clients-table-view.o: src/widgets/table-view/yeroth-erp-clients-t
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -15801,14 +15453,6 @@ obj/yeroth-erp-clients-table-view.o: src/widgets/table-view/yeroth-erp-clients-t
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -15856,26 +15500,24 @@ obj/yeroth-erp-alertes-table-view.o: src/widgets/table-view/yeroth-erp-alertes-t
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -15980,14 +15622,13 @@ obj/yeroth-erp-alertes-table-view.o: src/widgets/table-view/yeroth-erp-alertes-t
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -15997,14 +15638,6 @@ obj/yeroth-erp-alertes-table-view.o: src/widgets/table-view/yeroth-erp-alertes-t
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -16052,28 +15685,25 @@ obj/yeroth-erp-CHARGES-FINANCIERES-table-view.o: src/widgets/table-view/yeroth-e
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -16177,14 +15807,13 @@ obj/yeroth-erp-CHARGES-FINANCIERES-table-view.o: src/widgets/table-view/yeroth-e
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -16194,14 +15823,6 @@ obj/yeroth-erp-CHARGES-FINANCIERES-table-view.o: src/widgets/table-view/yeroth-e
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -16249,28 +15870,25 @@ obj/yeroth-erp-achats-table-view.o: src/widgets/table-view/yeroth-erp-achats-tab
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -16374,14 +15992,13 @@ obj/yeroth-erp-achats-table-view.o: src/widgets/table-view/yeroth-erp-achats-tab
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -16391,14 +16008,6 @@ obj/yeroth-erp-achats-table-view.o: src/widgets/table-view/yeroth-erp-achats-tab
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -16446,28 +16055,25 @@ obj/yeroth-erp-marchandises-table-view.o: src/widgets/table-view/yeroth-erp-marc
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -16571,14 +16177,13 @@ obj/yeroth-erp-marchandises-table-view.o: src/widgets/table-view/yeroth-erp-marc
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -16588,14 +16193,6 @@ obj/yeroth-erp-marchandises-table-view.o: src/widgets/table-view/yeroth-erp-marc
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -16645,28 +16242,25 @@ obj/yeroth-erp-programmes-de-fidelite-clients-table-view.o: src/widgets/table-vi
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -16770,14 +16364,13 @@ obj/yeroth-erp-programmes-de-fidelite-clients-table-view.o: src/widgets/table-vi
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -16787,14 +16380,6 @@ obj/yeroth-erp-programmes-de-fidelite-clients-table-view.o: src/widgets/table-vi
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -16997,29 +16582,26 @@ obj/yeroth-erp-qstandard-item-model.o: src/widgets/yeroth-erp-qstandard-item-mod
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -17124,14 +16706,13 @@ obj/yeroth-erp-qstandard-item-model.o: src/widgets/yeroth-erp-qstandard-item-mod
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -17141,14 +16722,6 @@ obj/yeroth-erp-qstandard-item-model.o: src/widgets/yeroth-erp-qstandard-item-mod
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -17245,28 +16818,25 @@ obj/yeroth-erp-datetime-edit.o: src/widgets/yeroth-erp-datetime-edit.cpp src/wid
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -17371,14 +16941,13 @@ obj/yeroth-erp-datetime-edit.o: src/widgets/yeroth-erp-datetime-edit.cpp src/wid
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -17388,14 +16957,6 @@ obj/yeroth-erp-datetime-edit.o: src/widgets/yeroth-erp-datetime-edit.cpp src/wid
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -17739,29 +17300,26 @@ obj/yeroth-erp-process.o: src/process/yeroth-erp-process.cpp src/process/yeroth-
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -17866,14 +17424,13 @@ obj/yeroth-erp-process.o: src/process/yeroth-erp-process.cpp src/process/yeroth-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -17883,14 +17440,6 @@ obj/yeroth-erp-process.o: src/process/yeroth-erp-process.cpp src/process/yeroth-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -17938,29 +17487,26 @@ obj/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.o: src/dialogs/yeroth-erp-IMPRESSIO
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -18062,14 +17608,13 @@ obj/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.o: src/dialogs/yeroth-erp-IMPRESSIO
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -18079,14 +17624,6 @@ obj/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.o: src/dialogs/yeroth-erp-IMPRESSIO
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -18131,29 +17668,26 @@ obj/yeroth-erp-dialog-commons.o: src/dialogs/yeroth-erp-dialog-commons.cpp src/d
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -18257,14 +17791,13 @@ obj/yeroth-erp-dialog-commons.o: src/dialogs/yeroth-erp-dialog-commons.cpp src/d
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -18274,14 +17807,6 @@ obj/yeroth-erp-dialog-commons.o: src/dialogs/yeroth-erp-dialog-commons.cpp src/d
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -18292,8 +17817,7 @@ obj/yeroth-erp-dialog-commons.o: src/dialogs/yeroth-erp-dialog-commons.cpp src/d
 
 obj/yeroth-erp-generic-select-db-field-dialog.o: src/dialogs/yeroth-erp-generic-select-db-field-dialog.cpp src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -18304,6 +17828,14 @@ obj/yeroth-erp-generic-select-db-field-dialog.o: src/dialogs/yeroth-erp-generic-
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/yeroth-erp-windows.hpp \
+		src/windows/yeroth-erp-main-window.hpp \
+		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -18314,43 +17846,33 @@ obj/yeroth-erp-generic-select-db-field-dialog.o: src/dialogs/yeroth-erp-generic-
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/dialogs/yeroth-erp-dialog-commons.hpp \
-		src/yeroth-erp-windows.hpp \
-		src/windows/yeroth-erp-main-window.hpp \
-		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -18453,14 +17975,13 @@ obj/yeroth-erp-generic-select-db-field-dialog.o: src/dialogs/yeroth-erp-generic-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -18470,14 +17991,6 @@ obj/yeroth-erp-generic-select-db-field-dialog.o: src/dialogs/yeroth-erp-generic-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -18521,29 +18034,26 @@ obj/yeroth-erp-changer-utilisateur-dialog.o: src/dialogs/yeroth-erp-changer-util
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -18648,14 +18158,13 @@ obj/yeroth-erp-changer-utilisateur-dialog.o: src/dialogs/yeroth-erp-changer-util
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -18665,14 +18174,6 @@ obj/yeroth-erp-changer-utilisateur-dialog.o: src/dialogs/yeroth-erp-changer-util
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -18725,29 +18226,26 @@ obj/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.o: src/dialogs/
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -18849,14 +18347,13 @@ obj/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.o: src/dialogs/
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -18866,14 +18363,6 @@ obj/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.o: src/dialogs/
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -18920,29 +18409,26 @@ obj/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.o: src/dialo
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -19044,14 +18530,13 @@ obj/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.o: src/dialo
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -19061,14 +18546,6 @@ obj/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.o: src/dialo
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -19112,29 +18589,26 @@ obj/yeroth-erp-pointdevente-methode-paiement-dialog.o: src/dialogs/yeroth-erp-po
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -19239,14 +18713,13 @@ obj/yeroth-erp-pointdevente-methode-paiement-dialog.o: src/dialogs/yeroth-erp-po
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -19256,14 +18729,6 @@ obj/yeroth-erp-pointdevente-methode-paiement-dialog.o: src/dialogs/yeroth-erp-po
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -19274,8 +18739,7 @@ obj/yeroth-erp-pointdevente-methode-paiement-dialog.o: src/dialogs/yeroth-erp-po
 
 obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -19286,6 +18750,9 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/includ
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -19296,40 +18763,35 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/includ
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -19434,14 +18896,13 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/includ
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -19451,14 +18912,6 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/includ
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -19470,8 +18923,7 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.o: src/windows/includ
 
 obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.o: src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -19482,6 +18934,9 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.o: src/windows/include/Y
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -19492,40 +18947,35 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.o: src/windows/include/Y
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -19630,14 +19080,13 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.o: src/windows/include/Y
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -19647,14 +19096,6 @@ obj/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.o: src/windows/include/Y
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -19705,23 +19146,20 @@ obj/yeroth-erp-comptabilite-window.o: src/windows/yeroth-erp-comptabilite-window
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -19826,14 +19264,13 @@ obj/yeroth-erp-comptabilite-window.o: src/windows/yeroth-erp-comptabilite-window
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -19843,14 +19280,6 @@ obj/yeroth-erp-comptabilite-window.o: src/windows/yeroth-erp-comptabilite-window
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -19907,28 +19336,25 @@ obj/yeroth-erp-creer-groupe-de-clients-window.o: src/windows/crm/creer/yeroth-er
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -20026,14 +19452,13 @@ obj/yeroth-erp-creer-groupe-de-clients-window.o: src/windows/crm/creer/yeroth-er
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -20043,14 +19468,6 @@ obj/yeroth-erp-creer-groupe-de-clients-window.o: src/windows/crm/creer/yeroth-er
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -20099,28 +19516,25 @@ obj/yeroth-erp-creer-un-programme-de-fidelite-clients-window.o: src/windows/crm/
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -20222,14 +19636,13 @@ obj/yeroth-erp-creer-un-programme-de-fidelite-clients-window.o: src/windows/crm/
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -20239,14 +19652,6 @@ obj/yeroth-erp-creer-un-programme-de-fidelite-clients-window.o: src/windows/crm/
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -20294,28 +19699,25 @@ obj/yeroth-erp-creer-compte-client-window.o: src/windows/crm/creer/yeroth-erp-cr
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -20418,14 +19820,13 @@ obj/yeroth-erp-creer-compte-client-window.o: src/windows/crm/creer/yeroth-erp-cr
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -20435,14 +19836,6 @@ obj/yeroth-erp-creer-compte-client-window.o: src/windows/crm/creer/yeroth-erp-cr
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -20495,28 +19888,25 @@ obj/yeroth-erp-details-dun-groupe-de-clients-window.o: src/windows/crm/details/y
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -20614,14 +20004,13 @@ obj/yeroth-erp-details-dun-groupe-de-clients-window.o: src/windows/crm/details/y
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -20631,14 +20020,6 @@ obj/yeroth-erp-details-dun-groupe-de-clients-window.o: src/windows/crm/details/y
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -20686,28 +20067,25 @@ obj/yeroth-erp-clients-detail-window.o: src/windows/crm/details/yeroth-erp-clien
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -20810,14 +20188,13 @@ obj/yeroth-erp-clients-detail-window.o: src/windows/crm/details/yeroth-erp-clien
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -20827,14 +20204,6 @@ obj/yeroth-erp-clients-detail-window.o: src/windows/crm/details/yeroth-erp-clien
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -20887,28 +20256,25 @@ obj/yeroth-erp-details-dun-programme-de-fidelite-clients-window.o: src/windows/c
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -21006,14 +20372,13 @@ obj/yeroth-erp-details-dun-programme-de-fidelite-clients-window.o: src/windows/c
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -21023,14 +20388,6 @@ obj/yeroth-erp-details-dun-programme-de-fidelite-clients-window.o: src/windows/c
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -21078,28 +20435,25 @@ obj/yeroth-erp-modifier-compte-client-window.o: src/windows/crm/modifier/yeroth-
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -21202,14 +20556,13 @@ obj/yeroth-erp-modifier-compte-client-window.o: src/windows/crm/modifier/yeroth-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -21219,14 +20572,6 @@ obj/yeroth-erp-modifier-compte-client-window.o: src/windows/crm/modifier/yeroth-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -21275,27 +20620,24 @@ obj/yeroth-erp-programmes-de-fidelite-clients-window.o: src/windows/crm/yeroth-e
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -21397,14 +20739,13 @@ obj/yeroth-erp-programmes-de-fidelite-clients-window.o: src/windows/crm/yeroth-e
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -21414,14 +20755,6 @@ obj/yeroth-erp-programmes-de-fidelite-clients-window.o: src/windows/crm/yeroth-e
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -21474,27 +20807,24 @@ obj/yeroth-erp-groupes-de-clients-window.o: src/windows/crm/yeroth-erp-groupes-d
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -21596,14 +20926,13 @@ obj/yeroth-erp-groupes-de-clients-window.o: src/windows/crm/yeroth-erp-groupes-d
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -21613,14 +20942,6 @@ obj/yeroth-erp-groupes-de-clients-window.o: src/windows/crm/yeroth-erp-groupes-d
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -21674,29 +20995,26 @@ obj/yeroth-erp-groupes-dun-client-window.o: src/windows/crm/yeroth-erp-groupes-d
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -21795,14 +21113,13 @@ obj/yeroth-erp-groupes-dun-client-window.o: src/windows/crm/yeroth-erp-groupes-d
 		ui_yeroth-erp-groupes-de-clients-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -21812,14 +21129,6 @@ obj/yeroth-erp-groupes-dun-client-window.o: src/windows/crm/yeroth-erp-groupes-d
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -21831,7 +21140,7 @@ obj/yeroth-erp-groupes-dun-client-window.o: src/windows/crm/yeroth-erp-groupes-d
 
 obj/yeroth-erp-clients-window.o: src/windows/crm/yeroth-erp-clients-window.cpp src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -21842,9 +21151,8 @@ obj/yeroth-erp-clients-window.o: src/windows/crm/yeroth-erp-clients-window.cpp s
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -21853,43 +21161,40 @@ obj/yeroth-erp-clients-window.o: src/windows/crm/yeroth-erp-clients-window.cpp s
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -21994,11 +21299,11 @@ obj/yeroth-erp-clients-window.o: src/windows/crm/yeroth-erp-clients-window.cpp s
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -22008,14 +21313,6 @@ obj/yeroth-erp-clients-window.o: src/windows/crm/yeroth-erp-clients-window.cpp s
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -22065,27 +21362,24 @@ obj/yeroth-erp-payer-compte-client-window.o: src/windows/crm/yeroth-erp-payer-co
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -22190,12 +21484,11 @@ obj/yeroth-erp-payer-compte-client-window.o: src/windows/crm/yeroth-erp-payer-co
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -22205,14 +21498,6 @@ obj/yeroth-erp-payer-compte-client-window.o: src/windows/crm/yeroth-erp-payer-co
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -22263,28 +21548,25 @@ obj/yeroth-erp-tableau-des-transactions-du-client-window.o: src/windows/crm/yero
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -22393,7 +21675,6 @@ obj/yeroth-erp-tableau-des-transactions-du-client-window.o: src/windows/crm/yero
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -22403,14 +21684,6 @@ obj/yeroth-erp-tableau-des-transactions-du-client-window.o: src/windows/crm/yero
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -22463,24 +21736,21 @@ obj/yeroth-erp-entrer-window.o: src/windows/yeroth-erp-entrer-window.cpp src/win
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
 		src/widgets/table-view/yeroth-erp-stocks-table-view.hpp \
@@ -22583,14 +21853,13 @@ obj/yeroth-erp-entrer-window.o: src/windows/yeroth-erp-entrer-window.cpp src/win
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -22600,14 +21869,6 @@ obj/yeroth-erp-entrer-window.o: src/windows/yeroth-erp-entrer-window.cpp src/win
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -22660,22 +21921,19 @@ obj/yeroth-erp-mouvements_de_stocks-window.o: src/windows/stocks/yeroth-erp-mouv
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -22780,14 +22038,13 @@ obj/yeroth-erp-mouvements_de_stocks-window.o: src/windows/stocks/yeroth-erp-mouv
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -22797,14 +22054,6 @@ obj/yeroth-erp-mouvements_de_stocks-window.o: src/windows/stocks/yeroth-erp-mouv
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -22855,24 +22104,21 @@ obj/yeroth-erp-modifier-window.o: src/windows/stocks/yeroth-erp-modifier-window.
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
 		src/widgets/yeroth-erp-radio-button.hpp \
@@ -22977,14 +22223,13 @@ obj/yeroth-erp-modifier-window.o: src/windows/stocks/yeroth-erp-modifier-window.
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -22994,14 +22239,6 @@ obj/yeroth-erp-modifier-window.o: src/windows/stocks/yeroth-erp-modifier-window.
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -23051,25 +22288,22 @@ obj/yeroth-erp-marchandises-window.o: src/windows/stocks/yeroth-erp-marchandises
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
 		src/widgets/yeroth-erp-radio-button.hpp \
@@ -23173,14 +22407,13 @@ obj/yeroth-erp-marchandises-window.o: src/windows/stocks/yeroth-erp-marchandises
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -23190,14 +22423,6 @@ obj/yeroth-erp-marchandises-window.o: src/windows/stocks/yeroth-erp-marchandises
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -23247,28 +22472,25 @@ obj/yeroth-erp-sortir-liststocks-window.o: src/windows/stocks/yeroth-erp-sortir-
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -23370,14 +22592,13 @@ obj/yeroth-erp-sortir-liststocks-window.o: src/windows/stocks/yeroth-erp-sortir-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -23387,14 +22608,6 @@ obj/yeroth-erp-sortir-liststocks-window.o: src/windows/stocks/yeroth-erp-sortir-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -23445,28 +22658,25 @@ obj/yeroth-erp-sortir-window.o: src/windows/stocks/yeroth-erp-sortir-window.cpp 
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -23565,14 +22775,13 @@ obj/yeroth-erp-sortir-window.o: src/windows/stocks/yeroth-erp-sortir-window.cpp 
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -23582,14 +22791,6 @@ obj/yeroth-erp-sortir-window.o: src/windows/stocks/yeroth-erp-sortir-window.cpp 
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -23639,28 +22840,25 @@ obj/yeroth-erp-historique-du-stock-window.o: src/windows/stocks/yeroth-erp-histo
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-marchandises-window.hpp \
@@ -23762,14 +22960,13 @@ obj/yeroth-erp-historique-du-stock-window.o: src/windows/stocks/yeroth-erp-histo
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -23779,14 +22976,6 @@ obj/yeroth-erp-historique-du-stock-window.o: src/windows/stocks/yeroth-erp-histo
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -23833,29 +23022,26 @@ obj/yeroth-erp-stock-detail-window.o: src/windows/stocks/yeroth-erp-stock-detail
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -23960,14 +23146,13 @@ obj/yeroth-erp-stock-detail-window.o: src/windows/stocks/yeroth-erp-stock-detail
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -23977,14 +23162,6 @@ obj/yeroth-erp-stock-detail-window.o: src/windows/stocks/yeroth-erp-stock-detail
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -24033,27 +23210,24 @@ obj/yeroth-erp-stocks-window.o: src/windows/stocks/yeroth-erp-stocks-window.cpp 
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -24155,14 +23329,13 @@ obj/yeroth-erp-stocks-window.o: src/windows/stocks/yeroth-erp-stocks-window.cpp 
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -24172,14 +23345,6 @@ obj/yeroth-erp-stocks-window.o: src/windows/stocks/yeroth-erp-stocks-window.cpp 
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -24232,27 +23397,24 @@ obj/yeroth-erp-charges-financieres-window.o: src/windows/yeroth-erp-charges-fina
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -24354,14 +23516,13 @@ obj/yeroth-erp-charges-financieres-window.o: src/windows/yeroth-erp-charges-fina
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -24371,14 +23532,6 @@ obj/yeroth-erp-charges-financieres-window.o: src/windows/yeroth-erp-charges-fina
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -24427,28 +23580,25 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -24551,14 +23701,13 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -24568,14 +23717,6 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -24622,28 +23763,25 @@ obj/yeroth-erp-achats-detail-window.o: src/windows/purchase/yeroth-erp-achats-de
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -24746,14 +23884,13 @@ obj/yeroth-erp-achats-detail-window.o: src/windows/purchase/yeroth-erp-achats-de
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -24763,14 +23900,6 @@ obj/yeroth-erp-achats-detail-window.o: src/windows/purchase/yeroth-erp-achats-de
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -24820,27 +23949,24 @@ obj/yeroth-erp-achats-window.o: src/windows/purchase/yeroth-erp-achats-window.cp
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -24941,14 +24067,13 @@ obj/yeroth-erp-achats-window.o: src/windows/purchase/yeroth-erp-achats-window.cp
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -24958,14 +24083,6 @@ obj/yeroth-erp-achats-window.o: src/windows/purchase/yeroth-erp-achats-window.cp
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -25028,9 +24145,6 @@ obj/yeroth-erp-pointdevente-window.o: src/windows/pos/yeroth-erp-pointdevente-wi
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
@@ -25038,13 +24152,13 @@ obj/yeroth-erp-pointdevente-window.o: src/windows/pos/yeroth-erp-pointdevente-wi
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
 		src/widgets/yeroth-erp-radio-button.hpp \
@@ -25139,14 +24253,13 @@ obj/yeroth-erp-pointdevente-window.o: src/windows/pos/yeroth-erp-pointdevente-wi
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -25156,14 +24269,6 @@ obj/yeroth-erp-pointdevente-window.o: src/windows/pos/yeroth-erp-pointdevente-wi
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -25214,28 +24319,25 @@ obj/yeroth-erp-pointdevente-liststocks-window.o: src/windows/pos/yeroth-erp-poin
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -25337,14 +24439,13 @@ obj/yeroth-erp-pointdevente-liststocks-window.o: src/windows/pos/yeroth-erp-poin
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -25354,14 +24455,6 @@ obj/yeroth-erp-pointdevente-liststocks-window.o: src/windows/pos/yeroth-erp-poin
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -25407,29 +24500,26 @@ obj/yeroth-erp-tableau-des-transactions-du-fournisseur-window.o: src/windows/sup
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -25532,14 +24622,13 @@ obj/yeroth-erp-tableau-des-transactions-du-fournisseur-window.o: src/windows/sup
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -25549,14 +24638,6 @@ obj/yeroth-erp-tableau-des-transactions-du-fournisseur-window.o: src/windows/sup
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -25605,28 +24686,25 @@ obj/yeroth-erp-modifier-fournisseur-window.o: src/windows/supplier/yeroth-erp-mo
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -25729,14 +24807,13 @@ obj/yeroth-erp-modifier-fournisseur-window.o: src/windows/supplier/yeroth-erp-mo
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -25746,14 +24823,6 @@ obj/yeroth-erp-modifier-fournisseur-window.o: src/windows/supplier/yeroth-erp-mo
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -25805,28 +24874,25 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yero
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -25924,14 +24990,13 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yero
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -25941,14 +25006,6 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yero
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -26001,28 +25058,25 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.o: src/windows/supplier/ye
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -26120,14 +25174,13 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.o: src/windows/supplier/ye
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -26137,14 +25190,6 @@ obj/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.o: src/windows/supplier/ye
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -26195,29 +25240,26 @@ obj/yeroth-erp-GROUPES-dun-employe-hr-window.o: src/windows/supplier/yeroth-erp-
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -26316,14 +25358,13 @@ obj/yeroth-erp-GROUPES-dun-employe-hr-window.o: src/windows/supplier/yeroth-erp-
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -26333,14 +25374,6 @@ obj/yeroth-erp-GROUPES-dun-employe-hr-window.o: src/windows/supplier/yeroth-erp-
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -26389,28 +25422,25 @@ obj/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -26512,14 +25542,13 @@ obj/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -26529,14 +25558,6 @@ obj/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -26589,28 +25610,25 @@ obj/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-e
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -26708,14 +25726,13 @@ obj/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-e
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -26725,14 +25742,6 @@ obj/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-e
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -26782,27 +25791,24 @@ obj/yeroth-erp-GROUPES-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-erp-GR
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -26904,14 +25910,13 @@ obj/yeroth-erp-GROUPES-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-erp-GR
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -26921,14 +25926,6 @@ obj/yeroth-erp-GROUPES-DEMPLOYES-hr-window.o: src/windows/supplier/yeroth-erp-GR
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -26981,27 +25978,24 @@ obj/yeroth-erp-GROUPES-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp-GROU
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -27103,14 +26097,13 @@ obj/yeroth-erp-GROUPES-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp-GROU
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -27120,14 +26113,6 @@ obj/yeroth-erp-GROUPES-DE-PAIE-hr-window.o: src/windows/supplier/yeroth-erp-GROU
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -27180,28 +26165,25 @@ obj/yeroth-erp-fournisseurs-window.o: src/windows/supplier/yeroth-erp-fournisseu
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -27302,14 +26284,13 @@ obj/yeroth-erp-fournisseurs-window.o: src/windows/supplier/yeroth-erp-fournisseu
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -27319,14 +26300,6 @@ obj/yeroth-erp-fournisseurs-window.o: src/windows/supplier/yeroth-erp-fournisseu
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -27375,28 +26348,25 @@ obj/yeroth-erp-creer-fournisseur-window.o: src/windows/supplier/yeroth-erp-creer
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -27499,14 +26469,13 @@ obj/yeroth-erp-creer-fournisseur-window.o: src/windows/supplier/yeroth-erp-creer
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -27516,14 +26485,6 @@ obj/yeroth-erp-creer-fournisseur-window.o: src/windows/supplier/yeroth-erp-creer
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -27571,28 +26532,25 @@ obj/yeroth-erp-fournisseur-details-window.o: src/windows/supplier/yeroth-erp-fou
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -27695,14 +26653,13 @@ obj/yeroth-erp-fournisseur-details-window.o: src/windows/supplier/yeroth-erp-fou
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -27712,14 +26669,6 @@ obj/yeroth-erp-fournisseur-details-window.o: src/windows/supplier/yeroth-erp-fou
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -27764,29 +26713,26 @@ obj/yeroth-erp-recherche-conditionnelle-window.o: src/windows/yeroth-erp-recherc
 		ui_yeroth-erp-main-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -27891,14 +26837,13 @@ obj/yeroth-erp-recherche-conditionnelle-window.o: src/windows/yeroth-erp-recherc
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -27908,14 +26853,6 @@ obj/yeroth-erp-recherche-conditionnelle-window.o: src/windows/yeroth-erp-recherc
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -27969,26 +26906,23 @@ obj/yeroth-erp-window-commons.o: src/windows/yeroth-erp-window-commons.cpp src/w
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
 		src/widgets/yeroth-erp-radio-button.hpp \
@@ -28093,28 +27027,19 @@ obj/yeroth-erp-window-commons.o: src/windows/yeroth-erp-window-commons.cpp src/w
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -28158,29 +27083,26 @@ obj/yeroth-erp-main-window.o: src/windows/yeroth-erp-main-window.cpp src/windows
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -28285,14 +27207,13 @@ obj/yeroth-erp-main-window.o: src/windows/yeroth-erp-main-window.cpp src/windows
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -28302,14 +27223,6 @@ obj/yeroth-erp-main-window.o: src/windows/yeroth-erp-main-window.cpp src/windows
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -28324,7 +27237,7 @@ obj/yeroth-erp-main-window.o: src/windows/yeroth-erp-main-window.cpp src/windows
 
 obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -28335,10 +27248,8 @@ obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/w
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -28347,39 +27258,38 @@ obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/w
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -28484,14 +27394,13 @@ obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/w
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -28501,14 +27410,6 @@ obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/w
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -28521,8 +27422,7 @@ obj/yeroth-erp-alertes-window.o: src/windows/yeroth-erp-alertes-window.cpp src/w
 
 obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bord-window.cpp src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -28533,6 +27433,9 @@ obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bor
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -28543,40 +27446,35 @@ obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bor
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -28681,14 +27579,13 @@ obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bor
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -28698,14 +27595,6 @@ obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bor
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -28721,7 +27610,7 @@ obj/yeroth-erp-tableaux-de-bord-window.o: src/windows/yeroth-erp-tableaux-de-bor
 
 obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
+		src/utils/yeroth-erp-logger.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -28732,10 +27621,8 @@ obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp s
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -28744,40 +27631,39 @@ obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp s
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/process/yeroth-erp-process.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -28882,14 +27768,13 @@ obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp s
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -28899,14 +27784,6 @@ obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp s
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -28917,7 +27794,7 @@ obj/yeroth-erp-paiements-window.o: src/windows/yeroth-erp-paiements-window.cpp s
 
 obj/yeroth-erp-ventes-window.o: src/windows/yeroth-erp-ventes-window.cpp src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
+		src/utils/yeroth-erp-logger.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -28928,10 +27805,8 @@ obj/yeroth-erp-ventes-window.o: src/windows/yeroth-erp-ventes-window.cpp src/win
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -28940,40 +27815,39 @@ obj/yeroth-erp-ventes-window.o: src/windows/yeroth-erp-ventes-window.cpp src/win
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/process/yeroth-erp-process.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -29078,14 +27952,13 @@ obj/yeroth-erp-ventes-window.o: src/windows/yeroth-erp-ventes-window.cpp src/win
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -29095,14 +27968,6 @@ obj/yeroth-erp-ventes-window.o: src/windows/yeroth-erp-ventes-window.cpp src/win
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -29182,29 +28047,26 @@ obj/yeroth-erp-test-yeroth-erp-table-view.o: src/tests/yeroth-erp-test-yeroth-er
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -29309,14 +28171,13 @@ obj/yeroth-erp-test-yeroth-erp-table-view.o: src/tests/yeroth-erp-test-yeroth-er
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -29326,14 +28187,6 @@ obj/yeroth-erp-test-yeroth-erp-table-view.o: src/tests/yeroth-erp-test-yeroth-er
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -29378,29 +28231,26 @@ obj/yeroth-erp-test-yeroth-erp-windows.o: src/tests/yeroth-erp-test-yeroth-erp-w
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -29505,14 +28355,13 @@ obj/yeroth-erp-test-yeroth-erp-windows.o: src/tests/yeroth-erp-test-yeroth-erp-w
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -29522,14 +28371,6 @@ obj/yeroth-erp-test-yeroth-erp-windows.o: src/tests/yeroth-erp-test-yeroth-erp-w
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -29577,29 +28418,26 @@ obj/yeroth-erp-test-import-csv-file-data.o: src/tests/utils/yeroth-erp-test-impo
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -29704,14 +28542,13 @@ obj/yeroth-erp-test-import-csv-file-data.o: src/tests/utils/yeroth-erp-test-impo
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -29721,14 +28558,6 @@ obj/yeroth-erp-test-import-csv-file-data.o: src/tests/utils/yeroth-erp-test-impo
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -29802,29 +28631,26 @@ obj/yeroth-erp-user-settings.o: src/users/yeroth-erp-user-settings.cpp src/users
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -29929,14 +28755,13 @@ obj/yeroth-erp-user-settings.o: src/users/yeroth-erp-user-settings.cpp src/users
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/admin/admin-actions-subjects.hpp \
@@ -29944,14 +28769,6 @@ obj/yeroth-erp-user-settings.o: src/users/yeroth-erp-user-settings.cpp src/users
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -29998,29 +28815,26 @@ obj/yeroth-erp-users.o: src/users/yeroth-erp-users.cpp src/users/yeroth-erp-user
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -30125,28 +28939,19 @@ obj/yeroth-erp-users.o: src/users/yeroth-erp-users.cpp src/users/yeroth-erp-user
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -30525,29 +29330,26 @@ obj/yeroth-erp-sqltable-model.o: src/utils/yeroth-erp-sqltable-model.cpp src/uti
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -30652,14 +29454,13 @@ obj/yeroth-erp-sqltable-model.o: src/utils/yeroth-erp-sqltable-model.cpp src/uti
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -30669,14 +29470,6 @@ obj/yeroth-erp-sqltable-model.o: src/utils/yeroth-erp-sqltable-model.cpp src/uti
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -30764,29 +29557,26 @@ obj/yeroth-erp-payment-processing-information.o: src/utils/yeroth-erp-payment-pr
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -30891,14 +29681,13 @@ obj/yeroth-erp-payment-processing-information.o: src/utils/yeroth-erp-payment-pr
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -30908,14 +29697,6 @@ obj/yeroth-erp-payment-processing-information.o: src/utils/yeroth-erp-payment-pr
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -30995,29 +29776,26 @@ obj/yeroth-erp-utils.o: src/utils/yeroth-erp-utils.cpp src/utils/yeroth-erp-util
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -31118,27 +29896,18 @@ obj/yeroth-erp-utils.o: src/utils/yeroth-erp-utils.cpp src/utils/yeroth-erp-util
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -31207,29 +29976,26 @@ obj/yeroth-erp-logger.o: src/utils/yeroth-erp-logger.cpp src/utils/yeroth-erp-lo
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -31334,14 +30100,13 @@ obj/yeroth-erp-logger.o: src/utils/yeroth-erp-logger.cpp src/utils/yeroth-erp-lo
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -31351,14 +30116,6 @@ obj/yeroth-erp-logger.o: src/utils/yeroth-erp-logger.cpp src/utils/yeroth-erp-lo
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -31403,29 +30160,26 @@ obj/yeroth-erp-historique-stock.o: src/utils/yeroth-erp-historique-stock.cpp src
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -31530,14 +30284,13 @@ obj/yeroth-erp-historique-stock.o: src/utils/yeroth-erp-historique-stock.cpp src
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -31547,14 +30300,6 @@ obj/yeroth-erp-historique-stock.o: src/utils/yeroth-erp-historique-stock.cpp src
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -31599,29 +30344,26 @@ obj/yeroth-erp-info-entreprise.o: src/utils/yeroth-erp-info-entreprise.cpp src/u
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -31726,14 +30468,13 @@ obj/yeroth-erp-info-entreprise.o: src/utils/yeroth-erp-info-entreprise.cpp src/u
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -31743,14 +30484,6 @@ obj/yeroth-erp-info-entreprise.o: src/utils/yeroth-erp-info-entreprise.cpp src/u
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -31875,29 +30608,26 @@ obj/yeroth-erp-print_yeroth_latex_util_pdf.o: src/utils/print_latex_pdf/yeroth-e
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -32002,14 +30732,13 @@ obj/yeroth-erp-print_yeroth_latex_util_pdf.o: src/utils/print_latex_pdf/yeroth-e
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -32018,14 +30747,6 @@ obj/yeroth-erp-print_yeroth_latex_util_pdf.o: src/utils/print_latex_pdf/yeroth-e
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -32072,29 +30793,26 @@ obj/yeroth-erp-admin-windows-commons.o: src/admin/yeroth-erp-admin-windows-commo
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -32199,27 +30917,18 @@ obj/yeroth-erp-admin-windows-commons.o: src/admin/yeroth-erp-admin-windows-commo
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -32232,8 +30941,7 @@ obj/yeroth-erp-admin-windows-commons.o: src/admin/yeroth-erp-admin-windows-commo
 
 obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
-		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -32244,8 +30952,9 @@ obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/y
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp \
-		src/utils/yeroth-erp-article-vente-info.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
@@ -32258,46 +30967,39 @@ obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/y
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -32318,6 +31020,9 @@ obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/y
 		src/windows/stocks/yeroth-erp-sortir-window.hpp \
 		ui_yeroth-erp-sortir-window.h \
 		src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp \
+		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
+		src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp \
+		src/utils/yeroth-erp-article-vente-info.hpp \
 		src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
 		src/widgets/yeroth-erp-push-button-PASSWORD.hpp \
@@ -32399,23 +31104,15 @@ obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/y
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
@@ -32434,8 +31131,11 @@ obj/yeroth-erp-admin-window.o: src/admin/yeroth-erp-admin-window.cpp src/admin/y
 
 obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp src/admin/yeroth-erp-admin-search-form.hpp \
 		ui_yeroth-erp-admin-search-form.h \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/admin-actions-subjects.hpp \
+		src/yeroth-erp-windows.hpp \
+		src/windows/yeroth-erp-main-window.hpp \
+		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -32446,6 +31146,10 @@ obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp s
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -32457,42 +31161,32 @@ obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp s
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/admin/admin-actions-subjects.hpp \
-		src/yeroth-erp-windows.hpp \
-		src/windows/yeroth-erp-main-window.hpp \
-		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -32597,14 +31291,13 @@ obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp s
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -32613,14 +31306,6 @@ obj/yeroth-erp-admin-search-form.o: src/admin/yeroth-erp-admin-search-form.cpp s
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -32667,27 +31352,24 @@ obj/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o: src/admin/widgets/table-view/yero
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -32792,14 +31474,13 @@ obj/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o: src/admin/widgets/table-view/yero
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -32809,13 +31490,6 @@ obj/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.o: src/admin/widgets/table-view/yero
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -32980,27 +31654,24 @@ obj/yeroth-erp-user-table-view.o: src/admin/widgets/table-view/yeroth-erp-user-t
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -33105,14 +31776,13 @@ obj/yeroth-erp-user-table-view.o: src/admin/widgets/table-view/yeroth-erp-user-t
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -33122,12 +31792,6 @@ obj/yeroth-erp-user-table-view.o: src/admin/widgets/table-view/yeroth-erp-user-t
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -33176,27 +31840,24 @@ obj/yeroth-erp-category-table-view.o: src/admin/widgets/table-view/yeroth-erp-ca
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -33301,14 +31962,13 @@ obj/yeroth-erp-category-table-view.o: src/admin/widgets/table-view/yeroth-erp-ca
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -33318,12 +31978,6 @@ obj/yeroth-erp-category-table-view.o: src/admin/widgets/table-view/yeroth-erp-ca
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -33364,8 +32018,7 @@ obj/yeroth-erp-bank-account-table-view.o: src/admin/widgets/table-view/yeroth-er
 
 obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-window.cpp src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -33376,6 +32029,10 @@ obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-wi
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -33386,48 +32043,42 @@ obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-wi
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-spinbox.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
+		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
 		src/widgets/table-view/yeroth-erp-stocks-table-view.hpp \
@@ -33530,25 +32181,16 @@ obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-wi
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/admin-actions-subjects.hpp \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
@@ -33567,7 +32209,8 @@ obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-wi
 
 obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-window.cpp src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -33578,12 +32221,6 @@ obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-w
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -33591,21 +32228,16 @@ obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-w
 		src/utils/yeroth-erp-database-table-column.hpp \
 		src/widgets/yeroth-erp-qmessage-box.hpp \
 		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/windows/yeroth-erp-window-commons.hpp \
 		src/utils/yeroth-erp-logger.hpp \
 		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -33613,31 +32245,30 @@ obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-w
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
@@ -33742,14 +32373,13 @@ obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-w
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
@@ -33766,8 +32396,7 @@ obj/yeroth-erp-admin-lister-window.o: src/admin/lister/yeroth-erp-admin-lister-w
 
 obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-window.cpp src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -33778,6 +32407,10 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -33788,16 +32421,9 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-spinbox.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -33805,32 +32431,33 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
+		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
 		src/widgets/table-view/yeroth-erp-stocks-table-view.hpp \
@@ -33933,26 +32560,17 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
 		src/utils/yeroth-erp-info-entreprise.hpp \
@@ -33961,8 +32579,7 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 
 obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modifier-window.cpp src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
-		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
+		src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -33973,6 +32590,10 @@ obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modi
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/windows/yeroth-erp-window-commons.hpp \
+		src/utils/yeroth-erp-logger.hpp \
+		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -33983,16 +32604,9 @@ obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modi
 		src/widgets/yeroth-erp-qstandard-item-model.hpp \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-line-edit.hpp \
-		src/widgets/yeroth-erp-push-button.hpp \
-		src/windows/yeroth-erp-window-commons.hpp \
-		src/utils/yeroth-erp-logger.hpp \
-		src/widgets/yeroth-erp-progress-bar.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-spinbox.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
-		src/admin/yeroth-erp-admin-windows-commons.hpp \
+		src/widgets/yeroth-erp-line-edit.hpp \
 		src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
@@ -34000,32 +32614,33 @@ obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modi
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
+		src/widgets/yeroth-erp-push-button.hpp \
 		src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
 		src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
-		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
-		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
-		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
-		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
-		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
+		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
-		src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
-		src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
 		src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
+		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
+		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
 		src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
+		src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-radio-button.hpp \
+		src/widgets/yeroth-erp-spinbox.hpp \
 		src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
 		src/widgets/table-view/yeroth-erp-stocks-table-view.hpp \
@@ -34128,26 +32743,17 @@ obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modi
 		ui_yeroth-erp-groupes-dun-client-window.h \
 		src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
-		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
+		src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
 		src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
-		src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
 		src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
-		src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
-		src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
-		src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
 		src/utils/yeroth-erp-info-entreprise.hpp \

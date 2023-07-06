@@ -382,9 +382,6 @@ void YerothAdminListerWindow::rendreVisible(unsigned selectedSujetAction)
     tabWidget_lister->setCurrentIndex(selectedSujetAction);
 
     setVisible(true);
-
-
-    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -773,10 +770,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::USERS);
 
-    	RESET_VIEW_utilisateur();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_users();
         break;
+
 
     case SUJET_ACTION_LOCALISATION:
     	tableView_lister_localisation->_currentViewWindow = this;
@@ -785,10 +781,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::LOCALISATIONS);
 
-    	RESET_VIEW_localisation();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_localisations();
         break;
+
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
     	tableView_lister_departements_produits->_currentViewWindow = this;
@@ -797,10 +792,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::DEPARTEMENTS_PRODUITS);
 
-    	RESET_VIEW_departements_de_produits();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_departements_produits();
         break;
+
 
     case SUJET_ACTION_CATEGORIE:
     	tableView_lister_categorie->_currentViewWindow = this;
@@ -809,10 +803,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
 
-    	RESET_VIEW_categorie();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_categories();
         break;
+
 
     case SUJET_ACTION_ligne_budgetaire:
     	tableView_lister_LIGNE_BUDGETAIRE->_currentViewWindow = this;
@@ -821,10 +814,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::LIGNES_BUDGETAIRES);
 
-    	RESET_VIEW_LIGNE_BUDGETAIRE();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_lignes_budgetaires();
         break;
+
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
     	tableView_lister_compte_bancaire->_currentViewWindow = this;
@@ -833,10 +825,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::COMPTES_BANCAIRES);
 
-    	RESET_VIEW_compte_bancaire();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_comptes_bancaires();
         break;
+
 
     case SUJET_ACTION_ALERTE:
     	tableView_lister_alerte->_currentViewWindow = this;
@@ -845,10 +836,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::ALERTES);
 
-    	RESET_VIEW_alerte();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_alertes();
         break;
+
 
     case SUJET_ACTION_REMISE:
     	tableView_lister_remise->_currentViewWindow = this;
@@ -857,10 +847,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::REMISES);
 
-    	RESET_VIEW_remise();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_remises();
         break;
+
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
     	tableView_lister_charges_financieres->_currentViewWindow = this;
@@ -869,10 +858,9 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
 
-    	RESET_VIEW_CHARGES_FINANCIERES();
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_charges_financieres();
         break;
+
 
     default:
         break;
@@ -917,6 +905,8 @@ void YerothAdminListerWindow::
     set_admin_rechercher_font();
 
     tableView_lister_charges_financieres->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -956,6 +946,8 @@ void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *aSqlTableM
     set_admin_rechercher_font();
 
     tableView_lister_utilisateur->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -995,11 +987,12 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
     set_admin_rechercher_font();
 
     tableView_lister_localisation->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
-void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableModel
-                                                              * aSqlTableModel)
+void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableModel *aSqlTableModel)
 {
 	SETUP_PRINT();
 
@@ -1073,6 +1066,8 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
     set_admin_rechercher_font();
 
     tableView_lister_departements_produits->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -1118,6 +1113,8 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
     set_admin_rechercher_font();
 
     tableView_lister_categorie->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -1163,6 +1160,8 @@ void YerothAdminListerWindow::lister_LIGNE_BUDGETAIRE(YerothSqlTableModel *aSqlT
 	set_admin_rechercher_font();
 
 	tableView_lister_LIGNE_BUDGETAIRE->selectRow(_lastItemSelectedForModification);
+
+	APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -1202,6 +1201,8 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
     set_admin_rechercher_font();
 
     tableView_lister_compte_bancaire->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -1240,6 +1241,8 @@ void YerothAdminListerWindow::lister_alerte(YerothSqlTableModel *aSqlTableModel)
     set_admin_rechercher_font();
 
     tableView_lister_alerte->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 
@@ -1279,6 +1282,8 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
     set_admin_rechercher_font();
 
     tableView_lister_remise->selectRow(_lastItemSelectedForModification);
+
+    APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 }
 
 

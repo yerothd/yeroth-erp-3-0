@@ -363,42 +363,41 @@ void YerothWindowsCommons::YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED_AUTOMATIC_CONS
 }
 
 
-void
-YerothWindowsCommons::
-
-APPLY_USER_LOCAL_SETTINGS_PARAMETERS_TABLE_COLUMN_ORDER_from_settings_parameters
-(const QString &pageTableColumnOrder_STRING)
+void YerothWindowsCommons::
+	APPLY_USER_LOCAL_SETTINGS_PARAMETERS_TABLE_COLUMN_ORDER_from_settings_parameters
+		(const QString &pageTableColumnOrder_STRING)
 {
     _CURRENTLY_APPLYING_USER_FILE_SETTING_TABLE_COLUMN_ORDER = true;
 
+
     set_PARAMETER_TABLE_COLUMN_ORDER(pageTableColumnOrder_STRING);
 
-    QStringList
-    print_table_column_order = pageTableColumnOrder_STRING.split(";");
+
+    QStringList print_table_column_order = pageTableColumnOrder_STRING.split(";");
+
 
     if (print_table_column_order.size() > 0)
     {
-        YerothTableView *
-        a_yeroth_table_view = GET_YEROTH_TABLE_VIEW();
+        YerothTableView * a_yeroth_table_view = GET_YEROTH_TABLE_VIEW();
 
         if (0 != a_yeroth_table_view)
         {
-            QHeaderView *
-            header_view = a_yeroth_table_view->horizontalHeader();
+            QHeaderView *header_view = a_yeroth_table_view->horizontalHeader();
 
             if (0 != header_view)
             {
                 _visibleDBColumnNameStrList.clear();
 
-                int
-                a_logical_index = 0;
+
+                int a_logical_index = 0;
 
                 QStringList a_tmp_list;
 
-                int
-                saved_VISUAL_INDEX;
+
+                int saved_VISUAL_INDEX;
 
                 QString headerColumnData;
+
 
                 for (uint k = 0; k < print_table_column_order.size(); ++k)
                 {
@@ -527,6 +526,12 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS_QTABLEWIDGET(Yer
                                 pageTablePrintRowCount_STRING.toUInt();
             }
 
+
+            //I REINITIALIZE qtableview colum ordering
+            //since this is a new table view
+            _visibleDBColumnNameStrList.clear();
+
+
             if (!pageTableColumnOrder_STRING.isEmpty())
             {
                 APPLY_USER_LOCAL_SETTINGS_PARAMETERS_TABLE_COLUMN_ORDER_from_settings_parameters(pageTableColumnOrder_STRING);
@@ -638,6 +643,11 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS()
                 _print_table_row_count =
                                 pageTablePrintRowCount_STRING.toUInt();
             }
+
+
+            //I REINITIALIZE qtableview colum ordering
+            //since this is a new table view
+            _visibleDBColumnNameStrList.clear();
 
 
             if (!pageTableColumnOrder_STRING.isEmpty())
