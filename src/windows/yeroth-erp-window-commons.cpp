@@ -527,9 +527,17 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS_QTABLEWIDGET(Yer
             }
 
 
-            //I REINITIALIZE qtableview colum ordering
-            //since this is a new table view
-            _visibleDBColumnNameStrList.clear();
+
+            YerothAdminListerWindow *yr_admin_lister_window =
+            		dynamic_cast<YerothAdminListerWindow *>(this);
+
+            if (0 != yr_admin_lister_window)
+            {
+            	//I REINITIALIZE qtableview colum ordering
+            	//since this is a new table view
+            	_visibleDBColumnNameStrList.clear();
+            }
+
 
 
             if (!pageTableColumnOrder_STRING.isEmpty())
@@ -645,9 +653,15 @@ void YerothWindowsCommons::APPLY_USER_LOCAL_SETTINGS_PARAMETERS()
             }
 
 
-            //I REINITIALIZE qtableview colum ordering
-            //since this is a new table view
-            _visibleDBColumnNameStrList.clear();
+            YerothAdminListerWindow *yr_admin_lister_window =
+            		dynamic_cast<YerothAdminListerWindow *>(this);
+
+            if (0 != yr_admin_lister_window)
+            {
+            	//I REINITIALIZE qtableview colum ordering
+            	//since this is a new table view
+            	_visibleDBColumnNameStrList.clear();
+            }
 
 
             if (!pageTableColumnOrder_STRING.isEmpty())
