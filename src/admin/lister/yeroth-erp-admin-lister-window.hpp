@@ -41,6 +41,11 @@ public:
 
     ~YerothAdminListerWindow();
 
+    inline virtual QTabWidget *get_tabwidget_lister()
+    {
+    	return tabWidget_lister;
+    }
+
     inline virtual QToolBar *getQMainWindowToolBar()
     {
         return toolBar_adminListerWindow;
@@ -61,25 +66,32 @@ public:
 
     void rendreVisible(unsigned selectedSujetAction);
 
+
     inline void setCurSearchSqlTableModel(YerothSqlTableModel *aSqlTableModel)
     {
         _curSearchSqlTableModel = aSqlTableModel;
     }
+
 
     inline YerothSqlTableModel *getCurSearchSqlTableModel()
     {
         return _curSearchSqlTableModel;
     }
 
+
 public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_lister_categorie)
 
+
     void handleCurrentChanged(int index);
+
 
     void creer();
 
+
     void modifier();
+
 
 	int LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(YerothTableViewWITHpagination  &a_table_view_to_list_show,
 							  	  	  	  	 YerothSqlTableModel 			&aSqlTableModel);
@@ -127,7 +139,9 @@ public slots:
 
     void lister_remise(YerothSqlTableModel *aSqlTableModel = 0);
 
+
     void afficher_au_detail();
+
 
     void afficher_detail_CHARGE_FINANCIERE();
 
@@ -147,7 +161,9 @@ public slots:
 
     void afficher_detail_alerte();
 
+
     void supprimer();
+
 
     void supprimer_utilisateur();
 
@@ -165,25 +181,33 @@ public slots:
 
     void supprimer_alerte();
 
+
     virtual QString get_latex_template_print_pdf_content();
+
 
     inline void annuler()
     {
         YerothPOSAdminWindowsCommons::menu();
     }
 
+
     void rechercher();
+
 
     void reinitialiser();
 
+
     void set_admin_rechercher_font();
+
 
     inline int lastSelectedItemForModification()
     {
         return _lastItemSelectedForModification;
     }
 
+
     void handleItemModification(const QModelIndex &index);
+
 
     inline bool isAlertCurrentlyFiltered() const
     {
