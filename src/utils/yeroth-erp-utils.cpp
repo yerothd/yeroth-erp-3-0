@@ -2937,7 +2937,7 @@ QString YerothUtils::GET_YEROTH_QT_OBJECT_NAME(QObject *an_object)
 			QString a_current_tab_index_STRING = QString::number(YR_tabWidget_lister->currentIndex());
 
 
-			YR_OBJECT_NAME = QString("%1__%2")
+			YR_OBJECT_NAME = QString("%1_%2")
 							  .arg(admin_lister_window->objectName().trimmed(),
 								   a_current_tab_index_STRING);
 
