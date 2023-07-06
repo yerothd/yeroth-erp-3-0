@@ -36,20 +36,29 @@ class YerothPOSUserGestionaireDesStocks;
 class YerothPOSUserMagasinier;
 class YerothPOSUserCaissier;
 
-class YerothPOSUser:public QObject
+class YerothPOSUser : public QObject
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothPOSUser(YerothERPWindows *allWindows);
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+
+	YerothPOSUser(YerothERPWindows *allWindows);
+
 
     virtual ~YerothPOSUser();
+
 
     enum YerothUtils::USER_ROLE role()
     {
         return _role;
     }
 
+
     QString toString();
+
 
     inline void setRole(enum YerothUtils::USER_ROLE aRole)
     {
@@ -88,7 +97,7 @@ Q_OBJECT public:
     inline QString nom_complet_truncated_FOR_SMALL_RECEIPT_Tex()
     {
         return YerothUtils::LATEX_IN_OUT_handleForeignAccents
-               (nom_complet_truncated_FOR_SMALL_RECEIPT());
+        			(nom_complet_truncated_FOR_SMALL_RECEIPT());
     }
 
     inline QString localisation()
@@ -223,58 +232,47 @@ Q_OBJECT public:
 
     void PRINT_PARAMETERS_TO_STRING();
 
-    inline QString GET_WINDOWS_PAGE_FROM_KEY_TO_STORE(const QString &
-                                                      a_window_object_name)
+    inline QString GET_WINDOWS_PAGE_FROM_KEY_TO_STORE(const QString &a_window_object_name)
     {
-        return (0 !=
-                _user_personal_settings) ?
-               _user_personal_settings->GET_WINDOWS_PAGE_FROM_KEY_TO_STORE
-               (a_window_object_name) : YerothUtils::EMPTY_STRING;
+        return (0 != _user_personal_settings) ?
+        			_user_personal_settings
+						->GET_WINDOWS_PAGE_FROM_KEY_TO_STORE(a_window_object_name) :
+					YerothUtils::EMPTY_STRING;
     }
 
-    inline QString GET_WINDOWS_PAGE_TO_KEY_TO_STORE(const QString &
-                                                    a_window_object_name)
+    inline QString GET_WINDOWS_PAGE_TO_KEY_TO_STORE(const QString &a_window_object_name)
     {
-        return (0 !=
-                _user_personal_settings) ?
-               _user_personal_settings->GET_WINDOWS_PAGE_TO_KEY_TO_STORE
-               (a_window_object_name) : YerothUtils::EMPTY_STRING;
+        return (0 != _user_personal_settings) ?
+               _user_personal_settings
+			   	   ->GET_WINDOWS_PAGE_TO_KEY_TO_STORE(a_window_object_name) :
+				   YerothUtils::EMPTY_STRING;
     }
 
-    inline QString GET_WINDOWS_A4_PRINTING_POSITION_KEY_TO_STORE(const QString
-                                                                 &
-                                                                 a_window_object_name)
+    inline QString GET_WINDOWS_A4_PRINTING_POSITION_KEY_TO_STORE(const QString &a_window_object_name)
     {
-        return (0 !=
-                _user_personal_settings) ?
-               _user_personal_settings->GET_WINDOWS_A4_PRINTING_POSITION_KEY_TO_STORE
-               (a_window_object_name) : YerothUtils::EMPTY_STRING;
+        return (0 != _user_personal_settings) ?
+               _user_personal_settings
+			   	   ->GET_WINDOWS_A4_PRINTING_POSITION_KEY_TO_STORE(a_window_object_name) :
+				   YerothUtils::EMPTY_STRING;
     }
 
-    inline QString GET_WINDOWS_USERSQL_TABLE_ROW_COUNT_KEY_TO_STORE(const
-                                                                    QString &
-                                                                    a_window_object_name)
+    inline QString GET_WINDOWS_USERSQL_TABLE_ROW_COUNT_KEY_TO_STORE(const QString &a_window_object_name)
     {
-        return (0 !=
-                _user_personal_settings) ?
-               _user_personal_settings->
-               GET_WINDOWS_USERSQL_TABLE_ROW_COUNT_KEY_TO_STORE(a_window_object_name)
-               : YerothUtils::EMPTY_STRING;
+        return (0 != _user_personal_settings) ?
+               _user_personal_settings
+			   	   ->GET_WINDOWS_USERSQL_TABLE_ROW_COUNT_KEY_TO_STORE(a_window_object_name) :
+				   YerothUtils::EMPTY_STRING;
     }
 
-    inline QString GET_WINDOWS_PRINT_TABLE_font_size_KEY_TO_STORE(const QString
-                                                                  &
-                                                                  a_window_object_name)
+    inline QString GET_WINDOWS_PRINT_TABLE_font_size_KEY_TO_STORE(const QString &a_window_object_name)
     {
-        return (0 !=
-                _user_personal_settings) ?
-               _user_personal_settings->GET_WINDOWS_PRINT_TABLE_font_size_KEY_TO_STORE
-               (a_window_object_name) : YerothUtils::EMPTY_STRING;
+        return (0 != _user_personal_settings) ?
+               _user_personal_settings
+			   	   ->GET_WINDOWS_PRINT_TABLE_font_size_KEY_TO_STORE(a_window_object_name) :
+			   YerothUtils::EMPTY_STRING;
     }
 
-    inline QString GET_WINDOWS_PRINT_TABLE_ROW_COUNT_KEY_TO_STORE(const QString
-                                                                  &
-                                                                  a_window_object_name)
+    inline QString GET_WINDOWS_PRINT_TABLE_ROW_COUNT_KEY_TO_STORE(const QString &a_window_object_name)
     {
         return (0 !=
                 _user_personal_settings) ?
@@ -282,8 +280,7 @@ Q_OBJECT public:
                (a_window_object_name) : YerothUtils::EMPTY_STRING;
     }
 
-    inline QString GET_WINDOWS_TABLE_COLUMN_ORDER_KEY_TO_STORE(const QString &
-                                                               a_window_object_name)
+    inline QString GET_WINDOWS_TABLE_COLUMN_ORDER_KEY_TO_STORE(const QString &a_window_object_name)
     {
         return (0 !=
                 _user_personal_settings) ?
@@ -299,17 +296,16 @@ Q_OBJECT public:
                YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PRINTING_PARAMETER_VALUE_page_from(const QString &
-                                                          a_window_object_name)
+    inline QString get_PRINTING_PARAMETER_VALUE_page_from(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
-               _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
-               (GET_WINDOWS_PAGE_FROM_KEY_TO_STORE(a_window_object_name)) :
+               _user_personal_settings
+			   	   ->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
+				   	   (GET_WINDOWS_PAGE_FROM_KEY_TO_STORE(a_window_object_name)) :
                YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PRINTING_PARAMETER_VALUE_page_to(const QString &
-                                                        a_window_object_name)
+    inline QString get_PRINTING_PARAMETER_VALUE_page_to(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
                _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
@@ -317,49 +313,43 @@ Q_OBJECT public:
                YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PRINTING_PARAMETER_VALUE_printing_position(const QString
-                                                                  &
-                                                                  a_window_object_name)
+    inline QString get_PRINTING_PARAMETER_VALUE_printing_position(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
-               _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
-               (GET_WINDOWS_A4_PRINTING_POSITION_KEY_TO_STORE(a_window_object_name)) :
+               _user_personal_settings
+			   	   ->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
+				   	   (GET_WINDOWS_A4_PRINTING_POSITION_KEY_TO_STORE(a_window_object_name)) :
                YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PRINTING_PARAMETER_VALUE_USERSQL_table_row_count(const
-                                                                        QString
-                                                                        &
-                                                                        a_window_object_name)
+    inline QString get_PRINTING_PARAMETER_VALUE_USERSQL_table_row_count(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
-               _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
-               (GET_WINDOWS_USERSQL_TABLE_ROW_COUNT_KEY_TO_STORE
-                (a_window_object_name)) : YerothUtils::EMPTY_STRING;
+               _user_personal_settings
+			   	   ->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
+				   	   (GET_WINDOWS_USERSQL_TABLE_ROW_COUNT_KEY_TO_STORE(a_window_object_name)) :
+				YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PARAMETER_VALUE_table_font_size(const
-                                                       QString &
-                                                       a_window_object_name)
+    inline QString get_PARAMETER_VALUE_table_font_size(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
-               _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
-               (GET_WINDOWS_PRINT_TABLE_font_size_KEY_TO_STORE(a_window_object_name))
-               : YerothUtils::EMPTY_STRING;
+               _user_personal_settings
+			   	   ->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
+				   	   (GET_WINDOWS_PRINT_TABLE_font_size_KEY_TO_STORE(a_window_object_name)) :
+                YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PRINTING_PARAMETER_VALUE_print_table_row_count(const
-                                                                      QString &
-                                                                      a_window_object_name)
+    inline QString get_PRINTING_PARAMETER_VALUE_print_table_row_count(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
-               _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
-               (GET_WINDOWS_PRINT_TABLE_ROW_COUNT_KEY_TO_STORE(a_window_object_name))
-               : YerothUtils::EMPTY_STRING;
+               _user_personal_settings
+			   	   ->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
+				   	   (GET_WINDOWS_PRINT_TABLE_ROW_COUNT_KEY_TO_STORE(a_window_object_name)) :
+				YerothUtils::EMPTY_STRING;
     }
 
-    inline QString get_PARAMETER_VALUE_table_column_order(const QString &
-                                                          a_window_object_name)
+    inline QString get_PARAMETER_VALUE_table_column_order(const QString &a_window_object_name)
     {
         return (0 != _user_personal_settings) ?
                _user_personal_settings->GET_PRINTING_PARAMETER_VALUE_FROM_KEY
@@ -367,18 +357,24 @@ Q_OBJECT public:
                YerothUtils::EMPTY_STRING;
     }
 
+
     void cleanup_user_personal_PRINTING_PARAMETER_settings();
 
-    void read_user_personal_PRINTING_PARAMETER_settings(
-    		YerothWindowsCommons *a_current_window_to_table_print_as_parameter = 0);
 
-    void read_user_personal_PRINTING_PARAMETER_settings_QTABLEWIDGET(
-    		YerothWindowsCommons *a_current_window_to_table_print_as_parameter = 0);
+    void read_user_personal_PRINTING_PARAMETER_settings
+			(YerothWindowsCommons *a_current_window_to_table_print_as_parameter = 0);
 
-    void save_user_personal_PRINTING_PARAMETER_settings(
-    		YerothWindowsCommons *a_current_window_to_table_print_as_parameter = 0);
+
+    void read_user_personal_PRINTING_PARAMETER_settings_QTABLEWIDGET
+			(YerothWindowsCommons *a_current_window_to_table_print_as_parameter = 0);
+
+
+    void save_user_personal_PRINTING_PARAMETER_settings
+			(YerothWindowsCommons *a_current_window_to_table_print_as_parameter = 0);
+
 
     void create_user_personal_settings_file();
+
 
 protected:
 
@@ -402,6 +398,7 @@ protected:
     QSemaphore *_write_read_user_setting_file_YEROTH_SEMAPHORE;
 
     YerothERPUserSettings *_user_personal_settings;
+
 
 private:
 
