@@ -55,8 +55,8 @@
     </message>
     <message>
         <location filename="src/admin/yeroth-erp-admin-window.cpp" line="133"/>
-        <source>administration ~ acceuil</source>
-        <oldsource>administration ~ main</oldsource>
+        <source>administration ~ accueil</source>
+        <oldsource>administration ~ acceuil</oldsource>
         <translation>administration ~ main</translation>
     </message>
     <message>
@@ -65,60 +65,60 @@
         <translation>server parameters [ &quot;%1&quot; ]</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="816"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="820"/>
         <source>L&apos;entreprise n&apos;a pas un logo enregistré !</source>
         <translation>The company doesn&apos;t have a saved logo image file !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="825"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="829"/>
         <source>Poursuivre avec la suppression du logo de l&apos;entreprise ?</source>
         <translation>Continue with deletion of a company logo file ?</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="830"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="834"/>
         <source>suppression d&apos;1 logo de l&apos;entreprise</source>
         <translation>deletion of a company logo file</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="850"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="854"/>
         <source>1 logo de l&apos;entreprise a été supprimée !</source>
         <translation>a company logo file has been deleted !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="854"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="858"/>
         <source>suppression d&apos;1 logo de l&apos;entreprise - succès</source>
         <translation>deletion of a company logo file - success</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="861"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="865"/>
         <source>1 logo de l&apos;entreprise n&apos;a pas pu être supprimé !</source>
         <translation>a company logo file couldn&apos;t be deleted !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="865"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="869"/>
         <source>suppression d&apos;1 logo de l&apos;entreprise - échec</source>
         <translation>deletion of a company logo file - failure</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="902"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="936"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1029"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1045"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="906"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="940"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1033"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1049"/>
         <source>EXÉCUTER COMMANDE MAINTENANCE</source>
         <translation>RUN MAINTENANCE BINARY EXECUTABLE</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="904"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="908"/>
         <source>Sélectionner 1 commande à exécuter !</source>
         <translation>Select 1 command to execute !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="938"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="942"/>
         <source>Commande à exécuter INVALIDE !</source>
         <translation>INVALID program to run !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1031"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1035"/>
         <source>Commande non exécutable: &quot;%1&quot; (%2) !
 
 Répertoire d&apos;exécution: &quot;%3&quot;.</source>
@@ -132,7 +132,7 @@ Répertoire d&apos;exécution: &quot;%4&quot;.</oldsource>
 Program executing directory: &quot;%3&quot;.</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1047"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1051"/>
         <source>La commande &quot;%1&quot; a été exécuter avec succès !
 
 Répertoire d&apos;exécution: &quot;%2&quot;.</source>
@@ -146,115 +146,115 @@ Répertoire d&apos;exécution: &quot;%3&quot;.</oldsource>
 Program executing directory: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1378"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1382"/>
         <source>&apos;%1&apos; entrée(s) du fichier CSV ont été importée(s) avec succès !</source>
         <translation>&apos;%1&apos; CSV file input(s) have been successfully imported into the database !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1385"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1397"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1389"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1401"/>
         <source>résultat importation fichier CSV</source>
         <translation>CSV file importation result</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1392"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="1396"/>
         <source>AUCUNE DONNÉE DU FICHIER (.csv) n&apos;a été importée !</source>
         <translation>NO DATA FROM CSV FILE (.csv) has been imported !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2199"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2269"/>
         <source>Choisir le chemin qui mène au fichier au format (.csv)</source>
         <translation>Select CSV import file path</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2202"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2271"/>
         <source>.csv (*.csv)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2220"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2288"/>
         <source>Choisir le chemin qui mène au répertoire de base de &apos;MariaDB-client&apos;</source>
         <oldsource>Choisir le chemin qui mène au rpertoire de base de &apos;MariaDB-client&apos;</oldsource>
         <translation>Select full path to &apos;MariaDB-client&apos; base folder</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2234"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2304"/>
         <source>Choisir le chemin qui mène au lecteur de fichiers PDF</source>
         <translation>Select file path to PDF reader program</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2249"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2319"/>
         <source>Chemin jusqu&apos;au fichier système représentant l&apos;imprimante thermique</source>
         <translation>Full path to thermal printer device driver file</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2264"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2335"/>
         <source>Choisir le chemin jusqu&apos;au répertoire du système de documentation Latex</source>
         <translation>Select full path to Latex system root folder</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2280"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2350"/>
         <source>Choisir le chemin qui mène au répertoire des sauvegardes</source>
         <translation>Select SQL backup folder</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2296"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2365"/>
         <source>Choisir le chemin qui mène au répertoire des fichiers temporaires</source>
         <translation>Select temporary file folder</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2504"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2580"/>
         <source>Réinitialiser les données de l&apos;entreprise avec les paramètres par défaut ?</source>
         <translation>Reinitialize company data with default values?</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2509"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2865"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2886"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2585"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2941"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2962"/>
         <source>réinitialiser</source>
         <translation>reset</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2861"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2937"/>
         <source>Réinitialiser la configuration du &apos;SYSTEM DAEMON&apos; avec les paramètres par défaut ?</source>
         <oldsource>Réinitialiser la configuration du système d&apos;alertes avec les paramètres par défaut ?</oldsource>
         <translation>Reinitialize &apos;YEROTH-ERP-3.0 SYSTEM DAEMON&apos; configuration data with default values?</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2882"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2958"/>
         <source>Réinitialiser la configuration (générale) avec les paramètres par défaut ?</source>
         <translation>Reinitialize general configuration data with default values?</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2904"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2980"/>
         <source>Enregistrer les données de l&apos;entreprise (modifiées) ?</source>
         <translation>Save modified company data?</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2908"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3049"/>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3294"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="2984"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3125"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3370"/>
         <source>enregistrer</source>
         <translation>save</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3011"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3087"/>
         <source>Les données commerciales de l&apos;entreprise ont été enregistrées avec succès !</source>
         <translation>Enterprise commercial data have been saved successfully !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3021"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3097"/>
         <source>Échec de l&apos;enregistrement des données commerciales de l&apos;entreprise !</source>
         <translation>Error saving enterprise commercial data !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3047"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3123"/>
         <source>Enregistrer la configuration (SYSTEM DAEMON) modifiée ?</source>
         <oldsource>Enregistrer la configuration (système d&apos;alertes) modifiée ?</oldsource>
         <translation>Save the modified configuration of &apos;YEROTH-ERP-3.0 SYSTEM DAEMON&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3291"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3367"/>
         <source>Enregistrer la configuration (générale) modifiée ?</source>
         <oldsource>Enregistrer la configuration (générale) modifiée de Yeroth ?</oldsource>
         <translation>Save the modified general configuration ?</translation>
@@ -668,7 +668,7 @@ Press m &apos;Cancel&apos; to exit %2</translation>
         <location filename="src/admin/yeroth-erp-admin-windows-commons.cpp" line="142"/>
         <location filename="src/utils/yeroth-erp-database-table-column.cpp" line="550"/>
         <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="394"/>
-        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1087"/>
+        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1107"/>
         <source>Catégorie</source>
         <translation>Category</translation>
     </message>
@@ -1707,7 +1707,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <translation>%1 (user ID)</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="818"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="822"/>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="509"/>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="602"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp" line="496"/>
@@ -2307,55 +2307,55 @@ Continue updating asset or stock ?</translation>
         <translation>administration ~ detail</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="33"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="112"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="39"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="118"/>
         <source>administration ~ lister</source>
         <oldsource>administration ~ lister</oldsource>
         <translation>administration ~ list</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1714"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1723"/>
         <source>Supprimer l&apos;utilisateur &apos;%1&apos; ?&apos;</source>
         <translation>Continue with deletion of user &apos;%1&apos;?</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1728"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1737"/>
         <source>L&apos;utilisateur &apos;%1&apos; a été supprimée de la base de données !</source>
         <translation>User &apos;%1&apos; has been deleted from database!</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1739"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1748"/>
         <source>L&apos;utilisateur &apos;%1 %2&apos; n&apos;a pas été supprimée de la base de données !</source>
         <translation>User &apos;%1 %2&apos; hasn&apos;t been deleted from database!</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1778"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1787"/>
         <source>Supprimer la localisation &apos;%1&apos; ?</source>
         <translation>Continue with deletion of location &apos;%1&apos;?</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1718"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1731"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1742"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1782"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1798"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1808"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1850"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1874"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1908"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1932"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1982"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2007"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2043"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2101"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2119"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2129"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2179"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2215"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2279"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2338"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2354"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2365"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1727"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1740"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1751"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1791"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1807"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1817"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1859"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1883"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1917"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1941"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1991"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2016"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2052"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2110"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2128"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2138"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2188"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2224"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2288"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2347"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2363"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2374"/>
         <location filename="src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp" line="763"/>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="550"/>
         <location filename="src/windows/stocks/yeroth-erp-stocks-window.cpp" line="1828"/>
@@ -2366,65 +2366,65 @@ Continue updating asset or stock ?</translation>
         <translation>remove</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="50"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="56"/>
         <source>ADMINISTRATION_LISTER_PDF</source>
         <oldsource>ADMINISTRATION_LISTER</oldsource>
         <translation>ADMINISTRATION_LISTING_PDF</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="878"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="884"/>
         <source>administration ~ lister ~ CHARGES FINANCIÈRES</source>
         <translation>administration ~ list ~ FINANCIAL EXPENSES</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="919"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="925"/>
         <source>administration ~ lister ~ utilisateurs</source>
         <translation>administration ~ list ~ users</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="961"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="967"/>
         <source>administration ~ lister ~ localisations</source>
         <translation>administration ~ list ~ sites</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1001"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1007"/>
         <source>administration ~ lister ~ départements</source>
         <translation>administration ~ list ~ departments</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1080"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1086"/>
         <source>administration ~ lister ~ catégories</source>
         <translation>administration ~ list ~ categories</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1127"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1133"/>
         <source>administration ~ lister ~ LIGNES BUDÉGTAIRES</source>
         <translation>administration ~ list ~ BUDGET LINES</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1174"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1180"/>
         <source>administration ~ lister ~ comptes bancaires</source>
         <translation>administration ~ list ~ bank accounts</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1215"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1221"/>
         <source>administration ~ lister ~ alertes</source>
         <translation>administration ~ list ~ alerts</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1255"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1261"/>
         <source>administration ~ lister ~ remises</source>
         <translation>administration ~ list ~ discounts</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1790"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1799"/>
         <source>La localisation &apos;%1</source>
         <translation>Site &apos;%1</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1796"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2117"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2351"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1805"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2126"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2360"/>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="621"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp" line="720"/>
         <location filename="src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp" line="711"/>
@@ -2435,9 +2435,9 @@ Continue updating asset or stock ?</translation>
         <translation>&apos; has been deleted from database !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1806"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2127"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2362"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1815"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2136"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2371"/>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="631"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp" line="730"/>
         <location filename="src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp" line="733"/>
@@ -2448,12 +2448,12 @@ Continue updating asset or stock ?</translation>
         <translation> hasn&apos;t been deleted from database !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1846"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1855"/>
         <source>Supprimer la catégorie &apos;%1&apos; ?</source>
         <translation>Continue with deletion of category &apos;%1&apos;?</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1876"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1885"/>
         <source>1. La catégorie &apos;%1&apos; comporte encore &apos;%2&apos; stocks !
 
 2. SVP, supprimer ou ecouler d&apos;abord tous ces stocks !</source>
@@ -2462,7 +2462,7 @@ Continue updating asset or stock ?</translation>
 2. PLEASE, remove, sell, or tranfer out these stocks before !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1910"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1919"/>
         <source>1. La catégorie &apos;%1&apos; comporte encore &apos;%2&apos; charges financières !
 
 2. SVP, supprimer d&apos;abord tous ces charges financières !</source>
@@ -2471,17 +2471,17 @@ Continue updating asset or stock ?</translation>
 2. PLEASE, remove, sell, or tranfer out these FINANCIAL EXPENSES before !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1925"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1934"/>
         <source>La catégorie &apos;%1</source>
         <translation>Category &apos;%1</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1978"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1987"/>
         <source>Supprimer la LIGNE BUDGÉTAIRE &apos;%1&apos; ?</source>
         <translation>DELETE budget line &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2008"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2017"/>
         <source>1. La LIGNE BUDGÉTAIRE &apos;%1&apos; comporte encore &apos;%2&apos; charges financières !
 
 2. SVP, supprimer d&apos;abord toutes ces  charges financières !</source>
@@ -2493,27 +2493,27 @@ Continue updating asset or stock ?</translation>
 2. PLEASE, remove these FINANCIAL EXPENSES before deletion !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2035"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2044"/>
         <source>La LIGNE BUDGÉTAIRE &apos;%1</source>
         <translation>Budget line &apos;%1</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2097"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2106"/>
         <source>Supprimer le compte bancaire avec la référence &apos;%1&apos; ?</source>
         <translation>Delete bank account with reference &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2111"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2120"/>
         <source>Le compte bancaire avec la référence &apos;%1</source>
         <translation>Bank account with reference &apos;%1</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2175"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2184"/>
         <source>Supprimer le département de produits &apos;%1&apos; ?</source>
         <translation>Remove product department &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2217"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2226"/>
         <source>1. Le département de produits &apos;%1&apos; comporte encore &apos;%2&apos; stocks !
 
 2. SVP, supprimer ou ecouler d&apos;abord tous ces  stocks !</source>
@@ -2522,22 +2522,22 @@ Continue updating asset or stock ?</translation>
 2. PLEASE, remove, sell, or tranfer out these inventory stocks before !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2259"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2268"/>
         <source>Le département de produits &apos;%1</source>
         <translation>Product department &apos;%1</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1930"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2041"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2277"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1939"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2050"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2286"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="705"/>
         <source>&apos; a été supprimé de la base de données !</source>
         <translation>&apos; could be deleted from database !</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1940"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2051"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2287"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1949"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2060"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2296"/>
         <source> n&apos;a pas pu été supprimé de la base de données !</source>
         <translation> couldn&apos;t be deleted from database !</translation>
     </message>
@@ -2562,7 +2562,7 @@ Continue updating asset or stock ?</translation>
         <translation>Supplier &apos;%1</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2333"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2342"/>
         <source>Supprimer l&apos;alerte &apos;%1&apos; ?</source>
         <translation>Continue with deletion of alert &apos;%1&apos;?</translation>
     </message>
@@ -2906,7 +2906,7 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <translation>&apos; couldn&apos;t be created!</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3014"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3090"/>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="947"/>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="1054"/>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="1156"/>
@@ -2969,7 +2969,7 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <translation>&apos; has been successfully created !</translation>
     </message>
     <message>
-        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3024"/>
+        <location filename="src/admin/yeroth-erp-admin-window.cpp" line="3100"/>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="929"/>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="1033"/>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="1138"/>
@@ -3229,7 +3229,7 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <location filename="src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.cpp" line="60"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="78"/>
         <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="1408"/>
-        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1093"/>
+        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1113"/>
         <source>LIGNE BUDGÉTAIRE</source>
         <translation>budget line</translation>
     </message>
@@ -5267,7 +5267,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     </message>
     <message>
         <location filename="src/admin/yeroth-erp-admin-windows-commons.cpp" line="408"/>
-        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1811"/>
+        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1827"/>
         <source>qui suis je ?</source>
         <translation>who am I ?</translation>
     </message>
@@ -5453,7 +5453,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     </message>
     <message>
         <location filename="src/admin/yeroth-erp-admin-windows-commons.cpp" line="214"/>
-        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1159"/>
+        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1179"/>
         <source>%1 - sélectionner des colones visibles (&apos;%2&apos; colones)</source>
         <oldsource>%1 - sélectionner les colones visibles (&apos;%2&apos; colones)</oldsource>
         <translation>%1 - select visible columns (&apos;%2&apos; columns)</translation>
@@ -6058,14 +6058,14 @@ Please, change the maximum member of this CLIENT LOYALTY group to &apos;%3&apos;
     <message>
         <location filename="src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp" line="231"/>
         <location filename="src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp" line="340"/>
-        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1685"/>
+        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1701"/>
         <source>IMPRESSION, NUMÉRO DE PAGES</source>
         <translation>PRINTING, PAGE NUMBERING</translation>
     </message>
     <message>
         <location filename="src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp" line="232"/>
         <location filename="src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp" line="341"/>
-        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1686"/>
+        <location filename="src/windows/yeroth-erp-window-commons.cpp" line="1702"/>
         <source>La numéro de la page de départ doit être inférieur au numéro de la page terminale</source>
         <translation>starting page number  must be inferior to ending PAGE NUMBER</translation>
     </message>
@@ -8101,9 +8101,9 @@ stock (service)</translation>
         <translation>Reset &apos;visible&apos; database table fields</translation>
     </message>
     <message>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1942"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2053"/>
-        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2289"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="1951"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2062"/>
+        <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2298"/>
         <source>supprimer</source>
         <translation>remove</translation>
     </message>

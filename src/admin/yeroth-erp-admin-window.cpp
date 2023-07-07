@@ -130,7 +130,7 @@ const QString YerothAdminWindow::REMISE(QObject::
 #endif
 
 YerothAdminWindow::YerothAdminWindow()
-:YerothPOSAdminWindowsCommons(QObject::tr("administration ~ acceuil")),
+:YerothPOSAdminWindowsCommons(QObject::tr("administration ~ accueil")),
  _logger(new YerothLogger("YerothAdminWindow")),
  _importer_parlant(false),
  _curAdminAction(ACTION_CREER),
@@ -1905,20 +1905,24 @@ void YerothAdminWindow::disableAllOperationsTabPushButtons()
     pushButton_supprimer->disable(this);
 }
 
-void YerothAdminWindow::setCurrentAdminWindowTitle(enum
-                                                   YerothAdminWindowTabPositionsTypes
-                                                   tabPosition)
+void YerothAdminWindow::
+	setCurrentAdminWindowTitle(enum YerothAdminWindowTabPositionsTypes tabPosition)
 {
     QStringList adminWindowTitleParts =
                     _yerothAdminWindowTitleStart.split('~');
+
     //adminWindowTitleParts.at(0) contient le string 'Yeroth-pgi-3.0'.
 
     if (2 <= adminWindowTitleParts.size())
     {
         QString newAdminWindowTitle(adminWindowTitleParts.at(0).trimmed());
-        newAdminWindowTitle.append(" ~ ").append(tabWidget_administration->
-                                                 tabText(tabPosition)).
-        append(" ~ ").append(adminWindowTitleParts.at(1).trimmed());
+
+        newAdminWindowTitle.append(" ~ ")
+        				   .append(tabWidget_administration->tabText(tabPosition))
+						   .append(" ~ ")
+						   .append(adminWindowTitleParts.at(1).trimmed());
+
+
         setWindowTitle(newAdminWindowTitle);
     }
 }
@@ -1931,26 +1935,32 @@ void YerothAdminWindow::handleTabChanged(int currentTab)
         disableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(CONNECTER_LOCALISATION);
         break;
+
     case DONNEES_ENTREPRISE:
         disableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(DONNEES_ENTREPRISE);
         break;
+
     case IMPORTER_CSV_TABLEAU:
         disableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(IMPORTER_CSV_TABLEAU);
         break;
+
     case MAINTENANCE:
         disableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(MAINTENANCE);
         break;
+
     case OPERATIONS:
         enableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(OPERATIONS);
         break;
+
     case PARAMETRES_APPLICATION:
         disableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(PARAMETRES_APPLICATION);
         break;
+
     case SYSTEME_DALERTES:
         disableAllOperationsTabPushButtons();
         setCurrentAdminWindowTitle(SYSTEME_DALERTES);
@@ -1965,37 +1975,46 @@ void YerothAdminWindow::handleTabChanged(int currentTab)
 
 void YerothAdminWindow::action_creer()
 {
-    _curAdminSujetAction =
-                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
+//    _curAdminSujetAction =
+//                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
     switch (_curAdminSujetAction)
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
         creer(SUJET_ACTION_COMPTE_UTILISATEUR);
         break;
+
     case SUJET_ACTION_LOCALISATION:
         creer(SUJET_ACTION_LOCALISATION);
         break;
+
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
         creer(SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS);
         break;
+
     case SUJET_ACTION_CATEGORIE:
         creer(SUJET_ACTION_CATEGORIE);
         break;
+
     case SUJET_ACTION_ligne_budgetaire:
         creer(SUJET_ACTION_ligne_budgetaire);
         break;
+
     case SUJET_ACTION_COMPTE_BANCAIRE:
         creer(SUJET_ACTION_COMPTE_BANCAIRE);
         break;
+
     case SUJET_ACTION_ALERTE:
         creer(SUJET_ACTION_ALERTE);
         break;
+
     case SUJET_ACTION_REMISE:
         creer(SUJET_ACTION_REMISE);
         break;
+
     case SUJET_ACTION_CHARGE_FINANCIERE:
         creer(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
+
     default:
         break;
     }
@@ -2003,37 +2022,47 @@ void YerothAdminWindow::action_creer()
 
 void YerothAdminWindow::action_lister()
 {
-    _curAdminSujetAction =
-                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
+//    _curAdminSujetAction =
+//    		_sujetActionsToConst->value(comboBox_sujets_actions->currentText());
+
     switch (_curAdminSujetAction)
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
         lister(SUJET_ACTION_COMPTE_UTILISATEUR);
         break;
+
     case SUJET_ACTION_LOCALISATION:
         lister(SUJET_ACTION_LOCALISATION);
         break;
+
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
         lister(SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS);
         break;
+
     case SUJET_ACTION_CATEGORIE:
         lister(SUJET_ACTION_CATEGORIE);
         break;
+
     case SUJET_ACTION_ligne_budgetaire:
         lister(SUJET_ACTION_ligne_budgetaire);
         break;
+
     case SUJET_ACTION_COMPTE_BANCAIRE:
         lister(SUJET_ACTION_COMPTE_BANCAIRE);
         break;
+
     case SUJET_ACTION_ALERTE:
         lister(SUJET_ACTION_ALERTE);
         break;
+
     case SUJET_ACTION_REMISE:
         lister(SUJET_ACTION_REMISE);
         break;
+
     case SUJET_ACTION_CHARGE_FINANCIERE:
         lister(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
+
     default:
         break;
     }
@@ -2041,34 +2070,43 @@ void YerothAdminWindow::action_lister()
 
 void YerothAdminWindow::action_modifier()
 {
-    _curAdminSujetAction =
-                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
+//    _curAdminSujetAction =
+//                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
+
     switch (_curAdminSujetAction)
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
         modifier(SUJET_ACTION_COMPTE_UTILISATEUR);
         break;
+
     case SUJET_ACTION_LOCALISATION:
         modifier(SUJET_ACTION_LOCALISATION);
         break;
+
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
         modifier(SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS);
         break;
+
     case SUJET_ACTION_CATEGORIE:
         modifier(SUJET_ACTION_CATEGORIE);
         break;
+
     case SUJET_ACTION_COMPTE_BANCAIRE:
         modifier(SUJET_ACTION_COMPTE_BANCAIRE);
         break;
+
     case SUJET_ACTION_REMISE:
         modifier(SUJET_ACTION_REMISE);
         break;
+
     case SUJET_ACTION_ALERTE:
         modifier(SUJET_ACTION_ALERTE);
         break;
+
     case SUJET_ACTION_CHARGE_FINANCIERE:
         modifier(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
+
     default:
         break;
     }
@@ -2076,37 +2114,46 @@ void YerothAdminWindow::action_modifier()
 
 void YerothAdminWindow::action_supprimer()
 {
-    _curAdminSujetAction =
-                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
+//    _curAdminSujetAction =
+//                    _sujetActionsToConst->value(comboBox_sujets_actions->currentText());
     switch (_curAdminSujetAction)
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
         modifier(SUJET_ACTION_COMPTE_UTILISATEUR);
         break;
+
     case SUJET_ACTION_LOCALISATION:
         modifier(SUJET_ACTION_LOCALISATION);
         break;
+
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
         modifier(SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS);
         break;
+
     case SUJET_ACTION_CATEGORIE:
         modifier(SUJET_ACTION_CATEGORIE);
         break;
+
     case SUJET_ACTION_ligne_budgetaire:
         modifier(SUJET_ACTION_ligne_budgetaire);
         break;
+
     case SUJET_ACTION_COMPTE_BANCAIRE:
         modifier(SUJET_ACTION_COMPTE_BANCAIRE);
         break;
+
     case SUJET_ACTION_ALERTE:
         modifier(SUJET_ACTION_ALERTE);
         break;
+
     case SUJET_ACTION_REMISE:
         modifier(SUJET_ACTION_REMISE);
         break;
+
     case SUJET_ACTION_CHARGE_FINANCIERE:
         modifier(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
+
     default:
         break;
     }
@@ -2115,15 +2162,18 @@ void YerothAdminWindow::action_supprimer()
 void YerothAdminWindow::action_exporter()
 {
     _curAdminSujetsMaintainAction =
-                    _sujetActionsToConst->value(comboBox_sujets_maintenance->currentText());
+    		_sujetActionsToConst->value(comboBox_sujets_maintenance->currentText());
+
     switch (_curAdminSujetsMaintainAction)
     {
     case SUJET_ACTION_DB:
         maintenance_exporter(SUJET_ACTION_DB);
         break;
+
     case SUJET_ACTION_TABLEAU:
         maintenance_exporter(SUJET_ACTION_TABLEAU);
         break;
+
     default:
         break;
     }
@@ -2132,15 +2182,18 @@ void YerothAdminWindow::action_exporter()
 void YerothAdminWindow::action_importer()
 {
     _curAdminSujetsMaintainAction =
-                    _sujetActionsToConst->value(comboBox_sujets_maintenance->currentText());
+    		_sujetActionsToConst->value(comboBox_sujets_maintenance->currentText());
+
     switch (_curAdminSujetsMaintainAction)
     {
     case SUJET_ACTION_DB:
         maintenance_importer(SUJET_ACTION_DB);
         break;
+
     case SUJET_ACTION_TABLEAU:
         maintenance_importer(SUJET_ACTION_TABLEAU);
         break;
+
     default:
         break;
     }
@@ -2149,18 +2202,22 @@ void YerothAdminWindow::action_importer()
 void YerothAdminWindow::action_effacer()
 {
     _curAdminSujetsMaintainAction =
-                    _sujetActionsToConst->value(comboBox_sujets_maintenance->currentText());
+    		_sujetActionsToConst->value(comboBox_sujets_maintenance->currentText());
+
     switch (_curAdminSujetsMaintainAction)
     {
     case SUJET_ACTION_DB:
         maintenance_importer(SUJET_ACTION_DB);
         break;
+
     case SUJET_ACTION_TABLEAU:
         maintenance_importer(SUJET_ACTION_TABLEAU);
         break;
+
     case SUJET_ACTION_DONNEES:
         maintenance_effacer(SUJET_ACTION_DONNEES);
         break;
+
     default:
         break;
     }
@@ -2169,27 +2226,36 @@ void YerothAdminWindow::action_effacer()
 void YerothAdminWindow::gerer_choix_action()
 {
     //qDebug() << "YerothAdminWindow::gerer_choix_action()";
-    _curAdminAction = _actionsToConst->value(comboBox_actions->currentText());
+	_curAdminAction = _actionsToConst->value(comboBox_actions->currentText());
+
+	_curAdminSujetAction = (enum AdminSujetAction) comboBox_sujets_actions->currentIndex();
+
     switch (_curAdminAction)
     {
     case ACTION_CREER:
         action_creer();
         break;
+
     case ACTION_LISTER:
         action_lister();
         break;
+
     case ACTION_MODIFIER:
         action_modifier();
         break;
+
     case ACTION_SUPPRIMER:
         action_supprimer();
         break;
+
     case ACTION_EXPORTER:
         action_exporter();
         break;
+
     case ACTION_IMPORTER:
         action_importer();
         break;
+
     default:
         break;
     }
@@ -2198,12 +2264,11 @@ void YerothAdminWindow::gerer_choix_action()
 
 void YerothAdminWindow::choose_fichier_csv_a_importer()
 {
-    QString csvFilePath = QFileDialog::getOpenFileName(this,
-                                                       QObject::tr
-                                                       ("Choisir le chemin qui mène au fichier au format (.csv)"),
-                                                       QString::null,
-                                                       QObject::tr
-                                                       (".csv (*.csv)"));
+    QString csvFilePath =
+    		QFileDialog::getOpenFileName(this,
+    									 QObject::tr("Choisir le chemin qui mène au fichier au format (.csv)"),
+										 QString::null,
+										 QObject::tr(".csv (*.csv)"));
     if (!csvFilePath.isEmpty())
     {
         lineEdit_fichier_csv_a_importer->setText(csvFilePath);
@@ -2219,25 +2284,27 @@ void YerothAdminWindow::choose_fichier_csv_a_importer()
 void YerothAdminWindow::choose_path_mariadb_client_dir()
 {
     QString mariaDBClientBASE_DIR_FULL_PATH =
-                    QFileDialog::getOpenFileName(this,
-                                                 QObject::tr
-                                                 ("Choisir le chemin qui mène au répertoire de base de 'MariaDB-client'"),
-                                                 QString::null, QString::null);
+    		QFileDialog::getOpenFileName(this,
+    									 QObject::tr("Choisir le chemin qui mène au répertoire de base de 'MariaDB-client'"),
+										 QString::null,
+										 QString::null);
+
     if (!mariaDBClientBASE_DIR_FULL_PATH.isEmpty())
     {
-        lineEdit_mariadb_client_base_dir_full_path->setText
-        (mariaDBClientBASE_DIR_FULL_PATH);
+        lineEdit_mariadb_client_base_dir_full_path
+			->setText(mariaDBClientBASE_DIR_FULL_PATH);
     }
 }
 
 
 void YerothAdminWindow::choose_path_pdfReader()
 {
-    QString pdfReaderFilePath = QFileDialog::getOpenFileName(this,
-                                                             QObject::tr
-                                                             ("Choisir le chemin qui mène au lecteur de fichiers PDF"),
-                                                             QString::null,
-                                                             QString::null);
+    QString pdfReaderFilePath =
+    		QFileDialog::getOpenFileName(this,
+    									 QObject::tr("Choisir le chemin qui mène au lecteur de fichiers PDF"),
+										 QString::null,
+										 QString::null);
+
     if (!pdfReaderFilePath.isEmpty())
     {
         lineEdit_pdfReader->setText(pdfReaderFilePath);
@@ -2248,28 +2315,27 @@ void YerothAdminWindow::choose_path_pdfReader()
 void YerothAdminWindow::choose_path_thermalPrinterDeviceFile()
 {
     QString thermalPrinterDeviceFileFullPath =
-                    QFileDialog::getOpenFileName(this,
-                                                 QObject::tr
-                                                 ("Chemin jusqu'au fichier système représentant l'imprimante thermique"),
-                                                 QString::null, QString::null);
+    		QFileDialog::getOpenFileName(this,
+    									 QObject::tr("Chemin jusqu'au fichier système représentant l'imprimante thermique"),
+										 QString::null,
+										 QString::null);
+
     if (!thermalPrinterDeviceFileFullPath.isEmpty())
     {
-        lineEdit_fichier_systeme_imprimante_thermique->setText
-        (thermalPrinterDeviceFileFullPath);
+        lineEdit_fichier_systeme_imprimante_thermique
+			->setText(thermalPrinterDeviceFileFullPath);
     }
 }
 
 
 void YerothAdminWindow::choose_path_latex_system_root_folder()
 {
-    QString latexSystemRootFolderPath = QFileDialog::getExistingDirectory(this,
-                                                                          QObject::
-                                                                          trUtf8
-                                                                          ("Choisir le chemin jusqu'au répertoire du système de documentation Latex"),
-                                                                          QString::
-                                                                          null,
-                                                                          QFileDialog::
-                                                                          ShowDirsOnly);
+    QString latexSystemRootFolderPath =
+    		QFileDialog::getExistingDirectory(this,
+    										  QObject::trUtf8("Choisir le chemin jusqu'au répertoire du système de documentation Latex"),
+											  QString::null,
+											  QFileDialog::ShowDirsOnly);
+
     if (!latexSystemRootFolderPath.isEmpty())
     {
         lineEdit_repertoire_systeme_latex->setText(latexSystemRootFolderPath);
@@ -2279,13 +2345,12 @@ void YerothAdminWindow::choose_path_latex_system_root_folder()
 
 void YerothAdminWindow::choose_repertoire_des_sauvegardes()
 {
-    QString backupFileDirPath = QFileDialog::getExistingDirectory(this,
-                                                                  QObject::tr
-                                                                  ("Choisir le chemin qui mène au répertoire des sauvegardes"),
-                                                                  QString::
-                                                                  null,
-                                                                  QFileDialog::
-                                                                  ShowDirsOnly);
+    QString backupFileDirPath =
+    		QFileDialog::getExistingDirectory(this,
+    										  QObject::tr("Choisir le chemin qui mène au répertoire des sauvegardes"),
+                                              QString::null,
+											  QFileDialog::ShowDirsOnly);
+
     if (!backupFileDirPath.isEmpty())
     {
         lineEdit_repertoire_des_sauvegardes->setText(backupFileDirPath);
@@ -2295,17 +2360,16 @@ void YerothAdminWindow::choose_repertoire_des_sauvegardes()
 
 void YerothAdminWindow::choose_repertoire_fichiers_temporaires()
 {
-    QString temporaryFileDirPath = QFileDialog::getExistingDirectory(this,
-                                                                     QObject::tr
-                                                                     ("Choisir le chemin qui mène au répertoire des fichiers temporaires"),
-                                                                     QString::
-                                                                     null,
-                                                                     QFileDialog::
-                                                                     ShowDirsOnly);
+    QString temporaryFileDirPath =
+    		QFileDialog::getExistingDirectory(this,
+    										  QObject::tr("Choisir le chemin qui mène au répertoire des fichiers temporaires"),
+											  QString::null,
+											  QFileDialog::ShowDirsOnly);
+
     if (!temporaryFileDirPath.isEmpty())
     {
-        lineEdit_repertoire_fichiers_temporaires->setText
-        (temporaryFileDirPath);
+        lineEdit_repertoire_fichiers_temporaires
+			->setText(temporaryFileDirPath);
     }
 }
 
@@ -2320,101 +2384,109 @@ void YerothAdminWindow::read_configuration()
 
     lineEdit_devise->setText(YerothERPConfig::currency);
 
-    lineEdit_mariadb_client_base_dir_full_path->
-    setText(YerothERPConfig::pathToMARIA_DB_BASE_DIR);
+    lineEdit_mariadb_client_base_dir_full_path
+		->setText(YerothERPConfig::pathToMARIA_DB_BASE_DIR);
 
     lineEdit_pdfReader->setText(YerothERPConfig::pathToPdfReader);
 
-    lineEdit_fichier_systeme_imprimante_thermique->
-    setText(YerothERPConfig::pathToThermalPrinterDeviceFile);
+    lineEdit_fichier_systeme_imprimante_thermique
+		->setText(YerothERPConfig::pathToThermalPrinterDeviceFile);
 
-    lineEdit_repertoire_systeme_latex->
-    setText(YerothERPConfig::pathToLatexSystemRootFolder);
+    lineEdit_repertoire_systeme_latex
+		->setText(YerothERPConfig::pathToLatexSystemRootFolder);
 
-    lineEdit_sauvegarde_de_yeroth_erp_3_secondes->setText(QString::number
-                                                          (YerothERPConfig::
-                                                           backup_restore_yeroth_erp_3_time_interval));
 
-    lineEdit_alert_period_time_interval->
-    setText(QString::number(YerothERPConfig::alert_period_time_interval));
+    lineEdit_sauvegarde_de_yeroth_erp_3_secondes
+		->setText(QString::number(YerothERPConfig::backup_restore_yeroth_erp_3_time_interval));
 
-    lineEdit_alert_quantity_time_interval->
-    setText(QString::number(YerothERPConfig::alert_quantity_time_interval));
 
-    lineEdit_nbre_de_LINE_FEED_POUR_IMPRESSION_PETIT_THERMIQUE->setText
-    (QString::number
-     (YerothERPConfig::LINE_FEED_CHARACTER_COUNT_FOR_THERMAL_SMALL_PRINTING));
+    lineEdit_alert_period_time_interval
+		->setText(QString::number(YerothERPConfig::alert_period_time_interval));
 
-    lineEdit_longueur_maximale_string->
-    setText(QString::number(YerothERPConfig::max_string_display_length));
+
+    lineEdit_alert_quantity_time_interval
+		->setText(QString::number(YerothERPConfig::alert_quantity_time_interval));
+
+
+    lineEdit_nbre_de_LINE_FEED_POUR_IMPRESSION_PETIT_THERMIQUE
+		->setText(QString::number(YerothERPConfig::LINE_FEED_CHARACTER_COUNT_FOR_THERMAL_SMALL_PRINTING));
+
+
+    lineEdit_longueur_maximale_string
+		->setText(QString::number(YerothERPConfig::max_string_display_length));
+
 
     lineEdit_taille_de_pagination_par_defaut
 		->setText(QString::number(YerothERPConfig::pagination_number_of_table_rows));
 
+
     lineEdit_MAINTENANCE_VERIFICATION_log_size_max
 		->setText(QString::number(YerothERPConfig::MAX_LAST_SIGNALS_SOURCE_TARGET_COUNT));
 
-    lineEdit_repertoire_fichiers_temporaires->
-    setText(YerothERPConfig::temporaryFilesDir);
+
+    lineEdit_repertoire_fichiers_temporaires->setText(YerothERPConfig::temporaryFilesDir);
 
     lineEdit_tva_value->setText(YerothUtils::getTvaString());
 
-    lineEdit_annee_depart_rapports_chiffre_affaire->
-    setText(YerothERPConfig::annee_depart_rapports_chiffre_affaire_value);
 
-    lineEdit_repertoire_des_sauvegardes->
-    setText(YerothERPConfig::fullpathToBACKUP_YEROTH_ERP_3_DIRECTORY);
+    lineEdit_annee_depart_rapports_chiffre_affaire
+		->setText(YerothERPConfig::annee_depart_rapports_chiffre_affaire_value);
 
-    lineEdit_annee_de_depart_pour_la_pagination->
-    setText(YerothERPConfig::annee_depart_pour_la_pagination);
 
-    lineEdit_ADRESSE_IP_RESEAU_IMPRIMANTE_THERMIQUE->
-    setText(YerothERPConfig::IP_ADDRESS_NETWORK_printer);
+    lineEdit_repertoire_des_sauvegardes
+		->setText(YerothERPConfig::fullpathToBACKUP_YEROTH_ERP_3_DIRECTORY);
+
+
+    lineEdit_annee_de_depart_pour_la_pagination
+		->setText(YerothERPConfig::annee_depart_pour_la_pagination);
+
+
+    lineEdit_ADRESSE_IP_RESEAU_IMPRIMANTE_THERMIQUE
+		->setText(YerothERPConfig::IP_ADDRESS_NETWORK_printer);
 
 
     comboBox_strategie_vente_sortie->clear();
-    comboBox_strategie_vente_sortie->
-    addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_ALL);
-    comboBox_strategie_vente_sortie->
-    addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_FEFO);
-    comboBox_strategie_vente_sortie->
-    addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_FIFO);
-    comboBox_strategie_vente_sortie->
-    addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_LIFO);
+
+    comboBox_strategie_vente_sortie->addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_ALL);
+
+    comboBox_strategie_vente_sortie->addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_FEFO);
+
+    comboBox_strategie_vente_sortie->addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_FIFO);
+
+    comboBox_strategie_vente_sortie->addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_LIFO);
 
     if (YerothUtils::isEqualCaseInsensitive(YerothERPConfig::salesStrategy,
-                                            YerothERPConfig::
-                                            STRATEGIE_VENTE_SORTIE_ALL))
+                                            YerothERPConfig::STRATEGIE_VENTE_SORTIE_ALL))
     {
-        comboBox_strategie_vente_sortie->
-        setCurrentIndex(YerothUtils::STRATEGIE_ALL_COMBOBOX_INDEX);
+        comboBox_strategie_vente_sortie
+			->setCurrentIndex(YerothUtils::STRATEGIE_ALL_COMBOBOX_INDEX);
     }
     else if (YerothUtils::isEqualCaseInsensitive
              (YerothERPConfig::salesStrategy,
               YerothERPConfig::STRATEGIE_VENTE_SORTIE_FEFO))
     {
-        comboBox_strategie_vente_sortie->
-        setCurrentIndex(YerothUtils::STRATEGIE_FEFO_COMBOBOX_INDEX);
+        comboBox_strategie_vente_sortie
+			->setCurrentIndex(YerothUtils::STRATEGIE_FEFO_COMBOBOX_INDEX);
     }
     else if (YerothUtils::isEqualCaseInsensitive
              (YerothERPConfig::salesStrategy,
               YerothERPConfig::STRATEGIE_VENTE_SORTIE_FIFO))
     {
-        comboBox_strategie_vente_sortie->
-        setCurrentIndex(YerothUtils::STRATEGIE_FIFO_COMBOBOX_INDEX);
+        comboBox_strategie_vente_sortie
+			->setCurrentIndex(YerothUtils::STRATEGIE_FIFO_COMBOBOX_INDEX);
     }
     else if (YerothUtils::isEqualCaseInsensitive
              (YerothERPConfig::salesStrategy,
               YerothERPConfig::STRATEGIE_VENTE_SORTIE_LIFO))
     {
-        comboBox_strategie_vente_sortie->
-        setCurrentIndex(YerothUtils::STRATEGIE_LIFO_COMBOBOX_INDEX);
+        comboBox_strategie_vente_sortie
+			->setCurrentIndex(YerothUtils::STRATEGIE_LIFO_COMBOBOX_INDEX);
     }
 
-    comboBox_impression_sur->
-    addItems_AS_INITIALIZATION(YerothERPConfig::printer,
-                               YerothERPConfig::printer,
-                               comboBox_impression_sur_CHOICE_list);
+    comboBox_impression_sur
+		->addItems_AS_INITIALIZATION(YerothERPConfig::printer,
+									 YerothERPConfig::printer,
+									 comboBox_impression_sur_CHOICE_list);
 }
 
 

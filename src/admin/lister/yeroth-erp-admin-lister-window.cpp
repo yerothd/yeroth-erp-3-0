@@ -14,9 +14,14 @@
 
 #endif
 
+
+#include "src/admin/admin-actions-subjects.hpp"
+
+
 #include "src/utils/yeroth-erp-utils.hpp"
 
 #include "src/admin/yeroth-erp-admin-search-form.hpp"
+
 
 #include <QtCore/QDebug>
 
@@ -27,6 +32,7 @@
 #include <QtSql/QSqlQuery>
 
 #include <QtSql/QSqlError>
+
 
 
 YerothAdminListerWindow::YerothAdminListerWindow()
@@ -904,9 +910,9 @@ void YerothAdminListerWindow::
 
     set_admin_rechercher_font();
 
-    tableView_lister_charges_financieres->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_charges_financieres->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -945,9 +951,9 @@ void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *aSqlTableM
 
     set_admin_rechercher_font();
 
-    tableView_lister_utilisateur->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_utilisateur->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -986,9 +992,9 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
 
     set_admin_rechercher_font();
 
-    tableView_lister_localisation->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_localisation->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -1065,9 +1071,9 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
 
     set_admin_rechercher_font();
 
-    tableView_lister_departements_produits->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_departements_produits->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -1112,9 +1118,9 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
 
     set_admin_rechercher_font();
 
-    tableView_lister_categorie->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_categorie->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -1159,9 +1165,9 @@ void YerothAdminListerWindow::lister_LIGNE_BUDGETAIRE(YerothSqlTableModel *aSqlT
 
 	set_admin_rechercher_font();
 
-	tableView_lister_LIGNE_BUDGETAIRE->selectRow(_lastItemSelectedForModification);
-
 	APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+	tableView_lister_LIGNE_BUDGETAIRE->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -1200,9 +1206,9 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
 
     set_admin_rechercher_font();
 
-    tableView_lister_compte_bancaire->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_compte_bancaire->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -1240,9 +1246,9 @@ void YerothAdminListerWindow::lister_alerte(YerothSqlTableModel *aSqlTableModel)
 
     set_admin_rechercher_font();
 
-    tableView_lister_alerte->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_alerte->selectRow(_lastItemSelectedForModification);
 }
 
 
@@ -1281,14 +1287,17 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
 
     set_admin_rechercher_font();
 
-    tableView_lister_remise->selectRow(_lastItemSelectedForModification);
-
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    tableView_lister_remise->selectRow(_lastItemSelectedForModification);
 }
 
 
 void YerothAdminListerWindow::handleCurrentChanged(int index)
 {
+	_allWindows->_adminWindow->_curAdminSujetAction =
+			(enum AdminSujetAction) tabWidget_lister->currentIndex();
+
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:

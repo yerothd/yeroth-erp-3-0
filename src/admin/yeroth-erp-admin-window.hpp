@@ -305,11 +305,18 @@ private:
     bool _importer_parlant;
 
 
+public:
+
     enum AdminAction _curAdminAction;
+
     enum AdminSujetAction _curAdminSujetAction;
 
     enum AdminAction _curAdminMaintainAction;
+
     enum AdminSujetAction _curAdminSujetsMaintainAction;
+
+
+private:
 
     YerothLogger *_logger;
 
@@ -327,9 +334,9 @@ private:
 
     QMap<int, QLabel * > _csvContentIdxToCsvFileContentImportHeader;
 
-    QMap<QString, AdminAction > *_actionsToConst;
+    QMap<QString, AdminAction> *_actionsToConst;
 
-    QMap<QString, AdminSujetAction > *_sujetActionsToConst;
+    QMap<QString, AdminSujetAction> *_sujetActionsToConst;
 
     QString _current_selected_import_table;
 
