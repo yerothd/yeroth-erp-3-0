@@ -18,12 +18,16 @@
 class YerothERPWindows;
 class YerothLogger;
 
-class YerothAdminDetailWindow:public YerothPOSAdminWindowsCommons,
-    private Ui_YerothAdminDetailWindow
+class YerothAdminDetailWindow : public YerothPOSAdminWindowsCommons,
+								private Ui_YerothAdminDetailWindow
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothAdminDetailWindow();
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	YerothAdminDetailWindow();
 
     inline ~YerothAdminDetailWindow()
     {
@@ -35,11 +39,13 @@ Q_OBJECT public:
         return toolBar_adminDetailWindow;
     }
 
+
     virtual void definirPasDeRole();
 
     virtual void definirAdministrateur();
 
     virtual void definirManager();
+
 
     void rendreVisibleCompteUtilisateur(int sqlTableRow);
 
@@ -55,11 +61,16 @@ Q_OBJECT public:
 
     void rendreVisibleRemise(int sqlTableRow);
 
+    void rendreVisible_CHARGE_FINANCIERE(int sqlTableRow);
+
     void rendreVisibleAlerte(int sqlTableRow);
+
 
     virtual void rendreInvisible();
 
+
 public slots:
+
     void creer();
 
     void lister();
@@ -67,6 +78,7 @@ public slots:
     void modifier();
 
     void supprimer();
+
 
     void retourListerCompteUtilisateur();
 
@@ -82,19 +94,25 @@ public slots:
 
     void retourListerRemise();
 
+    void retourListerChargeFinanciere();
+
     void retourListerAlerte();
+
 
 private:
 
     void enableOtherTabs(enum AdminSujetAction curAction, bool enabled);
 
+
     void setupLineEdits();
+
 
     void clear_set_edit_comboBoxes();
 
     void clear_set_edit_utilisateur_comboBoxes();
 
     void clear_set_edit_alerte_comboBoxes();
+
 
     YerothLogger *_logger;
 };

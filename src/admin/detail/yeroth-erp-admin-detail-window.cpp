@@ -27,9 +27,9 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
 
     QMESSAGE_BOX_STYLE_SHEET =
                     QString("QMessageBox {background-color: rgb(%1);}"
-                            "QMessageBox QLabel {color: rgb(%2);}").arg
-                    (COLOUR_RGB_STRING_YEROTH_DARK_GREEN_47_67_67,
-                     COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+                            "QMessageBox QLabel {color: rgb(%2);}")
+						.arg(COLOUR_RGB_STRING_YEROTH_DARK_GREEN_47_67_67,
+							 COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
     setupLineEdits();
 
@@ -88,6 +88,10 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
                                                       ()));
     pushButton_detail_remise_retour->enable(this,
                                             SLOT(retourListerRemise()));
+
+    pushButton_detail_charges_financieres_retour->enable(this,
+    													 SLOT(retourListerChargeFinanciere()));
+
     pushButton_detail_alerte_retour->enable(this,
                                             SLOT(retourListerAlerte()));
 
@@ -121,7 +125,10 @@ void YerothAdminDetailWindow::setupLineEdits()
     lineEdit_detail_utilisateur_id->setYerothEnabled(false);
     lineEdit_detail_utilisateur_mot_passe->setYerothEnabled(false);
 
+
     lineEdit_detail_departements_de_produits_nom->setYerothEnabled(false);
+
+    lineEdit_detail_categorie_nom_departement_produit->setYerothEnabled(false);
 
     lineEdit_detail_categorie_nom->setYerothEnabled(false);
 
@@ -134,11 +141,15 @@ void YerothAdminDetailWindow::setupLineEdits()
     lineEdit_detail_INTITULE_DU_COMPTE_BANCAIRE->setYerothEnabled(false);
 
 
-    lineEdit_detail_compte_bancaire_reference_du_compte_bancaire->
-    setYerothEnabled(false);
-    lineEdit_detail_compte_bancaire_intitule_du_compte_bancaire->
-    setYerothEnabled(false);
-    lineEdit_detail_compte_bancaire_institut_bancaire->setYerothEnabled(false);
+    lineEdit_detail_compte_bancaire_reference_du_compte_bancaire
+		->setYerothEnabled(false);
+
+    lineEdit_detail_compte_bancaire_intitule_du_compte_bancaire
+		->setYerothEnabled(false);
+
+    lineEdit_detail_compte_bancaire_institut_bancaire
+		->setYerothEnabled(false);
+
 
     lineEdit_detail_localisation_adresse_ip->setYerothEnabled(false);
     lineEdit_detail_localisation_nom->setYerothEnabled(false);
@@ -209,29 +220,38 @@ void YerothAdminDetailWindow::modifier()
     case SUJET_ACTION_COMPTE_UTILISATEUR:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_COMPTE_UTILISATEUR);
         break;
+
     case SUJET_ACTION_LOCALISATION:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_LOCALISATION);
         break;
+
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS);
         break;
+
     case SUJET_ACTION_CATEGORIE:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_CATEGORIE);
         break;
+
     case SUJET_ACTION_ligne_budgetaire:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_ligne_budgetaire);
         break;
+
     case SUJET_ACTION_COMPTE_BANCAIRE:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_COMPTE_BANCAIRE);
         break;
+
     case SUJET_ACTION_REMISE:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_REMISE);
         break;
+
     case SUJET_ACTION_ALERTE:
         _allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_ALERTE);
         break;
+
     case SUJET_ACTION_CHARGE_FINANCIERE:
         break;
+
     default:
         break;
     }
@@ -277,6 +297,12 @@ void YerothAdminDetailWindow::enableOtherTabs(enum AdminSujetAction curAction,
 void YerothAdminDetailWindow::rendreVisibleCompteUtilisateur(int sqlTableRow)
 {
 	retranslateUi(this);
+
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ utilisateurs"));
+
+    setWindowTitle(_windowName);
 
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_COMPTE_UTILISATEUR);
 
@@ -370,6 +396,12 @@ void YerothAdminDetailWindow::rendreVisibleLocalisation(int sqlTableRow)
 {
 	retranslateUi(this);
 
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ localisations"));
+
+    setWindowTitle(_windowName);
+
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_LOCALISATION);
 
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
@@ -450,6 +482,12 @@ void YerothAdminDetailWindow::rendreVisibleDepartementsDeProduits(int sqlTableRo
 {
 	retranslateUi(this);
 
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ départements"));
+
+    setWindowTitle(_windowName);
+
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS);
 
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
@@ -493,34 +531,46 @@ void YerothAdminDetailWindow::rendreVisibleCategorie(int sqlTableRow)
 {
 	retranslateUi(this);
 
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ catégories"));
+
+    setWindowTitle(_windowName);
+
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_CATEGORIE);
+
 
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
 
-    YerothSqlTableModel *categoriesTableModel =
-                    lw->getCurSearchSqlTableModel();
+
+    YerothSqlTableModel *categoriesTableModel = lw->getCurSearchSqlTableModel();
+
 
     if (!categoriesTableModel)
     {
         categoriesTableModel = &_allWindows->getSqlTableModel_categories();
     }
-    else if (categoriesTableModel
-             && !YerothUtils::isEqualCaseInsensitive(categoriesTableModel->
-                                                     sqlTableName(),
-                                                     YerothDatabase::
-                                                     CATEGORIES))
+    else if (categoriesTableModel &&
+    		 !YerothUtils::isEqualCaseInsensitive(categoriesTableModel->sqlTableName(),
+                                                  YerothDatabase::CATEGORIES))
     {
         categoriesTableModel = &_allWindows->getSqlTableModel_categories();
     }
 
+
     QSqlRecord record = categoriesTableModel->record(sqlTableRow);
 
-    lineEdit_detail_categorie_nom->setText(GET_SQL_RECORD_DATA
-                                           (record,
-                                            YerothDatabaseTableColumn::NOM_CATEGORIE));
-    textEdit_detail_categorie_description->setText(GET_SQL_RECORD_DATA
-                                                   (record,
-                                                    YerothDatabaseTableColumn::DESCRIPTION_CATEGORIE));
+    lineEdit_detail_categorie_nom_departement_produit
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT));
+
+    lineEdit_detail_categorie_nom
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::NOM_CATEGORIE));
+
+    textEdit_detail_categorie_description
+		->setText(GET_SQL_RECORD_DATA(record,
+									  YerothDatabaseTableColumn::DESCRIPTION_CATEGORIE));
 
     enableOtherTabs(SUJET_ACTION_CATEGORIE, false);
 
@@ -531,6 +581,12 @@ void YerothAdminDetailWindow::rendreVisibleCategorie(int sqlTableRow)
 void YerothAdminDetailWindow::rendreVisibleLigneBudgetaire(int sqlTableRow)
 {
 	retranslateUi(this);
+
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ lignes budgétaires"));
+
+    setWindowTitle(_windowName);
 
 	tabWidget_detail->setCurrentIndex(SUJET_ACTION_ligne_budgetaire);
 
@@ -586,6 +642,12 @@ void YerothAdminDetailWindow::rendreVisibleCompteBancaire(int sqlTableRow)
 {
 	retranslateUi(this);
 
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ comptes bancaires"));
+
+    setWindowTitle(_windowName);
+
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_COMPTE_BANCAIRE);
 
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
@@ -635,6 +697,12 @@ void YerothAdminDetailWindow::rendreVisibleCompteBancaire(int sqlTableRow)
 void YerothAdminDetailWindow::rendreVisibleRemise(int sqlTableRow)
 {
 	retranslateUi(this);
+
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ remises"));
+
+    setWindowTitle(_windowName);
 
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_REMISE);
 
@@ -699,9 +767,120 @@ void YerothAdminDetailWindow::rendreVisibleRemise(int sqlTableRow)
 }
 
 
+void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
+{
+	retranslateUi(this);
+
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ CHARGE FINANCIÈRE"));
+
+    setWindowTitle(_windowName);
+
+
+    tabWidget_detail->setCurrentIndex(SUJET_ACTION_CHARGE_FINANCIERE);
+
+
+    YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
+
+    YerothSqlTableModel *CHARGES_FINANCIERES_TableModel = lw->getCurSearchSqlTableModel();
+
+    if (0 == CHARGES_FINANCIERES_TableModel)
+    {
+        CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+    }
+    else if ((0 != CHARGES_FINANCIERES_TableModel) &&
+             !YerothUtils::isEqualCaseInsensitive(CHARGES_FINANCIERES_TableModel->sqlTableName(),
+                                                  YerothDatabase::CHARGES_FINANCIERES))
+    {
+        CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+    }
+
+
+    QSqlRecord record = CHARGES_FINANCIERES_TableModel->record(sqlTableRow);
+
+    dateEdit_date_de_commande->setYerothEnabled(false);
+    lineEdit_reference_produit->setYerothEnabled(false);
+    lineEdit_designation->setYerothEnabled(false);
+    lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
+    lineEdit_LIGNE_BUDGETAIRE->setYerothEnabled(false);
+    lineEdit_quantite->setYerothEnabled(false);
+    lineEdit_prix_dachat->setYerothEnabled(false);
+    lineEdit_prix_unitaire->setYerothEnabled(false);
+
+
+    QString date_de_commande =
+    		GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::DATE_DE_COMMANDE);
+
+    dateEdit_date_de_commande
+		->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_COMMANDE).toDate());
+
+    lineEdit_reference_produit
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::REFERENCE));
+
+    lineEdit_designation
+		->setText(GET_SQL_RECORD_DATA(record,
+                                   	  YerothDatabaseTableColumn::DESIGNATION));
+
+    lineEdit_LIGNE_BUDGETAIRE
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::CATEGORIE));
+
+    lineEdit_nom_entreprise_fournisseur
+		->setText(GET_SQL_RECORD_DATA(record,
+                                      YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR));
+
+
+    double prix_unitaire = GET_SQL_RECORD_DATA(record,
+                                               YerothDatabaseTableColumn::PRIX_UNITAIRE).toDouble();
+
+
+    lineEdit_prix_unitaire->setText(GET_CURRENCY_STRING_NUM(prix_unitaire));
+
+
+    double prix_dachat = 0.0;
+
+
+    YerothPOSUser *currentUser = YerothUtils::getAllWindows()->getUser();
+
+    if (0 != currentUser)
+    {
+        if (currentUser->isManager())
+        {
+            prix_dachat =
+            		GET_SQL_RECORD_DATA(record,
+                                        YerothDatabaseTableColumn::PRIX_DACHAT).toDouble();
+        }
+    }
+
+
+    lineEdit_prix_dachat->setText(GET_CURRENCY_STRING_NUM(prix_dachat));
+
+
+    double quantite_restante =
+    		GET_SQL_RECORD_DATA(record,
+                                YerothDatabaseTableColumn::QUANTITE_TOTALE).toDouble();
+
+
+    lineEdit_quantite->setText(GET_DOUBLE_STRING_P(quantite_restante, 0));
+
+
+    enableOtherTabs(SUJET_ACTION_CHARGE_FINANCIERE, false);
+
+    setVisible(true);
+}
+
+
 void YerothAdminDetailWindow::rendreVisibleAlerte(int sqlTableRow)
 {
 	retranslateUi(this);
+
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ détail ~ alertes"));
+
+    setWindowTitle(_windowName);
 
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_ALERTE);
 
@@ -786,12 +965,14 @@ void YerothAdminDetailWindow::rendreVisibleAlerte(int sqlTableRow)
     setVisible(true);
 }
 
+
 void YerothAdminDetailWindow::retourListerCompteUtilisateur()
 {
     _allWindows->_adminListerWindow->
     rendreVisible(SUJET_ACTION_COMPTE_UTILISATEUR);
     rendreInvisible();
 }
+
 
 void YerothAdminDetailWindow::retourListerLocalisation()
 {
@@ -829,10 +1010,15 @@ void YerothAdminDetailWindow::retourListerCompteBancaire()
     rendreInvisible();
 }
 
-
 void YerothAdminDetailWindow::retourListerRemise()
 {
     _allWindows->_adminListerWindow->rendreVisible(SUJET_ACTION_REMISE);
+    rendreInvisible();
+}
+
+void YerothAdminDetailWindow::retourListerChargeFinanciere()
+{
+    _allWindows->_adminListerWindow->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE);
     rendreInvisible();
 }
 

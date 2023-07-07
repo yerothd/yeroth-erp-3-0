@@ -5193,7 +5193,7 @@ un service</string>
       </font>
      </property>
     </widget>
-    <widget class="YerothLineEdit" name="lineEdit_categorie_produit">
+    <widget class="YerothLineEdit" name="lineEdit_LIGNE_BUDGETAIRE">
      <property name="geometry">
       <rect>
        <x>184</x>
@@ -8257,7 +8257,7 @@ un service</string>
   <tabstop>lineEdit_reference_produit</tabstop>
   <tabstop>lineEdit_designation</tabstop>
   <tabstop>lineEdit_nom_entreprise_fournisseur</tabstop>
-  <tabstop>lineEdit_categorie_produit</tabstop>
+  <tabstop>lineEdit_LIGNE_BUDGETAIRE</tabstop>
   <tabstop>lineEdit_quantite</tabstop>
   <tabstop>lineEdit_prix_dachat</tabstop>
   <tabstop>lineEdit_prix_unitaire</tabstop>

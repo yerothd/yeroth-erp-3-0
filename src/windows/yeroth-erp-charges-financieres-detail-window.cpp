@@ -87,7 +87,7 @@ void YerothChargesFinancieresDetailsWindow::setupLineEdits()
     lineEdit_quantite->setYerothEnabled(false);
     lineEdit_prix_dachat->setYerothEnabled(false);
     lineEdit_prix_unitaire->setYerothEnabled(false);
-    lineEdit_categorie_produit->setYerothEnabled(false);
+    lineEdit_LIGNE_BUDGETAIRE->setYerothEnabled(false);
     lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
 }
 
@@ -236,7 +236,7 @@ void YerothChargesFinancieresDetailsWindow::rendreInvisible()
 	dateEdit_date_de_commande->reset();
     lineEdit_reference_produit->clear();
     lineEdit_designation->clear();
-    lineEdit_categorie_produit->clear();
+    lineEdit_LIGNE_BUDGETAIRE->clear();
     lineEdit_quantite->clear();
     lineEdit_nom_entreprise_fournisseur->clear();
     lineEdit_prix_dachat->clear();
@@ -287,7 +287,7 @@ void YerothChargesFinancieresDetailsWindow::showItem()
 		->setText(GET_SQL_RECORD_DATA(record,
                                    	  YerothDatabaseTableColumn::DESIGNATION));
 
-    lineEdit_categorie_produit
+    lineEdit_LIGNE_BUDGETAIRE
 		->setText(GET_SQL_RECORD_DATA(record,
                                       YerothDatabaseTableColumn::CATEGORIE));
 

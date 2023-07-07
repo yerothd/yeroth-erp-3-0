@@ -192,52 +192,75 @@ YerothAdminListerWindow::YerothAdminListerWindow()
             this, SLOT(handleItemModification(QModelIndex)));
 
     connect(tableView_lister_departements_produits,
-            SIGNAL(clicked(QModelIndex)), this,
+            SIGNAL(clicked(QModelIndex)),
+			this,
             SLOT(handleItemModification(QModelIndex)));
 
-    connect(tableView_lister_categorie, SIGNAL(clicked(QModelIndex)), this,
+    connect(tableView_lister_categorie,
+    		SIGNAL(clicked(QModelIndex)),
+    		this,
             SLOT(handleItemModification(QModelIndex)));
 
-    connect(tableView_lister_LIGNE_BUDGETAIRE, SIGNAL(clicked(QModelIndex)), this,
+    connect(tableView_lister_LIGNE_BUDGETAIRE,
+    		SIGNAL(clicked(QModelIndex)),
+			this,
             SLOT(handleItemModification(QModelIndex)));
 
-    connect(tableView_lister_compte_bancaire, SIGNAL(clicked(QModelIndex)),
-            this, SLOT(handleItemModification(QModelIndex)));
+    connect(tableView_lister_compte_bancaire,
+    		SIGNAL(clicked(QModelIndex)),
+            this,
+			SLOT(handleItemModification(QModelIndex)));
 
-    connect(tableView_lister_alerte, SIGNAL(clicked(QModelIndex)), this,
+    connect(tableView_lister_alerte,
+    		SIGNAL(clicked(QModelIndex)),
+			this,
             SLOT(handleItemModification(QModelIndex)));
 
     connect(tableView_lister_utilisateur,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_utilisateur()));
 
     connect(tableView_lister_localisation,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_localisation()));
 
     connect(tableView_lister_departements_produits,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_departements_de_produits()));
 
     connect(tableView_lister_categorie,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_categorie()));
 
     connect(tableView_lister_LIGNE_BUDGETAIRE,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_LIGNE_BUDGETAIRE()));
 
     connect(tableView_lister_compte_bancaire,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_compte_bancaire()));
 
     connect(tableView_lister_remise,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_remise()));
 
+    connect(tableView_lister_charges_financieres,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
+            SLOT(afficher_detail_CHARGE_FINANCIERE()));
+
     connect(tableView_lister_alerte,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
             SLOT(afficher_detail_alerte()));
+
 
     /** Menu actions */
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this,
@@ -1592,12 +1615,13 @@ void YerothAdminListerWindow::afficher_au_detail()
     }
 }
 
+
 void YerothAdminListerWindow::afficher_detail_CHARGE_FINANCIERE()
 {
-//    _allWindows->_adminDetailWindow
-//		->rendreVisibleChargeFinanciere(lastSelectedItemForModification());
-//
-//    rendreInvisible();
+    _allWindows->_adminDetailWindow
+		->rendreVisible_CHARGE_FINANCIERE(lastSelectedItemForModification());
+
+    rendreInvisible();
 }
 
 
