@@ -714,20 +714,24 @@ void YerothAdminWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 
     if (YerothERPConfig::_distantSiteConnected)
     {
-        comboBox_localisation->
-        find_AND_SET_CURRENT_INDEX(YerothERPConfig::_connectedSite);
-        lineEdit_localisation_adresse_ip->
-        setText(YerothERPConfig::_connectedSiteIPAddress);
+        comboBox_localisation
+			->find_AND_SET_CURRENT_INDEX(YerothERPConfig::_connectedSite);
+
+        lineEdit_localisation_adresse_ip
+			->setText(YerothERPConfig::_connectedSiteIPAddress);
 
         label_ONLINE->setVisible(true);
+
         label_OFFLINE->setVisible(false);
     }
     else
     {
         comboBox_localisation->resetYerothComboBox();
+
         lineEdit_localisation_adresse_ip->clear();
 
         label_ONLINE->setVisible(false);
+
         label_OFFLINE->setVisible(true);
     }
 
