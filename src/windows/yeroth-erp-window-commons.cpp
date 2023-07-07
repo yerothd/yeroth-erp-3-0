@@ -1214,11 +1214,9 @@ void YerothWindowsCommons::handle_some_actions_tools_enabled()
 
             if (0 != anAction)
             {
-                if (_list_actions_to_enable_on_positive_tableview_ROW_COUNT.
-                        contains(anAction))
+                if (_list_actions_to_enable_on_positive_tableview_ROW_COUNT.contains(anAction))
                 {
-                    enable_action =
-                                    (_yerothTableView_FROM_WINDOWS_COMMONS->rowCount() > 0);
+                    enable_action = (_yerothTableView_FROM_WINDOWS_COMMONS->rowCount() > 0);
                 }
                 else
                 {
@@ -1234,23 +1232,18 @@ void YerothWindowsCommons::handle_some_actions_tools_enabled()
     {
         enable_action = (_yerothTableView_FROM_WINDOWS_COMMONS->rowCount() > 0);
 
-        int list_size =
-                        _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT.size
-                        ();
+        int list_size = _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT.size();
 
         YerothPushButton *aYerothPushButton = 0;
 
         for (unsigned int j = 0; j < list_size; ++j)
         {
-            aYerothPushButton =
-                            _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT.at
-                            (j);
+            aYerothPushButton = _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT.at(j);
 
             if (0 != aYerothPushButton)
             {
-                aYerothPushButton->setVisible((aYerothPushButton->
-                                               isAuthorizedForCurrentUser()
-                                               && enable_action));
+                aYerothPushButton
+					->setVisible((aYerothPushButton->isAuthorizedForCurrentUser() && enable_action));
             }
         }
     }
@@ -1260,22 +1253,28 @@ void YerothWindowsCommons::handle_some_actions_tools_enabled()
 void YerothWindowsCommons::getManuelUtilisateurPDF()
 {
     YerothPOSUser *user = _allWindows->getUser();
+
     if (user)
     {
         QStringList progArguments;
+
         QProcess aProcess;
 
-        if (user->isManager() || user->isVendeur() || user->isCaissier())
+        if (user->isManager() ||
+        	user->isVendeur() ||
+			user->isCaissier())
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            progArguments <<
-                          YerothERPConfig::
-                          FILE_ABSOLUTEPATH_YEROTH_ERP_3_0_MANUEL_DE_LUTILISATEUR_MANAGER;
-#else
-            progArguments <<
-                          YerothERPConfig::
-                          FILE_ABSOLUTEPATH_YEROTH_ERP_3_0_MANUEL_DE_LUTILISATEUR_MANAGER_EN;
-#endif
+
+        	if (YerothMainWindow::LANGUE_ANGLAISE)
+        	{
+                progArguments <<
+                		YerothERPConfig::FILE_ABSOLUTEPATH_YEROTH_ERP_3_0_MANUEL_DE_LUTILISATEUR_MANAGER_EN;
+        	}
+        	else
+        	{
+                progArguments <<
+                		YerothERPConfig::FILE_ABSOLUTEPATH_YEROTH_ERP_3_0_MANUEL_DE_LUTILISATEUR_MANAGER;
+        	}
 
             aProcess.startDetached(YerothERPConfig::pathToPdfReader,
                                    progArguments);
@@ -1287,16 +1286,14 @@ void YerothWindowsCommons::getManuelUtilisateurPDF()
 void YerothWindowsCommons::infosEntreprise()
 {
     YerothUtils::infosEntreprise(*this,
-                                 _allWindows->getInfoEntreprise().
-                                 toString());
+                                 _allWindows->getInfoEntreprise().toString());
 }
 
 
 void YerothWindowsCommons::charges_financieres()
 {
     rendreInvisible();
-    _allWindows->_charges_financieresWindow->
-    rendreVisible(_curStocksTableModel);
+    _allWindows->_charges_financieresWindow->rendreVisible(_curStocksTableModel);
 }
 
 
@@ -1429,8 +1426,7 @@ void YerothWindowsCommons::creerCompteClient()
 void YerothWindowsCommons::creerUnGroupeDeClients()
 {
     rendreInvisible();
-    _allWindows->_creerGroupeDeClientsWindow->
-    rendreVisible(_curStocksTableModel);
+    _allWindows->_creerGroupeDeClientsWindow->rendreVisible(_curStocksTableModel);
 }
 
 
