@@ -44,6 +44,8 @@ public:
     {
     }
 
+    virtual void SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(YerothWindowsCommons &a_window);
+
     virtual void lister_les_elements_du_tableau(YerothSqlTableModel &aSqlTableModel);
 };
 

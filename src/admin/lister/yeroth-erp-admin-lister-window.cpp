@@ -602,6 +602,9 @@ void YerothAdminListerWindow::RESET_VIEW_CHARGES_FINANCIERES()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_charges_financieres,
 										 sqlTableModel);
+
+	tableView_lister_charges_financieres
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -629,6 +632,9 @@ void YerothAdminListerWindow::RESET_VIEW_utilisateur()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_utilisateur,
 										 sqlTableModel);
+
+	tableView_lister_utilisateur
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -649,6 +655,9 @@ void YerothAdminListerWindow::RESET_VIEW_localisation()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_localisation,
 										 sqlTableModel);
+
+	tableView_lister_localisation
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -665,6 +674,9 @@ void YerothAdminListerWindow::RESET_VIEW_departements_de_produits()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_departements_produits,
 										 sqlTableModel);
+
+	tableView_lister_departements_produits
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -682,6 +694,9 @@ void YerothAdminListerWindow::RESET_VIEW_categorie()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_categorie,
 										 sqlTableModel);
+
+	tableView_lister_categorie
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -700,6 +715,9 @@ void YerothAdminListerWindow::RESET_VIEW_LIGNE_BUDGETAIRE()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_LIGNE_BUDGETAIRE,
 										 sqlTableModel);
+
+	tableView_lister_LIGNE_BUDGETAIRE
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -718,6 +736,9 @@ void YerothAdminListerWindow::RESET_VIEW_compte_bancaire()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_compte_bancaire,
 										 sqlTableModel);
+
+	tableView_lister_compte_bancaire
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -740,6 +761,9 @@ void YerothAdminListerWindow::RESET_VIEW_alerte()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_alerte,
 										 sqlTableModel);
+
+	tableView_lister_alerte
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -762,6 +786,9 @@ void YerothAdminListerWindow::RESET_VIEW_remise()
 
 	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_remise,
 										 sqlTableModel);
+
+	tableView_lister_remise
+		->SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(*this);
 }
 
 
@@ -774,7 +801,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_utilisateur);
 
-    	setup_select_configure_dbcolumn(YerothDatabase::USERS);
+    	//setup_select_configure_dbcolumn(YerothDatabase::USERS);
 
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_users();
         break;

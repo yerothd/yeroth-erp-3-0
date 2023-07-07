@@ -31,6 +31,58 @@
 
 
 void yerothERPAdminUpperTableViewClass::
+		SAVE_YEROTH_TABLEVIEW_header_COLUMN_order(YerothWindowsCommons &a_window)
+{
+    QStringList yerothTableView_model_raw_visible_headers =
+    		getTableModelRawHeaders();
+
+    const QStringList *a_visible_DB_columnname_string_List =
+    		a_window.get_visible_DB_column_name_str_list();
+
+
+    QHeaderView *q_header_view = verticalHeader();
+
+
+    QString pageTableColumnOrder_STRING;
+
+
+    if (0 != q_header_view 					  &&
+    	0 != a_visible_DB_columnname_string_List)
+    {
+        for (uint i = 0;
+        	 i < yerothTableView_model_raw_visible_headers.size();
+        	 ++i)
+        {
+            const QString &headerColumnData =
+            		yerothTableView_model_raw_visible_headers.at(i);
+
+            if (!headerColumnData.isEmpty())
+            {
+                if (a_visible_DB_columnname_string_List->contains(headerColumnData))
+                {
+                    pageTableColumnOrder_STRING
+						.append(QString("%1:%2;")
+								 .arg(headerColumnData,
+									  QString::number(q_header_view->visualIndex(i))));
+                }
+            }
+        }
+    }
+
+
+    a_window.set_PARAMETER_TABLE_COLUMN_ORDER(pageTableColumnOrder_STRING);
+
+
+    YerothPOSUser *aUser = _allWindows->getUser();
+
+    if (0 != aUser)
+    {
+        aUser->save_user_personal_PRINTING_PARAMETER_settings(&a_window);
+    }
+}
+
+
+void yerothERPAdminUpperTableViewClass::
 		lister_les_elements_du_tableau(YerothSqlTableModel &aSqlTableModel)
 {
     _stdItemModel->_curSqlTableModel = &aSqlTableModel;
