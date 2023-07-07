@@ -27,11 +27,6 @@ YerothERPGenericSelectDBFieldDialog::YerothERPGenericSelectDBFieldDialog(YerothE
     setModal(true);
 }
 
-YerothERPGenericSelectDBFieldDialog::~YerothERPGenericSelectDBFieldDialog()
-{
-    delete _currentPosition;
-}
-
 
 void YerothERPGenericSelectDBFieldDialog::show()
 {
