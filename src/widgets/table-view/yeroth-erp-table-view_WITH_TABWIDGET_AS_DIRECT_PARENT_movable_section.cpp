@@ -15,9 +15,10 @@
 #include <QtWidgets/QHeaderView>
 
 
-void
-YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION::handle_yeroth_header_view_position_changed
-(int logicalIndex, int oldVisualIndex, int newVisualIndex)
+void YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION::
+		handle_yeroth_header_view_position_changed(int logicalIndex,
+												   int oldVisualIndex,
+												   int newVisualIndex)
 {
     //      QDEBUG_QSTRINGLIST_OUTPUT("_tableModelRawHeaders_IN_OUT",
     //                                                         _tableModelRawHeaders_IN_OUT);
@@ -38,8 +39,7 @@ YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION::handle_yer
             (0 != parent()->parent()->parent()->parent()))
     {
 
-        QTabWidget *a_q_tab_widget =
-                        dynamic_cast<QTabWidget *>(parent()->parent()->parent());
+        QTabWidget *a_q_tab_widget = dynamic_cast<QTabWidget *>(parent()->parent()->parent());
 
         if (0 == a_q_tab_widget)
         {
@@ -47,8 +47,9 @@ YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION::handle_yer
             return;
         }
 
+
         YerothWindowsCommons *a_yeroth_window =
-                        dynamic_cast<YerothWindowsCommons *>(a_q_tab_widget->parent()->parent());
+        		dynamic_cast<YerothWindowsCommons *>(a_q_tab_widget->parent()->parent());
 
         if (0 == a_yeroth_window)
         {
@@ -56,48 +57,40 @@ YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION::handle_yer
             return;
         }
 
-        if (0 != _q_header_view &&
-                !a_yeroth_window->
-                GET_CURRENTLY_APPLYING_USER_FILE_SETTING_TABLE_COLUMN_ORDER())
+
+        if (0 != _q_header_view 														&&
+            !a_yeroth_window->GET_CURRENTLY_APPLYING_USER_FILE_SETTING_TABLE_COLUMN_ORDER())
         {
-            QStringList
-            yerothTableView_model_raw_visible_headers
-            (_tableModelRawHeaders_IN_OUT);
+            QStringList yerothTableView_model_raw_visible_headers(_tableModelRawHeaders_IN_OUT);
 
             const QStringList *a_visible_DB_columnname_string_List =
-                            a_yeroth_window->get_visible_DB_column_name_str_list();
+            		a_yeroth_window->get_visible_DB_column_name_str_list();
 
             QString pageTableColumnOrder_STRING;
 
             if (0 != a_visible_DB_columnname_string_List)
             {
                 for (uint i = 0;
-                        i < yerothTableView_model_raw_visible_headers.size(); ++i)
+                	 i < yerothTableView_model_raw_visible_headers.size();
+                	 ++i)
                 {
-                    const
-                    QString &
-                    headerColumnData =
-                                    yerothTableView_model_raw_visible_headers.at(i);
+                    const QString &headerColumnData =
+                    		yerothTableView_model_raw_visible_headers.at(i);
 
                     if (!headerColumnData.isEmpty())
                     {
-                        if (a_visible_DB_columnname_string_List->contains
-                                (headerColumnData))
+                        if (a_visible_DB_columnname_string_List->contains(headerColumnData))
                         {
-                            pageTableColumnOrder_STRING.append(QString
-                                                               ("%1:%2;").arg
-                                                               (headerColumnData,
-                                                                QString::number
-                                                                (_q_header_view->
-                                                                 visualIndex
-                                                                 (i))));
+                            pageTableColumnOrder_STRING
+								.append(QString("%1:%2;")
+										 .arg(headerColumnData,
+											  QString::number(_q_header_view->visualIndex(i))));
                         }
                     }
                 }
             }
 
-            a_yeroth_window->set_PARAMETER_TABLE_COLUMN_ORDER
-            (pageTableColumnOrder_STRING);
+            a_yeroth_window->set_PARAMETER_TABLE_COLUMN_ORDER(pageTableColumnOrder_STRING);
 
             YerothERPWindows *allWindows = YerothUtils::getAllWindows();
 
