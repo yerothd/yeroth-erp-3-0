@@ -8910,7 +8910,7 @@ stock (service)</translation>
         <location filename="ui/yeroth-erp-admin-window.ui" line="42123"/>
         <source>Paramètres de l&apos;application</source>
         <oldsource>paramètres de l&apos;application</oldsource>
-        <translation>Application parameters</translation>
+        <translation>Application settings</translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="49650"/>
