@@ -2279,10 +2279,55 @@ Continue updating asset or stock ?</translation>
         <translation>stock image could be deleted</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="24"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="25"/>
         <source>administration ~ créer</source>
         <oldsource>administration ~ create</oldsource>
         <translation>administration ~ create</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="549"/>
+        <source>administration ~ créer ~ utilisateurs</source>
+        <translation>administration ~ create ~ users</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="557"/>
+        <source>administration ~ créer ~ LOCALISATIONS</source>
+        <translation>administration ~ create ~ LOCALISATIONS</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="565"/>
+        <source>administration ~ créer ~ départements</source>
+        <translation>administration ~ create ~ departments</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="573"/>
+        <source>administration ~ créer ~ catégories</source>
+        <translation>administration ~ create ~ categories</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="581"/>
+        <source>administration ~ créer ~ LIGNES BUDÉGTAIRES</source>
+        <translation>administration ~ create ~ BUDGET LINES</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="589"/>
+        <source>administration ~ créer ~ comptes bancaires</source>
+        <translation>administration ~ create ~ bank accounts</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="597"/>
+        <source>administration ~ créer ~ remises</source>
+        <translation>administration ~ create ~ discounts</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="605"/>
+        <source>administration ~ créer ~ alertes</source>
+        <translation>administration ~ create ~ alerts</translation>
+    </message>
+    <message>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="613"/>
+        <source>administration ~ créer ~ charges financières</source>
+        <translation>administration ~ create ~ FINANCIAL EXPENSES</translation>
     </message>
     <message>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="727"/>
@@ -4567,14 +4612,14 @@ Please contact an administrator</translation>
         <translation>Alert parameter &apos;begin&apos; (date) must be anterior to alert parameter &apos;end&apos; (date) !</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.hpp" line="92"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.hpp" line="101"/>
         <location filename="src/admin/modifier/yeroth-erp-admin-modifier-window.hpp" line="109"/>
         <source>Yeroth-pgi-3.0 ~ admin-créer</source>
         <oldsource>Yeroth-erp-3.0 ~ admin-créer</oldsource>
         <translation>Yeroth-erp-3.0 ~ admin-create</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.hpp" line="94"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.hpp" line="103"/>
         <location filename="src/admin/modifier/yeroth-erp-admin-modifier-window.hpp" line="111"/>
         <source>Remplissez les informations nécessaire, et ensuite cliquer sur &apos;Valider&apos;.
 Cliquez sur &apos;Annuler&apos; si vous souhaiter annuler l&apos;opération !</source>
@@ -9945,136 +9990,141 @@ stock (service)</translation>
         <translation>FINANCIAL EXPENSE DETAILS</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3258"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3342"/>
         <source>référence</source>
         <translation>reference</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3282"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="5280"/>
         <source>désignation</source>
         <translation>item designation</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3763"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3826"/>
         <source>fournisseur</source>
         <translation>supplier</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3787"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6221"/>
         <source>quantité</source>
         <oldsource>quantité en stock</oldsource>
         <translation>quantity</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="4271"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="3318"/>
         <source>ligne budgétaire</source>
         <translation>budget line</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6134"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="2810"/>
         <source>prix unitaire (p.u.)</source>
         <translation>unit price (u.p.)</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6158"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="4337"/>
         <source>prix d&apos;achat</source>
         <translation>purchase price</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6182"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="4313"/>
         <source>date de commande</source>
         <translation>ORDER DATE</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6205"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="2790"/>
+        <source>visualisation des données [CHARGE FINANCIÈRE]</source>
+        <translation>data visualisation [FINANCIAL EXPENSE]</translation>
+    </message>
+    <message>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="2833"/>
         <source>dd/MM/yyyy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6678"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="6691"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="7135"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="7148"/>
         <source>Actions</source>
         <translation>Functions</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="7589"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="7602"/>
         <source>Outils</source>
         <translation>Tools</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8045"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8058"/>
         <source>toolBar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8065"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8078"/>
         <source>À propos</source>
         <translation>About Yeroth-erp-3.0</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8081"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8094"/>
         <source>Changer d&apos;utilisateur</source>
         <translation>Sign in</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8093"/>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8096"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8106"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8109"/>
         <source>Entrer un stock</source>
         <translation>Check in</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8108"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8121"/>
         <source>Lister les stocks</source>
         <translation>View stocks</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8120"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8133"/>
         <source>Fermeture</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8132"/>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8135"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8145"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8148"/>
         <source>Menu principal</source>
         <translation>Main menu</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8151"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8164"/>
         <source>Message d&apos;aide</source>
         <translation>User tip</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8154"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8167"/>
         <source>Appeler l&apos;aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8170"/>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8173"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8183"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8186"/>
         <source>Déconnecter l&apos;utilisateur</source>
         <translation>Sign out</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8185"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8198"/>
         <source>Courrier</source>
         <translation>E-mail</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8201"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8214"/>
         <source>Administration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8213"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8226"/>
         <source>Informations sur l&apos;entreprise</source>
         <translation>Company info</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8225"/>
+        <location filename="ui/yeroth-erp-charges-financieres-detail-window.ui" line="8238"/>
         <source>Qui suis je ?</source>
         <translation>Who am I?</translation>
     </message>

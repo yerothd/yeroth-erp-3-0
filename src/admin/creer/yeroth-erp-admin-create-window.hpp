@@ -19,12 +19,17 @@
 class YerothERPWindows;
 class YerothLogger;
 
-class YerothAdminCreateWindow:public YerothPOSAdminWindowsCommons,
-    private Ui_YerothAdminCreateWindow
+class YerothAdminCreateWindow : public YerothPOSAdminWindowsCommons,
+								private Ui_YerothAdminCreateWindow
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothAdminCreateWindow();
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+
+	YerothAdminCreateWindow();
 
     inline ~YerothAdminCreateWindow()
     {
@@ -45,7 +50,9 @@ Q_OBJECT public:
 
     virtual void rendreInvisible();
 
+
 public slots:
+
     void showDestinataireNomComplet(const QString &
                                     destinataireId);
 
@@ -63,7 +70,9 @@ public slots:
 
     void annuler();
 
+
     void handleCurrentChanged();
+
 
     bool creer_utilisateur();
 

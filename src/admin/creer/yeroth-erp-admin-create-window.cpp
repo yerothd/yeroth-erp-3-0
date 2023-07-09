@@ -21,19 +21,21 @@
 #include <QtSql/QSqlQuery>
 
 
-YerothAdminCreateWindow::YerothAdminCreateWindow():YerothPOSAdminWindowsCommons(QObject::tr("administration ~ créer")),
-    _logger(new
-            YerothLogger("YerothAdminCreateWindow"))
+YerothAdminCreateWindow::YerothAdminCreateWindow()
+:YerothPOSAdminWindowsCommons(QObject::tr("administration ~ créer")),
+ _logger(new YerothLogger("YerothAdminCreateWindow"))
 {
     setupUi(this);
 
     mySetupUi(this);
 
+
     QMESSAGE_BOX_STYLE_SHEET =
                     QString("QMessageBox {background-color: rgb(%1);}"
-                            "QMessageBox QLabel {color: rgb(%2);}").arg
-                    (COLOUR_RGB_STRING_YEROTH_DARK_GREEN_47_67_67,
-                     COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+                            "QMessageBox QLabel {color: rgb(%2);}")
+						.arg(COLOUR_RGB_STRING_YEROTH_DARK_GREEN_47_67_67,
+							 COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+
 
     setupLineEdits();
 
@@ -129,7 +131,9 @@ YerothAdminCreateWindow::YerothAdminCreateWindow():YerothPOSAdminWindowsCommons(
     connect(radioButton_creer_alerte_periode_temps, SIGNAL(clicked(bool)),
             this, SLOT(radioButtons_periode_temps()));
 
-    connect(tabWidget_creer, SIGNAL(currentChanged(int)), this,
+    connect(tabWidget_creer,
+    		SIGNAL(currentChanged(int)),
+			this,
             SLOT(handleCurrentChanged()));
 
     connect(tabWidget_creer, SIGNAL(currentChanged(int)), this,
@@ -463,6 +467,7 @@ void YerothAdminCreateWindow::annuler()
     rendreInvisible();
 }
 
+
 void YerothAdminCreateWindow::radioButtons_quantite()
 {
     dateEdit_creer_alerte_date_fin->setYerothEnabled(false);
@@ -477,6 +482,7 @@ void YerothAdminCreateWindow::radioButtons_quantite()
     }
 }
 
+
 void YerothAdminCreateWindow::radioButtons_periode_temps()
 {
     dateEdit_creer_alerte_date_fin->setYerothEnabled(true);
@@ -490,6 +496,7 @@ void YerothAdminCreateWindow::radioButtons_periode_temps()
         radioButton_creer_alerte_quantite->setChecked(false);
     }
 }
+
 
 void YerothAdminCreateWindow::handleCurrentChanged()
 {
@@ -526,7 +533,93 @@ void YerothAdminCreateWindow::handleCurrentChanged()
     creer_alerte_check_fields_entry();
 
     creer_remise_check_fields_entry();
+
+
+
+	_allWindows->_adminWindow->_curAdminSujetAction =
+			(enum AdminSujetAction) tabWidget_creer->currentIndex();
+
+
+    switch (tabWidget_creer->currentIndex())
+    {
+    case SUJET_ACTION_COMPTE_UTILISATEUR:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ utilisateurs"));
+		break;
+
+
+    case SUJET_ACTION_LOCALISATION:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ LOCALISATIONS"));
+        break;
+
+
+    case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ départements"));
+		break;
+
+
+    case SUJET_ACTION_CATEGORIE:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ catégories"));
+        break;
+
+
+    case SUJET_ACTION_ligne_budgetaire:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ LIGNES BUDÉGTAIRES"));
+        break;
+
+
+    case SUJET_ACTION_COMPTE_BANCAIRE:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ comptes bancaires"));
+        break;
+
+
+    case SUJET_ACTION_REMISE:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ remises"));
+        break;
+
+
+    case SUJET_ACTION_ALERTE:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ alertes"));
+        break;
+
+
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+
+        _windowName = QString("%1 - %2")
+                    			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                    				 QObject::tr("administration ~ créer ~ charges financières"));
+        break;
+
+    default:
+        break;
+    }
+
+    setWindowTitle(_windowName);
 }
+
 
 void YerothAdminCreateWindow::hideEvent(QHideEvent *hideEvent)
 {
@@ -537,6 +630,9 @@ void YerothAdminCreateWindow::hideEvent(QHideEvent *hideEvent)
     dateEdit_creer_remise_date_debut->reset();
     dateEdit_creer_remise_date_fin->reset();
 }
+
+
+
 
 #include "creer-utilisateur.cpp"
 
