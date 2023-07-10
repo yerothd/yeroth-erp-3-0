@@ -185,6 +185,8 @@ YerothAdminListerWindow::YerothAdminListerWindow()
 			this,
             SLOT(handleCurrentChanged(int)));
 
+
+
     connect(tableView_lister_utilisateur, SIGNAL(clicked(QModelIndex)), this,
             SLOT(handleItemModification(QModelIndex)));
 
@@ -201,6 +203,11 @@ YerothAdminListerWindow::YerothAdminListerWindow()
     		this,
             SLOT(handleItemModification(QModelIndex)));
 
+    connect(tableView_lister_charges_financieres,
+    		SIGNAL(clicked(QModelIndex)),
+			this,
+            SLOT(handleItemModification(QModelIndex)));
+
     connect(tableView_lister_LIGNE_BUDGETAIRE,
     		SIGNAL(clicked(QModelIndex)),
 			this,
@@ -215,6 +222,8 @@ YerothAdminListerWindow::YerothAdminListerWindow()
     		SIGNAL(clicked(QModelIndex)),
 			this,
             SLOT(handleItemModification(QModelIndex)));
+
+
 
     connect(tableView_lister_utilisateur,
             SIGNAL(doubleClicked(const QModelIndex &)),
@@ -235,6 +244,11 @@ YerothAdminListerWindow::YerothAdminListerWindow()
             SIGNAL(doubleClicked(const QModelIndex &)),
 			this,
             SLOT(afficher_detail_categorie()));
+
+    connect(tableView_lister_charges_financieres,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+			this,
+            SLOT(afficher_detail_CHARGE_FINANCIERE()));
 
     connect(tableView_lister_LIGNE_BUDGETAIRE,
             SIGNAL(doubleClicked(const QModelIndex &)),

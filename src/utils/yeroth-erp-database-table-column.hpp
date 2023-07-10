@@ -155,6 +155,8 @@ public:
 
     static const QString DESCRIPTION_DU_COMPTE_BANCAIRE;
 
+    static const QString DESCRIPTION_charge_financiere;
+
     static const QString DESCRIPTION_ligne_budgetaire;
 
     static const QString DESCRIPTION_DEPARTEMENT_PRODUIT;

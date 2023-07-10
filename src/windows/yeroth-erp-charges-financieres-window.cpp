@@ -330,11 +330,8 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
 
     aQStringList.append(_varchar_dbtable_column_name_list.values());
 
-    aQStringList.
-    removeAll(YerothDatabaseTableColumn::STATUT_DE_LACHAT_AU_FOURNISSEUR);
-    aQStringList.
-    removeAll(YerothDatabaseTableColumn::
-              NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT);
+    aQStringList.removeAll(YerothDatabaseTableColumn::STATUT_DE_LACHAT_AU_FOURNISSEUR);
+    aQStringList.removeAll(YerothDatabaseTableColumn::NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT);
     aQStringList.removeAll(YerothDatabaseTableColumn::ENREGISTREUR_STOCK);
     aQStringList.removeAll(YerothDatabaseTableColumn::LOCALISATION);
     aQStringList.removeAll(YerothDatabaseTableColumn::LOCALISATION_STOCK);
@@ -350,16 +347,17 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
         if (!YerothUtils::isEqualCaseInsensitive
                 (YerothDatabaseTableColumn::REFERENCE, aDBColumnElementString))
         {
-            comboBox_element_string_db->addItem
-            (YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
-             (aDBColumnElementString));
+            comboBox_element_string_db
+				->addItem(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
+							(aDBColumnElementString));
         }
     }
 
-    comboBox_element_string_db->insertItem(0,
-                                           YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
-                                           (YerothDatabaseTableColumn::
-                                            REFERENCE));
+
+    comboBox_element_string_db
+		->insertItem(0,
+					 YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
+					 	 (YerothDatabaseTableColumn::REFERENCE));
 
     comboBox_element_string_db->setCurrentIndex(0);
 
@@ -381,6 +379,7 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::QUANTITE_TOTALE));
 
+
     comboBox_element_charges_financieres->addItems(aQStringList);
 
 
@@ -395,6 +394,7 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
 
     comboBox_element_charges_financieres_condition->addItems(aQStringList);
 }

@@ -134,6 +134,8 @@ const QString YerothDatabaseTableColumn::INSTITUT_BANCAIRE("institut_bancaire");
 
 const QString YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_BANCAIRE("description_du_compte_bancaire");
 
+const QString YerothDatabaseTableColumn::DESCRIPTION_charge_financiere("description_charge_financiere");
+
 const QString YerothDatabaseTableColumn::DESCRIPTION_ligne_budgetaire("description_ligne_budgetaire");
 
 const QString YerothDatabaseTableColumn::DESCRIPTION_DEPARTEMENT_PRODUIT("description_departement_produit");
@@ -657,6 +659,10 @@ void YerothDatabaseTableColumn::RETRANSLATE()
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_BANCAIRE,
            QObject::tr("Description compte bancaire"));
+
+    _tableColumnToUserViewString
+		.insert(YerothDatabaseTableColumn::DESCRIPTION_charge_financiere,
+				QObject::tr("Description CHARGE FINANCIÈRE"));
 
     _tableColumnToUserViewString
 		.insert(YerothDatabaseTableColumn::DESCRIPTION_ligne_budgetaire,

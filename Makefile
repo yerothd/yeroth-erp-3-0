@@ -11905,9 +11905,9 @@ ui_yeroth-erp-admin-create-window.h: ui/yeroth-erp-admin-create-window.ui \
 		/usr/lib/qt5/bin/uic \
 		src/widgets/yeroth-erp-push-button.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp \
 		src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/widgets/yeroth-erp-text-edit.hpp \
-		src/widgets/yeroth-erp-combo-box.hpp \
 		src/widgets/yeroth-erp-spinbox.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
@@ -11958,27 +11958,17 @@ ui_yeroth-erp-admin-create-window.h: ui/yeroth-erp-admin-create-window.ui \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
-		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
-		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
-		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
-		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
-		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
-		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
-		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
-		src/include/yeroth-erp-3-0-definition-month.hpp \
-		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
-		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
-		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
-		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
-		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
-		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
-		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
-		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
-		src/include/yeroth-erp-3-0-definition-month.hpp \
-		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		src/utils/yeroth-erp-utils.hpp \
+		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
+		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
+		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
+		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
+		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
+		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
+		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
+		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
+		src/include/yeroth-erp-3-0-definition-month.hpp \
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -11990,7 +11980,6 @@ ui_yeroth-erp-admin-create-window.h: ui/yeroth-erp-admin-create-window.ui \
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
-		src/utils/yeroth-erp-utils.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -12001,6 +11990,17 @@ ui_yeroth-erp-admin-create-window.h: ui/yeroth-erp-admin-create-window.ui \
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
+		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
+		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
+		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
+		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
+		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
+		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
+		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
+		src/include/yeroth-erp-3-0-definition-month.hpp \
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/utils/yeroth-erp-utils.hpp \
 		src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-client-account-sale-info.hpp \
 		src/utils/yeroth-erp-database.hpp \
@@ -33554,10 +33554,12 @@ obj/yeroth-erp-admin-create-window.o: src/admin/creer/yeroth-erp-admin-create-wi
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
 		src/utils/yeroth-erp-info-entreprise.hpp \
+		src/utils/yeroth-erp-payment-processing-information.hpp \
 		src/admin/creer/creer-utilisateur.cpp \
 		src/admin/creer/creer-localisation.cpp \
 		src/admin/creer/creer-departements-de-produits.cpp \
 		src/admin/creer/creer-categorie.cpp \
+		src/admin/creer/creer-CHARGE_FINANCIERE.cpp \
 		src/admin/creer/creer-LIGNE_BUDGETAIRE.cpp \
 		src/admin/creer/creer-alerte.cpp \
 		src/admin/creer/creer-remise.cpp \

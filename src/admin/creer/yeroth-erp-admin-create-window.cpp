@@ -10,6 +10,9 @@
 #include "src/yeroth-erp-windows.hpp"
 
 
+#include "src/utils/yeroth-erp-payment-processing-information.hpp"
+
+
 #include <QtCore/QDebug>
 
 #include <QtWidgets/QDesktopWidget>
@@ -41,6 +44,9 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
 
     setupDateTimeEdits();
 
+    comboBox_creer_nom_departement->setYerothEditable(true);
+    comboBox_creer_fournisseur->setYerothEditable(true);
+
     comboBox_creer_alerte_designation->setYerothEditable(true);
 
 
@@ -51,11 +57,10 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
 
     pushButton_menu->enable(this, SLOT(menu()));
 
+    pushButton_creer_charge_financiere_ANNULER->enable(this, SLOT(annuler()));
     pushButton_creer_utilisateur_annuler->enable(this, SLOT(annuler()));
     pushButton_creer_localisation_annuler->enable(this, SLOT(annuler()));
-    pushButton_creer_departements_de_produits_annuler->enable(this,
-                                                              SLOT(annuler
-                                                                   ()));
+    pushButton_creer_departements_de_produits_annuler->enable(this, SLOT(annuler()));
     pushButton_creer_categorie_annuler->enable(this, SLOT(annuler()));
     pushButton_creer_ligne_budgetaire_ANNULER->enable(this, SLOT(annuler()));
     pushButton_creer_compte_bancaire_annuler->enable(this, SLOT(annuler()));
@@ -63,25 +68,24 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
     pushButton_creer_remise_annuler->enable(this, SLOT(annuler()));
 
 
-    pushButton_creer_utilisateur_valider->enable(this,
-                                                 SLOT(creer_utilisateur()));
-    pushButton_creer_localisation_valider->enable(this,
-                                                  SLOT(creer_localisation
-                                                       ()));
-    pushButton_creer_departements_de_produits_valider->enable(this,
-                                                              SLOT
-                                                              (creer_departements_de_produits
-                                                               ()));
-    pushButton_creer_categorie_valider->enable(this,
-                                               SLOT(creer_categorie()));
 
-    pushButton_creer_LIGNE_budgetaire_VALIDER->enable(this,
-                                              	      SLOT(creer_ligne_budgetaire()));
+    pushButton_creer_charge_financiere_VALIDER->enable(this, SLOT(creer_charge_financiere()));
 
-    pushButton_creer_compte_bancaire_valider->enable(this,
-                                                     SLOT
-                                                     (creer_compte_bancaire
-                                                      ()));
+    pushButton_creer_utilisateur_valider->enable(this, SLOT(creer_utilisateur()));
+
+
+    pushButton_creer_localisation_valider->enable(this, SLOT(creer_localisation()));
+
+    pushButton_creer_departements_de_produits_valider
+		->enable(this, SLOT(creer_departements_de_produits()));
+
+    pushButton_creer_categorie_valider->enable(this, SLOT(creer_categorie()));
+
+    pushButton_creer_LIGNE_budgetaire_VALIDER
+		->enable(this, SLOT(creer_ligne_budgetaire()));
+
+    pushButton_creer_compte_bancaire_valider
+		->enable(this, SLOT(creer_compte_bancaire()));
 
     pushButton_creer_alerte_valider->enable(this, SLOT(creer_alerte()));
 
@@ -90,6 +94,24 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
 
     pushButton_lister->enable(this, SLOT(lister()));
     pushButton_modifier->enable(this, SLOT(lister()));
+
+
+    connect(lineEdit_creer_CHARGE_FINANCIERE_tva_value,
+    		SIGNAL(textChanged(const QString &)),
+            this,
+			SLOT(calculate_tva_value(const QString &)));
+
+
+    connect(lineEdit_creer_prix_dachat_alunite,
+    		SIGNAL(textChanged(const QString &)),
+            this,
+			SLOT(display_montant_prix_dachat_total(const QString &)));
+
+
+    connect(doubleSpinBox_quantite,
+    		SIGNAL(valueChanged(double)),
+            this,
+			SLOT(display_montant_prix_dachat_totalby_spinbox(double)));
 
 
     connect(actionStocks, SIGNAL(triggered()), this, SLOT(lister()));
@@ -169,21 +191,33 @@ void YerothAdminCreateWindow::definirManager()
 
 void YerothAdminCreateWindow::setupLineEdits()
 {
+	lineEdit_creer_prix_dachat_total->setYerothEnabled(false);
+
+
 	lineEdit_creer_montant_RESTANT_de_la_LIGNE_BUDGETAIRE->setYerothEnabled(false);
 
     lineEdit_creer_remise_montant->setYerothEnabled(false);
 
-    lineEdit_creer_localisation_adresse_ip->setValidator
-    (&YerothUtils::STRING_FOR_YEROTH_ERP_3_0_IP_ADDRESS_VALIDATOR);
+    lineEdit_creer_localisation_adresse_ip
+		->setValidator(&YerothUtils::STRING_FOR_YEROTH_ERP_3_0_IP_ADDRESS_VALIDATOR);
 
-    lineEdit_creer_remise_montant->
-    setValidator(&YerothUtils::POSITIVE_DoubleValidator);
+
+    lineEdit_creer_CHARGE_FINANCIERE_tva_value->setValidator(&YerothUtils::POSITIVE_DoubleValidator);
+
+    lineEdit_creer_prix_dachat_alunite->setValidator(&YerothUtils::POSITIVE_DoubleValidator);
+
+    lineEdit_creer_remise_montant->setValidator(&YerothUtils::POSITIVE_DoubleValidator);
+
     lineEdit_creer_alerte_quantite->setValidator(&YerothUtils::UintValidator);
+
     lineEdit_creer_utilisateur_mot_passe_1->setEchoMode(QLineEdit::Password);
+
     lineEdit_creer_utilisateur_verification->setEchoMode(QLineEdit::Password);
 
+
     connect(lineEdit_creer_remise_designation_article,
-            SIGNAL(textChanged(const QString &)), this,
+            SIGNAL(textChanged(const QString &)),
+			this,
             SLOT(showProduitInfo(const QString &)));
 }
 
@@ -210,6 +244,8 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
     clear_departements_de_produits_all_fields();
 
     clear_categorie_all_fields();
+
+    clear_CHARGE_FINANCIERE_all_fields();
 
     clear_LIGNE_BUDGETAIRE_all_fields();
 
@@ -238,6 +274,8 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
 
     populateUtilisateurComboBoxes();
 
+    populate_CHARGE_FINANCIERE_ComboBoxes();
+
     populate_LIGNE_BUDGETAIRE_ComboBoxes();
 
     populateRemiseComboBoxes();
@@ -252,6 +290,8 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
 
     creer_categorie_check_fields();
 
+    creer_charge_financiere_CHECK_fields();
+
     creer_ligne_budgetaire_CHECK_fields();
 
     creer_compte_bancaire_check_fields();
@@ -264,6 +304,8 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
 
 
     lineEdit_creer_categorie_nom->setFocus();
+
+    comboBox_creer_nom_departement->setFocus();
 
 	lineEdit_creer_INTITULE_de_la_LIGNE_BUDGETAIRE->setFocus();
 
@@ -621,6 +663,58 @@ void YerothAdminCreateWindow::handleCurrentChanged()
 }
 
 
+void YerothAdminCreateWindow::calculate_tva_value(const QString &VALEUR_TVA)
+{
+	_VALEUR_TVA = VALEUR_TVA.toDouble() / 100.0 ;
+
+	display_montant_prix_dachat_total(lineEdit_creer_prix_dachat_alunite->text());
+
+	display_montant_prix_dachat_totalby_spinbox(doubleSpinBox_quantite->value());
+}
+
+
+void YerothAdminCreateWindow::
+		display_montant_prix_dachat_total(const QString &prix_dachat_alunite)
+{
+    double qte_totale = doubleSpinBox_quantite->value();
+
+    double montant_PRIX_DACHAT_TOTAL =
+    		qte_totale * lineEdit_creer_prix_dachat_alunite->text().toDouble();
+
+
+    _MONTANT_TVA_CHARGE_FINANCIERE = _VALEUR_TVA * montant_PRIX_DACHAT_TOTAL;
+
+
+    _montant_PRIX_DACHAT_TOTAL = _MONTANT_TVA_CHARGE_FINANCIERE +
+    							 montant_PRIX_DACHAT_TOTAL;
+
+
+    lineEdit_creer_prix_dachat_total
+		->setText(GET_CURRENCY_STRING_NUM(_montant_PRIX_DACHAT_TOTAL));
+}
+
+
+void YerothAdminCreateWindow::
+		display_montant_prix_dachat_totalby_spinbox(double quantite)
+{
+    double qte_totale = doubleSpinBox_quantite->value();
+
+    double montant_PRIX_DACHAT_TOTAL =
+    		qte_totale * lineEdit_creer_prix_dachat_alunite->text().toDouble();
+
+
+    _MONTANT_TVA_CHARGE_FINANCIERE = _VALEUR_TVA * montant_PRIX_DACHAT_TOTAL;
+
+
+    _montant_PRIX_DACHAT_TOTAL = _MONTANT_TVA_CHARGE_FINANCIERE +
+    							 montant_PRIX_DACHAT_TOTAL;
+
+
+    lineEdit_creer_prix_dachat_total
+		->setText(GET_CURRENCY_STRING_NUM(_montant_PRIX_DACHAT_TOTAL));
+}
+
+
 void YerothAdminCreateWindow::hideEvent(QHideEvent *hideEvent)
 {
     dateEdit_creer_utilisateur_date_naissance->reset();
@@ -641,6 +735,8 @@ void YerothAdminCreateWindow::hideEvent(QHideEvent *hideEvent)
 #include "creer-departements-de-produits.cpp"
 
 #include "creer-categorie.cpp"
+
+#include "creer-CHARGE_FINANCIERE.cpp"
 
 #include "creer-LIGNE_BUDGETAIRE.cpp"
 

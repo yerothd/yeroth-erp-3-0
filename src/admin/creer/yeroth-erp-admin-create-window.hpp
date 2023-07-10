@@ -62,9 +62,11 @@ public slots:
 			->setText(GET_DOUBLE_STRING(text_changed.toDouble()));
     }
 
+
     void showProduitInfo(const QString &nomProduit);
 
     void showDatePeremption(const QString &nomProduit);
+
 
     void lister();
 
@@ -82,6 +84,8 @@ public slots:
 
     bool creer_categorie();
 
+    bool creer_charge_financiere();
+
     bool creer_ligne_budgetaire();
 
     bool creer_compte_bancaire();
@@ -90,9 +94,11 @@ public slots:
 
     bool creer_alerte();
 
+
     void radioButtons_quantite();
 
     void radioButtons_periode_temps();
+
 
     inline virtual void help()
     {
@@ -106,9 +112,20 @@ public slots:
                                         "l'opération !"), QMessageBox::Ok);
     }
 
+
+protected slots:
+
+	void calculate_tva_value(const QString &VALEUR_TVA);
+
+	void display_montant_prix_dachat_total(const QString &prix_dachat_alunite);
+
+	void display_montant_prix_dachat_totalby_spinbox(double quantite);
+
+
 protected:
 
     virtual void hideEvent(QHideEvent *hideEvent);
+
 
 private:
 
@@ -116,21 +133,27 @@ private:
 
     void setupDateTimeEdits();
 
+
     void populateUtilisateurComboBoxes();
 
     void populateAlerteComboBoxes();
 
     void populateLocalisationComboBoxes();
 
+    void populate_CHARGE_FINANCIERE_ComboBoxes();
+
     void populate_LIGNE_BUDGETAIRE_ComboBoxes();
 
     void populateRemiseComboBoxes();
+
 
     void clear_utilisateur_all_fields();
 
     void clear_departements_de_produits_all_fields();
 
     void clear_categorie_all_fields();
+
+    void clear_CHARGE_FINANCIERE_all_fields();
 
     void clear_LIGNE_BUDGETAIRE_all_fields();
 
@@ -142,11 +165,14 @@ private:
 
     void clear_remise_all_fields();
 
+
     bool creer_utilisateur_check_fields();
 
     bool creer_departements_de_produits_check_fields();
 
     bool creer_categorie_check_fields();
+
+    bool creer_charge_financiere_CHECK_fields();
 
     bool creer_ligne_budgetaire_CHECK_fields();
 
@@ -158,11 +184,24 @@ private:
 
     bool creer_remise_check_fields();
 
+
     void creer_utilisateur_check_fields_entry();
+
+    void creer_charge_financiere_check_fields_entry();
 
     void creer_alerte_check_fields_entry();
 
     void creer_remise_check_fields_entry();
+
+
+    double _VALEUR_TVA;
+
+    double _MONTANT_TVA_CHARGE_FINANCIERE;
+
+
+    double _montant_PRIX_DACHAT_TOTAL;
+
+
 
     YerothLogger *_logger;
 };
