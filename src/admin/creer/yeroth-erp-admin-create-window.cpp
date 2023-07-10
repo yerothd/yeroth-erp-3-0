@@ -180,6 +180,7 @@ void YerothAdminCreateWindow::definirAdministrateur()
                                                  false);
 }
 
+
 void YerothAdminCreateWindow::definirManager()
 {
     _logger->log("definirManager");
@@ -188,6 +189,88 @@ void YerothAdminCreateWindow::definirManager()
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  true);
 }
+
+
+void YerothAdminCreateWindow::show_item_CHARGE_FINANCIERE()
+{
+	YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
+
+	YerothSqlTableModel *CHARGES_FINANCIERES_TableModel = lw->getCurSearchSqlTableModel();
+
+	if (0 == CHARGES_FINANCIERES_TableModel)
+	{
+		CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+	}
+	else if ((0 != CHARGES_FINANCIERES_TableModel) &&
+			!YerothUtils::isEqualCaseInsensitive(CHARGES_FINANCIERES_TableModel->sqlTableName(),
+					YerothDatabase::CHARGES_FINANCIERES))
+	{
+		CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+	}
+
+
+	int sqlTableRow = lw->lastSelectedItemForModification();
+
+
+	QSqlRecord record = CHARGES_FINANCIERES_TableModel->record(sqlTableRow);
+
+
+	lineEdit_creer_reference
+		->setText(GET_SQL_RECORD_DATA(record,
+				  YerothDatabaseTableColumn::REFERENCE));
+
+	lineEdit_creer_designation
+		->setText(GET_SQL_RECORD_DATA(record,
+				  YerothDatabaseTableColumn::DESIGNATION));
+
+	comboBox_creer_nom_departement
+		->find_AND_SET_CURRENT_INDEX
+			(GET_SQL_RECORD_DATA(record,
+			 YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT));
+
+	comboBox_creer_LIGNE_BUDGETAIRE
+		->find_AND_SET_CURRENT_INDEX
+			(GET_SQL_RECORD_DATA(record,
+			 YerothDatabaseTableColumn::CATEGORIE));
+
+	comboBox_creer_fournisseur
+		->find_AND_SET_CURRENT_INDEX
+			(GET_SQL_RECORD_DATA(record,
+			 YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR));
+
+	doubleSpinBox_quantite
+		->setValue(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::QUANTITE_TOTALE)
+				.toDouble());
+
+
+	lineEdit_creer_prix_dachat_alunite
+		->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::PRIX_UNITAIRE));
+
+
+	double prix_dachat = 0.0;
+
+
+	YerothPOSUser *currentUser = YerothUtils::getAllWindows()->getUser();
+
+	if (0 != currentUser)
+	{
+		if (currentUser->isManager())
+		{
+			prix_dachat =
+					GET_SQL_RECORD_DATA(record,
+							YerothDatabaseTableColumn::PRIX_DACHAT).toDouble();
+		}
+	}
+
+
+	lineEdit_creer_prix_dachat_total->setText(GET_CURRENCY_STRING_NUM(prix_dachat));
+
+
+	textEdit_creer_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
+			YerothDatabaseTableColumn::DESCRIPTION_charge_financiere));
+
+}
+
 
 void YerothAdminCreateWindow::setupLineEdits()
 {
@@ -221,6 +304,7 @@ void YerothAdminCreateWindow::setupLineEdits()
             SLOT(showProduitInfo(const QString &)));
 }
 
+
 void YerothAdminCreateWindow::setupDateTimeEdits()
 {
     dateEdit_creer_utilisateur_date_naissance->setStartDate(GET_CURRENT_DATE);
@@ -233,7 +317,9 @@ void YerothAdminCreateWindow::setupDateTimeEdits()
     dateEdit_creer_remise_date_fin->setStartDate(GET_CURRENT_DATE);
 }
 
-void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
+
+void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction,
+											bool 	 a_show_item_CHARGE_FINANCIERE /* = false */ )
 {
     retranslateUi(this);
 
@@ -257,12 +343,14 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
 
     clear_remise_all_fields();
 
+
     comboBox_nom_departement_produit->populateComboBoxRawString
     (YerothDatabase::DEPARTEMENTS_PRODUITS,
      YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT);
 
     comboBox_creer_alerte_designation->populateComboBoxRawString
     (YerothDatabase::STOCKS, YerothDatabaseTableColumn::DESIGNATION);
+
 
     lineEdit_creer_remise_designation_article->setupMyStaticQCompleter
     (YerothDatabase::STOCKS, YerothDatabaseTableColumn::DESIGNATION);
@@ -271,6 +359,7 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
 
     lineEdit_creer_utilisateur_localisation->
     setText(YerothERPConfig::THIS_SITE_LOCALISATION_NAME);
+
 
     populateUtilisateurComboBoxes();
 
@@ -284,7 +373,8 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
 
     populateLocalisationComboBoxes();
 
-    creer_utilisateur_check_fields_entry();
+
+
 
     creer_departements_de_produits_check_fields();
 
@@ -297,6 +387,9 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
     creer_compte_bancaire_check_fields();
 
     creer_localisation_check_fields();
+
+
+    creer_utilisateur_check_fields_entry();
 
     creer_alerte_check_fields_entry();
 
@@ -320,8 +413,15 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction)
     lineEdit_creer_departements_de_produits_nom->setFocus();
 
 
+    if (a_show_item_CHARGE_FINANCIERE)
+    {
+    	show_item_CHARGE_FINANCIERE();
+    }
+
+
     setVisible(true);
 }
+
 
 void YerothAdminCreateWindow::rendreInvisible()
 {

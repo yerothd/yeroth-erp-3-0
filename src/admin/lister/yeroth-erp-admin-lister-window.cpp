@@ -970,7 +970,7 @@ void YerothAdminListerWindow::
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("LISTER_CHARGES_FINANCIERES"));
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1011,7 +1011,7 @@ void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *aSqlTableM
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_utilisateur"));
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1052,7 +1052,7 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_localisation"));
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1131,7 +1131,7 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
     //                      .arg(_curSearchSqlTableModel->filter());
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1178,7 +1178,7 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
     //                      .arg(_curSearchSqlTableModel->filter());
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1225,7 +1225,7 @@ void YerothAdminListerWindow::lister_LIGNE_BUDGETAIRE(YerothSqlTableModel *aSqlT
 	//                      .arg(_curSearchSqlTableModel->filter());
 
 
-	_lastItemSelectedForModification = 0;
+	_lastItemSelectedForModification = lastSelectedItemForModification();
 
 	set_admin_rechercher_font();
 
@@ -1266,7 +1266,7 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_compte_bancaire"));
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1306,7 +1306,7 @@ void YerothAdminListerWindow::lister_alerte(YerothSqlTableModel *aSqlTableModel)
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_alerte"));
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 
@@ -1347,7 +1347,7 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
     setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_remise"));
 
 
-    _lastItemSelectedForModification = 0;
+    _lastItemSelectedForModification = lastSelectedItemForModification();
 
     set_admin_rechercher_font();
 

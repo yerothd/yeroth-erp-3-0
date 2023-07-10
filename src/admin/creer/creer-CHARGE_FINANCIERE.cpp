@@ -38,7 +38,7 @@ bool YerothAdminCreateWindow::creer_charge_financiere()
         YerothERPServiceData a_service_achat_au_fournisseur_data;
 
         a_service_achat_au_fournisseur_data._nom_departement_produit =
-                        comboBox_nom_departement_produit->currentText();
+        				proposed_nom_departement_produit;
 
         a_service_achat_au_fournisseur_data._categorie =
                         comboBox_creer_LIGNE_BUDGETAIRE->currentText();
@@ -181,8 +181,7 @@ bool YerothAdminCreateWindow::creer_charge_financiere()
                                  lineEdit_creer_designation->text());
 
             CHARGE_FINANCIERE_Record.setValue(YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
-                                 a_service_achat_au_fournisseur_data.
-                                 _nom_departement_produit);
+                                 a_service_achat_au_fournisseur_data._nom_departement_produit);
 
             CHARGE_FINANCIERE_Record.setValue(YerothDatabaseTableColumn::CATEGORIE,
                                  a_service_achat_au_fournisseur_data._categorie);
@@ -214,13 +213,37 @@ bool YerothAdminCreateWindow::creer_charge_financiere()
             CHARGE_FINANCIERE_Record.setValue(YerothDatabaseTableColumn::DATE_DE_COMMANDE,
                                  GET_CURRENT_DATE);
 
-            successAchatDeServiceInsert =
-            		charges_financieresSqlTableModel
-    					.insertNewRecord(CHARGE_FINANCIERE_Record,
-    									 this,
-    									 "src/admin/creer/creer-CHARGE_FINANCIERE.cpp",
-    									 200,
-    									 lineEdit_creer_designation->text());
+            if (!YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(*this,
+            								   	   	   	     charges_financieresSqlTableModel,
+															 *lineEdit_creer_designation,
+															 QObject::tr("Désignation"),
+															 YerothDatabaseTableColumn::DESIGNATION)  &&
+            	!YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(*this,
+            		            						     charges_financieresSqlTableModel,
+            												 *lineEdit_creer_reference,
+            												 QObject::tr("Référence"),
+            												 YerothDatabaseTableColumn::REFERENCE)	)
+            {
+                successAchatDeServiceInsert =
+                		charges_financieresSqlTableModel
+        					.insertNewRecord(CHARGE_FINANCIERE_Record,
+        									 this,
+        									 "src/admin/creer/creer-CHARGE_FINANCIERE.cpp",
+        									 221,
+        									 lineEdit_creer_designation->text());
+            }
+//            else
+//            {
+//        		QString retMsg_ECHEC_inserer_charge_financiere =
+//        				QObject::tr("1 charge financière avec la \n"
+//        							"désignation '%1' est déjà existante !")
+//    						.arg(lineEdit_creer_designation->text());
+//
+//                YerothQMessageBox::warning(this,
+//                                           QObject::tr("enregistrement ACHAT SUR LIGNE BUDGÉTAIRE (3) - échec"),
+//    									   retMsg_ECHEC_inserer_charge_financiere);
+//            }
+
         }
 
         bool successPaiementsInsert = false;
@@ -353,6 +376,8 @@ bool YerothAdminCreateWindow::creer_charge_financiere_CHECK_fields()
 
 	bool designation = lineEdit_creer_designation->checkField();
 
+	bool reference = lineEdit_creer_reference->checkField();
+
 	bool fournisseur = comboBox_creer_fournisseur->checkField();
 
 	bool quantite = doubleSpinBox_quantite->checkField();
@@ -366,6 +391,7 @@ bool YerothAdminCreateWindow::creer_charge_financiere_CHECK_fields()
 
     return departement							&&
     	   designation 							&&
+		   reference							&&
 		   quantite 							&&
 		   fournisseur							&&
 		   intitule_de_la_LIGNE_BUDGETAIRE 		&&

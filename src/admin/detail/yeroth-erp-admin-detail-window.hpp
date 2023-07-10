@@ -71,6 +71,9 @@ public:
 
 public slots:
 
+	virtual void CREER_A_PARTIR_DE_CECI();
+
+
     void creer();
 
     void lister();

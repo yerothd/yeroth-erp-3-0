@@ -46,7 +46,8 @@ public:
 
     virtual void definirManager();
 
-    virtual void rendreVisible(unsigned selectedSujetAction);
+    virtual void rendreVisible(unsigned selectedSujetAction,
+    						   bool 	a_show_item_CHARGE_FINANCIERE = false);
 
     virtual void rendreInvisible();
 
@@ -128,6 +129,8 @@ protected:
 
 
 private:
+
+    void show_item_CHARGE_FINANCIERE();
 
     void setupLineEdits();
 

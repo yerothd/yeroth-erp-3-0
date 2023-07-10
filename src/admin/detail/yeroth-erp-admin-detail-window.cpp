@@ -52,6 +52,11 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  false);
 
+
+    pushButton_detail_charges_financieres_CREER
+		->enable(this, SLOT(CREER_A_PARTIR_DE_CECI()));
+
+
     pushButton_creer->enable(this, SLOT(creer()));
     pushButton_menu->enable(this, SLOT(menu()));
     pushButton_lister->enable(this, SLOT(lister()));
@@ -195,6 +200,15 @@ void YerothAdminDetailWindow::definirManager()
                                                  true);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  true);
+}
+
+
+void YerothAdminDetailWindow::CREER_A_PARTIR_DE_CECI()
+{
+	_allWindows->_adminCreateWindow
+		->rendreVisible(tabWidget_detail->currentIndex(),
+						true);
+	rendreInvisible();
 }
 
 
@@ -799,7 +813,10 @@ void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
 
     QSqlRecord record = CHARGES_FINANCIERES_TableModel->record(sqlTableRow);
 
+    dateEdit_date_de_reception->setYerothEnabled(false);
     dateEdit_date_de_commande->setYerothEnabled(false);
+
+    lineEdit_departement->setYerothEnabled(false);
     lineEdit_reference_produit->setYerothEnabled(false);
     lineEdit_designation->setYerothEnabled(false);
     lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
@@ -808,12 +825,26 @@ void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
     lineEdit_prix_dachat->setYerothEnabled(false);
     lineEdit_prix_unitaire->setYerothEnabled(false);
 
+    lineEdit_STATUT_DE_LACHAT->setYerothEnabled(false);
+	lineEdit_MONTANT_TVA->setYerothEnabled(false);
+	lineEdit_ref_RECU_DACHAT->setYerothEnabled(false);
+	lineEdit_LOCALISATION->setYerothEnabled(false);
+	lineEdit_ID_commandeur->setYerothEnabled(false);
 
-    QString date_de_commande =
-    		GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::DATE_DE_COMMANDE);
+    textEdit_detail_une_CHARGE_FINANCIERE->setYerothEnabled(false);
+
+
+
+    dateEdit_date_de_reception
+		->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_RECEPTION).toDate());
 
     dateEdit_date_de_commande
 		->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_COMMANDE).toDate());
+
+
+    lineEdit_departement
+		->setText(GET_SQL_RECORD_DATA(record,
+                                  	  YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT));
 
     lineEdit_reference_produit
 		->setText(GET_SQL_RECORD_DATA(record,
@@ -866,7 +897,30 @@ void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
     lineEdit_quantite->setText(GET_DOUBLE_STRING_P(quantite_restante, 0));
 
 
+
+    lineEdit_STATUT_DE_LACHAT->setText(GET_SQL_RECORD_DATA(record,
+            YerothDatabaseTableColumn::STATUT_DE_LACHAT_AU_FOURNISSEUR));
+
+	lineEdit_MONTANT_TVA->setText(GET_SQL_RECORD_DATA(record,
+            YerothDatabaseTableColumn::MONTANT_TVA));
+
+	lineEdit_ref_RECU_DACHAT->setText(GET_SQL_RECORD_DATA(record,
+            YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT));
+
+	lineEdit_LOCALISATION->setText(GET_SQL_RECORD_DATA(record,
+            YerothDatabaseTableColumn::LOCALISATION));
+
+	lineEdit_ID_commandeur->setText(GET_SQL_RECORD_DATA(record,
+            YerothDatabaseTableColumn::NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT));
+
+
+    textEdit_detail_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
+            YerothDatabaseTableColumn::DESCRIPTION_charge_financiere));
+
+
+
     enableOtherTabs(SUJET_ACTION_CHARGE_FINANCIERE, false);
+
 
     setVisible(true);
 }
