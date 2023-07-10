@@ -2954,13 +2954,12 @@ QString YerothUtils::GET_YEROTH_QT_OBJECT_NAME(QObject *an_object)
 }
 
 
-bool YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(
-		YerothWindowsCommons &aCallingWindow,
-		YerothSqlTableModel &aSqlTableModel,
-		YerothLineEdit &aYerothLineEdit_DB_TO_SEARCH_COLUMN_NAME,
-		const QString &for_user_view_db_column_description,
-		const QString &aDB_TABLE_COLUMN_NAME, int aCurrentClientDetailDBID /* = YerothUtils::CURRENT_CLIENT_DB_ID_UNDEFINED */
-		)
+bool YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(YerothWindowsCommons &aCallingWindow,
+												 YerothSqlTableModel  &aSqlTableModel,
+												 YerothLineEdit 	  &aYerothLineEdit_DB_TO_SEARCH_COLUMN_NAME,
+												 const QString 		  &for_user_view_db_column_description,
+												 const QString 		  &aDB_TABLE_COLUMN_NAME,
+												 int 				  aCurrentClientDetailDBID /* = YerothUtils::CURRENT_CLIENT_DB_ID_UNDEFINED */)
 {
 	if (aYerothLineEdit_DB_TO_SEARCH_COLUMN_NAME.isEmpty())
 	{
