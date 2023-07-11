@@ -7920,7 +7920,7 @@ stock (service)</translation>
         <location filename="ui/yeroth-erp-admin-detail-window.ui" line="9148"/>
         <source>description de 
  la charge financière</source>
-        <translation>FINANCIAL EXPECSE 
+        <translation>FINANCIAL EXPENSE 
  DESCRIPTION</translation>
     </message>
     <message>
