@@ -81,14 +81,25 @@ YerothChargesFinancieresDetailsWindow::YerothChargesFinancieresDetailsWindow()
 
 void YerothChargesFinancieresDetailsWindow::setupLineEdits()
 {
-	dateEdit_date_de_commande->setYerothEnabled(false);
+    dateEdit_date_de_reception->setYerothEnabled(false);
+    dateEdit_date_de_commande->setYerothEnabled(false);
+
+    lineEdit_departement->setYerothEnabled(false);
     lineEdit_reference_produit->setYerothEnabled(false);
     lineEdit_designation->setYerothEnabled(false);
+    lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
+    lineEdit_LIGNE_BUDGETAIRE->setYerothEnabled(false);
     lineEdit_quantite->setYerothEnabled(false);
     lineEdit_prix_dachat->setYerothEnabled(false);
     lineEdit_prix_unitaire->setYerothEnabled(false);
-    lineEdit_LIGNE_BUDGETAIRE->setYerothEnabled(false);
-    lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
+
+    lineEdit_STATUT_DE_LACHAT->setYerothEnabled(false);
+	lineEdit_MONTANT_TVA->setYerothEnabled(false);
+	lineEdit_ref_RECU_DACHAT->setYerothEnabled(false);
+	lineEdit_LOCALISATION->setYerothEnabled(false);
+	lineEdit_ID_commandeur->setYerothEnabled(false);
+
+    textEdit_detail_une_CHARGE_FINANCIERE->setYerothEnabled(false);
 }
 
 
@@ -276,44 +287,55 @@ void YerothChargesFinancieresDetailsWindow::showItem()
 
     QSqlRecord record = _cur_CHARGES_FINANCIERESTableModel->record(0);
 
+    dateEdit_date_de_reception
+	->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_RECEPTION).toDate());
+
     dateEdit_date_de_commande
-		->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_COMMANDE).toDate());
+	->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_COMMANDE).toDate());
+
+
+    lineEdit_departement
+	->setText(GET_SQL_RECORD_DATA(record,
+			YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT));
 
     lineEdit_reference_produit
-		->setText(GET_SQL_RECORD_DATA(record,
-                                      YerothDatabaseTableColumn::REFERENCE));
+	->setText(GET_SQL_RECORD_DATA(record,
+			YerothDatabaseTableColumn::REFERENCE));
 
     lineEdit_designation
-		->setText(GET_SQL_RECORD_DATA(record,
-                                   	  YerothDatabaseTableColumn::DESIGNATION));
+	->setText(GET_SQL_RECORD_DATA(record,
+			YerothDatabaseTableColumn::DESIGNATION));
 
     lineEdit_LIGNE_BUDGETAIRE
-		->setText(GET_SQL_RECORD_DATA(record,
-                                      YerothDatabaseTableColumn::CATEGORIE));
+	->setText(GET_SQL_RECORD_DATA(record,
+			YerothDatabaseTableColumn::CATEGORIE));
 
     lineEdit_nom_entreprise_fournisseur
-		->setText(GET_SQL_RECORD_DATA(record,
-                                      YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR));
+	->setText(GET_SQL_RECORD_DATA(record,
+			YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR));
 
 
     double prix_unitaire = GET_SQL_RECORD_DATA(record,
-                                               YerothDatabaseTableColumn::PRIX_UNITAIRE).toDouble();
+    		YerothDatabaseTableColumn::PRIX_UNITAIRE).toDouble();
 
 
     lineEdit_prix_unitaire->setText(GET_CURRENCY_STRING_NUM(prix_unitaire));
 
+
     double prix_dachat = 0.0;
+
 
     YerothPOSUser *currentUser = YerothUtils::getAllWindows()->getUser();
 
     if (0 != currentUser)
     {
-        if (currentUser->isManager() || currentUser->isGestionaireDesStocks())
-        {
-            prix_dachat =
-            		GET_SQL_RECORD_DATA(record,
-                                        YerothDatabaseTableColumn::PRIX_DACHAT).toDouble();
-        }
+    	if (currentUser->isManager() ||
+    		currentUser->isGestionaireDesStocks())
+    	{
+    		prix_dachat =
+    				GET_SQL_RECORD_DATA(record,
+    						YerothDatabaseTableColumn::PRIX_DACHAT).toDouble();
+    	}
     }
 
 
@@ -322,9 +344,31 @@ void YerothChargesFinancieresDetailsWindow::showItem()
 
     double quantite_restante =
     		GET_SQL_RECORD_DATA(record,
-                                YerothDatabaseTableColumn::QUANTITE_TOTALE).toDouble();
+    				YerothDatabaseTableColumn::QUANTITE_TOTALE).toDouble();
+
 
     lineEdit_quantite->setText(GET_DOUBLE_STRING_P(quantite_restante, 0));
+
+
+    lineEdit_STATUT_DE_LACHAT->setText(GET_SQL_RECORD_DATA(record,
+    		YerothDatabaseTableColumn::STATUT_DE_LACHAT_AU_FOURNISSEUR));
+
+    lineEdit_MONTANT_TVA->setText(GET_SQL_RECORD_DATA(record,
+    		YerothDatabaseTableColumn::MONTANT_TVA));
+
+    lineEdit_ref_RECU_DACHAT->setText(GET_SQL_RECORD_DATA(record,
+    		YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT));
+
+    lineEdit_LOCALISATION->setText(GET_SQL_RECORD_DATA(record,
+    		YerothDatabaseTableColumn::LOCALISATION));
+
+    lineEdit_ID_commandeur->setText(GET_SQL_RECORD_DATA(record,
+    		YerothDatabaseTableColumn::NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT));
+
+
+    textEdit_detail_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
+    		YerothDatabaseTableColumn::DESCRIPTION_charge_financiere));
+
 
     _cur_CHARGES_FINANCIERESTableModel->resetFilter();
 }

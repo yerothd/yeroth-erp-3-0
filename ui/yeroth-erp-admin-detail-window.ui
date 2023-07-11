@@ -922,7 +922,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_4_alertes">
      <attribute name="title">
@@ -6555,6 +6555,9 @@
           <pointsize>10</pointsize>
          </font>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
         <property name="readOnly">
          <bool>false</bool>
         </property>
@@ -6611,7 +6614,7 @@
         <property name="geometry">
          <rect>
           <x>335</x>
-          <y>78</y>
+          <y>102</y>
           <width>156</width>
           <height>21</height>
          </rect>
@@ -7140,7 +7143,7 @@
         <property name="geometry">
          <rect>
           <x>494</x>
-          <y>79</y>
+          <y>103</y>
           <width>270</width>
           <height>21</height>
          </rect>
@@ -8060,7 +8063,7 @@
         <property name="geometry">
          <rect>
           <x>494</x>
-          <y>103</y>
+          <y>79</y>
           <width>270</width>
           <height>21</height>
          </rect>
@@ -8511,6 +8514,9 @@
          <font>
           <pointsize>10</pointsize>
          </font>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
        <widget class="YerothLineEdit" name="lineEdit_LOCALISATION">
@@ -8974,7 +8980,7 @@
         <property name="geometry">
          <rect>
           <x>335</x>
-          <y>102</y>
+          <y>78</y>
           <width>156</width>
           <height>21</height>
          </rect>
@@ -22576,6 +22582,8 @@ background-color: rgb(255, 255, 255);</string>
     <property name="title">
      <string>Outils</string>
     </property>
+    <addaction name="actionAfficherPDF"/>
+    <addaction name="separator"/>
     <addaction name="actionQui_suis_je"/>
    </widget>
    <addaction name="menu_adminDetailWindow"/>
@@ -23051,6 +23059,7 @@ background-color: rgb(255, 255, 255);</string>
    <addaction name="actionChanger_utilisateur"/>
    <addaction name="actionDeconnecter_utilisateur"/>
    <addaction name="actionAppeler_aide"/>
+   <addaction name="actionAfficherPDF"/>
    <addaction name="actionRetournerMenuPrincipal"/>
   </widget>
   <action name="actionA_propos">
@@ -23233,6 +23242,25 @@ background-color: rgb(255, 255, 255);</string>
      <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionAfficherPDF">
+   <property name="icon">
+    <iconset resource="../yeroth-erp-3-0.qrc">
+     <normaloff>:/yeroth-erp-3-0-images/yeroth-erp-3-0-pdf-print-icon.svg</normaloff>:/yeroth-erp-3-0-images/yeroth-erp-3-0-pdf-print-icon.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimer le bon de commande</string>
+   </property>
+   <property name="toolTip">
+    <string>Imprimer le bon de commande</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
   </action>

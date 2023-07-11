@@ -3805,6 +3805,7 @@ moc/moc_yeroth-erp-charges-financieres-detail-window.cpp: src/windows/yeroth-erp
 		src/utils/yeroth-erp-logger.hpp \
 		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-charges-financieres-detail-window.hpp -o moc/moc_yeroth-erp-charges-financieres-detail-window.cpp
@@ -8244,6 +8245,7 @@ ui_yeroth-erp-charges-financieres-detail-window.h: ui/yeroth-erp-charges-financi
 		src/widgets/yeroth-erp-push-button.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		src/widgets/yeroth-erp-datetime-edit.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -8302,7 +8304,29 @@ ui_yeroth-erp-charges-financieres-detail-window.h: ui/yeroth-erp-charges-financi
 		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
-		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
+		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
+		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
+		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
+		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
+		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
+		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
+		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
+		src/include/yeroth-erp-3-0-definition-month.hpp \
+		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
+		src/utils/yeroth-erp-utils.hpp \
+		src/utils/yeroth-erp-spell-numbers.hpp \
+		src/utils/yeroth-erp-client-account-sale-info.hpp \
+		src/utils/yeroth-erp-database.hpp \
+		src/utils/yeroth-erp-config.hpp \
+		src/utils/yeroth-erp-database-table-column.hpp \
+		src/widgets/yeroth-erp-qmessage-box.hpp \
+		src/widgets/table-view/yeroth-erp-table-view.hpp \
+		src/widgets/yeroth-erp-qstandard-item-model.hpp \
+		src/utils/yeroth-erp-sqltable-model.hpp \
+		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
+		src/widgets/yeroth-erp-combo-box.hpp
 	/usr/lib/qt5/bin/uic ui/yeroth-erp-charges-financieres-detail-window.ui -o ui_yeroth-erp-charges-financieres-detail-window.h
 
 ui_yeroth-erp-tableau-des-transactions-du-fournisseur-window.h: ui/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui \
@@ -24420,6 +24444,7 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		src/utils/yeroth-erp-logger.hpp \
 		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
@@ -24431,7 +24456,6 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/widgets/yeroth-erp-qcheckbox.hpp \
