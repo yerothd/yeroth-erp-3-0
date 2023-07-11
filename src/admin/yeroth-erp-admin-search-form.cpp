@@ -94,7 +94,7 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
     case SUJET_ACTION_CHARGE_FINANCIERE:
 
         lineEdit_terme_recherche
- 			->enableForSearch(QObject::tr("désignation de la charge financière (BON DE COMMANDE)"));
+ 			->enableForSearch(QObject::tr("désignation (BON DE COMMANDE)"));
 
          lineEdit_terme_recherche
          	->setupMyStaticQCompleter(YerothDatabase::CHARGES_FINANCIERES,
@@ -312,12 +312,14 @@ void YerothAdminSearchForm::rechercher(const QString &itemName)
     if (0 != _curSqlTableModel)
     {
         _curSqlTableModel->yerothSetFilter_WITH_where_clause(filter);
-        //qDebug() << "++ filter: "
-        //               << filter << ", _curSqlTableModel: "
-        //               << _curSqlTableModel->sqlTableName();
+
+//        qDebug() << "++ filter: "
+//                 << filter << ", _curSqlTableModel: "
+//                 << _curSqlTableModel->sqlTableName();
+
         int curSqlTableModelRows =
         		_curSqlTableModel->easySelect("src/admin/yeroth-erp-admin-search-form.cpp",
-        									  318);
+        									  320);
 
         if (curSqlTableModelRows > 0)
         {

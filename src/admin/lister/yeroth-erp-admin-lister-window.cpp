@@ -851,9 +851,7 @@ void YerothAdminListerWindow::SETUP_PRINT()
 
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_utilisateur);
 
-    	//setup_select_configure_dbcolumn(YerothDatabase::USERS);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_users();
+    	setup_select_configure_dbcolumn(YerothDatabase::USERS);
         break;
 
 
@@ -863,8 +861,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_localisation);
 
     	setup_select_configure_dbcolumn(YerothDatabase::LOCALISATIONS);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_localisations();
         break;
 
 
@@ -874,8 +870,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_departements_produits);
 
     	setup_select_configure_dbcolumn(YerothDatabase::DEPARTEMENTS_PRODUITS);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_departements_produits();
         break;
 
 
@@ -885,8 +879,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_categorie);
 
     	setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_categories();
         break;
 
 
@@ -896,8 +888,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_LIGNE_BUDGETAIRE);
 
     	setup_select_configure_dbcolumn(YerothDatabase::LIGNES_BUDGETAIRES);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_lignes_budgetaires();
         break;
 
 
@@ -907,8 +897,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_compte_bancaire);
 
     	setup_select_configure_dbcolumn(YerothDatabase::COMPTES_BANCAIRES);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_comptes_bancaires();
         break;
 
 
@@ -918,8 +906,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_alerte);
 
     	setup_select_configure_dbcolumn(YerothDatabase::ALERTES);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_alertes();
         break;
 
 
@@ -929,8 +915,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_remise);
 
     	setup_select_configure_dbcolumn(YerothDatabase::REMISES);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_remises();
         break;
 
 
@@ -940,8 +924,6 @@ void YerothAdminListerWindow::SETUP_PRINT()
     	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_charges_financieres);
 
     	setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
-
-    	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_charges_financieres();
         break;
 
 
@@ -967,6 +949,8 @@ void YerothAdminListerWindow::
     {
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_charges_financieres,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
     }
     else
     {
@@ -976,7 +960,10 @@ void YerothAdminListerWindow::
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_charges_financieres,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
+
 
     _LISTER_tab_TO_tabTitle.insert("LISTER_CHARGES_FINANCIERES", _windowName);
 
@@ -1008,6 +995,8 @@ void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *aSqlTableM
     {
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_utilisateur,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
     }
     else
     {
@@ -1017,7 +1006,10 @@ void YerothAdminListerWindow::lister_utilisateur(YerothSqlTableModel *aSqlTableM
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_utilisateur,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
+
 
     _LISTER_tab_TO_tabTitle.insert("lister_utilisateur", _windowName);
 
@@ -1049,6 +1041,8 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
     {
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_utilisateur,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
     }
     else
     {
@@ -1058,7 +1052,10 @@ void YerothAdminListerWindow::lister_localisation(YerothSqlTableModel *
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_localisation,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
+
 
     _LISTER_tab_TO_tabTitle.insert("lister_localisation", _windowName);
 
@@ -1091,6 +1088,8 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_departements_produits,
     										 *aSqlTableModel);
 
+    	_curSearchSqlTableModel = aSqlTableModel;
+
 #ifdef YEROTH_SERVER
 
     	YerothERPWindows *allWindows = YerothUtils::getAllWindows();
@@ -1117,6 +1116,8 @@ void YerothAdminListerWindow::lister_departements_de_produits(YerothSqlTableMode
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_departements_produits,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
 
 #ifdef YEROTH_SERVER
 
@@ -1169,6 +1170,8 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_categorie,
     										 *aSqlTableModel);
 
+    	_curSearchSqlTableModel = aSqlTableModel;
+
 //        _curSearchSqlTableModel = aSqlTableModel;
 //        //qDebug() << QString("++ lister_categorie | setting new _curSearchSqlTableModel| sql table filter: %1")
 //        //                              .arg(_curSearchSqlTableModel->filter());
@@ -1181,7 +1184,10 @@ void YerothAdminListerWindow::lister_categorie(YerothSqlTableModel *aSqlTableMod
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_categorie,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
+
 
     _LISTER_tab_TO_tabTitle.insert("lister_categorie", _windowName);
 
@@ -1216,6 +1222,8 @@ void YerothAdminListerWindow::lister_LIGNE_BUDGETAIRE(YerothSqlTableModel *aSqlT
 	{
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_LIGNE_BUDGETAIRE,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
 		//qDebug() << QString("++ lister_LIGNE_BUDGETAIRE | setting new _curSearchSqlTableModel| sql table filter: %1")
 	        		//                              .arg(_curSearchSqlTableModel->filter());
 	}
@@ -1227,6 +1235,8 @@ void YerothAdminListerWindow::lister_LIGNE_BUDGETAIRE(YerothSqlTableModel *aSqlT
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_LIGNE_BUDGETAIRE,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
 	}
 
 
@@ -1262,6 +1272,8 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
     {
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_compte_bancaire,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
     }
     else
     {
@@ -1271,6 +1283,8 @@ void YerothAdminListerWindow::lister_compte_bancaire(YerothSqlTableModel *aSqlTa
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_compte_bancaire,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
 
 
@@ -1303,6 +1317,8 @@ void YerothAdminListerWindow::lister_alerte(YerothSqlTableModel *aSqlTableModel)
     {
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_alerte,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
     }
     else
     {
@@ -1312,7 +1328,10 @@ void YerothAdminListerWindow::lister_alerte(YerothSqlTableModel *aSqlTableModel)
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_alerte,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
+
 
     _LISTER_tab_TO_tabTitle.insert("lister_alerte", _windowName);
 
@@ -1343,6 +1362,8 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
     {
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_remise,
     										 *aSqlTableModel);
+
+    	_curSearchSqlTableModel = aSqlTableModel;
     }
     else
     {
@@ -1352,6 +1373,8 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
 
     	LIST_SHOW_TABLE_VIEW_WITH_PAGINATION(*tableView_lister_remise,
     										 sqlTableModel);
+
+    	_curSearchSqlTableModel = &sqlTableModel;
     }
 
 
@@ -1375,6 +1398,7 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 	_allWindows->_adminWindow->_curAdminSujetAction =
 			(enum AdminSujetAction) tabWidget_lister->currentIndex();
 
+
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
@@ -1385,9 +1409,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_utilisateur()));
 
-    	lister_utilisateur(_curSearchSqlTableModel);
+        if (!isUserCurrentlyFiltered())
+        {
+        	lister_utilisateur(_curSearchSqlTableModel);
+        }
 
 		break;
+
 
     case SUJET_ACTION_LOCALISATION:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1397,9 +1425,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_localisation()));
 
-    	lister_localisation(_curSearchSqlTableModel);
+        if (!isSiteCurrentlyFiltered())
+        {
+        	lister_localisation(_curSearchSqlTableModel);
+        }
 
         break;
+
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1409,9 +1441,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_departements_de_produits()));
 
-    	lister_departements_de_produits(_curSearchSqlTableModel);
+        if (!isProductDepartmentCurrentlyFiltered())
+        {
+        	lister_departements_de_produits(_curSearchSqlTableModel);
+        }
 
 		break;
+
 
     case SUJET_ACTION_CATEGORIE:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1421,9 +1457,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_categorie()));
 
-    	lister_categorie(_curSearchSqlTableModel);
+        if (!isCategoryCurrentlyFiltered())
+        {
+        	lister_categorie(_curSearchSqlTableModel);
+        }
 
         break;
+
 
     case SUJET_ACTION_ligne_budgetaire:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1433,9 +1473,12 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_LIGNE_BUDGETAIRE()));
 
-    	lister_LIGNE_BUDGETAIRE(_curSearchSqlTableModel);
-
+        if (!is_LIGNE_BUDGETAIRE_CurrentlyFiltered())
+        {
+        	lister_LIGNE_BUDGETAIRE(_curSearchSqlTableModel);
+        }
         break;
+
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1445,9 +1488,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_compte_bancaire()));
 
-    	lister_compte_bancaire(_curSearchSqlTableModel);
+        if (!isBankAccountCurrentlyFiltered())
+        {
+        	lister_compte_bancaire(_curSearchSqlTableModel);
+        }
 
         break;
+
 
     case SUJET_ACTION_REMISE:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1457,9 +1504,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_remise()));
 
-    	lister_remise(_curSearchSqlTableModel);
+        if (!isDiscountCurrentlyFiltered())
+        {
+        	lister_remise(_curSearchSqlTableModel);
+        }
 
         break;
+
 
     case SUJET_ACTION_ALERTE:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1469,9 +1520,13 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_alerte()));
 
-    	lister_alerte(_curSearchSqlTableModel);
+        if (!isAlertCurrentlyFiltered())
+        {
+        	lister_alerte(_curSearchSqlTableModel);
+        }
 
         break;
+
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
@@ -1481,7 +1536,11 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 				this,
                 SLOT(RESET_VIEW_CHARGES_FINANCIERES()));
 
-    	LISTER_CHARGES_FINANCIERES(_curSearchSqlTableModel);
+        if (!isCharge_financieres_CurrentlyFiltered())
+        {
+        	LISTER_CHARGES_FINANCIERES(_curSearchSqlTableModel);
+        }
+
         break;
 
     default:
