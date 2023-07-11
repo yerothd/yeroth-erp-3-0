@@ -117,6 +117,28 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
 
 void YerothAdminDetailWindow::setupLineEdits()
 {
+	//FINANCIAL EXPENSE WIDGET SETUP
+    dateEdit_date_de_reception->setYerothEnabled(false);
+    dateEdit_date_de_commande->setYerothEnabled(false);
+
+    lineEdit_departement->setYerothEnabled(false);
+    lineEdit_reference_produit->setYerothEnabled(false);
+    lineEdit_designation->setYerothEnabled(false);
+    lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
+    lineEdit_LIGNE_BUDGETAIRE->setYerothEnabled(false);
+    lineEdit_quantite->setYerothEnabled(false);
+    lineEdit_prix_dachat->setYerothEnabled(false);
+    lineEdit_prix_unitaire->setYerothEnabled(false);
+
+    lineEdit_STATUT_DE_LACHAT->setYerothEnabled(false);
+	lineEdit_MONTANT_TVA->setYerothEnabled(false);
+	lineEdit_ref_RECU_DACHAT->setYerothEnabled(false);
+	lineEdit_LOCALISATION->setYerothEnabled(false);
+	lineEdit_ID_commandeur->setYerothEnabled(false);
+
+    textEdit_detail_une_CHARGE_FINANCIERE->setYerothEnabled(false);
+
+
     lineEdit_detail_utilisateur_prenom->setYerothEnabled(false);
     lineEdit_detail_utilisateur_nom->setYerothEnabled(false);
     lineEdit_detail_utilisateur_lieu_naissance->setYerothEnabled(false);
@@ -812,28 +834,6 @@ void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
 
 
     QSqlRecord record = CHARGES_FINANCIERES_TableModel->record(sqlTableRow);
-
-    dateEdit_date_de_reception->setYerothEnabled(false);
-    dateEdit_date_de_commande->setYerothEnabled(false);
-
-    lineEdit_departement->setYerothEnabled(false);
-    lineEdit_reference_produit->setYerothEnabled(false);
-    lineEdit_designation->setYerothEnabled(false);
-    lineEdit_nom_entreprise_fournisseur->setYerothEnabled(false);
-    lineEdit_LIGNE_BUDGETAIRE->setYerothEnabled(false);
-    lineEdit_quantite->setYerothEnabled(false);
-    lineEdit_prix_dachat->setYerothEnabled(false);
-    lineEdit_prix_unitaire->setYerothEnabled(false);
-
-    lineEdit_STATUT_DE_LACHAT->setYerothEnabled(false);
-	lineEdit_MONTANT_TVA->setYerothEnabled(false);
-	lineEdit_ref_RECU_DACHAT->setYerothEnabled(false);
-	lineEdit_LOCALISATION->setYerothEnabled(false);
-	lineEdit_ID_commandeur->setYerothEnabled(false);
-
-    textEdit_detail_une_CHARGE_FINANCIERE->setYerothEnabled(false);
-
-
 
     dateEdit_date_de_reception
 		->setDate(record.value(YerothDatabaseTableColumn::DATE_DE_RECEPTION).toDate());
