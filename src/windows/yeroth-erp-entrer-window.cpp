@@ -3348,13 +3348,25 @@ bool YerothEntrerWindow::executer_enregistrer_une_charge_financiere()
         achatRecord.setValue(YerothDatabaseTableColumn::DATE_DE_COMMANDE,
                              GET_CURRENT_DATE);
 
-        successAchatDeServiceInsert =
-        		charges_financieresSqlTableModel
-					.insertNewRecord(achatRecord,
-									 this,
-									 "src/windows/yeroth-erp-entrer-window.cpp",
-									 3346,
-									 lineEdit_designation->text());
+        if (!YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(*this,
+        												 charges_financieresSqlTableModel,
+														 *lineEdit_designation,
+														 QObject::tr("Désignation"),
+														 YerothDatabaseTableColumn::DESIGNATION)  &&
+        	!YerothUtils::checkIf_KEYWORD_ALREADY_EXISTS(*this,
+        		            						     charges_financieresSqlTableModel,
+        												 *(comboBox_reference_produit->lineEdit()),
+        												 QObject::tr("Référence"),
+        												 YerothDatabaseTableColumn::REFERENCE)	)
+        {
+            successAchatDeServiceInsert =
+            		charges_financieresSqlTableModel
+    					.insertNewRecord(achatRecord,
+    									 this,
+    									 "src/windows/yeroth-erp-entrer-window.cpp",
+    									 3346,
+    									 lineEdit_designation->text());
+        }
     }
 
     bool successPaiementsInsert = false;

@@ -232,18 +232,6 @@ bool YerothAdminCreateWindow::creer_charge_financiere()
         									 221,
         									 lineEdit_creer_designation->text());
             }
-//            else
-//            {
-//        		QString retMsg_ECHEC_inserer_charge_financiere =
-//        				QObject::tr("1 charge financière avec la \n"
-//        							"désignation '%1' est déjà existante !")
-//    						.arg(lineEdit_creer_designation->text());
-//
-//                YerothQMessageBox::warning(this,
-//                                           QObject::tr("enregistrement ACHAT SUR LIGNE BUDGÉTAIRE (3) - échec"),
-//    									   retMsg_ECHEC_inserer_charge_financiere);
-//            }
-
         }
 
         bool successPaiementsInsert = false;

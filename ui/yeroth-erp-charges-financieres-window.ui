@@ -19173,6 +19173,19 @@ border: none;</string>
     <string>diminuer la police du tableau</string>
    </property>
   </action>
+  <action name="action_CREER_A_PARTIR_DE_CECI">
+   <property name="text">
+    <string>Créer à partir de ceci (CHARGE FINANCIÈRE)</string>
+   </property>
+   <property name="toolTip">
+    <string>Créer à partir de ceci (CHARGE FINANCIÈRE)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

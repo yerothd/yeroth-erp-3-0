@@ -3153,7 +3153,7 @@
          <rect>
           <x>335</x>
           <y>54</y>
-          <width>121</width>
+          <width>156</width>
           <height>21</height>
          </rect>
         </property>
@@ -4191,9 +4191,9 @@
        <widget class="YerothLineEdit" name="lineEdit_prix_unitaire">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>55</y>
-          <width>305</width>
+          <width>270</width>
           <height>21</height>
          </rect>
         </property>
@@ -6588,7 +6588,7 @@
          <rect>
           <x>335</x>
           <y>126</y>
-          <width>121</width>
+          <width>156</width>
           <height>21</height>
          </rect>
         </property>
@@ -6612,7 +6612,7 @@
          <rect>
           <x>335</x>
           <y>78</y>
-          <width>121</width>
+          <width>156</width>
           <height>21</height>
          </rect>
         </property>
@@ -6636,7 +6636,7 @@
          <rect>
           <x>335</x>
           <y>174</y>
-          <width>121</width>
+          <width>156</width>
           <height>21</height>
          </rect>
         </property>
@@ -6660,7 +6660,7 @@
          <rect>
           <x>335</x>
           <y>150</y>
-          <width>121</width>
+          <width>156</width>
           <height>21</height>
          </rect>
         </property>
@@ -6682,9 +6682,9 @@
        <widget class="YerothLineEdit" name="lineEdit_ref_RECU_DACHAT">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>127</y>
-          <width>305</width>
+          <width>270</width>
           <height>21</height>
          </rect>
         </property>
@@ -7139,9 +7139,9 @@
        <widget class="YerothLineEdit" name="lineEdit_STATUT_DE_LACHAT">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>79</y>
-          <width>305</width>
+          <width>270</width>
           <height>21</height>
          </rect>
         </property>
@@ -7599,9 +7599,9 @@
        <widget class="YerothLineEdit" name="lineEdit_ID_commandeur">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>175</y>
-          <width>305</width>
+          <width>270</width>
           <height>21</height>
          </rect>
         </property>
@@ -8059,9 +8059,9 @@
        <widget class="YerothLineEdit" name="lineEdit_MONTANT_TVA">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>103</y>
-          <width>305</width>
+          <width>270</width>
           <height>21</height>
          </rect>
         </property>
@@ -8516,9 +8516,9 @@
        <widget class="YerothLineEdit" name="lineEdit_LOCALISATION">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>151</y>
-          <width>305</width>
+          <width>270</width>
           <height>21</height>
          </rect>
         </property>
@@ -8975,7 +8975,7 @@
          <rect>
           <x>335</x>
           <y>102</y>
-          <width>121</width>
+          <width>156</width>
           <height>21</height>
          </rect>
         </property>
@@ -9048,9 +9048,9 @@
        <widget class="YerothTextEdit" name="textEdit_detail_une_CHARGE_FINANCIERE">
         <property name="geometry">
          <rect>
-          <x>459</x>
+          <x>494</x>
           <y>199</y>
-          <width>305</width>
+          <width>270</width>
           <height>46</height>
          </rect>
         </property>
@@ -9132,7 +9132,7 @@
          <rect>
           <x>335</x>
           <y>198</y>
-          <width>121</width>
+          <width>156</width>
           <height>41</height>
          </rect>
         </property>

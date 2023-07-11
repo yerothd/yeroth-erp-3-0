@@ -85,6 +85,7 @@ YerothChargesFinancieresWindow::YerothChargesFinancieresWindow()
 
 
     _list_actions_to_enable_on_positive_tableview_ROW_COUNT
+		<< action_CREER_A_PARTIR_DE_CECI
 		<< actionAUGMENTER_LA_POLICE_DU_TABLEAU
 		<< actiondiminuer_la_police_du_tableau
 		<< actionExporter_au_format_csv
@@ -104,39 +105,49 @@ YerothChargesFinancieresWindow::YerothChargesFinancieresWindow()
     setup_select_configure_dbcolumn(YerothDatabase::CHARGES_FINANCIERES);
 
 
-    _lineEditsToANDContentForSearch.insert
-    (&lineEdit_charges_financieres_terme_recherche,
-     YerothUtils::EMPTY_STRING);
+    _lineEditsToANDContentForSearch
+		.insert(&lineEdit_charges_financieres_terme_recherche,
+				YerothUtils::EMPTY_STRING);
 
-    _yeroth_WINDOW_references_dbColumnString.
-    insert(YerothDatabaseTableColumn::REFERENCE);
-    _yeroth_WINDOW_references_dbColumnString.
-    insert(YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT);
+    _yeroth_WINDOW_references_dbColumnString
+    	.insert(YerothDatabaseTableColumn::REFERENCE);
 
-    YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION
-    (YerothDatabase::CHARGES_FINANCIERES);
+    _yeroth_WINDOW_references_dbColumnString
+    	.insert(YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT);
+
+
+    YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION(YerothDatabase::CHARGES_FINANCIERES);
+
 
     reinitialiser_colones_db_visibles();
 
+
     _cur_CHARGES_FINANCIERES_SqlTableModel =
-                    &_allWindows->getSqlTableModel_charges_financieres();
+    		&_allWindows->getSqlTableModel_charges_financieres();
+
 
     populateComboBoxes();
 
+
     setupLineEdits();
+
 
     setupLineEditsQCompleters((QObject *) this);
 
+
     setupDateTimeEdits();
+
 
     _pushButton_charges_financieres_filtrer_font =
                     new QFont(pushButton_charges_financieres_filtrer->font());
 
+
     tableView_charges_financieres->
     setSqlTableName(&YerothDatabase::CHARGES_FINANCIERES);
 
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                           false);
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED
     (actionAfficher_charge_financiere_au_detail, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionSupprimerUneCHARGE_FINANCIERE,
@@ -154,6 +165,8 @@ YerothChargesFinancieresWindow::YerothChargesFinancieresWindow()
 
 
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
+
+
     pushButton_charges_financieres_filtrer->disable(this);
     pushButton_supprimer->disable(this);
     pushButton_afficher->disable(this);
@@ -161,6 +174,12 @@ YerothChargesFinancieresWindow::YerothChargesFinancieresWindow()
     pushButton_entrer->disable(this);
     pushButton_paiements->disable(this);
     pushButton_reinitialiser->enable(this, SLOT(reinitialiser_recherche()));
+
+
+    connect(action_CREER_A_PARTIR_DE_CECI,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
 
 
     connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,
@@ -639,6 +658,7 @@ void YerothChargesFinancieresWindow::contextMenuEvent(QContextMenuEvent *event)
         menu.setPalette(toolBar_charges_financieresWindow->palette());
         menu.addAction(actionAfficher_charge_financiere_au_detail);
         menu.addAction(actionSupprimerUneCHARGE_FINANCIERE);
+        menu.addAction(action_CREER_A_PARTIR_DE_CECI);
         menu.exec(event->globalPos());
     }
 }
@@ -675,6 +695,8 @@ void YerothChargesFinancieresWindow::rendreVisible(YerothSqlTableModel *
 void YerothChargesFinancieresWindow::definirManager()
 {
     _logger->log("definirManager");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, true);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, true);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, true);
@@ -727,6 +749,8 @@ void YerothChargesFinancieresWindow::definirManager()
 void YerothChargesFinancieresWindow::definirPasDeRole()
 {
     _logger->log("definirPasDeRole");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, false);

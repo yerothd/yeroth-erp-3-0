@@ -299,6 +299,12 @@ public slots:
         _userCurrentlyFiltered = userCurrentlyFiltered;
     }
 
+
+protected:
+
+    virtual void contextMenuEvent(QContextMenuEvent *event);
+
+
 private:
 
     bool _alertCurrentlyFiltered;

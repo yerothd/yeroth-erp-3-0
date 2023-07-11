@@ -14574,12 +14574,17 @@ background-color: rgb(0, 0, 0); </string>
     <addaction name="actionDeconnecter_utilisateur"/>
     <addaction name="separator"/>
     <addaction name="actionAfficher"/>
+    <addaction name="separator"/>
     <addaction name="actionCreer"/>
+    <addaction name="separator"/>
     <addaction name="actionMenu"/>
+    <addaction name="separator"/>
     <addaction name="actionModifier"/>
     <addaction name="actionSupprimer"/>
     <addaction name="separator"/>
+    <addaction name="separator"/>
     <addaction name="actionRetournerMenuPrincipal"/>
+    <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="actionFermeture"/>
    </widget>
@@ -15774,6 +15779,19 @@ background-color: rgb(0, 0, 0); </string>
    </property>
    <property name="toolTip">
     <string>Réinitialiser les  champs (base de données) visible</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_CREER_A_PARTIR_DE_CECI">
+   <property name="text">
+    <string>Créer à partir de ceci (CHARGE FINANCIÈRE)</string>
+   </property>
+   <property name="toolTip">
+    <string>Créer à partir de ceci (CHARGE FINANCIÈRE)</string>
    </property>
    <property name="font">
     <font>

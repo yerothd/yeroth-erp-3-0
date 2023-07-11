@@ -63,6 +63,7 @@ YerothAdminListerWindow::YerothAdminListerWindow()
 
 
     _list_actions_to_enable_on_positive_tableview_ROW_COUNT
+		<< action_CREER_A_PARTIR_DE_CECI
 		<< actionAUGMENTER_LA_POLICE_DU_TABLEAU
 		<< actiondiminuer_la_police_du_tableau
         << action_parametrer_les_impressions
@@ -85,6 +86,9 @@ YerothAdminListerWindow::YerothAdminListerWindow()
                     new QFont(pushButton_admin_rechercher->font());
 
     _adminSearchForm = new YerothAdminSearchForm(_allWindows, this);
+
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
 
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
 
@@ -131,6 +135,14 @@ YerothAdminListerWindow::YerothAdminListerWindow()
     pushButton_admin_reinitialiser->enable(this, SLOT(reinitialiser()));
 
     pushButton_admin_rechercher->enable(this, SLOT(rechercher()));
+
+
+
+    connect(action_CREER_A_PARTIR_DE_CECI,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
+
 
     connect(actionAfficher, SIGNAL(triggered()), this,
             SLOT(afficher_au_detail()));
@@ -317,10 +329,10 @@ void YerothAdminListerWindow::definirPasDeRole()
 void YerothAdminListerWindow::definirAdministrateur()
 {
     _logger->log("definirAdministrateur");
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                                 true);
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
-                                                 false);
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, true);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
 
     MACRO_TO_ENABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS(this,
     														   _curSearchSqlTableModel)
@@ -330,10 +342,11 @@ void YerothAdminListerWindow::definirAdministrateur()
 void YerothAdminListerWindow::definirManager()
 {
     _logger->log("definirManager");
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                                 true);
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
-                                                 true);
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, true);
+
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, true);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, true);
 
     MACRO_TO_ENABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS(this,
     														   _curSearchSqlTableModel)
@@ -2705,5 +2718,19 @@ QString YerothAdminListerWindow::get_latex_template_print_pdf_content()
     return _latex_template_print_pdf_content;
 }
 
+
+void YerothAdminListerWindow::contextMenuEvent(QContextMenuEvent *event)
+{
+	if (((int) SUJET_ACTION_CHARGE_FINANCIERE) == tabWidget_lister->currentIndex())
+	{
+		if (tableView_lister_charges_financieres->rowCount() > 0)
+		{
+			QMenu menu(this);
+			menu.setPalette(toolBar_adminListerWindow->palette());
+			menu.addAction(action_CREER_A_PARTIR_DE_CECI);
+			menu.exec(event->globalPos());
+		}
+	}
+}
 
 

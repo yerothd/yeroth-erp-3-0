@@ -69,10 +69,13 @@ public:
 
     virtual void definirPasDeRole();
 
+
     MACRO_TO_DEFINE_VIEWING_PAGE_NUMBER_FOR_TABLEVIEW(label_charges_financieres_numero_page_derniere,
     												  label_charges_financieres_numero_page_courante)
 
+
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
+
 
 public slots:
 

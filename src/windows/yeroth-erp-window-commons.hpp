@@ -363,6 +363,8 @@ public slots:
 
     virtual void alertes();
 
+    virtual void SLOT_CREER_A_PARTIR_DE_CECI();
+
     virtual void CREER_UN_GROUPE_DE_SALARIAL_hr();
 
     virtual void CREER_GROUPE_demployes_hr();
