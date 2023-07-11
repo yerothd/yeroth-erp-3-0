@@ -18,17 +18,27 @@ class YerothERPWindows;
 class YerothSqlTableModel;
 class YerothLogger;
 
-class YerothAdminSearchForm:public QDialog, private Ui_YerothAdminSearchForm
+class YerothAdminSearchForm : public QDialog,
+							  private Ui_YerothAdminSearchForm
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothAdminSearchForm(YerothERPWindows *allWindows, QWidget *parent);
+public:
 
-    ~YerothAdminSearchForm();
+    YEROTH_CLASS_OPERATORS
+
+	YerothAdminSearchForm(YerothERPWindows  *allWindows,
+						  QWidget 			*parent);
+
+    inline ~YerothAdminSearchForm()
+    {
+        delete _logger;
+    }
+
 
 public slots:
-    inline void setCurSqlTableModel(YerothSqlTableModel *
-                                    aCurSqlTableModel)
+
+	inline void setCurSqlTableModel(YerothSqlTableModel *aCurSqlTableModel)
     {
         _curSqlTableModel = aCurSqlTableModel;
     }
@@ -46,12 +56,14 @@ public slots:
 
     void rendreInvisible();
 
+
 protected:
 
     inline void hideEvent(QHideEvent *hideEvent)
     {
         rendreInvisible();
     }
+
 
 private:
 
@@ -64,9 +76,11 @@ private:
 
 
     enum AdminSujetAction _curSujetAction;
+
     YerothSqlTableModel *_curSqlTableModel;
 
     YerothLogger *_logger;
+
     YerothERPWindows *_allWindows;
 };
 
