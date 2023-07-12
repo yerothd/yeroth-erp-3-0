@@ -54,6 +54,7 @@ void YerothAdminModifierWindow::setupEdit_LIGNE_BUDGETAIRE()
     textEdit_modifier_une_LIGNE_budgetaire->checkField();
 }
 
+
 void YerothAdminModifierWindow::modifier_LIGNE_BUDGETAIRE()
 {
     if (modifier_LIGNE_BUDGETAIRE_check_fields())
@@ -63,6 +64,7 @@ void YerothAdminModifierWindow::modifier_LIGNE_BUDGETAIRE()
         YEROTH_ERP_3_0_COMMIT_DATABASE_TRANSACTION;
     }
 }
+
 
 void YerothAdminModifierWindow::modifier_LIGNE_BUDGETAIRE_main()
 {
