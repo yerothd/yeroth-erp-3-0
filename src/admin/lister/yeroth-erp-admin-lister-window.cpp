@@ -466,6 +466,8 @@ void YerothAdminListerWindow::reinitialiser()
 
     lister_categorie();
 
+    LISTER_CHARGES_FINANCIERES();
+
     lister_LIGNE_BUDGETAIRE();
 
     lister_compte_bancaire();
