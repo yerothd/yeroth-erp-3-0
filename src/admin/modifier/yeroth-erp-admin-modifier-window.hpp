@@ -24,12 +24,16 @@ class YerothERPWindows;
 class YerothLogger;
 
 
-class YerothAdminModifierWindow:public YerothPOSAdminWindowsCommons,
-    private Ui_YerothAdminModifierWindow
+class YerothAdminModifierWindow : public YerothPOSAdminWindowsCommons,
+								  private Ui_YerothAdminModifierWindow
 {
-Q_OBJECT public:
+	Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothAdminModifierWindow();
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+	YerothAdminModifierWindow();
 
     inline ~YerothAdminModifierWindow()
     {
@@ -47,15 +51,19 @@ Q_OBJECT public:
 
     virtual void definirManager();
 
+
     virtual void rendreVisible(enum AdminSujetAction selectedSujetAction);
 
     virtual void rendreInvisible();
+
 
     void setupEditCompteUtilisateur();
 
     void setupEditLocalisation();
 
     void setupEditDepartementsDeProduits();
+
+    void setupEdit_CHARGE_FINANCIERE();
 
     void setupEditCategorie();
 
@@ -71,12 +79,15 @@ Q_OBJECT public:
 
     void setupEditBonDecommande();
 
+
 public slots:
+
     void creer();
 
     void lister();
 
     void supprimer();
+
 
     void modifier_utilisateur();
 
@@ -85,6 +96,8 @@ public slots:
     void modifier_localisation();
 
     void modifier_departements_de_produits();
+
+    void modifier_CHARGE_FINANCIERE();
 
     void modifier_categorie();
 
@@ -96,11 +109,14 @@ public slots:
 
     void modifier_remise();
 
+
     void annuler();
+
 
     void radioButtons_quantite();
 
     void radioButtons_periode_temps();
+
 
     inline virtual void help()
     {
@@ -114,19 +130,25 @@ public slots:
                                         "l'opération !"), QMessageBox::Ok);
     }
 
+
 private:
 
     void enableOtherTabs(enum AdminSujetAction curAction, bool enabled);
 
+
     void setupLineEdits();
 
+
     void modifier_departements_de_produits_main();
+
+    void modifier_CHARGE_FINANCIERE_main();
 
     void modifier_categorie_main();
 
     void modifier_LIGNE_BUDGETAIRE_main();
 
     void modifier_compte_bancaire_main();
+
 
     void retourListerCompteUtilisateur();
 
@@ -136,6 +158,8 @@ private:
 
     void retourListerCategorie();
 
+    void retourLister_CHARGE_FINANCIERE();
+
     void retourLister_LIGNE_BUDGETAIRE();
 
     void retourListerCompteBancaire();
@@ -144,9 +168,12 @@ private:
 
     void retourListerRemise();
 
+
     void clear_utilisateur_all_fields();
 
     void clear_departements_de_produits_all_fields();
+
+    void clear_CHARGE_FINANCIERE_all_fields();
 
     void clear_categorie_all_fields();
 
@@ -160,12 +187,15 @@ private:
 
     void clear_remise_all_fields();
 
+
     bool modifier_utilisateur_check_fields();
 
     inline bool modifier_departements_de_produits_check_fields()
     {
         return lineEdit_modifier_departements_de_produits_nom->checkField();
     }
+
+    bool modifier_CHARGE_FINANCIERE_check_fields();
 
     bool modifier_categorie_check_fields();
 
@@ -180,6 +210,7 @@ private:
     bool modifier_alerte_check_fields(QString previousAlertText);
 
     bool modifier_remise_check_fields(QString previousDiscountText);
+
 
     YerothLogger *_logger;
 

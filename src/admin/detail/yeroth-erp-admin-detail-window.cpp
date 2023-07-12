@@ -33,10 +33,21 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
 
     setupLineEdits();
 
+    dateEdit_detail_alerte_date_debut->setYerothEnabled(false);
+
+    dateEdit_detail_alerte_date_fin->setYerothEnabled(false);
+
+    dateEdit_date_de_reception->setYerothEnabled(false);
+
+    dateEdit_date_de_commande->setYerothEnabled(false);
+
     dateEdit_detail_utilisateur_date_naissance->setEnabled(false);
+
     dateEdit_detail_localisation_date_ouverture->setEnabled(false);
+
     textEdit_detail_departements_de_produits_description->setYerothEnabled(false);
     textEdit_detail_categorie_description->setYerothEnabled(false);
+    textEdit_une_CHARGE_FINANCIERE->setYerothEnabled(false);
     textEdit_detail_dune_LIGNE_budgetaire->setYerothEnabled(false);
     textEdit_detail_compte_bancaire_description_du_compte->setYerothEnabled(false);
     textEdit_detail_localisation_description_lieu->setYerothEnabled(false);
@@ -45,12 +56,10 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
     radioButton_detail_alerte_date_periode_temps->setEnabled(false);
     radioButton_detail_alerte_quantite->setEnabled(false);
 
-    dateEdit_detail_alerte_date_debut->setYerothEnabled(false);
-    dateEdit_detail_alerte_date_fin->setYerothEnabled(false);
 
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
-                                                 false);
+
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
 
 
     pushButton_detail_charges_financieres_CREER
@@ -118,9 +127,6 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
 void YerothAdminDetailWindow::setupLineEdits()
 {
 	//FINANCIAL EXPENSE WIDGET SETUP
-    dateEdit_date_de_reception->setYerothEnabled(false);
-    dateEdit_date_de_commande->setYerothEnabled(false);
-
     lineEdit_departement->setYerothEnabled(false);
     lineEdit_reference_produit->setYerothEnabled(false);
     lineEdit_designation->setYerothEnabled(false);
@@ -135,8 +141,6 @@ void YerothAdminDetailWindow::setupLineEdits()
 	lineEdit_ref_RECU_DACHAT->setYerothEnabled(false);
 	lineEdit_LOCALISATION->setYerothEnabled(false);
 	lineEdit_ID_commandeur->setYerothEnabled(false);
-
-    textEdit_detail_une_CHARGE_FINANCIERE->setYerothEnabled(false);
 
 
     lineEdit_detail_utilisateur_prenom->setYerothEnabled(false);
@@ -286,6 +290,7 @@ void YerothAdminDetailWindow::modifier()
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+    	_allWindows->_adminModifierWindow->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE);
         break;
 
     default:
@@ -914,7 +919,7 @@ void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
             YerothDatabaseTableColumn::NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT));
 
 
-    textEdit_detail_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
+    textEdit_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
             YerothDatabaseTableColumn::DESCRIPTION_charge_financiere));
 
 

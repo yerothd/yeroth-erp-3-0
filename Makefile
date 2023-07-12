@@ -34180,6 +34180,7 @@ obj/yeroth-erp-admin-modifier-window.o: src/admin/modifier/yeroth-erp-admin-modi
 		src/admin/modifier/modifier-utilisateur.cpp \
 		src/admin/modifier/modifier-localisation.cpp \
 		src/admin/modifier/modifier-departements_de_produits.cpp \
+		src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp \
 		src/admin/modifier/modifier-categorie.cpp \
 		src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp \
 		src/admin/modifier/modifier-compte-bancaire.cpp \

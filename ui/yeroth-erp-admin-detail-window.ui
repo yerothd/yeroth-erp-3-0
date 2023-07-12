@@ -922,7 +922,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_4_alertes">
      <attribute name="title">
@@ -9051,7 +9051,7 @@
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
-       <widget class="YerothTextEdit" name="textEdit_detail_une_CHARGE_FINANCIERE">
+       <widget class="YerothTextEdit" name="textEdit_une_CHARGE_FINANCIERE">
         <property name="geometry">
          <rect>
           <x>494</x>

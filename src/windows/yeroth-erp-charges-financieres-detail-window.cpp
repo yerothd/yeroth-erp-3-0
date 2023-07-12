@@ -99,7 +99,7 @@ void YerothChargesFinancieresDetailsWindow::setupLineEdits()
 	lineEdit_LOCALISATION->setYerothEnabled(false);
 	lineEdit_ID_commandeur->setYerothEnabled(false);
 
-    textEdit_detail_une_CHARGE_FINANCIERE->setYerothEnabled(false);
+    textEdit_une_CHARGE_FINANCIERE->setYerothEnabled(false);
 }
 
 
@@ -366,7 +366,7 @@ void YerothChargesFinancieresDetailsWindow::showItem()
     		YerothDatabaseTableColumn::NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT));
 
 
-    textEdit_detail_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
+    textEdit_une_CHARGE_FINANCIERE->setText(GET_SQL_RECORD_DATA(record,
     		YerothDatabaseTableColumn::DESCRIPTION_charge_financiere));
 
 
