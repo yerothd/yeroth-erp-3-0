@@ -1,7 +1,12 @@
 
 void YerothAdminModifierWindow::setupEditAlerte()
 {
+    _windowName = QString("%1 - %2")
+                			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                				 QObject::tr("administration ~ modifier ~ alertes"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
+
     YerothSqlTableModel *alertesTableModel = lw->getCurSearchSqlTableModel();
 
     if (!alertesTableModel)

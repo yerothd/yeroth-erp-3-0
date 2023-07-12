@@ -4658,18 +4658,23 @@ Cliquez sur &apos;Annuler&apos; si vous souhaiter interrompre l&apos;opération.
 Press &apos;Cancel&apos; if you wish to stop this process!</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="184"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="6"/>
+        <source>administration ~ modifier ~ utilisateurs</source>
+        <translation>administration ~ modify ~ users</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="189"/>
         <source>Les données de l&apos;utilisateur &apos;%1&apos;</source>
         <translation>Data for user &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="190"/>
-        <location filename="src/admin/modifier/modifier-localisation.cpp" line="141"/>
-        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="182"/>
-        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="149"/>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="200"/>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="235"/>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="160"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="195"/>
+        <location filename="src/admin/modifier/modifier-localisation.cpp" line="145"/>
+        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="186"/>
+        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="153"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="204"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="239"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="163"/>
         <location filename="src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp" line="720"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="640"/>
         <source> ont été modifiées avec succès !</source>
@@ -4677,20 +4682,20 @@ Press &apos;Cancel&apos; if you wish to stop this process!</translation>
         <translation> have been successfully modified!</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="194"/>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="212"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="199"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="217"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-utilisateur</source>
         <oldsource>Yeroth-erp-3.0 ~ admin-modifier-utilisateur</oldsource>
         <translation>Yeroth-erp-3.0 ~ admin-modify-user</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="208"/>
-        <location filename="src/admin/modifier/modifier-localisation.cpp" line="159"/>
-        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="199"/>
-        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="163"/>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="215"/>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="249"/>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="173"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="213"/>
+        <location filename="src/admin/modifier/modifier-localisation.cpp" line="163"/>
+        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="203"/>
+        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="167"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="219"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="253"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="176"/>
         <location filename="src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp" line="736"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="659"/>
         <source> n&apos;ont pas pu être modifiées !</source>
@@ -4698,49 +4703,59 @@ Press &apos;Cancel&apos; if you wish to stop this process!</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-utilisateur.cpp" line="240"/>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="229"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="234"/>
         <source>Les deux mot de passe sont différents !</source>
         <oldsource>Les deux mot de passe sont différents!</oldsource>
         <translation>The entered passwords are different!</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="233"/>
+        <location filename="src/admin/modifier/modifier-utilisateur.cpp" line="238"/>
         <source>Yeroth-pgi-3.0 -  administration ~ modifier ~ utilisateur</source>
         <oldsource>Yeroth-erp-3.0 -  administration ~ modifier ~ utilisateur</oldsource>
         <translation>Yeroth-erp-3.0 -  administration ~ modify ~ user</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-localisation.cpp" line="135"/>
+        <location filename="src/admin/modifier/modifier-localisation.cpp" line="6"/>
+        <source>administration ~ modifier ~ localisations</source>
+        <translation>administration ~ modify ~ sites</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-localisation.cpp" line="139"/>
         <source>Les données de la localisation &apos;%1&apos;</source>
         <translation>Data for site &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-localisation.cpp" line="145"/>
-        <location filename="src/admin/modifier/modifier-localisation.cpp" line="163"/>
+        <location filename="src/admin/modifier/modifier-localisation.cpp" line="149"/>
+        <location filename="src/admin/modifier/modifier-localisation.cpp" line="167"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-localisation</source>
         <oldsource>Yeroth-erp-3.0 ~ admin-modifier-localisation</oldsource>
         <translation>Yeroth-erp-3.0 ~ admin-modify-location</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="89"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="7"/>
+        <source>administration ~ modifier ~ catégories</source>
+        <translation>administration ~ modify ~ categories</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="93"/>
         <source>Une catégorie &apos;%1&apos; existe déjà !</source>
         <translation>CATEGORY &apos;%1&apos; ALREADY EXISTS !</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="93"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="97"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-nom catégorie</source>
         <translation>Yeroth-erp-3.0 ~ admin-modify-category</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="194"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="198"/>
         <source>Les données de la catégorie &apos;%1&apos;</source>
         <translation>Data for category &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="204"/>
-        <location filename="src/admin/modifier/modifier-categorie.cpp" line="219"/>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="163"/>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="176"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="208"/>
+        <location filename="src/admin/modifier/modifier-categorie.cpp" line="223"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="166"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="179"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-catégorie</source>
         <oldsource>Yeroth-erp-3.0 ~ admin-modifier-catégorie</oldsource>
         <translation>Yeroth-erp-3.0 ~ admin-modify-catégory</translation>
@@ -4751,30 +4766,35 @@ Press &apos;Cancel&apos; if you wish to stop this process!</translation>
         <translation>Data for supplier &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="113"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="6"/>
+        <source>administration ~ modifier ~ alertes</source>
+        <translation>administration ~ modify ~ alerts</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="118"/>
         <source>Le message de l&apos;alerte &apos;%1&apos; </source>
         <translation>Message for alert &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="119"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="124"/>
         <source>a été modifiées avec succès !</source>
         <translation> have been modified !</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="123"/>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="139"/>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="156"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="128"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="144"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="161"/>
         <source>Yeroth-pgi-3.0 ~ administration ~ modifier ~ alerte</source>
         <oldsource>Yeroth-erp-3.0 ~ administration ~ modifier ~ alerte</oldsource>
         <translation>Yeroth-erp-3.0 ~ administration ~ modify ~ alert</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="135"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="140"/>
         <source> n&apos;a pas pu être modifiées !</source>
         <translation> couldn&apos;t be modified !</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-alerte.cpp" line="158"/>
+        <location filename="src/admin/modifier/modifier-alerte.cpp" line="163"/>
         <source>Le message de l&apos;alerte n&apos;a pas changé!</source>
         <translation>The alert message hasn&apos;t be modified!</translation>
     </message>
@@ -6124,13 +6144,18 @@ Please, change the maximum member of this CLIENT LOYALTY group to &apos;%3&apos;
         <translation>Fill out form, and then press the &apos;save&apos; button !</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="176"/>
+        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="7"/>
+        <source>administration ~ modifier ~ départements</source>
+        <translation>administration ~ modify ~ departments</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="180"/>
         <source>Les données du département de produits &apos;%1&apos;</source>
         <translation>Product department data &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="186"/>
-        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="203"/>
+        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="190"/>
+        <location filename="src/admin/modifier/modifier-departements_de_produits.cpp" line="207"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-département_de_produits</source>
         <oldsource>Yeroth-erp-3.0 ~ admin-modifier-département_de_produits</oldsource>
         <translation>Yeroth-erp-3.0 ~ admin-modify-product_department</translation>
@@ -6204,30 +6229,41 @@ Please, change the maximum member of this CLIENT LOYALTY group to &apos;%3&apos;
         <translation>Yeroth-erp-3.0 ~ admin-create-budget line</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="114"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="7"/>
+        <source>administration ~ modifier ~ lignes budgétaires</source>
+        <oldsource>administration ~ lister ~ lignes budgétaires</oldsource>
+        <translation>administration ~ modify ~ BUDGET LINES</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="118"/>
         <source>UNE LIGNE BUDGÉTAIRE &apos;%1&apos; existe déjà !</source>
         <translation>A budget line titled &apos;%1&apos; ALREADY EXISTS !</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="230"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="234"/>
         <source>Les données de la LIGNE BUDGÉTAIRE &apos;%1&apos;</source>
         <translation>budget line data &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="118"/>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="238"/>
-        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="252"/>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="104"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="122"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="242"/>
+        <location filename="src/admin/modifier/modifier-LIGNE-BUDGETAIRE.cpp" line="256"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="107"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-ligne budgétaire</source>
         <translation>Yeroth-erp-3.0 ~ admin-modify-budget line</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="100"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="7"/>
+        <source>administration ~ modifier ~ comptes bancaires</source>
+        <translation>administration ~ modify ~ bank accounts</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="103"/>
         <source>Un compte bancaire &apos;%1&apos; existe déjà !</source>
         <translation>A BANK ACCOUNT &apos;%1&apos; already exists !</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="155"/>
+        <location filename="src/admin/modifier/modifier-compte-bancaire.cpp" line="158"/>
         <source>LES DONNÉES DU COMPTE BANCAIRE &apos;%1&apos;</source>
         <translation>Data of bank account &apos;%1&apos;</translation>
     </message>
@@ -6459,15 +6495,26 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>stock to sale</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="143"/>
+        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="7"/>
+        <source>administration ~ modifier ~ charges financières</source>
+        <oldsource>administration ~ lister ~ charges financières</oldsource>
+        <translation>administration ~ modify ~ FINANCIAL EXPENSES</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="147"/>
         <source>Les données de la CHARGE FINANCIÈRE &apos;%1&apos;</source>
         <translation>Financial expense data &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="152"/>
-        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="166"/>
+        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="156"/>
+        <location filename="src/admin/modifier/modifier-CHARGE-FINANCIERE.cpp" line="170"/>
         <source>Yeroth-pgi-3.0 ~ admin-modifier-charge financière</source>
         <translation>Yeroth-erp-3.0 ~ admin-modify-FINANCIAL EXPENSE</translation>
+    </message>
+    <message>
+        <location filename="src/admin/modifier/modifier-remise.cpp" line="6"/>
+        <source>administration ~ modifier ~ remises</source>
+        <translation>administration ~ modify ~ discounts</translation>
     </message>
 </context>
 <context>

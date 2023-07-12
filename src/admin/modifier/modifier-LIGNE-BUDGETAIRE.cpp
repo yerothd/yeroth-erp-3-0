@@ -2,6 +2,10 @@
 
 void YerothAdminModifierWindow::setupEdit_LIGNE_BUDGETAIRE()
 {
+    _windowName = QString("%1 - %2")
+    				.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                		 QObject::tr("administration ~ modifier ~ lignes budgétaires"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
 
     YerothSqlTableModel *LIGNES_BUDGETAIRES_TableModel =

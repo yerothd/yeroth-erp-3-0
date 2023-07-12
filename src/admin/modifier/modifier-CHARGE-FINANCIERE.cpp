@@ -2,6 +2,10 @@
 
 void YerothAdminModifierWindow::setupEdit_CHARGE_FINANCIERE()
 {
+    _windowName = QString("%1 - %2")
+    				.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                		 QObject::tr("administration ~ modifier ~ charges financières"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
 
     YerothSqlTableModel *CHARGES_FINANCIERES_TableModel = lw->getCurSearchSqlTableModel();

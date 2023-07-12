@@ -1,7 +1,12 @@
 
 void YerothAdminModifierWindow::setupEditRemise()
 {
+    _windowName = QString("%1 - %2")
+    				.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                		 QObject::tr("administration ~ modifier ~ remises"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
+
     YerothSqlTableModel *remisesTableModel = lw->getCurSearchSqlTableModel();
 
     if (!remisesTableModel)

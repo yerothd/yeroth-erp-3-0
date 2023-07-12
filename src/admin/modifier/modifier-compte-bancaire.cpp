@@ -2,10 +2,13 @@
 
 void YerothAdminModifierWindow::setupEditCompteBancaire()
 {
+    _windowName = QString("%1 - %2")
+    				.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                		 QObject::tr("administration ~ modifier ~ comptes bancaires"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
 
-    YerothSqlTableModel *comptesBancairesTableModel =
-                    lw->getCurSearchSqlTableModel();
+    YerothSqlTableModel *comptesBancairesTableModel = lw->getCurSearchSqlTableModel();
 
     if (0 == comptesBancairesTableModel)
     {

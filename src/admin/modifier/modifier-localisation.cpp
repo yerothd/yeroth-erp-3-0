@@ -1,9 +1,13 @@
 
 void YerothAdminModifierWindow::setupEditLocalisation()
 {
+    _windowName = QString("%1 - %2")
+    				.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                		 QObject::tr("administration ~ modifier ~ localisations"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
-    YerothSqlTableModel *localisationsTableModel =
-                    lw->getCurSearchSqlTableModel();
+
+    YerothSqlTableModel *localisationsTableModel = lw->getCurSearchSqlTableModel();
 
     if (!localisationsTableModel)
     {

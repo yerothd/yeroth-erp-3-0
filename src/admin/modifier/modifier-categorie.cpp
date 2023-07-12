@@ -2,9 +2,13 @@
 
 void YerothAdminModifierWindow::setupEditCategorie()
 {
+    _windowName = QString("%1 - %2")
+    				.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
+                		 QObject::tr("administration ~ modifier ~ catégories"));
+
     YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
-    YerothSqlTableModel *categoriesTableModel =
-                    lw->getCurSearchSqlTableModel();
+
+    YerothSqlTableModel *categoriesTableModel = lw->getCurSearchSqlTableModel();
 
     if (0 == categoriesTableModel)
     {
