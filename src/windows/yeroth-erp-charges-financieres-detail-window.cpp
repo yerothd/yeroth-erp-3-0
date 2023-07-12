@@ -37,18 +37,26 @@ YerothChargesFinancieresDetailsWindow::YerothChargesFinancieresDetailsWindow()
 
     setupLineEdits();
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionEntrer, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionStocks, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, false);
 
+    pushButton_detail_charges_financieres_CREER->disable(this);
     pushButton_entrer->disable(this);
     pushButton_lister->disable(this);
     pushButton_menu->disable(this);
     pushButton_retour->disable(this);
 
     /** Menu actions */
+
+    connect(action_CREER_A_PARTIR_DE_CECI,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
+
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this,
             SLOT(changer_utilisateur()));
     connect(actionAppeler_aide, SIGNAL(triggered()), this, SLOT(help()));
@@ -107,6 +115,8 @@ void YerothChargesFinancieresDetailsWindow::definirPasDeRole()
 {
     _logger->log("definirPasDeRole");
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
                                            false);
@@ -115,6 +125,8 @@ void YerothChargesFinancieresDetailsWindow::definirPasDeRole()
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, false);
 
+    pushButton_detail_charges_financieres_CREER->disable(this);
+
     pushButton_menu->disable(this);
     pushButton_entrer->disable(this);
     pushButton_lister->disable(this);
@@ -122,28 +134,12 @@ void YerothChargesFinancieresDetailsWindow::definirPasDeRole()
 }
 
 
-void YerothChargesFinancieresDetailsWindow::definirCaissier()
-{
-    _logger->log("definirCaissier");
-
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                           true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionEntrer, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionStocks, true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
-
-    pushButton_entrer->disable(this);
-    pushButton_lister->enable(this, SLOT(stocks()));
-    pushButton_menu->disable(this);
-    pushButton_retour->disable(this);
-}
-
 void YerothChargesFinancieresDetailsWindow::definirManager()
 {
     _logger->log("definirManager");
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, true);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, true);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
                                            true);
@@ -161,84 +157,13 @@ void YerothChargesFinancieresDetailsWindow::definirManager()
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
 
-    pushButton_entrer->enable(this, SLOT(entrer()));
-    pushButton_lister->enable(this, SLOT(stocks()));
-    pushButton_menu->enable(this, SLOT(menu()));
-    pushButton_retour->enable(this, SLOT(charges_financieres()));
-}
-
-
-void YerothChargesFinancieresDetailsWindow::definirVendeur()
-{
-    _logger->log("definirVendeur");
-
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                           true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionEntrer, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionStocks, true);
-
-#ifdef YEROTH_SERVER
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-#endif
-
-#ifdef YEROTH_CLIENT
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-#endif
-
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
+    pushButton_detail_charges_financieres_CREER
+		->enable(this, SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
 
     pushButton_entrer->enable(this, SLOT(entrer()));
     pushButton_lister->enable(this, SLOT(stocks()));
     pushButton_menu->enable(this, SLOT(menu()));
     pushButton_retour->enable(this, SLOT(charges_financieres()));
-}
-
-
-void YerothChargesFinancieresDetailsWindow::definirGestionaireDesStocks()
-{
-    _logger->log("definirGestionaireDesStocks");
-
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                           true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionEntrer, true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionStocks, true);
-
-#ifdef YEROTH_SERVER
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-#endif
-
-#ifdef YEROTH_CLIENT
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-#endif
-
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
-
-    pushButton_entrer->enable(this, SLOT(entrer()));
-    pushButton_lister->enable(this, SLOT(stocks()));
-    pushButton_menu->enable(this, SLOT(menu()));
-    pushButton_retour->enable(this, SLOT(charges_financieres()));
-}
-
-void YerothChargesFinancieresDetailsWindow::definirMagasinier()
-{
-    _logger->log("definirMagasinier");
-
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                           true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionEntrer, false);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionStocks, true);
-    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
-
-    pushButton_entrer->disable(this);
-    pushButton_lister->enable(this, SLOT(stocks()));
-    pushButton_menu->enable(this, SLOT(menu()));
-    pushButton_retour->disable(this);
 }
 
 
@@ -371,6 +296,15 @@ void YerothChargesFinancieresDetailsWindow::showItem()
 
 
     _cur_CHARGES_FINANCIERESTableModel->resetFilter();
+}
+
+
+void YerothChargesFinancieresDetailsWindow::contextMenuEvent(QContextMenuEvent *event)
+{
+    QMenu menu(this);
+    menu.setPalette(toolBar_CHARGE_FINANCIERE_detailWindow->palette());
+    menu.addAction(action_CREER_A_PARTIR_DE_CECI);
+    menu.exec(event->globalPos());
 }
 
 

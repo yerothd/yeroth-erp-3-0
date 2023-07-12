@@ -41,22 +41,36 @@ public:
         return toolBar_CHARGE_FINANCIERE_detailWindow;
     }
 
-    void definirCaissier();
+    inline virtual void definirCaissier()
+    {
+    	definirPasDeRole();
+    }
 
-    void definirManager();
+    virtual void definirManager();
 
-    virtual void definirVendeur();
+    inline virtual void definirVendeur()
+    {
+    	definirPasDeRole();
+    }
 
-    virtual void definirGestionaireDesStocks();
+    inline virtual void definirGestionaireDesStocks()
+    {
+    	definirPasDeRole();
+    }
 
-    void definirMagasinier();
+    inline virtual void definirMagasinier()
+    {
+    	definirPasDeRole();
+    }
 
-    void definirPasDeRole();
+    virtual void definirPasDeRole();
+
 
     void rendreInvisible();
 
     void rendreVisible(YerothSqlTableModel *achatStocksTableModel,
                        YerothSqlTableModel *stocksTableModel);
+
 
 public slots:
 
@@ -75,6 +89,8 @@ public slots:
     }
 
 protected:
+
+    virtual void contextMenuEvent(QContextMenuEvent *event);
 
     virtual void hideEvent(QHideEvent *hideEvent);
 

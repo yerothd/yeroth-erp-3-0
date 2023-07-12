@@ -456,27 +456,51 @@ void YerothAdminListerWindow::reinitialiser()
 
     if (_curSearchSqlTableModel)
     {
-        _curSearchSqlTableModel->resetFilter("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 391);
-        _curSearchSqlTableModel->easySelect("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 392);
+        _curSearchSqlTableModel->resetFilter("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 459);
+        _curSearchSqlTableModel->easySelect("src/admin/lister/yeroth-erp-admin-lister-window.cpp", 460);
     }
 
-    lister_utilisateur();
+    switch (tabWidget_lister->currentIndex())
+    {
+    case SUJET_ACTION_COMPTE_UTILISATEUR:
+    	lister_utilisateur();
+        break;
 
-    lister_localisation();
+    case SUJET_ACTION_LOCALISATION:
+    	lister_localisation();
+        break;
 
-    lister_categorie();
+    case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+    	lister_departements_de_produits();
+        break;
 
-    LISTER_CHARGES_FINANCIERES();
+    case SUJET_ACTION_CATEGORIE:
+    	lister_categorie();
+        break;
 
-    lister_LIGNE_BUDGETAIRE();
+    case SUJET_ACTION_ligne_budgetaire:
+    	lister_LIGNE_BUDGETAIRE();
+        break;
 
-    lister_compte_bancaire();
+    case SUJET_ACTION_COMPTE_BANCAIRE:
+    	lister_compte_bancaire();
+        break;
 
-    lister_departements_de_produits();
+    case SUJET_ACTION_ALERTE:
+    	lister_alerte();
+        break;
 
-    lister_alerte();
+    case SUJET_ACTION_REMISE:
+    	lister_remise();
+        break;
 
-    lister_remise();
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+    	LISTER_CHARGES_FINANCIERES();
+        break;
+
+    default:
+        break;
+    }
 
     setCurSearchSqlTableModel(0);
 
@@ -1548,6 +1572,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
     default:
         break;
     }
+
+    set_admin_rechercher_font();
 }
 
 

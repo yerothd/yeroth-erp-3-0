@@ -62,9 +62,7 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
 
 
-    pushButton_detail_charges_financieres_CREER
-		->enable(this, SLOT(CREER_A_PARTIR_DE_CECI()));
-
+    pushButton_detail_charges_financieres_CREER->disable(this);
 
     pushButton_creer->enable(this, SLOT(creer()));
     pushButton_menu->enable(this, SLOT(menu()));
@@ -202,39 +200,32 @@ void YerothAdminDetailWindow::setupLineEdits()
 void YerothAdminDetailWindow::definirPasDeRole()
 {
     _logger->log("definirPasDeRole");
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                                 false);
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
-                                                 false);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, false);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
+
+    pushButton_detail_charges_financieres_CREER->disable(this);
 }
 
 
 void YerothAdminDetailWindow::definirAdministrateur()
 {
     _logger->log("definirAdministrateur");
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                                 true);
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
-                                                 false);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, true);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
+
+    pushButton_detail_charges_financieres_CREER->disable(this);
 }
 
 
 void YerothAdminDetailWindow::definirManager()
 {
     _logger->log("definirManager");
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
-                                                 true);
-    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
-                                                 true);
-}
 
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, true);
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, true);
 
-void YerothAdminDetailWindow::CREER_A_PARTIR_DE_CECI()
-{
-	_allWindows->_adminCreateWindow
-		->rendreVisible(tabWidget_detail->currentIndex(),
-						true);
-	rendreInvisible();
+    pushButton_detail_charges_financieres_CREER
+		->enable(this, SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
 }
 
 
