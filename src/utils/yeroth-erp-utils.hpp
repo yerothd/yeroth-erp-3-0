@@ -338,11 +338,10 @@ public:
         return (position <= 12) ? position : ((position - 1) % 12);
     }
 
-    static double YEROTH_CONVERT_QSTRING_TO_DOUBLE_LOCALIZED(const QString &
-                                                             aDoubleQString);
+    static double YEROTH_CONVERT_QSTRING_TO_DOUBLE_LOCALIZED(const QString &aDoubleQString);
 
     static int execQueryRowCount(const QString &strQuery,
-                                 YerothLogger *logger = 0);
+                                 YerothLogger  *logger = 0);
 
     static void qDebugStrings(const QString &firstString,
                               const QStringList &aStringList);
@@ -705,12 +704,12 @@ public:
     static QString localized_string__get_double_string(double DOUBLE_NUMBER);
 
     static QString localized_string__get_double_string_P(double DOUBLE_NUMBER,
-    													 int NUMBER_OF_DECIMALS_after);
+    													 int 	NUMBER_OF_DECIMALS_after);
 
     static QString localized_string__get_CURRENCY_double_string(double DOUBLE_NUMBER);
 
     static QString localized_string__get_CURRENCY_double_string_P(double DOUBLE_NUMBER,
-    															  int NUMBER_OF_DECIMALS_after);
+    															  int 	 NUMBER_OF_DECIMALS_after);
 
     static QString localized_string__get_MONTH_NAME_LOCALIZED(int month_name);
 

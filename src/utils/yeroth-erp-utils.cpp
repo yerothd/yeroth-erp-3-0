@@ -2284,8 +2284,8 @@ bool YerothUtils::executer_fichier_sql(const QString &fileName,
 	return true;
 }
 
-double YerothUtils::YEROTH_CONVERT_QSTRING_TO_DOUBLE_LOCALIZED(
-		const QString &aDoubleQString)
+
+double YerothUtils::YEROTH_CONVERT_QSTRING_TO_DOUBLE_LOCALIZED(const QString &aDoubleQString)
 {
 	double aDoubleNum = 0.0;
 
@@ -2295,22 +2295,22 @@ double YerothUtils::YEROTH_CONVERT_QSTRING_TO_DOUBLE_LOCALIZED(
 
 	if (false == ok)
 	{
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-        aDoubleNum = YerothUtils::frenchLocale.toDouble(aDoubleQString, &ok);
-
-#elif YEROTH_ENGLISH_LANGUAGE
-
-        aDoubleNum = YerothUtils::englishLocale.toDouble(aDoubleQString, &ok);
-
-#endif
+		if (YerothMainWindow::LANGUE_ANGLAISE)
+		{
+			aDoubleNum = YerothUtils::englishLocale.toDouble(aDoubleQString, &ok);
+		}
+		else
+		{
+			aDoubleNum = YerothUtils::frenchLocale.toDouble(aDoubleQString, &ok);
+		}
 	}
 
 	return aDoubleNum;
 }
 
+
 int YerothUtils::execQueryRowCount(const QString &strQuery,
-		YerothLogger *logger)
+								   YerothLogger  *logger)
 {
 	//qDebug() << "[YerothUtils][execQuery]";
 
