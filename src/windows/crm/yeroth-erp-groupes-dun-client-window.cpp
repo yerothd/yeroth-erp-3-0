@@ -686,7 +686,7 @@ void YerothGroupesDunClientWindow::get_PRINT_OUT_TexTableString(QString &texTabl
 						   //"\\resizebox{\\textwidth}{!}{\n"
 						   "\\centering\n"
 						   "\\begin{tabular}"
-						   "{|l|l|c|} \\hline");
+						   "{|l|l|r|} \\hline");
 
 	if (YerothMainWindow::LANGUE_ANGLAISE)
 	{
@@ -705,18 +705,50 @@ void YerothGroupesDunClientWindow::get_PRINT_OUT_TexTableString(QString &texTabl
 							   "& &							\\\\ \\hline \\hline \n");
 	}
 
+
 	int rowCount = tableWidget_groupes_dun_client->rowCount();
+
 	int columnCount = tableWidget_groupes_dun_client->columnCount();
+
+	bool color_this_row_grey = true;
+
+	QString cell_text;
 
 	//Tex table body
 	for (int i = 0; i < rowCount; ++i)
 	{
+		color_this_row_grey = (0 == i%2);
+
+		if (color_this_row_grey)
+		{
+			texTable_IN_OUT.append(QString("\\rowcolor{yerothColorGray}"));
+		}
+		else
+		{
+			texTable_IN_OUT.append(QString("\\rowcolor{white}"));
+		}
+
 		for (int j = 0; j < columnCount; ++j)
 		{
+			if (j != 2)
+			{
+				cell_text = tableWidget_groupes_dun_client->item(i, j)->text();
+			}
+			else
+			{
+				cell_text = GET_NUM_STRING(tableWidget_groupes_dun_client->item(i, j)->text().toDouble());
+
+			}
+
 			YerothUtils::handleTexTableItemText(columnCount,
 												texTable_IN_OUT,
-												i,
-												tableWidget_groupes_dun_client->item(i, j)->text());
+												j,
+												cell_text);
+		}
+
+		if (i < rowCount - 1)
+		{
+			texTable_IN_OUT.append("\\hline\n");
 		}
 	}
 
@@ -891,7 +923,7 @@ bool YerothGroupesDunClientWindow::imprimer_pdf_document()
 	GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHCLIENT",
 			YerothUtils::LATEX_IN_OUT_handleForeignAccents(NOM_Client));
 
-	if (CLIENT_TableModel.easySelect("src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp", 872) > 0)
+	if (CLIENT_TableModel.easySelect("src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp", 894) > 0)
 	{
 		QSqlRecord record = CLIENT_TableModel.record(0);
 

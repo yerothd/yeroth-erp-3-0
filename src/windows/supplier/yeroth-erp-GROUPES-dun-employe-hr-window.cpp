@@ -248,7 +248,7 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::imprimer_pdf_document()
 	GROUPES_DUN_EMPLOYE__TexDocument.replace("YEROTHEMPLOYE",
 			YerothUtils::LATEX_IN_OUT_handleForeignAccents(NomEmploye));
 
-	if (supplierTableModel.easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 324) > 0)
+	if (supplierTableModel.easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 251) > 0)
 	{
 		QSqlRecord record = supplierTableModel.record(0);
 
@@ -905,7 +905,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::get_PRINT_OUT_TexTableString(QString &tex
 						   //"\\resizebox{\\textwidth}{!}{\n"
 						   "\\centering\n"
 						   "\\begin{tabular}"
-						   "{|l|l|c|} \\hline");
+						   "{|l|l|r|} \\hline");
 
 	if (YerothMainWindow::LANGUE_ANGLAISE)
 	{
@@ -924,18 +924,50 @@ void YerothGROUPES_DUN_EMPLOYE_Window::get_PRINT_OUT_TexTableString(QString &tex
 							   "& &							\\\\ \\hline \\hline \n");
 	}
 
+
 	int rowCount = tableWidget_Groupes_Dun_Employe->rowCount();
+
 	int columnCount = tableWidget_Groupes_Dun_Employe->columnCount();
+
+	bool color_this_row_grey = true;
+
+	QString cell_text;
 
 	//Tex table body
 	for (int i = 0; i < rowCount; ++i)
 	{
+		color_this_row_grey = (0 == i%2);
+
+		if (color_this_row_grey)
+		{
+			texTable_IN_OUT.append(QString("\\rowcolor{yerothColorGray}"));
+		}
+		else
+		{
+			texTable_IN_OUT.append(QString("\\rowcolor{white}"));
+		}
+
 		for (int j = 0; j < columnCount; ++j)
 		{
+			if (j != 2)
+			{
+				cell_text = tableWidget_Groupes_Dun_Employe->item(i, j)->text();
+			}
+			else
+			{
+				cell_text = GET_NUM_STRING(tableWidget_Groupes_Dun_Employe->item(i, j)->text().toDouble());
+
+			}
+
 			YerothUtils::handleTexTableItemText(columnCount,
 												texTable_IN_OUT,
-												i,
-												tableWidget_Groupes_Dun_Employe->item(i, j)->text());
+												j,
+												cell_text);
+		}
+
+		if (i < rowCount - 1)
+		{
+			texTable_IN_OUT.append("\\hline\n");
 		}
 	}
 
