@@ -3886,10 +3886,10 @@ void YerothUtils::handleFactureTexTableItemText(int texTableColumnCount,
 }
 
 
-void YerothUtils::handleTexTableItemText(int texTableColumnCount,
-										 QString &texTable_IN_OUT,
-										 int itemTextColumnPosition,
-										 const QString &itemText)
+void YerothUtils::handleTexTableItemText(int 			texTableColumnCount,
+										 QString 		&texTable_IN_OUT,
+										 int 			itemTextColumnPosition,
+										 const QString  &itemText)
 {
 	QString resultItemText(LATEX_IN_OUT_handleForeignAccents(itemText));
 
