@@ -240,11 +240,15 @@ void YerothAdminCreateWindow::show_item_CHARGE_FINANCIERE()
 
 	doubleSpinBox_quantite
 		->setValue(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::QUANTITE_TOTALE)
-				.toDouble());
+                    .toDouble());
 
 
-	lineEdit_creer_prix_dachat_alunite
-		->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::PRIX_UNITAIRE));
+    double prix_dachat_a_lunite =
+        qAbs(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::PRIX_UNITAIRE)
+                .toDouble());
+
+
+	lineEdit_creer_prix_dachat_alunite->setText(QString::number(prix_dachat_a_lunite));
 
 
 	double prix_dachat = 0.0;
@@ -344,21 +348,25 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction,
     clear_remise_all_fields();
 
 
-    comboBox_nom_departement_produit->populateComboBoxRawString
-    (YerothDatabase::DEPARTEMENTS_PRODUITS,
-     YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT);
+    comboBox_nom_departement_produit
+        ->populateComboBoxRawString(YerothDatabase::DEPARTEMENTS_PRODUITS,
+                                    YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT);
 
-    comboBox_creer_alerte_designation->populateComboBoxRawString
-    (YerothDatabase::STOCKS, YerothDatabaseTableColumn::DESIGNATION);
+    comboBox_creer_alerte_designation
+        ->populateComboBoxRawString(YerothDatabase::STOCKS,
+                                    YerothDatabaseTableColumn::DESIGNATION);
 
 
-    lineEdit_creer_remise_designation_article->setupMyStaticQCompleter
-    (YerothDatabase::STOCKS, YerothDatabaseTableColumn::DESIGNATION);
+    lineEdit_creer_remise_designation_article
+        ->setupMyStaticQCompleter(YerothDatabase::STOCKS,
+                                  YerothDatabaseTableColumn::DESIGNATION);
+
 
     lineEdit_creer_utilisateur_localisation->setYerothEnabled(false);
 
-    lineEdit_creer_utilisateur_localisation->
-    setText(YerothERPConfig::THIS_SITE_LOCALISATION_NAME);
+
+    lineEdit_creer_utilisateur_localisation
+        ->setText(YerothERPConfig::THIS_SITE_LOCALISATION_NAME);
 
 
     populateUtilisateurComboBoxes();

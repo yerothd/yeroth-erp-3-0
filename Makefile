@@ -14,9 +14,9 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DNO_YEROTH_ERP_3_0_TESTING_UNIT_TEST -DNO_YEROTH_ERP_3_0_TOUCH_SCREEN_SET -D${YEROTH_VIRTUAL_KEYBOARD_OPTIONS} -D${YEROTH_FEATURES_COMPTABILITE_VALUE} -D${YEROTH_LANGUAGE} -D${YEROTH_DEBUG_LOG} -D${YEROTH_VERSION} -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_DBUS_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
+DEFINES       = -DNO_YEROTH_ERP_3_0_TESTING_UNIT_TEST -DNO_YEROTH_ERP_3_0_TOUCH_SCREEN_SET -D${YEROTH_VIRTUAL_KEYBOARD_OPTIONS} -D${YEROTH_FEATURES_COMPTABILITE_VALUE} -D${YEROTH_LANGUAGE} -D${YEROTH_DEBUG_LOG} -D${YEROTH_VERSION} -DQT_WIDGETS_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_DBUS_LIB -DQT_CORE_LIB
+CFLAGS        = -pipe -g -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -g -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
 INCPATH       = -I. -Imoc -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtQmlModels -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -37,9 +37,9 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = yeroth-erp-3-01.0.0
-DISTDIR = /home/yeroth/yeroth-erp-3-0/obj/yeroth-erp-3-01.0.0
+DISTDIR = /home/yeri/yeroth-erp-3-0/obj/yeroth-erp-3-01.0.0
 LINK          = g++
-LFLAGS        = -Wl,-O1
+LFLAGS        = 
 LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Quick.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Sql.so /usr/lib/x86_64-linux-gnu/libQt5QmlModels.so /usr/lib/x86_64-linux-gnu/libQt5Qml.so /usr/lib/x86_64-linux-gnu/libQt5Network.so /usr/lib/x86_64-linux-gnu/libQt5DBus.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
@@ -1271,7 +1271,7 @@ compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc/moc_predefs.h
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp \
 		obj/yeroth-erp-3-0.gch/c++
-	g++ -pipe -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	g++ -pipe -g -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc/moc_YRruntimeverification_adaptor.cpp moc/moc_IYRruntimeverificationAdaptor_interface.cpp moc/moc_yeroth-erp-windows.cpp moc/moc_yeroth-erp-marchandise-import.cpp moc/moc_yeroth-erp-stock-import.cpp moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp moc/moc_yeroth-erp-push-button-PASSWORD.cpp moc/moc_yeroth-erp-progress-bar.cpp moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp moc/moc_yeroth-erp-point-de-vente-table-widget.cpp moc/moc_yeroth-erp-table-widget.cpp moc/moc_yeroth-erp-table-view-with-pagination.cpp moc/moc_yeroth-erp-table-view.cpp moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp moc/moc_yeroth-erp-paiements-table-view.cpp moc/moc_yeroth-erp-stocks-table-view.cpp moc/moc_yeroth-erp-ventes-table-view.cpp moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp moc/moc_yeroth-erp-fournisseurs-table-view.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp moc/moc_yeroth-erp-clients-table-view.cpp moc/moc_yeroth-erp-alertes-table-view.cpp moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp moc/moc_yeroth-erp-achats-table-view.cpp moc/moc_yeroth-erp-marchandises-table-view.cpp moc/moc_yeroth-erp-line-edit.cpp moc/moc_yeroth-erp-push-button.cpp moc/moc_yeroth-erp-combo-box.cpp moc/moc_yeroth-erp-datetime-edit.cpp moc/moc_yeroth-erp-qcheckbox.cpp moc/moc_yeroth-erp-select-db-qcheckbox.cpp moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp moc/moc_yeroth-erp-dialog-commons.cpp moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-creer-compte-client-window.cpp moc/moc_yeroth-erp-modifier-compte-client-window.cpp moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp moc/moc_yeroth-erp-clients-detail-window.cpp moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-groupes-de-clients-window.cpp moc/moc_yeroth-erp-groupes-dun-client-window.cpp moc/moc_yeroth-erp-clients-window.cpp moc/moc_yeroth-erp-payer-compte-client-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp moc/moc_yeroth-erp-entrer-window.cpp moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp moc/moc_yeroth-erp-modifier-window.cpp moc/moc_yeroth-erp-marchandises-window.cpp moc/moc_yeroth-erp-sortir-liststocks-window.cpp moc/moc_yeroth-erp-sortir-window.cpp moc/moc_yeroth-erp-historique-du-stock-window.cpp moc/moc_yeroth-erp-stock-detail-window.cpp moc/moc_yeroth-erp-stocks-window.cpp moc/moc_yeroth-erp-charges-financieres-window.cpp moc/moc_yeroth-erp-charges-financieres-detail-window.cpp moc/moc_yeroth-erp-achats-detail-window.cpp moc/moc_yeroth-erp-achats-window.cpp moc/moc_yeroth-erp-pointdevente-window.cpp moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp moc/moc_yeroth-erp-modifier-fournisseur-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-fournisseurs-window.cpp moc/moc_yeroth-erp-creer-fournisseur-window.cpp moc/moc_yeroth-erp-fournisseur-details-window.cpp moc/moc_yeroth-erp-comptabilite-window.cpp moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp moc/moc_yeroth-erp-window-commons.cpp moc/moc_yeroth-erp-main-window.cpp moc/moc_yeroth-erp-alertes-window.cpp moc/moc_yeroth-erp-tableaux-de-bord-window.cpp moc/moc_yeroth-erp-paiements-window.cpp moc/moc_yeroth-erp-ventes-window.cpp moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp moc/moc_yeroth-erp-test-import-csv-file-data.cpp moc/moc_yeroth-erp-test-utils.cpp moc/moc_yeroth-erp-users.cpp moc/moc_yeroth-erp-user-vendeur.cpp moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp moc/moc_yeroth-erp-user-manager.cpp moc/moc_yeroth-erp-user-magasinier.cpp moc/moc_yeroth-erp-user-caissier.cpp moc/moc_yeroth-erp-user-administrateur.cpp moc/moc_YEROTH_RUNTIME_VERIFIER.cpp moc/moc_yeroth-erp-key-emitter.cpp moc/moc_yeroth-erp-spell-numbers.cpp moc/moc_yeroth-erp-utils.cpp moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp moc/moc_yeroth-erp-admin-windows-commons.cpp moc/moc_yeroth-erp-admin-window.cpp moc/moc_yeroth-erp-admin-search-form.cpp moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp moc/moc_yeroth-erp-financial-expense-table-view.cpp moc/moc_yeroth-erp-product-department-table-view.cpp moc/moc_yeroth-erp-alert-table-view.cpp moc/moc_yeroth-erp-site-table-view.cpp moc/moc_yeroth-erp-user-table-view.cpp moc/moc_yeroth-erp-category-table-view.cpp moc/moc_yeroth-erp-bank-account-table-view.cpp moc/moc_yeroth-erp-admin-create-window.cpp moc/moc_yeroth-erp-admin-lister-window.cpp moc/moc_yeroth-erp-admin-detail-window.cpp moc/moc_yeroth-erp-admin-modifier-window.cpp
 compiler_moc_header_clean:
@@ -1281,12 +1281,12 @@ compiler_moc_header_clean:
 moc/moc_YRruntimeverification_adaptor.cpp: src/YRruntimeverification_adaptor.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/YRruntimeverification_adaptor.h -o moc/moc_YRruntimeverification_adaptor.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/YRruntimeverification_adaptor.h -o moc/moc_YRruntimeverification_adaptor.cpp
 
 moc/moc_IYRruntimeverificationAdaptor_interface.cpp: src/IYRruntimeverificationAdaptor_interface.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/IYRruntimeverificationAdaptor_interface.h -o moc/moc_IYRruntimeverificationAdaptor_interface.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/IYRruntimeverificationAdaptor_interface.h -o moc/moc_IYRruntimeverificationAdaptor_interface.cpp
 
 moc/moc_yeroth-erp-windows.cpp: src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
@@ -1483,7 +1483,7 @@ moc/moc_yeroth-erp-windows.cpp: src/yeroth-erp-windows.hpp \
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/yeroth-erp-windows.hpp -o moc/moc_yeroth-erp-windows.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/yeroth-erp-windows.hpp -o moc/moc_yeroth-erp-windows.cpp
 
 moc/moc_yeroth-erp-marchandise-import.cpp: src/imports/yeroth-erp-marchandise-import.hpp \
 		src/imports/yeroth-erp-stock-import.hpp \
@@ -1512,7 +1512,7 @@ moc/moc_yeroth-erp-marchandise-import.cpp: src/imports/yeroth-erp-marchandise-im
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/imports/yeroth-erp-marchandise-import.hpp -o moc/moc_yeroth-erp-marchandise-import.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/imports/yeroth-erp-marchandise-import.hpp -o moc/moc_yeroth-erp-marchandise-import.cpp
 
 moc/moc_yeroth-erp-stock-import.cpp: src/imports/yeroth-erp-stock-import.hpp \
 		src/imports/yeroth-erp-database-table-import-info.hpp \
@@ -1540,7 +1540,7 @@ moc/moc_yeroth-erp-stock-import.cpp: src/imports/yeroth-erp-stock-import.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/imports/yeroth-erp-stock-import.hpp -o moc/moc_yeroth-erp-stock-import.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/imports/yeroth-erp-stock-import.hpp -o moc/moc_yeroth-erp-stock-import.cpp
 
 moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp: src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
@@ -1568,7 +1568,7 @@ moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cp
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp -o moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp -o moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
 
 moc/moc_yeroth-erp-push-button-PASSWORD.cpp: src/widgets/yeroth-erp-push-button-PASSWORD.hpp \
 		src/widgets/yeroth-erp-push-button.hpp \
@@ -1601,7 +1601,7 @@ moc/moc_yeroth-erp-push-button-PASSWORD.cpp: src/widgets/yeroth-erp-push-button-
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-push-button-PASSWORD.hpp -o moc/moc_yeroth-erp-push-button-PASSWORD.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-push-button-PASSWORD.hpp -o moc/moc_yeroth-erp-push-button-PASSWORD.cpp
 
 moc/moc_yeroth-erp-progress-bar.cpp: src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -1628,7 +1628,7 @@ moc/moc_yeroth-erp-progress-bar.cpp: src/widgets/yeroth-erp-progress-bar.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-progress-bar.hpp -o moc/moc_yeroth-erp-progress-bar.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-progress-bar.hpp -o moc/moc_yeroth-erp-progress-bar.cpp
 
 moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp: src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp \
 		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
@@ -1658,7 +1658,7 @@ moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp: src/widgets/widgets-tab
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp -o moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp -o moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp
 
 moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp: src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1689,7 +1689,7 @@ moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp: src/widgets/widg
 		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp -o moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp -o moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp
 
 moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp: src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp \
 		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
@@ -1719,7 +1719,7 @@ moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp: src/widgets/widgets-tabl
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp -o moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp -o moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp
 
 moc/moc_yeroth-erp-point-de-vente-table-widget.cpp: src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp \
 		src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
@@ -1749,7 +1749,7 @@ moc/moc_yeroth-erp-point-de-vente-table-widget.cpp: src/widgets/widgets-table/ye
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp -o moc/moc_yeroth-erp-point-de-vente-table-widget.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp -o moc/moc_yeroth-erp-point-de-vente-table-widget.cpp
 
 moc/moc_yeroth-erp-table-widget.cpp: src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1778,7 +1778,7 @@ moc/moc_yeroth-erp-table-widget.cpp: src/widgets/widgets-table/yeroth-erp-table-
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-table-widget.hpp -o moc/moc_yeroth-erp-table-widget.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/widgets-table/yeroth-erp-table-widget.hpp -o moc/moc_yeroth-erp-table-widget.cpp
 
 moc/moc_yeroth-erp-table-view-with-pagination.cpp: src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -1805,7 +1805,7 @@ moc/moc_yeroth-erp-table-view-with-pagination.cpp: src/widgets/table-view/yeroth
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp -o moc/moc_yeroth-erp-table-view-with-pagination.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp -o moc/moc_yeroth-erp-table-view-with-pagination.cpp
 
 moc/moc_yeroth-erp-table-view.cpp: src/widgets/table-view/yeroth-erp-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1822,7 +1822,7 @@ moc/moc_yeroth-erp-table-view.cpp: src/widgets/table-view/yeroth-erp-table-view.
 		src/utils/yeroth-erp-sqltable-model.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-table-view.hpp -o moc/moc_yeroth-erp-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-table-view.hpp -o moc/moc_yeroth-erp-table-view.cpp
 
 moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp: src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1850,7 +1850,7 @@ moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp: src/widgets/
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp -o moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp -o moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp
 
 moc/moc_yeroth-erp-paiements-table-view.cpp: src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1879,7 +1879,7 @@ moc/moc_yeroth-erp-paiements-table-view.cpp: src/widgets/table-view/yeroth-erp-p
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-paiements-table-view.hpp -o moc/moc_yeroth-erp-paiements-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-paiements-table-view.hpp -o moc/moc_yeroth-erp-paiements-table-view.cpp
 
 moc/moc_yeroth-erp-stocks-table-view.cpp: src/widgets/table-view/yeroth-erp-stocks-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1907,7 +1907,7 @@ moc/moc_yeroth-erp-stocks-table-view.cpp: src/widgets/table-view/yeroth-erp-stoc
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-stocks-table-view.hpp -o moc/moc_yeroth-erp-stocks-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-stocks-table-view.hpp -o moc/moc_yeroth-erp-stocks-table-view.cpp
 
 moc/moc_yeroth-erp-ventes-table-view.cpp: src/widgets/table-view/yeroth-erp-ventes-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1936,7 +1936,7 @@ moc/moc_yeroth-erp-ventes-table-view.cpp: src/widgets/table-view/yeroth-erp-vent
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-ventes-table-view.hpp -o moc/moc_yeroth-erp-ventes-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-ventes-table-view.hpp -o moc/moc_yeroth-erp-ventes-table-view.cpp
 
 moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp: src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1965,7 +1965,7 @@ moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp: src/widgets/table-view/y
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp -o moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp -o moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp
 
 moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp: src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -1993,7 +1993,7 @@ moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp: src/widgets/table-view/yer
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp -o moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp -o moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp
 
 moc/moc_yeroth-erp-fournisseurs-table-view.cpp: src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2021,7 +2021,7 @@ moc/moc_yeroth-erp-fournisseurs-table-view.cpp: src/widgets/table-view/yeroth-er
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp -o moc/moc_yeroth-erp-fournisseurs-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp -o moc/moc_yeroth-erp-fournisseurs-table-view.cpp
 
 moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp: src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2049,7 +2049,7 @@ moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp: src/widgets/ta
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp -o moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp -o moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp
 
 moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp: src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2077,7 +2077,7 @@ moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp: src/widgets/table-view/yer
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp -o moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp -o moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp
 
 moc/moc_yeroth-erp-clients-table-view.cpp: src/widgets/table-view/yeroth-erp-clients-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2105,7 +2105,7 @@ moc/moc_yeroth-erp-clients-table-view.cpp: src/widgets/table-view/yeroth-erp-cli
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-clients-table-view.hpp -o moc/moc_yeroth-erp-clients-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-clients-table-view.hpp -o moc/moc_yeroth-erp-clients-table-view.cpp
 
 moc/moc_yeroth-erp-alertes-table-view.cpp: src/widgets/table-view/yeroth-erp-alertes-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2134,7 +2134,7 @@ moc/moc_yeroth-erp-alertes-table-view.cpp: src/widgets/table-view/yeroth-erp-ale
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-alertes-table-view.hpp -o moc/moc_yeroth-erp-alertes-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-alertes-table-view.hpp -o moc/moc_yeroth-erp-alertes-table-view.cpp
 
 moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp: src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2162,7 +2162,7 @@ moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp: src/widgets/table-view/ye
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp -o moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp -o moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp
 
 moc/moc_yeroth-erp-achats-table-view.cpp: src/widgets/table-view/yeroth-erp-achats-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2190,7 +2190,7 @@ moc/moc_yeroth-erp-achats-table-view.cpp: src/widgets/table-view/yeroth-erp-acha
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-achats-table-view.hpp -o moc/moc_yeroth-erp-achats-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-achats-table-view.hpp -o moc/moc_yeroth-erp-achats-table-view.cpp
 
 moc/moc_yeroth-erp-marchandises-table-view.cpp: src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2218,7 +2218,7 @@ moc/moc_yeroth-erp-marchandises-table-view.cpp: src/widgets/table-view/yeroth-er
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp -o moc/moc_yeroth-erp-marchandises-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp -o moc/moc_yeroth-erp-marchandises-table-view.cpp
 
 moc/moc_yeroth-erp-line-edit.cpp: src/widgets/yeroth-erp-line-edit.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -2245,7 +2245,7 @@ moc/moc_yeroth-erp-line-edit.cpp: src/widgets/yeroth-erp-line-edit.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-line-edit.hpp -o moc/moc_yeroth-erp-line-edit.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-line-edit.hpp -o moc/moc_yeroth-erp-line-edit.cpp
 
 moc/moc_yeroth-erp-push-button.cpp: src/widgets/yeroth-erp-push-button.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2277,7 +2277,7 @@ moc/moc_yeroth-erp-push-button.cpp: src/widgets/yeroth-erp-push-button.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-push-button.hpp -o moc/moc_yeroth-erp-push-button.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-push-button.hpp -o moc/moc_yeroth-erp-push-button.cpp
 
 moc/moc_yeroth-erp-combo-box.cpp: src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -2304,7 +2304,7 @@ moc/moc_yeroth-erp-combo-box.cpp: src/widgets/yeroth-erp-combo-box.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-combo-box.hpp -o moc/moc_yeroth-erp-combo-box.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-combo-box.hpp -o moc/moc_yeroth-erp-combo-box.cpp
 
 moc/moc_yeroth-erp-datetime-edit.cpp: src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2319,7 +2319,7 @@ moc/moc_yeroth-erp-datetime-edit.cpp: src/widgets/yeroth-erp-datetime-edit.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-datetime-edit.hpp -o moc/moc_yeroth-erp-datetime-edit.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-datetime-edit.hpp -o moc/moc_yeroth-erp-datetime-edit.cpp
 
 moc/moc_yeroth-erp-qcheckbox.cpp: src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -2346,7 +2346,7 @@ moc/moc_yeroth-erp-qcheckbox.cpp: src/widgets/yeroth-erp-qcheckbox.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-qcheckbox.hpp -o moc/moc_yeroth-erp-qcheckbox.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-qcheckbox.hpp -o moc/moc_yeroth-erp-qcheckbox.cpp
 
 moc/moc_yeroth-erp-select-db-qcheckbox.cpp: src/widgets/yeroth-erp-select-db-qcheckbox.hpp \
 		src/widgets/yeroth-erp-qcheckbox.hpp \
@@ -2374,7 +2374,7 @@ moc/moc_yeroth-erp-select-db-qcheckbox.cpp: src/widgets/yeroth-erp-select-db-qch
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-select-db-qcheckbox.hpp -o moc/moc_yeroth-erp-select-db-qcheckbox.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/widgets/yeroth-erp-select-db-qcheckbox.hpp -o moc/moc_yeroth-erp-select-db-qcheckbox.cpp
 
 moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp: src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp \
 		ui_yeroth-erp-imprimer-dialog.h \
@@ -2404,7 +2404,7 @@ moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp: src/dialogs/yeroth-erp-IMP
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp -o moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp -o moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
 
 moc/moc_yeroth-erp-dialog-commons.cpp: src/dialogs/yeroth-erp-dialog-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -2419,7 +2419,7 @@ moc/moc_yeroth-erp-dialog-commons.cpp: src/dialogs/yeroth-erp-dialog-commons.hpp
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-dialog-commons.hpp -o moc/moc_yeroth-erp-dialog-commons.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-dialog-commons.hpp -o moc/moc_yeroth-erp-dialog-commons.cpp
 
 moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp: src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
@@ -2454,7 +2454,7 @@ moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp: src/dialogs/yeroth-erp-ge
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp -o moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp -o moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp
 
 moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp: src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp \
 		ui_yeroth-erp-changer-utilisateur-dialog.h \
@@ -2490,7 +2490,7 @@ moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp: src/dialogs/yeroth-erp-change
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp -o moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp -o moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp
 
 moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp: src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp \
 		ui_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.h \
@@ -2525,7 +2525,7 @@ moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp: src/di
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp -o moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp -o moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp
 
 moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp: src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp \
 		ui_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.h \
@@ -2560,7 +2560,7 @@ moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp: src
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp -o moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp -o moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp
 
 moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp: src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp \
 		ui_yeroth-erp-pointdevente-methode-paiement-dialog.h \
@@ -2595,7 +2595,7 @@ moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp: src/dialogs/yeroth-
 		src/dialogs/yeroth-erp-dialog-commons.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp -o moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp -o moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp
 
 moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp: src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp \
 		ui_yeroth-erp-creer-groupe-de-clients-window.h \
@@ -2635,7 +2635,7 @@ moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp: src/windows/crm/creer/yer
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp -o moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp -o moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp
 
 moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp: src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp \
 		ui_yeroth-erp-creer-un-programme-de-fidelite-clients-window.h \
@@ -2671,7 +2671,7 @@ moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp: src/window
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp -o moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp -o moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp
 
 moc/moc_yeroth-erp-creer-compte-client-window.cpp: src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp \
 		ui_yeroth-erp-creer-compte-client-window.h \
@@ -2706,7 +2706,7 @@ moc/moc_yeroth-erp-creer-compte-client-window.cpp: src/windows/crm/creer/yeroth-
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp -o moc/moc_yeroth-erp-creer-compte-client-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp -o moc/moc_yeroth-erp-creer-compte-client-window.cpp
 
 moc/moc_yeroth-erp-modifier-compte-client-window.cpp: src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp \
 		ui_yeroth-erp-modifier-compte-client-window.h \
@@ -2741,7 +2741,7 @@ moc/moc_yeroth-erp-modifier-compte-client-window.cpp: src/windows/crm/modifier/y
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp -o moc/moc_yeroth-erp-modifier-compte-client-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp -o moc/moc_yeroth-erp-modifier-compte-client-window.cpp
 
 moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp: src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp \
 		ui_yeroth-erp-details-dun-groupe-de-clients-window.h \
@@ -2781,7 +2781,7 @@ moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp: src/windows/crm/det
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp -o moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp -o moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp
 
 moc/moc_yeroth-erp-clients-detail-window.cpp: src/windows/crm/details/yeroth-erp-clients-detail-window.hpp \
 		ui_yeroth-erp-clients-detail-window.h \
@@ -2816,7 +2816,7 @@ moc/moc_yeroth-erp-clients-detail-window.cpp: src/windows/crm/details/yeroth-erp
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/details/yeroth-erp-clients-detail-window.hpp -o moc/moc_yeroth-erp-clients-detail-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/details/yeroth-erp-clients-detail-window.hpp -o moc/moc_yeroth-erp-clients-detail-window.cpp
 
 moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp: src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp \
 		ui_yeroth-erp-details-dun-programme-de-fidelite-clients-window.h \
@@ -2856,7 +2856,7 @@ moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp: src/win
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp -o moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp -o moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp
 
 moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp: src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp \
 		ui_yeroth-erp-programmes-de-fidelite-clients-window.h \
@@ -2893,7 +2893,7 @@ moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp: src/windows/crm/ye
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp -o moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp -o moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp
 
 moc/moc_yeroth-erp-groupes-de-clients-window.cpp: src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp \
 		ui_yeroth-erp-groupes-de-clients-window.h \
@@ -2930,7 +2930,7 @@ moc/moc_yeroth-erp-groupes-de-clients-window.cpp: src/windows/crm/yeroth-erp-gro
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp -o moc/moc_yeroth-erp-groupes-de-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp -o moc/moc_yeroth-erp-groupes-de-clients-window.cpp
 
 moc/moc_yeroth-erp-groupes-dun-client-window.cpp: src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp \
 		ui_yeroth-erp-groupes-dun-client-window.h \
@@ -2968,7 +2968,7 @@ moc/moc_yeroth-erp-groupes-dun-client-window.cpp: src/windows/crm/yeroth-erp-gro
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp -o moc/moc_yeroth-erp-groupes-dun-client-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp -o moc/moc_yeroth-erp-groupes-dun-client-window.cpp
 
 moc/moc_yeroth-erp-clients-window.cpp: src/windows/crm/yeroth-erp-clients-window.hpp \
 		ui_yeroth-erp-clients-window.h \
@@ -3004,7 +3004,7 @@ moc/moc_yeroth-erp-clients-window.cpp: src/windows/crm/yeroth-erp-clients-window
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-clients-window.hpp -o moc/moc_yeroth-erp-clients-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-clients-window.hpp -o moc/moc_yeroth-erp-clients-window.cpp
 
 moc/moc_yeroth-erp-payer-compte-client-window.cpp: src/windows/crm/yeroth-erp-payer-compte-client-window.hpp \
 		ui_yeroth-erp-payer-compte-client-window.h \
@@ -3040,7 +3040,7 @@ moc/moc_yeroth-erp-payer-compte-client-window.cpp: src/windows/crm/yeroth-erp-pa
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-payer-compte-client-window.hpp -o moc/moc_yeroth-erp-payer-compte-client-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-payer-compte-client-window.hpp -o moc/moc_yeroth-erp-payer-compte-client-window.cpp
 
 moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp: src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-client-window.h \
@@ -3237,7 +3237,7 @@ moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp: src/windows/cr
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp -o moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp -o moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp
 
 moc/moc_yeroth-erp-entrer-window.cpp: src/windows/yeroth-erp-entrer-window.hpp \
 		ui_yeroth-erp-entrer-window.h \
@@ -3276,7 +3276,7 @@ moc/moc_yeroth-erp-entrer-window.cpp: src/windows/yeroth-erp-entrer-window.hpp \
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-entrer-window.hpp -o moc/moc_yeroth-erp-entrer-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-entrer-window.hpp -o moc/moc_yeroth-erp-entrer-window.cpp
 
 moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp: src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp \
 		ui_yeroth-erp-mouvements_de_stocks-window.h \
@@ -3315,7 +3315,7 @@ moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp: src/windows/stocks/yeroth-er
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp -o moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp -o moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp
 
 moc/moc_yeroth-erp-modifier-window.cpp: src/windows/stocks/yeroth-erp-modifier-window.hpp \
 		ui_yeroth-erp-modifier-window.h \
@@ -3352,7 +3352,7 @@ moc/moc_yeroth-erp-modifier-window.cpp: src/windows/stocks/yeroth-erp-modifier-w
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-modifier-window.hpp -o moc/moc_yeroth-erp-modifier-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-modifier-window.hpp -o moc/moc_yeroth-erp-modifier-window.cpp
 
 moc/moc_yeroth-erp-marchandises-window.cpp: src/windows/stocks/yeroth-erp-marchandises-window.hpp \
 		ui_yeroth-erp-marchandises-window.h \
@@ -3389,7 +3389,7 @@ moc/moc_yeroth-erp-marchandises-window.cpp: src/windows/stocks/yeroth-erp-marcha
 		src/widgets/yeroth-erp-qcheckbox.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-marchandises-window.hpp -o moc/moc_yeroth-erp-marchandises-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-marchandises-window.hpp -o moc/moc_yeroth-erp-marchandises-window.cpp
 
 moc/moc_yeroth-erp-sortir-liststocks-window.cpp: src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp \
 		ui_yeroth-erp-sortir-liststocks-window.h \
@@ -3424,7 +3424,7 @@ moc/moc_yeroth-erp-sortir-liststocks-window.cpp: src/windows/stocks/yeroth-erp-s
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp -o moc/moc_yeroth-erp-sortir-liststocks-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp -o moc/moc_yeroth-erp-sortir-liststocks-window.cpp
 
 moc/moc_yeroth-erp-sortir-window.cpp: src/windows/stocks/yeroth-erp-sortir-window.hpp \
 		ui_yeroth-erp-sortir-window.h \
@@ -3463,7 +3463,7 @@ moc/moc_yeroth-erp-sortir-window.cpp: src/windows/stocks/yeroth-erp-sortir-windo
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-sortir-window.hpp -o moc/moc_yeroth-erp-sortir-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-sortir-window.hpp -o moc/moc_yeroth-erp-sortir-window.cpp
 
 moc/moc_yeroth-erp-historique-du-stock-window.cpp: src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp \
 		ui_yeroth-erp-historique-du-stock-window.h \
@@ -3660,7 +3660,7 @@ moc/moc_yeroth-erp-historique-du-stock-window.cpp: src/windows/stocks/yeroth-erp
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp -o moc/moc_yeroth-erp-historique-du-stock-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp -o moc/moc_yeroth-erp-historique-du-stock-window.cpp
 
 moc/moc_yeroth-erp-stock-detail-window.cpp: src/windows/stocks/yeroth-erp-stock-detail-window.hpp \
 		ui_yeroth-erp-stock-detail-window.h \
@@ -3698,7 +3698,7 @@ moc/moc_yeroth-erp-stock-detail-window.cpp: src/windows/stocks/yeroth-erp-stock-
 		src/utils/windows/yeroth-erp-abstract-class-detail-view-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-stock-detail-window.hpp -o moc/moc_yeroth-erp-stock-detail-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-stock-detail-window.hpp -o moc/moc_yeroth-erp-stock-detail-window.cpp
 
 moc/moc_yeroth-erp-stocks-window.cpp: src/windows/stocks/yeroth-erp-stocks-window.hpp \
 		ui_yeroth-erp-stocks-window.h \
@@ -3735,7 +3735,7 @@ moc/moc_yeroth-erp-stocks-window.cpp: src/windows/stocks/yeroth-erp-stocks-windo
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-stocks-window.hpp -o moc/moc_yeroth-erp-stocks-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/stocks/yeroth-erp-stocks-window.hpp -o moc/moc_yeroth-erp-stocks-window.cpp
 
 moc/moc_yeroth-erp-charges-financieres-window.cpp: src/windows/yeroth-erp-charges-financieres-window.hpp \
 		ui_yeroth-erp-charges-financieres-window.h \
@@ -3772,7 +3772,7 @@ moc/moc_yeroth-erp-charges-financieres-window.cpp: src/windows/yeroth-erp-charge
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-charges-financieres-window.hpp -o moc/moc_yeroth-erp-charges-financieres-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-charges-financieres-window.hpp -o moc/moc_yeroth-erp-charges-financieres-window.cpp
 
 moc/moc_yeroth-erp-charges-financieres-detail-window.cpp: src/windows/yeroth-erp-charges-financieres-detail-window.hpp \
 		ui_yeroth-erp-charges-financieres-detail-window.h \
@@ -3808,7 +3808,7 @@ moc/moc_yeroth-erp-charges-financieres-detail-window.cpp: src/windows/yeroth-erp
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-charges-financieres-detail-window.hpp -o moc/moc_yeroth-erp-charges-financieres-detail-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-charges-financieres-detail-window.hpp -o moc/moc_yeroth-erp-charges-financieres-detail-window.cpp
 
 moc/moc_yeroth-erp-achats-detail-window.cpp: src/windows/purchase/yeroth-erp-achats-detail-window.hpp \
 		ui_yeroth-erp-achats-detail-window.h \
@@ -3843,7 +3843,7 @@ moc/moc_yeroth-erp-achats-detail-window.cpp: src/windows/purchase/yeroth-erp-ach
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/purchase/yeroth-erp-achats-detail-window.hpp -o moc/moc_yeroth-erp-achats-detail-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/purchase/yeroth-erp-achats-detail-window.hpp -o moc/moc_yeroth-erp-achats-detail-window.cpp
 
 moc/moc_yeroth-erp-achats-window.cpp: src/windows/purchase/yeroth-erp-achats-window.hpp \
 		ui_yeroth-erp-achats-window.h \
@@ -3881,7 +3881,7 @@ moc/moc_yeroth-erp-achats-window.cpp: src/windows/purchase/yeroth-erp-achats-win
 		src/widgets/yeroth-erp-radio-button.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/purchase/yeroth-erp-achats-window.hpp -o moc/moc_yeroth-erp-achats-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/purchase/yeroth-erp-achats-window.hpp -o moc/moc_yeroth-erp-achats-window.cpp
 
 moc/moc_yeroth-erp-pointdevente-window.cpp: src/windows/pos/yeroth-erp-pointdevente-window.hpp \
 		ui_yeroth-erp-pointdevente-window.h \
@@ -3925,7 +3925,7 @@ moc/moc_yeroth-erp-pointdevente-window.cpp: src/windows/pos/yeroth-erp-pointdeve
 		src/utils/credit-card/yeroth-erp-carte-credit-info.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/pos/yeroth-erp-pointdevente-window.hpp -o moc/moc_yeroth-erp-pointdevente-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/pos/yeroth-erp-pointdevente-window.hpp -o moc/moc_yeroth-erp-pointdevente-window.cpp
 
 moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp: src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp \
 		ui_yeroth-erp-pointdevente-liststocks-window.h \
@@ -4122,7 +4122,7 @@ moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp: src/windows/pos/yeroth-er
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp -o moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp -o moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp
 
 moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp: src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp \
 		ui_yeroth-erp-tableau-des-transactions-du-fournisseur-window.h \
@@ -4155,7 +4155,7 @@ moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp: src/windo
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp -o moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp -o moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp
 
 moc/moc_yeroth-erp-modifier-fournisseur-window.cpp: src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp \
 		ui_yeroth-erp-modifier-fournisseur-window.h \
@@ -4190,7 +4190,7 @@ moc/moc_yeroth-erp-modifier-fournisseur-window.cpp: src/windows/supplier/yeroth-
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp -o moc/moc_yeroth-erp-modifier-fournisseur-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp -o moc/moc_yeroth-erp-modifier-fournisseur-window.cpp
 
 moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp: src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp \
 		ui_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.h \
@@ -4230,7 +4230,7 @@ moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp: src/windows/supplie
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp -o moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp -o moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp
 
 moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp: src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp \
 		ui_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.h \
@@ -4270,7 +4270,7 @@ moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp: src/windows/suppl
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp -o moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp -o moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp
 
 moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp: src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp \
 		ui_yeroth-erp-GROUPES-dun-employe-hr-window.h \
@@ -4308,7 +4308,7 @@ moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp: src/windows/supplier/yerot
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp -o moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp -o moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp
 
 moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp: src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp \
 		ui_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.h \
@@ -4344,7 +4344,7 @@ moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp: src/windows/supplier/yero
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp -o moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp -o moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp
 
 moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp: src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp \
 		ui_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.h \
@@ -4384,7 +4384,7 @@ moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp: src/windows/supplier/ye
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp -o moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp -o moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp
 
 moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp: src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp \
 		ui_yeroth-erp-GROUPES-DEMPLOYES-hr-window.h \
@@ -4421,7 +4421,7 @@ moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp: src/windows/supplier/yeroth-
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp -o moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp -o moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp
 
 moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp: src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp \
 		ui_yeroth-erp-GROUPES-DE-PAIE-hr-window.h \
@@ -4458,7 +4458,7 @@ moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp: src/windows/supplier/yeroth-er
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp -o moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp -o moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp
 
 moc/moc_yeroth-erp-fournisseurs-window.cpp: src/windows/supplier/yeroth-erp-fournisseurs-window.hpp \
 		ui_yeroth-erp-fournisseurs-window.h \
@@ -4495,7 +4495,7 @@ moc/moc_yeroth-erp-fournisseurs-window.cpp: src/windows/supplier/yeroth-erp-four
 		src/widgets/yeroth-erp-radio-button.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-fournisseurs-window.hpp -o moc/moc_yeroth-erp-fournisseurs-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-fournisseurs-window.hpp -o moc/moc_yeroth-erp-fournisseurs-window.cpp
 
 moc/moc_yeroth-erp-creer-fournisseur-window.cpp: src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp \
 		ui_yeroth-erp-creer-fournisseur-window.h \
@@ -4530,7 +4530,7 @@ moc/moc_yeroth-erp-creer-fournisseur-window.cpp: src/windows/supplier/yeroth-erp
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp -o moc/moc_yeroth-erp-creer-fournisseur-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp -o moc/moc_yeroth-erp-creer-fournisseur-window.cpp
 
 moc/moc_yeroth-erp-fournisseur-details-window.cpp: src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp \
 		ui_yeroth-erp-fournisseur-details-window.h \
@@ -4565,7 +4565,7 @@ moc/moc_yeroth-erp-fournisseur-details-window.cpp: src/windows/supplier/yeroth-e
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp -o moc/moc_yeroth-erp-fournisseur-details-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp -o moc/moc_yeroth-erp-fournisseur-details-window.cpp
 
 moc/moc_yeroth-erp-comptabilite-window.cpp: src/windows/yeroth-erp-comptabilite-window.hpp \
 		ui_yeroth-erp-comptabilite-window.h \
@@ -4603,7 +4603,7 @@ moc/moc_yeroth-erp-comptabilite-window.cpp: src/windows/yeroth-erp-comptabilite-
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-comptabilite-window.hpp -o moc/moc_yeroth-erp-comptabilite-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-comptabilite-window.hpp -o moc/moc_yeroth-erp-comptabilite-window.cpp
 
 moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp: src/windows/yeroth-erp-recherche-conditionnelle-window.hpp \
 		ui_yeroth-erp-recherche-conditionnelle-window.h \
@@ -4800,7 +4800,7 @@ moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp: src/windows/yeroth-erp-r
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-recherche-conditionnelle-window.hpp -o moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-recherche-conditionnelle-window.hpp -o moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp
 
 moc/moc_yeroth-erp-window-commons.cpp: src/windows/yeroth-erp-window-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -4831,7 +4831,7 @@ moc/moc_yeroth-erp-window-commons.cpp: src/windows/yeroth-erp-window-commons.hpp
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-window-commons.hpp -o moc/moc_yeroth-erp-window-commons.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-window-commons.hpp -o moc/moc_yeroth-erp-window-commons.cpp
 
 moc/moc_yeroth-erp-main-window.cpp: src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
@@ -4865,7 +4865,7 @@ moc/moc_yeroth-erp-main-window.cpp: src/windows/yeroth-erp-main-window.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-main-window.hpp -o moc/moc_yeroth-erp-main-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-main-window.hpp -o moc/moc_yeroth-erp-main-window.cpp
 
 moc/moc_yeroth-erp-alertes-window.cpp: src/windows/yeroth-erp-alertes-window.hpp \
 		ui_yeroth-erp-alertes-window.h \
@@ -4905,7 +4905,7 @@ moc/moc_yeroth-erp-alertes-window.cpp: src/windows/yeroth-erp-alertes-window.hpp
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-alertes-window.hpp -o moc/moc_yeroth-erp-alertes-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-alertes-window.hpp -o moc/moc_yeroth-erp-alertes-window.cpp
 
 moc/moc_yeroth-erp-tableaux-de-bord-window.cpp: src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
@@ -4941,7 +4941,7 @@ moc/moc_yeroth-erp-tableaux-de-bord-window.cpp: src/windows/yeroth-erp-tableaux-
 		src/widgets/yeroth-erp-qcheckbox.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-tableaux-de-bord-window.hpp -o moc/moc_yeroth-erp-tableaux-de-bord-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-tableaux-de-bord-window.hpp -o moc/moc_yeroth-erp-tableaux-de-bord-window.cpp
 
 moc/moc_yeroth-erp-paiements-window.cpp: src/windows/yeroth-erp-paiements-window.hpp \
 		ui_yeroth-erp-paiements-window.h \
@@ -4981,7 +4981,7 @@ moc/moc_yeroth-erp-paiements-window.cpp: src/windows/yeroth-erp-paiements-window
 		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-paiements-window.hpp -o moc/moc_yeroth-erp-paiements-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-paiements-window.hpp -o moc/moc_yeroth-erp-paiements-window.cpp
 
 moc/moc_yeroth-erp-ventes-window.cpp: src/windows/yeroth-erp-ventes-window.hpp \
 		ui_yeroth-erp-ventes-window.h \
@@ -5020,7 +5020,7 @@ moc/moc_yeroth-erp-ventes-window.cpp: src/windows/yeroth-erp-ventes-window.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-ventes-window.hpp -o moc/moc_yeroth-erp-ventes-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-ventes-window.hpp -o moc/moc_yeroth-erp-ventes-window.cpp
 
 moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp: src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -5050,7 +5050,7 @@ moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp: src/tests/utils/yeroth-erp-test-ye
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp -o moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp -o moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp
 
 moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp: src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp \
 		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
@@ -5080,12 +5080,12 @@ moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp: src/tests/yeroth-erp-test-yer
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp -o moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp -o moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp
 
 moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp: src/tests/yeroth-erp-test-yeroth-erp-windows.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/yeroth-erp-test-yeroth-erp-windows.hpp -o moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/yeroth-erp-test-yeroth-erp-windows.hpp -o moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp
 
 moc/moc_yeroth-erp-test-import-csv-file-data.cpp: src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp \
 		src/tests/utils/yeroth-erp-test-utils.hpp \
@@ -5115,7 +5115,7 @@ moc/moc_yeroth-erp-test-import-csv-file-data.cpp: src/tests/utils/yeroth-erp-tes
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp -o moc/moc_yeroth-erp-test-import-csv-file-data.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp -o moc/moc_yeroth-erp-test-import-csv-file-data.cpp
 
 moc/moc_yeroth-erp-test-utils.cpp: src/tests/utils/yeroth-erp-test-utils.hpp \
 		src/imports/yeroth-erp-stock-import.hpp \
@@ -5144,7 +5144,7 @@ moc/moc_yeroth-erp-test-utils.cpp: src/tests/utils/yeroth-erp-test-utils.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/utils/yeroth-erp-test-utils.hpp -o moc/moc_yeroth-erp-test-utils.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/tests/utils/yeroth-erp-test-utils.hpp -o moc/moc_yeroth-erp-test-utils.cpp
 
 moc/moc_yeroth-erp-users.cpp: src/users/yeroth-erp-users.hpp \
 		src/users/yeroth-erp-user-settings.hpp \
@@ -5178,7 +5178,7 @@ moc/moc_yeroth-erp-users.cpp: src/users/yeroth-erp-users.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-users.hpp -o moc/moc_yeroth-erp-users.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-users.hpp -o moc/moc_yeroth-erp-users.cpp
 
 moc/moc_yeroth-erp-user-vendeur.cpp: src/users/yeroth-erp-user-vendeur.hpp \
 		src/users/yeroth-erp-users.hpp \
@@ -5213,7 +5213,7 @@ moc/moc_yeroth-erp-user-vendeur.cpp: src/users/yeroth-erp-user-vendeur.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-vendeur.hpp -o moc/moc_yeroth-erp-user-vendeur.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-vendeur.hpp -o moc/moc_yeroth-erp-user-vendeur.cpp
 
 moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp: src/users/yeroth-erp-user-gestionaire-des-stocks.hpp \
 		src/users/yeroth-erp-users.hpp \
@@ -5248,7 +5248,7 @@ moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp: src/users/yeroth-erp-user-ge
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-gestionaire-des-stocks.hpp -o moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-gestionaire-des-stocks.hpp -o moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp
 
 moc/moc_yeroth-erp-user-manager.cpp: src/users/yeroth-erp-user-manager.hpp \
 		src/users/yeroth-erp-users.hpp \
@@ -5283,7 +5283,7 @@ moc/moc_yeroth-erp-user-manager.cpp: src/users/yeroth-erp-user-manager.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-manager.hpp -o moc/moc_yeroth-erp-user-manager.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-manager.hpp -o moc/moc_yeroth-erp-user-manager.cpp
 
 moc/moc_yeroth-erp-user-magasinier.cpp: src/users/yeroth-erp-user-magasinier.hpp \
 		src/users/yeroth-erp-users.hpp \
@@ -5318,7 +5318,7 @@ moc/moc_yeroth-erp-user-magasinier.cpp: src/users/yeroth-erp-user-magasinier.hpp
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-magasinier.hpp -o moc/moc_yeroth-erp-user-magasinier.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-magasinier.hpp -o moc/moc_yeroth-erp-user-magasinier.cpp
 
 moc/moc_yeroth-erp-user-caissier.cpp: src/users/yeroth-erp-user-caissier.hpp \
 		src/users/yeroth-erp-users.hpp \
@@ -5353,7 +5353,7 @@ moc/moc_yeroth-erp-user-caissier.cpp: src/users/yeroth-erp-user-caissier.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-caissier.hpp -o moc/moc_yeroth-erp-user-caissier.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-caissier.hpp -o moc/moc_yeroth-erp-user-caissier.cpp
 
 moc/moc_yeroth-erp-user-administrateur.cpp: src/users/yeroth-erp-user-administrateur.hpp \
 		src/users/yeroth-erp-users.hpp \
@@ -5388,13 +5388,13 @@ moc/moc_yeroth-erp-user-administrateur.cpp: src/users/yeroth-erp-user-administra
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-administrateur.hpp -o moc/moc_yeroth-erp-user-administrateur.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/users/yeroth-erp-user-administrateur.hpp -o moc/moc_yeroth-erp-user-administrateur.cpp
 
 moc/moc_YEROTH_RUNTIME_VERIFIER.cpp: src/dbus/YEROTH_RUNTIME_VERIFIER.hpp \
 		src/IYRruntimeverificationAdaptor_interface.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dbus/YEROTH_RUNTIME_VERIFIER.hpp -o moc/moc_YEROTH_RUNTIME_VERIFIER.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/dbus/YEROTH_RUNTIME_VERIFIER.hpp -o moc/moc_YEROTH_RUNTIME_VERIFIER.cpp
 
 moc/moc_yeroth-erp-key-emitter.cpp: src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5409,7 +5409,7 @@ moc/moc_yeroth-erp-key-emitter.cpp: src/utils/virtual-keyboard/yeroth-erp-key-em
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp -o moc/moc_yeroth-erp-key-emitter.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp -o moc/moc_yeroth-erp-key-emitter.cpp
 
 moc/moc_yeroth-erp-spell-numbers.cpp: src/utils/yeroth-erp-spell-numbers.hpp \
 		src/utils/yeroth-erp-utils.hpp \
@@ -5436,7 +5436,7 @@ moc/moc_yeroth-erp-spell-numbers.cpp: src/utils/yeroth-erp-spell-numbers.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/yeroth-erp-spell-numbers.hpp -o moc/moc_yeroth-erp-spell-numbers.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/yeroth-erp-spell-numbers.hpp -o moc/moc_yeroth-erp-spell-numbers.cpp
 
 moc/moc_yeroth-erp-utils.cpp: src/utils/yeroth-erp-utils.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5463,7 +5463,7 @@ moc/moc_yeroth-erp-utils.cpp: src/utils/yeroth-erp-utils.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/yeroth-erp-utils.hpp -o moc/moc_yeroth-erp-utils.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/yeroth-erp-utils.hpp -o moc/moc_yeroth-erp-utils.cpp
 
 moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp: src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5495,7 +5495,7 @@ moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp: src/utils/print_latex_pdf/ye
 		src/widgets/yeroth-erp-line-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp -o moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp -o moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp
 
 moc/moc_yeroth-erp-admin-windows-commons.cpp: src/admin/yeroth-erp-admin-windows-commons.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5530,7 +5530,7 @@ moc/moc_yeroth-erp-admin-windows-commons.cpp: src/admin/yeroth-erp-admin-windows
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-windows-commons.hpp -o moc/moc_yeroth-erp-admin-windows-commons.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-windows-commons.hpp -o moc/moc_yeroth-erp-admin-windows-commons.cpp
 
 moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		ui_yeroth-erp-admin-window.h \
@@ -5727,7 +5727,7 @@ moc/moc_yeroth-erp-admin-window.cpp: src/admin/yeroth-erp-admin-window.hpp \
 		src/utils/yeroth-erp-info-entreprise.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-window.hpp -o moc/moc_yeroth-erp-admin-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-window.hpp -o moc/moc_yeroth-erp-admin-window.cpp
 
 moc/moc_yeroth-erp-admin-search-form.cpp: src/admin/yeroth-erp-admin-search-form.hpp \
 		ui_yeroth-erp-admin-search-form.h \
@@ -5762,7 +5762,7 @@ moc/moc_yeroth-erp-admin-search-form.cpp: src/admin/yeroth-erp-admin-search-form
 		src/admin/admin-actions-subjects.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-search-form.hpp -o moc/moc_yeroth-erp-admin-search-form.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/yeroth-erp-admin-search-form.hpp -o moc/moc_yeroth-erp-admin-search-form.cpp
 
 moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp: src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5791,7 +5791,7 @@ moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp: src/admin/widgets/table-vie
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp -o moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp -o moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
 
 moc/moc_yeroth-erp-financial-expense-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5821,7 +5821,7 @@ moc/moc_yeroth-erp-financial-expense-table-view.cpp: src/admin/widgets/table-vie
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp -o moc/moc_yeroth-erp-financial-expense-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp -o moc/moc_yeroth-erp-financial-expense-table-view.cpp
 
 moc/moc_yeroth-erp-product-department-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5851,7 +5851,7 @@ moc/moc_yeroth-erp-product-department-table-view.cpp: src/admin/widgets/table-vi
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp -o moc/moc_yeroth-erp-product-department-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp -o moc/moc_yeroth-erp-product-department-table-view.cpp
 
 moc/moc_yeroth-erp-alert-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5881,7 +5881,7 @@ moc/moc_yeroth-erp-alert-table-view.cpp: src/admin/widgets/table-view/yeroth-erp
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp -o moc/moc_yeroth-erp-alert-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp -o moc/moc_yeroth-erp-alert-table-view.cpp
 
 moc/moc_yeroth-erp-site-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5911,7 +5911,7 @@ moc/moc_yeroth-erp-site-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp -o moc/moc_yeroth-erp-site-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp -o moc/moc_yeroth-erp-site-table-view.cpp
 
 moc/moc_yeroth-erp-user-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5941,7 +5941,7 @@ moc/moc_yeroth-erp-user-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp -o moc/moc_yeroth-erp-user-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp -o moc/moc_yeroth-erp-user-table-view.cpp
 
 moc/moc_yeroth-erp-category-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -5971,7 +5971,7 @@ moc/moc_yeroth-erp-category-table-view.cpp: src/admin/widgets/table-view/yeroth-
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp -o moc/moc_yeroth-erp-category-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp -o moc/moc_yeroth-erp-category-table-view.cpp
 
 moc/moc_yeroth-erp-bank-account-table-view.cpp: src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -6001,7 +6001,7 @@ moc/moc_yeroth-erp-bank-account-table-view.cpp: src/admin/widgets/table-view/yer
 		src/widgets/yeroth-erp-combo-box.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp -o moc/moc_yeroth-erp-bank-account-table-view.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp -o moc/moc_yeroth-erp-bank-account-table-view.cpp
 
 moc/moc_yeroth-erp-admin-create-window.cpp: src/admin/creer/yeroth-erp-admin-create-window.hpp \
 		ui_yeroth-erp-admin-create-window.h \
@@ -6042,7 +6042,7 @@ moc/moc_yeroth-erp-admin-create-window.cpp: src/admin/creer/yeroth-erp-admin-cre
 		src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/creer/yeroth-erp-admin-create-window.hpp -o moc/moc_yeroth-erp-admin-create-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/creer/yeroth-erp-admin-create-window.hpp -o moc/moc_yeroth-erp-admin-create-window.cpp
 
 moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-lister-window.hpp \
 		ui_yeroth-erp-admin-lister-window.h \
@@ -6091,7 +6091,7 @@ moc/moc_yeroth-erp-admin-lister-window.cpp: src/admin/lister/yeroth-erp-admin-li
 		src/admin/admin-actions-subjects.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/lister/yeroth-erp-admin-lister-window.hpp -o moc/moc_yeroth-erp-admin-lister-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/lister/yeroth-erp-admin-lister-window.hpp -o moc/moc_yeroth-erp-admin-lister-window.cpp
 
 moc/moc_yeroth-erp-admin-detail-window.cpp: src/admin/detail/yeroth-erp-admin-detail-window.hpp \
 		ui_yeroth-erp-admin-detail-window.h \
@@ -6133,7 +6133,7 @@ moc/moc_yeroth-erp-admin-detail-window.cpp: src/admin/detail/yeroth-erp-admin-de
 		src/admin/admin-actions-subjects.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/detail/yeroth-erp-admin-detail-window.hpp -o moc/moc_yeroth-erp-admin-detail-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/detail/yeroth-erp-admin-detail-window.hpp -o moc/moc_yeroth-erp-admin-detail-window.cpp
 
 moc/moc_yeroth-erp-admin-modifier-window.cpp: src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
@@ -6175,7 +6175,7 @@ moc/moc_yeroth-erp-admin-modifier-window.cpp: src/admin/modifier/yeroth-erp-admi
 		src/admin/admin-actions-subjects.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeroth/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeroth/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/modifier/yeroth-erp-admin-modifier-window.hpp -o moc/moc_yeroth-erp-admin-modifier-window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/admin/modifier/yeroth-erp-admin-modifier-window.hpp -o moc/moc_yeroth-erp-admin-modifier-window.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -34561,788 +34561,787 @@ obj/qrc_yeroth-erp-3-0.o: qrc_yeroth-erp-3-0.cpp obj/yeroth-erp-3-0.gch/c++
 ####### Install
 
 install_target: first FORCE
-	@test -d $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0 || mkdir -p $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0
-	$(QINSTALL_PROGRAM) bin/$(QMAKE_TARGET) $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
-	-$(STRIP) $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
+	@test -d $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0 || mkdir -p $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0
+	$(QINSTALL_PROGRAM) bin/$(QMAKE_TARGET) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
 
 uninstall_target: FORCE
-	-$(DEL_FILE) $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
-	-$(DEL_DIR) $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0/ 
+	-$(DEL_FILE) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
+	-$(DEL_DIR) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0/ 
 
 
 install_sources: first FORCE
-	@test -d $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/. || mkdir -p $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/.
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/yeroth-erp-3-0.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/YRruntimeverification_adaptor.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YRruntimeverification_adaptor.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/IYRruntimeverificationAdaptor_interface.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/yeroth-erp-windows.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-windows.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/imports/yeroth-erp-marchandise-import.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandise-import.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/imports/yeroth-erp-stock-import.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-import.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button-PASSWORD.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-progress-bar.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-progress-bar.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qcolumn-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view-with-pagination.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-paiements-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-stocks-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-ventes-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-fournisseurs-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-clients-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-alertes-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-achats-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-marchandises-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-line-edit.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-line-edit.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-text-edit.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-text-edit.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-combo-box.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-combo-box.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-radio-button.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-radio-button.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qmessage-box.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qmessage-box.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item-model.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-spinbox.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spinbox.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-datetime-edit.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-datetime-edit.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qcheckbox.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcheckbox.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-select-db-qcheckbox.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-table-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-qtable-widget-item.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/process/yeroth-erp-process-info.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process-info.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/process/yeroth-erp-process.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-dialog-commons.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-dialog-commons.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-generic-select-db-field-dialog.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-changer-utilisateur-dialog.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_zero_stats.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-comptabilite-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-compte-client-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-clients-detail-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-clients-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-payer-compte-client-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-entrer-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-entrer-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-modifier-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-marchandises-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-liststocks-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-historique-du-stock-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stock-detail-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stocks-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-detail-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-detail-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-liststocks-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseurs-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-recherche-conditionnelle-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-window-commons.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-window-commons.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-main-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-main-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-alertes-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-tableaux-de-bord-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-paiements-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-ventes-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-yeroth-erp-utils.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-windows.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-import-csv-file-data.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-utils.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-utils.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-settings.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-settings.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-users.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-users.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-vendeur.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-vendeur.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-gestionaire-des-stocks.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-manager.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-manager.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-magasinier.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-magasinier.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-caissier.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-caissier.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-administrateur.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-administrateur.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dbus/YEROTH_RUNTIME_VERIFIER.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/credit-card/yeroth-erp-carte-credit-info.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-detail-view-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/virtual-keyboard/yeroth-erp-key-emitter.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-key-emitter.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-spell-numbers.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spell-numbers.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-sqltable-model.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sqltable-model.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-map-COMPLEX-ITEM.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-payment-processing-information.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-config.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-config.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-utils.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-utils.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-database.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-logger.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-logger.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-historique-stock.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-stock.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-info-entreprise.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-info-entreprise.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-article-vente-info.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-article-vente-info.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-database-table-column.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database-table-column.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-command-line-parser.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-command-line-parser.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-style.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-style.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-client-account-sale-info.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-windows-commons.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-search-form.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-site-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-site-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-user-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-category-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-category-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/creer/yeroth-erp-admin-create-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-create-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/lister/yeroth-erp-admin-lister-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/detail/yeroth-erp-admin-detail-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/modifier/yeroth-erp-admin-modifier-window.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-precompiled-header.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-precompiled-header.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/YRruntimeverification_adaptor.h $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YRruntimeverification_adaptor.h
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/IYRruntimeverificationAdaptor_interface.h $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.h
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/yeroth-erp-windows.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-windows.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/imports/yeroth-erp-database-table-import-info.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database-table-import-info.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/imports/yeroth-erp-marchandise-import.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandise-import.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/imports/yeroth-erp-stock-import.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-import.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-special-qt5.7-macro.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-colour-rgb.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-colour-rgb.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-user-manual.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-user-manual.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-file-folder.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-file-folder.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-format-date-time.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-format-date-time.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-initial-focus-searchbar.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-month.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-month.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-shortcut.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-shortcut.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/include/yeroth-erp-3-0-software.text-configuration.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-software.text-configuration.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button-PASSWORD.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-progress-bar.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-progress-bar.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qcolumn-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-table-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-paiements-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-stocks-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-ventes-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-clients-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-alertes-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-achats-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-line-edit.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-line-edit.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-radio-button.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-radio-button.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qmessage-box.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qmessage-box.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-text-edit.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-text-edit.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-combo-box.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-combo-box.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item-model.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-spinbox.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spinbox.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-datetime-edit.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-datetime-edit.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-qcheckbox.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcheckbox.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/widgets/yeroth-erp-select-db-qcheckbox.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/process/yeroth-erp-process-info.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process-info.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/process/yeroth-erp-process.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-dialog-commons.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-dialog-commons.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-clients-detail-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-clients-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-payer-compte-client-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-entrer-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-entrer-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-modifier-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-marchandises-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stock-detail-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stocks-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-detail-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-detail-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseurs-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-comptabilite-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-recherche-conditionnelle-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-window-commons.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-window-commons.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-main-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-main-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-alertes-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-tableaux-de-bord-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-paiements-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/windows/yeroth-erp-ventes-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-windows.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-utils.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-utils.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-settings.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-settings.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-users.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-users.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-vendeur.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-vendeur.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-gestionaire-des-stocks.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-manager.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-manager.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-magasinier.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-magasinier.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-caissier.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-caissier.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/users/yeroth-erp-user-administrateur.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-administrateur.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/dbus/YEROTH_RUNTIME_VERIFIER.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/credit-card/yeroth-erp-carte-credit-info.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-detail-view-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-key-emitter.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-spell-numbers.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spell-numbers.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-sqltable-model.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sqltable-model.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-map-COMPLEX-ITEM.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-payment-processing-information.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-config.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-config.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-service-stock-marchandise-data.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-service-stock-marchandise-data.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-utils.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-utils.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-database.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-logger.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-logger.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-historique-stock.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-stock.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-info-entreprise.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-info-entreprise.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-article-vente-info.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-article-vente-info.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-database-table-column.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database-table-column.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-command-line-parser.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-command-line-parser.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-style.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-style.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/utils/yeroth-erp-client-account-sale-info.cpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.cpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-windows-commons.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/yeroth-erp-admin-search-form.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-site-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-category-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/creer/yeroth-erp-admin-create-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-create-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/lister/yeroth-erp-admin-lister-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/detail/yeroth-erp-admin-detail-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/src/admin/modifier/yeroth-erp-admin-modifier-window.hpp $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.hpp
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0.qrc $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0.qrc
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-main-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-main-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-recherche-conditionnelle-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-imprimer-dialog.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-imprimer-dialog.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-comptabilite-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-sortir-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-entrer-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-entrer-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-mouvements_de_stocks-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-marchandises-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-modifier-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-historique-du-stock-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-stocks-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-sortir-liststocks-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/stocks/yeroth-erp-stock-detail-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-liststocks-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-methode-paiement-dialog.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/purchase/yeroth-erp-achats-detail-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/purchase/yeroth-erp-achats-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-charges-financieres-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-charges-financieres-detail-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-modifier-fournisseur-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-creer-fournisseur-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-fournisseur-details-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/supplier/yeroth-erp-fournisseurs-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/creer/yeroth-erp-creer-compte-client-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/creer/yeroth-erp-creer-groupe-de-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/details/yeroth-erp-clients-detail-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/yeroth-erp-tableau-des-transactions-du-client-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/modifier/yeroth-erp-modifier-compte-client-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/modifier/yeroth-erp-modifier-groupe-de-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-groupe-de-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/modifier/yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/yeroth-erp-payer-compte-client-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/yeroth-erp-programmes-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/yeroth-erp-groupes-de-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/yeroth-erp-groupes-dun-client-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/crm/yeroth-erp-clients-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-paiements-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-ventes-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-tableaux-de-bord-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-alertes-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-changer-utilisateur-dialog.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-admin-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-admin-search-form.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-admin-create-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-create-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-admin-lister-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-admin-detail-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/ui/yeroth-erp-admin-modifier-window.ui $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.ui
-	$(QINSTALL) /home/yeroth/yeroth-erp-3-0/yeroth-erp-3-0.pro $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0.pro
+	@test -d $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/. || mkdir -p $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/.
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/yeroth-erp-3-0.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/YRruntimeverification_adaptor.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YRruntimeverification_adaptor.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/IYRruntimeverificationAdaptor_interface.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/yeroth-erp-windows.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-windows.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/imports/yeroth-erp-marchandise-import.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandise-import.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/imports/yeroth-erp-stock-import.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-import.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button-PASSWORD.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-progress-bar.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-progress-bar.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qcolumn-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view-with-pagination.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-paiements-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-stocks-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-ventes-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-fournisseurs-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-clients-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-alertes-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-achats-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-marchandises-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-line-edit.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-line-edit.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-text-edit.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-text-edit.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-combo-box.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-combo-box.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-radio-button.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-radio-button.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qmessage-box.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qmessage-box.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item-model.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-spinbox.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spinbox.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-datetime-edit.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-datetime-edit.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qcheckbox.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcheckbox.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-select-db-qcheckbox.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-table-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-qtable-widget-item.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/process/yeroth-erp-process-info.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process-info.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/process/yeroth-erp-process.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-dialog-commons.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-dialog-commons.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-generic-select-db-field-dialog.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-changer-utilisateur-dialog.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_zero_stats.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/include/YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-comptabilite-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-compte-client-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-clients-detail-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-clients-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-payer-compte-client-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-entrer-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-entrer-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-modifier-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-marchandises-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-liststocks-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-historique-du-stock-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stock-detail-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stocks-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-detail-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-detail-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-liststocks-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseurs-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-recherche-conditionnelle-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-window-commons.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-window-commons.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-main-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-main-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-alertes-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-tableaux-de-bord-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-paiements-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-ventes-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-yeroth-erp-utils.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-windows.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-import-csv-file-data.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-utils.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-utils.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-settings.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-settings.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-users.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-users.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-vendeur.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-vendeur.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-gestionaire-des-stocks.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-manager.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-manager.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-magasinier.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-magasinier.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-caissier.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-caissier.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-administrateur.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-administrateur.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dbus/YEROTH_RUNTIME_VERIFIER.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/credit-card/yeroth-erp-carte-credit-info.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-detail-view-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/virtual-keyboard/yeroth-erp-key-emitter.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-key-emitter.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-spell-numbers.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spell-numbers.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-sqltable-model.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sqltable-model.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-map-COMPLEX-ITEM.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-payment-processing-information.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-config.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-config.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-utils.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-utils.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-database.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-logger.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-logger.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-historique-stock.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-stock.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-info-entreprise.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-info-entreprise.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-article-vente-info.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-article-vente-info.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-database-table-column.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database-table-column.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-command-line-parser.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-command-line-parser.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-style.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-style.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-client-account-sale-info.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/yeroth-erp-admin-windows-commons.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/yeroth-erp-admin-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/yeroth-erp-admin-search-form.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-search-form.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-product-department-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-alert-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alert-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-site-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-site-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-user-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-category-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-category-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/creer/yeroth-erp-admin-create-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-create-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/lister/yeroth-erp-admin-lister-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/detail/yeroth-erp-admin-detail-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/modifier/yeroth-erp-admin-modifier-window.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-precompiled-header.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-precompiled-header.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/YRruntimeverification_adaptor.h $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YRruntimeverification_adaptor.h
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/IYRruntimeverificationAdaptor_interface.h $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.h
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/yeroth-erp-windows.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-windows.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/imports/yeroth-erp-database-table-import-info.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database-table-import-info.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/imports/yeroth-erp-marchandise-import.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandise-import.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/imports/yeroth-erp-stock-import.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-import.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-special-qt5.7-macro.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-colour-rgb.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-colour-rgb.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-user-manual.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-user-manual.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-file-folder.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-file-folder.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-format-date-time.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-format-date-time.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-initial-focus-searchbar.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-month.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-month.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-definition-shortcut.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-shortcut.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/include/yeroth-erp-3-0-software.text-configuration.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-software.text-configuration.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button-PASSWORD.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-progress-bar.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-progress-bar.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qcolumn-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-admin-verif-logging-table-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-table-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/widgets-table/yeroth-erp-tab-widget.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view-with-pagination.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-paiements-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-stocks-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-ventes-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-mouvements_de_stocks-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-fournisseurs-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-programmes-de-fidelite-clients-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-groupes-de-clients-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-clients-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-alertes-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-CHARGES-FINANCIERES-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-achats-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/table-view/yeroth-erp-marchandises-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-line-edit.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-line-edit.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-radio-button.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-radio-button.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qmessage-box.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qmessage-box.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-push-button.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-text-edit.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-text-edit.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-combo-box.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-combo-box.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item-model.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qstandard-item.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-spinbox.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spinbox.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-datetime-edit.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-datetime-edit.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-qcheckbox.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcheckbox.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/widgets/yeroth-erp-select-db-qcheckbox.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/process/yeroth-erp-process-info.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process-info.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/process/yeroth-erp-process.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-dialog-commons.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-dialog-commons.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-generic-select-db-field-dialog.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-changer-utilisateur-dialog.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dialogs/yeroth-erp-pointdevente-methode-paiement-dialog.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/creer/yeroth-erp-creer-compte-client-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-clients-detail-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-clients-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-payer-compte-client-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/crm/yeroth-erp-tableau-des-transactions-du-client-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-entrer-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-entrer-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-modifier-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-marchandises-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-liststocks-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-sortir-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-historique-du-stock-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stock-detail-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/stocks/yeroth-erp-stocks-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-charges-financieres-detail-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-detail-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/purchase/yeroth-erp-achats-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseurs-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-comptabilite-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-recherche-conditionnelle-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-window-commons.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-window-commons.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-main-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-main-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-alertes-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-tableaux-de-bord-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-paiements-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/windows/yeroth-erp-ventes-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-yeroth-erp-utils.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/yeroth-erp-test-yeroth-erp-windows.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-import-csv-file-data.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/tests/utils/yeroth-erp-test-utils.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-utils.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-settings.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-settings.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-users.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-users.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-vendeur.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-vendeur.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-gestionaire-des-stocks.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-manager.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-manager.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-magasinier.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-magasinier.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-caissier.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-caissier.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/users/yeroth-erp-user-administrateur.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-administrateur.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/dbus/YEROTH_RUNTIME_VERIFIER.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/credit-card/yeroth-erp-carte-credit-info.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-detail-view-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/virtual-keyboard/yeroth-erp-key-emitter.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-key-emitter.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-spell-numbers.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spell-numbers.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-sqltable-model.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sqltable-model.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-map-COMPLEX-ITEM.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-payment-processing-information.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-config.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-config.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-service-stock-marchandise-data.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-service-stock-marchandise-data.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-utils.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-utils.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-database.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-logger.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-logger.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-historique-stock.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-stock.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-info-entreprise.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-info-entreprise.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-article-vente-info.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-article-vente-info.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-database-table-column.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database-table-column.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-command-line-parser.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-command-line-parser.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-style.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-style.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/utils/yeroth-erp-client-account-sale-info.cpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.cpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/yeroth-erp-admin-windows-commons.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/yeroth-erp-admin-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/yeroth-erp-admin-search-form.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-search-form.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-financial-expense-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-product-department-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-alert-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alert-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-site-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-site-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-user-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-category-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-category-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/widgets/table-view/yeroth-erp-bank-account-table-view.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/creer/yeroth-erp-admin-create-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-create-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/lister/yeroth-erp-admin-lister-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/detail/yeroth-erp-admin-detail-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/src/admin/modifier/yeroth-erp-admin-modifier-window.hpp $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.hpp
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/yeroth-erp-3-0.qrc $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0.qrc
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-main-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-main-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-recherche-conditionnelle-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-imprimer-dialog.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-imprimer-dialog.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-comptabilite-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-sortir-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-entrer-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-entrer-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-mouvements_de_stocks-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-marchandises-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-modifier-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-historique-du-stock-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-stocks-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-sortir-liststocks-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/stocks/yeroth-erp-stock-detail-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-liststocks-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/pos/yeroth-erp-pointdevente-methode-paiement-dialog.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/purchase/yeroth-erp-achats-detail-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/purchase/yeroth-erp-achats-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-charges-financieres-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-charges-financieres-detail-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-modifier-fournisseur-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-creer-fournisseur-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-fournisseur-details-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/supplier/yeroth-erp-fournisseurs-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/creer/yeroth-erp-creer-compte-client-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/creer/yeroth-erp-creer-groupe-de-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/details/yeroth-erp-details-dun-groupe-de-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/details/yeroth-erp-clients-detail-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/details/yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/yeroth-erp-tableau-des-transactions-du-client-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/modifier/yeroth-erp-modifier-compte-client-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/modifier/yeroth-erp-modifier-groupe-de-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-groupe-de-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/modifier/yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/yeroth-erp-payer-compte-client-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/yeroth-erp-programmes-de-fidelite-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/yeroth-erp-groupes-de-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/yeroth-erp-groupes-dun-client-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/crm/yeroth-erp-clients-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-paiements-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-ventes-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-tableaux-de-bord-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-alertes-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-changer-utilisateur-dialog.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-admin-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-admin-search-form.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-search-form.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-admin-create-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-create-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-admin-lister-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-admin-detail-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/ui/yeroth-erp-admin-modifier-window.ui $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.ui
+	$(QINSTALL) /home/yeri/yeroth-erp-3-0/yeroth-erp-3-0.pro $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0.pro
 
 uninstall_sources: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0.pro
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-create-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-groupe-de-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-entrer-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-imprimer-dialog.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-main-window.ui
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0.qrc
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-create-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-category-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-site-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-style.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-command-line-parser.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database-table-column.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-article-vente-info.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-info-entreprise.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-stock.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-logger.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-utils.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-service-stock-marchandise-data.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-config.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sqltable-model.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spell-numbers.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-key-emitter.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-administrateur.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-caissier.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-magasinier.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-manager.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-vendeur.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-users.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-settings.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-utils.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-main-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-window-commons.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-entrer-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-dialog-commons.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process-info.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcheckbox.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-datetime-edit.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spinbox.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-combo-box.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-text-edit.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qmessage-box.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-radio-button.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-line-edit.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-progress-bar.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-software.text-configuration.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-shortcut.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-month.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-initial-focus-searchbar.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-format-date-time.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-file-folder.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-user-manual.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-colour-rgb.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-definition-special-qt5.7-macro.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-import.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandise-import.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database-table-import-info.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-windows.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.h
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YRruntimeverification_adaptor.h
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0-precompiled-header.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-create-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-category-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-site-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alert-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-search-form.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.hpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-style.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-command-line-parser.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database-table-column.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-article-vente-info.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-info-entreprise.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-stock.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-logger.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-database.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-utils.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-config.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sqltable-model.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spell-numbers.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-key-emitter.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-administrateur.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-caissier.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-magasinier.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-manager.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-vendeur.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-users.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-user-settings.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-utils.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-main-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-window-commons.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-entrer-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-dialog-commons.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-process-info.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcheckbox.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-datetime-edit.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-spinbox.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qmessage-box.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-radio-button.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-combo-box.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-text-edit.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-line-edit.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-achats-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-clients-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-progress-bar.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-stock-import.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-marchandise-import.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-windows.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./YRruntimeverification_adaptor.cpp
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./yeroth-erp-3-0.cpp
-	-$(DEL_DIR) $(INSTALL_ROOT)/home/yeroth/yeroth-erp-3-0/./ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0.pro
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-create-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-search-form.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-un-programme-de-fidelite-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-groupe-de-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-entrer-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-imprimer-dialog.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-main-window.ui
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0.qrc
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-create-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-category-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-site-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alert-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-search-form.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-style.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-command-line-parser.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database-table-column.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-article-vente-info.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-info-entreprise.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-stock.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-logger.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-utils.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-service-stock-marchandise-data.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-config.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sqltable-model.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spell-numbers.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-key-emitter.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-administrateur.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-caissier.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-magasinier.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-manager.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-vendeur.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-users.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-settings.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-utils.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-main-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-window-commons.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-entrer-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-dialog-commons.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process-info.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcheckbox.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-datetime-edit.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spinbox.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-combo-box.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-text-edit.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qmessage-box.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-radio-button.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-line-edit.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-progress-bar.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-software.text-configuration.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-shortcut.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-month.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-initial-focus-searchbar.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-format-date-time.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-file-folder.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-user-manual.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-colour-rgb.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-definition-special-qt5.7-macro.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-import.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandise-import.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database-table-import-info.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-windows.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.h
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YRruntimeverification_adaptor.h
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0-precompiled-header.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-modifier-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-detail-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-lister-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-create-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-bank-account-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-category-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-site-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alert-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-product-department-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-financial-expense-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-search-form.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-windows-commons.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-client-account-sale-info.hpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-print_yeroth_latex_util_pdf.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-style.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-command-line-parser.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database-table-column.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-article-vente-info.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-info-entreprise.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-stock.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-logger.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-database.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-utils.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-config.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payment-processing-information.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-map-COMPLEX-ITEM.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-LIST-map-COMPLEX-ITEM.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sqltable-model.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spell-numbers.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-key-emitter.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-yerothsearch-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-abstract-class-detail-view-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-carte-credit-info.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_RUNTIME_VERIFIER.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-administrateur.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-caissier.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-magasinier.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-manager.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-gestionaire-des-stocks.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-vendeur.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-users.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-user-settings.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-utils.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-import-csv-file-data.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-windows.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-test-yeroth-erp-utils.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableaux-de-bord-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-main-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-window-commons.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-recherche-conditionnelle-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseur-details-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-fournisseur-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-dun-employe-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-fournisseur-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-liststocks-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-detail-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-detail-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-charges-financieres-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-detail-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-historique-du-stock-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-sortir-liststocks-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-entrer-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tableau-des-transactions-du-client-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-payer-compte-client-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-modifier-compte-client-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-detail-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-details-dun-groupe-de-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-compte-client-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-groupe-de-clients-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptabilite-window.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_zero_stats.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-dialog.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-changer-utilisateur-dialog.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-generic-select-db-field-dialog.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-dialog-commons.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-process-info.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qtable-widget-item.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-point-de-vente-table-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-dun-client-table-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-admin-verif-logging-table-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-tab-widget.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-select-db-qcheckbox.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcheckbox.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-datetime-edit.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-spinbox.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qstandard-item-model.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qmessage-box.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-radio-button.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-combo-box.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-text-edit.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-line-edit.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-programmes-de-fidelite-clients-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandises-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-achats-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-CHARGES-FINANCIERES-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-alertes-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-clients-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-groupes-de-clients-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-fournisseurs-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-mouvements_de_stocks-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-ventes-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stocks-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-paiements-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-comptes-doperations-comptabilite-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view-with-pagination.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-qcolumn-view.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-progress-bar.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-push-button-PASSWORD.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-stock-import.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-marchandise-import.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-windows.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./IYRruntimeverificationAdaptor_interface.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./YRruntimeverification_adaptor.cpp
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./yeroth-erp-3-0.cpp
+	-$(DEL_DIR) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/./ 
 
 
 install: install_target install_sources  FORCE

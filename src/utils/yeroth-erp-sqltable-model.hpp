@@ -148,7 +148,7 @@ public:
 
 private:
 
-    const QString _sqlTableName;
+    QString _sqlTableName;
 
     YerothLogger *_logger;
 

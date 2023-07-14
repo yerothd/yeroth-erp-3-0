@@ -463,38 +463,47 @@ void YerothAdminListerWindow::reinitialiser()
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
+    	setUserCurrentlyFiltered(false);
     	lister_utilisateur();
         break;
 
     case SUJET_ACTION_LOCALISATION:
+    	setSiteCurrentlyFiltered(false);
     	lister_localisation();
         break;
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+    	setProductDepartmentCurrentlyFiltered(false);
     	lister_departements_de_produits();
         break;
 
     case SUJET_ACTION_CATEGORIE:
+    	setCategoryCurrentlyFiltered(false);
     	lister_categorie();
         break;
 
     case SUJET_ACTION_ligne_budgetaire:
+    	setLIGNE_BUDGETAIRE_CurrentlyFiltered(false);
     	lister_LIGNE_BUDGETAIRE();
         break;
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
+    	setBankAccountCurrentlyFiltered(false);
     	lister_compte_bancaire();
         break;
 
     case SUJET_ACTION_ALERTE:
+    	setAlertCurrentlyFiltered(false);
     	lister_alerte();
         break;
 
     case SUJET_ACTION_REMISE:
+    	setDiscountCurrentlyFiltered(false);
     	lister_remise();
         break;
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+    	setCharge_financieres_CurrentlyFiltered(false);
     	LISTER_CHARGES_FINANCIERES();
         break;
 
@@ -533,12 +542,7 @@ void YerothAdminListerWindow::set_admin_rechercher_font()
 		break;
 
     case SUJET_ACTION_CATEGORIE:
-    	setYerothTableView_FROM_WINDOWS_COMMONS(tableView_lister_categorie);
-    	setup_select_configure_dbcolumn(YerothDatabase::CATEGORIES);
-    	tableView_lister_categorie->_currentViewWindow = this;
-
     	_curSearchSqlTableModel = &_allWindows->getSqlTableModel_categories();
-
     	MACRO_SET_ADMIN_RECHERCHER_FONT(_categoryCurrentlyFiltered)
 		setWindowTitle(_LISTER_tab_TO_tabTitle.value("lister_categorie"));
 

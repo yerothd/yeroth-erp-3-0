@@ -171,6 +171,12 @@ bool YerothAdminCreateWindow::creer_charge_financiere()
             int achat_de_service_id_to_save =
                             YerothERPWindows::getNextIdSqlTableModel_charges_financieres();
 
+
+            CHARGE_FINANCIERE_Record.setValue
+				(YerothDatabaseTableColumn::NOM_UTILISATEUR_DU_COMMANDEUR_DE_LACHAT,
+				 aUser->nom_utilisateur());
+
+
             CHARGE_FINANCIERE_Record.setValue(YerothDatabaseTableColumn::ID,
                                  achat_de_service_id_to_save);
 
