@@ -130,7 +130,7 @@ public:
     }
 
     int easySelect(QString 	 cpp_file 	 = "",
-			  	  int	  	 cpp_LINE_nr = -1);
+			  	   int	  	 cpp_LINE_nr = -1);
 
     bool yerothSetSort(int 				column,
     				   Qt::SortOrder 	order,
