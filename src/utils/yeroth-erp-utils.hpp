@@ -1132,6 +1132,10 @@ public:
 
     static QString EN_template_carte_de_fidelite_client_TEMPLATE_tex;
 
+    static QString FR_template_bon_de_commande_TEX;
+
+    static QString EN_template_bon_de_commande_TEX;
+
     static QString FR_template_lister_admin_objects_TEX;
 
     static QString EN_template_lister_admin_objects_TEX;
