@@ -3,6 +3,7 @@
 
     <file>yeroth-erp-3-0-main.qml</file>
 
+	  <file>yeroth-erp-3-0-templates/EN_template-bon_de_COMMANDE.tex</file>
 	  <file>yeroth-erp-3-0-templates/EN_template-lister-admin-objects.tex</file>
 	  <file>yeroth-erp-3-0-templates/EN_template-THREE_D_bardiag.tex</file>
     <file>yeroth-erp-3-0-templates/EN_template-lister-charges-financieres.tex</file>
@@ -39,6 +40,7 @@
     <file>yeroth-erp-3-0-templates/EN_bar-chart.tex</file>
     <file>yeroth-erp-3-0-templates/EN_ZERO_ventes.tex</file>
 
+	  <file>yeroth-erp-3-0-templates/FR_template-bon_de_COMMANDE.tex</file>
 	  <file>yeroth-erp-3-0-templates/FR_template-lister-admin-objects.tex</file>
 		<file>yeroth-erp-3-0-templates/FR_template-THREE_D_bardiag.tex</file>
     <file>yeroth-erp-3-0-templates/FR_template-lister-charges-financieres.tex</file>
