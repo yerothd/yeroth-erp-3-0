@@ -1432,6 +1432,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
     switch (tabWidget_lister->currentIndex())
     {
     case SUJET_ACTION_COMPTE_UTILISATEUR:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1448,6 +1450,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_LOCALISATION:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1464,6 +1468,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1480,6 +1486,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_CATEGORIE:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1496,6 +1504,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_ligne_budgetaire:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1511,6 +1521,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1527,6 +1539,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_REMISE:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1543,6 +1557,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_ALERTE:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, false);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,
@@ -1559,6 +1575,8 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_CREER_A_PARTIR_DE_CECI, true);
+
     	disconnect(actionReinitialiserChampsDBVisible, 0, 0, 0);
 
         connect(actionReinitialiserChampsDBVisible,

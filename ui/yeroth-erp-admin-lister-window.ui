@@ -14576,6 +14576,7 @@ background-color: rgb(0, 0, 0); </string>
     <addaction name="actionAfficher"/>
     <addaction name="separator"/>
     <addaction name="actionCreer"/>
+    <addaction name="action_CREER_A_PARTIR_DE_CECI"/>
     <addaction name="separator"/>
     <addaction name="actionMenu"/>
     <addaction name="separator"/>
@@ -15796,6 +15797,8 @@ background-color: rgb(0, 0, 0); </string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
   </action>
