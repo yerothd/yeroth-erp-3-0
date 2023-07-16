@@ -99,6 +99,20 @@ void readTexTemplateFiles(YerothLogger &logger)
 
     {
     	// FR_template-lister-admin-objects.tex
+    	QFile file_FR_template_bon_de_commande(FILE_YEROTH_ERP_3_0_TEMPLATE_PURCHASE_ORDER_SHEET_FR);
+
+    	YerothUtils::YEROTH_READ_FILE_CONTENT(file_FR_template_bon_de_commande,
+    			YerothUtils::FR_template_bon_de_commande_TEX);
+
+    	// EN_template-lister-admin-objects.tex
+    	QFile file_EN_template_bon_de_commande(FILE_YEROTH_ERP_3_0_TEMPLATE_PURCHASE_ORDER_SHEET_EN);
+
+    	YerothUtils::YEROTH_READ_FILE_CONTENT(file_EN_template_bon_de_commande,
+    			YerothUtils::EN_template_bon_de_commande_TEX);
+    }
+
+    {
+    	// FR_template-lister-admin-objects.tex
     	QFile file_FR_template_lister_admin_objects(FILE_YEROTH_ERP_3_0_TEMPLATE_LISTE_ADMIN_OBJECTS_FR);
 
     	YerothUtils::YEROTH_READ_FILE_CONTENT(file_FR_template_lister_admin_objects,

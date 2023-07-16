@@ -50,11 +50,6 @@ QPoint *YerothWindowsCommons::_centerPosition(new QPoint);
 
 YerothWindowsCommons::~YerothWindowsCommons()
 {
-    if (0 != _selectExportDBQDialog)
-    {
-        delete _selectExportDBQDialog;
-    }
-
     if (0 != _yeroth_PRINT_UTILITIES_TEX_TABLE)
     {
         delete _yeroth_PRINT_UTILITIES_TEX_TABLE;
