@@ -1327,6 +1327,15 @@ void YerothWindowsCommons::SLOT_CREER_A_PARTIR_DE_CECI()
 	rendreInvisible();
 }
 
+void YerothWindowsCommons::SLOT_CREER_A_PARTIR_DE_CECI_charge_financiere()
+{
+	_allWindows->_adminCreateWindow
+		->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE,
+						true,
+						true);
+	rendreInvisible();
+}
+
 void YerothWindowsCommons::CREER_UN_GROUPE_DE_SALARIAL_hr()
 {
     rendreInvisible();

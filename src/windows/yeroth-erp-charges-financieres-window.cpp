@@ -81,7 +81,8 @@ YerothChargesFinancieresWindow::YerothChargesFinancieresWindow()
 
 
     _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT
-            << pushButton_afficher << pushButton_supprimer;
+        << pushButton_afficher
+        << pushButton_supprimer;
 
 
     _list_actions_to_enable_on_positive_tableview_ROW_COUNT
@@ -179,7 +180,7 @@ YerothChargesFinancieresWindow::YerothChargesFinancieresWindow()
     connect(action_CREER_A_PARTIR_DE_CECI,
     		SIGNAL(triggered()),
 			this,
-			SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
+			SLOT(SLOT_CREER_A_PARTIR_DE_CECI_charge_financiere()));
 
 
     connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,

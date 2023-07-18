@@ -14,9 +14,9 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DNO_YEROTH_ERP_3_0_TESTING_UNIT_TEST -DNO_YEROTH_ERP_3_0_TOUCH_SCREEN_SET -D${YEROTH_VIRTUAL_KEYBOARD_OPTIONS} -D${YEROTH_FEATURES_COMPTABILITE_VALUE} -D${YEROTH_LANGUAGE} -D${YEROTH_DEBUG_LOG} -D${YEROTH_VERSION} -DQT_WIDGETS_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_DBUS_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -g -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
+DEFINES       = -DNO_YEROTH_ERP_3_0_TESTING_UNIT_TEST -DNO_YEROTH_ERP_3_0_TOUCH_SCREEN_SET -D${YEROTH_VIRTUAL_KEYBOARD_OPTIONS} -D${YEROTH_FEATURES_COMPTABILITE_VALUE} -D${YEROTH_LANGUAGE} -D${YEROTH_DEBUG_LOG} -D${YEROTH_VERSION} -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_DBUS_LIB -DQT_CORE_LIB
+CFLAGS        = -pipe -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -D_REENTRANT -Wall -Wextra -fPIC $(DEFINES)
 INCPATH       = -I. -Imoc -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtQmlModels -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -39,7 +39,7 @@ COMPRESS      = gzip -9f
 DISTNAME      = yeroth-erp-3-01.0.0
 DISTDIR = /home/yeri/yeroth-erp-3-0/obj/yeroth-erp-3-01.0.0
 LINK          = g++
-LFLAGS        = 
+LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Quick.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Sql.so /usr/lib/x86_64-linux-gnu/libQt5QmlModels.so /usr/lib/x86_64-linux-gnu/libQt5Qml.so /usr/lib/x86_64-linux-gnu/libQt5Network.so /usr/lib/x86_64-linux-gnu/libQt5DBus.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
@@ -616,6 +616,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
@@ -640,6 +641,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri \
@@ -1037,6 +1039,7 @@ Makefile: yeroth-erp-3-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
@@ -1061,6 +1064,7 @@ Makefile: yeroth-erp-3-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri \
@@ -1131,6 +1135,7 @@ Makefile: yeroth-erp-3-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri:
@@ -1155,6 +1160,7 @@ Makefile: yeroth-erp-3-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri:
@@ -1271,7 +1277,7 @@ compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc/moc_predefs.h
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp \
 		obj/yeroth-erp-3-0.gch/c++
-	g++ -pipe -g -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	g++ -pipe -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc/moc_YRruntimeverification_adaptor.cpp moc/moc_IYRruntimeverificationAdaptor_interface.cpp moc/moc_yeroth-erp-windows.cpp moc/moc_yeroth-erp-marchandise-import.cpp moc/moc_yeroth-erp-stock-import.cpp moc/moc_yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp moc/moc_yeroth-erp-push-button-PASSWORD.cpp moc/moc_yeroth-erp-progress-bar.cpp moc/moc_yeroth-erp-admin-verif-logging-table-widget.cpp moc/moc_yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp moc/moc_yeroth-erp-groupes-dun-client-table-widget.cpp moc/moc_yeroth-erp-point-de-vente-table-widget.cpp moc/moc_yeroth-erp-table-widget.cpp moc/moc_yeroth-erp-table-view-with-pagination.cpp moc/moc_yeroth-erp-table-view.cpp moc/moc_yeroth-erp-comptes-doperations-comptabilite-table-view.cpp moc/moc_yeroth-erp-paiements-table-view.cpp moc/moc_yeroth-erp-stocks-table-view.cpp moc/moc_yeroth-erp-ventes-table-view.cpp moc/moc_yeroth-erp-mouvements_de_stocks-table-view.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-HR-table-view.cpp moc/moc_yeroth-erp-fournisseurs-table-view.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-table-view.cpp moc/moc_yeroth-erp-groupes-de-clients-table-view.cpp moc/moc_yeroth-erp-clients-table-view.cpp moc/moc_yeroth-erp-alertes-table-view.cpp moc/moc_yeroth-erp-CHARGES-FINANCIERES-table-view.cpp moc/moc_yeroth-erp-achats-table-view.cpp moc/moc_yeroth-erp-marchandises-table-view.cpp moc/moc_yeroth-erp-line-edit.cpp moc/moc_yeroth-erp-push-button.cpp moc/moc_yeroth-erp-combo-box.cpp moc/moc_yeroth-erp-datetime-edit.cpp moc/moc_yeroth-erp-qcheckbox.cpp moc/moc_yeroth-erp-select-db-qcheckbox.cpp moc/moc_yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp moc/moc_yeroth-erp-dialog-commons.cpp moc/moc_yeroth-erp-generic-select-db-field-dialog.cpp moc/moc_yeroth-erp-changer-utilisateur-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-carte-credit-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-comptant-entree-dialog.cpp moc/moc_yeroth-erp-pointdevente-methode-paiement-dialog.cpp moc/moc_yeroth-erp-creer-groupe-de-clients-window.cpp moc/moc_yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-creer-compte-client-window.cpp moc/moc_yeroth-erp-modifier-compte-client-window.cpp moc/moc_yeroth-erp-details-dun-groupe-de-clients-window.cpp moc/moc_yeroth-erp-clients-detail-window.cpp moc/moc_yeroth-erp-details-dun-programme-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-programmes-de-fidelite-clients-window.cpp moc/moc_yeroth-erp-groupes-de-clients-window.cpp moc/moc_yeroth-erp-groupes-dun-client-window.cpp moc/moc_yeroth-erp-clients-window.cpp moc/moc_yeroth-erp-payer-compte-client-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-client-window.cpp moc/moc_yeroth-erp-entrer-window.cpp moc/moc_yeroth-erp-mouvements_de_stocks-window.cpp moc/moc_yeroth-erp-modifier-window.cpp moc/moc_yeroth-erp-marchandises-window.cpp moc/moc_yeroth-erp-sortir-liststocks-window.cpp moc/moc_yeroth-erp-sortir-window.cpp moc/moc_yeroth-erp-historique-du-stock-window.cpp moc/moc_yeroth-erp-stock-detail-window.cpp moc/moc_yeroth-erp-stocks-window.cpp moc/moc_yeroth-erp-charges-financieres-window.cpp moc/moc_yeroth-erp-charges-financieres-detail-window.cpp moc/moc_yeroth-erp-achats-detail-window.cpp moc/moc_yeroth-erp-achats-window.cpp moc/moc_yeroth-erp-pointdevente-window.cpp moc/moc_yeroth-erp-pointdevente-liststocks-window.cpp moc/moc_yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp moc/moc_yeroth-erp-modifier-fournisseur-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-dun-employe-hr-window.cpp moc/moc_yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp moc/moc_yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp moc/moc_yeroth-erp-fournisseurs-window.cpp moc/moc_yeroth-erp-creer-fournisseur-window.cpp moc/moc_yeroth-erp-fournisseur-details-window.cpp moc/moc_yeroth-erp-comptabilite-window.cpp moc/moc_yeroth-erp-recherche-conditionnelle-window.cpp moc/moc_yeroth-erp-window-commons.cpp moc/moc_yeroth-erp-main-window.cpp moc/moc_yeroth-erp-alertes-window.cpp moc/moc_yeroth-erp-tableaux-de-bord-window.cpp moc/moc_yeroth-erp-paiements-window.cpp moc/moc_yeroth-erp-ventes-window.cpp moc/moc_yeroth-erp-test-yeroth-erp-utils.cpp moc/moc_yeroth-erp-test-yeroth-erp-table-view.cpp moc/moc_yeroth-erp-test-yeroth-erp-windows.cpp moc/moc_yeroth-erp-test-import-csv-file-data.cpp moc/moc_yeroth-erp-test-utils.cpp moc/moc_yeroth-erp-users.cpp moc/moc_yeroth-erp-user-vendeur.cpp moc/moc_yeroth-erp-user-gestionaire-des-stocks.cpp moc/moc_yeroth-erp-user-manager.cpp moc/moc_yeroth-erp-user-magasinier.cpp moc/moc_yeroth-erp-user-caissier.cpp moc/moc_yeroth-erp-user-administrateur.cpp moc/moc_YEROTH_RUNTIME_VERIFIER.cpp moc/moc_yeroth-erp-key-emitter.cpp moc/moc_yeroth-erp-spell-numbers.cpp moc/moc_yeroth-erp-utils.cpp moc/moc_yeroth-erp-print_yeroth_latex_util_pdf.cpp moc/moc_yeroth-erp-admin-windows-commons.cpp moc/moc_yeroth-erp-admin-window.cpp moc/moc_yeroth-erp-admin-search-form.cpp moc/moc_yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp moc/moc_yeroth-erp-financial-expense-table-view.cpp moc/moc_yeroth-erp-product-department-table-view.cpp moc/moc_yeroth-erp-alert-table-view.cpp moc/moc_yeroth-erp-site-table-view.cpp moc/moc_yeroth-erp-user-table-view.cpp moc/moc_yeroth-erp-category-table-view.cpp moc/moc_yeroth-erp-bank-account-table-view.cpp moc/moc_yeroth-erp-admin-create-window.cpp moc/moc_yeroth-erp-admin-lister-window.cpp moc/moc_yeroth-erp-admin-detail-window.cpp moc/moc_yeroth-erp-admin-modifier-window.cpp
 compiler_moc_header_clean:
@@ -6238,6 +6244,7 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-templates/FR_template-fournisseurs.tex \
 		yeroth-erp-3-0-templates/FR_template-transactions-dun-fournisseur.tex \
 		yeroth-erp-3-0-templates/EN_template_GROUPES_DUN_CLIENT.tex \
+		yeroth-erp-3-0-templates/FR_template-bon_de_COMMANDE.tex \
 		yeroth-erp-3-0-templates/FR_template-lister-achats.tex \
 		yeroth-erp-3-0-templates/EN_template_GROUPES_DUN_EMPLOYE.tex \
 		yeroth-erp-3-0-templates/EN_template-THREE_D_bardiag.tex \
@@ -6255,6 +6262,7 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-templates/EN_template-lister-programmes-de-fidelite-GROUPES-clients.tex \
 		yeroth-erp-3-0-templates/FR_template-sortie-des-stocks-petit.tex \
 		yeroth-erp-3-0-templates/FR_template_EMPLOYEE_GROUP_LISTING.tex \
+		yeroth-erp-3-0-templates/EN_template-bon_de_COMMANDE.tex \
 		yeroth-erp-3-0-templates/EN_YEROTH_LOYALTY_MEMBERSHIP_CARD_TEMPLATE.tex \
 		yeroth-erp-3-0-templates/FR_template-journal-des-ventes.tex \
 		yeroth-erp-3-0-templates/FR_template_recu-grand.tex \
@@ -34563,6 +34571,7 @@ obj/qrc_yeroth-erp-3-0.o: qrc_yeroth-erp-3-0.cpp obj/yeroth-erp-3-0.gch/c++
 install_target: first FORCE
 	@test -d $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0 || mkdir -p $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0
 	$(QINSTALL_PROGRAM) bin/$(QMAKE_TARGET) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
+	-$(STRIP) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)
 
 uninstall_target: FORCE
 	-$(DEL_FILE) $(INSTALL_ROOT)/home/yeri/yeroth-erp-3-0/yeroth-erp-3-0/$(QMAKE_TARGET)

@@ -364,9 +364,45 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
 
     data.append("\n\n\\vspace{0.3cm}\n\n");
 
-    data.append(QString("%1").arg
-                (YerothUtils::get_latex_bold_text
-                 (QObject::tr("DESCRIPTION FOURNISSEUR:"))));
+
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+    	if (_SHOW_EMPLOYEE)
+    	{
+    	    data.append(
+                QString("%1")
+                    .arg(YerothUtils::get_latex_bold_text
+                            ("Employee Description:")));
+    	}
+    	else
+    	{
+    	    data.append(
+                QString("%1")
+                    .arg(YerothUtils::get_latex_bold_text
+                            ("Supplier Description:")));
+    	}
+    }
+    else
+    {
+    	if (_SHOW_EMPLOYEE)
+    	{
+    	    data.append(
+                QString("%1")
+                    .arg(YerothUtils::get_latex_bold_text
+                            ("Description de l'employé:")));
+    	}
+    	else
+    	{
+    	    data.append(
+                QString("%1")
+                    .arg(YerothUtils::get_latex_bold_text
+                            ("Description du fournisseur:")));
+    	}
+    }
+
+
+
     data.append("\n\n\\vspace{0.3cm}\n\n");
 
     texDocument.replace("YEROTHDETAILSFOURNISSEUR", data);
@@ -429,11 +465,35 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
     texDocument.replace("YEROTHAGENCECOMPTEBANCAIRE",
                         infoEntreprise.getAgenceCompteBancaireTex());
 
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+    	if (_SHOW_EMPLOYEE)
+    	{
+    	    texDocument.replace("YEROTHOBJECT", "Employee");
+    	}
+    	else
+    	{
+            texDocument.replace("YEROTHOBJECT", "Supplier");
+    	}
+    }
+    else
+    {
+        if (_SHOW_EMPLOYEE)
+    	{
+    	    texDocument.replace("YEROTHOBJECT", "de l'EMPLOYÉ");
+    	}
+    	else
+    	{
+            texDocument.replace("YEROTHOBJECT", "de fournisseur");
+    	}
+    }
+
+
     QString yerothPrefixFileName;
 
-    yerothPrefixFileName.append
-    (YerothUtils::getUniquePrefixFileInTemporaryFilesDir
-     (latexFileNamePrefix));
+    yerothPrefixFileName
+        .append(YerothUtils::getUniquePrefixFileInTemporaryFilesDir(latexFileNamePrefix));
 
     //qDebug() << "++\n" << texDocument;
 

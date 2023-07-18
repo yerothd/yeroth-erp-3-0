@@ -191,25 +191,53 @@ void YerothAdminCreateWindow::definirManager()
 }
 
 
-void YerothAdminCreateWindow::show_item_CHARGE_FINANCIERE()
+void YerothAdminCreateWindow::show_item_CHARGE_FINANCIERE(bool from_charge_financiere_window /* = false */)
 {
-	YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
+    YerothSqlTableModel *CHARGES_FINANCIERES_TableModel = 0;
 
-	YerothSqlTableModel *CHARGES_FINANCIERES_TableModel = lw->getCurSearchSqlTableModel();
-
-	if (0 == CHARGES_FINANCIERES_TableModel)
-	{
-		CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
-	}
-	else if ((0 != CHARGES_FINANCIERES_TableModel) &&
-			!YerothUtils::isEqualCaseInsensitive(CHARGES_FINANCIERES_TableModel->sqlTableName(),
-					YerothDatabase::CHARGES_FINANCIERES))
-	{
-		CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
-	}
+    int sqlTableRow = 0;
 
 
-	int sqlTableRow = lw->lastSelectedItemForModification();
+    if (from_charge_financiere_window)
+    {
+        YerothChargesFinancieresWindow *chfw = _allWindows->_charges_financieresWindow;
+
+        CHARGES_FINANCIERES_TableModel = chfw->getCurStocksTableModel();
+
+        if (0 == CHARGES_FINANCIERES_TableModel)
+        {
+            CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+        }
+        else if ((0 != CHARGES_FINANCIERES_TableModel) &&
+                 !YerothUtils::isEqualCaseInsensitive(CHARGES_FINANCIERES_TableModel->sqlTableName(),
+                         YerothDatabase::CHARGES_FINANCIERES))
+        {
+            CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+        }
+
+
+        sqlTableRow = chfw->getLastListerSelectedRow__ID_AS_INTEGER();
+    }
+    else
+    {
+        YerothAdminListerWindow *lw = _allWindows->_adminListerWindow;
+
+        CHARGES_FINANCIERES_TableModel = lw->getCurSearchSqlTableModel();
+
+        if (0 == CHARGES_FINANCIERES_TableModel)
+        {
+            CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+        }
+        else if ((0 != CHARGES_FINANCIERES_TableModel) &&
+                 !YerothUtils::isEqualCaseInsensitive(CHARGES_FINANCIERES_TableModel->sqlTableName(),
+                         YerothDatabase::CHARGES_FINANCIERES))
+        {
+            CHARGES_FINANCIERES_TableModel = &_allWindows->getSqlTableModel_charges_financieres();
+        }
+
+
+        sqlTableRow = lw->lastSelectedItemForModification();
+    }
 
 
 	QSqlRecord record = CHARGES_FINANCIERES_TableModel->record(sqlTableRow);
@@ -323,7 +351,8 @@ void YerothAdminCreateWindow::setupDateTimeEdits()
 
 
 void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction,
-											bool 	 a_show_item_CHARGE_FINANCIERE /* = false */ )
+											bool 	 a_show_item_CHARGE_FINANCIERE /* = false */,
+											bool     from_charge_financiere_window /* = false */ )
 {
     retranslateUi(this);
 
@@ -423,7 +452,7 @@ void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction,
 
     if (a_show_item_CHARGE_FINANCIERE)
     {
-    	show_item_CHARGE_FINANCIERE();
+    	show_item_CHARGE_FINANCIERE(from_charge_financiere_window);
     }
 
 

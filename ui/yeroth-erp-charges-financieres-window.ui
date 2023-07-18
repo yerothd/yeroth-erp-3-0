@@ -17877,6 +17877,8 @@ border: none;</string>
     <addaction name="actionAfficher_charge_financiere_au_detail"/>
     <addaction name="actionSupprimerUneCHARGE_FINANCIERE"/>
     <addaction name="separator"/>
+    <addaction name="action_CREER_A_PARTIR_DE_CECI"/>
+    <addaction name="separator"/>
     <addaction name="actionPaiements"/>
     <addaction name="actionStocks"/>
     <addaction name="separator"/>
@@ -19133,6 +19135,11 @@ border: none;</string>
    </property>
    <property name="toolTip">
     <string>Supprimer 1 charge financière</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </action>
   <action name="action_parametrer_les_impressions">
