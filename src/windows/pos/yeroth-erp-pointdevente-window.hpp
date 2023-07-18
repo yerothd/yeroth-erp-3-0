@@ -109,9 +109,11 @@ public:
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
+
 signals:
 
     void SELLING();
+
 
 public slots:
 
@@ -253,25 +255,18 @@ public slots:
 
     double GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS();
 
-    double GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS(QString &
-                                                           client_best_loyalty_program_IN_OUT);
+    double GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS(QString &client_best_loyalty_program_IN_OUT);
 
-    double calculate_LOYALTY_PROGRAM_MONEY_BENEFITS(const QString &
-                                                    a_loyalty_program);
+    double calculate_LOYALTY_PROGRAM_MONEY_BENEFITS(const QString &a_loyalty_program);
 
-    void updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY(const QString &
-                                                          a_nom_entreprise_client,
-                                                          bool
-                                                          CALL_update_lineedits_and_labels
-                                                          = false);
+    void updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY(const QString &a_nom_entreprise_client,
+                                                          bool          CALL_update_lineedits_and_labels = false);
 
-    void handle_CLIENT_LOYALTY_PROGRAM_PAYMENTS_ENTRIES(const QString &
-                                                        a_product_reference);
+    void handle_CLIENT_LOYALTY_PROGRAM_PAYMENTS_ENTRIES(const QString &a_product_reference);
 
     void executer_la_vente_compteclient_FIDELITE();
 
-    void executer_la_vente_compteclient_AVANCE_DE_CASH(double
-                                                       TOTAL_PRIX_DE_VENTE);
+    void executer_la_vente_compteclient_AVANCE_DE_CASH(double TOTAL_PRIX_DE_VENTE);
 
     unsigned int effectuer_check_out_compte_client();
 
@@ -296,13 +291,14 @@ public slots:
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
-                                       QObject::tr
-                                       ("Choisissez les articles à vendre en utilisant "
-                                        "leur référence à la première barre de recherche, ou bien "
-                                        "leur désignation à la deuxième barre de recherche !"));
+                                       QObject::tr("Choisissez les articles à vendre en utilisant "
+                                                   "leur référence à la première barre de recherche, ou bien "
+                                                   "leur désignation à la deuxième barre de recherche !"));
     }
 
+
 private slots:
+
     void enable_DATA_EXTRA_VENTE(bool enable);
 
     void retourVentes();
@@ -325,7 +321,9 @@ private slots:
 
     bool PRE__PROCESS_CREDIT_CARD_PAYMENT();
 
+
 protected slots:
+
     inline virtual void disableImprimer()
     {
         actionAfficherPDF->setVisible(false);
@@ -336,11 +334,13 @@ protected slots:
         actionAfficherPDF->setVisible(true);
     }
 
+
 protected:
 
     virtual void hideEvent(QHideEvent *event);
 
     virtual void setupShortcuts();
+
 
 private:
 

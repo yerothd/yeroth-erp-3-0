@@ -3913,23 +3913,19 @@ double YerothPointDeVenteWindow::GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS
 {
     QString client_best_loyalty_program;
 
-    return
-                    GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS
-                    (client_best_loyalty_program);
+    return GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS(client_best_loyalty_program);
 }
 
 
-double
-YerothPointDeVenteWindow::GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS
-(QString &client_best_loyalty_program_IN_OUT)
+double YerothPointDeVenteWindow::
+        GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS(QString &client_best_loyalty_program_IN_OUT)
 {
-    Yeroth_MAP_COMPLEX_Item *
-    a_map_COMPLEX_item = 0;
+    Yeroth_MAP_COMPLEX_Item *a_map_COMPLEX_item = 0;
 
     if (!_client_group_program_TO_money_benefit.isEmpty())
     {
         a_map_COMPLEX_item =
-                        _client_group_program_TO_money_benefit.q_list().last();
+            _client_group_program_TO_money_benefit.q_list().last();
     }
 
     if (0 == a_map_COMPLEX_item)
@@ -3939,12 +3935,10 @@ YerothPointDeVenteWindow::GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS
 
     client_best_loyalty_program_IN_OUT = a_map_COMPLEX_item->_itemName;
 
-    HANDLE_VISIBILITY_OF_LOYALTY_LABEL_AND_LINEEDIT(QString("%1   (%2)").arg
-                                                    (a_map_COMPLEX_item->
-                                                     _itemName,
-                                                     GET_CURRENCY_STRING_NUM
-                                                     (a_map_COMPLEX_item->
-                                                      _itemValue)));
+    HANDLE_VISIBILITY_OF_LOYALTY_LABEL_AND_LINEEDIT
+        (QString("%1   (%2)")
+            .arg(a_map_COMPLEX_item->_itemName,
+         GET_CURRENCY_STRING_NUM(a_map_COMPLEX_item->_itemValue)));
 
     return a_map_COMPLEX_item->_itemValue;
 }
