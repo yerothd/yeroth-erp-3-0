@@ -3997,10 +3997,9 @@ double YerothPointDeVenteWindow::calculate_LOYALTY_PROGRAM_MONEY_BENEFITS(const
 }
 
 
-void
-YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
-(const QString &a_nom_entreprise_client,
- bool CALL_update_lineedits_and_labels
+void YerothPointDeVenteWindow::
+        updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY(const QString  &a_nom_entreprise_client,
+                                                         bool           CALL_update_lineedits_and_labels
  /* = false */)
 {
     if (a_nom_entreprise_client.isEmpty())
@@ -4013,18 +4012,18 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
     /*
      * I search all client group of customer 'a_nom_entreprise_client'.
      */
-    QString
-    SELECT_CLIENT_GROUPS(QString("select %1 from %2 where %3='%4'").arg
-                         (YerothDatabaseTableColumn::GROUPES_DU_CLIENT_ID,
-                          YerothDatabase::CLIENTS,
-                          YerothDatabaseTableColumn::NOM_ENTREPRISE,
-                          a_nom_entreprise_client));
+    QString SELECT_CLIENT_GROUPS
+                (QString("select %1 from %2 where %3='%4'")
+                    .arg(YerothDatabaseTableColumn::GROUPES_DU_CLIENT_ID,
+                         YerothDatabase::CLIENTS,
+                         YerothDatabaseTableColumn::NOM_ENTREPRISE,
+                         a_nom_entreprise_client));
 
-    QSqlQuery
-    a_qsql_query;
 
-    int
-    query_size = YerothUtils::execQuery(a_qsql_query, SELECT_CLIENT_GROUPS);
+    QSqlQuery a_qsql_query;
+
+    int query_size = YerothUtils::execQuery(a_qsql_query,
+                                            SELECT_CLIENT_GROUPS);
 
     if (query_size <= 0)
     {
@@ -4036,14 +4035,12 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
     }
 
 
-    QString
-    client_group_id;
+    QString client_group_id;
 
     a_qsql_query.next();
 
-    client_group_id =
-                    a_qsql_query.value(YerothDatabaseTableColumn::GROUPES_DU_CLIENT_ID).
-                    toString();
+    client_group_id = a_qsql_query
+                        .value(YerothDatabaseTableColumn::GROUPES_DU_CLIENT_ID).toString();
 
 //      QDEBUG_STRING_OUTPUT_2("client_group_id", client_group_id);
 
@@ -4056,8 +4053,8 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
         return;
     }
 
-    QStringList
-    clientGroupId_list;
+
+    QStringList clientGroupId_list;
 
     YerothUtils::SPLIT_STAR_SEPARATED_DB_STRING(clientGroupId_list,
                                                 client_group_id);
@@ -4078,20 +4075,16 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
 //                                                 YerothERPConfig::THIS_SITE_LOCALISATION_NAME);
 
 
-    QString
-    clientGroup_db_ID;
+    QString clientGroup_db_ID;
 
-    QString
-    client_group_loyalty_program_LOCALISATION;
+    QString client_group_loyalty_program_LOCALISATION;
 
-    QString
-    client_group_loyalty_program;
+    QString client_group_loyalty_program;
 
-    QString
-    CUR_SELECT_CLIENT_LOYALTY_PROGRAM;
+    QString CUR_SELECT_CLIENT_LOYALTY_PROGRAM;
 
-    double
-    cur_client_group_loyalty_program_money_BENEFITS = 0.0;
+    double cur_client_group_loyalty_program_money_BENEFITS = 0.0;
+
 
     for (uint k = 0; k < clientGroupId_list.size(); ++k)
     {
@@ -4103,21 +4096,23 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
         }
 
         CUR_SELECT_CLIENT_LOYALTY_PROGRAM =
-                        QString("select %1 from %2 where %3='%4'").arg
-                        (YerothDatabaseTableColumn::PROGRAMME_DE_FIDELITE_CLIENTS,
-                         YerothDatabase::GROUPES_DE_CLIENTS, YerothDatabaseTableColumn::ID,
-                         clientGroup_db_ID);
+                        QString("select %1 from %2 where %3='%4'")
+                            .arg(YerothDatabaseTableColumn::PROGRAMME_DE_FIDELITE_CLIENTS,
+                                 YerothDatabase::GROUPES_DE_CLIENTS,
+                                 YerothDatabaseTableColumn::ID,
+                                 clientGroup_db_ID);
 
 //              QDEBUG_STRING_OUTPUT_2("cur_select_client_loyalty_program",
 //                                                         cur_select_client_loyalty_program);
 
         a_qsql_query.clear();
 
-        query_size =
-                        YerothUtils::execQuery(a_qsql_query,
-                                               CUR_SELECT_CLIENT_LOYALTY_PROGRAM);
+        query_size = YerothUtils::execQuery(a_qsql_query,
+                                            CUR_SELECT_CLIENT_LOYALTY_PROGRAM);
 
-        if (query_size > 0 && a_qsql_query.next())
+
+        if (query_size > 0   &&
+            a_qsql_query.next())
         {
             client_group_loyalty_program = a_qsql_query.value(0).toString();
 
@@ -4128,15 +4123,14 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
 
             client_group_loyalty_program_LOCALISATION =
                             YerothUtils::GET_LOCALISATION_FOR_CLIENT_LOYALTY_PROGRAM
-                            (client_group_loyalty_program);
+                                (client_group_loyalty_program);
 
 //                      QDEBUG_STRING_OUTPUT_2("client_group_loyalty_program_LOCALISATION",
 //                                                                 client_group_loyalty_program_LOCALISATION);
 
             if (!client_group_loyalty_program_LOCALISATION.isEmpty() &&
-                    !YerothUtils::isEqualCaseInsensitive
-                    (YerothERPConfig::THIS_SITE_LOCALISATION_NAME,
-                     client_group_loyalty_program_LOCALISATION))
+                !YerothUtils::isEqualCaseInsensitive(YerothERPConfig::THIS_SITE_LOCALISATION_NAME,
+                                                     client_group_loyalty_program_LOCALISATION))
             {
                 continue;
             }
@@ -4146,32 +4140,32 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
 //                                                                               client_group_loyalty_program));
 
             cur_client_group_loyalty_program_money_BENEFITS =
-                            calculate_LOYALTY_PROGRAM_MONEY_BENEFITS
-                            (client_group_loyalty_program);
+                calculate_LOYALTY_PROGRAM_MONEY_BENEFITS(client_group_loyalty_program);
+                calculate_LOYALTY_PROGRAM_MONEY_BENEFITS(client_group_loyalty_program);
 
-            _client_group_program_TO_money_benefit.insert_item
-            (client_group_loyalty_program,
-             cur_client_group_loyalty_program_money_BENEFITS);
+
+            _client_group_program_TO_money_benefit
+                .insert_item(client_group_loyalty_program,
+                             cur_client_group_loyalty_program_money_BENEFITS);
         }
     }
+
 
     _client_group_program_TO_money_benefit.q_sort();
 
 //      _client_group_program_TO_money_benefit.print("_client_group_program_TO_money_benefit");
 
-    double
-    best_current_lotaly_program_money_benefits =
-                    GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS();
+    double best_current_lotaly_program_money_benefits =
+            GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS();
 
-    double
-    somme_TOTAL_SANS_TVA = GET_CURRENT_CLIENT_AMOUNT_TO_BE_PAID();
+    double somme_TOTAL_SANS_TVA = GET_CURRENT_CLIENT_AMOUNT_TO_BE_PAID();
 
 //      QDEBUG_STRING_OUTPUT_2_N("somme_TOTAL_SANS_TVA **", somme_TOTAL_SANS_TVA);
 
     if (somme_TOTAL_SANS_TVA >= best_current_lotaly_program_money_benefits)
     {
         somme_TOTAL_SANS_TVA =
-                        somme_TOTAL_SANS_TVA - best_current_lotaly_program_money_benefits;
+            somme_TOTAL_SANS_TVA - best_current_lotaly_program_money_benefits;
     }
 
 //      QDEBUG_STRING_OUTPUT_2_N(QString("somme_TOTAL_SANS_TVA - best_current_lotaly_program_money_benefits (%1)")
@@ -4180,13 +4174,11 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
 
 //      QDEBUG_STRING_OUTPUT_2_N("_sommeTotal *", _sommeTotal);
 
-    double
-    _TVA_SOMME_TOTAL_MONEY_BENEFITS = 0.0;
+    double^_TVA_SOMME_TOTAL_MONEY_BENEFITS = 0.0;
 
     if (checkBox_tva->isChecked())
     {
-        _TVA_SOMME_TOTAL_MONEY_BENEFITS =
-                        somme_TOTAL_SANS_TVA * YerothERPConfig::tva_value;
+        _TVA_SOMME_TOTAL_MONEY_BENEFITS = somme_TOTAL_SANS_TVA * YerothERPConfig::tva_value;
     }
 
 //      QDEBUG_STRING_OUTPUT_2_N("_TVA_SOMME_TOTAL_MONEY_BENEFITS",
@@ -4202,12 +4194,11 @@ YerothPointDeVenteWindow::updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY
 }
 
 
-void
-YerothPointDeVenteWindow::handle_CLIENT_LOYALTY_PROGRAM_PAYMENTS_ENTRIES
-(const QString &a_product_reference)
+void YerothPointDeVenteWindow::
+        handle_CLIENT_LOYALTY_PROGRAM_PAYMENTS_ENTRIES(const QString &a_product_reference)
 {
-    if (_curClientName.isEmpty() ||
-            _client_group_program_TO_money_benefit.isEmpty())
+    if (_curClientName.isEmpty()                      ||
+        _client_group_program_TO_money_benefit.isEmpty())
     {
         return;
     }
@@ -4215,11 +4206,10 @@ YerothPointDeVenteWindow::handle_CLIENT_LOYALTY_PROGRAM_PAYMENTS_ENTRIES
     /*
      * WE FIRST CREATE A PAYMENT ENTRY.
      */
-    QString
-    client_loyalty_best_program;
+    QString client_loyalty_best_program;
 
-    YerothERPPaymentProcessingInformation
-    a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT;
+
+    YerothERPPaymentProcessingInformation a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT;
 
     a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._nom_entreprise =
                     _curClientName;
@@ -4241,40 +4231,36 @@ YerothPointDeVenteWindow::handle_CLIENT_LOYALTY_PROGRAM_PAYMENTS_ENTRIES
     _nouveau_compteClient_PROGRAMME_DE_FIDELITE_CLIENTS =
                     _vente_LOYALTY_PROGRAM_NOUVEAU_COMPTE_CLIENT;
 
+
     {
-        QString
-        compte_client_inchange =
-                        QString("select %1 from %2 where %3='%4'").arg
-                        (YerothDatabaseTableColumn::COMPTE_CLIENT,
-                         YerothDatabase::CLIENTS,
-                         YerothDatabaseTableColumn::NOM_ENTREPRISE,
-                         a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._nom_entreprise);
+        QString compte_client_inchange =
+                    QString("select %1 from %2 where %3='%4'")
+                        .arg(YerothDatabaseTableColumn::COMPTE_CLIENT,
+                             YerothDatabase::CLIENTS,
+                             YerothDatabaseTableColumn::NOM_ENTREPRISE,
+                             a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._nom_entreprise);
 
-        QSqlQuery
-        a_qsql_query;
+        QSqlQuery a_qsql_query;
 
-        int
-        query_size =
-                        YerothUtils::execQuery(a_qsql_query, compte_client_inchange);
+        int query_size = YerothUtils::execQuery(a_qsql_query,
+                                                compte_client_inchange);
+
 
         if (query_size > 0 && a_qsql_query.next())
         {
-            a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT.
-            _nouveau_compte_client =
-                            a_qsql_query.value(YerothDatabaseTableColumn::COMPTE_CLIENT).
-                            toDouble();
+            a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._nouveau_compte_client =
+                a_qsql_query.value(YerothDatabaseTableColumn::COMPTE_CLIENT).toDouble();
         }
     }
 
-    a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._NOTES =
-                    QObject::tr
-                    ("PAYEMENT POUR PROGRAMME DE FIDÉLITÉ CLIENTS: '%1' (montant: %2)").arg
-                    (client_loyalty_best_program,
-                     QString::number(a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT.
-                                     _montant_paye));
 
-    a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT.save_payment_info_record
-    ();
+    a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._NOTES =
+        QObject::tr("PAYEMENT POUR PROGRAMME DE FIDÉLITÉ CLIENTS: '%1' (montant: %2)")
+            .arg(client_loyalty_best_program,
+                 QString::number(a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT._montant_paye));
+
+
+    a_payment_info_record_FOR_CLIENT_LOYALTY_PAYMENT.save_payment_info_record();
 }
 
 
@@ -4282,9 +4268,10 @@ void YerothPointDeVenteWindow::executer_la_vente_compteclient_FIDELITE()
 {
     int IDforReceipt = YerothERPWindows::getNextIdSqlTableModel_stocks_vendu();
 
-    QString
-    referenceRecuVenduCompteClient(YerothUtils::GET_REFERENCE_RECU_VENDU
-                                   (QString::number(IDforReceipt)));
+
+    QString referenceRecuVenduCompteClient =
+        YerothUtils::GET_REFERENCE_RECU_VENDU(QString::number(IDforReceipt));
+
 
     int stocksVenduID = -1;
 
@@ -4294,18 +4281,19 @@ void YerothPointDeVenteWindow::executer_la_vente_compteclient_FIDELITE()
 
     double total_prix_vente = 0.0;
 
+
     for (int j = 0; j < tableWidget_articles->itemCount(); ++j)
     {
-        YerothArticleVenteInfo *articleVenteInfo =
-                        articleItemToVenteInfo.value(j);
+        YerothArticleVenteInfo *articleVenteInfo = articleItemToVenteInfo.value(j);
 
         QSqlQuery stockRecordQuery;
 
-        QString
-        stockRecordQueryStr(QString("SELECT * FROM %1 WHERE %2 = '%3'").arg
-                            (YerothDatabase::STOCKS,
-                             YerothDatabaseTableColumn::ID,
-                             articleVenteInfo->_stockID));
+        QString stockRecordQueryStr =
+            QString("SELECT * FROM %1 WHERE %2 = '%3'")
+                .arg(YerothDatabase::STOCKS,
+                     YerothDatabaseTableColumn::ID,
+                     articleVenteInfo->_stockID);
+
 
         bool historique_stock_actif = true;
 
@@ -4323,115 +4311,114 @@ void YerothPointDeVenteWindow::executer_la_vente_compteclient_FIDELITE()
 
         QString nomEntrepriseFournisseur;
 
-        int querySize =
-                        YerothUtils::execQuery(stockRecordQuery, stockRecordQueryStr,
+
+        int querySize = YerothUtils::execQuery(stockRecordQuery,
+                                               stockRecordQueryStr,
                                                _logger);
+
 
         if (querySize > 0 && stockRecordQuery.next())
         {
-            isService =
-                            stockRecordQuery.value(YerothDatabaseTableColumn::IS_SERVICE).
-                            toBool();
+            isService = stockRecordQuery.value(YerothDatabaseTableColumn::IS_SERVICE).toBool();
 
             quantite_totale_actuelle =
-                            stockRecordQuery.
-                            value(YerothDatabaseTableColumn::QUANTITE_TOTALE).toDouble();
+                stockRecordQuery.value(YerothDatabaseTableColumn::QUANTITE_TOTALE).toDouble();
+
 
             datePeremtion =
-                            stockRecordQuery.
-                            value(YerothDatabaseTableColumn::DATE_PEREMPTION).toDate();
+                stockRecordQuery.value(YerothDatabaseTableColumn::DATE_PEREMPTION).toDate();
+
 
             historique_stock_actif =
-                            stockRecordQuery.
-                            value(YerothDatabaseTableColumn::HISTORIQUE_STOCK_ACTIF).
-                            toBool();
+                stockRecordQuery.value(YerothDatabaseTableColumn::HISTORIQUE_STOCK_ACTIF)
+                                        .toBool();
 
-            historiqueStock =
-                            stockRecordQuery.
-                            value(YerothDatabaseTableColumn::HISTORIQUE_STOCK).toString();
 
-            localisation_stock =
-                            stockRecordQuery.
-                            value(YerothDatabaseTableColumn::LOCALISATION_STOCK).toString();
+            historiqueStock = stockRecordQuery.value(YerothDatabaseTableColumn::HISTORIQUE_STOCK).toString();
 
-            localisation =
-                            stockRecordQuery.value(YerothDatabaseTableColumn::LOCALISATION).
-                            toString();
+            localisation_stock = stockRecordQuery.value(YerothDatabaseTableColumn::LOCALISATION_STOCK).toString();
+
+            localisation = stockRecordQuery.value(YerothDatabaseTableColumn::LOCALISATION).toString();
+
 
             nomEntrepriseFournisseur =
-                            stockRecordQuery.
-                            value(YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR).
-                            toString();
+                stockRecordQuery.value(YerothDatabaseTableColumn::NOM_ENTREPRISE_FOURNISSEUR).toString();
         }
 
         //qDebug() << QString("++ previousHistoriquestock: %1")
         //                      .arg(historiqueStock);
 
         YerothSqlTableModel &stocksVenduTableModel =
-                        _allWindows->getSqlTableModel_stocks_vendu();
+            _allWindows->getSqlTableModel_stocks_vendu();
 
-        QSqlRecord stocksVenduCompteClientRecord =
-                        stocksVenduTableModel.record();
+
+        QSqlRecord stocksVenduCompteClientRecord = stocksVenduTableModel.record();
+
 
         _typeDeVente = YerothUtils::VENTE_COMPTE_CLIENT;
 
-        stocksVenduID =
-                        YerothERPWindows::getNextIdSqlTableModel_stocks_vendu();
+
+        stocksVenduID = YerothERPWindows::getNextIdSqlTableModel_stocks_vendu();
 
         stocksVenduCompteClientRecord.setValue(YerothDatabaseTableColumn::ID,
                                                stocksVenduID);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::TYPE_DE_VENTE, _typeDeVente);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::TYPE_DE_VENTE,
+                      _typeDeVente);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::IS_SERVICE, isService);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::IS_SERVICE,
+                      isService);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::REFERENCE_RECU_VENDU,
-                 referenceRecuVenduCompteClient);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::REFERENCE_RECU_VENDU,
+                      referenceRecuVenduCompteClient);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::REFERENCE,
-                 articleVenteInfo->_stockReference);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::REFERENCE,
+                      articleVenteInfo->_stockReference);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::DESIGNATION,
-                 articleVenteInfo->_stockName);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::DESIGNATION,
+                      articleVenteInfo->_stockName);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::DATE_PEREMPTION, datePeremtion);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::DATE_PEREMPTION,
+                      datePeremtion);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
-                 articleVenteInfo->_stockNomDepartementProduits);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
+                      articleVenteInfo->_stockNomDepartementProduits);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::CATEGORIE,
-                 articleVenteInfo->_stockCategorie);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::CATEGORIE,
+                      articleVenteInfo->_stockCategorie);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::QUANTITE_VENDUE,
-                 articleVenteInfo->_quantite_a_vendre);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::QUANTITE_VENDUE,
+                      articleVenteInfo->_quantite_a_vendre);
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::PRIX_UNITAIRE,
-                 articleVenteInfo->_prix_unitaire);
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::PRIX_UNITAIRE,
+                      articleVenteInfo->_prix_unitaire);
+
 
         total_prix_vente += articleVenteInfo->prix_vente();
 
-        stocksVenduCompteClientRecord.
-        setValue(YerothDatabaseTableColumn::MONTANT_TOTAL_VENTE,
-                 articleVenteInfo->prix_vente());
 
-        stocksVenduCompteClientRecord.setValue
-        (YerothDatabaseTableColumn::
-         MONTANT_RABAIS_PROGRAMME_DE_FIDELITE_CLIENTS,
-         GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS());
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::MONTANT_TOTAL_VENTE,
+                      articleVenteInfo->prix_vente());
 
-        stocksVenduCompteClientRecord.
-        	setValue(YerothDatabaseTableColumn::SERVICE_SUPPLEMENT_AJOUT_COMMERCIAL,
-        			 articleVenteInfo->Get_ajout_pour_COMMERCIAL());
+
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::MONTANT_RABAIS_PROGRAMME_DE_FIDELITE_CLIENTS,
+                      GET_BEST_CURRENT_LOYALTY_PROGRAM_MONEY_BENEFITS());
+
+        stocksVenduCompteClientRecord
+            .setValue(YerothDatabaseTableColumn::SERVICE_SUPPLEMENT_AJOUT_COMMERCIAL,
+        			  articleVenteInfo->Get_ajout_pour_COMMERCIAL());
 
         stocksVenduCompteClientRecord.
         	setValue(YerothDatabaseTableColumn::REMISE_PRIX,
