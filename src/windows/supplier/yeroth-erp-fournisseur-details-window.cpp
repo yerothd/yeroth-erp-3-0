@@ -666,11 +666,11 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
     	lineEdit_employe_DEPARTEMENT
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::DEPARTEMENT));
 
-    	lineEdit_EMPLOYE_SALAIRE_annuel
-			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_ANNUEL));
+//    	lineEdit_EMPLOYE_SALAIRE_annuel
+//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_ANNUEL));
 
-    	lineEdit_EMPLOYE_SALAIRE_MENSUEL
-			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_MENSUEL));
+//    	lineEdit_EMPLOYE_SALAIRE_MENSUEL
+//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_MENSUEL));
 
     	lineEdit_EMPLOYE_position_fonction
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::POSITION_FONCTION));
