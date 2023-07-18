@@ -520,6 +520,16 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
 }
 
 
+void YerothFournisseurDetailsWindow::CALCULATE_EMPLOYEE_SALARY()
+{
+//    	lineEdit_EMPLOYE_SALAIRE_annuel
+//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_ANNUEL));
+
+//    	lineEdit_EMPLOYE_SALAIRE_MENSUEL
+//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_MENSUEL));
+}
+
+
 void YerothFournisseurDetailsWindow::rendreInvisible()
 {
     lineEdit_fournisseur_details_reference_registre_du_commerce->clear();
@@ -666,11 +676,7 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
     	lineEdit_employe_DEPARTEMENT
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::DEPARTEMENT));
 
-//    	lineEdit_EMPLOYE_SALAIRE_annuel
-//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_ANNUEL));
-
-//    	lineEdit_EMPLOYE_SALAIRE_MENSUEL
-//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_MENSUEL));
+        CALCULATE_EMPLOYEE_SALARY();
 
     	lineEdit_EMPLOYE_position_fonction
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::POSITION_FONCTION));

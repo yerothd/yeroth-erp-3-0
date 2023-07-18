@@ -12144,6 +12144,9 @@
        <property name="autoFillBackground">
         <bool>true</bool>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
       </widget>
       <widget class="YerothLineEdit" name="lineEdit_EMPLOYE_SALAIRE_MENSUEL">
        <property name="geometry">
@@ -12605,6 +12608,9 @@
        </property>
        <property name="autoFillBackground">
         <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="YerothLineEdit" name="lineEdit_employe_SUPERIEUR_hierarchique">

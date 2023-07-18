@@ -69,6 +69,8 @@ public:
 
     void definirPasDeRole();
 
+    void CALCULATE_EMPLOYEE_SALARY();
+
     void rendreInvisible();
 
     void rendreVisible(YerothSqlTableModel *fournisseurTableModel,
