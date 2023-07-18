@@ -4174,7 +4174,7 @@ void YerothPointDeVenteWindow::
 
 //      QDEBUG_STRING_OUTPUT_2_N("_sommeTotal *", _sommeTotal);
 
-    double^_TVA_SOMME_TOTAL_MONEY_BENEFITS = 0.0;
+    double _TVA_SOMME_TOTAL_MONEY_BENEFITS = 0.0;
 
     if (checkBox_tva->isChecked())
     {
