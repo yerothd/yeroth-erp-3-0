@@ -161,9 +161,7 @@ public slots:
 
     void handleTVACheckBox(bool clicked);
 
-    void HANDLE_VISIBILITY_OF_LOYALTY_LABEL_AND_LINEEDIT(const QString &text =
-                                                                         YerothUtils::
-                                                                         EMPTY_STRING);
+    void HANDLE_VISIBILITY_OF_LOYALTY_LABEL_AND_LINEEDIT(const QString &text = YerothUtils::EMPTY_STRING);
 
     inline void handle_VIEW_FONT_SIZE_change_buttons_FROM__SELLING_signal()
     {
@@ -183,7 +181,8 @@ public slots:
 
     void updateQuantiteAVendre();
 
-    bool article_exist(const QString codeBar, const QString designation);
+    bool article_exist(const QString codeBar,
+                       const QString designation);
 
     void ajouter_article(const QString &aStockID);
 
@@ -191,9 +190,11 @@ public slots:
 
     void ajouter_article_codebar(const QString &aStockReference);
 
-    void actualiser_articles(int row, unsigned newItemQte);
+    void actualiser_articles(int row,
+                             unsigned newItemQte);
 
-    void actualiser_articles_codebar(int row, unsigned newItemQte);
+    void actualiser_articles_codebar(int row,
+                                     unsigned newItemQte);
 
     void actualiser_tableau_vente();
 
