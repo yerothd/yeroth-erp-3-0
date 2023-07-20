@@ -3999,8 +3999,7 @@ double YerothPointDeVenteWindow::calculate_LOYALTY_PROGRAM_MONEY_BENEFITS(const
 
 void YerothPointDeVenteWindow::
         updateCompteClient_PROGRAMME_DE_FIDELITE_LOYALTY(const QString  &a_nom_entreprise_client,
-                                                         bool           CALL_update_lineedits_and_labels
- /* = false */)
+                                                         bool           CALL_update_lineedits_and_labels /* = false */)
 {
     if (a_nom_entreprise_client.isEmpty())
     {
