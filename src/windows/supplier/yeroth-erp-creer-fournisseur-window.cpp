@@ -631,12 +631,6 @@ bool YerothCreerFournisseurWindow::creerEnregistrerFournisseur()
             record.setValue(YerothDatabaseTableColumn::DEPARTEMENT,
             		lineEdit_employe_DEPARTEMENT->text());
 
-            record.setValue(YerothDatabaseTableColumn::SALAIRE_ANNUEL,
-            		lineEdit_EMPLOYE_SALAIRE_annuel->text().toDouble());
-
-            record.setValue(YerothDatabaseTableColumn::SALAIRE_MENSUEL,
-            		lineEdit_EMPLOYE_SALAIRE_MENSUEL->text().toDouble());
-
             record.setValue(YerothDatabaseTableColumn::POSITION_FONCTION,
             		lineEdit_EMPLOYE_position_fonction->text());
         }

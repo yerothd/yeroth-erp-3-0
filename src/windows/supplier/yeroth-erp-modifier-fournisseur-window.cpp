@@ -329,8 +329,6 @@ void YerothModifierFournisseurWindow::clear_all_fields()
 
 	lineEdit_employe_SUPERIEUR_hierarchique->clear();
 	lineEdit_employe_DEPARTEMENT->clear();
-	lineEdit_EMPLOYE_SALAIRE_annuel->clear();
-	lineEdit_EMPLOYE_SALAIRE_MENSUEL->clear();
 	lineEdit_EMPLOYE_position_fonction->clear();
 
     label_image_produit->clear();
@@ -552,12 +550,6 @@ void YerothModifierFournisseurWindow::actualiserFournisseur()
             record.setValue(YerothDatabaseTableColumn::DEPARTEMENT,
             		lineEdit_employe_DEPARTEMENT->text());
 
-            record.setValue(YerothDatabaseTableColumn::SALAIRE_ANNUEL,
-            		lineEdit_EMPLOYE_SALAIRE_annuel->text().toDouble());
-
-            record.setValue(YerothDatabaseTableColumn::SALAIRE_MENSUEL,
-            		lineEdit_EMPLOYE_SALAIRE_MENSUEL->text().toDouble());
-
         	record.setValue(YerothDatabaseTableColumn::POSITION_FONCTION,
         			lineEdit_EMPLOYE_position_fonction->text());
         }
@@ -756,28 +748,20 @@ void YerothModifierFournisseurWindow::rendreVisible(YerothSqlTableModel *fournis
     {
     	label_employe_SUPERIEUR_hierarchique->setVisible(true);
     	label_employe_DEPARTEMENT->setVisible(true);
-		label_EMPLOYE_SALAIRE_annuel->setVisible(true);
-		label_EMPLOYE_SALAIRE_MENSUEL->setVisible(true);
 		label_EMPLOYE_position_fonction->setVisible(true);
 
 		lineEdit_employe_SUPERIEUR_hierarchique->setVisible(true);
 		lineEdit_employe_DEPARTEMENT->setVisible(true);
-		lineEdit_EMPLOYE_SALAIRE_annuel->setVisible(true);
-		lineEdit_EMPLOYE_SALAIRE_MENSUEL->setVisible(true);
 		lineEdit_EMPLOYE_position_fonction->setVisible(true);
     }
     else
     {
     	label_employe_SUPERIEUR_hierarchique->setVisible(false);
     	label_employe_DEPARTEMENT->setVisible(false);
-		label_EMPLOYE_SALAIRE_annuel->setVisible(false);
-		label_EMPLOYE_SALAIRE_MENSUEL->setVisible(false);
 		label_EMPLOYE_position_fonction->setVisible(false);
 
 		lineEdit_employe_SUPERIEUR_hierarchique->setVisible(false);
 		lineEdit_employe_DEPARTEMENT->setVisible(false);
-		lineEdit_EMPLOYE_SALAIRE_annuel->setVisible(false);
-		lineEdit_EMPLOYE_SALAIRE_MENSUEL->setVisible(false);
 		lineEdit_EMPLOYE_position_fonction->setVisible(false);
     }
 
@@ -862,12 +846,6 @@ void YerothModifierFournisseurWindow::showFournisseurDetail(bool show_EMPLOYE /*
     	lineEdit_employe_DEPARTEMENT
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::DEPARTEMENT));
 
-    	lineEdit_EMPLOYE_SALAIRE_annuel
-			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_ANNUEL));
-
-    	lineEdit_EMPLOYE_SALAIRE_MENSUEL
-			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_MENSUEL));
-
     	lineEdit_EMPLOYE_position_fonction
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::POSITION_FONCTION));
     }
@@ -875,8 +853,6 @@ void YerothModifierFournisseurWindow::showFournisseurDetail(bool show_EMPLOYE /*
     {
     	lineEdit_employe_SUPERIEUR_hierarchique->clear();
     	lineEdit_employe_DEPARTEMENT->clear();
-    	lineEdit_EMPLOYE_SALAIRE_annuel->clear();
-    	lineEdit_EMPLOYE_SALAIRE_MENSUEL->clear();
     	lineEdit_EMPLOYE_position_fonction->clear();
     }
 

@@ -169,10 +169,6 @@ public:
 
     static const QString DEPARTEMENT;
 
-    static const QString SALAIRE_ANNUEL;
-
-	static const QString SALAIRE_MENSUEL;
-
     static const QString POSITION_FONCTION;
 
     static const QString NOM_CATEGORIE;
@@ -327,8 +323,7 @@ public:
 
     static const QString CARTE_DE_FIDELITE_CLIENT_service_de_gestion_clientele;
 
-    static const QString
-    CARTE_DE_FIDELITE_CLIENT_service_du_programme_de_fidelite_client;
+    static const QString CARTE_DE_FIDELITE_CLIENT_service_du_programme_de_fidelite_client;
 
     static const QString CARTE_DE_FIDELITE_CLIENT_email;
 
@@ -419,7 +414,7 @@ public:
     static const QString LOCALISATION_ENTREE_ID;
 
 
-    static QMap < QString, QString > _tableColumnToUserViewString;
+    static QMap<QString, QString> _tableColumnToUserViewString;
 };
 
 #endif /* SRC_UTILS_YEROTH_DATABASE_TABLES_COLUMNS_HPP_ */

@@ -3377,18 +3377,51 @@ QString YerothUtils::appendPDFReceiptFormat(QString aStr)
 	return resultStr;
 }
 
-QString YerothUtils::GET_LOCALISATION_FOR_CLIENT_LOYALTY_PROGRAM(
-		const QString &client_loyalty_program)
+
+QString YerothUtils::GET_LOCALISATION_FOR_EMPLOYEE_PAY_GROUP
+                        (const QString &an_employee_PAY_GROUP)
 {
-	QString CUR_GET_CLIENT_LOYALTY_PROGRAM_LOCALISATION_ONLY = QString(
-			"select %1 from %2 where %3='%4'").arg(
-			YerothDatabaseTableColumn::LOCALISATION,
-			YerothDatabase::PROGRAMMES_DE_FIDELITE_CLIENTS,
-			YerothDatabaseTableColumn::DESIGNATION, client_loyalty_program);
+	QString CUR_GET_employee_pay_group_LOCALISATION_ONLY =
+        QString("select %1 from %2 where %3='%4'")
+            .arg(YerothDatabaseTableColumn::LOCALISATION,
+                 YerothDatabase::GROUPES_DE_PAIE_hr,
+                 YerothDatabaseTableColumn::DESIGNATION,
+                 an_employee_PAY_GROUP);
+
 	QSqlQuery a_qsql_query;
-	int query_size = YerothUtils::execQuery(a_qsql_query,
-			CUR_GET_CLIENT_LOYALTY_PROGRAM_LOCALISATION_ONLY);
-	if (query_size > 0 && a_qsql_query.next())
+
+	int query_size =
+        YerothUtils::execQuery(a_qsql_query,
+                               CUR_GET_employee_pay_group_LOCALISATION_ONLY);
+
+	if (query_size > 0   &&
+        a_qsql_query.next())
+	{
+		return a_qsql_query.value(0).toString();
+	}
+
+	return YerothUtils::EMPTY_STRING;
+}
+
+
+QString YerothUtils::GET_LOCALISATION_FOR_CLIENT_LOYALTY_PROGRAM
+                        (const QString &client_loyalty_program)
+{
+	QString CUR_GET_CLIENT_LOYALTY_PROGRAM_LOCALISATION_ONLY =
+        QString("select %1 from %2 where %3='%4'")
+            .arg(YerothDatabaseTableColumn::LOCALISATION,
+                 YerothDatabase::PROGRAMMES_DE_FIDELITE_CLIENTS,
+                 YerothDatabaseTableColumn::DESIGNATION,
+                 client_loyalty_program);
+
+	QSqlQuery a_qsql_query;
+
+	int query_size =
+        YerothUtils::execQuery(a_qsql_query,
+                               CUR_GET_CLIENT_LOYALTY_PROGRAM_LOCALISATION_ONLY);
+
+	if (query_size > 0   &&
+        a_qsql_query.next())
 	{
 		return a_qsql_query.value(0).toString();
 	}

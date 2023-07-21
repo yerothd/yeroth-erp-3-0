@@ -653,6 +653,8 @@ public:
 
     static QString appendPDFReceiptFormat(QString aStr);
 
+    static QString GET_LOCALISATION_FOR_EMPLOYEE_PAY_GROUP(const QString &an_employee_PAY_GROUP);
+
     static QString GET_LOCALISATION_FOR_CLIENT_LOYALTY_PROGRAM(const QString &client_loyalty_program);
 
     static QString getStrategySqlQueryStr(QString aSelectStmt,

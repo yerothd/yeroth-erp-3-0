@@ -15,6 +15,9 @@
 #include "src/windows/yeroth-erp-window-commons.hpp"
 
 
+#include "src/utils/yeroth-erp-LIST-map-COMPLEX-ITEM.hpp"
+
+
 #include <QtWidgets/QMessageBox>
 
 
@@ -69,7 +72,16 @@ public:
 
     void definirPasDeRole();
 
-    void CALCULATE_EMPLOYEE_SALARY();
+
+    double GET_BEST_CURRENT_pay_group_MONEY_BENEFITS();
+
+
+    double calculate_PAY_GROUP_MONEY_BENEFITS(const QString &PAY_GROUP);
+
+
+    void CALCULATE_EMPLOYEE_SALARY(const QString  &a_nom_entreprise_client,
+                                   bool           CALL_update_lineedits_and_labels = false);
+
 
     void rendreInvisible();
 
@@ -113,11 +125,18 @@ private:
     void checkCourrierAlerts();
 
 
-    bool _SHOW_EMPLOYEE;
 
     YerothLogger *_logger;
 
+    bool _SHOW_EMPLOYEE;
+
+    double _sommeTotal_HORS_TAXES;
+
+    double _sommeTotal;
+
     YerothSqlTableModel *_curFournisseurTableModel;
+
+    Yeroth_LIST_map_COMPLEX_ITEM _EMPLOYEE_group_program_TO_money_benefit;
 };
 
 

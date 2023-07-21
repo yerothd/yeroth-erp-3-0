@@ -148,10 +148,6 @@ const QString YerothDatabaseTableColumn::MANAGER("manager");
 
 const QString YerothDatabaseTableColumn::DEPARTEMENT("departement");
 
-const QString YerothDatabaseTableColumn::SALAIRE_ANNUEL("salaire_annuel");
-
-const QString YerothDatabaseTableColumn::SALAIRE_MENSUEL("salaire_mensuel");
-
 const QString YerothDatabaseTableColumn::POSITION_FONCTION("position_fonction");
 
 const QString YerothDatabaseTableColumn::NOM_CATEGORIE("nom_categorie");
@@ -824,10 +820,6 @@ void YerothDatabaseTableColumn::RETRANSLATE()
     _tableColumnToUserViewString.insert(YerothDatabaseTableColumn::MANAGER, QObject::tr("Manager"));
 
     _tableColumnToUserViewString.insert(YerothDatabaseTableColumn::DEPARTEMENT, QObject::tr("Département empl."));
-
-    _tableColumnToUserViewString.insert(YerothDatabaseTableColumn::SALAIRE_ANNUEL, QObject::tr("Salaire annuel"));
-
-    _tableColumnToUserViewString.insert(YerothDatabaseTableColumn::SALAIRE_MENSUEL, QObject::tr("Salaire mensuel"));
 
     _tableColumnToUserViewString.insert(YerothDatabaseTableColumn::POSITION_FONCTION, QObject::tr("Position/fonction"));
 
