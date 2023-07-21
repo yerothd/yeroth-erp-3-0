@@ -276,10 +276,13 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
 
     QString latexFileNamePrefix("yeroth-erp-liste-fournisseur");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    latexFileNamePrefix.clear();
-    latexFileNamePrefix.append("yeroth-erp-supplier-file");
-#endif
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        latexFileNamePrefix.clear();
+        latexFileNamePrefix.append("yeroth-erp-supplier-file");
+    }
+
 
     QString texDocument;
 
@@ -382,10 +385,14 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
                 (lineEdit_fournisseur_details_reference_registre_du_commerce->
                  text_LATEX()));
 
-    data.
-    append(YerothUtils::get_latex_bold_text(QObject::tr("Fournisseur: ")));
-    data.append(QString("%1\\\\\n").
-                arg(lineEdit_fournisseur_details_fournisseur->text_LATEX()));
+
+    if (!_SHOW_EMPLOYEE)
+    {
+        data.append(YerothUtils::get_latex_bold_text(QObject::tr("Fournisseur: ")));
+        data.append(QString("%1\\\\\n")
+                     .arg(lineEdit_fournisseur_details_fournisseur->text_LATEX()));
+    }
+
 
     data.append("\n\n\\vspace{0.3cm}\n\n");
 
@@ -888,54 +895,49 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
 {
     QSqlRecord record;
 
-    _allWindows->
-    _fournisseursWindow->SQL_QUERY_YEROTH_TABLE_VIEW_LAST_SELECTED_ROW
-    (record);
 
-    lineEdit_fournisseur_details_reference_fournisseur->setText
-    (GET_SQL_RECORD_DATA
-     (record, YerothDatabaseTableColumn::REFERENCE_FOURNISSEUR));
+    _allWindows->_fournisseursWindow->SQL_QUERY_YEROTH_TABLE_VIEW_LAST_SELECTED_ROW(record);
 
-    lineEdit_fournisseur_details_reference_registre_du_commerce->setText
-    (GET_SQL_RECORD_DATA
-     (record, YerothDatabaseTableColumn::REFERENCE_REGISTRE_DU_COMMERCE));
 
-    lineEdit_fournisseur_details_nom_entreprise->setText(GET_SQL_RECORD_DATA
-                                                         (record,
-                                                          YerothDatabaseTableColumn::NOM_ENTREPRISE));
+    lineEdit_fournisseur_details_reference_fournisseur
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::REFERENCE_FOURNISSEUR));
 
-    lineEdit_fournisseur_details_nom_representant->setText(GET_SQL_RECORD_DATA
-                                                           (record,
-                                                            YerothDatabaseTableColumn::NOM_REPRESENTANT));
+    lineEdit_fournisseur_details_reference_registre_du_commerce
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::REFERENCE_REGISTRE_DU_COMMERCE));
 
-    lineEdit_fournisseur_details_quartier->setText(GET_SQL_RECORD_DATA
-                                                   (record,
-                                                    YerothDatabaseTableColumn::QUARTIER));
+    lineEdit_fournisseur_details_nom_entreprise
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::NOM_ENTREPRISE));
 
-    lineEdit_fournisseur_details_ville->setText(GET_SQL_RECORD_DATA
-                                                (record,
-                                                 YerothDatabaseTableColumn::VILLE));
+    lineEdit_fournisseur_details_nom_representant
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::NOM_REPRESENTANT));
 
-    lineEdit_fournisseur_details_province_etat->setText(GET_SQL_RECORD_DATA
-                                                        (record,
-                                                         YerothDatabaseTableColumn::PROVINCE_ETAT));
+    lineEdit_fournisseur_details_quartier
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::QUARTIER));
 
-    lineEdit_fournisseur_details_pays->setText(GET_SQL_RECORD_DATA
-                                               (record,
-                                                YerothDatabaseTableColumn::PAYS));
+    lineEdit_fournisseur_details_ville
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::VILLE));
 
-    lineEdit_fournisseur_details_boite_postale->setText(GET_SQL_RECORD_DATA
-                                                        (record,
-                                                         YerothDatabaseTableColumn::BOITE_POSTALE));
+    lineEdit_fournisseur_details_province_etat
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::PROVINCE_ETAT));
 
-    lineEdit_fournisseur_details_siege_social->setText(GET_SQL_RECORD_DATA
-                                                       (record,
-                                                        YerothDatabaseTableColumn::SIEGE_SOCIAL));
+    lineEdit_fournisseur_details_pays
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::PAYS));
 
-    lineEdit_fournisseur_details_email->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::EMAIL));
+    lineEdit_fournisseur_details_boite_postale
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::BOITE_POSTALE));
+
+    lineEdit_fournisseur_details_siege_social
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SIEGE_SOCIAL));
+
+    lineEdit_fournisseur_details_email
+        ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::EMAIL));
+
 
     if (true == employe)
     {
+        label_fournisseur_details_fournisseur->setVisible(false);
+        lineEdit_fournisseur_details_fournisseur->setVisible(false);
+
     	lineEdit_employe_qualite
 			->setText(QObject::tr("Employé"));
 
@@ -953,6 +955,9 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
     }
     else
     {
+        label_fournisseur_details_fournisseur->setVisible(true);
+        lineEdit_fournisseur_details_fournisseur->setVisible(true);
+
     	lineEdit_employe_qualite
 			->setText(QObject::tr("FOURNISSEUR"));
 
