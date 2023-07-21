@@ -235,13 +235,13 @@ void YerothCreerUnGroupeDePaieWindow::clear_all_fields()
 
     lineEdit_creer_un_GroupeDePaie_designation->clearField();
 
+    lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL->clearField();
+
     textEdit_creer_un_GroupeDePaie_description->clear();
 
-    doubleSpinBox_creer_un_GroupeDePaie_pourcentage_TAXES_IMPOSABLES->
-    setValue(0.0);
+    doubleSpinBox_creer_un_GroupeDePaie_pourcentage_TAXES_IMPOSABLES->setValue(0.0);
 
-    comboBox_creer_un_GroupeDePaie_localisation->
-    resetYerothComboBox();
+    comboBox_creer_un_GroupeDePaie_localisation->resetYerothComboBox();
 }
 
 
