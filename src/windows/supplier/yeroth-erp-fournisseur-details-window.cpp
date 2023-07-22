@@ -59,7 +59,7 @@ YerothFournisseurDetailsWindow::YerothFournisseurDetailsWindow()
     pushButton_fournisseurs->disable(this);
     pushButton_menu->disable(this);
     pushButton_modifier->disable(this);
-    pushButton_supprimer->disable(this);
+    pushButton_EMPLOYEE_PAY_GROUP->disable(this);
 
     /** Menu actions */
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this,
@@ -96,6 +96,26 @@ YerothFournisseurDetailsWindow::YerothFournisseurDetailsWindow()
 #endif
 
     setupShortcuts();
+}
+
+
+void YerothFournisseurDetailsWindow::afficher_groupes_dun_employe()
+{
+    if (_curFournisseurTableModel->rowCount() > 0)
+    {
+        rendreInvisible();
+
+        _allWindows->_groupes_DUN_EMPLOYE_window
+			->rendreVisible(_curFournisseurTableModel,
+                            _curStocksTableModel);
+    }
+    else
+    {
+        YerothQMessageBox::information(this,
+                                       QObject::tr("groupes d'EMPLOYÉS d'appartenance"),
+                                       QObject::tr("Sélectionnez 1 employé afin de visualiser "
+                                                   "ses GROUPES d'EMPLOYÉS d'appartenance."));
+    }
 }
 
 
@@ -218,7 +238,7 @@ void YerothFournisseurDetailsWindow::definirPasDeRole()
     pushButton_fournisseurs->disable(this);
     pushButton_menu->disable(this);
     pushButton_modifier->disable(this);
-    pushButton_supprimer->disable(this);
+    pushButton_EMPLOYEE_PAY_GROUP->disable(this);
 }
 
 
@@ -239,7 +259,7 @@ void YerothFournisseurDetailsWindow::definirManager()
     pushButton_fournisseurs->enable(this, SLOT(fournisseurs()));
     pushButton_menu->enable(this, SLOT(menu()));
     pushButton_modifier->enable(this, SLOT(modifierFournisseur()));
-    pushButton_supprimer->enable(this, SLOT(supprimerFournisseur()));
+    pushButton_EMPLOYEE_PAY_GROUP->enable(this, SLOT(afficher_groupes_dun_employe()));
 
 
 #ifdef YEROTH_SERVER

@@ -112,6 +112,8 @@ protected:
 
 private slots:
 
+    void afficher_groupes_dun_employe();
+
     void modifierFournisseur();
 
     void supprimerFournisseur();

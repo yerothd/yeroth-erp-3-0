@@ -509,14 +509,10 @@ void YerothCreerFournisseurWindow::SWITCH_TO_EMPLOYE_fournisseur(const QString &
 
     	label_employe_SUPERIEUR_hierarchique->setVisible(false);
     	label_employe_DEPARTEMENT->setVisible(false);
-		label_EMPLOYE_SALAIRE_annuel->setVisible(false);
-		label_EMPLOYE_SALAIRE_MENSUEL->setVisible(false);
 		label_EMPLOYE_position_fonction->setVisible(false);
 
 		lineEdit_employe_SUPERIEUR_hierarchique->setVisible(false);
 		lineEdit_employe_DEPARTEMENT->setVisible(false);
-		lineEdit_EMPLOYE_SALAIRE_annuel->setVisible(false);
-		lineEdit_EMPLOYE_SALAIRE_MENSUEL->setVisible(false);
 		lineEdit_EMPLOYE_position_fonction->setVisible(false);
     }
     else
@@ -525,14 +521,10 @@ void YerothCreerFournisseurWindow::SWITCH_TO_EMPLOYE_fournisseur(const QString &
 
     	label_employe_SUPERIEUR_hierarchique->setVisible(true);
     	label_employe_DEPARTEMENT->setVisible(true);
-		label_EMPLOYE_SALAIRE_annuel->setVisible(true);
-		label_EMPLOYE_SALAIRE_MENSUEL->setVisible(true);
 		label_EMPLOYE_position_fonction->setVisible(true);
 
 		lineEdit_employe_SUPERIEUR_hierarchique->setVisible(true);
 		lineEdit_employe_DEPARTEMENT->setVisible(true);
-		lineEdit_EMPLOYE_SALAIRE_annuel->setVisible(true);
-		lineEdit_EMPLOYE_SALAIRE_MENSUEL->setVisible(true);
 		lineEdit_EMPLOYE_position_fonction->setVisible(true);
     }
 }

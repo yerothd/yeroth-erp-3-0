@@ -51,6 +51,8 @@ YerothCreerUnGroupeDePaieWindow::YerothCreerUnGroupeDePaieWindow()
 
     setup_select_configure_dbcolumn(YerothDatabase::GROUPES_DE_PAIE_hr );
 
+    doubleSpinBox_creer_un_GroupeDePaie_pourcentage_TAXES_IMPOSABLES->setMinimum(0.0);
+
     doubleSpinBox_creer_un_GroupeDePaie_pourcentage_TAXES_IMPOSABLES->setMaximum(100.0);
 
 

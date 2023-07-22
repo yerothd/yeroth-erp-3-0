@@ -813,7 +813,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
 
     QString maximum_de_membres;
 
-    QString current_EMPLOYEE_group_reference;
+    QString current_EMPLOYEE_PAY_GROUP;
 
     int curQuerySize = -1;
 
@@ -826,7 +826,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
         employeeGroupTableModelQUERY_STR =
                         QString("select %1, %2, %3 from %4 where %5='%6'")
 							.arg(YerothDatabaseTableColumn::ID,
-								 YerothDatabaseTableColumn::REFERENCE_GROUPE_DEMPLOYES_hr,
+								 YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
 								 YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES,
 								 YerothDatabase::GROUPES_DEMPLOYES_hr,
 								 YerothDatabaseTableColumn::DESIGNATION,
@@ -834,9 +834,9 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
 
         aSqlGroupTableModelQUERY.clear();
 
-        curQuerySize =
-                        YerothUtils::execQuery(aSqlGroupTableModelQUERY,
-                                               employeeGroupTableModelQUERY_STR, _logger);
+        curQuerySize = YerothUtils::execQuery(aSqlGroupTableModelQUERY,
+                                              employeeGroupTableModelQUERY_STR,
+                                              _logger);
 
         if (curQuerySize > 0)
         {
@@ -845,15 +845,16 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
                 current_group_db_ID =
                                 QString::number(aSqlGroupTableModelQUERY.value(0).toInt());
 
-                current_EMPLOYEE_group_reference =
+                current_EMPLOYEE_PAY_GROUP =
                                 aSqlGroupTableModelQUERY.value(1).toString();
 
-                maximum_de_membres =
-                                aSqlGroupTableModelQUERY.value(2).toString();
+                maximum_de_membres = aSqlGroupTableModelQUERY.value(2).toString();
 
                 tableWidget_Groupes_Dun_Employe
-					->insert_group(current_group_db_ID, allEmployeeGroups.at(k).trimmed(),
-								   current_EMPLOYEE_group_reference, maximum_de_membres);
+					->insert_group(current_group_db_ID,
+                                   allEmployeeGroups.at(k).trimmed(),
+								   current_EMPLOYEE_PAY_GROUP,
+								   maximum_de_membres);
             }
 
 //              qDebug() << tableWidget_Groupes_Dun_Employe->get_mapListIdxToElement_db_ID();
