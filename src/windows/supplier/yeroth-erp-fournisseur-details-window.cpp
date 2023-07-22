@@ -581,6 +581,8 @@ double YerothFournisseurDetailsWindow::
 
 double YerothFournisseurDetailsWindow::calculate_PAY_GROUP_MONEY_BENEFITS(const QString &PAY_GROUP)
 {
+    double result = 0.0;
+
     QString SELECT_GROUPE_DE_PAIE =
                 QString("select * from %1 where %2='%3'")
                     .arg(YerothDatabase::GROUPES_DE_PAIE_hr,
@@ -608,7 +610,7 @@ double YerothFournisseurDetailsWindow::calculate_PAY_GROUP_MONEY_BENEFITS(const 
                                     YerothDatabaseTableColumn::MONTANT_A_PAYER_MENSUEL)
                                 .toDouble();
 
-    _sommeTotal = AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS;
+    result = AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS;
 
 
     //QDEBUG_STRING_OUTPUT_2_N("original amount to be paid TO EMPLOYEE", _sommeTotal);
@@ -628,9 +630,9 @@ double YerothFournisseurDetailsWindow::calculate_PAY_GROUP_MONEY_BENEFITS(const 
 //                                                                       QString::number(money_BENEFITS),
 //                                                                       QString::number(AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS)));
 
-    _sommeTotal = _sommeTotal - TVA_money;
+    result = result - TVA_money;
 
-    return _sommeTotal;
+    return result;
 }
 
 
@@ -747,10 +749,12 @@ void YerothFournisseurDetailsWindow::
                                             CUR_SELECT_employee_PAY_GROUP);
 
 
-        if (query_size > 0   &&
-            a_qsql_query.next())
+        for (int j = 0;
+             j < query_size && a_qsql_query.next();
+             ++j)
         {
-            EMPLOYEE_group_PAY_GR0UP = a_qsql_query.value(0).toString();
+            EMPLOYEE_group_PAY_GR0UP =
+                a_qsql_query.value(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR).toString();
 
             if (EMPLOYEE_group_PAY_GR0UP.isEmpty())
             {
@@ -779,20 +783,22 @@ void YerothFournisseurDetailsWindow::
                 calculate_PAY_GROUP_MONEY_BENEFITS(EMPLOYEE_group_PAY_GR0UP);
 
 
-            _EMPLOYEE_group_program_TO_money_benefit
-                .insert_item(EMPLOYEE_group_PAY_GR0UP,
-                             cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS);
+            _sommeTotal += cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS;
+
+            //_EMPLOYEE_group_program_TO_money_benefit
+            //    .insert_item(EMPLOYEE_group_PAY_GR0UP,
+            //                 cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS);
         }
     }
 
 
-    _EMPLOYEE_group_program_TO_money_benefit.q_sort();
+    //_EMPLOYEE_group_program_TO_money_benefit.q_sort();
 
     //QDEBUG_STRING_OUTPUT_2("lineEdit_fournisseur_details_nom_entreprise->text()",
     //                        lineEdit_fournisseur_details_nom_entreprise->text());
 
 
-    _sommeTotal = GET_BEST_CURRENT_pay_group_MONEY_BENEFITS();
+    //_sommeTotal = GET_BEST_CURRENT_pay_group_MONEY_BENEFITS();
 
 
     //QDEBUG_STRING_OUTPUT_2_N("_sommeTotal *", _sommeTotal);

@@ -5673,12 +5673,12 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>Supplier: </translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="942"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="948"/>
         <source>Employé</source>
         <translation>EMPLOYEE</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="962"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="968"/>
         <source>FOURNISSEUR</source>
         <translation>supplier</translation>
     </message>
