@@ -106,19 +106,19 @@ private slots:
 
     inline void ajouter_appartenance(const QString &un_groupe_DEMPLOYES_hr)
     {
-        YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION(this,
-                                                              &un_groupe_DEMPLOYES_hr,
-                                                              &YerothGROUPES_DUN_EMPLOYE_Window::
-                                                              executer_ajouter_appartenance);
+        YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
+                        (this,
+                         &un_groupe_DEMPLOYES_hr,
+                         &YerothGROUPES_DUN_EMPLOYE_Window::executer_ajouter_appartenance);
     }
 
     void executer_ajouter_appartenance(const QString *un_groupe_DEMPLOYES_hr);
 
     inline void retirer_CET_EMPLOYE_du_groupe_selectionne()
     {
-        YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK(this,
-                                                                            &YerothGROUPES_DUN_EMPLOYE_Window::
-                                                                            EXECUTER_retirer_cet_employe_du_groupe_selectionne);
+        YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK
+                        (this,
+                         &YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_selectionne);
     }
 
     bool EXECUTER_retirer_cet_employe_du_groupe_selectionne();

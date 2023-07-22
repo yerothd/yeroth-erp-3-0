@@ -21,7 +21,6 @@ YerothFournisseurDetailsWindow::YerothFournisseurDetailsWindow()
 :YerothWindowsCommons(),
  _logger(new YerothLogger("YerothFournisseurDetailsWindow")),
  _SHOW_EMPLOYEE(false),
- _sommeTotal_HORS_TAXES(0.0),
  _sommeTotal(0.0)
 {
     _windowName = QString("%1 - %2")
@@ -861,6 +860,8 @@ void YerothFournisseurDetailsWindow::rendreInvisible()
 
     label_image_produit->clear();
     label_image_produit->setAutoFillBackground(false);
+
+    _sommeTotal = 0.0;
 
     YerothWindowsCommons::rendreInvisible();
 }

@@ -132,8 +132,6 @@ private:
 
     bool _SHOW_EMPLOYEE;
 
-    double _sommeTotal_HORS_TAXES;
-
     double _sommeTotal;
 
     YerothSqlTableModel *_curFournisseurTableModel;

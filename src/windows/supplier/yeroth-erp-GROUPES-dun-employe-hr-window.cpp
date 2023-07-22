@@ -435,7 +435,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
     QString SELECT_GROUP_FROM_DB_TABLE
 		(QString("select %1, %2, %3, %4 from %5 where %6='%7'")
 			.arg(YerothDatabaseTableColumn::ID,
-                 YerothDatabaseTableColumn::REFERENCE_GROUPE_DEMPLOYES_hr,
+                 YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
                  YerothDatabaseTableColumn::MEMBRES_DU_GROUPE_db_ID,
                  YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES,
                  YerothDatabase::GROUPES_DEMPLOYES_hr,
@@ -460,9 +460,9 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
 
     AN_EMPLOYEE_GroupRecordInfo = aQSqlQuery.record();
 
-    int maximum_de_membres = GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
-                                                 YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES).
-                             toInt();
+    int maximum_de_membres =
+        GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
+                            YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES).toInt();
 
     QString membres_du_groupe_db_ID =
                     GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
@@ -475,11 +475,11 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
 
     if (membres_du_groupe_db_ID_LIST.size() >= maximum_de_membres)
     {
-        YerothQMessageBox::information(this, QObject::tr("ajouter"),
-                                       QObject::tr
-                                       ("LE GROUPE D'EMPLOYÉS '%1' a déjà atteint son nombre maximum de membres (%2) !").
-                                       arg(*un_groupe_DEMPLOYES_hr,
-                                           QString::number(maximum_de_membres)));
+        YerothQMessageBox::information(this,
+                                       QObject::tr("ajouter"),
+                                       QObject::tr("LE GROUPE D'EMPLOYÉS '%1' a déjà atteint son nombre maximum de membres (%2) !")
+                                         .arg(*un_groupe_DEMPLOYES_hr,
+                                              QString::number(maximum_de_membres)));
 
         return;
     }
@@ -582,11 +582,10 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
     }
 
     tableWidget_Groupes_Dun_Employe
-		->insert_group(GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
-                       YerothDatabaseTableColumn::ID),
+		->insert_group(GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo, YerothDatabaseTableColumn::ID),
 					   *un_groupe_DEMPLOYES_hr,
 					   GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
-                                           YerothDatabaseTableColumn::REFERENCE_GROUPE_DEMPLOYES_hr),
+                                           YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR),
                        QString::number(maximum_de_membres));
 
 
