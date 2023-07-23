@@ -15229,7 +15229,8 @@ Transférer</oldsource>
     <message>
         <location filename="ui/supplier/yeroth-erp-fournisseur-details-window.ui" line="927"/>
         <source>Fournisseurs</source>
-        <translation>Supplier_HR MENU</translation>
+        <translation>Supplier 
+HR MENU</translation>
     </message>
     <message>
         <location filename="ui/supplier/yeroth-erp-fournisseur-details-window.ui" line="1390"/>
