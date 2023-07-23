@@ -417,6 +417,8 @@ bool YerothChargesFinancieresDetailsWindow::imprimer_pdf_document()
     texDocument.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
     texDocument.replace("YEROTHTELEPHONE", infoEntreprise.getTelephone());
     texDocument.replace("YEROTHDATE", fileDate);
+    texDocument.replace("YEROTHFOURNISSEUR",
+                        lineEdit_nom_entreprise_fournisseur->text_LATEX());
     texDocument.replace("YEROTHDESIGNATIONBONDECOMMANDE",
                         lineEdit_designation->text_LATEX());
     texDocument.replace("YEROTHNOMUTILISATEUR",
