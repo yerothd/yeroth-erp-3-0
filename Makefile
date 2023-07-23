@@ -33996,6 +33996,7 @@ obj/yeroth-erp-admin-detail-window.o: src/admin/detail/yeroth-erp-admin-detail-w
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
 		src/utils/yeroth-erp-info-entreprise.hpp \
+		src/process/yeroth-erp-process.hpp \
 		obj/yeroth-erp-3-0.gch/c++
 	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/yeroth-erp-admin-detail-window.o src/admin/detail/yeroth-erp-admin-detail-window.cpp
 

@@ -99,6 +99,14 @@ public slots:
     void retourListerAlerte();
 
 
+    virtual bool imprimer_pdf_document();
+
+
+protected slots:
+
+    void handleCurrentChanged(int index);
+
+
 private:
 
     void enableOtherTabs(enum AdminSujetAction curAction, bool enabled);

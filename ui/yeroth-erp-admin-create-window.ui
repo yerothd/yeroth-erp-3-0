@@ -6776,8 +6776,8 @@
         <property name="geometry">
          <rect>
           <x>5</x>
-          <y>26</y>
-          <width>143</width>
+          <y>50</y>
+          <width>168</width>
           <height>21</height>
          </rect>
         </property>
@@ -6791,9 +6791,9 @@
        <widget class="QLabel" name="label_departement_CMD_REPETITION_2">
         <property name="geometry">
          <rect>
-          <x>301</x>
-          <y>27</y>
-          <width>60</width>
+          <x>321</x>
+          <y>50</y>
+          <width>40</width>
           <height>21</height>
          </rect>
         </property>
@@ -6807,9 +6807,9 @@
        <widget class="YerothSpinBox" name="doubleSpinBox_creer_charge_financiere_CMD_REPETITION">
         <property name="geometry">
          <rect>
-          <x>151</x>
-          <y>27</y>
-          <width>145</width>
+          <x>178</x>
+          <y>51</y>
+          <width>138</width>
           <height>21</height>
          </rect>
         </property>
@@ -7299,6 +7299,38 @@ background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="minimum">
          <double>1.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_reactiver_departement_CMD_REPETITION">
+        <property name="geometry">
+         <rect>
+          <x>178</x>
+          <y>27</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_reactiver_departement_CMD_REPETITION">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>26</y>
+          <width>168</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>RÉ-ACTIVER des répétitions</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </widget>

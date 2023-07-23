@@ -2351,47 +2351,47 @@ Continue updating asset or stock ?</translation>
         <translation>administration ~ detail</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="335"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="378"/>
         <source>administration ~ détail ~ utilisateurs</source>
         <translation>administration ~ details ~ users</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="433"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="476"/>
         <source>administration ~ détail ~ localisations</source>
         <translation>administration ~ details ~ sites</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="519"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="562"/>
         <source>administration ~ détail ~ départements</source>
         <translation>administration ~ details ~ departments</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="568"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="611"/>
         <source>administration ~ détail ~ catégories</source>
         <translation>administration ~ details ~ categories</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="619"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="662"/>
         <source>administration ~ détail ~ lignes budgétaires</source>
         <translation>administration ~ details ~ BUDGET LINES</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="679"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="722"/>
         <source>administration ~ détail ~ comptes bancaires</source>
         <translation>administration ~ details ~ bank accounts</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="735"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="778"/>
         <source>administration ~ détail ~ remises</source>
         <translation>administration ~ details ~ discounts</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="808"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="851"/>
         <source>administration ~ détail ~ CHARGE FINANCIÈRE</source>
         <translation>administration ~ details ~ FINANCIAL EXPENSE</translation>
     </message>
     <message>
-        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="931"/>
+        <location filename="src/admin/detail/yeroth-erp-admin-detail-window.cpp" line="974"/>
         <source>administration ~ détail ~ alertes</source>
         <translation>administration ~ details ~ alerts</translation>
     </message>
@@ -6482,48 +6482,48 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>Reception date: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="344"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="353"/>
         <source>Département : </source>
         <oldsource>Département: </oldsource>
         <translation>Department : </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="348"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="357"/>
         <source>Référence: </source>
         <translation>Reference: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="352"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="361"/>
         <source>Désignation: </source>
         <translation>Designation: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="357"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="366"/>
         <source>FOURNISSEUR: </source>
         <translation>SUPPLIER: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="361"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="370"/>
         <source>LIGNE BUDGÉTAIRE: </source>
         <translation>BUDGET LINE: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="366"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="375"/>
         <source>Quantité: </source>
         <translation>Quantity: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="371"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="380"/>
         <source>PRIX D&apos;ACHAT: </source>
         <translation>PURCHASE PRICE: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="376"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="385"/>
         <source>PRIX UNITAIRE: </source>
         <translation>PURCHASE UNIT PRICE: </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="389"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-detail-window.cpp" line="398"/>
         <source>Description de la charge financière: </source>
         <oldsource>Description de la charge financière:</oldsource>
         <translation>Financial Expense Description: </translation>

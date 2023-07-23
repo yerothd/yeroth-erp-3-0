@@ -8,6 +8,9 @@
 #include "src/yeroth-erp-windows.hpp"
 
 
+#include "src/process/yeroth-erp-process.hpp"
+
+
 #include <QtCore/QDebug>
 
 #include <QtWidgets/QDesktopWidget>
@@ -115,6 +118,17 @@ YerothAdminDetailWindow::YerothAdminDetailWindow()
     connect(actionAppeler_aide, SIGNAL(triggered()), this, SLOT(help()));
     connect(actionFermeture, SIGNAL(triggered()), this, SLOT(fermeture()));
     connect(actionA_propos, SIGNAL(triggered()), this, SLOT(apropos()));
+
+    connect(tabWidget_detail,
+    		SIGNAL(currentChanged(int)),
+			this,
+            SLOT(handleCurrentChanged(int)));
+
+    connect(actionAfficherPDF,
+            SIGNAL(triggered()),
+            this,
+            SLOT(imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()));
+
     connect(actionRetournerMenuPrincipal, SIGNAL(triggered()), this,
             SLOT(retour_menu_principal()));
     connect(actionQui_suis_je, SIGNAL(triggered()), this,
@@ -203,6 +217,8 @@ void YerothAdminDetailWindow::definirPasDeRole()
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, false);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
 
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
+
     pushButton_detail_charges_financieres_CREER->disable(this);
 }
 
@@ -212,6 +228,8 @@ void YerothAdminDetailWindow::definirAdministrateur()
     _logger->log("definirAdministrateur");
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, true);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, false);
+
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
 
     pushButton_detail_charges_financieres_CREER->disable(this);
 }
@@ -223,6 +241,8 @@ void YerothAdminDetailWindow::definirManager()
 
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur, true);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal, true);
+
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, true);
 
     pushButton_detail_charges_financieres_CREER
 		->enable(this, SLOT(SLOT_CREER_A_PARTIR_DE_CECI()));
@@ -309,6 +329,204 @@ void YerothAdminDetailWindow::rendreInvisible()
     lineEdit_detail_alerte_designation_article->clear();
     clear_set_edit_comboBoxes();
     setVisible(false);
+}
+
+
+bool YerothAdminDetailWindow::imprimer_pdf_document()
+{
+    _logger->log("imprimer_pdf_document");
+
+
+    QString latexFileNamePrefix("yeroth-erp-ADMINISTRATION-BON-DE-COMMANDE");
+
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        latexFileNamePrefix.clear();
+        latexFileNamePrefix.append("yeroth-erp-ADMINISTRATION-ORDER-SHEET");
+    }
+
+
+    QString texDocument;
+
+    //TODO
+    YerothUtils::getLatex_FINANCIALexpense_Data(texDocument);
+
+    QString data;
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("NOM DE L'employé commandeur: ")));
+    data.append(QString("%1\\\\\n").arg
+                (_allWindows->getUser()->nom_completTex()));
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("DATE DE COMMANDE: ")));
+    data.append(QString("%1\\\\\n").arg
+                (dateEdit_date_de_commande->dateTime().toString("dd.MM.yyyy")));
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("DATE DE réception: ")));
+
+    if (dateEdit_date_de_reception >= dateEdit_date_de_commande)
+    {
+        data.append(QString("%1\\\\\n")
+                     .arg(dateEdit_date_de_reception->dateTime()
+                            .toString("dd.MM.yyyy")));
+    }
+    else
+    {
+        data.append(QString("\\\\\n"));
+    }
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("Département : ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_departement->text_LATEX()));
+
+    data.append(YerothUtils::get_latex_bold_text(QObject::tr("Référence: ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_reference_produit->text_LATEX()));
+
+    data.append(YerothUtils::get_latex_bold_text(QObject::tr("Désignation: ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_designation->text_LATEX()));
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("FOURNISSEUR: ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_nom_entreprise_fournisseur->text_LATEX()));
+
+    data.append(YerothUtils::get_latex_bold_text(QObject::tr("LIGNE BUDGÉTAIRE: ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_LIGNE_BUDGETAIRE->text_LATEX()));
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("Quantité: ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_quantite->text_LATEX()));
+
+    data.append(YerothUtils::get_latex_bold_text
+                (QObject::tr("PRIX D'ACHAT: ")));
+    data.append(QString("%1\\\\\n").arg
+                (lineEdit_prix_dachat->text_LATEX()));
+
+    data.
+    append(YerothUtils::get_latex_bold_text(QObject::tr("PRIX UNITAIRE: ")));
+    data.append(QString("%1\\\\\n").
+                arg(lineEdit_prix_unitaire->text_LATEX()));
+
+    data.append("\n\n\\vspace{0.3cm}\n\n");
+
+    texDocument.replace("YEROTHDETAILSBONDECOMMANDE", data);
+
+
+    data.clear();
+
+    data.append(QString("%1")
+                 .arg(YerothUtils::get_latex_bold_text
+                    (QObject::tr("Description de la charge financière: "))));
+
+    data.append(QString("%1\\\\").arg
+                (textEdit_une_CHARGE_FINANCIERE->toPlainTextForLatex()));
+
+    texDocument.replace("YEROTHDESCRIPTIONBONDECOMMANDE", data);
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(78);
+
+    YerothInfoEntreprise &infoEntreprise =
+                    YerothUtils::getAllWindows()->getInfoEntreprise();
+
+    QString
+    fileDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+             (infoEntreprise.getVille_LATEX()));
+
+    YerothUtils::getCurrentLocaleDate(fileDate);
+
+    texDocument.replace("YEROTHPAPERSPEC", "a4paper");
+
+    texDocument.replace("YEROTHENTREPRISE",
+                        infoEntreprise.getNomCommercial_LATEX());
+    texDocument.replace("YEROTHACTIVITESENTREPRISE",
+                        infoEntreprise.getSecteursActivitesTex());
+    texDocument.replace("YEROTHBOITEPOSTALE",
+                        infoEntreprise.getBoitePostal());
+    texDocument.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
+    texDocument.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
+    texDocument.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
+    texDocument.replace("YEROTHTELEPHONE", infoEntreprise.getTelephone());
+    texDocument.replace("YEROTHDATE", fileDate);
+    texDocument.replace("YEROTHFOURNISSEUR",
+                        lineEdit_nom_entreprise_fournisseur->text_LATEX());
+    texDocument.replace("YEROTHDESIGNATIONBONDECOMMANDE",
+                        lineEdit_designation->text_LATEX());
+    texDocument.replace("YEROTHNOMUTILISATEUR",
+                        _allWindows->getUser()->nom_completTex());
+    texDocument.replace("YEROTHSUCCURSALE",
+                        YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
+    texDocument.replace("YEROTHHEUREDIMPRESSION", CURRENT_TIME);
+    texDocument.replace("YEROTHCOMPTEBANCAIRENR",
+                        infoEntreprise.getNumeroCompteBancaire());
+    texDocument.replace("YEROTHCONTRIBUABLENR",
+                        infoEntreprise.getNumeroDeContribuable());
+    texDocument.replace("YEROTHAGENCECOMPTEBANCAIRE",
+                        infoEntreprise.getAgenceCompteBancaireTex());
+
+
+    QString yerothPrefixFileName;
+
+    yerothPrefixFileName
+        .append(YerothUtils::getUniquePrefixFileInTemporaryFilesDir(latexFileNamePrefix));
+
+    //qDebug() << "++\n" << texDocument;
+
+    QFile tmpLatexFile(QString("%1tex").arg(yerothPrefixFileName));
+
+    YerothUtils::writeStringToQFilewithUTF8Encoding(tmpLatexFile, texDocument);
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(92);
+
+    QString
+    pdfSupplierDataFileName(YerothERPProcess::compileLatex
+                            (yerothPrefixFileName));
+
+    if (pdfSupplierDataFileName.isEmpty())
+    {
+        return false;
+    }
+
+    YerothERPProcess::startPdfViewerProcess(pdfSupplierDataFileName);
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(98);
+
+    return true;
+}
+
+
+void YerothAdminDetailWindow::handleCurrentChanged(int index)
+{
+	_allWindows->_adminWindow->_curAdminSujetAction =
+			(enum AdminSujetAction) tabWidget_detail->currentIndex();
+
+    switch (tabWidget_detail->currentIndex())
+    {
+    case SUJET_ACTION_CHARGE_FINANCIERE:
+
+    	disconnect(actionAfficherPDF, 0, 0, 0);
+
+        connect(actionAfficherPDF,
+                SIGNAL(triggered()),
+                this,
+                SLOT(imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()));
+
+        break;
+
+    default:
+        YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
+        disconnect(actionAfficherPDF, 0, 0, 0);
+
+        break;
+    }
 }
 
 
@@ -809,6 +1027,7 @@ void YerothAdminDetailWindow::rendreVisible_CHARGE_FINANCIERE(int sqlTableRow)
 
     setWindowTitle(_windowName);
 
+    YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, true);
 
     tabWidget_detail->setCurrentIndex(SUJET_ACTION_CHARGE_FINANCIERE);
 
