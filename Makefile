@@ -24618,6 +24618,7 @@ obj/yeroth-erp-charges-financieres-detail-window.o: src/windows/yeroth-erp-charg
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
 		src/utils/yeroth-erp-info-entreprise.hpp \
+		src/process/yeroth-erp-process.hpp \
 		obj/yeroth-erp-3-0.gch/c++
 	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/yeroth-erp-charges-financieres-detail-window.o src/windows/yeroth-erp-charges-financieres-detail-window.cpp
 

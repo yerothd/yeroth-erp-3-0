@@ -74,6 +74,8 @@ public:
 
 public slots:
 
+    virtual bool imprimer_pdf_document();
+
     inline virtual void apropos()
     {
         YerothWindowsCommons::apropos(this);

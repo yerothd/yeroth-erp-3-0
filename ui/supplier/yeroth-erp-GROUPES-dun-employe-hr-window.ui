@@ -1908,7 +1908,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Nombre de membres</string>
+       <string>Nombre de membres MAXIMAL</string>
       </property>
      </column>
     </widget>

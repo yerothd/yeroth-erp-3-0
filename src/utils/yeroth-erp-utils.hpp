@@ -608,6 +608,8 @@ public:
 
     static void getLatexCLIENT_LOYALTY_CARD_template(QString &texDocumentString_in_out);
 
+    static void getLatex_FINANCIALexpense_Data(QString &texDocumentString_in_out);
+
     static void getLatexSupplierData(QString &texDocumentString_in_out);
 
     static void getLatexCustomerData(QString &texDocumentString_in_out);

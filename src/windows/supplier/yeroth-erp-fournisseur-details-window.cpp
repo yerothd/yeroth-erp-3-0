@@ -314,6 +314,10 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
     {
     	if (_SHOW_EMPLOYEE)
     	{
+            data.append(YerothUtils::get_latex_bold_text("Employee FUNCTION: "));
+            data.append(QString("%1\\\\\n")
+                         .arg(lineEdit_EMPLOYE_position_fonction->text_LATEX()));
+
             data.append(YerothUtils::get_latex_bold_text("Employee reference: "));
     	}
     	else
@@ -325,6 +329,10 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
     {
     	if (_SHOW_EMPLOYEE)
     	{
+            data.append(YerothUtils::get_latex_bold_text("POSTE de l'employé: "));
+            data.append(QString("%1\\\\\n")
+                         .arg(lineEdit_EMPLOYE_position_fonction->text_LATEX()));
+
     	    data.append(YerothUtils::get_latex_bold_text("Référence employé: "));
     	}
     	else

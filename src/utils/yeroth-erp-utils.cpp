@@ -4741,6 +4741,25 @@ void YerothUtils::getLatexCLIENT_LOYALTY_CARD_template(QString &texDocumentStrin
 }
 
 
+void YerothUtils::getLatex_FINANCIALexpense_Data(QString &texDocumentString_in_out)
+{
+	texDocumentString_in_out.clear();
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+    	texDocumentString_in_out.append(
+    			QString("%1\n\\end{document}")
+    				.arg(YerothUtils::EN_template_bon_de_commande_TEX));
+    }
+    else
+    {
+    	texDocumentString_in_out.append(
+    			QString("%1\n\\end{document}")
+    				.arg(YerothUtils::FR_template_bon_de_commande_TEX));
+    }
+}
+
+
 void YerothUtils::getLatexSupplierData(QString &texDocumentString_in_out)
 {
 	texDocumentString_in_out.clear();
