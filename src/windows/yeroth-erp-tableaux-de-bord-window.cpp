@@ -3504,17 +3504,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-quartiers-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-client-location-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-client-location-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-quartiers-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3526,20 +3523,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-regions-etats-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-regions-states-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-regions-states-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-regions-etats-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3550,15 +3543,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
             statsBENEFICESMoindreRegionsEtats(csvFile, size);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append
-        (" avec les B\\'EN\\'EFICES les moins \\'elev\\'es");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(" giving the least sold by FINANCIAL BENEFITS");
-#endif
-
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(" giving the least sold by FINANCIAL BENEFITS");
+        }
+        else
+        {
+            pdfFileTitle.append(" avec les B\\'EN\\'EFICES les moins \\'elev\\'es");
+        }
     }
 
     if (_csvFileItemSize <= 0)
@@ -3579,77 +3571,77 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
     QString latexChartTemplate;
     QString latexChartFileNamePrefix;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-            comboBox_qualite->currentText())
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
     {
-        latexChartTemplate.append(YerothUtils::FR_ZERO_ventes_tex);
+        if (YerothTableauxDeBordWindow::QUALITE_ZERO == comboBox_qualite->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_ZERO_ventes_tex);
 
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "_ZERO");
+            latexChartFileNamePrefix.append(QString("%1/%2_ZERO")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART == comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_bar_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
+                                       GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-bar-chart")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART == comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_pie_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
+                                       GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-pie-chart")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
     }
-    else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
-             comboBox_type_graphes->currentText())
+    else
     {
-        latexChartTemplate.append(YerothUtils::FR_bar_chart_tex);
+        if (YerothTableauxDeBordWindow::QUALITE_ZERO == comboBox_qualite->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_ZERO_ventes_tex);
 
-        latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
-                                   GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
-                                   (size));
+            latexChartFileNamePrefix.append(QString("%1/%2_ZERO")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART == comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_bar_chart_tex);
 
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-bar-chart");
+            latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
+                                       GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-bar-chart")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART == comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_pie_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
+                                       GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-pie-chart")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
     }
-    else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::FR_pie_chart_tex);
 
-        latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
-                                   GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-pie-chart");
-    }
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-            comboBox_qualite->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_ZERO_ventes_tex);
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "_ZERO");
-    }
-    else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_bar_chart_tex);
-
-        latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
-                                   GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-bar-chart");
-    }
-    else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_pie_chart_tex);
-
-        latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
-                                   GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-pie-chart");
-    }
-#endif
 
     QString pdfFile(latexChartFileNamePrefix + ".pdf");
+
     tempDir.remove(pdfFile);
 
     //qDebug() << "++ csvFile: " << csvFile;
