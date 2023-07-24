@@ -706,18 +706,18 @@ private:
     static const QString QUALITE_ZERO;
     static const QString QUALITE_DERNIERS;
 
-    static const QString OBJET_SERVICES;
-    static const QString OBJET_ARTICLES;
-    static const QString OBJET_CATEGORIES;
-    static const QString OBJET_CAISSIERS;
-    static const QString OBJET_CLIENTS;
-    static const QString OBJET_FOURNISSEURS;
-    static const QString OBJET_QUARTIER;
-    static const QString OBJET_REGIONS_ETATS;
-    static const QString OBJET_VILLES;
+    static QString OBJET_SERVICES;
+    static QString OBJET_ARTICLES;
+    static QString OBJET_CATEGORIES;
+    static QString OBJET_CAISSIERS;
+    static QString OBJET_CLIENTS;
+    static QString OBJET_FOURNISSEURS;
+    static QString OBJET_QUARTIER;
+    static QString OBJET_REGIONS_ETATS;
+    static QString OBJET_VILLES;
 
-    static const QString GRAPHE_BAR_CHART;
-    static const QString GRAPHE_PIE_CHART;
+    static QString GRAPHE_BAR_CHART;
+    static QString GRAPHE_PIE_CHART;
 
     static const double STATS_MIN_VALUE;
 

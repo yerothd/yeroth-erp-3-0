@@ -79,19 +79,8 @@ const
 QString
 YerothTableauxDeBordWindow::QUALITE_DERNIERS
 ("avec les chiffres d'affaires les moins élevés");
-const
-QString YerothTableauxDeBordWindow::OBJET_ARTICLES("articles");
-const QString YerothTableauxDeBordWindow::OBJET_CATEGORIES("catégories");
-const QString YerothTableauxDeBordWindow::OBJET_CAISSIERS("caissiers");
-const QString YerothTableauxDeBordWindow::OBJET_CLIENTS("clients");
-const QString YerothTableauxDeBordWindow::OBJET_FOURNISSEURS("fournisseurs");
-const QString YerothTableauxDeBordWindow::OBJET_VILLES("villes");
-const QString YerothTableauxDeBordWindow::OBJET_QUARTIER("quartier");
-const QString YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS("régions, états");
-const QString YerothTableauxDeBordWindow::OBJET_SERVICES("services");
-const QString YerothTableauxDeBordWindow::GRAPHE_BAR_CHART("diagramme à bandes");
-const QString YerothTableauxDeBordWindow::GRAPHE_PIE_CHART("diagramme circulaire");
 #endif
+
 
 #ifdef YEROTH_ENGLISH_LANGUAGE
 const QString YerothTableauxDeBordWindow::OPERATION_GENERER("generate the");
@@ -114,18 +103,20 @@ YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES
 const
 QString YerothTableauxDeBordWindow::QUALITE_ZERO("zero business turnover");
 const QString YerothTableauxDeBordWindow::QUALITE_DERNIERS("least business turnover");
-const QString YerothTableauxDeBordWindow::OBJET_ARTICLES("products");
-const QString YerothTableauxDeBordWindow::OBJET_CATEGORIES("categories");
-const QString YerothTableauxDeBordWindow::OBJET_CAISSIERS("cashiers");
-const QString YerothTableauxDeBordWindow::OBJET_CLIENTS("customers");
-const QString YerothTableauxDeBordWindow::OBJET_FOURNISSEURS("suppliers");
-const QString YerothTableauxDeBordWindow::OBJET_VILLES("cities");
-const QString YerothTableauxDeBordWindow::OBJET_QUARTIER("client location");
-const QString YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS("regions, states");
-const QString YerothTableauxDeBordWindow::OBJET_SERVICES("services");
-const QString YerothTableauxDeBordWindow::GRAPHE_BAR_CHART("bar chart");
-const QString YerothTableauxDeBordWindow::GRAPHE_PIE_CHART("pie chart");
 #endif
+
+QString YerothTableauxDeBordWindow::OBJET_ARTICLES("products");
+QString YerothTableauxDeBordWindow::OBJET_CATEGORIES("categories");
+QString YerothTableauxDeBordWindow::OBJET_CAISSIERS("cashiers");
+QString YerothTableauxDeBordWindow::OBJET_CLIENTS("customers");
+QString YerothTableauxDeBordWindow::OBJET_FOURNISSEURS("suppliers");
+QString YerothTableauxDeBordWindow::OBJET_VILLES("cities");
+QString YerothTableauxDeBordWindow::OBJET_QUARTIER("client location");
+QString YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS("regions, states");
+QString YerothTableauxDeBordWindow::OBJET_SERVICES("services");
+QString YerothTableauxDeBordWindow::GRAPHE_BAR_CHART("bar chart");
+QString YerothTableauxDeBordWindow::GRAPHE_PIE_CHART("pie chart");
+
 
 #ifdef YEROTH_FRANCAIS_LANGUAGE
 const QString
@@ -149,9 +140,7 @@ YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE
 #endif
 
 
-const
-QString
-YerothTableauxDeBordWindow::YEROTH_DTL_SET_BAR_PIE_COLOR_ARRAY[12] =
+const QString YerothTableauxDeBordWindow::YEROTH_DTL_SET_BAR_PIE_COLOR_ARRAY[12] =
 {
     "forestgreen",
     "firebrickred",
@@ -327,8 +316,8 @@ YerothTableauxDeBordWindow::YerothTableauxDeBordWindow()
                  (const QString &)));
 
 
-    changeLineEditEvolutionObjetsTextSetup
-    (YerothTableauxDeBordWindow::OBJET_ARTICLES);
+    changeLineEditEvolutionObjetsTextSetup(YerothTableauxDeBordWindow::OBJET_ARTICLES);
+
 
     connect(comboBox_evolution_objets,
             SIGNAL(currentTextChanged(const QString &)),
@@ -786,17 +775,18 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
 
 void YerothTableauxDeBordWindow::setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES()
 {
-    comboBox_operations->
-    addItem(YerothTableauxDeBordWindow::OPERATION_GENERER);
+    comboBox_operations->clear();
+    comboBox_qualite->clear();
+    comboBox_objets->clear();
+    comboBox_type_graphes->clear();
 
-    comboBox_qualite->
-    addItem(YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES);
-    comboBox_qualite->
-    addItem(YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES);
-    comboBox_qualite->
-    addItem(YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE);
-    comboBox_qualite->
-    addItem(YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE);
+
+    comboBox_operations->addItem(YerothTableauxDeBordWindow::OPERATION_GENERER);
+
+    comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES);
+    comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES);
+    comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE);
+    comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE);
     comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_MEILLEURS);
     comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_DERNIERS);
     comboBox_qualite->addItem(YerothTableauxDeBordWindow::QUALITE_ZERO);
@@ -811,10 +801,8 @@ void YerothTableauxDeBordWindow::setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES()
     comboBox_objets->addItem(YerothTableauxDeBordWindow::OBJET_SERVICES);
     comboBox_objets->addItem(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-    comboBox_type_graphes->
-    addItem(YerothTableauxDeBordWindow::GRAPHE_BAR_CHART);
-    comboBox_type_graphes->
-    addItem(YerothTableauxDeBordWindow::GRAPHE_PIE_CHART);
+    comboBox_type_graphes->addItem(YerothTableauxDeBordWindow::GRAPHE_BAR_CHART);
+    comboBox_type_graphes->addItem(YerothTableauxDeBordWindow::GRAPHE_PIE_CHART);
 
 
     check_fields_BUSINESS_TURNOVER_COMPARISON();
@@ -839,7 +827,18 @@ void YerothTableauxDeBordWindow::rendreInvisible()
 
 void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
-    retranslateUi(this);
+    OBJET_ARTICLES = QObject::tr("articles");
+    OBJET_CATEGORIES = QObject::tr("catégories");
+    OBJET_CAISSIERS = QObject::tr("caissiers");
+    OBJET_CLIENTS = QObject::tr("clients");
+    OBJET_FOURNISSEURS = QObject::tr("fournisseurs");
+    OBJET_VILLES = QObject::tr("villes");
+    OBJET_QUARTIER = QObject::tr("quartier");
+    OBJET_REGIONS_ETATS = QObject::tr("régions, états");
+    OBJET_SERVICES = QObject::tr("services");
+    GRAPHE_BAR_CHART = QObject::tr("diagramme à bandes");
+    GRAPHE_PIE_CHART = QObject::tr("diagramme circulaire");
+
 
     if (YerothMainWindow::LANGUE_ANGLAISE)
     {
@@ -872,6 +871,14 @@ void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableM
         MOIS_11 = MONTH_YEROTH_ERP_3_0_NOVEMBER_FR;
         MOIS_12 = MONTH_YEROTH_ERP_3_0_DECEMBER_FR;
     }
+
+
+
+    retranslateUi(this);
+
+
+    setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES();
+
 
     _curStocksTableModel = stocksTableModel;
 
