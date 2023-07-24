@@ -168,57 +168,37 @@ YerothTableauxDeBordWindow::YEROTH_DTL_SET_BAR_PIE_COLOR_ARRAY[12] =
 };
 
 
-const unsigned int
-YerothTableauxDeBordWindow::QUANTITE_9 = 9;
+const unsigned int YerothTableauxDeBordWindow::QUANTITE_9 = 9;
 
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
+QString YerothTableauxDeBordWindow::MOIS_1("");
+QString YerothTableauxDeBordWindow::MOIS_2("");
+QString YerothTableauxDeBordWindow::MOIS_3("");
+QString YerothTableauxDeBordWindow::MOIS_4("");
+QString YerothTableauxDeBordWindow::MOIS_5("");
+QString YerothTableauxDeBordWindow::MOIS_6("");
+QString YerothTableauxDeBordWindow::MOIS_7("");
+QString YerothTableauxDeBordWindow::MOIS_8("");
+QString YerothTableauxDeBordWindow::MOIS_9("");
+QString YerothTableauxDeBordWindow::MOIS_10("");
+QString YerothTableauxDeBordWindow::MOIS_11("");
+QString YerothTableauxDeBordWindow::MOIS_12("");
 
-const
-QString YerothTableauxDeBordWindow::MOIS_1(MONTH_YEROTH_ERP_3_0_JANUARY_FR);
-const QString YerothTableauxDeBordWindow::MOIS_2(MONTH_YEROTH_ERP_3_0_FEBRUARY_FR);
-const QString YerothTableauxDeBordWindow::MOIS_3(MONTH_YEROTH_ERP_3_0_MARCH_FR);
-const QString YerothTableauxDeBordWindow::MOIS_4(MONTH_YEROTH_ERP_3_0_APRIL_FR);
-const QString YerothTableauxDeBordWindow::MOIS_5(MONTH_YEROTH_ERP_3_0_MAY_FR);
-const QString YerothTableauxDeBordWindow::MOIS_6(MONTH_YEROTH_ERP_3_0_JUNE_FR);
-const QString YerothTableauxDeBordWindow::MOIS_7(MONTH_YEROTH_ERP_3_0_JULY_FR);
-const QString YerothTableauxDeBordWindow::MOIS_8(MONTH_YEROTH_ERP_3_0_AUGUST_FR);
-const QString YerothTableauxDeBordWindow::MOIS_9(MONTH_YEROTH_ERP_3_0_SEPTEMBER_FR);
-const QString YerothTableauxDeBordWindow::MOIS_10(MONTH_YEROTH_ERP_3_0_OCTOBER_FR);
-const QString YerothTableauxDeBordWindow::MOIS_11(MONTH_YEROTH_ERP_3_0_NOVEMBER_FR);
-const QString YerothTableauxDeBordWindow::MOIS_12(MONTH_YEROTH_ERP_3_0_DECEMBER_FR);
-
-#elif YEROTH_ENGLISH_LANGUAGE
-
-const
-QString YerothTableauxDeBordWindow::MOIS_1(MONTH_YEROTH_ERP_3_0_JANUARY_EN);
-const QString YerothTableauxDeBordWindow::MOIS_2(MONTH_YEROTH_ERP_3_0_FEBRUARY_EN);
-const QString YerothTableauxDeBordWindow::MOIS_3(MONTH_YEROTH_ERP_3_0_MARCH_EN);
-const QString YerothTableauxDeBordWindow::MOIS_4(MONTH_YEROTH_ERP_3_0_APRIL_EN);
-const QString YerothTableauxDeBordWindow::MOIS_5(MONTH_YEROTH_ERP_3_0_MAY_EN);
-const QString YerothTableauxDeBordWindow::MOIS_6(MONTH_YEROTH_ERP_3_0_JUNE_EN);
-const QString YerothTableauxDeBordWindow::MOIS_7(MONTH_YEROTH_ERP_3_0_JULY_EN);
-const QString YerothTableauxDeBordWindow::MOIS_8(MONTH_YEROTH_ERP_3_0_AUGUST_EN);
-const QString YerothTableauxDeBordWindow::MOIS_9(MONTH_YEROTH_ERP_3_0_SEPTEMBER_EN);
-const QString YerothTableauxDeBordWindow::MOIS_10(MONTH_YEROTH_ERP_3_0_OCTOBER_EN);
-const QString YerothTableauxDeBordWindow::MOIS_11(MONTH_YEROTH_ERP_3_0_NOVEMBER_EN);
-const QString YerothTableauxDeBordWindow::MOIS_12(MONTH_YEROTH_ERP_3_0_DECEMBER_EN);
-
-#endif
 
 const unsigned int YerothTableauxDeBordWindow::MAX_YEARS_REPORTS(10);
 
 const double YerothTableauxDeBordWindow::STATS_MIN_VALUE(0.0009);
 
 
-YerothTableauxDeBordWindow::YerothTableauxDeBordWindow():YerothWindowsCommons(),
-    _logger(new YerothLogger("YerothRapportsWindow")),
-    _objetServiceLastIndex(-1),
-    _objetClientLastIndex(-1),
-    _csvFileItemSize(0),
-    _startYear(0),
-    _GENERATE_THREE_D_BARD_DIAGRAM(false),
-    _curStocksVenduTableModel(&_allWindows->getSqlTableModel_stocks_vendu())
+YerothTableauxDeBordWindow::YerothTableauxDeBordWindow()
+:YerothWindowsCommons(),
+ _logger(new YerothLogger("YerothRapportsWindow")),
+ _objetServiceLastIndex(-1),
+ _objetClientLastIndex(-1),
+ _csvFileItemSize(0),
+ _startYear(0),
+ _GENERATE_THREE_D_BARD_DIAGRAM(false),
+ _curStocksVenduTableModel(&_allWindows->getSqlTableModel_stocks_vendu())
 {
     _windowName = QString("%1 - %2")
                 			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
@@ -857,10 +837,41 @@ void YerothTableauxDeBordWindow::rendreInvisible()
 }
 
 
-void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *
-                                               stocksTableModel)
+void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
     retranslateUi(this);
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        MOIS_1 = MONTH_YEROTH_ERP_3_0_JANUARY_EN;
+        MOIS_2 = MONTH_YEROTH_ERP_3_0_FEBRUARY_EN;
+        MOIS_3 = MONTH_YEROTH_ERP_3_0_MARCH_EN;
+        MOIS_4 = MONTH_YEROTH_ERP_3_0_APRIL_EN;
+        MOIS_5 = MONTH_YEROTH_ERP_3_0_MAY_EN;
+        MOIS_6 = MONTH_YEROTH_ERP_3_0_JUNE_EN;
+        MOIS_7 = MONTH_YEROTH_ERP_3_0_JULY_EN;
+        MOIS_8 = MONTH_YEROTH_ERP_3_0_AUGUST_EN;
+        MOIS_9 = MONTH_YEROTH_ERP_3_0_SEPTEMBER_EN;
+        MOIS_10 = MONTH_YEROTH_ERP_3_0_OCTOBER_EN;
+        MOIS_11 = MONTH_YEROTH_ERP_3_0_NOVEMBER_EN;
+        MOIS_12 = MONTH_YEROTH_ERP_3_0_DECEMBER_EN;
+
+    }
+    else
+    {
+        MOIS_1 = MONTH_YEROTH_ERP_3_0_JANUARY_FR;
+        MOIS_2 = MONTH_YEROTH_ERP_3_0_FEBRUARY_FR;
+        MOIS_3 = MONTH_YEROTH_ERP_3_0_MARCH_FR;
+        MOIS_4 = MONTH_YEROTH_ERP_3_0_APRIL_FR;
+        MOIS_5 = MONTH_YEROTH_ERP_3_0_MAY_FR;
+        MOIS_6 = MONTH_YEROTH_ERP_3_0_JUNE_FR;
+        MOIS_7 = MONTH_YEROTH_ERP_3_0_JULY_FR;
+        MOIS_8 = MONTH_YEROTH_ERP_3_0_AUGUST_FR;
+        MOIS_9 = MONTH_YEROTH_ERP_3_0_SEPTEMBER_FR;
+        MOIS_10 = MONTH_YEROTH_ERP_3_0_OCTOBER_FR;
+        MOIS_11 = MONTH_YEROTH_ERP_3_0_NOVEMBER_FR;
+        MOIS_12 = MONTH_YEROTH_ERP_3_0_DECEMBER_FR;
+    }
 
     _curStocksTableModel = stocksTableModel;
 
@@ -876,8 +887,7 @@ void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *
 
         for (unsigned int k = 0; k < MAX_YEARS_REPORTS; ++k)
         {
-            comboBox_annee_chiffre_affaire->
-            addItem(QString::number(_startYear + k));
+            comboBox_annee_chiffre_affaire->addItem(QString::number(_startYear + k));
         }
     }
 
@@ -1417,47 +1427,51 @@ void YerothTableauxDeBordWindow::rechercher()
     QString csvFile;
     QString pdfFileTitle;
 
-    if (YerothTableauxDeBordWindow::QUALITE_MEILLEURS ==
-            comboBox_qualite->currentText()
-            || YerothTableauxDeBordWindow::QUALITE_DERNIERS ==
-            comboBox_qualite->currentText())
+    if (YerothTableauxDeBordWindow::QUALITE_MEILLEURS == comboBox_qualite->currentText() ||
+        YerothTableauxDeBordWindow::QUALITE_DERNIERS == comboBox_qualite->currentText())
     {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append(QString("Les %1 ").
-                            arg(lineEdit_quantite->text()));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(QString("The %1 ")
+                                 .arg(lineEdit_quantite->text()));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(QString("The %1 ").
-                            arg(lineEdit_quantite->text()));
-#endif
+        }
+        else
+        {
+            pdfFileTitle.append(QString("Les %1 ")
+                                 .arg(lineEdit_quantite->text()));
+        }
     }
     else
     {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append("Les ");
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append("The ");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append("The ");
-#endif
+        }
+        else
+        {
+            pdfFileTitle.append("Les ");
+        }
+
     }
 
-    if (YerothTableauxDeBordWindow::QUALITE_MEILLEURS ==
-            comboBox_qualite->currentText())
+    if (YerothTableauxDeBordWindow::QUALITE_MEILLEURS == comboBox_qualite->currentText())
     {
         if (YerothTableauxDeBordWindow::OBJET_SERVICES == objet)
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_SERVICES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleurs-services");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-services");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-services");
-#endif
+            }
+            else
+            {
+                tmpFilePrefix =
+                    FILE_NAME_USERID_CURRENT_TIME("meilleurs-services");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1471,13 +1485,15 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleures-VILLES");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-cities");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-cities");
-#endif
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleures-VILLES");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1491,15 +1507,15 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleurs-quartier");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-client-location");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-client-location");
-#endif
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-quartier");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1511,18 +1527,16 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleurs-regions-etats");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-regions-cities");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-regions-cities");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-regions-etats");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1536,14 +1550,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_ARTICLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleurs-articles");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-articles");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-articles");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-articles");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1555,26 +1569,22 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_CATEGORIES == objet)
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
-                                 "meilleures");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
+                                     "best");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
-                                 "best");
-#endif
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-categories");
+            }
+            else
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
+                                     "meilleures");
+
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleures-categories");
+            }
 
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleures-categories");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-categories");
-#endif
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1588,14 +1598,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleurs-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-cashiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-caissiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1609,13 +1619,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-clients");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-customers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-clients");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1627,18 +1638,16 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("meilleurs-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-supplier-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-supplier-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("meilleurs-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1649,19 +1658,17 @@ void YerothTableauxDeBordWindow::rechercher()
             statsMeilleursFournisseursVentes(csvFile, size);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append
-        (" avec les chiffres d'affaires les plus \\'elev\\'es");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(" giving the best financial income");
-#endif
-
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(" giving the best financial income");
+        }
+        else
+        {
+            pdfFileTitle.append(" avec les chiffres d'affaires les plus \\'elev\\'es");
+        }
     }
 
-    else if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-             comboBox_qualite->currentText())
+    else if (YerothTableauxDeBordWindow::QUALITE_ZERO == comboBox_qualite->currentText())
     {
         if (YerothTableauxDeBordWindow::OBJET_ARTICLES == objet)
         {
@@ -1695,13 +1702,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-cashiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-caissiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1715,15 +1723,15 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-chiffre-daffaire-clients");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-turnover-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-chiffre-daffaire-clients");
+            }
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-turnover-customers");
-#endif
             csvFile = tmpFilePrefix + ".csv";
 
             csvFile.prepend(YerothERPConfig::temporaryFilesDir + "/");
@@ -1734,18 +1742,16 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-suppliers-sales");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-suppliers-sales");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1759,14 +1765,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-quartier");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-client-location");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-client-location");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-quartier");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1778,18 +1784,16 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-regions-etats");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("zero-regions-states");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-regions-states");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-regions-etats");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1803,13 +1807,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-villes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-cities");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-cities");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("zero-villes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1820,33 +1825,34 @@ void YerothTableauxDeBordWindow::rechercher()
             statsZERO_VILLES(csvFile);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append(QString
-                            (" (quantité: %1) avec les chiffres d'affaires nuls (0)").
-                            arg(GET_NUM_STRING(_csvFileItemSize)));
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(QString
-                            (" (quantity: %1) with NO (zero) financial income").
-                            arg(GET_NUM_STRING(_csvFileItemSize)));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append
+                (QString(" (quantity: %1) with NO (zero) financial income")
+                    .arg(GET_NUM_STRING(_csvFileItemSize)));
+        }
+        else
+        {
+            pdfFileTitle.append
+                (QString(" (quantité: %1) avec les chiffres d'affaires nuls (0)")
+                    .arg(GET_NUM_STRING(_csvFileItemSize)));
+        }
     }
 
-    else if (YerothTableauxDeBordWindow::QUALITE_DERNIERS ==
-             comboBox_qualite->currentText())
+    else if (YerothTableauxDeBordWindow::QUALITE_DERNIERS == comboBox_qualite->currentText())
     {
         if (YerothTableauxDeBordWindow::OBJET_SERVICES == objet)
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_SERVICES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-services");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-services");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-services");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-services");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1860,13 +1866,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_ARTICLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-articles");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-articles");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-articles");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-articles");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1878,26 +1885,27 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_CATEGORIES == objet)
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_DERNIERS,
-                                 "derni\\`eres");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_DERNIERS,
-                                 "last");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_DERNIERS,
+                                     "last");
+            }
+            else
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_DERNIERS,
+                                     "derni\\`eres");
+            }
 
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("dernieres-categories");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-categories");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-categories");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("dernieres-categories");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1911,14 +1919,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("derniers-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-cashiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-caissiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1932,13 +1940,15 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-clients");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-clients");
+            }
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-customers");
-#endif
             csvFile = tmpFilePrefix + ".csv";
 
             csvFile.prepend(YerothERPConfig::temporaryFilesDir + "/");
@@ -1949,18 +1959,16 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("derniers-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("last-suppliers-sales");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-suppliers-sales");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1974,14 +1982,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-quartier");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("last-client-location");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-client-location");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-quartier");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -1993,18 +2001,16 @@ void YerothTableauxDeBordWindow::rechercher()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("derniers-regions-etats");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("last-regions-states");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-regions-states");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-regions-etats");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -2018,13 +2024,14 @@ void YerothTableauxDeBordWindow::rechercher()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-villes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-cities");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("last-cities");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("derniers-villes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -2035,26 +2042,23 @@ void YerothTableauxDeBordWindow::rechercher()
             statsDerniers_VILLES(csvFile, size);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append
-        (" avec les chiffres d'affaires les moins \\'elev\\'es");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(" giving the least financial income");
-#endif
-
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(" giving the least financial income");
+        }
+        else
+        {
+            pdfFileTitle.append(" avec les chiffres d'affaires les moins \\'elev\\'es");
+        }
     }
 
     if (_csvFileItemSize <= 0)
     {
-        QString retMsg(QObject::tr
-                       ("Il n'y a pas de données correspondante à la requête !\n"
-                        "Vérifier que les dates de début et de fin sont correctes !"));
+        QString retMsg(QObject::tr("Il n'y a pas de données correspondante à la requête !\n"
+                                   "Vérifier que les dates de début et de fin sont correctes !"));
 
         YerothQMessageBox::information(this,
-                                       QObject::tr
-                                       ("rankings - pas de données !"),
+                                       QObject::tr("rankings - pas de données !"),
                                        retMsg);
         _csvFileItemSize = 0;
 
@@ -2064,83 +2068,84 @@ void YerothTableauxDeBordWindow::rechercher()
     QString latexChartTemplate;
     QString latexChartFileNamePrefix;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-            comboBox_qualite->currentText())
+    if (YerothMainWindow::LANGUE_ANGLAISE)
     {
-        latexChartTemplate.append(YerothUtils::FR_ZERO_ventes_tex);
+        if (YerothTableauxDeBordWindow::QUALITE_ZERO == comboBox_qualite->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_ZERO_ventes_tex);
 
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "_ZERO");
+            latexChartFileNamePrefix.append(QString("%1/%2_ZERO")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART == comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_bar_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
+                                       GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-bar-chart")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
+                 comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_pie_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
+                                       GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-pie-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
     }
-    else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
-             comboBox_type_graphes->currentText())
+    else
     {
-        latexChartTemplate.append(YerothUtils::FR_bar_chart_tex);
+        if (YerothTableauxDeBordWindow::QUALITE_ZERO == comboBox_qualite->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_ZERO_ventes_tex);
 
-        latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
-                                   GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
-                                   (size));
+            latexChartFileNamePrefix.append(QString("%1/%2_ZERO")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
+                 comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_bar_chart_tex);
 
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-bar-chart");
+            latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
+                                       GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-bar-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
+                 comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_pie_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
+                                       GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-pie-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
     }
-    else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::FR_pie_chart_tex);
 
-        latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
-                                   GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-pie-chart");
-    }
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-            comboBox_qualite->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_ZERO_ventes_tex);
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "_ZERO");
-    }
-    else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_bar_chart_tex);
-
-        latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
-                                   GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-bar-chart");
-    }
-    else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_pie_chart_tex);
-
-        latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
-                                   GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-pie-chart");
-    }
-#endif
 
     QString pdfFile(latexChartFileNamePrefix + ".pdf");
+
     tempDir.remove(pdfFile);
 
     //qDebug() << "++ csvFile: " << csvFile;
 
-    if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-            comboBox_type_graphes->currentText())
+    if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART == comboBox_type_graphes->currentText())
     {
         QString YEROTHCUTAWAY;
 
@@ -2157,9 +2162,7 @@ void YerothTableauxDeBordWindow::rechercher()
 
     YerothInfoEntreprise &infoEntreprise = _allWindows->getInfoEntreprise();
 
-    QString
-    statsDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-              (infoEntreprise.getVille_LATEX()));
+    QString statsDate = YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX());
 
     YerothUtils::getCurrentLocaleDate(statsDate);
 
@@ -2171,49 +2174,59 @@ void YerothTableauxDeBordWindow::rechercher()
     latexChartTemplate.replace("YEROTHCHARTFIN", _reportTexFileEndString);
 
     latexChartTemplate.replace("YEROTHUTILISATEUR",
-                               QString("%1 %2").
-                               arg(YerothUtils::getAllWindows()->getUser()->
-                                   titreTex(),
-                                   YerothUtils::getAllWindows()->getUser()->
-                                   nom_completTex()));
+                               QString("%1 %2")
+                                .arg(YerothUtils::getAllWindows()->getUser()->titreTex(),
+                                   YerothUtils::getAllWindows()->getUser()->nom_completTex()));
 
     latexChartTemplate.replace("YEROTHENTREPRISE",
                                infoEntreprise.getNomCommercial_LATEX());
+
     latexChartTemplate.replace("YEROTHBARCHARTTITLE",
-                               YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                               (pdfFileTitle));
+                               YerothUtils::LATEX_IN_OUT_handleForeignAccents(pdfFileTitle));
+
     latexChartTemplate.replace("YEROTHENTREPRISE",
                                infoEntreprise.getNomCommercial_LATEX());
+
     latexChartTemplate.replace("YEROTHACTIVITESENTREPRISE",
                                infoEntreprise.getSecteursActivitesTex());
+
     latexChartTemplate.replace("YEROTHBOITEPOSTALE",
                                infoEntreprise.getBoitePostal());
+
     latexChartTemplate.replace("YEROTHVILLE",
                                infoEntreprise.getVille_LATEX());
+
     latexChartTemplate.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
+
     latexChartTemplate.replace("YEROTHEMAIL",
                                infoEntreprise.getEmail_LATEX());
+
     latexChartTemplate.replace("YEROTHTELEPHONE",
                                infoEntreprise.getTelephone());
+
     latexChartTemplate.replace("YEROTHDATE", statsDate);
+
     latexChartTemplate.replace("YEROTHVENTESDEBUT",
-                               DATE_TO_STRING(dateEdit_rapports_debut->date
-                                              ()));
+                               DATE_TO_STRING(dateEdit_rapports_debut->date()));
+
     latexChartTemplate.replace("YEROTHVENTESFIN",
-                               DATE_TO_STRING(dateEdit_rapports_fin->date
-                                              ()));
+                               DATE_TO_STRING(dateEdit_rapports_fin->date()));
 
     latexChartTemplate.replace("YEROTHSUCCURSALE",
                                YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                               (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
+                                    (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
 
     latexChartTemplate.replace("YEROTHHEUREGENERATION", CURRENT_TIME);
+
     latexChartTemplate.replace("YEROTHCOMPTEBANCAIRENR",
                                infoEntreprise.getNumeroCompteBancaire());
+
     latexChartTemplate.replace("YEROTHCONTRIBUABLENR",
                                infoEntreprise.getNumeroDeContribuable());
+
     latexChartTemplate.replace("YEROTHAGENCECOMPTEBANCAIRE",
                                infoEntreprise.getAgenceCompteBancaireTex());
+
 
     QFile latexChartFile(latexChartFileNamePrefix + ".tex");
 
@@ -2237,15 +2250,18 @@ void YerothTableauxDeBordWindow::rechercher()
 
         aProcess.setWorkingDirectory(YerothERPConfig::temporaryFilesDir);
 
-        aProcess.start(YerothERPConfig::pathToPdfLatex(), progArguments);
+        aProcess.start(YerothERPConfig::pathToPdfLatex(),
+                       progArguments);
 
         aProcess.waitForFinished(-1);
 
         progArguments.clear();
+
         progArguments << pdfFile;
 
         aProcess.startDetached(YerothERPConfig::pathToPdfReader,
                                progArguments);
+
         aProcess.waitForFinished();
     }
 
@@ -2257,93 +2273,92 @@ bool YerothTableauxDeBordWindow::export_csv_file()
 {
     QString comboBoxQualiteCurrentText(comboBox_qualite->currentText());
 
-    if (!YerothUtils::isEqualCaseInsensitive
-            (YerothTableauxDeBordWindow::QUALITE_ZERO, comboBoxQualiteCurrentText))
+    if (!YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::QUALITE_ZERO,
+                                             comboBoxQualiteCurrentText))
     {
         return false;
     }
 
-    if (!YerothUtils::isEqualCaseInsensitive
-            (YerothTableauxDeBordWindow::OBJET_ARTICLES,
-             comboBox_objets->currentText()))
+    if (!YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::OBJET_ARTICLES,
+                                             comboBox_objets->currentText()))
     {
         return false;
     }
+
 
     QString csvFileName("articles-zero-chiffre-daffaire");
 
-    QString
-    yerothStocksListingCSVFileName(QString("%1/%2").arg
-                                   (YerothERPConfig::temporaryFilesDir,
-                                    csvFileName));
+    QString yerothStocksListingCSVFileName
+                (QString("%1/%2")
+                    .arg(YerothERPConfig::temporaryFilesDir,
+                         csvFileName));
+
 
     yerothStocksListingCSVFileName =
-                    FILE_NAME_USERID_CURRENT_TIME(yerothStocksListingCSVFileName);
+        FILE_NAME_USERID_CURRENT_TIME(yerothStocksListingCSVFileName);
+
 
     yerothStocksListingCSVFileName =
-                    QFileDialog::getSaveFileName(this,
-                                                 QObject::tr
-                                                 ("Saisir le nom du fichier '.csv'"),
-                                                 yerothStocksListingCSVFileName,
-                                                 QObject::tr
-                                                 ("articles avec chiffre d'affaire nul \"*.csv\" (*.csv)"));
+        QFileDialog::getSaveFileName(this,
+                                     QObject::tr("Saisir le nom du fichier '.csv'"),
+                                     yerothStocksListingCSVFileName,
+                                     QObject::tr("articles avec chiffre d'affaire nul \"*.csv\" (*.csv)"));
+
 
     statsZERO_Articles(yerothStocksListingCSVFileName.append(".csv"));
 
+
     _reportTexFileEndString.clear();
+
 
     return true;
 }
 
 
-void
-YerothTableauxDeBordWindow::
-
-remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER(const QString &
-                                                       comboBoxQualiteCurrentText)
+void YerothTableauxDeBordWindow::
+        remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER(const QString &comboBoxQualiteCurrentText)
 {
     //qDebug() << QString("remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER: %1")
     //                              .arg(comboBoxQualiteCurrentText);
-    if (YerothUtils::isEqualCaseInsensitive
-            (YerothTableauxDeBordWindow::QUALITE_ZERO, comboBoxQualiteCurrentText))
+    if (YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::QUALITE_ZERO,
+                                            comboBoxQualiteCurrentText))
     {
-        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv,
-                                               true);
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, true);
 
         _objetServiceLastIndex =
-                        comboBox_objets->findText(YerothTableauxDeBordWindow::
-                                                  OBJET_SERVICES);
+            comboBox_objets->findText(YerothTableauxDeBordWindow::OBJET_SERVICES);
 
         if (-1 != _objetServiceLastIndex)
         {
             comboBox_objets->removeItem(_objetServiceLastIndex);
         }
 
+
         _objetClientLastIndex =
-                        comboBox_objets->findText(YerothTableauxDeBordWindow::OBJET_CLIENTS);
+            comboBox_objets->findText(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
         if (-1 != _objetClientLastIndex)
         {
             comboBox_objets->removeItem(_objetClientLastIndex);
         }
 
+
         label_CHART->setVisible(false);
 
         label_comparaison_chiffres_daffaires_quantite->setVisible(false);
 
         lineEdit_quantite->setVisible(false);
+
         comboBox_type_graphes->setVisible(false);
     }
     else
     {
-        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv,
-                                               false);
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, false);
 
         if (-1 != _objetServiceLastIndex)
         {
             comboBox_objets->insertItem(_objetServiceLastIndex,
-                                        YerothTableauxDeBordWindow::
-                                        OBJET_SERVICES);
+                                        YerothTableauxDeBordWindow::OBJET_SERVICES);
 
             _objetServiceLastIndex = -1;
         }
@@ -2351,8 +2366,7 @@ remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER(const QString &
         if (-1 != _objetClientLastIndex)
         {
             comboBox_objets->insertItem(_objetClientLastIndex,
-                                        YerothTableauxDeBordWindow::
-                                        OBJET_CLIENTS);
+                                        YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
             _objetClientLastIndex = -1;
         }
@@ -2362,6 +2376,7 @@ remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER(const QString &
         label_comparaison_chiffres_daffaires_quantite->setVisible(true);
 
         lineEdit_quantite->setVisible(true);
+
         comboBox_type_graphes->setVisible(true);
     }
 }
@@ -2930,61 +2945,60 @@ void YerothTableauxDeBordWindow::bilanComptable()
     QString bilanComptableDateDebut;
     QString bilanComptableDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    bilanComptableDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_bilan_comptable_debut->date())));
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        bilanComptableDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_bilan_comptable_debut->date())));
 
-    bilanComptableDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_bilan_comptable_fin->date())));
-#endif
+        bilanComptableDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_bilan_comptable_fin->date())));
+    }
+    else
+    {
+        bilanComptableDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_bilan_comptable_debut->date())));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    bilanComptableDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_bilan_comptable_debut->date())));
+        bilanComptableDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_bilan_comptable_fin->date())));
+    }
 
-    bilanComptableDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_bilan_comptable_fin->date())));
-#endif
 
     texDocument.replace("YEROTHBILANCOMPTABLEDEBUT", bilanComptableDateDebut);
 
     texDocument.replace("YEROTHBILANCOMPTABLEFIN", bilanComptableDateFin);
 
     texDocument.replace("YEROTHBILANCOMPTABLEVENTESDEVISE",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (montant_total_vente));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(montant_total_vente));
 
     texDocument.replace("YEROTHBILANCOMPTABLEVERSEMENTSCLIENTSDEVISE",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (montant_total_versements));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(montant_total_versements));
 
     texDocument.replace("YEROTHBILANCOMPTABLETOTALENTREESDEVISE",
                         GET_CURRENCY_STRING_NUM_FOR_LATEX(total_entrees));
 
     texDocument.replace("YEROTHBILANCOMPTABLEDETTECLIENTELLEDEVISE",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (montant_total_dette_clientelle));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(montant_total_dette_clientelle));
 
     texDocument.replace("YEROTHBILANCOMPTABLEACHATSDEVISE",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (montant_total_achat));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(montant_total_achat));
 
     texDocument.replace("YEROTHBILANCOMPTABLETVAENGRANGE",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (montant_TOTAL_TVA_COLLECTE));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(montant_TOTAL_TVA_COLLECTE));
 
     texDocument.replace("YEROTHBILANCOMPTABLETOTALSORTIESDEVISE",
                         GET_CURRENCY_STRING_NUM_FOR_LATEX(total_sorties));
 
+
     QString balanceDeviseLatexStr(GET_CURRENCY_STRING_NUM_FOR_LATEX(balance));
+
 
     if (balance >= 0)
     {
@@ -3003,16 +3017,13 @@ void YerothTableauxDeBordWindow::bilanComptable()
                         balanceDeviseLatexStr);
 
     texDocument.replace("YEROTHBILANCOMPTABLEPROGRAMMEFIDELITECLIENTS",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (montant_total_versements__PAR_FIDELITE_CLIENTS));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(montant_total_versements__PAR_FIDELITE_CLIENTS));
 
     texDocument.replace("YEROTHBILANCOMPTABLECHARGESDEPENSESFINANCIERES",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (achats_depenses_financieres_effectues));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(achats_depenses_financieres_effectues));
 
     texDocument.replace("YEROTHBILANCOMPTABLEBENEFICEDEVISE",
-                        GET_CURRENCY_STRING_NUM_FOR_LATEX
-                        (benefice_sur_vente_effectuees));
+                        GET_CURRENCY_STRING_NUM_FOR_LATEX(benefice_sur_vente_effectuees));
 
     texDocument.replace("YEROTHBILANCOMPTABLECHIFFREDAFFAIREDEVISE",
                         GET_CURRENCY_STRING_NUM_FOR_LATEX(total_entrees));
@@ -3133,50 +3144,44 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
     QString csvFile;
     QString pdfFileTitle;
 
-    if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES ==
-            comboBox_qualite->currentText()
-            || YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES ==
-            comboBox_qualite->currentText())
+    if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES == comboBox_qualite->currentText() ||
+        YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES == comboBox_qualite->currentText())
     {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append(QString("Les %1 ").
-                            arg(lineEdit_quantite->text()));
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(QString("The %1 ").
-                            arg(lineEdit_quantite->text()));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(QString("The %1 ").arg(lineEdit_quantite->text()));
+        }
+        else
+        {
+            pdfFileTitle.append(QString("Les %1 ").arg(lineEdit_quantite->text()));
+        }
     }
     else
     {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append("Les ");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append("The ");
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append("The ");
+        }
+        else
+        {
+            pdfFileTitle.append("Les ");
+        }
     }
 
-    if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES ==
-            comboBox_qualite->currentText())
+    if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES == comboBox_qualite->currentText())
     {
         if (YerothTableauxDeBordWindow::OBJET_ARTICLES == objet)
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_ARTICLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-articles");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-articles");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-articles");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-articles");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3188,29 +3193,27 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
         else if (YerothTableauxDeBordWindow::OBJET_CATEGORIES == objet)
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
-                                 "meilleures");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
-                                 "best");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
+                                     "best");
+            }
+            else
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
+                                     "meilleures");
+            }
 
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-categories");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-categories");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-categories");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-categories");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3224,17 +3227,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-cashiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-caissiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3248,17 +3248,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-clients");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-customers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-clients");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3270,20 +3267,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-supplier-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-supplier-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3297,17 +3290,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-villes-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-cities-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-cities-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-villes-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3321,17 +3311,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-quartiers-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-client-location-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-client-location-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-quartiers-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3343,20 +3330,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-BENEFICES-regions-etats-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-FINANCIAL-BENEFITS-regions-states-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-FINANCIAL-BENEFITS-regions-states-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-BENEFICES-regions-etats-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3367,34 +3350,29 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
             statsBENEFICESMaxRegionsEtats(csvFile, size);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append
-        (" avec les b\\'en\\'efices les plus \\'elev\\'ees");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(" giving the best sold by FINANCIAL BENEFITS");
-#endif
-
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(" giving the best sold by FINANCIAL BENEFITS");
+        }
+        else
+        {
+            pdfFileTitle.append(" avec les b\\'en\\'efices les plus \\'elev\\'ees");
+        }
     }
-    else if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES ==
-             comboBox_qualite->currentText())
+    else if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES == comboBox_qualite->currentText())
     {
         if (YerothTableauxDeBordWindow::OBJET_ARTICLES == objet)
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_ARTICLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-articles");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-articles");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-articles");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-articles");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3406,31 +3384,29 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
         else if (YerothTableauxDeBordWindow::OBJET_CATEGORIES == objet)
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            pdfFileTitle.replace
-            (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
-             "les moins");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            pdfFileTitle.replace
-            (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
-             "least");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                pdfFileTitle
+                    .replace(YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
+                             "least");
+            }
+            else
+            {
+                pdfFileTitle
+                    .replace(YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
+                             "les moins");
+            }
 
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-categories");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-categories");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-categories");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-categories");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3444,17 +3420,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-cashiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-caissiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3468,17 +3441,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-clients");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-customers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-clients");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3490,20 +3460,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-supplier-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-supplier-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3517,17 +3483,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-BENEFICES-villes-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-FINANCIAL-BENEFITS-cities-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-FINANCIAL-BENEFITS-cities-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-BENEFICES-villes-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3824,25 +3787,27 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
             || YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE ==
             comboBox_qualite->currentText())
     {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append(QString("Les %1 ").
-                            arg(lineEdit_quantite->text()));
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(QString("The %1 ").
-                            arg(lineEdit_quantite->text()));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(QString("The %1 ").
+                                arg(lineEdit_quantite->text()));
+        }
+        else
+        {
+            pdfFileTitle.append(QString("Les %1 ").
+                                arg(lineEdit_quantite->text()));
+        }
     }
     else
     {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append("Les ");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append("The ");
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append("The ");
+        }
+        else
+        {
+            pdfFileTitle.append("Les ");
+        }
     }
 
     if (YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE ==
@@ -3851,17 +3816,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         if (YerothTableauxDeBordWindow::OBJET_SERVICES == objet)
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_SERVICES);
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-services");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-services");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-services");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-services");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3875,16 +3837,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_ARTICLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-articles");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-articles");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-articles");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-articles");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3896,29 +3856,22 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
         else if (YerothTableauxDeBordWindow::OBJET_CATEGORIES == objet)
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
-                                 "meilleures");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
+                                     "best");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
-                                 "best");
-#endif
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-categories");
+            }
+            else
+            {
+                pdfFileTitle.replace(YerothTableauxDeBordWindow::QUALITE_MEILLEURS,
+                                     "meilleures");
+
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-categories");
+            }
 
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-categories");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-quantity-categories");
-#endif
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3932,16 +3885,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-caissiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-cashiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3955,16 +3906,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-clients");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-customers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-clients");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -3976,20 +3925,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-quantity-supplier-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-supplier-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4003,17 +3948,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-villes-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-quantity-cities-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-villes-ventes");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-cities-sale");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4027,17 +3969,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-quartier-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-quantity-client-location-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-client-location-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-quartier-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4049,20 +3988,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-plus-vendus-par-quantite-regions-etats-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("best-sold-by-quantity-regions-states-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("best-sold-by-quantity-regions-states-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-plus-vendus-par-quantite-regions-etats-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4073,33 +4008,29 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
             statsQuantiteMaxRegionsEtats(csvFile, size);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append
-        (" avec les quantit\\'es vendues les plus \\'elev\\'ees");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(" giving the best sold by quantity");
-#endif
-
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(" giving the best sold by quantity");
+        }
+        else
+        {
+            pdfFileTitle.append(" avec les quantit\\'es vendues les plus \\'elev\\'ees");
+        }
     }
-    else if (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE ==
-             comboBox_qualite->currentText())
+    else if (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE == comboBox_qualite->currentText())
     {
         if (YerothTableauxDeBordWindow::OBJET_SERVICES == objet)
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_SERVICES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-services");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-services");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-services");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-services");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4113,16 +4044,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_ARTICLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-articles");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-articles");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-articles");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-articles");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4134,31 +4063,29 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
         else if (YerothTableauxDeBordWindow::OBJET_CATEGORIES == objet)
         {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            pdfFileTitle.replace
-            (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
-             "les moins");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            pdfFileTitle.replace
-            (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
-             "least");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                pdfFileTitle.replace
+                    (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
+                     "least");
+            }
+            else
+            {
+                pdfFileTitle.replace
+                    (YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE,
+                     "les moins");
+            }
 
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-categories");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-quantity-categories");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-categories");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-categories");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4172,16 +4099,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-caissiers");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-cashiers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-cashiers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-caissiers");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4195,17 +4120,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_CLIENTS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-clients");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-quantity-customers");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-customers");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-clients");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4219,17 +4141,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-villes-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-quantity-cities-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-cities-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-villes-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4243,17 +4162,14 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         {
             pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_QUARTIER);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-quartiers-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-quantity-client-location-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-client-location-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-quartiers-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4265,20 +4181,15 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
         else if (YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-regions-etats-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-quantity-regions-states-sale");
-#endif
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-regions-states-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-regions-etats-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4290,20 +4201,16 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
         else if (YerothTableauxDeBordWindow::OBJET_FOURNISSEURS == objet)
         {
-            pdfFileTitle.
-            append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+            pdfFileTitle.append(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("les-moins-vendus-par-quantite-fournisseurs-ventes");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-            tmpFilePrefix =
-                            FILE_NAME_USERID_CURRENT_TIME
-                            ("least-sold-by-quantity-supplier-sale");
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("least-sold-by-quantity-supplier-sale");
+            }
+            else
+            {
+                tmpFilePrefix = FILE_NAME_USERID_CURRENT_TIME("les-moins-vendus-par-quantite-fournisseurs-ventes");
+            }
 
             csvFile = tmpFilePrefix + ".csv";
 
@@ -4314,26 +4221,23 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
             statsQuantiteMoindreFournisseursVentes(csvFile, size);
         }
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        pdfFileTitle.append
-        (" avec les quantit\\'es vendues les moins \\'elev\\'ees");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        pdfFileTitle.append(" giving the least sold by quantity");
-#endif
-
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            pdfFileTitle.append(" giving the least sold by quantity");
+        }
+        else
+        {
+            pdfFileTitle.append(" avec les quantit\\'es vendues les moins \\'elev\\'ees");
+        }
     }
 
     if (_csvFileItemSize <= 0)
     {
-        QString retMsg(QObject::tr
-                       ("Il n'y a pas de données correspondante à la requête !\n"
-                        "Vérifier que les dates de début et de fin sont correctes !"));
+        QString retMsg(QObject::tr("Il n'y a pas de données correspondante à la requête !\n"
+                                   "Vérifier que les dates de début et de fin sont correctes !"));
 
         YerothQMessageBox::information(this,
-                                       QObject::tr
-                                       ("rankings - pas de données !"),
+                                       QObject::tr("rankings - pas de données !"),
                                        retMsg);
         _csvFileItemSize = 0;
 
@@ -4343,83 +4247,85 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
     QString latexChartTemplate;
     QString latexChartFileNamePrefix;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-            comboBox_qualite->currentText())
+    if (YerothMainWindow::LANGUE_ANGLAISE)
     {
-        latexChartTemplate.append(YerothUtils::FR_ZERO_ventes_tex);
+        if (YerothTableauxDeBordWindow::QUALITE_ZERO == comboBox_qualite->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_ZERO_ventes_tex);
 
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "_ZERO");
+            latexChartFileNamePrefix.append(QString("%1/%2_ZERO")
+                                             .arg(YerothERPConfig::temporaryFilesDir,
+                                                  tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART == comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_bar_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
+                                       GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-bar-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
+                 comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::EN_pie_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
+                                       GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-pie-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
     }
-    else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
-             comboBox_type_graphes->currentText())
+    else
     {
-        latexChartTemplate.append(YerothUtils::FR_bar_chart_tex);
+        if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
+                comboBox_qualite->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_ZERO_ventes_tex);
 
-        latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
-                                   GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
-                                   (size));
+            latexChartFileNamePrefix.append(QString("%1/%2_ZERO")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
+                 comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_bar_chart_tex);
 
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-bar-chart");
+            latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
+                                       GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-bar-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
+        else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
+                 comboBox_type_graphes->currentText())
+        {
+            latexChartTemplate.append(YerothUtils::FR_pie_chart_tex);
+
+            latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
+                                       GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(size));
+
+            latexChartFileNamePrefix.append(QString("%1/%2-pie-chart")
+                                            .arg(YerothERPConfig::temporaryFilesDir,
+                                                 tmpFilePrefix));
+        }
     }
-    else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::FR_pie_chart_tex);
 
-        latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
-                                   GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-pie-chart");
-    }
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    if (YerothTableauxDeBordWindow::QUALITE_ZERO ==
-            comboBox_qualite->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_ZERO_ventes_tex);
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "_ZERO");
-    }
-    else if (YerothTableauxDeBordWindow::GRAPHE_BAR_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_bar_chart_tex);
-
-        latexChartTemplate.replace("YEROTHDTLSETBARCOLOR",
-                                   GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-bar-chart");
-    }
-    else if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-             comboBox_type_graphes->currentText())
-    {
-        latexChartTemplate.append(YerothUtils::EN_pie_chart_tex);
-
-        latexChartTemplate.replace("YEROTHDTLSETPIESEGMENTCOLOR",
-                                   GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX
-                                   (size));
-
-        latexChartFileNamePrefix.append(YerothERPConfig::temporaryFilesDir +
-                                        "/" + tmpFilePrefix + "-pie-chart");
-    }
-#endif
 
     QString pdfFile(latexChartFileNamePrefix + ".pdf");
+
     tempDir.remove(pdfFile);
 
     //qDebug() << "++ csvFile: " << csvFile;
 
-    if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART ==
-            comboBox_type_graphes->currentText())
+    if (YerothTableauxDeBordWindow::GRAPHE_PIE_CHART == comboBox_type_graphes->currentText())
     {
         QString YEROTHCUTAWAY;
 
@@ -4846,17 +4752,22 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_jour_semaine()
 
     _reportTexFileEndString.clear();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("Details in %1:").arg(YerothERPConfig::currency)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QString("Details in %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+    else
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QString("D\\'etails en %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+
 
     _reportTexFileEndString.prepend("\\textbf{").append("}\n");
     _reportTexFileEndString.append("\\begin{enumerate}[1.]\n");
@@ -4873,25 +4784,33 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_jour_semaine()
 
         somme_totale_ventes_jour_semaine += it.value();
 
-        _reportTexFileEndString.append("\\item ")
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                 (it.key())))
-#endif
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                 (it.key())))
-#endif
-        .append(QString(": $%1$\n").arg
-                (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                 (GET_CURRENCY_STRING_NUM(it.value()))));
+
+        _reportTexFileEndString.append("\\item ");
+
+
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            _reportTexFileEndString
+                .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.key())));
+        }
+        else
+        {
+            _reportTexFileEndString
+                .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.key())));
+        }
+
+        _reportTexFileEndString
+            .append(QString(": $%1$\n")
+                     .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (GET_CURRENCY_STRING_NUM(it.value()))));
     }
 
 //          QDEBUG_STRING_OUTPUT_2_N("somme_totale_jour_semaine", somme_totale_jour_semaine);
 
     _reportTexFileEndString.append("\\end{enumerate}\n");
+
 
     QString barItems;
 
@@ -4934,20 +4853,27 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_jour_semaine()
     texDocument.replace("YEROTHBARITEMS", barItems);
     texDocument.replace("YEROTHTICKS", QString::number(TICKS));
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio du chiffre d'affaire jour--semaine.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
-                        "Niveau du chiffre d'affaire");
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio of days of week income.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio of days of week income.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
+    }
+    else
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio du chiffre d'affaire jour--semaine.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Niveau du chiffre d'affaire");
+    }
+
 
     QString fileName1(YerothERPConfig::temporaryFilesDir + "/1a.tex");
 
@@ -4957,56 +4883,60 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_jour_semaine()
     {
         tmpFile1.write(texDocument.toUtf8());
     }
+
     tmpFile1.close();
+
 
     YerothInfoEntreprise &infoEntreprise = _allWindows->getInfoEntreprise();
 
+
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_bar_diag_tex);
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_bar_diag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_bar_diag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_bar_diag_tex);
+    }
 
 
-    QString
-    factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (infoEntreprise.getVille_LATEX()));
+    QString factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (infoEntreprise.getVille_LATEX()));
+
     YerothUtils::getCurrentLocaleDate(factureDate);
 
     QString longDateDebut;
+
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
+    else
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
 
     //qDebug() << "++ type fact. rapports - chiffe affaire: " << YerothConfig::typeOfFacturation;
 
@@ -5014,13 +4944,11 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_jour_semaine()
     texDocument2.replace("YEROTHPAPERSPEC", "a4paper");
 
     if (YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                            YerothTableauxDeBordWindow::OBJET_CAISSIERS)
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                YerothTableauxDeBordWindow::OBJET_CATEGORIES)
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                YerothTableauxDeBordWindow::OBJET_CLIENTS))
+                                            YerothTableauxDeBordWindow::OBJET_CAISSIERS)    ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
+                                            YerothTableauxDeBordWindow::OBJET_CATEGORIES)   ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
+                                            YerothTableauxDeBordWindow::OBJET_CLIENTS))
     {
         if (textFromLineEditEvolutionSujets.isEmpty())
         {
@@ -5069,38 +4997,42 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_jour_semaine()
     texDocument2.replace("YEROTHAGENCECOMPTEBANCAIRE",
                          infoEntreprise.getAgenceCompteBancaireTex());
 
+
     texDocument2.replace("1a.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme r\\'epr\\'esentatif des chiffres"
-                                 " d'affaire par jour de la semaine du %1 au %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString
-                         ("Chart illustrating days of week income from %1 to %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Chart illustrating days of week income from %1 to %2.")
+                                .arg(longDateDebut, longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme r\\'epr\\'esentatif des chiffres"
+                                     " d'affaire par jour de la semaine du %1 au %2.")
+                                .arg(longDateDebut, longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
     YerothUtils::LATEX_IN_OUT_handleForeignAccents(texDocument2);
 
-    QString
-    fileName(FILE_NAME_USERID_CURRENT_TIME
-             ("evolution-chiffre-affaire-jour-semaine"));
+    QString fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire-jour-semaine"));
+
     fileName.append(".");
 
     QString tmpFilePrefix(YerothERPConfig::temporaryFilesDir + "/" + fileName);
 
     QFile tmpFile(tmpFilePrefix + "tex");
+
     if (tmpFile.open(QFile::WriteOnly))
     {
         tmpFile.write(texDocument2.toUtf8());
     }
+
     tmpFile.close();
 
     //qDebug() << "++ tmpFile: " << tmpFile.fileName();
@@ -5434,20 +5366,25 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
 
     _reportTexFileEndString.clear();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("Details in %1:").arg(YerothERPConfig::currency)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                (QString("Details in %1:").arg(YerothERPConfig::currency)));
+    }
+    else
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
+    }
+
 
     _reportTexFileEndString.prepend("\\textbf{").append("}\n");
+
     _reportTexFileEndString.append("\\begin{enumerate}[1.]\n");
+
 
     //Fill in the PDF file which amount of money for which month.
 
@@ -5458,24 +5395,33 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
 
     for (int k = moisDebut; k <= moisFin; ++k)
     {
-        _reportTexFileEndString.append("\\item ")
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (YerothUtils::frenchLocale.monthName(k)))
-#endif
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (YerothUtils::englishLocale.monthName(k)))
-#endif
-        .append(": $").append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                              (GET_CURRENCY_STRING_NUM
-                               (monthToVentesTotalAmount[k]))).append
-        ("$\n");
+        _reportTexFileEndString.append("\\item ");
+
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            _reportTexFileEndString
+                .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::englishLocale.monthName(k)));
+        }
+        else
+        {
+            _reportTexFileEndString
+                .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::frenchLocale.monthName(k)));
+        }
+
+
+        _reportTexFileEndString
+            .append(": $")
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])))
+            .append("$\n");
     }
 
     _reportTexFileEndString.append("\\end{enumerate}\n");
 
     //qDebug() << "++ END";
+
 
     QString barItems;
 
@@ -5484,7 +5430,9 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
     double sommeTotalMois = 0.0;
 
     const int TICKS = 100;
+
     const double MAX_RATIO = 900.0;
+
 
     for (int k = moisDebut; k <= moisFin; ++k)
     {
@@ -5523,20 +5471,27 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
     texDocument.replace("YEROTHBARITEMS", barItems);
     texDocument.replace("YEROTHTICKS", QString::number(TICKS));
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio du chiffre d'affaire du mois.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
-                        "Niveau du chiffre d'affaire");
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio of the monthly income.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
-#endif
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio of the monthly income.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Income Level");
+    }
+    else
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE", "");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio du chiffre d'affaire du mois.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Niveau du chiffre d'affaire");
+    }
+
 
     QString fileName1(YerothERPConfig::temporaryFilesDir + "/1a.tex");
 
@@ -5546,48 +5501,55 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
     {
         tmpFile1.write(texDocument.toUtf8());
     }
+
     tmpFile1.close();
+
 
     YerothInfoEntreprise &infoEntreprise = _allWindows->getInfoEntreprise();
 
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_bar_diag_tex);
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_bar_diag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_bar_diag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_bar_diag_tex);
+    }
 
 
     QString
     factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
                 (infoEntreprise.getVille_LATEX()));
+
     YerothUtils::getCurrentLocaleDate(factureDate);
 
     QString longDateDebut;
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString(qDateDebut)));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString(qDateFin)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString(qDateDebut)));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString(qDateDebut)));
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString(qDateFin)));
+    }
+    else
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString(qDateDebut)));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString(qDateFin)));
-#endif
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString(qDateFin)));
+    }
+
 
     //qDebug() << "++ type fact. rapports - chiffe affaire: " << YerothConfig::typeOfFacturation;
 
@@ -5652,19 +5614,21 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
 
     texDocument2.replace("1a.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme r\\'epr\\'esentatif des chiffres"
-                                 " d'affaire du %1 au %2.").arg
-                         (longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString
-                         ("Chart illustrating the income from %1 to %2.").arg
-                         (longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Chart illustrating the income from %1 to %2.")
+                                .arg(longDateDebut, longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme r\\'epr\\'esentatif des chiffres"
+                                     " d'affaire du %1 au %2.")
+                                .arg(longDateDebut, longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
@@ -5672,15 +5636,21 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
 
     QString
     fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire"));
+
     fileName.append(".");
+
 
     QString tmpFilePrefix(YerothERPConfig::temporaryFilesDir + "/" + fileName);
 
+
     QFile tmpFile(tmpFilePrefix + "tex");
+
+
     if (tmpFile.open(QFile::WriteOnly))
     {
         tmpFile.write(texDocument2.toUtf8());
     }
+
     tmpFile.close();
 
     //qDebug() << "++ tmpFile: " << tmpFile.fileName();

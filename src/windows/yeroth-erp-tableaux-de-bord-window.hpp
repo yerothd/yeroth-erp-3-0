@@ -685,18 +685,18 @@ private:
 
     static const unsigned int QUANTITE_9;
 
-    static const QString MOIS_1;
-    static const QString MOIS_2;
-    static const QString MOIS_3;
-    static const QString MOIS_4;
-    static const QString MOIS_5;
-    static const QString MOIS_6;
-    static const QString MOIS_7;
-    static const QString MOIS_8;
-    static const QString MOIS_9;
-    static const QString MOIS_10;
-    static const QString MOIS_11;
-    static const QString MOIS_12;
+    static QString MOIS_1;
+    static QString MOIS_2;
+    static QString MOIS_3;
+    static QString MOIS_4;
+    static QString MOIS_5;
+    static QString MOIS_6;
+    static QString MOIS_7;
+    static QString MOIS_8;
+    static QString MOIS_9;
+    static QString MOIS_10;
+    static QString MOIS_11;
+    static QString MOIS_12;
 
     static const QString QUALITE_PLUS_VENDU_PAR_QUANTITE;
     static const QString QUALITE_MOINS_VENDU_PAR_QUANTITE;
