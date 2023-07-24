@@ -53,7 +53,8 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
 
 
     _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT
-        << pushButton_modifier << pushButton_supprimer;
+        << pushButton_modifier
+        << pushButton_supprimer;
 
 
     _list_actions_to_enable_on_positive_tableview_ROW_COUNT
@@ -73,6 +74,12 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
                             "QMessageBox QLabel {color: rgb(%2);}").arg
                     (COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
                      COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+
+
+    _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME
+        << YerothDatabaseTableColumn::EMPLOYE
+        << YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE
+        << YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE_ID;
 
     setup_select_configure_dbcolumn(YerothDatabase::FOURNISSEURS);
 
