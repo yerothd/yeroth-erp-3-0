@@ -338,16 +338,12 @@ bool YerothChargesFinancieresDetailsWindow::imprimer_pdf_document()
     data.append(YerothUtils::get_latex_bold_text
                 (QObject::tr("DATE DE réception: ")));
 
-    if (dateEdit_date_de_reception >= dateEdit_date_de_commande)
-    {
-        data.append(QString("%1\\\\\n")
-                     .arg(dateEdit_date_de_reception->dateTime()
-                            .toString("dd.MM.yyyy")));
-    }
-    else
-    {
-        data.append(QString("\\\\\n"));
-    }
+    //QDEBUG_STRING_OUTPUT_2_N("dateEdit_date_de_reception >= dateEdit_date_de_commande",
+    //                         dateEdit_date_de_reception >= dateEdit_date_de_commande);
+
+    data.append(QString("%1\\\\\n")
+                 .arg(dateEdit_date_de_commande->dateTime()
+                        .toString("dd.MM.yyyy")));
 
     data.append(YerothUtils::get_latex_bold_text
                 (QObject::tr("Département : ")));
