@@ -38,24 +38,16 @@
 #include <QtSql/QSqlError>
 
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-	const QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES("ANALYSE COMPARÉ VENTES BÉNÉFICES");
-	const QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES("ANALYSE COMPARÉ ACHATS VENTES");
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-	const QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES("COMPARED ANALYSIS SALES PROFITS");
-	const QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES("COMPARED ANALYSIS PURCHASES SALES");
-#endif
+QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES("ANALYSE COMPARÉ VENTES BÉNÉFICES");
+QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES("ANALYSE COMPARÉ ACHATS VENTES");
 
 
 QString YerothTableauxDeBordWindow::OPERATION_GENERER("générer les");
 
+
 QString YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE("générer le bilan comptable");
 QString YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE("générer le chiffre d'affaire");
-
-//QString YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE("generate financial accounting report");
-//QString YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE("generate the business turnover");
 
 
 QString YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE("avec les quantités les plus vendues");
@@ -424,12 +416,6 @@ void YerothTableauxDeBordWindow::populateComboBoxes()
 
 
     _current_succursale_STRING = YerothERPConfig::THIS_SITE_LOCALISATION_NAME;
-
-
-    comboBox_ANALYSE_COMPAREE->
-    addItem(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES);
-    comboBox_ANALYSE_COMPAREE->
-    addItem(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES);
 }
 
 
@@ -589,11 +575,25 @@ YerothTableauxDeBordWindow::GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
 }
 
 
-void
-YerothTableauxDeBordWindow::
-setupDateTimeEdits_EVOLUTION_DES_CHIFFRES_DAFFAIRES()
+void YerothTableauxDeBordWindow::setupDateTimeEdits_EVOLUTION_DES_CHIFFRES_DAFFAIRES()
 {
     //QDEBUG_STRING_OUTPUT_2("comboBox_evolution_objets->currentText()", comboBox_evolution_objets->currentText());
+
+    int comboBox_ANALYSE_COMPAREE_IDX = comboBox_ANALYSE_COMPAREE->currentIndex();
+
+
+    comboBox_ANALYSE_COMPAREE->clear();
+
+
+    comboBox_ANALYSE_COMPAREE->addItem(ANALYSE_COMPAREE_ACHATS_VENTES);
+    comboBox_ANALYSE_COMPAREE->addItem(ANALYSE_COMPAREE_VENTES_BENEFICES);
+
+
+    if (-1 != comboBox_ANALYSE_COMPAREE_IDX)
+    {
+        comboBox_ANALYSE_COMPAREE->setCurrentIndex(comboBox_ANALYSE_COMPAREE_IDX);
+    }
+
 
     if (!YerothUtils::isEqualCaseInsensitive
             (YerothTableauxDeBordWindow::OBJET_ARTICLES,
@@ -787,10 +787,13 @@ void YerothTableauxDeBordWindow::rendreInvisible()
 
 void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
-    OPERATION_GENERER =                 QObject::tr("générer les");
+    OPERATION_GENERER =                     QObject::tr("générer les");
 
     OPERATION_GENERER_BILAN_COMPTABLE =     QObject::tr("générer le bilan comptable");
     OPERATION_GENERER_CHIFFRE_DAFFAIRE =    QObject::tr("générer le chiffre d'affaire");
+
+    ANALYSE_COMPAREE_VENTES_BENEFICES =     QObject::tr("ANALYSE COMPARÉ VENTES BÉNÉFICES");
+    ANALYSE_COMPAREE_ACHATS_VENTES=         QObject::tr("ANALYSE COMPARÉ ACHATS VENTES");
 
     QUALITE_PLUS_VENDU_PAR_QUANTITE =   QObject::tr("avec les quantités les plus vendues");
     QUALITE_MOINS_VENDU_PAR_QUANTITE =  QObject::tr("avec les quantités les moins vendues");

@@ -68,6 +68,7 @@ public:
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
+
 public slots:
 
     inline virtual void apropos()
@@ -583,11 +584,14 @@ public slots:
 
     void choisirEvolutionDuChiffreDaffaire();
 
+
 protected:
 
     virtual void setupShortcuts();
 
+
 private slots:
+
     bool check_fields_FINANCIAL_ACCOUNTING_REPORT();
 
     bool check_fields_BUSINESS_TURNOVER_COMPARISON();
@@ -622,6 +626,7 @@ private slots:
 
     void handleTabChanged(int index);
 
+
 private:
 
     void populateComboBoxes();
@@ -629,8 +634,9 @@ private:
     class StockQteVendueEtRemiseTotalSurVente
     {
     public:
-        inline StockQteVendueEtRemiseTotalSurVente():_qteVendue(0),
-            _remiseTotalSurVentes(0)
+        inline StockQteVendueEtRemiseTotalSurVente():
+               _qteVendue(0),
+               _remiseTotalSurVentes(0)
         {
         }
 
@@ -654,8 +660,7 @@ private:
 
     static QString GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING(uint position);
 
-    static QString GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(uint
-                                                                         size);
+    static QString GET_YEROTH_DTL_SET_PIE_SEGMENT_COLOR_STRING_for_LATEX(uint size);
 
 
     static QString GET_YEROTH_DTL_SET_BAR_COLOR_STRING(uint position);
@@ -671,8 +676,8 @@ private:
 
 
 
-    static const QString ANALYSE_COMPAREE_VENTES_BENEFICES;
-    static const QString ANALYSE_COMPAREE_ACHATS_VENTES;
+    static QString ANALYSE_COMPAREE_VENTES_BENEFICES;
+    static QString ANALYSE_COMPAREE_ACHATS_VENTES;
 
 
     static QString OPERATION_GENERER;
