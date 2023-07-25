@@ -49,61 +49,23 @@
 #endif
 
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-const
 QString YerothTableauxDeBordWindow::OPERATION_GENERER("générer les");
-const QString
-YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE
-("avec les quantités les plus vendues");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE
-("avec les quantités les moins vendues");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_MEILLEURS
-("avec les chiffres d'affaires les plus élevés");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES
-("avec les bénéfices les plus élevés");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES
-("avec les bénéfices les moins élevés");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_ZERO
-("avec les chiffres d'affaires zéro");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_DERNIERS
-("avec les chiffres d'affaires les moins élevés");
-#endif
+
+QString YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE("générer le bilan comptable");
+QString YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE("générer le chiffre d'affaire");
+
+//QString YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE("generate financial accounting report");
+//QString YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE("generate the business turnover");
 
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-const QString YerothTableauxDeBordWindow::OPERATION_GENERER("generate the");
-const QString
-YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE
-("highest sold quantity");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE
-("least sold quantity");
-const
-QString YerothTableauxDeBordWindow::QUALITE_MEILLEURS("best business turnover");
-const QString
-YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES
-("highest financial PROFIT");
-const
-QString
-YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES
-("least financial PROFIT");
-const
-QString YerothTableauxDeBordWindow::QUALITE_ZERO("zero business turnover");
-const QString YerothTableauxDeBordWindow::QUALITE_DERNIERS("least business turnover");
-#endif
+QString YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE("avec les quantités les plus vendues");
+QString YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE("avec les quantités les moins vendues");
+QString YerothTableauxDeBordWindow::QUALITE_MEILLEURS("avec les chiffres d'affaires les plus élevés");
+QString YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES("avec les bénéfices les plus élevés");
+QString YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES("avec les bénéfices les moins élevés");
+QString YerothTableauxDeBordWindow::QUALITE_ZERO("avec les chiffres d'affaires zéro");
+QString YerothTableauxDeBordWindow::QUALITE_DERNIERS("avec les chiffres d'affaires les moins élevés");
+
 
 QString YerothTableauxDeBordWindow::OBJET_ARTICLES("products");
 QString YerothTableauxDeBordWindow::OBJET_CATEGORIES("categories");
@@ -116,28 +78,6 @@ QString YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS("regions, states");
 QString YerothTableauxDeBordWindow::OBJET_SERVICES("services");
 QString YerothTableauxDeBordWindow::GRAPHE_BAR_CHART("bar chart");
 QString YerothTableauxDeBordWindow::GRAPHE_PIE_CHART("pie chart");
-
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-const QString
-YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE
-("générer le bilan comptable");
-const
-QString
-YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE
-("générer le chiffre d'affaire");
-#endif
-
-#ifdef YEROTH_ENGLISH_LANGUAGE
-const
-QString
-YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE
-("generate financial accounting report");
-const
-QString
-YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE
-("generate the business turnover");
-#endif
 
 
 const QString YerothTableauxDeBordWindow::YEROTH_DTL_SET_BAR_PIE_COLOR_ARRAY[12] =
@@ -672,101 +612,94 @@ setupDateTimeEdits_EVOLUTION_DES_CHIFFRES_DAFFAIRES()
 }
 
 
-void
-YerothTableauxDeBordWindow::
-setupDateTimeEdits_COMPARAISON_DES_CHIFFRES_DAFFAIRES()
+void YerothTableauxDeBordWindow::setupDateTimeEdits_COMPARAISON_DES_CHIFFRES_DAFFAIRES()
 {
-    dateEdit_rapports_debut->setStartDate
-    (YerothERPConfig::GET_YEROTH_BUSINESS_DASHBOARD_DEFAULT_START_DATE());
+    dateEdit_rapports_debut
+        ->setStartDate(YerothERPConfig::GET_YEROTH_BUSINESS_DASHBOARD_DEFAULT_START_DATE());
+
     dateEdit_rapports_fin->setStartDate(GET_CURRENT_DATE);
 }
 
 
 void YerothTableauxDeBordWindow::setupDateTimeEdits_BILAN_COMPTABLE()
 {
-    dateEdit_bilan_comptable_debut->setStartDate
-    (YerothERPConfig::GET_YEROTH_BUSINESS_DASHBOARD_DEFAULT_START_DATE());
+    dateEdit_bilan_comptable_debut
+        ->setStartDate(YerothERPConfig::GET_YEROTH_BUSINESS_DASHBOARD_DEFAULT_START_DATE());
+
     dateEdit_bilan_comptable_fin->setStartDate(GET_CURRENT_DATE);
 }
 
 
 void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
 {
+    int comboBox_evolution_objets_IDX =             comboBox_evolution_objets->currentIndex();
+    int comboBox_mois_debut_chiffre_affaire_IDX =   comboBox_mois_debut_chiffre_affaire->currentIndex();
+    int comboBox_mois_fin_chiffre_affaire_IDX =     comboBox_mois_fin_chiffre_affaire->currentIndex();
+
+
+    comboBox_evolution_objets->clear();
+    comboBox_mois_debut_chiffre_affaire->clear();
+    comboBox_mois_fin_chiffre_affaire->clear();
+
+
     radioButton_jour_semaine->setChecked(true);
 
     handle_enabled_chiffre_daffaire_mois(false);
 
     handle_enabled_chiffre_daffaire_jour_semaine(true);
 
-    comboBox_operations_chiffre->
-    addItem(YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE);
+    comboBox_operations_chiffre->addItem(YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE);
 
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_ARTICLES);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_CLIENTS);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_QUARTIER);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
-    comboBox_evolution_objets->
-    addItem(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_1);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_2);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_3);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_4);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_5);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_6);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_7);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_8);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_9);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_10);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_11);
-    comboBox_mois_debut_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_12);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_ARTICLES);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_CAISSIERS);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_CATEGORIES);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_CLIENTS);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_FOURNISSEURS);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_QUARTIER);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_REGIONS_ETATS);
+    comboBox_evolution_objets->addItem(YerothTableauxDeBordWindow::OBJET_VILLES);
 
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_1);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_2);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_3);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_4);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_5);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_6);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_7);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_8);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_9);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_10);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_11);
-    comboBox_mois_fin_chiffre_affaire->
-    addItem(YerothTableauxDeBordWindow::MOIS_12);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_1);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_2);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_3);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_4);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_5);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_6);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_7);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_8);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_9);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_10);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_11);
+    comboBox_mois_debut_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_12);
+
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_1);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_2);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_3);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_4);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_5);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_6);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_7);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_8);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_9);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_10);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_11);
+    comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_12);
+
+
+    if (-1 != comboBox_evolution_objets_IDX)
+    {
+        comboBox_evolution_objets->setCurrentIndex(comboBox_evolution_objets_IDX);
+    }
+    if (-1 != comboBox_mois_debut_chiffre_affaire_IDX)
+    {
+        comboBox_mois_debut_chiffre_affaire->setCurrentIndex(comboBox_mois_debut_chiffre_affaire_IDX);
+    }
+
+    if (-1 != comboBox_mois_fin_chiffre_affaire_IDX)
+    {
+        comboBox_mois_fin_chiffre_affaire->setCurrentIndex(comboBox_mois_fin_chiffre_affaire_IDX);
+    }
 
 
     check_fields_BUSINESS_TURNOVER_PROGRESS();
@@ -775,6 +708,11 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
 
 void YerothTableauxDeBordWindow::setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES()
 {
+    int comboBox_operations_IDX =   comboBox_operations->currentIndex();
+    int comboBox_qualite_IDX =      comboBox_qualite->currentIndex();
+    int comboBox_objets_IDX =       comboBox_objets->currentIndex();
+    int comboBox_type_graphes_IDX = comboBox_type_graphes->currentIndex();
+
     comboBox_operations->clear();
     comboBox_qualite->clear();
     comboBox_objets->clear();
@@ -805,14 +743,36 @@ void YerothTableauxDeBordWindow::setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES()
     comboBox_type_graphes->addItem(YerothTableauxDeBordWindow::GRAPHE_PIE_CHART);
 
 
+    if (-1 != comboBox_operations_IDX)
+    {
+        comboBox_operations->setCurrentIndex(comboBox_operations_IDX);
+    }
+
+    if (-1 != comboBox_qualite_IDX)
+    {
+        comboBox_qualite->setCurrentIndex(comboBox_qualite_IDX);
+    }
+
+    if (-1 != comboBox_objets_IDX)
+    {
+        comboBox_objets->setCurrentIndex(comboBox_objets_IDX);
+    }
+
+    if (-1 != comboBox_type_graphes_IDX)
+    {
+        comboBox_type_graphes->setCurrentIndex(comboBox_type_graphes_IDX);
+    }
+
+
     check_fields_BUSINESS_TURNOVER_COMPARISON();
 }
 
 
 void YerothTableauxDeBordWindow::setupTab_BILAN_COMPTABLE()
 {
-    comboBox_bilan_comptable_operation->
-    addItem(YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE);
+    comboBox_bilan_comptable_operation->clear();
+
+    comboBox_bilan_comptable_operation->addItem(YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE);
 
     check_fields_FINANCIAL_ACCOUNTING_REPORT();
 }
@@ -827,17 +787,30 @@ void YerothTableauxDeBordWindow::rendreInvisible()
 
 void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
-    OBJET_ARTICLES = QObject::tr("articles");
-    OBJET_CATEGORIES = QObject::tr("catégories");
-    OBJET_CAISSIERS = QObject::tr("caissiers");
-    OBJET_CLIENTS = QObject::tr("clients");
-    OBJET_FOURNISSEURS = QObject::tr("fournisseurs");
-    OBJET_VILLES = QObject::tr("villes");
-    OBJET_QUARTIER = QObject::tr("quartier");
-    OBJET_REGIONS_ETATS = QObject::tr("régions, états");
-    OBJET_SERVICES = QObject::tr("services");
-    GRAPHE_BAR_CHART = QObject::tr("diagramme à bandes");
-    GRAPHE_PIE_CHART = QObject::tr("diagramme circulaire");
+    OPERATION_GENERER =                 QObject::tr("générer les");
+
+    OPERATION_GENERER_BILAN_COMPTABLE =     QObject::tr("générer le bilan comptable");
+    OPERATION_GENERER_CHIFFRE_DAFFAIRE =    QObject::tr("générer le chiffre d'affaire");
+
+    QUALITE_PLUS_VENDU_PAR_QUANTITE =   QObject::tr("avec les quantités les plus vendues");
+    QUALITE_MOINS_VENDU_PAR_QUANTITE =  QObject::tr("avec les quantités les moins vendues");
+    QUALITE_MEILLEURS =                 QObject::tr("avec les chiffres d'affaires les plus élevés");
+    QUALITE_BENEFICES_PLUS_ELEVES =     QObject::tr("avec les bénéfices les plus élevés");
+    QUALITE_BENEFICES_MOINS_ELEVES =    QObject::tr("avec les bénéfices les moins élevés");
+    QUALITE_ZERO =                      QObject::tr("avec les chiffres d'affaires zéro");
+    QUALITE_DERNIERS =                  QObject::tr("avec les chiffres d'affaires les moins élevés");
+
+    OBJET_ARTICLES =        QObject::tr("articles");
+    OBJET_CATEGORIES =      QObject::tr("catégories");
+    OBJET_CAISSIERS =       QObject::tr("caissiers");
+    OBJET_CLIENTS =         QObject::tr("clients");
+    OBJET_FOURNISSEURS =    QObject::tr("fournisseurs");
+    OBJET_VILLES =          QObject::tr("villes");
+    OBJET_QUARTIER =        QObject::tr("quartier");
+    OBJET_REGIONS_ETATS =   QObject::tr("régions, états");
+    OBJET_SERVICES =        QObject::tr("services");
+    GRAPHE_BAR_CHART =      QObject::tr("diagramme à bandes");
+    GRAPHE_PIE_CHART =      QObject::tr("diagramme circulaire");
 
 
     if (YerothMainWindow::LANGUE_ANGLAISE)
@@ -876,6 +849,10 @@ void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableM
 
     retranslateUi(this);
 
+
+    setupTab_BILAN_COMPTABLE();
+
+    setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE();
 
     setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES();
 

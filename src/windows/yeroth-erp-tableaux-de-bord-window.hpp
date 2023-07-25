@@ -675,9 +675,9 @@ private:
     static const QString ANALYSE_COMPAREE_ACHATS_VENTES;
 
 
-    static const QString OPERATION_GENERER;
-    static const QString OPERATION_GENERER_CHIFFRE_DAFFAIRE;
-    static const QString OPERATION_GENERER_BILAN_COMPTABLE;
+    static QString OPERATION_GENERER;
+    static QString OPERATION_GENERER_CHIFFRE_DAFFAIRE;
+    static QString OPERATION_GENERER_BILAN_COMPTABLE;
 
 
     static const QString YEROTH_DTL_SET_BAR_PIE_COLOR_ARRAY[12];
@@ -698,13 +698,13 @@ private:
     static QString MOIS_11;
     static QString MOIS_12;
 
-    static const QString QUALITE_PLUS_VENDU_PAR_QUANTITE;
-    static const QString QUALITE_MOINS_VENDU_PAR_QUANTITE;
-    static const QString QUALITE_MEILLEURS;
-    static const QString QUALITE_BENEFICES_PLUS_ELEVES;
-    static const QString QUALITE_BENEFICES_MOINS_ELEVES;
-    static const QString QUALITE_ZERO;
-    static const QString QUALITE_DERNIERS;
+    static QString QUALITE_PLUS_VENDU_PAR_QUANTITE;
+    static QString QUALITE_MOINS_VENDU_PAR_QUANTITE;
+    static QString QUALITE_MEILLEURS;
+    static QString QUALITE_BENEFICES_PLUS_ELEVES;
+    static QString QUALITE_BENEFICES_MOINS_ELEVES;
+    static QString QUALITE_ZERO;
+    static QString QUALITE_DERNIERS;
 
     static QString OBJET_SERVICES;
     static QString OBJET_ARTICLES;
