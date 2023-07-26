@@ -590,37 +590,7 @@ YerothTableauxDeBordWindow::GET_YEROTH_DTL_SET_BAR_COLOR_STRING_for_LATEX
 
 void YerothTableauxDeBordWindow::setupDateTimeEdits_EVOLUTION_DES_CHIFFRES_DAFFAIRES()
 {
-    //QDEBUG_STRING_OUTPUT_2("comboBox_evolution_objets->currentText()", comboBox_evolution_objets->currentText());
-
-    int comboBox_ANALYSE_COMPAREE_IDX = comboBox_ANALYSE_COMPAREE->currentIndex();
-
-
-    comboBox_ANALYSE_COMPAREE->clear();
-
-
-    comboBox_ANALYSE_COMPAREE->addItem(ANALYSE_COMPAREE_ACHATS_VENTES);
-    comboBox_ANALYSE_COMPAREE->addItem(ANALYSE_COMPAREE_VENTES_BENEFICES);
-
-
-    if (-1 != comboBox_ANALYSE_COMPAREE_IDX)
-    {
-        comboBox_ANALYSE_COMPAREE->setCurrentIndex(comboBox_ANALYSE_COMPAREE_IDX);
-    }
-
-
-    if (!YerothUtils::isEqualCaseInsensitive
-            (YerothTableauxDeBordWindow::OBJET_ARTICLES,
-             comboBox_evolution_objets->currentText()))
-    {
-        comboBox_evolution_objets_value->checkField(true);
-    }
-    else
-    {
-        comboBox_evolution_objets_value->clearField();
-    }
-
-    dateEdit_chiffre_daffaire_jour_semaine_debut->setStartDate
-    (GET_CURRENT_DATE);
+    dateEdit_chiffre_daffaire_jour_semaine_debut->setStartDate(GET_CURRENT_DATE);
     dateEdit_chiffre_daffaire_jour_semaine_fin->setStartDate(GET_CURRENT_DATE);
 }
 
@@ -645,12 +615,14 @@ void YerothTableauxDeBordWindow::setupDateTimeEdits_BILAN_COMPTABLE()
 
 void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
 {
+    int comboBox_evolution_objets_value_IDX =       comboBox_evolution_objets_value->currentIndex();
     int comboBox_ANALYSE_COMPAREE_IDX =             comboBox_ANALYSE_COMPAREE->currentIndex();
     int comboBox_evolution_objets_IDX =             comboBox_evolution_objets->currentIndex();
     int comboBox_mois_debut_chiffre_affaire_IDX =   comboBox_mois_debut_chiffre_affaire->currentIndex();
     int comboBox_mois_fin_chiffre_affaire_IDX =     comboBox_mois_fin_chiffre_affaire->currentIndex();
 
 
+    comboBox_evolution_objets_value->clear();
     comboBox_ANALYSE_COMPAREE->clear();
     comboBox_operations_chiffre->clear();
     comboBox_evolution_objets->clear();
@@ -665,8 +637,8 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
     handle_enabled_chiffre_daffaire_jour_semaine(true);
 
 
-    comboBox_ANALYSE_COMPAREE->addItem(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES);
-    comboBox_ANALYSE_COMPAREE->addItem(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES);
+    comboBox_ANALYSE_COMPAREE->addItem(ANALYSE_COMPAREE_ACHATS_VENTES);
+    comboBox_ANALYSE_COMPAREE->addItem(ANALYSE_COMPAREE_VENTES_BENEFICES);
 
 
     comboBox_operations_chiffre->addItem(YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE);
@@ -708,7 +680,6 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
     comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_12);
 
 
-
     if (-1 != comboBox_ANALYSE_COMPAREE_IDX)
     {
         comboBox_ANALYSE_COMPAREE->setCurrentIndex(comboBox_ANALYSE_COMPAREE_IDX);
@@ -731,6 +702,12 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
 
 
     check_fields_BUSINESS_TURNOVER_PROGRESS();
+
+
+    if (-1 != comboBox_evolution_objets_value_IDX)
+    {
+        comboBox_evolution_objets_value->setCurrentIndex(comboBox_evolution_objets_value_IDX);
+    }
 }
 
 
@@ -881,7 +858,6 @@ void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableM
 
 
     retranslateUi(this);
-
 
 
     setupTab_BILAN_COMPTABLE();

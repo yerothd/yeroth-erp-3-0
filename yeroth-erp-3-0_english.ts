@@ -3492,14 +3492,14 @@ THIS FINANCIAL EXPENSE !)!</translation>
     </message>
     <message>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp" line="181"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="1339"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="1315"/>
         <source>D\&apos;etails en %1:</source>
         <translation>Details in %1:</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2072"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="3569"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4237"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2048"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="3545"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4213"/>
         <source>rankings - pas de données !</source>
         <oldsource>Yeroth - rapports - rankings - pas de données !</oldsource>
         <translation>rankings - no data !</translation>
@@ -3515,16 +3515,16 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="612"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="846"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="1315"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4506"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4534"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4953"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5152"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5568"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4482"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4510"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4929"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5128"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5544"/>
         <source>aucun filtre !</source>
         <translation>no filter !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2483"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2459"/>
         <source>bilan comptable</source>
         <translation>financial accounting report</translation>
     </message>
@@ -3562,112 +3562,112 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <translation>%1 - business turnover progress</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="818"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="795"/>
         <source>générer les</source>
         <translation>generate the</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="820"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="797"/>
         <source>générer le bilan comptable</source>
         <translation>generate financial accounting report</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="822"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="799"/>
         <source>générer le chiffre d&apos;affaire</source>
         <translation>generate the business turnover</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="824"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="801"/>
         <source>ANALYSE COMPARÉ VENTES BÉNÉFICES</source>
         <translation>COMPARED ANALYSIS SALES PROFITS</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="826"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="803"/>
         <source>ANALYSE COMPARÉ ACHATS VENTES</source>
         <translation>COMPARED ANALYSIS PURCHASES SALES</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="828"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="805"/>
         <source>avec les quantités les plus vendues</source>
         <translation>with the highest sold quantities</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="829"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="806"/>
         <source>avec les quantités les moins vendues</source>
         <translation>with the least sold quantities</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="830"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="807"/>
         <source>avec les chiffres d&apos;affaires les plus élevés</source>
         <translation>with the highest business turnover</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="831"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="808"/>
         <source>avec les bénéfices les plus élevés</source>
         <translation>with the highest profit</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="832"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="809"/>
         <source>avec les bénéfices les moins élevés</source>
         <translation>with the least profit</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="833"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="810"/>
         <source>avec les chiffres d&apos;affaires zéro</source>
         <translation>with ZER0 as business turnover</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="834"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="811"/>
         <source>avec les chiffres d&apos;affaires les moins élevés</source>
         <translation>with the least business turnover</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="836"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="813"/>
         <source>articles</source>
         <translation>article item</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="837"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="814"/>
         <source>catégories</source>
         <translation>categories</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="838"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="815"/>
         <source>caissiers</source>
         <translation>cashiers</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="840"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="817"/>
         <source>fournisseurs</source>
         <translation>suppliers</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="841"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="818"/>
         <source>villes</source>
         <translation>cities</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="842"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="819"/>
         <source>quartier</source>
         <translation>location</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="843"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="820"/>
         <source>régions, états</source>
         <translation>regions, states</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="844"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="821"/>
         <source>services</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="845"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="822"/>
         <source>diagramme à bandes</source>
         <translation>bar chart</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="846"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="823"/>
         <source>diagramme circulaire</source>
         <translation>pie chart</translation>
     </message>
@@ -3709,7 +3709,7 @@ THIS FINANCIAL EXPENSE !)!</translation>
     </message>
     <message>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_meilleurs_stats.cpp" line="226"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="1387"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="1363"/>
         <source>\item %1: \textbf{%2} (quantité vendue: %3)
 </source>
         <translation>\item %1: \textbf{%2} (sold quantity: %3)
@@ -3723,17 +3723,17 @@ THIS FINANCIAL EXPENSE !)!</translation>
 </translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2314"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2290"/>
         <source>Saisir le nom du fichier &apos;.csv&apos;</source>
         <translation>Enter CSV file name</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2316"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2292"/>
         <source>articles avec chiffre d&apos;affaire nul &quot;*.csv&quot; (*.csv)</source>
         <translation>articles with 0 business turnover &quot;*.csv* (*.csv)</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2485"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2461"/>
         <source>La date de &apos;début&apos; doit être antérieure à la date de &apos;fin&apos; !</source>
         <oldsource>La date de &apos;début&apos; doit être antérieur à la date de &apos;fin&apos; !</oldsource>
         <translation>The &apos;begin&apos; date must be anterior to the &apos;end&apos; date !</translation>
@@ -3771,22 +3771,22 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="943"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="958"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="973"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4529"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4541"/>
         <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4553"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4565"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4577"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4599"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4614"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4630"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4645"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4660"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4575"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4590"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4606"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4621"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4636"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5147"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5159"/>
         <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5171"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5183"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5195"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5216"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5230"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5245"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5260"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5275"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5192"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5206"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5221"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5236"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5251"/>
         <source>filtre: %1 = %2</source>
         <translation>search filter: %1 = %2</translation>
     </message>
@@ -3803,8 +3803,8 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp" line="1964"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="295"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="992"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4679"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5294"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4655"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5270"/>
         <source>paramètre manquant</source>
         <translation>missing parameter</translation>
     </message>
@@ -3813,8 +3813,8 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp" line="1966"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="297"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="994"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4681"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5296"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4657"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5272"/>
         <source>Vous devez spécifier un paramètre dans le champs de texte &apos;nom&apos; !</source>
         <translation>Please enter a string in field &apos;name&apos; !</translation>
     </message>
@@ -3879,25 +3879,25 @@ THIS FINANCIAL EXPENSE !)!</translation>
     <message>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp" line="57"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp" line="1742"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4475"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4451"/>
         <source>Le jour de &apos;début&apos; doit être antérieur au jour de la &apos;fin&apos; !</source>
         <translation>The &apos;begin&apos; date must be anterior to the &apos;end&apos; date !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4742"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5325"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4718"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5301"/>
         <source>pas de données</source>
         <translation>no data</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4744"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4720"/>
         <source>Il n&apos;y a pas de données correspondante à la requête !
 Vérifier que les dates de début et de fin, sont correctes !</source>
         <translation>There is no data associated with this request!
 Please check that begin and end dates are correct!</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5327"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5303"/>
         <source>Il n&apos;y a pas de données correspondante à la requête !
 Vérifier que les dates de début et de fin, ainsi que l&apos;année sont correctes !</source>
         <translation>There is no data associated with this request!
@@ -3912,15 +3912,15 @@ Please check that begin and end dates are correct!</translation>
     <message>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp" line="55"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_jour_semaine.cpp" line="1740"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4473"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5080"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4449"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5056"/>
         <source>évolution du chiffre d&apos;affaire</source>
         <translation>business turnover progress</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2068"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="3564"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4233"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="2044"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="3540"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="4209"/>
         <source>Il n&apos;y a pas de données correspondante à la requête !
 Vérifier que les dates de début et de fin sont correctes !</source>
         <oldsource>Il n&apos;y a pas de données correspondante à la requête !Vérifier que les dates de début et de fin sont correctes !</oldsource>
@@ -3930,7 +3930,7 @@ Please check that begin and end dates are correct!</translation>
     <message>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="54"/>
         <location filename="src/windows/include/YEROTH_TABLEAUX_DE_BORDS_analyse_comparee_mensuelle.cpp" line="749"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5082"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="5058"/>
         <source>Le mois de &apos;début&apos; doit être antérieur au mois de &apos;fin&apos; !</source>
         <translation>The &apos;begin&apos; month must be anterior to the &apos;end&apos; month!</translation>
     </message>
@@ -5218,7 +5218,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     </message>
     <message>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="44"/>
-        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="839"/>
+        <location filename="src/windows/yeroth-erp-tableaux-de-bord-window.cpp" line="816"/>
         <source>clients</source>
         <translation>clients</translation>
     </message>
