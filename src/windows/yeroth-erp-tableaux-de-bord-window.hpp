@@ -46,6 +46,7 @@ public:
         return toolBar_rapportsWindow;
     }
 
+
     virtual void definirCaissier();
 
     virtual void definirManager();
@@ -58,11 +59,13 @@ public:
 
     virtual void definirPasDeRole();
 
+
     void setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE();
 
     void setupTab_COMPARAISON_DES_CHIFFRES_DAFFAIRES();
 
     void setupTab_BILAN_COMPTABLE();
+
 
     virtual void rendreInvisible();
 
@@ -94,31 +97,42 @@ public slots:
 
     inline void setFilter()
     {
-        _curStocksVenduTableModel->yerothSetFilter_WITH_where_clause
-        (_searchFilter);
+        _curStocksVenduTableModel->yerothSetFilter_WITH_where_clause(_searchFilter);
     }
 
     void generer();
 
-    void quantite_max_benefices(QString fileName, QString fieldId, int size);
+    void quantite_max_benefices(QString fileName,
+                                QString fieldId,
+                                int size);
 
-    void quantite_moindre_benefices(QString fileName, QString fieldId,
+    void quantite_moindre_benefices(QString fileName,
+                                    QString fieldId,
                                     int size);
 
-    void quantite_max_stats(QString fileName, QString fieldId, int size,
+    void quantite_max_stats(QString fileName,
+                            QString fieldId,
+                            int size,
                             bool service = false);
 
-    void quantite_moindre_stats(QString fileName, QString fieldId, int size,
+    void quantite_moindre_stats(QString fileName,
+                                QString fieldId,
+                                int size,
                                 bool service = false);
 
-    void meilleursStats(QString fileName, QString fieldId, int size,
+    void meilleursStats(QString fileName,
+                        QString fieldId,
+                        int size,
                         bool service = false);
 
     //void ZERO_stats(QString fileName, QString fieldId);
 
-    void ZERO_stats_stocks(QString fileName, QString fieldId);
+    void ZERO_stats_stocks(QString fileName,
+                           QString fieldId);
 
-    void derniersStats(QString fileName, QString fieldId, int size,
+    void derniersStats(QString fileName,
+                       QString fieldId,
+                       int size,
                        bool service = false);
 
 

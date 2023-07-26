@@ -98,6 +98,7 @@ private slots:
 
 	void CHANGER_DE_LANGUE();
 
+
 public slots:
 
     inline virtual void apropos()
@@ -111,13 +112,35 @@ public slots:
 
     void cleanupAllOtherWindows();
 
+
 protected:
 
     virtual void setupShortcuts();
 
+
 private:
 
     void CHANGER_DE_LANGUE__text__TRANSLATION();
+
+
+public:
+
+    static QString STRING_MONDAY;
+
+    static QString STRING_TUESDAY;
+
+    static QString STRING_WEDNESDAY;
+
+    static QString STRING_THURSDAY;
+
+    static QString STRING_FRIDAY;
+
+    static QString STRING_SATURDAY;
+
+    static QString STRING_SUNDAY;
+
+
+private:
 
     void calculate_presentation_geometry_of_push_buttons_in_MAIN_WINDOW();
 

@@ -29,6 +29,24 @@
 #include <QtSql/QSqlRecord>
 
 
+
+QString YerothMainWindow::STRING_MONDAY("lundi");
+
+QString YerothMainWindow::STRING_TUESDAY("mardi");
+
+QString YerothMainWindow::STRING_WEDNESDAY("mercredi");
+
+QString YerothMainWindow::STRING_THURSDAY("jeudi");
+
+QString YerothMainWindow::STRING_FRIDAY("vendredi");
+
+QString YerothMainWindow::STRING_SATURDAY("samedi");
+
+QString YerothMainWindow::STRING_SUNDAY("dimanche");
+
+
+
+
 #ifdef YEROTH_FRANCAIS_LANGUAGE
 	bool YerothMainWindow::LANGUE_ANGLAISE = false;
 #endif
@@ -183,14 +201,32 @@ _logger(new YerothLogger("YerothMainWindow"))
 
 void YerothMainWindow::CHANGER_DE_LANGUE__text__TRANSLATION()
 {
-	if (YerothMainWindow::LANGUE_ANGLAISE)
-	{
-		action_TRADUIRE_EN_ANGLAIS->setText("TRADUIRE EN FRANÇAIS");
-	}
-	else
-	{
-		action_TRADUIRE_EN_ANGLAIS->setText("TRANSLATE INTO ENGLISH");
-	}
+    STRING_MONDAY = QObject::tr("Lundi");
+
+    STRING_TUESDAY = QObject::tr("Mardi");
+
+    STRING_WEDNESDAY = QObject::tr("Mercredi");
+
+    STRING_THURSDAY = QObject::tr("Jeudi");
+
+    STRING_FRIDAY = QObject::tr("Vendredi");
+
+    STRING_SATURDAY = QObject::tr("Samedi");
+
+    STRING_SUNDAY = QObject::tr("Dimanche");
+
+
+    retranslateUi(this);
+
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        action_TRADUIRE_EN_ANGLAIS->setText("TRADUIRE EN FRANÇAIS");
+    }
+    else
+    {
+        action_TRADUIRE_EN_ANGLAIS->setText("TRANSLATE INTO ENGLISH");
+    }
 }
 
 
@@ -674,8 +710,6 @@ void YerothMainWindow::write_AFTER_SETUP_YEROTH_ERP_3_0_SERVER_PARAMETERS_DISPLA
 
 void YerothMainWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
-    retranslateUi(this);
-
 	CHANGER_DE_LANGUE__text__TRANSLATION();
 
     calculate_presentation_geometry_of_push_buttons_in_MAIN_WINDOW();

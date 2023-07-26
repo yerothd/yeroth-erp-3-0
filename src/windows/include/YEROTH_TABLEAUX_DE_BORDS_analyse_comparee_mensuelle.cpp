@@ -406,17 +406,21 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
 
     _reportTexFileEndString.clear();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                     (QString("Details in %1:")
+                        .arg(YerothERPConfig::currency)));
+    }
+    else
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                     (QString("Détails in %1:")
+                        .arg(YerothERPConfig::currency)));
+    }
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("Details in %1:").arg(YerothERPConfig::currency)));
-#endif
 
     _reportTexFileEndString.prepend("\\textbf{").append("}\n");
     _reportTexFileEndString.append("\\begin{enumerate}[1.]\n");
@@ -430,39 +434,31 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
 
     for (int k = moisDebut; k <= moisFin; ++k)
     {
-        _reportTexFileEndString.append("\\item \\textbf{")
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        .append(QString
-                ("%1}: ventes $\\rightarrow %2$, bénéfice $\\rightarrow %3$\n").
-                arg(YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                      frenchLocale.
-                                                      monthName(k)),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents
-                    (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents
-                    (GET_CURRENCY_STRING_NUM
-                     (monthToBeneficesTotalAmount[k]))));
-#endif
+        _reportTexFileEndString.append("\\item \\textbf{");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        .append(QString
-                ("%1}: sales $\\rightarrow %2$, profit $\\rightarrow %3$\n").
-                arg(YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                      englishLocale.
-                                                      monthName(k)),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(GET_CURRENCY_STRING_NUM
-                                                      (monthToVentesTotalAmount
-                                                       [k])),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(GET_CURRENCY_STRING_NUM
-                                                      (monthToBeneficesTotalAmount
-                                                       [k]))));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            _reportTexFileEndString
+                .append(QString("%1}: sales $\\rightarrow %2$, profit $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::englishLocale.monthName(k)),
+                                     YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])),
+                                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (GET_CURRENCY_STRING_NUM(monthToBeneficesTotalAmount[k]))));
+        }
+        else
+        {
+            _reportTexFileEndString
+                .append(QString("%1}: ventes $\\rightarrow %2$, bénéfice $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::frenchLocale.monthName(k)),
+                                     YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])),
+                                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (GET_CURRENCY_STRING_NUM(monthToBeneficesTotalAmount[k]))));
+
+        }
     }
 
     _reportTexFileEndString.append("\\end{enumerate}\n");
@@ -523,21 +519,28 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
     texDocument.replace("YEROTHBARITEMS", barItems);
     texDocument.replace("YEROTHTICKS", QString::number(TICKS));
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio des bénéfices du mois.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio du chiffre d'affaire du mois.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
-                        "Niveau du chiffre d'affaire");
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio of monthly profit.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE", "Ratio of monthly income.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio of monthly profit.}{purplish}");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE", "Ratio of monthly income.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
+    }
+    else
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio des bénéfices du mois.}{purplish}");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio du chiffre d'affaire du mois.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Niveau du chiffre d'affaire");
+    }
+
 
     QString fileName1(YerothERPConfig::temporaryFilesDir + "/1a.tex");
 
@@ -553,56 +556,55 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
 
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_bar_diag_tex);
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_bar_diag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_bar_diag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_bar_diag_tex);
+    }
 
 
-    QString
-    factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (infoEntreprise.getVille_LATEX()));
+    QString factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX()));
+
     YerothUtils::getCurrentLocaleDate(factureDate);
 
     QString longDateDebut;
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString(qDateDebut)));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString(qDateFin)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString(qDateDebut)));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString(qDateDebut)));
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString(qDateFin)));
+    }
+    else
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString(qDateDebut)));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString(qDateFin)));
-#endif
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString(qDateFin)));
+    }
+
 
     //qDebug() << "++ type fact. rapports - chiffe affaire: " << YerothConfig::typeOfFacturation;
 
 
     texDocument2.replace("YEROTHPAPERSPEC", "a4paper");
 
-    if (YerothUtils::isEqualCaseInsensitive
-            (comboBoxEvolutionObjetsCurrentText, "caissiers")
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                "catégories")
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                "clients"))
+    if (YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText, "caissiers")  ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText, "catégories") ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText, "clients"))
     {
         if (textFromLineEditEvolutionSujets.isEmpty())
         {
@@ -612,9 +614,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
     }
     else
     {
-        yerothFiltre =
-                        YerothUtils::LATEX_IN_OUT_handleForeignAccents(yerothFiltre);
+        yerothFiltre = YerothUtils::LATEX_IN_OUT_handleForeignAccents(yerothFiltre);
     }
+
 
     texDocument2.replace("YEROTHMENTION",
                          QObject::tr("[analyse compar\\'ee]"));
@@ -625,12 +627,16 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEDEBUT", longDateDebut);
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEFIN", longDateFin);
     texDocument2.replace("YEROTHCHARTFIN", _reportTexFileEndString);
+
     texDocument2.replace("YEROTHENTREPRISE",
                          infoEntreprise.getNomCommercial_LATEX());
+
     texDocument2.replace("YEROTHACTIVITESENTREPRISE",
                          infoEntreprise.getSecteursActivitesTex());
+
     texDocument2.replace("YEROTHBOITEPOSTALE",
                          infoEntreprise.getBoitePostal());
+
     texDocument2.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
     texDocument2.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
     texDocument2.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
@@ -638,55 +644,61 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_VENTES_BENEFICES()
     texDocument2.replace("YEROTHDATE", factureDate);
 
     texDocument2.replace("YEROTHNOMUTILISATEUR",
-                         QString("%1 %2").arg(YerothUtils::getAllWindows()->
-                                              getUser()->titreTex(),
-                                              YerothUtils::getAllWindows()->
-                                              getUser()->
-                                              nom_completTex()));
+                         QString("%1 %2")
+                            .arg(YerothUtils::getAllWindows()->getUser()->titreTex(),
+                                 YerothUtils::getAllWindows()->getUser()->nom_completTex()));
 
     texDocument2.replace("YEROTHSUCCURSALE",
                          YerothUtils::LATEX_IN_OUT_handleForeignAccents
 						 	 (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
 
     texDocument2.replace("YEROTHHEUREDIMPRESSION", CURRENT_TIME);
+
     texDocument2.replace("YEROTHCOMPTEBANCAIRENR",
                          infoEntreprise.getNumeroCompteBancaire());
+
     texDocument2.replace("YEROTHCONTRIBUABLENR",
                          infoEntreprise.getNumeroDeContribuable());
+
     texDocument2.replace("YEROTHAGENCECOMPTEBANCAIRE",
                          infoEntreprise.getAgenceCompteBancaireTex());
 
     texDocument2.replace("1a.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme r\\'epr\\'esentatif des chiffres"
-                                 " d'affaire du %1 au %2.").arg
-                         (longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString
-                         ("Chart illustrating the income from %1 to %2.").arg
-                         (longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Chart illustrating the income from %1 to %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme r\\'epr\\'esentatif des chiffres"
+                                     " d'affaire du %1 au %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
     YerothUtils::LATEX_IN_OUT_handleForeignAccents(texDocument2);
 
-    QString
-    fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire"));
+    QString fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire"));
     fileName.append(".");
 
     QString tmpFilePrefix(YerothERPConfig::temporaryFilesDir + "/" + fileName);
 
     QFile tmpFile(tmpFilePrefix + "tex");
+
     if (tmpFile.open(QFile::WriteOnly))
     {
         tmpFile.write(texDocument2.toUtf8());
     }
+
     tmpFile.close();
 
     //qDebug() << "++ tmpFile: " << tmpFile.fileName();
@@ -1097,17 +1109,22 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
 
     _reportTexFileEndString.clear();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("Details in %1:").arg(YerothERPConfig::currency)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QString("Details in %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+    else
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QString("Détails en %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+
 
     _reportTexFileEndString.prepend("\\textbf{").append("}\n");
     _reportTexFileEndString.append("\\begin{enumerate}[1.]\n");
@@ -1121,39 +1138,30 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
 
     for (int k = moisDebut; k <= moisFin; ++k)
     {
-        _reportTexFileEndString.append("\\item \\textbf{")
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        .append(QString
-                ("%1}: ventes $\\rightarrow %2$, achats $\\rightarrow %3$\n").
-                arg(YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                      frenchLocale.
-                                                      monthName(k)),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents
-                    (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents
-                    (GET_CURRENCY_STRING_NUM
-                     (monthToAchatsTotalAmount[k]))));
-#endif
+        _reportTexFileEndString.append("\\item \\textbf{");
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-        .append(QString
-                ("%1}: sales $\\rightarrow %2$, purchases $\\rightarrow %3$\n").
-                arg(YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                      englishLocale.
-                                                      monthName(k)),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(GET_CURRENCY_STRING_NUM
-                                                      (monthToVentesTotalAmount
-                                                       [k])),
-                    YerothUtils::
-                    LATEX_IN_OUT_handleForeignAccents(GET_CURRENCY_STRING_NUM
-                                                      (monthToAchatsTotalAmount
-                                                       [k]))));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            _reportTexFileEndString
+                .append(QString("%1}: sales $\\rightarrow %2$, purchases $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::englishLocale.monthName(k)),
+                                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])),
+                                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (GET_CURRENCY_STRING_NUM(monthToAchatsTotalAmount[k]))));
+        }
+        else
+        {
+            _reportTexFileEndString
+                .append(QString("%1}: ventes $\\rightarrow %2$, achats $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::englishLocale.monthName(k)),
+                                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (GET_CURRENCY_STRING_NUM(monthToVentesTotalAmount[k])),
+                                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (GET_CURRENCY_STRING_NUM(monthToAchatsTotalAmount[k]))));
+        }
     }
 
     _reportTexFileEndString.append("\\end{enumerate}\n");
@@ -1213,22 +1221,29 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
     texDocument.replace("YEROTHBARITEMS", barItems);
     texDocument.replace("YEROTHTICKS", QString::number(TICKS));
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio des achats du mois.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio du chiffre d'affaire du mois.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
-                        "Niveau du chiffre d'affaire");
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio of the monthly purchases.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio of the monthly income.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio of the monthly purchases.}{purplish}");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio of the monthly income.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
+    }
+    else
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio des achats du mois.}{purplish}");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio du chiffre d'affaire du mois.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Niveau du chiffre d'affaire");
+    }
+
 
     QString fileName1(YerothERPConfig::temporaryFilesDir + "/1a.tex");
 
@@ -1244,56 +1259,55 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
 
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_bar_diag_tex);
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_bar_diag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_bar_diag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_bar_diag_tex);
+    }
 
 
-    QString
-    factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (infoEntreprise.getVille_LATEX()));
+    QString factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX()));
+
     YerothUtils::getCurrentLocaleDate(factureDate);
 
     QString longDateDebut;
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString(qDateDebut)));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString(qDateFin)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString(qDateDebut)));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString(qDateDebut)));
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString(qDateFin)));
+    }
+    else
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString(qDateDebut)));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString(qDateFin)));
-#endif
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString(qDateFin)));
+    }
+
 
     //qDebug() << "++ type fact. rapports - chiffe affaire: " << YerothConfig::typeOfFacturation;
 
 
     texDocument2.replace("YEROTHPAPERSPEC", "a4paper");
 
-    if (YerothUtils::isEqualCaseInsensitive
-            (comboBoxEvolutionObjetsCurrentText, "caissiers")
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                "catégories")
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                "clients"))
+    if (YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText, "caissiers")  ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText, "catégories") ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText, "clients"))
     {
         if (textFromLineEditEvolutionSujets.isEmpty())
         {
@@ -1316,12 +1330,16 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEDEBUT", longDateDebut);
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEFIN", longDateFin);
     texDocument2.replace("YEROTHCHARTFIN", _reportTexFileEndString);
+
     texDocument2.replace("YEROTHENTREPRISE",
                          infoEntreprise.getNomCommercial_LATEX());
+
     texDocument2.replace("YEROTHACTIVITESENTREPRISE",
                          infoEntreprise.getSecteursActivitesTex());
+
     texDocument2.replace("YEROTHBOITEPOSTALE",
                          infoEntreprise.getBoitePostal());
+
     texDocument2.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
     texDocument2.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
     texDocument2.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
@@ -1329,11 +1347,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
     texDocument2.replace("YEROTHDATE", factureDate);
 
     texDocument2.replace("YEROTHNOMUTILISATEUR",
-                         QString("%1 %2").arg(YerothUtils::getAllWindows()->
-                                              getUser()->titreTex(),
-                                              YerothUtils::getAllWindows()->
-                                              getUser()->
-                                              nom_completTex()));
+                         QString("%1 %2")
+                            .arg(YerothUtils::getAllWindows()->getUser()->titreTex(),
+                                 YerothUtils::getAllWindows()->getUser()->nom_completTex()));
 
     texDocument2.replace("YEROTHSUCCURSALE",
                          YerothUtils::LATEX_IN_OUT_handleForeignAccents
@@ -1342,42 +1358,49 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle_ACHATS_VENTES()
     texDocument2.replace("YEROTHHEUREDIMPRESSION", CURRENT_TIME);
     texDocument2.replace("YEROTHCOMPTEBANCAIRENR",
                          infoEntreprise.getNumeroCompteBancaire());
+
     texDocument2.replace("YEROTHCONTRIBUABLENR",
                          infoEntreprise.getNumeroDeContribuable());
+
     texDocument2.replace("YEROTHAGENCECOMPTEBANCAIRE",
                          infoEntreprise.getAgenceCompteBancaireTex());
 
     texDocument2.replace("1a.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme r\\'epr\\'esentatif des chiffres"
-                                 " d'affaire du %1 au %2.").arg
-                         (longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString
-                         ("Chart illustrating the income from %1 to %2.").arg
-                         (longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Chart illustrating the income from %1 to %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme r\\'epr\\'esentatif des chiffres"
+                                     " d'affaire du %1 au %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
     YerothUtils::LATEX_IN_OUT_handleForeignAccents(texDocument2);
 
-    QString
-    fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire"));
+    QString fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire"));
     fileName.append(".");
 
     QString tmpFilePrefix(YerothERPConfig::temporaryFilesDir + "/" + fileName);
 
     QFile tmpFile(tmpFilePrefix + "tex");
+
     if (tmpFile.open(QFile::WriteOnly))
     {
         tmpFile.write(texDocument2.toUtf8());
     }
+
     tmpFile.close();
 
     //qDebug() << "++ tmpFile: " << tmpFile.fileName();

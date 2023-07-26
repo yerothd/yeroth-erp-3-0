@@ -59,9 +59,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
         return;
     }
 
-    QMap < int, double >dayOfWeek__TO__businessturnover;
+    QMap<int, double> dayOfWeek__TO__businessturnover;
 
-    QMap < int, double >dayOfWeek__TO__PROFITS;
+    QMap<int, double> dayOfWeek__TO__PROFITS;
 
     qint64 dates_range =
                     dateEdit_chiffre_daffaire_jour_semaine_debut->date().
@@ -382,17 +382,22 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 
     _reportTexFileEndString.clear();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("Details in %1:").arg(YerothERPConfig::currency)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QObject::tr("Details in %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+    else
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QObject::tr("Détails en %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+
 
     _reportTexFileEndString.prepend("\\textbf{").append("}\n");
     _reportTexFileEndString.append("\\begin{enumerate}[1.]\n");
@@ -401,9 +406,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 
     double somme_totale_ventes_jour_semaine = 0.0;
 
-    QMap < int, QString > ventes_info;
+    QMap<int, QString> ventes_info;
 
-    QMapIterator < int, double >it_ventes(dayOfWeek__TO__businessturnover);
+    QMapIterator<int, double> it_ventes(dayOfWeek__TO__businessturnover);
 
     while (it_ventes.hasNext())
     {
@@ -411,33 +416,24 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 
         somme_totale_ventes_jour_semaine += it_ventes.value();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        ventes_info.insert(it_ventes.key(),
-                           QString
-                           ("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ").
-                           arg(YerothUtils::
-                               LATEX_IN_OUT_handleForeignAccents
-                               (YerothUtils::
-                                GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it_ventes.
-                                                                   key())),
-                               YerothUtils::
-                               LATEX_IN_OUT_handleForeignAccents
-                               (GET_CURRENCY_STRING_NUM
-                                (it_ventes.value()))));
-#else //YEROTH_ENGLISH_LANGUAGE
-        ventes_info.insert(it_ventes.key(),
-                           QString
-                           ("\\item \\textbf{%1}: sales $\\rightarrow %2$, ").
-                           arg(YerothUtils::
-                               LATEX_IN_OUT_handleForeignAccents
-                               (YerothUtils::
-                                GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it_ventes.
-                                                                   key())),
-                               YerothUtils::
-                               LATEX_IN_OUT_handleForeignAccents
-                               (GET_CURRENCY_STRING_NUM
-                                (it_ventes.value()))));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            ventes_info.insert(it_ventes.key(),
+                               QString("\\item \\textbf{%1}: sales $\\rightarrow %2$, ")
+                                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it_ventes.key())),
+                                     YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (GET_CURRENCY_STRING_NUM(it_ventes.value()))));
+        }
+        else
+        {
+            ventes_info.insert(it_ventes.key(),
+                               QString("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ")
+                                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it_ventes.key())),
+                                   YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (GET_CURRENCY_STRING_NUM(it_ventes.value()))));
+        }
     }
 
     for (uint j = 1; j <= 7; ++j)
@@ -446,25 +442,23 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
         {
 //                      QDEBUG_STRING_OUTPUT_2_N("j - VENTES 0", j);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            ventes_info.insert(j,
-                               QString
-                               ("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ").
-                               arg(YerothUtils::
-                                   LATEX_IN_OUT_handleForeignAccents
-                                   (YerothUtils::
-                                    GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
-                                   GET_CURRENCY_STRING_NUM(0.0)));
-#else //YEROTH_ENGLISH_LANGUAGE
-            ventes_info.insert(j,
-                               QString
-                               ("\\item \\textbf{%1}: sales $\\rightarrow %2$, ").
-                               arg(YerothUtils::
-                                   LATEX_IN_OUT_handleForeignAccents
-                                   (YerothUtils::
-                                    GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
-                                   GET_CURRENCY_STRING_NUM(0.0)));
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                ventes_info.insert(j,
+                                   QString("\\item \\textbf{%1}: sales $\\rightarrow %2$, ")
+                                    .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                            (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                                         GET_CURRENCY_STRING_NUM(0.0)));
+            }
+            else
+            {
+                ventes_info.insert(j,
+                                   QString("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ")
+                                    .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                            (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                                         GET_CURRENCY_STRING_NUM(0.0)));
+            }
+
         }
     }
 
@@ -479,9 +473,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
     QString current_prefix_string_benefice_info;
 
 
-    QMapIterator < int, double >it_benefices(dayOfWeek__TO__PROFITS);
+    QMapIterator<int, double> it_benefices(dayOfWeek__TO__PROFITS);
 
-    QList < uint > benefices_jours_semaines_presents;
+    QList<uint> benefices_jours_semaines_presents;
 
     for (uint j = 1; j <= 7; ++j)
     {
@@ -492,31 +486,29 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
             somme_totale_benefices_jour_semaine += it_benefices.value();
 
             current_prefix_string_benefice_info =
-                            ventes_info.value(it_benefices.key());
+                ventes_info.value(it_benefices.key());
 
             if (!current_prefix_string_benefice_info.isEmpty())
             {
                 benefices_jours_semaines_presents.append(it_benefices.key());
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-                current_complete_string_benefice_info =
-                                current_prefix_string_benefice_info.append(QString
-                                                                           ("profits $\\rightarrow %1$\n").
-                                                                           arg(YerothUtils::
-                                                                               LATEX_IN_OUT_handleForeignAccents
-                                                                               (GET_CURRENCY_STRING_NUM
-                                                                                (it_benefices.value
-                                                                                 ()))));
-#else //YEROTH_ENGLISH_LANGUAGE
-                current_complete_string_benefice_info =
-                                current_prefix_string_benefice_info.append(QString
-                                                                           ("profits $\\rightarrow %1$\n").
-                                                                           arg(YerothUtils::
-                                                                               LATEX_IN_OUT_handleForeignAccents
-                                                                               (GET_CURRENCY_STRING_NUM
-                                                                                (it_benefices.value
-                                                                                 ()))));
-#endif
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    current_complete_string_benefice_info =
+                        current_prefix_string_benefice_info
+                            .append(QString("profits $\\rightarrow %1$\n")
+                                     .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                            (GET_CURRENCY_STRING_NUM(it_benefices.value()))));
+                }
+                else
+                {
+                    current_complete_string_benefice_info =
+                        current_prefix_string_benefice_info
+                            .append(QString("profits $\\rightarrow %1$\n")
+                                     .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                            (GET_CURRENCY_STRING_NUM(it_benefices.value()))));
+                }
+
 
                 ventes_info.insert(it_benefices.key(),
                                    current_complete_string_benefice_info);
@@ -534,48 +526,44 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 
             if (!ventes_info.contains(j))
             {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-                current_complete_string_benefice_info =
-                                QString
-                                ("\\item \\textbf{%1}: ventes $\\rightarrow %2$, bénéfice $\\rightarrow %3$\n").
-                                arg(YerothUtils::
-                                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                                      GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                                                                      (j)),
-                                    GET_CURRENCY_STRING_NUM(0.0),
-                                    GET_CURRENCY_STRING_NUM(0.0));
-#else //YEROTH_ENGLISH_LANGUAGE
-                current_complete_string_benefice_info =
-                                QString
-                                ("\\item \\textbf{%1}: sales $\\rightarrow %2$, profit $\\rightarrow %3$\n").
-                                arg(YerothUtils::
-                                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                                      GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                                                                      (j)),
-                                    GET_CURRENCY_STRING_NUM(0.0),
-                                    GET_CURRENCY_STRING_NUM(0.0));
-#endif
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    current_complete_string_benefice_info =
+                        QString("\\item \\textbf{%1}: sales $\\rightarrow %2$, profit $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                        GET_CURRENCY_STRING_NUM(0.0),
+                        GET_CURRENCY_STRING_NUM(0.0));
+                }
+                else
+                {
+                    current_complete_string_benefice_info =
+                        QString("\\item \\textbf{%1}: ventes $\\rightarrow %2$, bénéfice $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                        GET_CURRENCY_STRING_NUM(0.0),
+                        GET_CURRENCY_STRING_NUM(0.0));
+                }
             }
             else
             {
                 current_prefix_string_benefice_info = ventes_info.value(j);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-                current_complete_string_benefice_info =
-                                QString("%1 bénéfice $\\rightarrow %2$\n").arg
-                                (current_prefix_string_benefice_info,
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    current_complete_string_benefice_info =
+                        QString("%1 profit $\\rightarrow %2$\n")
+                            .arg(current_prefix_string_benefice_info,
                                  GET_CURRENCY_STRING_NUM(0.0));
-
-#else //YEROTH_ENGLISH_LANGUAGE
-
-                current_complete_string_benefice_info =
-                                QString("%1 profit $\\rightarrow %2$\n").arg
-                                (current_prefix_string_benefice_info,
+                }
+                else
+                {
+                   current_complete_string_benefice_info =
+                        QString("%1 bénéfice $\\rightarrow %2$\n")
+                            .arg(current_prefix_string_benefice_info,
                                  GET_CURRENCY_STRING_NUM(0.0));
+                }
 
-#endif
             }
 
             ventes_info.insert(j, current_complete_string_benefice_info);
@@ -591,7 +579,7 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 
     _reportTexFileEndString.append("\\end{enumerate}\n");
 
-    QMap < int, QString > barItems;
+    QMap<int, QString> barItems;
 
     double MAX_AMOUNT_VENTES_BENEFICES = somme_totale_benefices_jour_semaine +
                                          somme_totale_ventes_jour_semaine;
@@ -686,22 +674,29 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
                         barItems.values().join(YerothUtils::EMPTY_STRING));
     texDocument.replace("YEROTHTICKS", QString::number(TICKS));
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio des bénéfices jour--semaine.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio du chiffre d'affaire jour--semaine.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
-                        "Niveau du chiffre d'affaire");
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio of days of week profits.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio of days of week income.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio of days of week profits.}{purplish}");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio of days of week income.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
+    }
+    else
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio des bénéfices jour--semaine.}{purplish}");
+
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio du chiffre d'affaire jour--semaine.");
+
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Niveau du chiffre d'affaire");
+    }
+
 
     QString fileName1(YerothERPConfig::temporaryFilesDir + "/1a.tex");
 
@@ -717,50 +712,49 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_bar_diag_tex);
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_bar_diag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_bar_diag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_bar_diag_tex);
+    }
 
 
-    QString
-    factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (infoEntreprise.getVille_LATEX()));
+    QString factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX()));
+
     YerothUtils::getCurrentLocaleDate(factureDate);
 
     QString longDateDebut;
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
+    else
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
 
     //qDebug() << "++ type fact. rapports - chiffe affaire: " << YerothConfig::typeOfFacturation;
 
@@ -768,13 +762,11 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
     texDocument2.replace("YEROTHPAPERSPEC", "a4paper");
 
     if (YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                            YerothTableauxDeBordWindow::OBJET_CAISSIERS)
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                YerothTableauxDeBordWindow::OBJET_CATEGORIES)
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                YerothTableauxDeBordWindow::OBJET_CLIENTS))
+                                            YerothTableauxDeBordWindow::OBJET_CAISSIERS)  ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
+                                            YerothTableauxDeBordWindow::OBJET_CATEGORIES) ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
+                                            YerothTableauxDeBordWindow::OBJET_CLIENTS))
     {
         if (textFromLineEditEvolutionSujets.isEmpty())
         {
@@ -784,8 +776,7 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
     }
     else
     {
-        yerothFiltre =
-                        YerothUtils::LATEX_IN_OUT_handleForeignAccents(yerothFiltre);
+        yerothFiltre = YerothUtils::LATEX_IN_OUT_handleForeignAccents(yerothFiltre);
     }
 
     texDocument2.replace("YEROTHMENTION", "");
@@ -796,12 +787,16 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEDEBUT", longDateDebut);
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEFIN", longDateFin);
     texDocument2.replace("YEROTHCHARTFIN", _reportTexFileEndString);
+
     texDocument2.replace("YEROTHENTREPRISE",
                          infoEntreprise.getNomCommercial_LATEX());
+
     texDocument2.replace("YEROTHACTIVITESENTREPRISE",
                          infoEntreprise.getSecteursActivitesTex());
+
     texDocument2.replace("YEROTHBOITEPOSTALE",
                          infoEntreprise.getBoitePostal());
+
     texDocument2.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
     texDocument2.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
     texDocument2.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
@@ -809,62 +804,71 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
     texDocument2.replace("YEROTHDATE", factureDate);
 
     texDocument2.replace("YEROTHNOMUTILISATEUR",
-                         QString("%1 %2").arg(YerothUtils::getAllWindows()->
-                                              getUser()->titreTex(),
-                                              YerothUtils::getAllWindows()->
-                                              getUser()->
-                                              nom_completTex()));
+                         QString("%1 %2")
+                            .arg(YerothUtils::getAllWindows()->getUser()->titreTex(),
+                                 YerothUtils::getAllWindows()->getUser()->nom_completTex()));
 
     texDocument2.replace("YEROTHSUCCURSALE",
                          YerothUtils::LATEX_IN_OUT_handleForeignAccents
-						 	 (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
+                            (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
 
     texDocument2.replace("YEROTHHEUREDIMPRESSION", CURRENT_TIME);
+
     texDocument2.replace("YEROTHCOMPTEBANCAIRENR",
                          infoEntreprise.getNumeroCompteBancaire());
+
     texDocument2.replace("YEROTHCONTRIBUABLENR",
                          infoEntreprise.getNumeroDeContribuable());
+
     texDocument2.replace("YEROTHAGENCECOMPTEBANCAIRE",
                          infoEntreprise.getAgenceCompteBancaireTex());
 
     texDocument2.replace("1a.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme r\\'epr\\'esentatif des chiffres"
-                                 " d'affaire par jour de la semaine du %1 au %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString
-                         ("Chart illustrating days of week income from %1 to %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Chart illustrating days of week income from %1 to %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme r\\'epr\\'esentatif des chiffres"
+                                     " d'affaire par jour de la semaine du %1 au %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
     YerothUtils::LATEX_IN_OUT_handleForeignAccents(texDocument2);
 
-    QString
-    fileName(FILE_NAME_USERID_CURRENT_TIME
-             ("evolution-chiffre-affaire-jour-semaine"));
+
+    QString fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire-jour-semaine"));
+
     fileName.append(".");
 
     QString tmpFilePrefix(YerothERPConfig::temporaryFilesDir + "/" + fileName);
 
     QFile tmpFile(tmpFilePrefix + "tex");
+
     if (tmpFile.open(QFile::WriteOnly))
     {
         tmpFile.write(texDocument2.toUtf8());
     }
+
     tmpFile.close();
 
 //qDebug() << "++ tmpFile: " << tmpFile.fileName();
 
     QStringList progArguments;
+
     QString texRm(tmpFile.fileName().remove(".tex"));
+
     progArguments << texRm;
 
 //          qDebug() << "++ file name to latex compile bar diag: " << texRm;
@@ -900,10 +904,10 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_VENTES_BENEFICES(
 //#################### #################### -------------- #################### ####################
 
 
-void
-YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_ACHATS_VENTES
-(QString yerothFiltre, const QString &textFromLineEditEvolutionSujets,
- const QString &comboBoxEvolutionObjetsCurrentText)
+void YerothTableauxDeBordWindow::
+        GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_ACHATS_VENTES(QString yerothFiltre,
+                                                                        const QString &textFromLineEditEvolutionSujets,
+                                                                        const QString &comboBoxEvolutionObjetsCurrentText)
 {
     _GENERATE_THREE_D_BARD_DIAGRAM = false;
 
@@ -954,9 +958,9 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
     QString string_chiffre_daffaire_semaine_query;
 
 
-    QMap < int, double >dayOfWeek_TO_Purchases;
+    QMap<int, double> dayOfWeek_TO_Purchases;
 
-    QMap < QString, QMap < int, double >>article_TO_dayOfWeekPurchases;
+    QMap<QString, QMap<int, double>> article_TO_dayOfWeekPurchases;
 
     qint64
     dates_range =
@@ -1000,12 +1004,13 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
             current_day_of_week = current_day_date.date().dayOfWeek();
 
             string_achats_semaine_query =
-                            QString("SELECT (%1 * %2) FROM %3 WHERE %4='%5' AND %6='%7'").arg
-                            (YerothDatabaseTableColumn::PRIX_DACHAT,
-                             YerothDatabaseTableColumn::QUANTITE_TOTALE,
-                             YerothDatabase::ACHATS, YerothDatabaseTableColumn::DATE_ENTREE,
-                             DATE_TO_DB_FORMAT_STRING(current_day_date),
-                             YerothDatabaseTableColumn::DESIGNATION, current_designation);
+                            QString("SELECT (%1 * %2) FROM %3 WHERE %4='%5' AND %6='%7'")
+                                .arg(YerothDatabaseTableColumn::PRIX_DACHAT,
+                                     YerothDatabaseTableColumn::QUANTITE_TOTALE,
+                                     YerothDatabase::ACHATS, YerothDatabaseTableColumn::DATE_ENTREE,
+                                     DATE_TO_DB_FORMAT_STRING(current_day_date),
+                                     YerothDatabaseTableColumn::DESIGNATION,
+                                     current_designation);
             //QDEBUG_STRING_OUTPUT_2("string_achats_semaine_query", string_achats_semaine_query);
 
             //QDEBUG_STRING_OUTPUT_2("string_chiffre_daffaire_semaine_query", string_chiffre_daffaire_semaine_query);
@@ -1066,9 +1071,9 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
 
 
 
-    QMap < int, double >dayOfWeek_TO_Businessturnover;
+    QMap<int, double> dayOfWeek_TO_Businessturnover;
 
-    QMap < QString, QMap < int, double >>article_TO_dayOfWeekBusinessturnover;
+    QMap<QString, QMap<int, double>> article_TO_dayOfWeekBusinessturnover;
 
 
     for (uint k = 0; k < article_designation.size(); ++k)
@@ -1214,18 +1219,16 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
 
 
     //Fill in the PDF file which amount of money for each day of week.
-    QMapIterator < QString, QMap < int,
-                 double >>it_ventes(article_TO_dayOfWeekBusinessturnover);
+    QMapIterator<QString, QMap<int, double>> it_ventes(article_TO_dayOfWeekBusinessturnover);
 
-    QMapIterator < QString, QMap < int,
-                 double >>it_achats(article_TO_dayOfWeekPurchases);
+    QMapIterator<QString, QMap<int, double>> it_achats(article_TO_dayOfWeekPurchases);
 
 
-    QMap < int, QString > day_TO_QStringBaritem;
+    QMap<int, QString> day_TO_QStringBaritem;
 
-    QMap < QString, QMap < int, QString >> PRODUCT_TO_barItems;
+    QMap<QString, QMap<int, QString>> PRODUCT_TO_barItems;
 
-    QMap < int, double >it_dayOfWeek_TO_Businessturnover;
+    QMap<int, double> it_dayOfWeek_TO_Businessturnover;
 
     double ratio_achats = 0.0;
 
@@ -1239,9 +1242,9 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
 
     QString current_week_day;
 
-    QList < int >days_of_week;
+    QList<int>days_of_week;
 
-    QMap < QString, QString > weekday_TO_col;
+    QMap<QString, QString> weekday_TO_col;
 
 
     uint col_counter = 1;
@@ -1346,7 +1349,7 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
 
     QString sub_bar_achat;
 
-    QMap < int, double >it_dayOfWeek_TO_Purchases;
+    QMap<int, double> it_dayOfWeek_TO_Purchases;
 
     uint achats_count = 1;
 
@@ -1528,13 +1531,15 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
 
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_template_THREE_D_bardiag_tex);
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_template_THREE_D_bardiag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_template_THREE_D_bardiag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_template_THREE_D_bardiag_tex);
+    }
 
 
     QString
@@ -1573,33 +1578,31 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
     QString longDateDebut;
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::englishLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
+    else
+    {
+        longDateDebut =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+        longDateFin =
+        QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                            (YerothUtils::frenchLocale.toString
+                             (dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
 
 
     texDocument2.replace("YEROTHMENTION", "");
@@ -1615,48 +1618,58 @@ YerothTableauxDeBordWindow::GEN_THREE_DIMENSION_analyse_comparee_jour_semaine_AC
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEDEBUT", longDateDebut);
     texDocument2.replace("YEROTHCHIFFREAFFAIREDATEFIN", longDateFin);
     texDocument2.replace("YEROTHCHARTFIN", _reportTexFileEndString);
+
     texDocument2.replace("YEROTHENTREPRISE",
                          infoEntreprise.getNomCommercial_LATEX());
+
     texDocument2.replace("YEROTHACTIVITESENTREPRISE",
                          infoEntreprise.getSecteursActivitesTex());
+
     texDocument2.replace("YEROTHBOITEPOSTALE",
                          infoEntreprise.getBoitePostal());
     texDocument2.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
+
     texDocument2.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
     texDocument2.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
     texDocument2.replace("YEROTHTELEPHONE", infoEntreprise.getTelephone());
     texDocument2.replace("YEROTHDATE", factureDate);
 
     texDocument2.replace("YEROTHNOMUTILISATEUR",
-                         QString("%1 %2").arg(YerothUtils::getAllWindows()->
-                                              getUser()->titreTex(),
-                                              YerothUtils::getAllWindows()->
-                                              getUser()->
-                                              nom_completTex()));
+                         QString("%1 %2")
+                            .arg(YerothUtils::getAllWindows()->getUser()->titreTex(),
+                                 YerothUtils::getAllWindows()->getUser()->nom_completTex()));
 
     texDocument2.replace("YEROTHHEUREDIMPRESSION", CURRENT_TIME);
+
     texDocument2.replace("YEROTHCOMPTEBANCAIRENR",
                          infoEntreprise.getNumeroCompteBancaire());
+
     texDocument2.replace("YEROTHCONTRIBUABLENR",
                          infoEntreprise.getNumeroDeContribuable());
+
     texDocument2.replace("YEROTHAGENCECOMPTEBANCAIRE",
                          infoEntreprise.getAgenceCompteBancaireTex());
 
     texDocument2.replace("YEROTH-ERP-3D-BARDIAG-TEMPLATE.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme représentatif des pourcentages "
-                                 "DES ACHATS ET DES VENTES par jour de semaine du %1 au %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagram illustrating PURCHASE sales "
-                                 "percentages per days of week from %1 to %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagram illustrating PURCHASE sales "
+                                     "percentages per days of week from %1 to %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme représentatif des pourcentages "
+                                     "DES ACHATS ET DES VENTES par jour de semaine du %1 au %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
@@ -1731,9 +1744,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
         return;
     }
 
-    QMap < int, double >dayOfWeek__TO__purchases;
+    QMap<int, double> dayOfWeek__TO__purchases;
 
-    QMap < int, double >dayOfWeek__TO__businessturnover;
+    QMap<int, double> dayOfWeek__TO__businessturnover;
 
     qint64 dates_range =
                     dateEdit_chiffre_daffaire_jour_semaine_debut->date().
@@ -1771,13 +1784,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
     QString databaseTableColumn;
 
-    QString
-    comboBoxEvolutionObjetsCurrentText(comboBox_evolution_objets->currentText
-                                       ());
+    QString comboBoxEvolutionObjetsCurrentText(comboBox_evolution_objets->currentText());
 
-    QString
-    textFromLineEditEvolutionSujets
-    (comboBox_evolution_objets_value->currentText());
+    QString textFromLineEditEvolutionSujets(comboBox_evolution_objets_value->currentText());
 
 
     if (YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
@@ -2054,17 +2063,22 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
     _reportTexFileEndString.clear();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("D\\'etails en %1:").arg(YerothERPConfig::currency)));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    _reportTexFileEndString.append
-    (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-     (QString("Details in %1:").arg(YerothERPConfig::currency)));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QObject::tr("Details in %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+    else
+    {
+        _reportTexFileEndString
+            .append(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (QObject::tr("Détails en %1:")
+                            .arg(YerothERPConfig::currency)));
+    }
+
 
     _reportTexFileEndString.prepend("\\textbf{").append("}\n");
     _reportTexFileEndString.append("\\begin{enumerate}[1.]\n");
@@ -2073,9 +2087,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
     double somme_totale_ventes_jour_semaine = 0.0;
 
-    QMap < int, QString > ventes_achats_info;
+    QMap<int, QString> ventes_achats_info;
 
-    QMapIterator < int, double >it(dayOfWeek__TO__businessturnover);
+    QMapIterator<int, double> it(dayOfWeek__TO__businessturnover);
 
     while (it.hasNext())
     {
@@ -2083,64 +2097,46 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
         somme_totale_ventes_jour_semaine += it.value();
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-        ventes_achats_info.insert(it.key(),
-                                  QString
-                                  ("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ").
-                                  arg(YerothUtils::
-                                      LATEX_IN_OUT_handleForeignAccents
-                                      (YerothUtils::
-                                       GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.
-                                                                          key
-                                                                          ())),
-                                      YerothUtils::
-                                      LATEX_IN_OUT_handleForeignAccents
-                                      (GET_CURRENCY_STRING_NUM
-                                       (it.value()))));
-#else //YEROTH_ENGLISH_LANGUAGE
-        ventes_achats_info.insert(it.key(),
-                                  QString
-                                  ("\\item \\textbf{%1}: sales $\\rightarrow %2$, ").
-                                  arg(YerothUtils::
-                                      LATEX_IN_OUT_handleForeignAccents
-                                      (YerothUtils::
-                                       GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.
-                                                                          key
-                                                                          ())),
-                                      YerothUtils::
-                                      LATEX_IN_OUT_handleForeignAccents
-                                      (GET_CURRENCY_STRING_NUM
-                                       (it.value()))));
-#endif
+        if (YerothMainWindow::LANGUE_ANGLAISE)
+        {
+            ventes_achats_info.insert(it.key(),
+                                      QString("\\item \\textbf{%1}: sales $\\rightarrow %2$, ")
+                                        .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                                (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.key())),
+                                             YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                                (GET_CURRENCY_STRING_NUM(it.value()))));
+        }
+        else
+        {
+            ventes_achats_info.insert(it.key(),
+                                      QString("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ")
+                                        .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                                (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.key())),
+                                             YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                                (GET_CURRENCY_STRING_NUM(it.value()))));
+        }
     }
-
     for (uint j = 1; j <= 7; ++j)
     {
         if (!ventes_achats_info.contains(j))
         {
             //                      QDEBUG_STRING_OUTPUT_2_N("j - VENTES 0", j);
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-            ventes_achats_info.insert(j,
-                                      QString
-                                      ("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ").
-                                      arg(YerothUtils::
-                                          LATEX_IN_OUT_handleForeignAccents
-                                          (YerothUtils::
-                                           GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                                           (j)),
-                                          GET_CURRENCY_STRING_NUM(0.0)));
-#else //YEROTH_ENGLISH_LANGUAGE
-            ventes_achats_info.insert(j,
-                                      QString
-                                      ("\\item \\textbf{%1}: sales $\\rightarrow %2$, ").
-                                      arg(YerothUtils::
-                                          LATEX_IN_OUT_handleForeignAccents
-                                          (YerothUtils::
-                                           GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                                           (j)),
-                                          GET_CURRENCY_STRING_NUM(0.0)));
-#endif
+            if (YerothMainWindow::LANGUE_ANGLAISE)
+            {
+                ventes_achats_info.insert(j,
+                                          QString("\\item \\textbf{%1}: sales $\\rightarrow %2$, ")
+                                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                                                 GET_CURRENCY_STRING_NUM(0.0)));
+            }
+            else
+            {
+                ventes_achats_info.insert(j,
+                                          QString("\\item \\textbf{%1}: ventes $\\rightarrow %2$, ")
+                                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                                                 GET_CURRENCY_STRING_NUM(0.0)));
+            }
         }
     }
 
@@ -2155,9 +2151,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
     QString current_prefix_string_vente_info;
 
 
-    QMapIterator < int, double >it_achats(dayOfWeek__TO__purchases);
+    QMapIterator<int, double> it_achats(dayOfWeek__TO__purchases);
 
-    QList < uint > achats_jours_semaines_presents;
+    QList<uint> achats_jours_semaines_presents;
 
     for (uint j = 1; j <= 7; ++j)
     {
@@ -2169,30 +2165,26 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
             current_prefix_string_vente_info =
                             ventes_achats_info.value(it_achats.key());
-
             if (!current_prefix_string_vente_info.isEmpty())
             {
                 achats_jours_semaines_presents.append(it_achats.key());
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-                current_complete_string_vente_info =
-                                current_prefix_string_vente_info.append(QString
-                                                                        ("achats $\\rightarrow %1$\n").
-                                                                        arg(YerothUtils::
-                                                                            LATEX_IN_OUT_handleForeignAccents
-                                                                            (GET_CURRENCY_STRING_NUM
-                                                                             (it_achats.value
-                                                                              ()))));
-#else //YEROTH_ENGLISH_LANGUAGE
-                current_complete_string_vente_info =
-                                current_prefix_string_vente_info.append(QString
-                                                                        ("purchases $\\rightarrow %1$\n").
-                                                                        arg(YerothUtils::
-                                                                            LATEX_IN_OUT_handleForeignAccents
-                                                                            (GET_CURRENCY_STRING_NUM
-                                                                             (it_achats.value
-                                                                              ()))));
-#endif
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    current_complete_string_vente_info =
+                        current_prefix_string_vente_info.append
+                            (QString("purchases $\\rightarrow %1$\n")
+                                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (GET_CURRENCY_STRING_NUM(it_achats.value()))));
+                }
+                else
+                {
+                    current_complete_string_vente_info =
+                        current_prefix_string_vente_info.append
+                            (QString("achats $\\rightarrow %1$\n")
+                                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                        (GET_CURRENCY_STRING_NUM(it_achats.value()))));
+                }
 
                 ventes_achats_info.insert(it_achats.key(),
                                           current_complete_string_vente_info);
@@ -2207,67 +2199,63 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
         if (!achats_jours_semaines_presents.contains(j))
         {
             //                      QDEBUG_STRING_OUTPUT_2_N("!achats_jours_semaines_presents.contains(j)", j);
-
             if (!ventes_achats_info.contains(j))
             {
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-                current_complete_string_vente_info =
-                                QString
-                                ("\\item \\textbf{%1}: ventes $\\rightarrow %2$, achats $\\rightarrow %3$\n").
-                                arg(YerothUtils::
-                                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                                      GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                                                                      (j)),
-                                    GET_CURRENCY_STRING_NUM(0.0),
-                                    GET_CURRENCY_STRING_NUM(0.0));
-#else //YEROTH_ENGLISH_LANGUAGE
-                current_complete_string_vente_info =
-                                QString
-                                ("\\item \\textbf{%1}: sales $\\rightarrow %2$, purchases $\\rightarrow %3$\n").
-                                arg(YerothUtils::
-                                    LATEX_IN_OUT_handleForeignAccents(YerothUtils::
-                                                                      GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                                                                      (j)),
-                                    GET_CURRENCY_STRING_NUM(0.0),
-                                    GET_CURRENCY_STRING_NUM(0.0));
-#endif
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    current_complete_string_vente_info =
+                        QString("\\item \\textbf{%1}: sales $\\rightarrow %2$, purchases $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                                     GET_CURRENCY_STRING_NUM(0.0),
+                                     GET_CURRENCY_STRING_NUM(0.0));
+                }
+                else
+                {
+                    current_complete_string_vente_info =
+                        QString("\\item \\textbf{%1}: ventes $\\rightarrow %2$, purchases $\\rightarrow %3$\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(j)),
+                                     GET_CURRENCY_STRING_NUM(0.0),
+                                     GET_CURRENCY_STRING_NUM(0.0));
+                }
             }
             else
             {
                 current_prefix_string_vente_info = ventes_achats_info.value(j);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-                current_complete_string_vente_info =
-                                QString("%1 achats $\\rightarrow %2$\n").arg
-                                (current_prefix_string_vente_info,
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    current_complete_string_vente_info =
+                        QString("%1 purchases $\\rightarrow %2$\n")
+                            .arg(current_prefix_string_vente_info,
                                  GET_CURRENCY_STRING_NUM(0.0));
-
-#else //YEROTH_ENGLISH_LANGUAGE
-
-                current_complete_string_vente_info =
-                                QString("%1 purchases $\\rightarrow %2$\n").arg
-                                (current_prefix_string_vente_info,
+                }
+                else
+                {
+                    current_complete_string_vente_info =
+                        QString("%1 achats $\\rightarrow %2$\n")
+                            .arg(current_prefix_string_vente_info,
                                  GET_CURRENCY_STRING_NUM(0.0));
-
-#endif
+                }
             }
 
             ventes_achats_info.insert(j, current_complete_string_vente_info);
         }
     }
 
+
     for (uint j = 1; j <= 7; ++j)
     {
         _reportTexFileEndString.append(ventes_achats_info.value(j));
     }
 
+
     //      qDebug() << "VENTES-ACHATS-COMPLETE ventes_achats_info: " << ventes_achats_info;
 
     _reportTexFileEndString.append("\\end{enumerate}\n");
 
-    QMap < int, QString > barItems;
+    QMap<int, QString> barItems;
 
     double MAX_AMOUNT_ACHATS_VENTES = somme_totale_achats_jour_semaine +
                                       somme_totale_ventes_jour_semaine;
@@ -2289,11 +2277,10 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
         ratio_ventes = (it.value() * MAX_RATIO) / MAX_AMOUNT_ACHATS_VENTES;
 
         barItems.insert(it.key(),
-                        QString("\\baritem{%1}{%2}{gray}\n").arg
-                        (YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                         (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT
-                          (it.key())), QString::number(ratio_ventes, 'f',
-                                                       2)));
+                        QString("\\baritem{%1}{%2}{gray}\n")
+                            .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                                    (YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(it.key())),
+                                     QString::number(ratio_ventes, 'f', 2)));
     }
 
     for (uint k = 1; k <= 7; ++k)
@@ -2356,26 +2343,31 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
 
     texDocument.replace("YEROTHBARPERGROUP", "");
+
     texDocument.replace("YEROTHBARITEMS",
                         barItems.values().join(YerothUtils::EMPTY_STRING));
+
     texDocument.replace("YEROTHTICKS", QString::number(TICKS));
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio des achats jour--semaine.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio du chiffre d'affaire jour--semaine.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
-                        "Niveau du chiffre d'affaire");
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
-                        "\\diagLegenditem{Ratio of days of week purchasing.}{purplish}");
-    texDocument.replace("YEROTHDIAGRAMMETITRE",
-                        "Ratio of days of week income.");
-    texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio of days of week purchasing.}{purplish}");
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio of days of week income.");
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE", "Income Level");
+    }
+    else
+    {
+        texDocument.replace("YEROTHLEGENDANALYSECOMPAREE",
+                            "\\diagLegenditem{Ratio des achats jour--semaine.}{purplish}");
+        texDocument.replace("YEROTHDIAGRAMMETITRE",
+                            "Ratio du chiffre d'affaire jour--semaine.");
+        texDocument.replace("YEROTHNIVEAUCHIFFREAFFAIRE",
+                            "Niveau du chiffre d'affaire");
+    }
+
 
     QString fileName1(YerothERPConfig::temporaryFilesDir + "/1a.tex");
 
@@ -2391,64 +2383,63 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
     QString texDocument2;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.append(YerothUtils::FR_bar_diag_tex);
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.append(YerothUtils::EN_bar_diag_tex);
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.append(YerothUtils::EN_bar_diag_tex);
+    }
+    else
+    {
+        texDocument2.append(YerothUtils::FR_bar_diag_tex);
+    }
 
 
-    QString
-    factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                (infoEntreprise.getVille_LATEX()));
+    QString factureDate(YerothUtils::LATEX_IN_OUT_handleForeignAccents(infoEntreprise.getVille_LATEX()));
+
     YerothUtils::getCurrentLocaleDate(factureDate);
 
     QString longDateDebut;
     QString longDateFin;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::frenchLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        longDateDebut =
+            QString("'%1'")
+                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::englishLocale.toString(dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    longDateDebut =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_debut->date
-                                          ())));
+        longDateFin =
+            QString("'%1'")
+                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::englishLocale.toString(dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
+    else
+    {
+        longDateDebut =
+            QString("'%1'")
+                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::frenchLocale.toString(dateEdit_chiffre_daffaire_jour_semaine_debut->date())));
 
-    longDateFin =
-                    QString("'%1'").arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
-                                        (YerothUtils::englishLocale.toString
-                                         (dateEdit_chiffre_daffaire_jour_semaine_fin->date
-                                          ())));
-#endif
+        longDateFin =
+            QString("'%1'")
+                .arg(YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                        (YerothUtils::frenchLocale.toString(dateEdit_chiffre_daffaire_jour_semaine_fin->date())));
+    }
+
 
     //qDebug() << "++ type fact. rapports - chiffe affaire: " << YerothConfig::typeOfFacturation;
 
 
     texDocument2.replace("YEROTHPAPERSPEC", "a4paper");
 
+
     if (YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                            YerothTableauxDeBordWindow::OBJET_CAISSIERS)
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                YerothTableauxDeBordWindow::OBJET_CATEGORIES)
-            ||
-            YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
-                                                YerothTableauxDeBordWindow::OBJET_CLIENTS))
+                                            YerothTableauxDeBordWindow::OBJET_CAISSIERS)  ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
+                                            YerothTableauxDeBordWindow::OBJET_CATEGORIES) ||
+        YerothUtils::isEqualCaseInsensitive(comboBoxEvolutionObjetsCurrentText,
+                                            YerothTableauxDeBordWindow::OBJET_CLIENTS))
     {
         if (textFromLineEditEvolutionSujets.isEmpty())
         {
@@ -2458,9 +2449,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
     }
     else
     {
-        yerothFiltre =
-                        YerothUtils::LATEX_IN_OUT_handleForeignAccents(yerothFiltre);
+        yerothFiltre = YerothUtils::LATEX_IN_OUT_handleForeignAccents(yerothFiltre);
     }
+
 
     texDocument2.replace("YEROTHMENTION", "");
 
@@ -2472,10 +2463,13 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
     texDocument2.replace("YEROTHCHARTFIN", _reportTexFileEndString);
     texDocument2.replace("YEROTHENTREPRISE",
                          infoEntreprise.getNomCommercial_LATEX());
+
     texDocument2.replace("YEROTHACTIVITESENTREPRISE",
                          infoEntreprise.getSecteursActivitesTex());
+
     texDocument2.replace("YEROTHBOITEPOSTALE",
                          infoEntreprise.getBoitePostal());
+
     texDocument2.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
     texDocument2.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
     texDocument2.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
@@ -2483,11 +2477,9 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
     texDocument2.replace("YEROTHDATE", factureDate);
 
     texDocument2.replace("YEROTHNOMUTILISATEUR",
-                         QString("%1 %2").arg(YerothUtils::getAllWindows()->
-                                              getUser()->titreTex(),
-                                              YerothUtils::getAllWindows()->
-                                              getUser()->
-                                              nom_completTex()));
+                         QString("%1 %2")
+                            .arg(YerothUtils::getAllWindows()->getUser()->titreTex(),
+                                 YerothUtils::getAllWindows()->getUser()->nom_completTex()));
 
     texDocument2.replace("YEROTHSUCCURSALE",
                          YerothUtils::LATEX_IN_OUT_handleForeignAccents
@@ -2503,36 +2495,41 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine_ACHATS_VENTES()
 
     texDocument2.replace("1a.tex", fileName1);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString("Diagramme r\\'epr\\'esentatif des chiffres"
-                                 " d'affaire par jour de la semaine du %1 au %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
 
-#ifdef YEROTH_ENGLISH_LANGUAGE
-    texDocument2.replace("YEROTHTITREDOCUMENT",
-                         QString
-                         ("Chart illustrating days of week income from %1 to %2.").
-                         arg(longDateDebut, longDateFin));
-#endif
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Chart illustrating days of week income from %1 to %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+    else
+    {
+        texDocument2.replace("YEROTHTITREDOCUMENT",
+                             QString("Diagramme r\\'epr\\'esentatif des chiffres"
+                                     " d'affaire par jour de la semaine du %1 au %2.")
+                                .arg(longDateDebut,
+                                     longDateFin));
+    }
+
 
     //qDebug() << "++ test: " << texDocument2;
 
     YerothUtils::LATEX_IN_OUT_handleForeignAccents(texDocument2);
 
-    QString
-    fileName(FILE_NAME_USERID_CURRENT_TIME
-             ("evolution-chiffre-affaire-jour-semaine"));
+    QString fileName(FILE_NAME_USERID_CURRENT_TIME("evolution-chiffre-affaire-jour-semaine"));
+
     fileName.append(".");
 
     QString tmpFilePrefix(YerothERPConfig::temporaryFilesDir + "/" + fileName);
 
     QFile tmpFile(tmpFilePrefix + "tex");
+
     if (tmpFile.open(QFile::WriteOnly))
     {
         tmpFile.write(texDocument2.toUtf8());
     }
+
     tmpFile.close();
 
     //qDebug() << "++ tmpFile: " << tmpFile.fileName();

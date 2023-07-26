@@ -357,40 +357,6 @@ const QString YerothUtils::STRING_STYLESHEETS_YEROTH_ERP_3_0(
 const QString YerothUtils::STRING_STYLESHEET_COLOR_YEROTHGREEN(
 		"QLabel { color : rgb(0, 255, 100); }");
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-const
-QString YerothUtils::STRING_MONDAY("lundi");
-
-const QString YerothUtils::STRING_TUESDAY("mardi");
-
-const QString YerothUtils::STRING_WEDNESDAY("mercredi");
-
-const QString YerothUtils::STRING_THURSDAY("jeudi");
-
-const QString YerothUtils::STRING_FRIDAY("vendredi");
-
-const QString YerothUtils::STRING_SATURDAY("samedi");
-
-const QString YerothUtils::STRING_SUNDAY("dimanche");
-
-#else //YEROTH_ENGLISH_LANGUAGE
-
-const QString YerothUtils::STRING_MONDAY("MONDAY");
-
-const QString YerothUtils::STRING_TUESDAY("TUESDAY");
-
-const QString YerothUtils::STRING_WEDNESDAY("WEDNESDAY");
-
-const QString YerothUtils::STRING_THURSDAY("THURSDAY");
-
-const QString YerothUtils::STRING_FRIDAY("FRIDAY");
-
-const QString YerothUtils::STRING_SATURDAY("SATURDAY");
-
-const QString YerothUtils::STRING_SUNDAY("SUNDAY");
-
-#endif
 
 const QColor YerothUtils::YEROTH_WHITE_COLOR_FOR_EMPTY_MERCHANDISE_FILTERING(
 		QColor(COLOUR_RGB_YEROTH_RED_178_34_34));
@@ -1633,19 +1599,26 @@ QString YerothUtils::GET_DAYOFWEEK_FROM_QT_INT_CONSTANT(int day_of_week)
 	switch (day_of_week)
 	{
 	case 1:
-		return YerothUtils::STRING_MONDAY;
+		return YerothMainWindow::STRING_MONDAY;
+
 	case 2:
-		return YerothUtils::STRING_TUESDAY;
+		return YerothMainWindow::STRING_TUESDAY;
+
 	case 3:
-		return YerothUtils::STRING_WEDNESDAY;
+		return YerothMainWindow::STRING_WEDNESDAY;
+
 	case 4:
-		return YerothUtils::STRING_THURSDAY;
+		return YerothMainWindow::STRING_THURSDAY;
+
 	case 5:
-		return YerothUtils::STRING_FRIDAY;
+		return YerothMainWindow::STRING_FRIDAY;
+
 	case 6:
-		return YerothUtils::STRING_SATURDAY;
+		return YerothMainWindow::STRING_SATURDAY;
+
 	case 7:
-		return YerothUtils::STRING_SUNDAY;
+		return YerothMainWindow::STRING_SUNDAY;
+
 	default:
 		return YerothUtils::EMPTY_STRING;
 	}

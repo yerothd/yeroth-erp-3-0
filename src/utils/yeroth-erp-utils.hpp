@@ -953,21 +953,6 @@ public:
     static const QString STRING_STYLESHEET_COLOR_YEROTHGREEN;
 
 
-    static const QString STRING_MONDAY;
-
-    static const QString STRING_TUESDAY;
-
-    static const QString STRING_WEDNESDAY;
-
-    static const QString STRING_THURSDAY;
-
-    static const QString STRING_FRIDAY;
-
-    static const QString STRING_SATURDAY;
-
-    static const QString STRING_SUNDAY;
-
-
     static const QColor YEROTH_WHITE_COLOR_FOR_EMPTY_MERCHANDISE_FILTERING;
 
     static const QColor YEROTH_WHITE_COLOR;

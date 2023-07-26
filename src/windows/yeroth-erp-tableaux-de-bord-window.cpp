@@ -40,13 +40,14 @@
 
 
 QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES("ANALYSE COMPARÉ VENTES BÉNÉFICES");
+
 QString YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES("ANALYSE COMPARÉ ACHATS VENTES");
 
 
 QString YerothTableauxDeBordWindow::OPERATION_GENERER("générer les");
 
-
 QString YerothTableauxDeBordWindow::OPERATION_GENERER_BILAN_COMPTABLE("générer le bilan comptable");
+
 QString YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE("générer le chiffre d'affaire");
 
 
@@ -468,12 +469,24 @@ void YerothTableauxDeBordWindow::handleTabChanged(int index)
                        ("%1 - évolution du chiffre d'affaire").arg
                        (_windowName));
 
-        connect(actionAfficherPDF, SIGNAL(triggered()), this,
+
+        connect(actionAfficherPDF,
+                SIGNAL(triggered()),
+                this,
                 SLOT(choisirEvolutionDuChiffreDaffaire()));
-        connect(actionGenererPDF, SIGNAL(triggered()), this,
+
+
+        connect(actionGenererPDF,
+                SIGNAL(triggered()),
+                this,
                 SLOT(choisirEvolutionDuChiffreDaffaire()));
-        connect(actionReinitialiserRecherche, SIGNAL(triggered()), this,
+
+
+        connect(actionReinitialiserRecherche,
+                SIGNAL(triggered()),
+                this,
                 SLOT(reinitialiser_chiffre_affaire()));
+
 
         check_fields_BUSINESS_TURNOVER_PROGRESS();
     }
@@ -632,11 +645,14 @@ void YerothTableauxDeBordWindow::setupDateTimeEdits_BILAN_COMPTABLE()
 
 void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
 {
+    int comboBox_ANALYSE_COMPAREE_IDX =             comboBox_ANALYSE_COMPAREE->currentIndex();
     int comboBox_evolution_objets_IDX =             comboBox_evolution_objets->currentIndex();
     int comboBox_mois_debut_chiffre_affaire_IDX =   comboBox_mois_debut_chiffre_affaire->currentIndex();
     int comboBox_mois_fin_chiffre_affaire_IDX =     comboBox_mois_fin_chiffre_affaire->currentIndex();
 
 
+    comboBox_ANALYSE_COMPAREE->clear();
+    comboBox_operations_chiffre->clear();
     comboBox_evolution_objets->clear();
     comboBox_mois_debut_chiffre_affaire->clear();
     comboBox_mois_fin_chiffre_affaire->clear();
@@ -647,6 +663,11 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
     handle_enabled_chiffre_daffaire_mois(false);
 
     handle_enabled_chiffre_daffaire_jour_semaine(true);
+
+
+    comboBox_ANALYSE_COMPAREE->addItem(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES);
+    comboBox_ANALYSE_COMPAREE->addItem(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES);
+
 
     comboBox_operations_chiffre->addItem(YerothTableauxDeBordWindow::OPERATION_GENERER_CHIFFRE_DAFFAIRE);
 
@@ -687,10 +708,17 @@ void YerothTableauxDeBordWindow::setupTab_EVOLUTION_DU_CHIFFRE_DAFFAIRE()
     comboBox_mois_fin_chiffre_affaire->addItem(YerothTableauxDeBordWindow::MOIS_12);
 
 
+
+    if (-1 != comboBox_ANALYSE_COMPAREE_IDX)
+    {
+        comboBox_ANALYSE_COMPAREE->setCurrentIndex(comboBox_ANALYSE_COMPAREE_IDX);
+    }
+
     if (-1 != comboBox_evolution_objets_IDX)
     {
         comboBox_evolution_objets->setCurrentIndex(comboBox_evolution_objets_IDX);
     }
+
     if (-1 != comboBox_mois_debut_chiffre_affaire_IDX)
     {
         comboBox_mois_debut_chiffre_affaire->setCurrentIndex(comboBox_mois_debut_chiffre_affaire_IDX);
@@ -790,10 +818,12 @@ void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableM
     OPERATION_GENERER =                     QObject::tr("générer les");
 
     OPERATION_GENERER_BILAN_COMPTABLE =     QObject::tr("générer le bilan comptable");
+
     OPERATION_GENERER_CHIFFRE_DAFFAIRE =    QObject::tr("générer le chiffre d'affaire");
 
     ANALYSE_COMPAREE_VENTES_BENEFICES =     QObject::tr("ANALYSE COMPARÉ VENTES BÉNÉFICES");
-    ANALYSE_COMPAREE_ACHATS_VENTES=         QObject::tr("ANALYSE COMPARÉ ACHATS VENTES");
+
+    ANALYSE_COMPAREE_ACHATS_VENTES =        QObject::tr("ANALYSE COMPARÉ ACHATS VENTES");
 
     QUALITE_PLUS_VENDU_PAR_QUANTITE =   QObject::tr("avec les quantités les plus vendues");
     QUALITE_MOINS_VENDU_PAR_QUANTITE =  QObject::tr("avec les quantités les moins vendues");
@@ -851,6 +881,7 @@ void YerothTableauxDeBordWindow::rendreVisible(YerothSqlTableModel *stocksTableM
 
 
     retranslateUi(this);
+
 
 
     setupTab_BILAN_COMPTABLE();
@@ -939,13 +970,10 @@ void YerothTableauxDeBordWindow::definirManager()
     /** Tab One *************************************/
 
     pushButton_chiffre_affaire_generer->enable(this,
-                                               SLOT
-                                               (choisirEvolutionDuChiffreDaffaire
-                                                ()));
+                                               SLOT(choisirEvolutionDuChiffreDaffaire()));
+
     pushButton_chiffre_affaire_reinitialiser->enable(this,
-                                                     SLOT
-                                                     (reinitialiser_chiffre_affaire
-                                                      ()));
+                                                     SLOT(reinitialiser_chiffre_affaire()));
 
     /** Tab Two *************************************/
 
@@ -1130,17 +1158,13 @@ void YerothTableauxDeBordWindow::reinitialiser_bilan_comptable()
 
 void YerothTableauxDeBordWindow::generer()
 {
-    if (YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE ==
-            comboBox_qualite->currentText()
-            || YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE ==
-            comboBox_qualite->currentText())
+    if (YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE == comboBox_qualite->currentText()  ||
+        YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE == comboBox_qualite->currentText())
     {
         compterLesArticlesVendusParQuantite();
     }
-    else if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES ==
-             comboBox_qualite->currentText()
-             || YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES ==
-             comboBox_qualite->currentText())
+    else if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES == comboBox_qualite->currentText() ||
+             YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES == comboBox_qualite->currentText())
     {
         compterLesArticlesVendusParBENEFICES();
     }
@@ -3075,18 +3099,15 @@ void YerothTableauxDeBordWindow::analyse_comparee_jour_semaine()
 {
     if (checkBox_analyse_comparee->isChecked())
     {
-        QString
-        current_compared_analysis(comboBox_ANALYSE_COMPAREE->currentText());
+        QString current_compared_analysis(comboBox_ANALYSE_COMPAREE->currentText());
 
-        if (YerothUtils::isEqualCaseInsensitive
-                (YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES,
-                 current_compared_analysis))
+        if (YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES,
+                                                current_compared_analysis))
         {
             analyse_comparee_jour_semaine_ACHATS_VENTES();
         }
-        else if (YerothUtils::isEqualCaseInsensitive
-                 (YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES,
-                  current_compared_analysis))
+        else if (YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES,
+                                                     current_compared_analysis))
         {
             analyse_comparee_jour_semaine_VENTES_BENEFICES();
         }
@@ -3098,18 +3119,15 @@ void YerothTableauxDeBordWindow::analyse_comparee_mensuelle()
 {
     if (checkBox_analyse_comparee->isChecked())
     {
-        QString
-        current_compared_analysis(comboBox_ANALYSE_COMPAREE->currentText());
+        QString current_compared_analysis(comboBox_ANALYSE_COMPAREE->currentText());
 
-        if (YerothUtils::isEqualCaseInsensitive
-                (YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES,
-                 current_compared_analysis))
+        if (YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_ACHATS_VENTES,
+                                                current_compared_analysis))
         {
             analyse_comparee_mensuelle_ACHATS_VENTES();
         }
-        else if (YerothUtils::isEqualCaseInsensitive
-                 (YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES,
-                  current_compared_analysis))
+        else if (YerothUtils::isEqualCaseInsensitive(YerothTableauxDeBordWindow::ANALYSE_COMPAREE_VENTES_BENEFICES,
+                                                     current_compared_analysis))
         {
             analyse_comparee_mensuelle_VENTES_BENEFICES();
         }
