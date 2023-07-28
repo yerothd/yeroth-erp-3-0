@@ -1,0 +1,1 @@
+create table periodes_dappartenance_groupes_de_paie_hr (id int primary key, nom_entreprise varchar(256) NOT NULL, groupe_de_paie_hr varchar(256) NOT NULL, date_de_debut_dappartenance date NOT NULL, date_de_fin_dappartenance date NOT NULL);

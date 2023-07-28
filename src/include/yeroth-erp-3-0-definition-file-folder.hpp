@@ -19,6 +19,9 @@
 
 #define FILE_YEROTH_ERP_3_0_USER_MANUAL_FR 					FOLDER_YEROTH_ERP_3_0_USER_DOC"/francais/yeroth-erp-3-0-software-system-uses.pdf"
 
+#define FILE_YEROTH_ERP_3_0_SQL_TABLE_periodes_dappartenance_groupes_de_paie_hr \
+		FOLDER_YEROTH_ERP_3_0_SQL"/create_table_PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR.sql"
+
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_groupes_demployes_hr				FOLDER_YEROTH_ERP_3_0_SQL"/create_table_GROUPES_DEMPLOYES_HR.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_groupes_de_paie_hr					FOLDER_YEROTH_ERP_3_0_SQL"/create_table_GROUPES_DE_PAIE_HR.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_TYPE_DOPERATIONS_FINANCIERES	FOLDER_YEROTH_ERP_3_0_SQL"/create_table_typedoperations_financieres.sql"

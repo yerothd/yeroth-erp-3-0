@@ -973,6 +973,7 @@ int main(int argc, char *argv[])
 #endif
 
     sql_table_list
+			<< FILE_YEROTH_ERP_3_0_SQL_TABLE_periodes_dappartenance_groupes_de_paie_hr
 			<< FILE_YEROTH_ERP_3_0_SQL_TABLE_groupes_demployes_hr
 			<< FILE_YEROTH_ERP_3_0_SQL_TABLE_groupes_de_paie_hr
             << FILE_YEROTH_ERP_3_0_SQL_TABLE_TYPE_DOPERATIONS_FINANCIERES

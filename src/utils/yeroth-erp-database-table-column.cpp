@@ -196,6 +196,10 @@ const QString YerothDatabaseTableColumn::LOGO_ENTREPRISE("logo_entreprise");
 
 const QString YerothDatabaseTableColumn::IMAGE_PRODUIT("image_produit");
 
+const QString YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE("date_de_debut_dappartenance");
+
+const QString YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE("date_de_fin_dappartenance");
+
 const QString YerothDatabaseTableColumn::DATE_PEREMPTION("date_peremption");
 
 const QString YerothDatabaseTableColumn::DATE_DE_RECEPTION("date_de_reception");
@@ -755,6 +759,14 @@ void YerothDatabaseTableColumn::RETRANSLATE()
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::IMAGE_PRODUIT,
            QObject::tr("Image produit"));
+
+    _tableColumnToUserViewString.
+    insert(YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE,
+           QObject::tr("Début d'appartenance"));
+
+    _tableColumnToUserViewString.
+    insert(YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE,
+           QObject::tr("Fin d'appartenance"));
 
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::DATE_PEREMPTION,

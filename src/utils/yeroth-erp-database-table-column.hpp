@@ -217,6 +217,10 @@ public:
 
     static const QString IMAGE_PRODUIT;
 
+    static const QString DATE_DE_DEBUT_DAPPARTENANCE;
+
+    static const QString DATE_DE_FIN_DAPPARTENANCE;
+
     static const QString DATE_PEREMPTION;
 
     static const QString DATE_DE_RECEPTION;
