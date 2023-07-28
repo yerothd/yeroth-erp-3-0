@@ -200,11 +200,13 @@ public:
 
     void reinitialiseSqlTableModels();
 
-    void setupSqlTableModelFromName(const QString &aSqlTableName,
-                                    YerothSqlTableModel **
-                                    aYerothSqlTableModel);
+    void setupSqlTableModelFromName(const QString       &aSqlTableName,
+                                    YerothSqlTableModel **aYerothSqlTableModel);
 
     void setupConfiguration();
+
+
+    YerothSqlTableModel &getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
 
     YerothSqlTableModel &getSqlTableModel_imprimantereseau_recus_petits();
 
@@ -592,6 +594,7 @@ private:
 
     static QMap<QString, YerothSqlTableModel *> _sqltablenameTOsqltablemodel;
 
+    YerothSqlTableModel *_tableModel_periodes_dappartenance_groupes_de_paie_hr;
     YerothSqlTableModel *_tableModel_imprimantereseau_recus_petits;
     YerothSqlTableModel *_tableModel_operations_comptables;
     YerothSqlTableModel *_tableModel_comptes_doperations_comptables;

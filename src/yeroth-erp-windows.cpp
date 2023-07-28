@@ -114,6 +114,7 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
     _adminDetailWindow(0),
     _adminModifierWindow(0),
     _database(0),
+    _tableModel_periodes_dappartenance_groupes_de_paie_hr(0),
     _tableModel_imprimantereseau_recus_petits(0),
     _tableModel_operations_comptables(0),
     _tableModel_comptes_doperations_comptables(0),
@@ -143,7 +144,8 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
     _tableModel_stocks_vendu(0),
     _tableModel_stocks_sorties(0),
     _tableModel_marchandises(0),
-    _tableModel_configurations(0), _tableModel_init_configurations(0),
+    _tableModel_configurations(0),
+    _tableModel_init_configurations(0),
 #ifdef YEROTH_SERVER
     _dbusServer(0),
 #endif
@@ -152,38 +154,53 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
 #endif
     _logger(0),
     _infoEntreprise(0),
-    _user(0), _currentPosition(0), _desktopWidget(desktopWidget)
+    _user(0),
+    _currentPosition(0),
+    _desktopWidget(desktopWidget)
 {
     _logger = new YerothLogger("YerothWindows");
 
     YerothERPWindows::setupConfiguration();
 
-    static
-    YerothDatabaseTableColumn
-    aYerothDatabaseTableColumnStaticInstance;
+    static YerothDatabaseTableColumn aYerothDatabaseTableColumnStaticInstance;
+
+    setupSqlTableModelFromName(YerothDatabase::PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR,
+                               &_tableModel_periodes_dappartenance_groupes_de_paie_hr);
 
     setupSqlTableModelFromName(YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS,
                                &_tableModel_imprimantereseau_recus_petits);
+
     setupSqlTableModelFromName(YerothDatabase::OPERATIONS_COMPTABLES,
                                &_tableModel_operations_comptables);
+
     setupSqlTableModelFromName(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES,
                                &_tableModel_comptes_doperations_comptables);
+
     setupSqlTableModelFromName(YerothDatabase::COMPTES_BANCAIRES,
                                &_tableModel_comptes_bancaires);
+
     setupSqlTableModelFromName(YerothDatabase::ENTREPRISE_INFO,
                                &_tableModel_entreprise_info);
+
     setupSqlTableModelFromName(YerothDatabase::PAIEMENTS,
                                &_tableModel_historique_paiements);
+
     setupSqlTableModelFromName(YerothDatabase::USERS, &_tableModel_users);
+
     setupSqlTableModelFromName(YerothDatabase::TITRES, &_tableModel_titres);
+
     setupSqlTableModelFromName(YerothDatabase::LOCALISATIONS,
                                &_tableModel_localisations);
+
     setupSqlTableModelFromName(YerothDatabase::DEPARTEMENTS_PRODUITS,
                                &_tableModel_departements_produits);
+
     setupSqlTableModelFromName(YerothDatabase::CATEGORIES,
                                &_tableModel_categories);
+
     setupSqlTableModelFromName(YerothDatabase::LIGNES_BUDGETAIRES,
                                &_tableModel_ligne_budgetaire);
+
     setupSqlTableModelFromName(YerothDatabase::PROGRAMMES_DE_FIDELITE_CLIENTS,
                                &_tableModel_programmes_de_fidelite_clients);
 
@@ -200,6 +217,7 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
 
     setupSqlTableModelFromName(YerothDatabase::FOURNISSEURS,
                                &_tableModel_fournisseurs);
+
     setupSqlTableModelFromName(YerothDatabase::ALERTES, &_tableModel_alertes);
     setupSqlTableModelFromName(YerothDatabase::REMISES, &_tableModel_remises);
     setupSqlTableModelFromName(YerothDatabase::CONDITIONS_ALERTES,
@@ -408,6 +426,7 @@ void YerothERPWindows::createAllYerothPosUserWindows()
 
 void YerothERPWindows::reinitialiseSqlTableModels()
 {
+    delete _tableModel_periodes_dappartenance_groupes_de_paie_hr;
     delete _tableModel_imprimantereseau_recus_petits;
     delete _tableModel_comptes_doperations_comptables;
     delete _tableModel_operations_comptables;
@@ -439,14 +458,21 @@ void YerothERPWindows::reinitialiseSqlTableModels()
     delete _tableModel_configurations;
     delete _tableModel_init_configurations;
 
+    _tableModel_periodes_dappartenance_groupes_de_paie_hr =
+        new YerothSqlTableModel(YerothDatabase::PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR);
+
     _tableModel_imprimantereseau_recus_petits =
-                    new YerothSqlTableModel(YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS);
+        new YerothSqlTableModel(YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS);
+
     _tableModel_operations_comptables =
                     new YerothSqlTableModel(YerothDatabase::OPERATIONS_COMPTABLES);
+
     _tableModel_comptes_doperations_comptables =
                     new YerothSqlTableModel(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES);
+
     _tableModel_comptes_bancaires =
                     new YerothSqlTableModel(YerothDatabase::COMPTES_BANCAIRES);
+
     _tableModel_entreprise_info =
                     new YerothSqlTableModel(YerothDatabase::ENTREPRISE_INFO);
     _tableModel_historique_paiements =
@@ -922,6 +948,13 @@ void YerothERPWindows::hideAllWindows()
     _adminModifierWindow->rendreInvisible();
 
     _mainWindow->rendreInvisible();
+}
+
+
+YerothSqlTableModel &YerothERPWindows::getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr()
+{
+    _tableModel_periodes_dappartenance_groupes_de_paie_hr->resetFilter("src/yeroth-erp-windows.cpp", 948);
+    return *_tableModel_periodes_dappartenance_groupes_de_paie_hr;
 }
 
 

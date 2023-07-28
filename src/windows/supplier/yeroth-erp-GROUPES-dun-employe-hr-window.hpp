@@ -73,6 +73,7 @@ public:
     virtual void rendreVisible(YerothSqlTableModel *clientTableModel,
                                YerothSqlTableModel *stocksTableModel);
 
+
 public slots:
 
 	virtual bool imprimer_pdf_document();
@@ -96,13 +97,18 @@ public slots:
                                         "cliquer sur l'opération que vous souhaitez réaliser !"));
     }
 
+
 protected:
 
     virtual void contextMenuEvent(QContextMenuEvent *event);
 
     virtual void setupShortcuts();
 
+
 private slots:
+
+    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
+                                                     int column);
 
     inline void ajouter_appartenance(const QString &un_groupe_DEMPLOYES_hr)
     {
@@ -133,6 +139,7 @@ private slots:
     void afficher_tous_les_groupes_DUN_EMPLOYE_hr();
 
     void enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT();
+
 
 private:
 

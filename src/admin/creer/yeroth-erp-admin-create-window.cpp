@@ -96,6 +96,12 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
     pushButton_modifier->enable(this, SLOT(lister()));
 
 
+    connect(checkBox_reactiver_departement_CMD_REPETITION,
+    		SIGNAL(stateChanged(int)),
+            this,
+			SLOT(handle_reactiver_departement_CMD_REPETITION(int)));
+
+
     connect(lineEdit_creer_CHARGE_FINANCIERE_tva_value,
     		SIGNAL(textChanged(const QString &)),
             this,
@@ -160,7 +166,11 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
 
     connect(tabWidget_creer, SIGNAL(currentChanged(int)), this,
             SLOT(handleCurrentChanged()));
+
+
+    checkBox_reactiver_departement_CMD_REPETITION->setChecked(false);
 }
+
 
 void YerothAdminCreateWindow::definirPasDeRole()
 {
@@ -170,6 +180,7 @@ void YerothAdminCreateWindow::definirPasDeRole()
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  false);
 }
+
 
 void YerothAdminCreateWindow::definirAdministrateur()
 {
@@ -188,6 +199,22 @@ void YerothAdminCreateWindow::definirManager()
                                                  true);
     YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(actionRetournerMenuPrincipal,
                                                  true);
+}
+
+
+void YerothAdminCreateWindow::handle_reactiver_departement_CMD_REPETITION(int state)
+{
+    QDEBUG_STRING_OUTPUT_2("state checked",
+                            BOOL_TO_STRING(checkBox_reactiver_departement_CMD_REPETITION->isChecked()));
+
+    if (checkBox_reactiver_departement_CMD_REPETITION->isChecked())
+    {
+        doubleSpinBox_creer_charge_financiere_CMD_REPETITION->setYerothEnabled(true);
+    }
+    else
+    {
+        doubleSpinBox_creer_charge_financiere_CMD_REPETITION->setYerothEnabled(false);
+    }
 }
 
 

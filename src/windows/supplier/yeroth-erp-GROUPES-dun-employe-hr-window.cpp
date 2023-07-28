@@ -54,9 +54,16 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
 
     _curEMPLOYEEgroups_TableModel = &_allWindows->getSqlTableModel_fournisseurs();
 
+
+    dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(false);
+
+    dateEdit_groupe_dun_employe_date_end->setYerothEnabled(false);
+
+
     setupLineEdits();
 
     populateComboBoxes();
+
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, false);
@@ -421,6 +428,77 @@ void YerothGROUPES_DUN_EMPLOYE_Window::setupShortcuts()
     setupShortcutActionAfficherPDF(*actionAfficherPDF);
     //setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
     setupShortcutActionQuiSuisJe(*actionQui_suis_je);
+}
+
+
+void YerothGROUPES_DUN_EMPLOYE_Window::
+        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
+                                                    int column)
+{
+    //I only handle the first column that entails group name.
+    if  (0 != column)
+    {
+        return;
+    }
+
+    QTableWidgetItem *item_designation =
+        tableWidget_Groupes_Dun_Employe->item(row,
+                                              0);
+
+    if (0 != item_designation)
+    {
+        QString designation_GROUPE_DE_PAIE_HR =
+            item_designation->text();
+
+        if (!designation_GROUPE_DE_PAIE_HR.isEmpty())
+        {
+            dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(true);
+            dateEdit_groupe_dun_employe_date_end->setYerothEnabled(true);
+
+
+            YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_TableModel
+                = _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
+
+
+            periodes_dappartenance_groupes_de_paie_hr_TableModel
+                .yerothSetFilter_WITH_where_clause
+                    (GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::DESIGNATION,
+                                          designation_GROUPE_DE_PAIE_HR));
+
+
+            int query_size = periodes_dappartenance_groupes_de_paie_hr_TableModel
+                                .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 469);
+
+            if (0 < query_size)
+            {
+                QSqlRecord a_record =
+                    periodes_dappartenance_groupes_de_paie_hr_TableModel.record(0);
+
+                QString dateEdit_groupe_dun_employe_date_begin_STRING =
+                    GET_SQL_RECORD_DATA(a_record,
+                                        YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE);
+
+                QString dateEdit_groupe_dun_employe_date_end_STRING =
+                    GET_SQL_RECORD_DATA(a_record,
+                                        YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE);
+
+
+                dateEdit_groupe_dun_employe_date_begin
+                    ->setDate(GET_DATE_FROM_STRING(dateEdit_groupe_dun_employe_date_begin_STRING));
+
+                dateEdit_groupe_dun_employe_date_end
+                    ->setDate(GET_DATE_FROM_STRING(dateEdit_groupe_dun_employe_date_end_STRING));
+            }
+
+            periodes_dappartenance_groupes_de_paie_hr_TableModel.resetFilter();
+        }
+        else
+        {
+            dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(false);
+            dateEdit_groupe_dun_employe_date_end->setYerothEnabled(false);
+        }
+    }
+
 }
 
 

@@ -21,9 +21,12 @@ class QSqlError;
 
 class YerothDatabase
 {
+
 public:
 
-    YEROTH_CLASS_OPERATORS YerothDatabase();
+    YEROTH_CLASS_OPERATORS
+
+    YerothDatabase();
 
     inline ~YerothDatabase()
     {
@@ -121,6 +124,7 @@ public:
         return _db_connection_options;
     }
 
+
 private:
 
     QSqlDatabase _database;
@@ -132,9 +136,10 @@ private:
     static QString _db_user_pwd;
     static QString _db_connection_options;
 
+
 public:
 
-
+    static const QString PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR;
     static const QString IMPRIMANTERESEAU_RECUS_PETITS;
     static const QString COMPTES_BANCAIRES;
     static const QString OPERATIONS_COMPTABLES;

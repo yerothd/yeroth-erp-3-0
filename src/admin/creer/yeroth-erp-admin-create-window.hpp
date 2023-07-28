@@ -130,6 +130,11 @@ protected:
     virtual void hideEvent(QHideEvent *hideEvent);
 
 
+private slots:
+
+    void handle_reactiver_departement_CMD_REPETITION(int state);
+
+
 private:
 
     void show_item_CHARGE_FINANCIERE(bool from_charge_financiere_window = false);

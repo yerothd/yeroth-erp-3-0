@@ -9,9 +9,10 @@
 #include "src/utils/yeroth-erp-utils.hpp"
 
 
-const QString
-YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS
-("imprimantereseau_recus_petits");
+
+const QString YerothDatabase::PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR("periodes_dappartenance_groupes_de_paie_hr");
+
+const QString YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS("imprimantereseau_recus_petits");
 
 const
 QString YerothDatabase::COMPTES_BANCAIRES("comptes_bancaires");
@@ -106,6 +107,7 @@ QString YerothDatabase::_db_user_pwd("");
 
 QString YerothDatabase::_db_connection_options("");
 
+
 YerothDatabase::YerothDatabase()
 {
     set_db_name(YerothERPConfig::_db_name);
@@ -135,11 +137,13 @@ YerothDatabase::YerothDatabase()
     _database.setConnectOptions(_db_connection_options);
 }
 
+
 void YerothDatabase::set_db_name(const QString &db_name)
 {
     _db_name = db_name;
     _database.setDatabaseName(_db_name);
 }
+
 
 void YerothDatabase::set_db_ip_address(const QString &db_ip_address)
 {
@@ -147,17 +151,20 @@ void YerothDatabase::set_db_ip_address(const QString &db_ip_address)
     _database.setHostName(_db_ip_address);
 }
 
+
 void YerothDatabase::set_db_user_name(const QString &db_user_name)
 {
     _db_user_name = db_user_name;
     _database.setUserName(_db_user_name);
 }
 
+
 void YerothDatabase::set_db_user_pwd(const QString &db_user_pwd)
 {
     _db_user_pwd = db_user_pwd;
     _database.setPassword(_db_user_pwd);
 }
+
 
 void YerothDatabase::set_db_connection_options(const QString &
                                                db_connection_options)
@@ -166,6 +173,7 @@ void YerothDatabase::set_db_connection_options(const QString &
     _database.setConnectOptions(_db_connection_options);
 
 }
+
 
 QString YerothDatabase::toString() const
 {
@@ -201,3 +209,4 @@ QString YerothDatabase::toString() const
 
     return ret;
 }
+
