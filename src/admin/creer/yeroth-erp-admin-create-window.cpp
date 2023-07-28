@@ -350,11 +350,14 @@ void YerothAdminCreateWindow::setupDateTimeEdits()
 }
 
 
-void YerothAdminCreateWindow::rendreVisible(unsigned selectedSujetAction,
+void YerothAdminCreateWindow::rendreVisible(YerothSqlTableModel *stocksTableModel,
+                                            unsigned selectedSujetAction,
 											bool 	 a_show_item_CHARGE_FINANCIERE /* = false */,
 											bool     from_charge_financiere_window /* = false */ )
 {
     retranslateUi(this);
+
+    _curStocksTableModel = stocksTableModel;
 
     tabWidget_creer->setCurrentIndex(selectedSujetAction);
 
@@ -641,7 +644,8 @@ void YerothAdminCreateWindow::annuler()
 
     clear_remise_all_fields();
 
-    _allWindows->_adminWindow->rendreVisible();
+    _allWindows->_adminWindow
+        ->rendreVisible(_curStocksTableModel);
 
     rendreInvisible();
 }

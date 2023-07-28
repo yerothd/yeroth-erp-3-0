@@ -251,7 +251,9 @@ void YerothAdminDetailWindow::definirManager()
 
 void YerothAdminDetailWindow::creer()
 {
-    _allWindows->_adminCreateWindow->rendreVisible(tabWidget_detail->currentIndex());
+    _allWindows->_adminCreateWindow
+        ->rendreVisible(_curStocksTableModel,
+                        tabWidget_detail->currentIndex());
     rendreInvisible();
 }
 

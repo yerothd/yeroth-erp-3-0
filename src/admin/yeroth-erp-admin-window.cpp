@@ -1764,7 +1764,9 @@ void YerothAdminWindow::initialize_admin_importer_csv_tableau()
 
 void YerothAdminWindow::creer(enum AdminSujetAction selectedSujetAction)
 {
-    _allWindows->_adminCreateWindow->rendreVisible(selectedSujetAction);
+    _allWindows->_adminCreateWindow
+        ->rendreVisible(_curStocksTableModel,
+                        selectedSujetAction);
     rendreInvisible();
 }
 

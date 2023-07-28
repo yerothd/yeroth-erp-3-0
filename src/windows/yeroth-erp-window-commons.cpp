@@ -1322,7 +1322,8 @@ void YerothWindowsCommons::alertes()
 void YerothWindowsCommons::SLOT_CREER_A_PARTIR_DE_CECI()
 {
 	_allWindows->_adminCreateWindow
-		->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE,
+		->rendreVisible(_curStocksTableModel,
+                        SUJET_ACTION_CHARGE_FINANCIERE,
 						true);
 	rendreInvisible();
 }
@@ -1330,7 +1331,8 @@ void YerothWindowsCommons::SLOT_CREER_A_PARTIR_DE_CECI()
 void YerothWindowsCommons::SLOT_CREER_A_PARTIR_DE_CECI_charge_financiere()
 {
 	_allWindows->_adminCreateWindow
-		->rendreVisible(SUJET_ACTION_CHARGE_FINANCIERE,
+		->rendreVisible(_curStocksTableModel,
+                        SUJET_ACTION_CHARGE_FINANCIERE,
 						true,
 						true);
 	rendreInvisible();

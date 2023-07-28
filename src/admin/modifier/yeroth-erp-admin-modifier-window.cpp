@@ -414,7 +414,9 @@ void YerothAdminModifierWindow::annuler()
 
 void YerothAdminModifierWindow::creer()
 {
-    _allWindows->_adminCreateWindow->rendreVisible(tabWidget_modifier->currentIndex());
+    _allWindows->_adminCreateWindow
+        ->rendreVisible(_curStocksTableModel,
+                        tabWidget_modifier->currentIndex());
     rendreInvisible();
 }
 

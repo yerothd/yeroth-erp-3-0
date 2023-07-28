@@ -46,7 +46,8 @@ public:
 
     virtual void definirManager();
 
-    virtual void rendreVisible(unsigned selectedSujetAction,
+    virtual void rendreVisible(YerothSqlTableModel *stocksTableModel,
+                               unsigned selectedSujetAction,
     						   bool 	a_show_item_CHARGE_FINANCIERE = false,
     						   bool     from_charge_financiere_window = false);
 

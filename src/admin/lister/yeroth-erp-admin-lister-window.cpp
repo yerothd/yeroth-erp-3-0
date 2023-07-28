@@ -1601,8 +1601,9 @@ void YerothAdminListerWindow::handleCurrentChanged(int index)
 
 void YerothAdminListerWindow::creer()
 {
-    _allWindows->_adminCreateWindow->rendreVisible(tabWidget_lister->
-                                                   currentIndex());
+    _allWindows->_adminCreateWindow
+        ->rendreVisible(_curStocksTableModel,
+                        tabWidget_lister->currentIndex());
     rendreInvisible();
 }
 
