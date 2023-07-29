@@ -167,8 +167,8 @@ YerothAdminCreateWindow::YerothAdminCreateWindow()
     connect(tabWidget_creer, SIGNAL(currentChanged(int)), this,
             SLOT(handleCurrentChanged()));
 
-
-    checkBox_reactiver_departement_CMD_REPETITION->setChecked(false);
+    checkBox_reactiver_departement_CMD_REPETITION->setCheckState(Qt::Checked);
+    checkBox_reactiver_departement_CMD_REPETITION->setCheckState(Qt::Unchecked);
 }
 
 
@@ -204,9 +204,6 @@ void YerothAdminCreateWindow::definirManager()
 
 void YerothAdminCreateWindow::handle_reactiver_departement_CMD_REPETITION(int state)
 {
-    QDEBUG_STRING_OUTPUT_2("state checked",
-                            BOOL_TO_STRING(checkBox_reactiver_departement_CMD_REPETITION->isChecked()));
-
     if (checkBox_reactiver_departement_CMD_REPETITION->isChecked())
     {
         doubleSpinBox_creer_charge_financiere_CMD_REPETITION->setYerothEnabled(true);

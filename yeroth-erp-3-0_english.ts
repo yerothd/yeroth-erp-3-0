@@ -2337,47 +2337,47 @@ Continue updating asset or stock ?</translation>
         <translation>administration ~ create</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="759"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="756"/>
         <source>administration ~ créer ~ utilisateurs</source>
         <translation>administration ~ create ~ users</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="767"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="764"/>
         <source>administration ~ créer ~ LOCALISATIONS</source>
         <translation>administration ~ create ~ LOCALISATIONS</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="775"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="772"/>
         <source>administration ~ créer ~ départements</source>
         <translation>administration ~ create ~ departments</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="783"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="780"/>
         <source>administration ~ créer ~ catégories</source>
         <translation>administration ~ create ~ categories</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="791"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="788"/>
         <source>administration ~ créer ~ LIGNES BUDÉGTAIRES</source>
         <translation>administration ~ create ~ BUDGET LINES</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="799"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="796"/>
         <source>administration ~ créer ~ comptes bancaires</source>
         <translation>administration ~ create ~ bank accounts</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="807"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="804"/>
         <source>administration ~ créer ~ remises</source>
         <translation>administration ~ create ~ discounts</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="815"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="812"/>
         <source>administration ~ créer ~ alertes</source>
         <translation>administration ~ create ~ alerts</translation>
     </message>
     <message>
-        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="823"/>
+        <location filename="src/admin/creer/yeroth-erp-admin-create-window.cpp" line="820"/>
         <source>administration ~ créer ~ charges financières</source>
         <translation>administration ~ create ~ FINANCIAL EXPENSES</translation>
     </message>
