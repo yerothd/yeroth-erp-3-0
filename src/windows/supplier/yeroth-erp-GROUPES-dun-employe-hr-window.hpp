@@ -107,8 +107,7 @@ protected:
 
 private slots:
 
-    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
-                                                     int column);
+    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &aQModelIndex);
 
     inline void ajouter_appartenance(const QString &un_groupe_DEMPLOYES_hr)
     {

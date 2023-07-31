@@ -129,6 +129,11 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
             SLOT(enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT()));
 
     connect(tableWidget_Groupes_Dun_Employe,
+            SIGNAL(clicked(const QModelIndex &)),
+            this,
+			SLOT(handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &)));
+
+    connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(doubleClicked(const QModelIndex &)),
             this,
 			SLOT(afficher_au_detail(const QModelIndex &)));
@@ -432,9 +437,11 @@ void YerothGROUPES_DUN_EMPLOYE_Window::setupShortcuts()
 
 
 void YerothGROUPES_DUN_EMPLOYE_Window::
-        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
-                                                    int column)
+        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &aQModelIndex)
 {
+    int column = aQModelIndex.column();
+
+    int row = aQModelIndex.row();
     //I only handle the first column that entails group name.
     if  (0 != column)
     {
