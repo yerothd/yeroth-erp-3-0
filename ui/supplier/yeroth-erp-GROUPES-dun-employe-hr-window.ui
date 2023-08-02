@@ -1386,7 +1386,7 @@
     <property name="title">
      <string>GROUPES D'employés D'APPARTENANCE D'1 EMPLOYÉ (nom de l'employé)</string>
     </property>
-    <widget class="YerothGroupesDunClientTableWidget" name="tableWidget_Groupes_Dun_Employe">
+    <widget class="YerothGroupesDunEmployeTableWidget" name="tableWidget_Groupes_Dun_Employe">
      <property name="geometry">
       <rect>
        <x>308</x>
@@ -9710,11 +9710,6 @@ FOURNISSEURS</string>
    <header>src/widgets/yeroth-erp-line-edit.hpp</header>
   </customwidget>
   <customwidget>
-   <class>YerothGroupesDunClientTableWidget</class>
-   <extends>QTableWidget</extends>
-   <header>src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp</header>
-  </customwidget>
-  <customwidget>
    <class>YerothComboBox</class>
    <extends>QComboBox</extends>
    <header>src/widgets/yeroth-erp-combo-box.hpp</header>
@@ -9723,6 +9718,11 @@ FOURNISSEURS</string>
    <class>YerothDateTimeEdit</class>
    <extends>QDateEdit</extends>
    <header>src/widgets/yeroth-erp-datetime-edit.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>YerothGroupesDunEmployeTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>src/widgets/widgets-table/yeroth-erp-groupes-dun-EMPLOYE-table-widget.hpp</header>
   </customwidget>
  </customwidgets>
  <tabstops>

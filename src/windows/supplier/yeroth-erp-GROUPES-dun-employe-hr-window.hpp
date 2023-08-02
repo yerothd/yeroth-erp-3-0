@@ -92,10 +92,13 @@ public slots:
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
                                        QObject::tr
-                                       ("Sélectionner un compte client dans le tableau "
-                                        "des groupes d'1 client, ensuite "
+                                       ("Sélectionner un groupe d'employés dans le tableau "
+                                        "des groupes d'1 employé, ensuite "
                                         "cliquer sur l'opération que vous souhaitez réaliser !"));
     }
+
+    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
+                                                     int column);
 
 
 protected:
@@ -109,8 +112,7 @@ private slots:
 
     void handle_VALIDER_button();
 
-    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
-                                                     int column);
+    //void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(QTableWidgetItem *item);
 
     inline void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &aQModelIndex)
     {

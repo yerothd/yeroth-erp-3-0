@@ -92,10 +92,6 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
                                            false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, false);
 
-    connect(action_parametrer_les_impressions,
-    		SIGNAL(triggered()),
-			this,
-            SLOT(setup_print()));
 
     pushButton_VALIDER->disable(this);
     pushButton_groupes_demployes->disable(this);
@@ -104,10 +100,17 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
     pushButton_retirer->disable(this);
 
 
+    connect(action_parametrer_les_impressions,
+            SIGNAL(triggered()),
+            this,
+            SLOT(setup_print()));
+
+
     connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,
-    		SIGNAL(triggered()),
-    		this,
+            SIGNAL(triggered()),
+            this,
             SLOT(incrementFontSize__OF_TABLE()));
+
 
     connect(actiondiminuer_la_police_du_tableau,
     		SIGNAL(triggered()),
@@ -119,6 +122,7 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
     		SIGNAL(triggered()),
 			this,
 			SLOT(imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()));
+
 
     connect(actionAdministration, SIGNAL(triggered()), this, SLOT(administration()));
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this, SLOT(changer_utilisateur()));
@@ -139,25 +143,29 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
             this,
             SLOT(enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT()));
 
-    connect(tableWidget_Groupes_Dun_Employe,
-            SIGNAL(cellActivated(int, int)),
-            this,
-			SLOT(handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int, int)));
+//    connect(tableWidget_Groupes_Dun_Employe,
+//            SIGNAL(cellChanged(int, int)),
+//            this,
+//			SLOT(handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int, int)));
+
 
     connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(clicked(const QModelIndex &)),
             this,
 			SLOT(handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &)));
 
+
     connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(doubleClicked(const QModelIndex &)),
             this,
 			SLOT(afficher_au_detail(const QModelIndex &)));
 
+
     connect(comboBox_Groupes_Dun_Employe_recherche,
             SIGNAL(activated(const QString &)),
             this,
 			SLOT(ajouter_appartenance(const QString &)));
+
 
     setupShortcuts();
 
@@ -558,13 +566,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
         handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
                                                     int column)
 {
-    //I only handle the first column that entails group name.
-    if  (0 != column)
-    {
-        return;
-    }
-
-
     QTableWidgetItem *item_designation =
         tableWidget_Groupes_Dun_Employe->item(row,
                                               0);
@@ -581,11 +582,11 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
         _curEMPLOYEE_groupe_de_paie_hr = item_GROUPE_DE_PAIE_HR->text();
 
 
-        QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_NOM_ENTREPRISE", _curEMPLOYEE_NOM_ENTREPRISE);
+        //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_NOM_ENTREPRISE", _curEMPLOYEE_NOM_ENTREPRISE);
 
         //QDEBUG_STRING_OUTPUT_2("designation_GROUPE_DEMPLOYES_HR", designation_GROUPE_DEMPLOYES_HR);
 
-        QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_groupe_de_paie_hr", _curEMPLOYEE_groupe_de_paie_hr);
+        //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_groupe_de_paie_hr", _curEMPLOYEE_groupe_de_paie_hr);
 
 
         if (!_curEMPLOYEE_NOM_ENTREPRISE.isEmpty() &&
@@ -1240,6 +1241,15 @@ void YerothGROUPES_DUN_EMPLOYE_Window::rendreInvisible()
 void YerothGROUPES_DUN_EMPLOYE_Window::rendreVisible(YerothSqlTableModel *EMPLOYEE_TableModel,
                                                  	 YerothSqlTableModel *stocksTableModel)
 {
+    static bool FIRST_time_execution = true;
+
+    if (FIRST_time_execution)
+    {
+        tableWidget_Groupes_Dun_Employe->a_current_window = this;
+
+        FIRST_time_execution = false;
+    }
+
 	retranslateUi(this);
 
     _curStocksTableModel = stocksTableModel;
