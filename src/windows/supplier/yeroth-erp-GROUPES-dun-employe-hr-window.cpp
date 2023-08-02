@@ -105,18 +105,15 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
             this,
             SLOT(setup_print()));
 
-
     connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,
             SIGNAL(triggered()),
             this,
             SLOT(incrementFontSize__OF_TABLE()));
 
-
     connect(actiondiminuer_la_police_du_tableau,
     		SIGNAL(triggered()),
     		this,
             SLOT(decrementFontSize__OF_TABLE()));
-
 
     connect(actionAfficherPDF,
     		SIGNAL(triggered()),
@@ -143,29 +140,20 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
             this,
             SLOT(handle_activer_DATES_DAPPARTENANCE(int)));
 
-
     connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(addedYerothTableWidget()),
             this,
             SLOT(enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT()));
-
-//    connect(tableWidget_Groupes_Dun_Employe,
-//            SIGNAL(cellChanged(int, int)),
-//            this,
-//			SLOT(handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int, int)));
-
 
     connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(clicked(const QModelIndex &)),
             this,
 			SLOT(handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &)));
 
-
     connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(doubleClicked(const QModelIndex &)),
             this,
 			SLOT(afficher_au_detail(const QModelIndex &)));
-
 
     connect(comboBox_Groupes_Dun_Employe_recherche,
             SIGNAL(activated(const QString &)),
