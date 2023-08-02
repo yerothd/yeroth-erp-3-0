@@ -110,6 +110,10 @@ protected:
 
 private slots:
 
+    bool CREATE_A_NEW_PERIODE_DE_TEMPS_APPARTENANCE();
+
+    void handle_activer_DATES_DAPPARTENANCE(int state);
+
     void handle_VALIDER_button();
 
     //void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(QTableWidgetItem *item);

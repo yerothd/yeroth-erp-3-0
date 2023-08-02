@@ -138,6 +138,12 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
     connect(actionQui_suis_je, SIGNAL(triggered()), this, SLOT(qui_suis_je()));
 
 
+    connect(checkBox_activer_DATES_DAPPARTENANCE,
+            SIGNAL(stateChanged(int)),
+            this,
+            SLOT(handle_activer_DATES_DAPPARTENANCE(int)));
+
+
     connect(tableWidget_Groupes_Dun_Employe,
             SIGNAL(addedYerothTableWidget()),
             this,
@@ -460,6 +466,82 @@ void YerothGROUPES_DUN_EMPLOYE_Window::setupShortcuts()
 }
 
 
+bool YerothGROUPES_DUN_EMPLOYE_Window::CREATE_A_NEW_PERIODE_DE_TEMPS_APPARTENANCE()
+{
+    bool successBeginEndDataSaved = false;
+
+
+    QDate begin_DATE = dateEdit_groupe_dun_employe_date_begin->date();
+
+    QDate end_DATE = dateEdit_groupe_dun_employe_date_end->date();
+
+
+    YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_SqlTableModel =
+        _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
+
+
+    periodes_dappartenance_groupes_de_paie_hr_SqlTableModel.resetFilter();
+
+
+    QSqlRecord periodes_dappartenance_Record =
+        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel.record();
+
+
+    periodes_dappartenance_Record
+        .setValue(YerothDatabaseTableColumn::NOM_ENTREPRISE,
+                  _curEMPLOYEE_NOM_ENTREPRISE);
+
+    periodes_dappartenance_Record
+        .setValue(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
+                  _curEMPLOYEE_groupe_de_paie_hr);
+
+    periodes_dappartenance_Record
+        .setValue(YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE,
+                  begin_DATE);
+
+    periodes_dappartenance_Record
+        .setValue(YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE,
+                  end_DATE);
+
+
+    int IDforPERIODESdappartenance =
+        YerothERPWindows::getNextIdSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
+
+
+    periodes_dappartenance_Record.setValue(YerothDatabaseTableColumn::ID,
+                                           IDforPERIODESdappartenance);
+
+
+    successBeginEndDataSaved =
+        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
+            .insertNewRecord(periodes_dappartenance_Record,
+                             0,
+                             "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
+                             515);
+
+
+
+    return successBeginEndDataSaved;
+}
+
+
+void YerothGROUPES_DUN_EMPLOYE_Window::handle_activer_DATES_DAPPARTENANCE(int state)
+{
+    if (checkBox_activer_DATES_DAPPARTENANCE->isChecked())
+    {
+        dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(true);
+
+        dateEdit_groupe_dun_employe_date_end->setYerothEnabled(true);
+    }
+    else
+    {
+        dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(false);
+
+        dateEdit_groupe_dun_employe_date_end->setYerothEnabled(false);
+    }
+}
+
+
 void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 {
     if (!dateEdit_groupe_dun_employe_date_begin->isEnabled() ||
@@ -494,46 +576,67 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
     YEROTH_ERP_3_0_START_DATABASE_TRANSACTION;
 
-    bool successBeginEndDataSaved = false;
-
 
     YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_SqlTableModel =
         _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
 
-    QSqlRecord periodes_dappartenance_Record =
-        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel.record();
+
+    QString condition_exist_already =
+        QString("(%1) AND (%2)")
+            .arg(GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_ENTREPRISE,
+                                      _curEMPLOYEE_NOM_ENTREPRISE),
+                 GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
+                                      _curEMPLOYEE_groupe_de_paie_hr));
 
 
-    periodes_dappartenance_Record
-        .setValue(YerothDatabaseTableColumn::NOM_ENTREPRISE,
-                  _curEMPLOYEE_NOM_ENTREPRISE);
-
-    periodes_dappartenance_Record
-        .setValue(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
-                  _curEMPLOYEE_groupe_de_paie_hr);
-
-    periodes_dappartenance_Record
-        .setValue(YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE,
-                  begin_DATE);
-
-    periodes_dappartenance_Record
-        .setValue(YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE,
-                  end_DATE);
+    periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
+        .yerothSetFilter_WITH_where_clause(condition_exist_already);
 
 
-    int IDforPERIODESdappartenance =
-        YerothERPWindows::getNextIdSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
+    int query_size = periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
+                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 587);
 
 
-    periodes_dappartenance_Record.setValue(YerothDatabaseTableColumn::ID,
-                                           IDforPERIODESdappartenance);
+    //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
+    bool successBeginEndDataSaved = false;
 
-    successBeginEndDataSaved =
-        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-            .insertNewRecord(periodes_dappartenance_Record,
-                             0,
-                             "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
-                             518);
+
+    if (0 < query_size)
+    {
+        QSqlRecord a_record =
+            periodes_dappartenance_groupes_de_paie_hr_SqlTableModel.record(0);
+
+
+        QSqlRecord a_periodes_dappartenance_UpdateRecord(a_record);
+
+
+        a_periodes_dappartenance_UpdateRecord
+            .setValue(YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE,
+                      begin_DATE);
+
+
+        a_periodes_dappartenance_UpdateRecord
+            .setValue(YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE,
+                      end_DATE);
+
+
+        successBeginEndDataSaved =
+            periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
+                .updateRecord(0,
+                              a_periodes_dappartenance_UpdateRecord,
+                              "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
+                              618,
+                              _curEMPLOYEE_NOM_ENTREPRISE);
+    }
+    else
+    {
+        successBeginEndDataSaved =
+            CREATE_A_NEW_PERIODE_DE_TEMPS_APPARTENANCE();
+    }
+
+
+    periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
+        .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 633);
 
 
     if (successBeginEndDataSaved)
@@ -592,9 +695,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
         if (!_curEMPLOYEE_NOM_ENTREPRISE.isEmpty() &&
             !_curEMPLOYEE_groupe_de_paie_hr.isEmpty())
         {
-            dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(true);
-            dateEdit_groupe_dun_employe_date_end->setYerothEnabled(true);
-
             YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_TableModel
                 = _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
 
@@ -614,7 +714,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
                                 .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 588);
 
 
-            QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
+            //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
 
 
             if (0 < query_size)
@@ -644,11 +744,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
             }
 
             periodes_dappartenance_groupes_de_paie_hr_TableModel.resetFilter();
-        }
-        else
-        {
-            dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(false);
-            dateEdit_groupe_dun_employe_date_end->setYerothEnabled(false);
         }
     }
 
