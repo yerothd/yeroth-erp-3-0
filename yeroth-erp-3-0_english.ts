@@ -4327,7 +4327,7 @@ Please contact an administrator of %1</translation>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1168"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1455"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="1014"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="156"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="161"/>
         <source>impression</source>
         <translation>print</translation>
     </message>
@@ -4339,7 +4339,7 @@ Please contact an administrator of %1</translation>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1457"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="833"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="1016"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="157"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="162"/>
         <source>Il n&apos;y a pas de données à imprimer !</source>
         <oldsource>Il n&apos;y a pas de données a imprimer !</oldsource>
         <translation>There are no data to print-out!</translation>
@@ -5342,7 +5342,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     <message>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="658"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="558"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="857"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="864"/>
         <source>Sélectionnez 1 compte client à afficher les détails.</source>
         <translation>Select a client to view its details.</translation>
     </message>
@@ -5933,7 +5933,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="556"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="891"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="914"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="855"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="862"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="768"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="802"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="826"/>
@@ -6044,11 +6044,11 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="293"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="320"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="349"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="557"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="585"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="627"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="651"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="674"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="564"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="592"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="634"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="658"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="681"/>
         <source>ajouter</source>
         <translation>add</translation>
     </message>
@@ -6597,32 +6597,32 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>AN EMPLOYEE GROUP</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="558"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="565"/>
         <source>LE GROUPE D&apos;EMPLOYÉS &apos;%1&apos; a déjà atteint son nombre maximum de membres (%2) !</source>
         <translation>EMPLOYEE GROUP &apos;%1&apos; has already reached its maximum members (%2) !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="587"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="594"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; n&apos;a pas pu être ajouté dans le groupe des employés &apos;%2&apos; !</source>
         <translation>EMPLOYEE &apos;%1&apos; couldn&apos;t be added to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="628"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="635"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; EST DÉJÀ MEMBRE DU GROUPE D&apos;EMPLOYÉS &apos;%2&apos; !</source>
         <translation>Employee &apos;%1&apos; is already a member of employee group &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="652"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="659"/>
         <source>L&apos;employé &apos;%1&apos; n&apos;a pas pu être ajouté dans le GROUPE D&apos;EMPLOYÉS &apos;%2&apos; !</source>
         <translation>EMPLOYEE &apos;%1&apos; couldn&apos;t be added to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="675"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="682"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; a été ajouté dans le groupe des employés &apos;%2&apos; !</source>
         <translation>Employee &apos;%1&apos; has been successfully inserted to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="878"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="885"/>
         <source>Groupes d&apos;appartenance DE L&apos;EMPLOYÉ (%1)</source>
         <translation>GROUPS of this employee (%1)</translation>
     </message>
@@ -15779,128 +15779,133 @@ PAY GROUP</translation>
         <translation>End (date)</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5402"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5400"/>
+        <source>valider</source>
+        <translation>ok</translation>
+    </message>
+    <message>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5864"/>
         <source>RETOUR</source>
         <translation>BACK</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5919"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="6381"/>
         <source>GROUPES 
  D&apos;EMPLOYÉS</source>
         <translation>EMPLOYEE 
  GROUP</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="6437"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="6899"/>
         <source>MENU
 DES
 FOURNISSEURS</source>
         <translation>Supplier_HR MENU</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="7471"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="7933"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="7982"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8444"/>
         <source>Actions</source>
         <translation>Functions</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8492"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8954"/>
         <source>Outils</source>
         <translation>Tools</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9008"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9470"/>
         <source>toolBar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9032"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9494"/>
         <source>À propos</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9048"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9510"/>
         <source>Changer d&apos;utilisateur</source>
         <translation>Sign in</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9060"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9522"/>
         <source>Fermeture</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9076"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9538"/>
         <source>Message d&apos;aide</source>
         <translation>User tip</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9079"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9541"/>
         <source>Appeler l&apos;aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9095"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9098"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9557"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9560"/>
         <source>Déconnecter l&apos;utilisateur</source>
         <translation>Sign out</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9115"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9577"/>
         <source>Administration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9127"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9589"/>
         <source>Informations sur l&apos;entreprise</source>
         <translation>Company info</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9139"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9601"/>
         <source>Qui suis je ?</source>
         <translation>Who am I?</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9151"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9154"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9613"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9616"/>
         <source>Lister des fournisseurs / EMPLOYÉS</source>
         <translation>VIEW SUPPLIERS / EMPLOYEES</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9159"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9162"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9621"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9624"/>
         <source>Afficher les détails de ce groupe d&apos;EMPLOYÉS</source>
         <translation>SHOW EMPLOYEE GROUP DETAILS</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9174"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9177"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9636"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9639"/>
         <source>Lister des groupes de paie</source>
         <translation>View pay group</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9187"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9649"/>
         <source>AUGMENTER LA POLICE DU TABLEAU</source>
         <translation>INCREASE FONT SIZE OF TABLE</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9197"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9659"/>
         <source>diminuer la police du tableau</source>
         <translation>decrease table font size</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9206"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9209"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9668"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9671"/>
         <source>Imprimer des groupes de l&apos;employé</source>
         <oldsource>Imprimer la fiche des clients</oldsource>
         <translation>PRINT EMPLOYEE GROUP</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9224"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9227"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9686"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9689"/>
         <source>Paramétrer les impressions PDF</source>
         <translation>Parameterize PDF printing</translation>
     </message>
