@@ -107,7 +107,16 @@ protected:
 
 private slots:
 
-    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &aQModelIndex);
+    void handle_VALIDER_button();
+
+    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
+                                                     int column);
+
+    inline void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &aQModelIndex)
+    {
+        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(aQModelIndex.row(),
+                                                    aQModelIndex.column());
+    }
 
     inline void ajouter_appartenance(const QString &un_groupe_DEMPLOYES_hr)
     {
@@ -157,6 +166,8 @@ private:
     YerothLogger *_logger;
 
     YerothSqlTableModel *_curEMPLOYEEgroups_TableModel;
+
+    QString _curEMPLOYEE_groupe_de_paie_hr;
 
     QString _curEMPLOYEE_NOM_ENTREPRISE;
 

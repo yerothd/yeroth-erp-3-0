@@ -299,6 +299,11 @@ public:
         return *_desktopWidget;
     }
 
+    static inline int getNextIdSqlTableModel_periodes_dappartenance_groupes_de_paie_hr()
+    {
+        return YerothERPWindows::getNextIdFromTable(YerothDatabase::PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR);
+    }
+
     static inline int getNextIdSqlTableModel_users()
     {
         return YerothERPWindows::getNextIdFromTable(YerothDatabase::USERS);
