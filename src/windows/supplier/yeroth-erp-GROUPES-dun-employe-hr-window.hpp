@@ -78,9 +78,11 @@ public slots:
 
 	virtual bool imprimer_pdf_document();
 
+
 	virtual void incrementFontSize__OF_TABLE();
 
 	virtual void decrementFontSize__OF_TABLE();
+
 
     inline virtual void apropos()
     {
@@ -97,8 +99,8 @@ public slots:
                                         "cliquer sur l'opération que vous souhaitez réaliser !"));
     }
 
-    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
-                                                     int column);
+
+    void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row);
 
 
 protected:
@@ -112,17 +114,18 @@ private slots:
 
     bool CREATE_A_NEW_PERIODE_DE_TEMPS_APPARTENANCE();
 
+
     void handle_activer_DATES_DAPPARTENANCE(int state);
+
 
     void handle_VALIDER_button();
 
-    //void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(QTableWidgetItem *item);
 
     inline void handle_DATE_DEBUT_et_DATE_FIN_dappartenance(const QModelIndex &aQModelIndex)
     {
-        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(aQModelIndex.row(),
-                                                    aQModelIndex.column());
+        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(aQModelIndex.row());
     }
+
 
     inline void ajouter_appartenance(const QString &un_groupe_DEMPLOYES_hr)
     {
@@ -132,7 +135,9 @@ private slots:
                          &YerothGROUPES_DUN_EMPLOYE_Window::executer_ajouter_appartenance);
     }
 
+
     void executer_ajouter_appartenance(const QString *un_groupe_DEMPLOYES_hr);
+
 
     inline void retirer_CET_EMPLOYE_du_groupe_selectionne()
     {
@@ -141,16 +146,21 @@ private slots:
                          &YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_selectionne);
     }
 
+
     bool EXECUTER_retirer_cet_employe_du_groupe_selectionne();
 
+
     void afficher_au_detail(const QModelIndex &modelIndex);
+
 
     inline void afficher_au_detail()
     {
         afficher_au_detail(tableWidget_Groupes_Dun_Employe->currentIndex());
     }
 
+
     void afficher_tous_les_groupes_DUN_EMPLOYE_hr();
+
 
     void enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT();
 

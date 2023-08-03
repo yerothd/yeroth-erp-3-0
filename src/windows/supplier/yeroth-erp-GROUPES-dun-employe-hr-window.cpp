@@ -435,6 +435,90 @@ void YerothGROUPES_DUN_EMPLOYE_Window::decrementFontSize__OF_TABLE()
 }
 
 
+void YerothGROUPES_DUN_EMPLOYE_Window::
+        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row)
+{
+    QTableWidgetItem *item_designation =
+        tableWidget_Groupes_Dun_Employe->item(row,
+                                              0);
+
+    QTableWidgetItem *item_GROUPE_DE_PAIE_HR =
+        tableWidget_Groupes_Dun_Employe->item(row,
+                                              1);
+
+    if (0 != item_designation &&
+        0 != item_GROUPE_DE_PAIE_HR)
+    {
+        QString designation_GROUPE_DEMPLOYES_HR = item_designation->text();
+
+        _curEMPLOYEE_groupe_de_paie_hr = item_GROUPE_DE_PAIE_HR->text();
+
+
+        //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_NOM_ENTREPRISE", _curEMPLOYEE_NOM_ENTREPRISE);
+
+        //QDEBUG_STRING_OUTPUT_2("designation_GROUPE_DEMPLOYES_HR", designation_GROUPE_DEMPLOYES_HR);
+
+        //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_groupe_de_paie_hr", _curEMPLOYEE_groupe_de_paie_hr);
+
+
+        if (!_curEMPLOYEE_NOM_ENTREPRISE.isEmpty() &&
+            !_curEMPLOYEE_groupe_de_paie_hr.isEmpty())
+        {
+            YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_TableModel
+                = _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
+
+
+            QString CONDITION = QString("(%1) AND (%2)")
+                                    .arg(GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_ENTREPRISE,
+                                                              _curEMPLOYEE_NOM_ENTREPRISE),
+                                         GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
+                                                              _curEMPLOYEE_groupe_de_paie_hr));
+
+
+            periodes_dappartenance_groupes_de_paie_hr_TableModel
+                .yerothSetFilter_WITH_where_clause(CONDITION);
+
+
+            int query_size = periodes_dappartenance_groupes_de_paie_hr_TableModel
+                                .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 588);
+
+
+            //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
+
+
+            if (0 < query_size)
+            {
+                QSqlRecord a_record =
+                    periodes_dappartenance_groupes_de_paie_hr_TableModel.record(0);
+
+                QString dateEdit_groupe_dun_employe_date_begin_STRING =
+                    GET_SQL_RECORD_DATA(a_record,
+                                        YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE);
+
+                QString dateEdit_groupe_dun_employe_date_end_STRING =
+                    GET_SQL_RECORD_DATA(a_record,
+                                        YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE);
+
+
+                dateEdit_groupe_dun_employe_date_begin
+                    ->setDate(GET_DATE_FROM_STRING(dateEdit_groupe_dun_employe_date_begin_STRING));
+
+                dateEdit_groupe_dun_employe_date_end
+                    ->setDate(GET_DATE_FROM_STRING(dateEdit_groupe_dun_employe_date_end_STRING));
+            }
+            else
+            {
+                dateEdit_groupe_dun_employe_date_begin->reset();
+                dateEdit_groupe_dun_employe_date_end->reset();
+            }
+
+            periodes_dappartenance_groupes_de_paie_hr_TableModel.resetFilter();
+        }
+    }
+
+}
+
+
 void YerothGROUPES_DUN_EMPLOYE_Window::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
@@ -582,7 +666,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
 
     int query_size = periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 587);
+                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 668);
 
 
     //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
@@ -650,91 +734,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
         YEROTH_ERP_3_0_ROLLBACK_DATABASE_TRANSACTION;
     }
-}
-
-
-void YerothGROUPES_DUN_EMPLOYE_Window::
-        handle_DATE_DEBUT_et_DATE_FIN_dappartenance(int row,
-                                                    int column)
-{
-    QTableWidgetItem *item_designation =
-        tableWidget_Groupes_Dun_Employe->item(row,
-                                              0);
-
-    QTableWidgetItem *item_GROUPE_DE_PAIE_HR =
-        tableWidget_Groupes_Dun_Employe->item(row,
-                                              1);
-
-    if (0 != item_designation &&
-        0 != item_GROUPE_DE_PAIE_HR)
-    {
-        QString designation_GROUPE_DEMPLOYES_HR = item_designation->text();
-
-        _curEMPLOYEE_groupe_de_paie_hr = item_GROUPE_DE_PAIE_HR->text();
-
-
-        //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_NOM_ENTREPRISE", _curEMPLOYEE_NOM_ENTREPRISE);
-
-        //QDEBUG_STRING_OUTPUT_2("designation_GROUPE_DEMPLOYES_HR", designation_GROUPE_DEMPLOYES_HR);
-
-        //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_groupe_de_paie_hr", _curEMPLOYEE_groupe_de_paie_hr);
-
-
-        if (!_curEMPLOYEE_NOM_ENTREPRISE.isEmpty() &&
-            !_curEMPLOYEE_groupe_de_paie_hr.isEmpty())
-        {
-            YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_TableModel
-                = _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
-
-
-            QString CONDITION = QString("(%1) AND (%2)")
-                                    .arg(GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_ENTREPRISE,
-                                                              _curEMPLOYEE_NOM_ENTREPRISE),
-                                         GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
-                                                              _curEMPLOYEE_groupe_de_paie_hr));
-
-
-            periodes_dappartenance_groupes_de_paie_hr_TableModel
-                .yerothSetFilter_WITH_where_clause(CONDITION);
-
-
-            int query_size = periodes_dappartenance_groupes_de_paie_hr_TableModel
-                                .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 588);
-
-
-            //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
-
-
-            if (0 < query_size)
-            {
-                QSqlRecord a_record =
-                    periodes_dappartenance_groupes_de_paie_hr_TableModel.record(0);
-
-                QString dateEdit_groupe_dun_employe_date_begin_STRING =
-                    GET_SQL_RECORD_DATA(a_record,
-                                        YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE);
-
-                QString dateEdit_groupe_dun_employe_date_end_STRING =
-                    GET_SQL_RECORD_DATA(a_record,
-                                        YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE);
-
-
-                dateEdit_groupe_dun_employe_date_begin
-                    ->setDate(GET_DATE_FROM_STRING(dateEdit_groupe_dun_employe_date_begin_STRING));
-
-                dateEdit_groupe_dun_employe_date_end
-                    ->setDate(GET_DATE_FROM_STRING(dateEdit_groupe_dun_employe_date_end_STRING));
-            }
-            else
-            {
-                dateEdit_groupe_dun_employe_date_begin->reset();
-                dateEdit_groupe_dun_employe_date_end->reset();
-            }
-
-            periodes_dappartenance_groupes_de_paie_hr_TableModel.resetFilter();
-        }
-    }
-
 }
 
 
@@ -895,12 +894,19 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
         return;
     }
 
-    tableWidget_Groupes_Dun_Employe
-		->insert_group(GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo, YerothDatabaseTableColumn::ID),
-					   *un_groupe_DEMPLOYES_hr,
-					   GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
-                                           YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR),
-                       QString::number(maximum_de_membres));
+    int last_row_INSERTED =
+        tableWidget_Groupes_Dun_Employe
+            ->insert_group(GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo, YerothDatabaseTableColumn::ID),
+                           *un_groupe_DEMPLOYES_hr,
+                           GET_SQL_RECORD_DATA(AN_EMPLOYEE_GroupRecordInfo,
+                                               YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR),
+                            QString::number(maximum_de_membres));
+
+
+    //QDEBUG_STRING_OUTPUT_2_N("last_row_INSERTED",
+    //                          last_row_INSERTED);
+
+    handle_VALIDER_button();
 
 
     lineEdit_Groupes_Dun_Employe_nombre_de_groupes
@@ -984,7 +990,7 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
     bool result = true;
 
     {
-        QString UPDATE_GROUPES_DU_CLIENT_INFO(
+        QString UPDATE_GROUPES_DUN_EMPLOYE_INFO =
         			QString("UPDATE %1 SET %2='%3', %4='%5' WHERE %6='%7'")
 						.arg(YerothDatabase::FOURNISSEURS,
                              YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE,
@@ -992,15 +998,27 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
                              YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE_ID,
                              groupes_dun_EMPLOYE_ID,
                              YerothDatabaseTableColumn::ID,
-                             _curEmployeeDBID));
+                             _curEmployeeDBID);
 
-        result = result && YerothUtils::execQuery(UPDATE_GROUPES_DU_CLIENT_INFO);
+        result = result && YerothUtils::execQuery(UPDATE_GROUPES_DUN_EMPLOYE_INFO);
+    }
+
+    {
+        QString UPDATE_PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR =
+        			QString("DELETE FROM %1 WHERE %2='%3' AND %4='%5'")
+						.arg(YerothDatabase::PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR,
+                             YerothDatabaseTableColumn::NOM_ENTREPRISE,
+                             _curEMPLOYEE_NOM_ENTREPRISE,
+                             YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
+                             _curEMPLOYEE_groupe_de_paie_hr);
+
+        result = result && YerothUtils::execQuery(UPDATE_PERIODES_DAPPARTENANCE_GROUPES_DE_PAIE_HR);
     }
 
     {
         aQSqlQuery.clear();
 
-        QSqlRecord a_client_group_record_info;
+        QSqlRecord an_employee_group_record_info;
 
         SELECT_GROUPES_DUN_EMPLOYE_INFO.clear();
 
@@ -1021,10 +1039,10 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
             return false;
         }
 
-        a_client_group_record_info = aQSqlQuery.record();
+        an_employee_group_record_info = aQSqlQuery.record();
 
         QString membres_du_groupe_db_ID =
-        			GET_SQL_RECORD_DATA(a_client_group_record_info,
+        			GET_SQL_RECORD_DATA(an_employee_group_record_info,
                                         YerothDatabaseTableColumn::MEMBRES_DU_GROUPE_db_ID);
 
 //      QDEBUG_STRING_OUTPUT_2("membres_du_groupe_db_ID *",

@@ -70,8 +70,7 @@ void YerothGroupesDunEmployeTableWidget::
         int column = selectedIndexes.at(0).column();
 
         a_current_window
-            ->handle_DATE_DEBUT_et_DATE_FIN_dappartenance(row,
-                                                          column);
+            ->handle_DATE_DEBUT_et_DATE_FIN_dappartenance(row);
     }
 }
 
