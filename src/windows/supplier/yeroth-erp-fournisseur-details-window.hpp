@@ -76,11 +76,12 @@ public:
     double GET_BEST_CURRENT_pay_group_MONEY_BENEFITS();
 
 
-    double calculate_PAY_GROUP_MONEY_BENEFITS(const QString &PAY_GROUP);
+    double calculate_PAY_GROUP_MONEY_BENEFITS(QString &a_nom_entreprise_EMPLOYEE,
+                                              QString &PAY_GROUP);
 
 
-    void CALCULATE_EMPLOYEE_SALARY(const QString  &a_nom_entreprise_client,
-                                   bool           CALL_update_lineedits_and_labels = false);
+    void CALCULATE_EMPLOYEE_SALARY(const QString    &a_nom_entreprise_client,
+                                   bool             CALL_update_lineedits_and_labels = false);
 
 
     void rendreInvisible();
@@ -88,6 +89,7 @@ public:
     void rendreVisible(YerothSqlTableModel *fournisseurTableModel,
                        YerothSqlTableModel *stocksTableModel,
 					   bool 			   employe = false);
+
 
 public slots:
 
@@ -106,9 +108,11 @@ public slots:
                                     		   	   " en cliquant sur 'Modifier' !"));
     }
 
+
 protected:
 
     virtual void setupShortcuts();
+
 
 private slots:
 
@@ -117,6 +121,7 @@ private slots:
     void modifierFournisseur();
 
     void supprimerFournisseur();
+
 
 private:
 

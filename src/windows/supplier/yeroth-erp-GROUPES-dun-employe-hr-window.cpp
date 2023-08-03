@@ -512,7 +512,8 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
                 dateEdit_groupe_dun_employe_date_end->reset();
             }
 
-            periodes_dappartenance_groupes_de_paie_hr_TableModel.resetFilter();
+            periodes_dappartenance_groupes_de_paie_hr_TableModel
+                .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 515);
         }
     }
 
@@ -589,7 +590,7 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::CREATE_A_NEW_PERIODE_DE_TEMPS_APPARTENANC
             .insertNewRecord(periodes_dappartenance_Record,
                              0,
                              "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
-                             515);
+                             588);
 
 
 
@@ -630,20 +631,13 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
     if (end_DATE < begin_DATE)
     {
-        QDEBUG_STRING_OUTPUT_2("end_DATE < begin_DATE",
-                               BOOL_TO_STRING((end_DATE < begin_DATE)));
         return ;
     }
 
     if (begin_DATE < GET_CURRENT_DATE)
     {
-        QDEBUG_STRING_OUTPUT_2("begin_DATE < GET_CURRENT_DATE",
-                               BOOL_TO_STRING((begin_DATE < GET_CURRENT_DATE)));
         return ;
     }
-
-    QDEBUG_STRING_OUTPUT_2("end_DATE >= begin_DATE",
-                           BOOL_TO_STRING((end_DATE >= begin_DATE)));
 
 
     YEROTH_ERP_3_0_START_DATABASE_TRANSACTION;
@@ -666,7 +660,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
 
     int query_size = periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 668);
+                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 662);
 
 
     //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
@@ -697,7 +691,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
                 .updateRecord(0,
                               a_periodes_dappartenance_UpdateRecord,
                               "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
-                              618,
+                              688,
                               _curEMPLOYEE_NOM_ENTREPRISE);
     }
     else
@@ -708,7 +702,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
 
     periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-        .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 633);
+        .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 704);
 
 
     if (successBeginEndDataSaved)
