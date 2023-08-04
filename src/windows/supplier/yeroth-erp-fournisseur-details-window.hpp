@@ -73,17 +73,6 @@ public:
     void definirPasDeRole();
 
 
-    double GET_BEST_CURRENT_pay_group_MONEY_BENEFITS();
-
-
-    double calculate_PAY_GROUP_MONEY_BENEFITS(QString &a_nom_entreprise_EMPLOYEE,
-                                              QString &PAY_GROUP);
-
-
-    void CALCULATE_EMPLOYEE_SALARY(const QString    &a_nom_entreprise_client,
-                                   bool             CALL_update_lineedits_and_labels = false);
-
-
     void rendreInvisible();
 
     void rendreVisible(YerothSqlTableModel *fournisseurTableModel,
@@ -140,8 +129,6 @@ private:
     double _sommeTotal;
 
     YerothSqlTableModel *_curFournisseurTableModel;
-
-    Yeroth_LIST_map_COMPLEX_ITEM _EMPLOYEE_group_program_TO_money_benefit;
 };
 
 

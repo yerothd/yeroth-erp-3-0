@@ -5,6 +5,8 @@
 
 #include "yeroth-erp-fournisseur-details-window.hpp"
 
+#include "yeroth-erp-calcul-salaire-EMPLOYE-window.hpp"
+
 #include "src/yeroth-erp-windows.hpp"
 
 #include "src/process/yeroth-erp-process.hpp"
@@ -579,341 +581,6 @@ bool YerothFournisseurDetailsWindow::imprimer_pdf_document()
 }
 
 
-double YerothFournisseurDetailsWindow::
-        GET_BEST_CURRENT_pay_group_MONEY_BENEFITS()
-{
-    Yeroth_MAP_COMPLEX_Item *a_map_COMPLEX_item = 0;
-
-    if (!_EMPLOYEE_group_program_TO_money_benefit.isEmpty())
-    {
-        a_map_COMPLEX_item =
-            _EMPLOYEE_group_program_TO_money_benefit.q_list().last();
-    }
-
-    if (0 == a_map_COMPLEX_item)
-    {
-        return 0.0;
-    }
-
-    QString employee_best_PAY_GROUP = a_map_COMPLEX_item->_itemName;
-
-    a_map_COMPLEX_item->toString();
-
-    //QDEBUG_STRING_OUTPUT_2_N("employee_best_PAY_GROUP - a_map_COMPLEX_item->_itemValue",
-    //                          a_map_COMPLEX_item->_itemValue);
-
-    return a_map_COMPLEX_item->_itemValue;
-}
-
-
-double YerothFournisseurDetailsWindow::
-            calculate_PAY_GROUP_MONEY_BENEFITS(QString  &a_nom_entreprise_EMPLOYEE,
-                                               QString  &PAY_GROUP)
-{
-    double result = 0.0;
-
-
-    YerothSqlTableModel &periodes_dappartenance_groupes_de_paie_hr_SqlTableModel =
-        _allWindows->getSqlTableModel_periodes_dappartenance_groupes_de_paie_hr();
-
-
-    QString condition_exist_already =
-        QString("(%1) AND (%2)")
-            .arg(GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_ENTREPRISE,
-                                      a_nom_entreprise_EMPLOYEE),
-                 GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
-                                      PAY_GROUP));
-
-
-    periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-        .yerothSetFilter_WITH_where_clause(condition_exist_already);
-
-
-    int query_size = periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-                        .easySelect("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 632);
-
-
-    if (query_size <= 0)
-    {
-        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-            .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 638);
-
-        return result;
-    }
-
-
-    QDate begin_DATE, end_DATE;
-
-
-    QSqlRecord periodes_dappartenance_RECORD =
-        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel.record(0);
-
-
-    begin_DATE = periodes_dappartenance_RECORD
-                    .value(YerothDatabaseTableColumn::DATE_DE_DEBUT_DAPPARTENANCE)
-                            .toDate();
-
-    end_DATE = periodes_dappartenance_RECORD
-                    .value(YerothDatabaseTableColumn::DATE_DE_FIN_DAPPARTENANCE)
-                            .toDate();
-
-
-    QDate current_date = GET_CURRENT_DATE;
-
-
-    bool AUTHORIZED_PAYMENT_DATE = (begin_DATE <= current_date &&
-                                    current_date <= end_DATE);
-
-
-    if (!AUTHORIZED_PAYMENT_DATE)
-    {
-        YerothQMessageBox::information(this,
-                                       QObject::tr("calcul de salaire d'1 employé"),
-                                       QObject::tr("AUCUN GROUPE DE PAIEMENT N'A DE dates de "
-                                                   "validités courantes pour l'employé [%1] !")
-                                                .arg(a_nom_entreprise_EMPLOYEE));
-
-        periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-            .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 676);
-
-        return result;
-    }
-
-
-    periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-        .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 683);
-
-
-
-    QString SELECT_GROUPE_DE_PAIE =
-                QString("select * from %1 where %2='%3'")
-                    .arg(YerothDatabase::GROUPES_DE_PAIE_hr,
-                         YerothDatabaseTableColumn::DESIGNATION,
-                         PAY_GROUP);
-
-
-    QSqlQuery a_qsql_query;
-
-    int query_size_3 = YerothUtils::execQuery(a_qsql_query,
-                                              SELECT_GROUPE_DE_PAIE);
-
-    if (query_size_3 <= 0)
-    {
-        return 0.0;
-    }
-
-    a_qsql_query.next();
-
-    QSqlRecord aQSqlRecord = a_qsql_query.record();
-
-    double AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS =
-                GET_SQL_RECORD_DATA(aQSqlRecord,
-                                    YerothDatabaseTableColumn::MONTANT_A_PAYER_MENSUEL)
-                                        .toDouble();
-
-    result = AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS;
-
-
-    //QDEBUG_STRING_OUTPUT_2_N("original amount to be paid TO EMPLOYEE", _sommeTotal);
-
-
-    double pourcentage_TAXES_IMPOSABLES =
-                GET_SQL_RECORD_DATA(aQSqlRecord,
-                                    YerothDatabaseTableColumn::POURCENTAGE_TAXES_IMPOSABLES).toDouble();
-
-
-    double TVA_money =
-                    (pourcentage_TAXES_IMPOSABLES *
-                     AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS) / 100.0;
-
-//      QDEBUG_STRING_OUTPUT_1(QString("MONEY BENEFITS FOR client loyalty program '%1': %2 (ORIGINAL AMOUNT: %3)")
-//                                                              .arg(a_loyalty_program,
-//                                                                       QString::number(money_BENEFITS),
-//                                                                       QString::number(AMOUNT_TO_BE_PAID_to_employee__NO__MONEY_BENEFITS)));
-
-    result = result - TVA_money;
-
-    return result;
-}
-
-
-void YerothFournisseurDetailsWindow::
-        CALCULATE_EMPLOYEE_SALARY(const QString  &a_nom_entreprise_EMPLOYEE,
-                                  bool           CALL_update_lineedits_and_labels /* = false */)
-{
-    //QDEBUG_STRING_OUTPUT_2("a_nom_entreprise_EMPLOYEE",
-    //                        a_nom_entreprise_EMPLOYEE);
-
-    if (a_nom_entreprise_EMPLOYEE.isEmpty())
-    {
-        return;
-    }
-
-    /*
-     * I search all client group of customer 'a_nom_entreprise_client'.
-     */
-    QString SELECT_EMPLOYEE_GROUP
-                (QString("select %1 from %2 where %3='%4' AND %5='1'")
-                    .arg(YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE_ID,
-                         YerothDatabase::FOURNISSEURS,
-                         YerothDatabaseTableColumn::NOM_ENTREPRISE,
-                         a_nom_entreprise_EMPLOYEE,
-                         YerothDatabaseTableColumn::EMPLOYE));
-
-    //QDEBUG_STRING_OUTPUT_2("SELECT_EMPLOYEE_GROUP",
-    //                        SELECT_EMPLOYEE_GROUP);
-
-    QSqlQuery a_qsql_query;
-
-    int query_size = YerothUtils::execQuery(a_qsql_query,
-                                            SELECT_EMPLOYEE_GROUP);
-
-    if (query_size <= 0)
-    {
-        _EMPLOYEE_group_program_TO_money_benefit.clear();
-
-        return;
-    }
-
-
-    QString employee_group_id;
-
-    a_qsql_query.next();
-
-    employee_group_id = a_qsql_query
-                        .value(YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE_ID).toString();
-
-    //QDEBUG_STRING_OUTPUT_2("employee_group_id", employee_group_id);
-
-    if (employee_group_id.isEmpty())
-    {
-        _EMPLOYEE_group_program_TO_money_benefit.clear();
-
-        return;
-    }
-
-
-    QStringList EMPLOYEE_GroupId_list;
-
-    YerothUtils::SPLIT_STAR_SEPARATED_DB_STRING(EMPLOYEE_GroupId_list,
-                                                employee_group_id);
-
-
-//      QDEBUG_QSTRINGLIST_OUTPUT("EMPLOYEE_GroupId_list", EMPLOYEE_GroupId_list);
-
-
-    /*
-     * select the best client fidelity program for this customer (i.e.:
-     * the 'client fidelity program' where this customer earns maximal
-     * money !
-     */
-    _EMPLOYEE_group_program_TO_money_benefit.clear();
-
-
-//      QDEBUG_STRING_OUTPUT_2("YerothERPConfig::THIS_SITE_LOCALISATION_NAME",
-//                                                 YerothERPConfig::THIS_SITE_LOCALISATION_NAME);
-
-
-    QString employeeGroup_db_ID;
-
-    QString EMPLOYEE_group_PAY_GR0UP_LOCALISATION;
-
-    QString EMPLOYEE_group_PAY_GR0UP;
-
-    QString CUR_SELECT_employee_PAY_GROUP;
-
-    double cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS = 0.0;
-
-
-    for (uint k = 0; k < EMPLOYEE_GroupId_list.size(); ++k)
-    {
-        employeeGroup_db_ID = EMPLOYEE_GroupId_list.at(k);
-
-        if (employeeGroup_db_ID.isEmpty())
-        {
-            continue;
-        }
-
-        CUR_SELECT_employee_PAY_GROUP =
-                        QString("select %1 from %2 where %3='%4'")
-                            .arg(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR,
-                                 YerothDatabase::GROUPES_DEMPLOYES_hr,
-                                 YerothDatabaseTableColumn::ID,
-                                 employeeGroup_db_ID);
-
-        //QDEBUG_STRING_OUTPUT_2("CUR_SELECT_employee_PAY_GROUP",
-        //                        CUR_SELECT_employee_PAY_GROUP);
-
-        a_qsql_query.clear();
-
-        query_size = YerothUtils::execQuery(a_qsql_query,
-                                            CUR_SELECT_employee_PAY_GROUP);
-
-
-        for (int j = 0;
-             j < query_size && a_qsql_query.next();
-             ++j)
-        {
-            EMPLOYEE_group_PAY_GR0UP =
-                a_qsql_query.value(YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR).toString();
-
-            if (EMPLOYEE_group_PAY_GR0UP.isEmpty())
-            {
-                continue;
-            }
-
-            EMPLOYEE_group_PAY_GR0UP_LOCALISATION =
-                            YerothUtils::GET_LOCALISATION_FOR_EMPLOYEE_PAY_GROUP
-                                (EMPLOYEE_group_PAY_GR0UP);
-
-            //QDEBUG_STRING_OUTPUT_2("EMPLOYEE_group_PAY_GR0UP_LOCALISATION",
-            //                        EMPLOYEE_group_PAY_GR0UP_LOCALISATION);
-
-            if (!EMPLOYEE_group_PAY_GR0UP_LOCALISATION.isEmpty() &&
-                !YerothUtils::isEqualCaseInsensitive(YerothERPConfig::THIS_SITE_LOCALISATION_NAME,
-                                                     EMPLOYEE_group_PAY_GR0UP_LOCALISATION))
-            {
-                continue;
-            }
-
-            //QDEBUG_STRING_OUTPUT_1(QString("employeeGroup_db_ID (%1), EMPLOYEE_group_PAY_GR0UP => %2")
-            //                         .arg(employeeGroup_db_ID,
-            //                              EMPLOYEE_group_PAY_GR0UP));
-
-            cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS =
-                calculate_PAY_GROUP_MONEY_BENEFITS(const_cast<QString &>(a_nom_entreprise_EMPLOYEE),
-                                                   EMPLOYEE_group_PAY_GR0UP);
-
-
-            _sommeTotal += cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS;
-
-            //_EMPLOYEE_group_program_TO_money_benefit
-            //    .insert_item(EMPLOYEE_group_PAY_GR0UP,
-            //                 cur_EMPLOYEE_group_PAY_GR0UP_money_BENEFITS);
-        }
-    }
-
-
-    //_EMPLOYEE_group_program_TO_money_benefit.q_sort();
-
-    //QDEBUG_STRING_OUTPUT_2("lineEdit_fournisseur_details_nom_entreprise->text()",
-    //                        lineEdit_fournisseur_details_nom_entreprise->text());
-
-
-    //_sommeTotal = GET_BEST_CURRENT_pay_group_MONEY_BENEFITS();
-
-
-    //QDEBUG_STRING_OUTPUT_2_N("_sommeTotal *", _sommeTotal);
-
-
-//    	lineEdit_EMPLOYE_SALAIRE_annuel
-//			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::SALAIRE_ANNUEL));
-
-    	lineEdit_EMPLOYE_SALAIRE_MENSUEL
-			->setText(GET_CURRENCY_STRING_NUM(_sommeTotal));
-}
-
-
 void YerothFournisseurDetailsWindow::rendreInvisible()
 {
     lineEdit_fournisseur_details_reference_registre_du_commerce->clear();
@@ -1043,6 +710,13 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
         ->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::EMAIL));
 
 
+
+    double sommeTotal_SALAIRE = 0.0;
+
+
+    YerothERPCalculSalaireEMPLOYE CALCUL_SALAIRE_EMPLOYE(this);
+
+
     if (true == employe)
     {
         label_fournisseur_details_fournisseur->setVisible(false);
@@ -1057,8 +731,9 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
     	lineEdit_employe_DEPARTEMENT
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::DEPARTEMENT));
 
-        CALCULATE_EMPLOYEE_SALARY
-            (GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::NOM_ENTREPRISE));
+        sommeTotal_SALAIRE =
+            CALCUL_SALAIRE_EMPLOYE.CALCULATE_EMPLOYEE_SALARY
+                (GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::NOM_ENTREPRISE));
 
     	lineEdit_EMPLOYE_position_fonction
 			->setText(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::POSITION_FONCTION));
@@ -1112,6 +787,9 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
     {
         label_image_produit->setAutoFillBackground(false);
     }
+
+    lineEdit_EMPLOYE_SALAIRE_MENSUEL
+        ->setText(GET_CURRENCY_STRING_NUM(sommeTotal_SALAIRE));
 }
 
 

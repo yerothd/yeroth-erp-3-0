@@ -238,7 +238,8 @@ HEADERS = src/include/yeroth-erp-3-0-precompiled-header.hpp \
 		  src/windows/purchase/yeroth-erp-achats-window.hpp \
 		  src/windows/pos/yeroth-erp-pointdevente-window.hpp \
 		  src/windows/pos/yeroth-erp-pointdevente-liststocks-window.hpp \
-		  src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp \
+			src/windows/supplier/yeroth-erp-calcul-salaire-EMPLOYE-window.hpp \
+			src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.hpp \
 			src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp \
 		  src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.hpp \
 		  src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DEMPLOYES-hr-window.hpp \
@@ -401,6 +402,7 @@ SOURCES = src/yeroth-erp-3-0.cpp \
 		  src/windows/purchase/yeroth-erp-achats-window.cpp \
 		  src/windows/pos/yeroth-erp-pointdevente-window.cpp \
 		  src/windows/pos/yeroth-erp-pointdevente-liststocks-window.cpp \
+			src/windows/supplier/yeroth-erp-calcul-salaire-EMPLOYE-window.cpp \
 			src/windows/supplier/yeroth-erp-tableau-des-transactions-du-fournisseur-window.cpp \
 			src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp \
 			src/windows/supplier/yeroth-erp-DETAILS-DUN-GROUPE-DE-PAIE-hr-window.cpp \
