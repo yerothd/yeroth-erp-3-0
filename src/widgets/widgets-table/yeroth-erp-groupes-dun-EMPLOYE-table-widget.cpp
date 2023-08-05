@@ -43,6 +43,12 @@ int YerothGroupesDunEmployeTableWidget::insert_group(const QString &group_db_ID,
         _groupReferenceItem->setForeground(YerothUtils::YEROTH_RED_COLOR);
         _groupNumberItem->setForeground(YerothUtils::YEROTH_RED_COLOR);
     }
+    else
+    {
+        _groupDesignationItem->setForeground(YerothUtils::YEROTH_WHITE_COLOR);
+        _groupReferenceItem->setForeground(YerothUtils::YEROTH_WHITE_COLOR);
+        _groupNumberItem->setForeground(YerothUtils::YEROTH_WHITE_COLOR);
+    }
 
 
     resizeColumnsToContents();

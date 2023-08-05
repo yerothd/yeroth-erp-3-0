@@ -755,6 +755,8 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
         YEROTH_ERP_3_0_ROLLBACK_DATABASE_TRANSACTION;
     }
+
+    checkBox_activer_DATES_DAPPARTENANCE->setCheckState(Qt::Unchecked);
 }
 
 
