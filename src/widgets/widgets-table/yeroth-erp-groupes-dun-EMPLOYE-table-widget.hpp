@@ -28,6 +28,7 @@ public:
      _groupReferenceItem(0),
 	 _groupNumberItem(0)
     {
+        setSelectionMode(QAbstractItemView::ExtendedSelection);
     }
 
     inline virtual ~YerothGroupesDunEmployeTableWidget()
