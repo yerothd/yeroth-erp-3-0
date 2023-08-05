@@ -54,15 +54,15 @@ double YerothERPCalculSalaireEMPLOYE::
 
 
     int query_size = periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-                        .easySelect("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 632);
+                        .easySelect("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 56);
 
 
     if (query_size <= 0)
     {
         periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-            .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 638);
+            .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 62);
 
-        return result;
+        return 0.0;
     }
 
 
@@ -103,14 +103,14 @@ double YerothERPCalculSalaireEMPLOYE::
         }
 
         periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-            .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 676);
+            .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 105);
 
-        return result;
+        return 0.0;
     }
 
 
     periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-        .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 683);
+        .resetFilter("src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp", 112);
 
 
 
@@ -162,8 +162,7 @@ double YerothERPCalculSalaireEMPLOYE::
 
 
 double YerothERPCalculSalaireEMPLOYE::
-        CALCULATE_EMPLOYEE_SALARY(const QString  &a_nom_entreprise_EMPLOYEE,
-                                  bool           CALL_update_lineedits_and_labels /* = false */)
+        CALCULATE_EMPLOYEE_SALARY(const QString  &a_nom_entreprise_EMPLOYEE)
 {
     //QDEBUG_STRING_OUTPUT_2("a_nom_entreprise_EMPLOYEE",
     //                        a_nom_entreprise_EMPLOYEE);

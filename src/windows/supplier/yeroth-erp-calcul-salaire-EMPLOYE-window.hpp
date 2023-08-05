@@ -37,8 +37,7 @@ public:
                                               QString &PAY_GROUP);
 
 
-    double CALCULATE_EMPLOYEE_SALARY(const QString &a_nom_entreprise_client,
-                                     bool          CALL_update_lineedits_and_labels = false);
+    double CALCULATE_EMPLOYEE_SALARY(const QString &a_nom_entreprise_client);
 
 
 private:
