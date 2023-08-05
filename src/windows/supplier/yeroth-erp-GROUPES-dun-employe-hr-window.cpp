@@ -631,11 +631,36 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
     if (end_DATE < begin_DATE)
     {
+        YerothQMessageBox::warning(this,
+                                   QObject::tr("date de fin AVANT date de début !"),
+                                   QObject::tr("La date de fin [\"%1\"] d'appartenance au "
+                                               "groupe de paie (HR) '%2' DEVRAIT ÊTRE avant "
+                                               "la date de début [\"%3\"] !")
+                                       .arg(DATE_TO_STRING(end_DATE),
+                                            _curEMPLOYEE_groupe_de_paie_hr,
+                                            DATE_TO_STRING(begin_DATE)));
         return ;
     }
 
     if (begin_DATE < GET_CURRENT_DATE)
     {
+
+        YerothQMessageBox::warning(this,
+                                   QObject::tr("date de début PRÉ-DATÉE !"),
+                                   QObject::tr("La date de début [\"%1\"] d'appartenance au "
+                                               "groupe de paie (HR) '%2' DEVRAIT ÊTRE daté "
+                                               "au minimum à partir de ce jour [\"%3\"] !")
+                                       .arg(DATE_TO_STRING(begin_DATE),
+                                            _curEMPLOYEE_groupe_de_paie_hr,
+                                            DATE_TO_STRING(GET_CURRENT_DATE)));
+
+        YerothQMessageBox::information(this,
+                                       QObject::tr("NOUVELLES DATES D'APPARTENACE"),
+                                       QObject::tr("Pour faire de nouvelles dates d'appartenance au "
+                                                   "groupe de paie (HR) '%1' pour cet employé [\"%2\"], "
+                                                   "VOUS DEVEZ LE RETIRER DE CE GROUPE, et ensuite l'y remettre !")
+                                         .arg(_curEMPLOYEE_groupe_de_paie_hr,
+                                              _curEMPLOYEE_NOM_ENTREPRISE));
         return ;
     }
 

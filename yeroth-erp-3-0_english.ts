@@ -1730,7 +1730,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="632"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="481"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="574"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="152"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="154"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="703"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="676"/>
         <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="418"/>
@@ -2021,7 +2021,7 @@ IS NOT POSSIBLE !</translation>
         <translation>Client ref.: </translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="349"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="351"/>
         <source>Nom de l&apos;entreprise: </source>
         <translation>Company name: </translation>
     </message>
@@ -2037,73 +2037,73 @@ IS NOT POSSIBLE !</translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="543"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="354"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="356"/>
         <source>Nom du Représentant: </source>
         <translation>Representant name: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="547"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="359"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="361"/>
         <source>Quartier: </source>
         <translation>Location: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="551"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="363"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="365"/>
         <source>Ville: </source>
         <translation>City: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="556"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="368"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="370"/>
         <source>Province / État: </source>
         <translation>Province / State: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="560"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="372"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="374"/>
         <source>Pays: </source>
         <translation>Country: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="565"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="377"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="379"/>
         <source>Boîte postale: </source>
         <translation>Postal code (or P.O. box): </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="570"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="382"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="384"/>
         <source>Siège social: </source>
         <translation>Headquarters: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="575"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="387"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="389"/>
         <source>Émail: </source>
         <translation>E-mail: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="582"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="392"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="394"/>
         <source>Numéro de téléphone 1: </source>
         <translation>Phone number (1): </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="587"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="398"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="400"/>
         <source>Numéro de téléphone 2: </source>
         <translation>Phone number (2): </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="592"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="404"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="406"/>
         <source>Numéro de contribuable: </source>
         <translation>Tax payer identification nr: </translation>
     </message>
     <message>
         <location filename="src/windows/crm/details/yeroth-erp-clients-detail-window.cpp" line="597"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="410"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="412"/>
         <source>RCCM N\textsuperscript{o}: </source>
         <oldsource>RCCN N\textsuperscript{o}: </oldsource>
         <translation>RCCM N\textsuperscript{o}: </translation>
@@ -2743,7 +2743,7 @@ Continue updating asset or stock ?</translation>
         <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp" line="77"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp" line="72"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp" line="74"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp" line="106"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp" line="95"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.hpp" line="89"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.hpp" line="76"/>
         <location filename="src/windows/yeroth-erp-alertes-window.hpp" line="83"/>
@@ -5298,7 +5298,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="668"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="499"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="708"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="172"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="174"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="727"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="698"/>
         <source>suppression - succès</source>
@@ -5327,7 +5327,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="690"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="508"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="717"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="185"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="187"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="737"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="715"/>
         <source>suppression - échec</source>
@@ -5342,7 +5342,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     <message>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="658"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="558"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1105"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1130"/>
         <source>Sélectionnez 1 compte client à afficher les détails.</source>
         <translation>Select a client to view its details.</translation>
     </message>
@@ -5823,54 +5823,53 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>Supplier &apos;</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="28"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="30"/>
         <source>détails d&apos;un fournisseur</source>
         <translation>supplier details</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="145"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="147"/>
         <source>Poursuivre avec la suppression du compte fournisseur &apos;%1&apos; ?</source>
         <translation>Continue with deletion of supplier &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="166"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="168"/>
         <source>Le compte fournisseur &apos;%1&apos; a été supprimé !</source>
         <translation>Supplier &apos;%1&apos; has been deleted !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="179"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="181"/>
         <source>Le compte fournisseur &apos;%1&apos; ne pouvait pas être supprimé !</source>
         <translation>Supplier &apos;%1&apos; couldn&apos;t be deleted !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="418"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="420"/>
         <source>Fournisseur: </source>
         <oldsource>Compte fournisseur: </oldsource>
         <translation>Supplier: </translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="671"/>
+        <location filename="src/windows/supplier/yeroth-erp-calcul-salaire-EMPLOYE-window.cpp" line="97"/>
         <source>calcul de salaire d&apos;1 employé</source>
         <translation>An employee salary calculation</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="672"/>
-        <source>AUCUN GROUPE DE PAIEMENT N&apos;A DE dates de validités courantes pour l&apos;employé [%1] !</source>
-        <oldsource>AUCUN GROUPE DE PAIEMENT N&apos;A DE dates de validités courantes pour l&apos;employé [%1] ! </oldsource>
-        <translation>NO PAYMENT GROUP has valid current dates for employee [%1] !</translation>
+        <location filename="src/windows/supplier/yeroth-erp-calcul-salaire-EMPLOYE-window.cpp" line="98"/>
+        <source>LE GROUPE DE PAIEMENT [&quot;%1&quot;] N&apos;A PLUS DE dates de validités courantes pour l&apos;employé [%2] !</source>
+        <translation>PAY GROUP [&quot;%1&quot;] DOESN&apos;T HAVE VALID BELONGING DATES for employee [%2] !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="1052"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="726"/>
         <source>Employé</source>
         <translation>EMPLOYEE</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="1072"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="747"/>
         <source>FOURNISSEUR</source>
         <translation>supplier</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp" line="107"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp" line="96"/>
         <source>Vous pouvez modifier les détails de ce fournisseur en cliquant sur &apos;Modifier&apos; !</source>
         <oldsource>Vous pouvez modifier les détails de ce fournisseuren cliquant sur &apos;Modifier&apos; !</oldsource>
         <translation>Details of this supplier could be modify by pressing button &apos;Modify&apos; !</translation>
@@ -5882,13 +5881,13 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>EMPLOYEES / SUPPLIERS</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="114"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="116"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="489"/>
         <source>groupes d&apos;EMPLOYÉS d&apos;appartenance</source>
         <translation>GROUPS of this employee</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="115"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="117"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="491"/>
         <source>Sélectionnez 1 employé afin de visualiser ses GROUPES d&apos;EMPLOYÉS d&apos;appartenance.</source>
         <translation>Select an EMPLOYEE TO VIEW ITS BELONGING GROUPS.</translation>
@@ -5944,7 +5943,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="556"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="891"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="914"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1103"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1128"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="768"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="802"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="826"/>
@@ -6055,11 +6054,11 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="293"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="320"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="349"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="786"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="814"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="856"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="880"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="910"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="811"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="839"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="881"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="905"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="935"/>
         <source>ajouter</source>
         <translation>add</translation>
     </message>
@@ -6607,48 +6606,78 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>AN EMPLOYEE GROUP</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="713"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="723"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="635"/>
+        <source>date de fin AVANT date de début !</source>
+        <translation>end date BEFORE begin date !</translation>
+    </message>
+    <message>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="636"/>
+        <source>La date de fin [&quot;%1&quot;] d&apos;appartenance au groupe de paie (HR) &apos;%2&apos; DEVRAIT ÊTRE avant la date de début [&quot;%3&quot;] !</source>
+        <translation>End date [&quot;%1&quot;], for belonging to PAY GROUP (HR) &apos;%2&apos;MUST BE SET BEFORE begin date [&quot;%3&quot;] !</translation>
+    </message>
+    <message>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="649"/>
+        <source>date de début PRÉ-DATÉE !</source>
+        <translation>begin date PREDATED !</translation>
+    </message>
+    <message>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="650"/>
+        <source>La date de début [&quot;%1&quot;] d&apos;appartenance au groupe de paie (HR) &apos;%2&apos; DEVRAIT ÊTRE daté au minimum à partir de ce jour [&quot;%3&quot;] !</source>
+        <translation>Begin date [&quot;%1&quot;], for belonging to PAY GROUP (HR) &apos;%2&apos; MUST BE SET AT LEAST starting this day [&quot;%3&quot;] !</translation>
+    </message>
+    <message>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="658"/>
+        <source>NOUVELLES DATES D&apos;APPARTENACE</source>
+        <translation>New belonging dates to PAY GROUP</translation>
+    </message>
+    <message>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="659"/>
+        <source>Pour faire de nouvelles dates d&apos;appartenance au groupe de paie (HR) &apos;%1&apos; pour cet employé [&quot;%2&quot;], VOUS DEVEZ LE RETIRER DE CE GROUPE, et ensuite l&apos;y remettre !</source>
+        <translation>TO SET NEW BELONGING DATES FOR PAY GROUP [HR] &apos;%1&apos; for this employee [&quot;%2&quot;], YOU MUST REMOVE HIM from pay group, and then insert him anew !</translation>
+    </message>
+    <message>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="738"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="748"/>
         <source>ajouter périodes d&apos;appartenance</source>
         <translation>add belonging time frame</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="714"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="739"/>
         <source>LES DATES D&apos;APPARTENANCE AU GROUPE DE PAIE (HR) &apos;%1&apos; POUR L&apos;EMPLOYÉ [%2] ont été enregistrées avec succès !</source>
         <translation>dates of belonging to employee group (HR) &apos;%1&apos; FOR EMPLOYEE [%2] could be saved sucessfully !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="724"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="749"/>
         <source>LES DATES D&apos;APPARTENANCE AU GROUPE DE PAIE (HR) &apos;%1&apos; POUR L&apos;EMPLOYÉ [%2] N&apos;ONT PAS PU ÊTRE ENREGISTRÉES !</source>
         <translation>dates of belonging to employee group (HR) &apos;%1&apos; FOR EMPLOYEE [%2] couldn&apos;t be saved sucessfully !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="787"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="812"/>
         <source>LE GROUPE D&apos;EMPLOYÉS &apos;%1&apos; a déjà atteint son nombre maximum de membres (%2) !</source>
         <translation>EMPLOYEE GROUP &apos;%1&apos; has already reached its maximum members (%2) !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="816"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="841"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; n&apos;a pas pu être ajouté dans le groupe des employés &apos;%2&apos; !</source>
         <translation>EMPLOYEE &apos;%1&apos; couldn&apos;t be added to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="857"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="882"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; EST DÉJÀ MEMBRE DU GROUPE D&apos;EMPLOYÉS &apos;%2&apos; !</source>
         <translation>Employee &apos;%1&apos; is already a member of employee group &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="881"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="906"/>
         <source>L&apos;employé &apos;%1&apos; n&apos;a pas pu être ajouté dans le GROUPE D&apos;EMPLOYÉS &apos;%2&apos; !</source>
         <translation>EMPLOYEE &apos;%1&apos; couldn&apos;t be added to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="911"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="936"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; a été ajouté dans le groupe des employés &apos;%2&apos; !</source>
         <translation>Employee &apos;%1&apos; has been successfully inserted to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1126"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1151"/>
         <source>Groupes d&apos;appartenance DE L&apos;EMPLOYÉ (%1)</source>
         <translation>GROUPS of this employee (%1)</translation>
     </message>
