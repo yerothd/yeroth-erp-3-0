@@ -37,7 +37,8 @@ public:
     int insert_group(const QString &group_db_ID,
                      const QString &groupDesignation,
                      const QString &groupReference,
-                     const QString &groupNumber);
+                     const QString &groupNumber,
+                     bool          COLOR_RED = false);
 
 
 protected:

@@ -27,7 +27,21 @@ public:
 
     YEROTH_CLASS_OPERATORS
 
+
+    inline YerothERPCalculSalaireEMPLOYE()
+    :_sommeTotal(0.0),
+     _calling_window(0)
+    {
+        __QMESSAGE_BOX_STYLE_SHEET =
+                        QString("QMessageBox {background-color: rgb(%1);}"
+                                "QMessageBox QLabel {color: rgb(%2);}")
+                            .arg(COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
+                                 COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+    }
+
+
 	YerothERPCalculSalaireEMPLOYE(YerothWindowsCommons *calling_window);
+
 
     inline ~YerothERPCalculSalaireEMPLOYE()
     {

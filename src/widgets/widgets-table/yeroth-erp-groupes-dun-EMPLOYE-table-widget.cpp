@@ -14,7 +14,8 @@
 int YerothGroupesDunEmployeTableWidget::insert_group(const QString &group_db_ID,
                                                      const QString &groupDesignation,
                                                      const QString &groupReference,
-                                                     const QString &groupNumber)
+                                                     const QString &groupNumber,
+                                                     bool          COLOR_RED /* = false */)
 {
 //      QDEBUG_STRING_OUTPUT_2("YerothGroupesDunClientWindow::insert_group", groupDesignation);
 
@@ -34,6 +35,15 @@ int YerothGroupesDunEmployeTableWidget::insert_group(const QString &group_db_ID,
     setItem(_curRow, idx++, _groupDesignationItem);
     setItem(_curRow, idx++, _groupReferenceItem);
     setItem(_curRow, idx++, _groupNumberItem);
+
+
+    if (COLOR_RED)
+    {
+        _groupDesignationItem->setForeground(YerothUtils::YEROTH_RED_COLOR);
+        _groupReferenceItem->setForeground(YerothUtils::YEROTH_RED_COLOR);
+        _groupNumberItem->setForeground(YerothUtils::YEROTH_RED_COLOR);
+    }
+
 
     resizeColumnsToContents();
 

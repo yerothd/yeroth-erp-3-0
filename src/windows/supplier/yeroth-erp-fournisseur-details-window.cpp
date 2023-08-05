@@ -714,7 +714,7 @@ void YerothFournisseurDetailsWindow::showFournisseurDetail(bool employe /* = fal
     double sommeTotal_SALAIRE = 0.0;
 
 
-    YerothERPCalculSalaireEMPLOYE CALCUL_SALAIRE_EMPLOYE(this);
+    YerothERPCalculSalaireEMPLOYE CALCUL_SALAIRE_EMPLOYE;
 
 
     if (true == employe)

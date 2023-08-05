@@ -26779,6 +26779,7 @@ obj/yeroth-erp-GROUPES-dun-employe-hr-window.o: src/windows/supplier/yeroth-erp-
 		src/admin/modifier/yeroth-erp-admin-modifier-window.hpp \
 		ui_yeroth-erp-admin-modifier-window.h \
 		src/utils/yeroth-erp-info-entreprise.hpp \
+		src/windows/supplier/yeroth-erp-calcul-salaire-EMPLOYE-window.hpp \
 		src/process/yeroth-erp-process.hpp \
 		obj/yeroth-erp-3-0.gch/c++
 	$(CXX) -c -include obj/yeroth-erp-3-0 $(CXXFLAGS) $(INCPATH) -o obj/yeroth-erp-GROUPES-dun-employe-hr-window.o src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp

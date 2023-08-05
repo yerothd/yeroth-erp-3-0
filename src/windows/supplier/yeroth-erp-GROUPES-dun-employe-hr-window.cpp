@@ -8,6 +8,8 @@
 
 #include "src/yeroth-erp-windows.hpp"
 
+#include "yeroth-erp-calcul-salaire-EMPLOYE-window.hpp"
+
 #include "src/process/yeroth-erp-process.hpp"
 
 #include "src/users/yeroth-erp-users.hpp"
@@ -832,7 +834,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
         bool insert_update_success =
         		YerothUtils::execQuery(INSERT_UPDATE_employee_WITHIN_GROUP);
 
-//              QDEBUG_STRING_OUTPUT_2("insert_update_success - 1", BOOL_TO_STRING(insert_update_success));
 
         if (!insert_update_success)
         {
@@ -921,10 +922,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
                                                YerothDatabaseTableColumn::GROUPE_DE_PAIE_HR),
                             QString::number(maximum_de_membres));
 
-
-    //QDEBUG_STRING_OUTPUT_2_N("last_row_INSERTED",
-    //                          last_row_INSERTED);
-
     handle_VALIDER_button();
 
 
@@ -977,22 +974,13 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
 
     int currentRow = tableWidget_Groupes_Dun_Employe->currentRow();
 
-//      QDEBUG_STRING_OUTPUT_1(QString("groupes_du_client_ID: %1, currentRow: %2")
-//                                                              .arg(groupes_du_client_ID,
-//                                                                       QString::number(currentRow)));
 
     QString EMPLOYEE_Group_db_ID = tableWidget_Groupes_Dun_Employe->get_DB_ELEMENT_db_ID(currentRow);
 
-//      QDEBUG_STRING_OUTPUT_1(QString("EMPLOYEE_Group_db_ID: %1, groupes_dun_EMPLOYE_ID: %2")
-//                                                              .arg(EMPLOYEE_Group_db_ID,
-//                                                                   groupes_dun_EMPLOYE_ID));
 
     YerothUtils::REMOVE_STRING_FROM_SPLIT_STAR_SEPARATED_DB_STRING(groupes_dun_EMPLOYE_ID,
     															   EMPLOYEE_Group_db_ID);
 
-//      QDEBUG_STRING_OUTPUT_1(QString("EMPLOYEE_Group_db_ID: %1, groupes_dun_EMPLOYE_ID: %2")
-//                                                              .arg(EMPLOYEE_Group_db_ID,
-//                                                                       groupes_dun_EMPLOYE_ID));
 
     QTableWidgetItem *item = tableWidget_Groupes_Dun_Employe->item(currentRow, 0);
 
@@ -1048,9 +1036,6 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
                          YerothDatabaseTableColumn::DESIGNATION,
 						 employeeGroup_designation);
 
-//              QDEBUG_STRING_OUTPUT_2("SELECT_GROUPES_DUN_EMPLOYE_INFO",
-//                                     SELECT_GROUPES_DUN_EMPLOYE_INFO);
-
         result = result && YerothUtils::execQuery(aQSqlQuery, SELECT_GROUPES_DUN_EMPLOYE_INFO);
 
         if (!aQSqlQuery.next())
@@ -1064,17 +1049,8 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
         			GET_SQL_RECORD_DATA(an_employee_group_record_info,
                                         YerothDatabaseTableColumn::MEMBRES_DU_GROUPE_db_ID);
 
-//      QDEBUG_STRING_OUTPUT_2("membres_du_groupe_db_ID *",
-//                             membres_du_groupe_db_ID);
-
-
         YerothUtils::REMOVE_STRING_FROM_SPLIT_STAR_SEPARATED_DB_STRING(membres_du_groupe_db_ID,
         															   _curEmployeeDBID);
-
-
-//              QDEBUG_STRING_OUTPUT_2("membres_du_groupe_db_ID ***",
-//                                                         membres_du_groupe_db_ID);
-
 
         QString UPDATE_GROUPES_DUN_EMPLOYE_DB_TABLE
 					(QString("UPDATE %1 SET %2='%3' WHERE %4='%5'")
@@ -1171,6 +1147,12 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
 
     QString employeeGroupTableModelQUERY_STR;
 
+
+    double CALCULATED_SALARY_for_EMPLOYEE = 0.0;
+
+    YerothERPCalculSalaireEMPLOYE CHECK_VALIDITY_DATES_for_belonging_of_EMPLOYEE;
+
+
     for (int k = 0; k < allEmployeeGroups.size(); ++k)
     {
         employeeGroupTableModelQUERY_STR =
@@ -1200,11 +1182,18 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
 
                 maximum_de_membres = aSqlGroupTableModelQUERY.value(2).toString();
 
+
+                CALCULATED_SALARY_for_EMPLOYEE =
+                    CHECK_VALIDITY_DATES_for_belonging_of_EMPLOYEE
+                        .calculate_PAY_GROUP_MONEY_BENEFITS(_curEMPLOYEE_NOM_ENTREPRISE,
+                                                            current_EMPLOYEE_PAY_GROUP);
+
                 tableWidget_Groupes_Dun_Employe
 					->insert_group(current_group_db_ID,
                                    allEmployeeGroups.at(k).trimmed(),
 								   current_EMPLOYEE_PAY_GROUP,
-								   maximum_de_membres);
+								   maximum_de_membres,
+								   (0.0 == CALCULATED_SALARY_for_EMPLOYEE));
             }
 
 //              qDebug() << tableWidget_Groupes_Dun_Employe->get_mapListIdxToElement_db_ID();
