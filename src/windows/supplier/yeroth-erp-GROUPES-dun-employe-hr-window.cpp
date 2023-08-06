@@ -1126,6 +1126,10 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_au_detail(const QModelIndex &mod
 
 void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr()
 {
+    _somme_SALAIRE_CUMULE_A_DATE = 0.0;
+
+    _map_GROUPE_SELECTIONNE__to__salaire.clear();
+
     tableWidget_Groupes_Dun_Employe->yerothClearTableWidgetContent();
 
     QSqlRecord record;
