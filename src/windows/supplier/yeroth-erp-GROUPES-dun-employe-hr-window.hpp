@@ -183,11 +183,15 @@ private:
 
     YerothSqlTableModel *_curEMPLOYEEgroups_TableModel;
 
+    double  _somme_SALAIRE_CUMULE_A_DATE;
+
     QString _curEMPLOYEE_groupe_de_paie_hr;
 
     QString _curEMPLOYEE_NOM_ENTREPRISE;
 
     QString _curEmployeeDBID;
+
+    QMap<QString, double> _map_GROUPE_SELECTIONNE__to__salaire;
 };
 
 #endif /* SRC_WINDOWS_YEROTH_ERP_GROUPES_DE_PAIE_DUN_employe_WINDOW_HPP_ */

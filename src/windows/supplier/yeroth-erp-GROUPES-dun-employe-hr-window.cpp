@@ -35,7 +35,8 @@
 YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
 :YerothWindowsCommons("yeroth-erp-GROUPES-dun-employe-hr"),
  _logger(new YerothLogger("YerothGROUPES_DUN_EMPLOYE_Window")),
- _curEMPLOYEEgroups_TableModel(0)
+ _curEMPLOYEEgroups_TableModel(0),
+ _somme_SALAIRE_CUMULE_A_DATE(0.0)
 {
     _windowName = QString("%1 - %2")
                 	.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
@@ -280,7 +281,7 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::imprimer_pdf_document()
 	GROUPES_DUN_EMPLOYE__TexDocument.replace("YEROTHEMPLOYE",
 			YerothUtils::LATEX_IN_OUT_handleForeignAccents(NomEmploye));
 
-	if (supplierTableModel.easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 251) > 0)
+	if (supplierTableModel.easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 284) > 0)
 	{
 		QSqlRecord record = supplierTableModel.record(0);
 
@@ -453,14 +454,20 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
     {
         QString designation_GROUPE_DEMPLOYES_HR = item_designation->text();
 
-        _curEMPLOYEE_groupe_de_paie_hr = item_GROUPE_DE_PAIE_HR->text();
-
 
         //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_NOM_ENTREPRISE", _curEMPLOYEE_NOM_ENTREPRISE);
 
         //QDEBUG_STRING_OUTPUT_2("designation_GROUPE_DEMPLOYES_HR", designation_GROUPE_DEMPLOYES_HR);
 
         //QDEBUG_STRING_OUTPUT_2("_curEMPLOYEE_groupe_de_paie_hr", _curEMPLOYEE_groupe_de_paie_hr);
+
+        _curEMPLOYEE_groupe_de_paie_hr = item_GROUPE_DE_PAIE_HR->text();
+
+
+        lineEdit_SALAIRE_DU_GROUPE_SELECTIONNE
+            ->setText(GET_CURRENCY_STRING_NUM
+                        (_map_GROUPE_SELECTIONNE__to__salaire
+                            .value(_curEMPLOYEE_groupe_de_paie_hr)));
 
 
         if (!_curEMPLOYEE_NOM_ENTREPRISE.isEmpty() &&
@@ -482,7 +489,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
 
 
             int query_size = periodes_dappartenance_groupes_de_paie_hr_TableModel
-                                .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 588);
+                                .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 491);
 
 
             //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
@@ -515,8 +522,13 @@ void YerothGROUPES_DUN_EMPLOYE_Window::
             }
 
             periodes_dappartenance_groupes_de_paie_hr_TableModel
-                .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 515);
+                .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 524);
         }
+    }
+    else
+    {
+        lineEdit_SALAIRE_DU_GROUPE_SELECTIONNE
+            ->setText(GET_CURRENCY_STRING_NUM(0.0));
     }
 
 }
@@ -592,7 +604,7 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::CREATE_A_NEW_PERIODE_DE_TEMPS_APPARTENANC
             .insertNewRecord(periodes_dappartenance_Record,
                              0,
                              "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
-                             588);
+                             602);
 
 
 
@@ -687,7 +699,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
 
     int query_size = periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 662);
+                        .easySelect("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 701);
 
 
     //QDEBUG_STRING_OUTPUT_2_N("query_size", query_size);
@@ -718,7 +730,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
                 .updateRecord(0,
                               a_periodes_dappartenance_UpdateRecord,
                               "src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp",
-                              688,
+                              728,
                               _curEMPLOYEE_NOM_ENTREPRISE);
     }
     else
@@ -729,7 +741,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
 
 
     periodes_dappartenance_groupes_de_paie_hr_SqlTableModel
-        .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 704);
+        .resetFilter("src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp", 743);
 
 
     if (successBeginEndDataSaved)
@@ -1190,6 +1202,15 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
                         .calculate_PAY_GROUP_MONEY_BENEFITS(_curEMPLOYEE_NOM_ENTREPRISE,
                                                             current_EMPLOYEE_PAY_GROUP);
 
+
+                _map_GROUPE_SELECTIONNE__to__salaire
+                    .insert(current_EMPLOYEE_PAY_GROUP,
+                            CALCULATED_SALARY_for_EMPLOYEE);
+
+
+                _somme_SALAIRE_CUMULE_A_DATE += CALCULATED_SALARY_for_EMPLOYEE;
+
+
                 tableWidget_Groupes_Dun_Employe
 					->insert_group(current_group_db_ID,
                                    allEmployeeGroups.at(k).trimmed(),
@@ -1204,7 +1225,15 @@ void YerothGROUPES_DUN_EMPLOYE_Window::afficher_tous_les_groupes_DUN_EMPLOYE_hr(
 
     if (tableWidget_Groupes_Dun_Employe->rowCount() > 0)
     {
+        lineEdit_SALAIRE_CUMULE
+            ->setText(GET_CURRENCY_STRING_NUM(_somme_SALAIRE_CUMULE_A_DATE));
+
         tableWidget_Groupes_Dun_Employe->selectRow(0);
+    }
+    else
+    {
+        lineEdit_SALAIRE_CUMULE
+            ->setText(GET_CURRENCY_STRING_NUM(0.0));
     }
 }
 
@@ -1332,6 +1361,10 @@ void YerothGROUPES_DUN_EMPLOYE_Window::populateComboBoxes()
 
 void YerothGROUPES_DUN_EMPLOYE_Window::rendreInvisible()
 {
+    _map_GROUPE_SELECTIONNE__to__salaire.clear();
+
+    _somme_SALAIRE_CUMULE_A_DATE = 0.0;
+
     dateEdit_groupe_dun_employe_date_begin->reset();
 
     dateEdit_groupe_dun_employe_date_end->reset();
@@ -1340,7 +1373,6 @@ void YerothGROUPES_DUN_EMPLOYE_Window::rendreInvisible()
     dateEdit_groupe_dun_employe_date_begin->setYerothEnabled(false);
 
     dateEdit_groupe_dun_employe_date_end->setYerothEnabled(false);
-
 
     tableWidget_Groupes_Dun_Employe->yerothClearTableWidgetContent();
 
