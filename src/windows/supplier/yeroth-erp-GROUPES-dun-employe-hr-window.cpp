@@ -769,6 +769,8 @@ void YerothGROUPES_DUN_EMPLOYE_Window::handle_VALIDER_button()
     }
 
     checkBox_activer_DATES_DAPPARTENANCE->setCheckState(Qt::Unchecked);
+
+    afficher_tous_les_groupes_DUN_EMPLOYE_hr();
 }
 
 
