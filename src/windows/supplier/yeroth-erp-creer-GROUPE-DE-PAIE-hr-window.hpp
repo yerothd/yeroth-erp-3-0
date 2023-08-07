@@ -87,6 +87,13 @@ protected:
 
 private slots:
 
+    void HANDLE_lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL_visualisation
+            (const QString &text_changed)
+    {
+    	lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL_visualisation
+			->setText(GET_DOUBLE_STRING(text_changed.toDouble()));
+    }
+
     void annuler_la_creation_dun_GROUPE_DE_PAIE_hr();
 
     bool creerEnregistrerUnGroupeDePaieHr();
@@ -108,11 +115,7 @@ private:
 										YerothDatabaseTableColumn::NOM_LOCALISATION);
     }
 
-    inline virtual void setupLineEdits()
-    {
-    	lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL->
-    	    setValidator(&YerothUtils::POSITIVE_DoubleValidator);
-    }
+    virtual void setupLineEdits();
 
     int _last_selected_table_widget_row;
 

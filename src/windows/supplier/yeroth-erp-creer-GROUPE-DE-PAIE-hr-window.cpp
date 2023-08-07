@@ -81,6 +81,12 @@ YerothCreerUnGroupeDePaieWindow::YerothCreerUnGroupeDePaieWindow()
     pushButton_enregistrer->disable(this);
 
 
+    connect(lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL,
+            SIGNAL(textChanged(const QString &)),
+            this,
+            SLOT(HANDLE_lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL_visualisation(const QString &)));
+
+
     /** Menu actions */
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this, SLOT(changer_utilisateur()));
     connect(actionAppeler_aide, SIGNAL(triggered()), this, SLOT(help()));
@@ -128,6 +134,16 @@ void YerothCreerUnGroupeDePaieWindow::updatePopulateComboBoxes()
 
     comboBox_creer_un_GroupeDePaie_localisation->addItem_AFTER_POPULATE
     (new_items);
+}
+
+
+void YerothCreerUnGroupeDePaieWindow::setupLineEdits()
+{
+    lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL_visualisation
+        ->setYerothEnabled(false);
+
+    lineEdit_creer_un_GroupeDePaie_MONTANT_A_PAYER_MENSUEL
+        ->setValidator(&YerothUtils::POSITIVE_DoubleValidator);
 }
 
 

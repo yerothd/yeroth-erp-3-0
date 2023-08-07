@@ -3108,7 +3108,7 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-compte-client-window.cpp" line="581"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp" line="667"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp" line="377"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="368"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="384"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="656"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp" line="640"/>
         <source>&apos; a été créer avec succès !</source>
@@ -4662,7 +4662,7 @@ Please contact an administrator</translation>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-compte-client-window.cpp" line="570"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp" line="657"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp" line="367"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="358"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="374"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="646"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp" line="631"/>
         <source>&apos; n&apos;a pas pu être créer !</source>
@@ -6184,7 +6184,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     <message>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp" line="530"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp" line="295"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="291"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="307"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp" line="512"/>
         <source>Remplisser tous les champs obligatoires !</source>
         <translation>Please, fill out all mandatory text fields!</translation>
@@ -6585,18 +6585,18 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>CREATE A pay group</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="210"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="226"/>
         <source>GROUPE DE PAIE hr</source>
         <translation>PAY GROUP hr</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="306"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="322"/>
         <source>LE GROUPE DE PAIE &apos;</source>
         <translation>Pay group &apos;</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="361"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="372"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="377"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="388"/>
         <source>CRÉER 1 GROUPE DE PAIE (hr)</source>
         <translation>Create a pay group (HR)</translation>
     </message>
@@ -6677,7 +6677,7 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>Employee &apos;%1&apos; has been successfully inserted to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1143"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1147"/>
         <source>Groupes d&apos;appartenance DE L&apos;EMPLOYÉ (%1)</source>
         <translation>GROUPS of this employee (%1)</translation>
     </message>
@@ -12439,8 +12439,8 @@ FOURNISSEURS</source>
     </message>
     <message>
         <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="1447"/>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9167"/>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9170"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9248"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9251"/>
         <source>Enregistrer</source>
         <translation>Save</translation>
     </message>
@@ -12489,91 +12489,91 @@ FOURNISSEURS</source>
         <translation>due amount (MONTHLY)</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="6973"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="7054"/>
         <source>Annuler</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="7499"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="7580"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="8012"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="8093"/>
         <source>Actions</source>
         <translation>Functions</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="8531"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="8612"/>
         <source>Outils</source>
         <translation>Tools</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9013"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9094"/>
         <source>toolBar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9033"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9114"/>
         <source>À propos</source>
         <translation>About Yeroth-erp-3.0</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9049"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9130"/>
         <source>Changer d&apos;utilisateur</source>
         <translation>Sign in</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9061"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9142"/>
         <source>Fermeture</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9073"/>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9076"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9154"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9157"/>
         <source>Menu principal</source>
         <translation>Main menu</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9092"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9173"/>
         <source>Message d&apos;aide</source>
         <translation>User tip</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9095"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9176"/>
         <source>Appeler l&apos;aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9111"/>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9114"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9192"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9195"/>
         <source>Déconnecter l&apos;utilisateur</source>
         <translation>Sign out</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9131"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9212"/>
         <source>Administration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9143"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9224"/>
         <source>Informations sur l&apos;entreprise</source>
         <translation>Company info</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9155"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9236"/>
         <source>Qui suis je ?</source>
         <translation>Who am I?</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9182"/>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9185"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9263"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9266"/>
         <source>Annuler la création du GROUPE DE PAIE</source>
         <translation>cancel SALARY group creation</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9197"/>
-        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9200"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9278"/>
+        <location filename="ui/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.ui" line="9281"/>
         <source>Lister les fournisseurs</source>
         <translation>View suppliers</translation>
     </message>
