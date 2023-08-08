@@ -75,9 +75,6 @@ void YerothERPGenericSelectDBFieldDialog::closeEvent(QCloseEvent *closeEvent)
         	_associatedWindow->rendreVisible(_associatedWindow->getCurStocksTableModel());
         }
     }
-
-
-    YerothPOSDialogCommons::closeEvent(closeEvent);
 }
 
 
