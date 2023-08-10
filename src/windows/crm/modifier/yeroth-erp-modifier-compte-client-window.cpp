@@ -824,7 +824,7 @@ void YerothModifierCompteClientWindow::rendreVisible(YerothSqlTableModel *client
 
     _curClientTableModel = clientTableModel;
 
-    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_ID();
+    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_db_ID();
     showClientDetail();
 
     //QDEBUG_STRING_OUTPUT_2("show_TabDESCRIPTION_CLIENT", BOOL_TO_STRING(show_TabDESCRIPTION_CLIENT));

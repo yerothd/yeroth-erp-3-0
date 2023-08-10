@@ -2803,7 +2803,7 @@ void YerothUtils::GET_YEROTH_VIEW_RECORD_WIDTH_LAST_SELECTED_ID(
 {
 	aYerothSqlTableModel_in_out.yerothSetFilter_WITH_where_clause(
 			QString("%1 = '%2'").arg(YerothDatabaseTableColumn::ID,
-					YerothERPWindows::get_last_lister_selected_row_ID()));
+					YerothERPWindows::get_last_lister_selected_row_db_ID()));
 
 	resultSQL_RECORD_in_out = aYerothSqlTableModel_in_out.record(0);
 }

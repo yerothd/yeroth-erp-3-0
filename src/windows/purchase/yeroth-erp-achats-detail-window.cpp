@@ -266,7 +266,7 @@ void YerothAchatsDetailWindow::rendreVisible(YerothSqlTableModel *stocksTableMod
 
     setVisible(true);
 
-    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_ID();
+    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_db_ID();
     showItem();
 
     YEROTH_set_windowName_TRANSLATED(YerothMainWindow::get_TRANSLATED_WindowName("détails d'1 achat de stock"),
@@ -281,7 +281,7 @@ void YerothAchatsDetailWindow::showItem()
                                                                  arg
                                                                  (YerothDatabaseTableColumn::ID,
                                                                   YerothERPWindows::
-                                                                  get_last_lister_selected_row_ID
+                                                                  get_last_lister_selected_row_db_ID
                                                                   ()));
 
     QSqlRecord record = _curAchatStocksTableModel->record(0);

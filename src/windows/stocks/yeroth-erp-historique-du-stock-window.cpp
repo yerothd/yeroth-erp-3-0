@@ -134,7 +134,7 @@ void YerothHistoriqueDuStockWindow::listHistoriqueDuStock(const QStringList &aMo
 
     _a_previous_mouvement_stock_list = aMouvementStockList;
 
-    _currentStockID = YerothWindowsCommons::get_last_lister_selected_row_ID();
+    _currentStockID = YerothWindowsCommons::get_last_lister_selected_row_db_ID();
 
     if (!YerothUtils::isEqualCaseInsensitive(_previousStockID, _currentStockID))
     {
@@ -185,13 +185,13 @@ void YerothHistoriqueDuStockWindow::listHistoriqueDuStock(const QStringList &aMo
     if (!_show_ASSET)
     {
         preambleTitle.append(QObject::tr(" ID (%1), stock \"%2\"")
-        						.arg(YerothWindowsCommons::get_last_lister_selected_row_ID(),
+        						.arg(YerothWindowsCommons::get_last_lister_selected_row_db_ID(),
         							 stockDesignation));
     }
     else
     {
         preambleTitle.append(QObject::tr(" ID (%1), IMMOBILISATION \"%2\"")
-                             	 .arg(YerothWindowsCommons::get_last_lister_selected_row_ID(),
+                             	 .arg(YerothWindowsCommons::get_last_lister_selected_row_db_ID(),
                              		  stockDesignation));
     }
 

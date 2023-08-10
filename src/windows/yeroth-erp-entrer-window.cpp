@@ -1600,8 +1600,7 @@ void YerothEntrerWindow::showItem(YerothSqlTableModel *
 
     QString yerothSqlTableModelFilter =
     QString("%1 = '%2'").arg(YerothDatabaseTableColumn::ID,
-                             YerothERPWindows::
-                             get_last_lister_selected_row_ID());
+                             YerothERPWindows::get_last_lister_selected_row_db_ID());
 
 
     if (0 == stocks_OR_marchandises_TableModel)
@@ -1775,7 +1774,7 @@ void YerothEntrerWindow::showItem(YerothSqlTableModel *
                                             stocks_OR_marchandises_TableModel->
                                             sqlTableName()))
     {
-        QString recordID = YerothERPWindows::get_last_lister_selected_row_ID();
+        QString recordID = YerothERPWindows::get_last_lister_selected_row_db_ID();
 
         int achatQuerySize =
                         YerothUtils::STOCK_PURCHASE_RECORDS_QUANTITY(recordID);

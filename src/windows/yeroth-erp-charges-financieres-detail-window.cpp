@@ -200,7 +200,7 @@ void YerothChargesFinancieresDetailsWindow::rendreVisible(YerothSqlTableModel *s
     YEROTH_set_windowName_TRANSLATED(YerothMainWindow::get_TRANSLATED_WindowName("détails d'1 CHARGE FINANCIÈRE"),
     								 _cur_CHARGES_FINANCIERESTableModel);
 
-    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_ID();
+    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_db_ID();
     showItem();
 }
 
@@ -211,7 +211,7 @@ void YerothChargesFinancieresDetailsWindow::showItem()
 		->yerothSetFilter_WITH_where_clause
 			(QString("%1 = '%2'")
 				.arg(YerothDatabaseTableColumn::ID,
-					 YerothERPWindows::get_last_lister_selected_row_ID()));
+					 YerothERPWindows::get_last_lister_selected_row_db_ID()));
 
 
     QSqlRecord record = _cur_CHARGES_FINANCIERESTableModel->record(0);

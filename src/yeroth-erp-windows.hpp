@@ -284,9 +284,9 @@ public:
     }
 #endif
 
-    inline static const QString &get_last_lister_selected_row_ID()
+    inline static const QString &get_last_lister_selected_row_db_ID()
     {
-        return YerothWindowsCommons::get_last_lister_selected_row_ID();
+        return YerothWindowsCommons::get_last_lister_selected_row_db_ID();
     }
 
     inline void setDesktopWidget(QDesktopWidget *desktopWidget)

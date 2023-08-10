@@ -294,7 +294,7 @@ void YerothStockDetailWindow::rendreVisible(YerothSqlTableModel *stocksTableMode
 	retranslateUi(this);
 
     _curStocksTableModel = stocksTableModel;
-    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_ID();
+    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_db_ID();
 
     setDetailViewFilter(_curStocksTableModel);
 
@@ -370,7 +370,7 @@ YerothStockDetailWindow::showItem_YerothERPAbstractClassDetailViewFOR_WINDOW
                                                             ("%1 = '%2'").arg
                                                             (YerothDatabaseTableColumn::ID,
                                                              YerothERPWindows::
-                                                             get_last_lister_selected_row_ID
+                                                             get_last_lister_selected_row_db_ID
                                                              ()));
 
     QSqlRecord
@@ -584,7 +584,7 @@ void YerothStockDetailWindow::supprimer_ce_stock()
                                                             ("%1 = '%2'").arg
                                                             (YerothDatabaseTableColumn::ID,
                                                              YerothERPWindows::
-                                                             get_last_lister_selected_row_ID
+                                                             get_last_lister_selected_row_db_ID
                                                              ()));
 
     QSqlRecord record = _curStocksTableModel->record(0);

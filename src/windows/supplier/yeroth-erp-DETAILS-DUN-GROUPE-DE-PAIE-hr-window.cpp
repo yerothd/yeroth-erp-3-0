@@ -148,7 +148,7 @@ void YerothDetailsDunGroupeDePaieWindow::
     _curPAY_GROUP_TableModel =
                     curClient_LOYALTY_PROGRAM_TableModel;
 
-    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_ID();
+    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_db_ID();
 
     setVisible(true);
 
