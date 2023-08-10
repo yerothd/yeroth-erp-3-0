@@ -135,12 +135,11 @@ private slots:
 
     void modifierFournisseur();
 
-    void supprimer_PLUSIEURS_Fournisseurs(YerothSqlTableModel &
-                                          aFournisseursTableModel);
+    void supprimer_PLUSIEURS_Fournisseurs(YerothSqlTableModel &aFournisseursTableModel);
 
     void supprimerFournisseur();
 
-    void afficher_au_detail();
+    virtual void afficher_au_detail();
 
     inline virtual void afficher_au_detail(const QModelIndex &modelIndex)
     {

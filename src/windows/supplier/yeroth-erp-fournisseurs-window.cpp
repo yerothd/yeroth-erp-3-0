@@ -68,12 +68,13 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
 		<< actionAfficherDetailsFournisseur;
 
 
-    MACRO_TO_DEFINE_CURRENT_VIEW_WINDOW_FOR_TABLE_PAGINATION
-    (tableView_fournisseurs) QMESSAGE_BOX_STYLE_SHEET =
-                    QString("QMessageBox {background-color: rgb(%1);}"
-                            "QMessageBox QLabel {color: rgb(%2);}").arg
-                    (COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
-                     COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+    MACRO_TO_DEFINE_CURRENT_VIEW_WINDOW_FOR_TABLE_PAGINATION(tableView_fournisseurs);
+
+
+    QMESSAGE_BOX_STYLE_SHEET = QString("QMessageBox {background-color: rgb(%1);}"
+                                       "QMessageBox QLabel {color: rgb(%2);}")
+                                    .arg(COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
+                                         COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
 
     _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME
@@ -81,17 +82,23 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
         << YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE
         << YerothDatabaseTableColumn::GROUPES_DUN_EMPLOYE_ID;
 
+
     setup_select_configure_dbcolumn(YerothDatabase::FOURNISSEURS);
 
 
-    _lineEditsToANDContentForSearch.insert
-    (&lineEdit_fournisseurs_terme_recherche, YerothUtils::EMPTY_STRING);
+    _lineEditsToANDContentForSearch
+        .insert(&lineEdit_fournisseurs_terme_recherche,
+                YerothUtils::EMPTY_STRING);
+
 
     YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION(YerothDatabase::FOURNISSEURS);
 
+
     reinitialiser_colones_db_visibles();
 
+
     _curFournisseursTableModel = &_allWindows->getSqlTableModel_fournisseurs();
+
 
     setupLineEdits();
 
@@ -124,7 +131,9 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
 
+
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS;
+
 
     pushButton_add_condition_SEARCH->disable(this);
     pushButton_GROUPE_DEMPLOYES->disable(this);
@@ -143,13 +152,16 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
     		this,
             SLOT(incrementFontSize__OF_TABLE()));
 
+
     connect(actiondiminuer_la_police_du_tableau,
     		SIGNAL(triggered()),
     		this,
             SLOT(decrementFontSize__OF_TABLE()));
 
     //Menu actions
-    connect(actionReinitialiserChampsDBVisible, SIGNAL(triggered()), this,
+    connect(actionReinitialiserChampsDBVisible,
+            SIGNAL(triggered()),
+            this,
             SLOT(slot_reinitialiser_colones_db_visibles()));
 
 
@@ -159,7 +171,9 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
             SLOT(afficher_groupes_dun_employe()));
 
 
-    connect(actionChampsDBVisible, SIGNAL(triggered()), this,
+    connect(actionChampsDBVisible,
+            SIGNAL(triggered()),
+            this,
             SLOT(selectionner_champs_db_visibles()));
 
 
@@ -229,13 +243,14 @@ YerothERPFournisseursWindow::YerothERPFournisseursWindow()
 
 #else //YEROTH_SERVER, YEROTH_STANDALONE, YEROTH_ACADEMIC_EVALUSATION_VERSION
 
-    connect(actionAdministration, SIGNAL(triggered()), this,
-            SLOT(administration()));
+    connect(actionAdministration, SIGNAL(triggered()), this, SLOT(administration()));
 
 #endif
 
+
     connect(tableView_fournisseurs,
-            SIGNAL(doubleClicked(const QModelIndex &)), this,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+            this,
             SLOT(afficher_au_detail(const QModelIndex &)));
 
     setupShortcuts();
@@ -1076,8 +1091,8 @@ void YerothERPFournisseursWindow::afficher_nom_entreprise_selectioner(const QStr
 }
 
 
-void
-YerothERPFournisseursWindow::lister_les_elements_du_tableau(YerothSqlTableModel &fournisseurSqlTableModel)
+void YerothERPFournisseursWindow::
+        lister_les_elements_du_tableau(YerothSqlTableModel &fournisseurSqlTableModel)
 {
 	tableView_fournisseurs->queryYerothTableViewCurrentPageContentRow(fournisseurSqlTableModel);
 
