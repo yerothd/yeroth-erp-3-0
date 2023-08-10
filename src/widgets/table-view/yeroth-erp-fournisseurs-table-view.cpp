@@ -33,9 +33,8 @@
 #include <QtSql/QSqlError>
 
 
-void
-YerothERPFournisseursTableView::lister_les_elements_du_tableau
-(YerothSqlTableModel &tableModel)
+void YerothERPFournisseursTableView::
+        lister_les_elements_du_tableau(YerothSqlTableModel &tableModel)
 {
     _stdItemModel->_curSqlTableModel = &tableModel;
 
@@ -62,26 +61,25 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
 
     _stdItemModel->setColumnCount(_tableModelRawHeaders_IN_OUT.size());
 
-    if (!s || (0 == _tableModelHeaders.size())
-            || (0 == _tableModelRawHeaders_IN_OUT.size()))
+    if (!s                                      ||
+        (0 == _tableModelHeaders.size())        ||
+        (0 == _tableModelRawHeaders_IN_OUT.size()))
     {
         return;
     }
 
-    QString
-    curTableModelRawHdr;
 
-    QString
-    tmpQvString;
 
-    QStandardItem *
-    anItem = 0;
+    QString curTableModelRawHdr;
 
-    QVariant
-    qv;
+    QString tmpQvString;
 
-    QSqlRecord
-    record;
+    QStandardItem *anItem = 0;
+
+    QVariant qv;
+
+    QSqlRecord record;
+
 
     for (int i = 0; i < rows; ++i)
     {
@@ -102,8 +100,7 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
 
             if (anItem)
             {
-                delete
-                anItem;
+                delete anItem;
             }
 
             anItem = new YerothQStandardItem;
@@ -111,8 +108,7 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
             switch (qv.type())
             {
             case QVariant::UInt:
-                anItem =
-                                new YerothQStandardItem(GET_NUM_STRING(qv.toUInt()));
+                anItem = new YerothQStandardItem(GET_NUM_STRING(qv.toUInt()));
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
@@ -121,34 +117,32 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
                 if (!YerothUtils::isEqualCaseInsensitive(curTableModelRawHdr,
                                                          YerothDatabaseTableColumn::ID))
                 {
-                    anItem =
-                                    new YerothQStandardItem(GET_NUM_STRING(qv.toInt()));
+                    anItem = new YerothQStandardItem(GET_NUM_STRING(qv.toInt()));
                 }
                 else
                 {
-                    YEROTH_SAVE_ID_TO_ROW_NUMBER_FOR_YEROTH_TABLE_VIEW
-                    (tmpQvString, qv.toInt(), i) anItem =
-                                    new YerothQStandardItem(tmpQvString);
+                    YEROTH_SAVE_ID_TO_ROW_NUMBER_FOR_YEROTH_TABLE_VIEW(tmpQvString,
+                                                                       qv.toInt(),
+                                                                       i)
+
+                    anItem = new YerothQStandardItem(tmpQvString);
                 }
 
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
             case QVariant::Double:
-                anItem =
-                                new YerothQStandardItem(GET_DOUBLE_STRING(qv.toDouble()));
+                anItem = new YerothQStandardItem(GET_DOUBLE_STRING(qv.toDouble()));
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
             case QVariant::ULongLong:
-                anItem =
-                                new YerothQStandardItem(GET_NUM_STRING(qv.toULongLong()));
+                anItem = new YerothQStandardItem(GET_NUM_STRING(qv.toULongLong()));
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
             case QVariant::LongLong:
-                anItem =
-                                new YerothQStandardItem(GET_NUM_STRING(qv.toLongLong()));
+                anItem = new YerothQStandardItem(GET_NUM_STRING(qv.toLongLong()));
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
@@ -162,8 +156,7 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
                 tmpQvString.append(qv.toString());
 
                 if (!YerothUtils::isEqualCaseInsensitive(curTableModelRawHdr,
-                                                         YerothDatabaseTableColumn::
-                                                         REFERENCE_FOURNISSEUR))
+                                                         YerothDatabaseTableColumn::REFERENCE_FOURNISSEUR))
                 {
                     anItem = new YerothQStandardItem(tmpQvString, false);
                 }
@@ -176,21 +169,18 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
                 break;
 
             case QVariant::Bool:
-                anItem =
-                                new YerothQStandardItem(qv.toBool()? BOOLEAN_STRING_TRUE :
-                                                        BOOLEAN_STRING_FALSE);
+                anItem = new YerothQStandardItem(qv.toBool() ?
+                                                  BOOLEAN_STRING_TRUE : BOOLEAN_STRING_FALSE);
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
             case QVariant::Date:
-                anItem =
-                                new YerothQStandardItem(DATE_TO_STRING(qv.toDate()));
+                anItem = new YerothQStandardItem(DATE_TO_STRING(qv.toDate()));
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
             case QVariant::Time:
-                anItem =
-                                new YerothQStandardItem(TIME_TO_STRING(qv.toTime()));
+                anItem = new YerothQStandardItem(TIME_TO_STRING(qv.toTime()));
                 _stdItemModel->setItem(i, k, anItem);
                 break;
 
@@ -208,12 +198,10 @@ YerothERPFournisseursTableView::lister_les_elements_du_tableau
         }
     }
 
-    static YerothERPWindows *
-    curAllWindows = YerothUtils::getAllWindows();
+    static YerothERPWindows *curAllWindows = YerothUtils::getAllWindows();
 
     YEROTH_SET_LAST_TABLE_VIEW_SELECTED_ROW_ID(curAllWindows,
-                                               curAllWindows->
-                                               _fournisseursWindow)
+                                               curAllWindows->_fournisseursWindow)
     resizeColumnsToContents();
 
     curAllWindows->_fournisseursWindow->handle_some_actions_tools_enabled();

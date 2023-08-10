@@ -211,8 +211,10 @@ YerothERPClientsWindow::YerothERPClientsWindow()
 
 #endif
 
-    connect(tableView_clients, SIGNAL(doubleClicked(const QModelIndex &)),
-            this, SLOT(private_payer_au_compteclient(const QModelIndex &)));
+    connect(tableView_clients,
+            SIGNAL(doubleClicked(const QModelIndex &)),
+            this,
+            SLOT(private_payer_au_compteclient(const QModelIndex &)));
 
     setupShortcuts();
 }
@@ -1044,8 +1046,7 @@ void YerothERPClientsWindow::afficher_nom_entreprise_selectioner(const QString &
 }
 
 
-void YerothERPClientsWindow::afficherClients(YerothSqlTableModel &
-                                             clientSqlTableModel)
+void YerothERPClientsWindow::afficherClients(YerothSqlTableModel &clientSqlTableModel)
 {
     tableView_clients->queryYerothTableViewCurrentPageContentRow(clientSqlTableModel);
 
