@@ -219,10 +219,13 @@ YerothERPClientsWindow::YerothERPClientsWindow()
     setupShortcuts();
 }
 
+
 YerothERPClientsWindow::~YerothERPClientsWindow()
 {
     MACRO_TO_DELETE_PAGINATION_INTEGER_VALIDATOR
+
     delete _pushButton_filtrer_font;
+
     delete _logger;
 }
 
@@ -781,11 +784,10 @@ void YerothERPClientsWindow::populateClientsComboBoxes()
     aQStringList.removeAll(YerothDatabaseTableColumn::NUMERO_TELEPHONE_2);
 
 
-    comboBox_element_string_db->addItems(aQStringList,
-                                         YerothDatabaseTableColumn::
-                                         _tableColumnToUserViewString);
+    comboBox_element_string_db->clear();
 
-    comboBox_element_string_db->setCurrentIndex(0);
+    comboBox_element_string_db->addItems(aQStringList,
+                                         YerothDatabaseTableColumn::_tableColumnToUserViewString);
 
 
     aQStringList.clear();
@@ -803,7 +805,15 @@ void YerothERPClientsWindow::populateClientsComboBoxes()
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::DETTE_MAXIMALE_COMPTE_CLIENT));
 
+
+
+    comboBox_element->clear();
+
     comboBox_element->addItems(aQStringList);
+
+
+
+    comboBox_condition->clear();
 
     aQStringList.clear();
 
@@ -842,13 +852,15 @@ void YerothERPClientsWindow::setupLineEdits()
 
 void YerothERPClientsWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 {
-	retranslateUi(this);
+    retranslateUi(this);
 
     YEROTH_INITIALISE_WINDOW_SEARCH_FILTERS_WIDGETS;
 
     setupLineEdits();
 
     setupLineEditsQCompleters((QObject *) this);
+
+    populateClientsComboBoxes();
 
     setYerothSqlTableModel(_curClientsTableModel);
 

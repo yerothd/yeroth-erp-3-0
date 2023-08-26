@@ -410,6 +410,8 @@ const QString YerothDatabaseTableColumn::LOCALISATION_ENTREE_ID("localisation_en
 
 void YerothDatabaseTableColumn::RETRANSLATE()
 {
+    _tableColumnToUserViewString.clear();
+
     _tableColumnToUserViewString.insert
     (YerothDatabaseTableColumn::MONTANT_RABAIS_PROGRAMME_DE_FIDELITE_CLIENTS,
      QObject::tr("Rabais FIDÉLITÉ CLIENTS (%1)").

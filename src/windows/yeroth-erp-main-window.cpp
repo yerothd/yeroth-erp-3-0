@@ -765,9 +765,11 @@ void YerothMainWindow::CHANGER_DE_LANGUE()
 	    YerothMainWindow::LANGUE_ANGLAISE = false;
 	}
 
-	retranslateUi(this);
 
-	YerothDatabaseTableColumn::RETRANSLATE();
+    YerothDatabaseTableColumn::RETRANSLATE();
+
+
+	retranslateUi(this);
 
 	CHANGER_DE_LANGUE__text__TRANSLATION();
 
