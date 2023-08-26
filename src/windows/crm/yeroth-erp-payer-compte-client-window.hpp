@@ -29,8 +29,8 @@ class YerothSqlTableModel;
 
 
 
-class YerothPayerCompteClientWindow:public YerothWindowsCommons,
-    private Ui_YerothPayerCompteClientWindow
+class YerothPayerCompteClientWindow : public YerothWindowsCommons,
+                                      private Ui_YerothPayerCompteClientWindow
 {
 	Q_OBJECT
 
@@ -77,6 +77,7 @@ public:
 
     virtual void rendreInvisible();
 
+
 public slots:
 
     inline virtual void apropos()
@@ -97,17 +98,21 @@ public slots:
 
     void PUBLIC_slot_afficher_les_transactions_dun_client();
 
+
 protected:
 
     virtual void hideEvent(QHideEvent *hideEvent);
 
+
 protected slots:
+
     void handleComboBoxClients_Typedepaiement_TextChanged(const
                                                           QString
                                                           &
                                                           currentText);
 
 private slots:
+
     void handleReferenceChange(const QString &
                                referenceEngagement);
 
@@ -130,6 +135,7 @@ private slots:
     void reinitialiser_donnees_de_consultation_des_transactions_financieres();
 
     bool putCashIntoCustomerAccount();
+
 
 private:
 

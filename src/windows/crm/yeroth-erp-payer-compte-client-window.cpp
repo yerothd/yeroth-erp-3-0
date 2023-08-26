@@ -49,17 +49,17 @@ YerothPayerCompteClientWindow::YerothPayerCompteClientWindow()
     mySetupUi(this);
 
     QMESSAGE_BOX_STYLE_SHEET =
-                    QString("QMessageBox {background-color: rgb(%1);}").arg
-                    (COLOUR_RGB_STRING_YEROTH_YELLOW_254_254_0);
+                    QString("QMessageBox {background-color: rgb(%1);}")
+                        .arg(COLOUR_RGB_STRING_YEROTH_YELLOW_254_254_0);
 
 
     comboBox_comptes_clients_reference->setYerothEditable(true);
 
-    comboBox_comptes_clients_CONSULTER_TRANSACTIONS_FINANCIERES_reference->
-    setYerothEditable(true);
+    comboBox_comptes_clients_CONSULTER_TRANSACTIONS_FINANCIERES_reference
+        ->setYerothEditable(true);
 
-    comboBox_comptes_clients_CONSULTER_TRANSACTIONS_FINANCIERES_succursale->
-    setYerothEditable(true);
+    comboBox_comptes_clients_CONSULTER_TRANSACTIONS_FINANCIERES_succursale
+        ->setYerothEditable(true);
 
 
     checkBox_ne_pas_inclure_les_ventes_comptant->setChecked(true);
@@ -98,8 +98,7 @@ YerothPayerCompteClientWindow::YerothPayerCompteClientWindow()
 
 
     pushButton_transactions_compte_client_consulter->disable(this);
-    pushButton_transactions_compte_client_reinitialiser_consultation->disable
-    (this);
+    pushButton_transactions_compte_client_reinitialiser_consultation->disable(this);
 
 
 
@@ -115,32 +114,34 @@ YerothPayerCompteClientWindow::YerothPayerCompteClientWindow()
 
 
     //Menu actions
-    connect(actionChanger_utilisateur, SIGNAL(triggered()), this,
-            SLOT(changer_utilisateur()));
-    connect(actionDeconnecter_utilisateur, SIGNAL(triggered()), this,
-            SLOT(deconnecter_utilisateur()));
-    connect(actionReinitialiser, SIGNAL(triggered()), this,
+    connect(actionChanger_utilisateur, SIGNAL(triggered()), this, SLOT(changer_utilisateur()));
+
+    connect(actionDeconnecter_utilisateur, SIGNAL(triggered()), this, SLOT(deconnecter_utilisateur()));
+
+    connect(actionReinitialiser,
+            SIGNAL(triggered()),
+            this,
             SLOT(reinitialiser_donnees_de_paiement_au_compteclient()));
 
-    connect(actionAfficherPDF, SIGNAL(triggered()), this,
+    connect(actionAfficherPDF,
+            SIGNAL(triggered()),
+            this,
             SLOT(generer_FACTURE_RELIQUAT_DE_PAIEMENT()));
+
     connect(actionA_propos, SIGNAL(triggered()), this, SLOT(apropos()));
 
     connect(actionGENERER_FACTURE_RELIQUAT_DE_PAIEMENT,
             SIGNAL(triggered()),
-            this, SLOT(generer_FACTURE_RELIQUAT_DE_PAIEMENT()));
+            this,
+            SLOT(generer_FACTURE_RELIQUAT_DE_PAIEMENT()));
 
-    connect(actionEntrer, SIGNAL(triggered()), this,
-            SLOT(vendre_au_COMPTE_CLIENT()));
+    connect(actionEntrer, SIGNAL(triggered()), this,SLOT(vendre_au_COMPTE_CLIENT()));
     connect(actionPaiements, SIGNAL(triggered()), this, SLOT(paiements()));
-    connect(actionAfficherDetailsCompteClient, SIGNAL(triggered()), this,
-            SLOT(afficher_detail_client()));
-    connect(actionPayerAuCompteClient, SIGNAL(triggered()), this,
-            SLOT(putCashIntoCustomerAccount()));
+    connect(actionAfficherDetailsCompteClient, SIGNAL(triggered()), this, SLOT(afficher_detail_client()));
+    connect(actionPayerAuCompteClient, SIGNAL(triggered()), this, SLOT(putCashIntoCustomerAccount()));
     connect(actionMenu_Principal, SIGNAL(triggered()), this, SLOT(menu()));
     connect(actionFermeture, SIGNAL(triggered()), this, SLOT(fermeture()));
-    connect(actionQui_suis_je, SIGNAL(triggered()), this,
-            SLOT(qui_suis_je()));
+    connect(actionQui_suis_je, SIGNAL(triggered()), this, SLOT(qui_suis_je()));
 
 
     activer_la_generation_des_factures_reliquat_de_paiement_client
@@ -163,7 +164,7 @@ YerothPayerCompteClientWindow::YerothPayerCompteClientWindow()
 
     groupBox_TRANSACTIONS_FINANCIERES->setVisible(true);
 
-    groupBox_ENCAISSEMENT_ET_FACTURATION->setVisible(false);
+    groupBox_ENCAISSEMENT_ET_FACTURATION->setVisible(true);
 
 }
 
@@ -174,27 +175,18 @@ void YerothPayerCompteClientWindow::hideEvent(QHideEvent *hideEvent)
 }
 
 
-void
-YerothPayerCompteClientWindow::
-
-handleComboBoxClients_Typedepaiement_TextChanged(const QString &
-                                                 currentText)
+void YerothPayerCompteClientWindow::
+        handleComboBoxClients_Typedepaiement_TextChanged(const QString &currentText)
 {
     if (YerothUtils::isEqualCaseInsensitive(currentText,
-                                            YerothUtils::
-                                            _typedepaiementToUserViewString.
-                                            value(YerothUtils::
-                                                  ENCAISSEMENT_BANCAIRE))
-            || YerothUtils::isEqualCaseInsensitive(currentText,
-                                                   YerothUtils::
-                                                   _typedepaiementToUserViewString.
-                                                   value(YerothUtils::
-                                                         ENCAISSEMENT_TELEPHONE))
-            || YerothUtils::isEqualCaseInsensitive(currentText,
-                                                   YerothUtils::
-                                                   _typedepaiementToUserViewString.
-                                                   value(YerothUtils::
-                                                         ENCAISSEMENT_VIREMENT_BANCAIRE)))
+                                            YerothUtils::_typedepaiementToUserViewString
+                                                .value(YerothUtils::ENCAISSEMENT_BANCAIRE)) ||
+        YerothUtils::isEqualCaseInsensitive(currentText,
+                                            YerothUtils::_typedepaiementToUserViewString
+                                                .value(YerothUtils::ENCAISSEMENT_TELEPHONE)) ||
+        YerothUtils::isEqualCaseInsensitive(currentText,
+                                            YerothUtils::_typedepaiementToUserViewString
+                                                .value(YerothUtils::ENCAISSEMENT_VIREMENT_BANCAIRE)))
     {
         comboBox_clients_intitule_du_compte_bancaire->setYerothEnabled(true);
     }
