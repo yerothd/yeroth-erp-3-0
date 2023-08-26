@@ -960,12 +960,27 @@ void YerothERPFournisseursWindow::rendreVisible(YerothSqlTableModel *stocksTable
 
     setVisible(true);
 
+
+    QDEBUG_STRING_OUTPUT_2_N("* - tableView_fournisseurs->currentIndex().row()",
+                             tableView_fournisseurs->currentIndex().row());
+
     lister_les_elements_du_tableau(*_curFournisseursTableModel);
 
     YEROTH_set_windowName_TRANSLATED(YerothMainWindow::get_TRANSLATED_WindowName("EMPLOYÉS / fournisseurs"),
     								 _curFournisseursTableModel);
 
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+
+    QDEBUG_STRING_OUTPUT_2("** get_last_lister_selected_row_db_ID()",
+                           get_last_lister_selected_row_db_ID());
+
+    int row = tableView_fournisseurs
+                     ->_map_dbID_TO_yeroth_table_view_ROW_NUMBER
+                            .value(get_last_lister_selected_row_db_ID());
+
+    QDEBUG_STRING_OUTPUT_2_N("* row", row);
+
+    //tableView_fournisseurs->selectRow(row);
 
     lineEdit_fournisseurs_terme_recherche->setFocus();
 }
@@ -1097,6 +1112,9 @@ void YerothERPFournisseursWindow::
 	tableView_fournisseurs->queryYerothTableViewCurrentPageContentRow(fournisseurSqlTableModel);
 
     tableView_show_or_hide_columns(*tableView_fournisseurs);
+
+    //tableView_fournisseurs
+    //    ->selectRow(tableView_fournisseurs->currentIndex().row());
 
     int rowCount = tableView_fournisseurs->rowCount();
 

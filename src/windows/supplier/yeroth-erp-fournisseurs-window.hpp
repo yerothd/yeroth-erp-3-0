@@ -74,6 +74,7 @@ public:
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
+
 public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_fournisseurs)
@@ -101,6 +102,7 @@ public slots:
 
     void afficher_nom_entreprise_selectioner(const QString &nomEntreprise);
 
+
 protected:
 
     virtual void reinitialiser_colones_db_visibles();
@@ -113,15 +115,18 @@ protected:
 
     virtual void set_filtrer_font();
 
+
 protected slots:
 
     virtual void slot_reinitialiser_colones_db_visibles();
 
     virtual void textChangedSearchLineEditsQCompleters();
 
+
 private:
 
     void initialiser_FILTRES();
+
 
 private slots:
 

@@ -742,7 +742,7 @@ void YerothModifierFournisseurWindow::rendreVisible(YerothSqlTableModel *fournis
 
     _SHOW_EMPLOYEE = show_EMPLOYE;
 
-    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_ID();
+    //qDebug() << "++ last selected row: " << YerothERPWindows::get_last_lister_selected_row_db_ID();
 
     if (true == _SHOW_EMPLOYEE)
     {

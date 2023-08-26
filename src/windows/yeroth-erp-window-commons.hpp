@@ -216,9 +216,9 @@ public:
     bool SQL_DELETE_YEROTH_TABLE_VIEW_LAST_SELECTED_ROW();
 
 
-    inline static const QString &get_last_lister_selected_row_ID()
+    inline static const QString &get_last_lister_selected_row_db_ID()
     {
-        return _yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__ID;
+        return _yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__db_ID;
     }
 
     inline const QString &getLastListerSelectedRow__ID()
@@ -723,7 +723,7 @@ protected:
 
 private:
 
-    static QString _yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__ID;
+    static QString _yerothTableView_FROM_WINDOWS_COMMONS_LAST_SELECTED_ROW__db_ID;
 
     static QPoint *_centerPosition;
 };
