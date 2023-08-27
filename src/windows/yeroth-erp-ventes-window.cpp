@@ -2096,12 +2096,15 @@ void YerothVentesWindow::populateComboBoxes()
 {
     _logger->log("populateComboBoxes");
 
+    comboBox_ventes_type_de_vente->clear();
+
     comboBox_ventes_type_de_vente->
     setupPopulateNORawString(YerothDatabase::TYPE_DE_VENTE,
                              YerothDatabaseTableColumn::TYPE_DE_VENTE,
                              &YerothUtils::_typedeventeToUserViewString);
 
     comboBox_ventes_type_de_vente->populateComboBox();
+
 
     QStringList aQStringList;
 
@@ -2110,9 +2113,11 @@ void YerothVentesWindow::populateComboBoxes()
     aQStringList.removeAll(YerothDatabaseTableColumn::REFERENCE);
     aQStringList.removeAll(YerothDatabaseTableColumn::DATE_PEREMPTION);
     aQStringList.removeAll(YerothDatabaseTableColumn::HISTORIQUE_STOCK);
-    aQStringList.
-    removeAll(YerothDatabaseTableColumn::NOM_UTILISATEUR_CAISSIER);
+    aQStringList.removeAll(YerothDatabaseTableColumn::NOM_UTILISATEUR_CAISSIER);
     aQStringList.removeAll(YerothDatabaseTableColumn::NOM_CAISSIER);
+
+
+    comboBox_element_string_db->clear();
 
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
@@ -2155,6 +2160,9 @@ void YerothVentesWindow::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+
+    comboBox_ventes_element_de_vente_condition->clear();
 
     comboBox_ventes_element_de_vente_condition->addItems(aQStringList);
 }
@@ -3074,6 +3082,8 @@ void YerothVentesWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
     setYerothSqlTableModel(_curStocksVenduTableModel);
 
     setupLineEditsQCompleters((QObject *) this);
+
+    populateComboBoxes();
 
     tabWidget_ventes->setCurrentIndex(TableauDesVentes);
 

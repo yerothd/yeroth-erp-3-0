@@ -350,6 +350,9 @@ void YerothERPGroupesDemployesHRWindow::populateComboBoxes()
     aQStringList.removeAll(YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES);
     aQStringList.removeAll(YerothDatabaseTableColumn::MEMBRES_DU_GROUPE_db_ID);
 
+
+    comboBox_element_string_db->clear();
+
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
                                          _tableColumnToUserViewString);
@@ -361,7 +364,11 @@ void YerothERPGroupesDemployesHRWindow::populateComboBoxes()
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES));
 
+
+    comboBox_element->clear();
+
     comboBox_element->addItems(aQStringList);
+
 
     aQStringList.clear();
 
@@ -374,6 +381,9 @@ void YerothERPGroupesDemployesHRWindow::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+
+    comboBox_condition->clear();
 
     comboBox_condition->addItems(aQStringList);
 }
@@ -807,6 +817,8 @@ void YerothERPGroupesDemployesHRWindow::rendreVisible(YerothSqlTableModel *stock
     setupLineEdits();
 
     setupLineEditsQCompleters((QObject *) this);
+
+    populateComboBoxes();
 
     setYerothSqlTableModel(_curEMPLOYEEGroupTableModel);
 

@@ -358,6 +358,9 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
 
 //      qDebug() << "++ test: " << aQStringList;
 
+
+    comboBox_element_string_db->clear();
+
     QString aDBColumnElementString;
 
     for (int k = 0; k < aQStringList.size(); ++k)
@@ -400,6 +403,8 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
                         (YerothDatabaseTableColumn::QUANTITE_TOTALE));
 
 
+    comboBox_element_charges_financieres->clear();
+
     comboBox_element_charges_financieres->addItems(aQStringList);
 
 
@@ -415,6 +420,8 @@ void YerothChargesFinancieresWindow::populateComboBoxes()
 
     aQStringList.append("=");
 
+
+    comboBox_element_charges_financieres_condition->clear();
 
     comboBox_element_charges_financieres_condition->addItems(aQStringList);
 }
@@ -675,6 +682,8 @@ void YerothChargesFinancieresWindow::rendreVisible(YerothSqlTableModel *
     setupLineEdits();
 
     setupLineEditsQCompleters((QObject *) this);
+
+    populateComboBoxes();
 
     setYerothSqlTableModel(_cur_CHARGES_FINANCIERES_SqlTableModel);
 

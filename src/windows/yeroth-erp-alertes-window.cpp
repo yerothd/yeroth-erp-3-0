@@ -500,6 +500,8 @@ void YerothAlertesWindow::clear_all_fields()
 
 void YerothAlertesWindow::populateComboBoxes()
 {
+    comboBox_alertes_resolue_oui_OU_non->clear();
+
     comboBox_alertes_resolue_oui_OU_non->addItem(YerothUtils::EMPTY_STRING);
 
     comboBox_alertes_resolue_oui_OU_non->addItem(YerothUtils::STRING_OUI);
@@ -519,6 +521,9 @@ void YerothAlertesWindow::populateComboBoxes()
     aQStringList.removeAll(YerothDatabaseTableColumn::ALERTE_RESOLUE);
     aQStringList.removeAll(YerothDatabaseTableColumn::DESTINATAIRE);
     aQStringList.removeAll(YerothDatabaseTableColumn::CONDITION_ALERTE);
+
+
+    comboBox_element_string_db->clear();
 
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
@@ -795,6 +800,8 @@ void YerothAlertesWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
     setupLineEdits();
 
     setupLineEditsQCompleters((QObject *) this);
+
+    populateComboBoxes();
 
     YerothPOSUser *aUser = _allWindows->getUser();
 

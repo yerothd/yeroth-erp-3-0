@@ -880,18 +880,26 @@ void YerothERPFournisseursWindow::populateFournisseursComboBoxes()
 
     aQStringList.removeAll(YerothDatabaseTableColumn::DESCRIPTION_FOURNISSEUR);
 
+
+    comboBox_element_string_db->clear();
+
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
                                          _tableColumnToUserViewString);
 
     comboBox_element_string_db->setCurrentIndex(0);
 
+
     aQStringList.clear();
 
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::COMPTE_FOURNISSEUR));
 
+
+    comboBox_element->clear();
+
     comboBox_element->addItems(aQStringList);
+
 
     aQStringList.clear();
 
@@ -904,6 +912,9 @@ void YerothERPFournisseursWindow::populateFournisseursComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+
+    comboBox_condition->clear();
 
     comboBox_condition->addItems(aQStringList);
 }
@@ -940,6 +951,8 @@ void YerothERPFournisseursWindow::rendreVisible(YerothSqlTableModel *stocksTable
     setupLineEdits();
 
     setupLineEditsQCompleters((QObject *) this);
+
+    populateFournisseursComboBoxes();
 
     setYerothSqlTableModel(_curFournisseursTableModel);
 

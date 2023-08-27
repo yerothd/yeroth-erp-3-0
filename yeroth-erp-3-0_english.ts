@@ -1707,12 +1707,12 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <translation>Alert &apos;%1&apos; couldn&apos;t be deleted!</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="536"/>
+        <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="541"/>
         <source>terme à rechercher (message d&apos;alerte)</source>
         <translation>keyword to search for (alert trigger message)</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="541"/>
+        <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="546"/>
         <source>%1 (nom d&apos;utilisateur)</source>
         <translation>%1 (user ID)</translation>
     </message>
@@ -1728,8 +1728,8 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/stocks/yeroth-erp-modifier-window.cpp" line="1188"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="530"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="632"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="481"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="574"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="491"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="584"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="154"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="718"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="676"/>
@@ -1744,50 +1744,50 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <translation>FINANCIAL EXPENSES list</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="804"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="813"/>
         <source>Sélectionnez 1 CHARGE FINANCIÈRE à afficher les détails.</source>
         <translation>Select A FINANCIAL EXPENSE to view its details.</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="981"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="990"/>
         <source>Sélectionnez 1 charge financière à supprimer.</source>
         <translation>Select a FINANCIAL EXPENSE to REMOVE.</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="994"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1003"/>
         <source>Poursuivre avec la suppression de la charge financière &apos;%1&apos; ?</source>
         <translation>Continue with removal of FINANCIAL EXPENSE &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1002"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1147"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1172"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1197"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1011"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1156"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1181"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1206"/>
         <source>suppression d&apos;une charge financière</source>
         <translation>DELETION OF A FINANCIAL EXPENSE</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1127"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1136"/>
         <source>La LIGNE BUDGÉTAIRE &apos;%1&apos; est inexistante dans la base de donnée!</source>
         <translation>BUDGET LINE &apos;%1&apos; IS INEXISTENT IN DATABASE !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1132"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1141"/>
         <source>suppression d&apos;une charge financière - LIGNE BUDGÉTAIRE</source>
         <translation>DELETION OF A FINANCIAL EXPENSE - budget line</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1141"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1150"/>
         <source>La charge financière &apos;%1&apos; a été supprimée !</source>
         <translation>FINANCIAL EXPENSE &apos;%1&apos; could be removed !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1164"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1173"/>
         <source>La charge financière &apos;%1&apos; ne pouvait pas être supprimée du tableau des paiements !</source>
         <translation>FINANCIAL EXPENSE &apos;%1&apos; COULDN&apos;T BE REMOVED FROM TABLE PAYMENTS !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1191"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="1200"/>
         <source>La charge financière &apos;%1&apos; ne pouvait pas être supprimée !</source>
         <translation>FINANCIAL EXPENSE &apos;%1&apos; COULDN&apos;T BE REMOVED !</translation>
     </message>
@@ -1814,7 +1814,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <translation>Select a purchase to view its stock details.</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="828"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="837"/>
         <source>Sélectionnez 1 achat au fournisseur à afficher les détails.</source>
         <translation>Select A FINANCIAL EXPENSE to view its details.</translation>
     </message>
@@ -1840,7 +1840,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp" line="598"/>
         <location filename="src/windows/stocks/yeroth-erp-stocks-window.cpp" line="643"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="908"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="962"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="974"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="799"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="288"/>
         <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="386"/>
@@ -1850,7 +1850,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
     </message>
     <message>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="425"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="429"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="436"/>
         <source>terme à rechercher (désignation de l&apos;article)</source>
         <oldsource>terme à rechercher (désignation, et description de l&apos;article)</oldsource>
         <translation>keyword to search for (product name)</translation>
@@ -1864,17 +1864,17 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp" line="764"/>
         <location filename="src/windows/stocks/yeroth-erp-stocks-window.cpp" line="897"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="409"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="396"/>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="921"/>
-        <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="538"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="432"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="406"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="932"/>
+        <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="543"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="439"/>
         <location filename="src/windows/yeroth-erp-comptabilite-window.cpp" line="481"/>
         <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="812"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="317"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="319"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="321"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="323"/>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="2176"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="2184"/>
         <source>valeur à rechercher</source>
         <translation>value to search for</translation>
     </message>
@@ -2503,7 +2503,7 @@ Continue updating asset or stock ?</translation>
         <location filename="src/windows/stocks/yeroth-erp-stocks-window.cpp" line="1828"/>
         <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="445"/>
         <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="456"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="979"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="988"/>
         <source>supprimer</source>
         <translation>remove</translation>
     </message>
@@ -2672,7 +2672,7 @@ Continue updating asset or stock ?</translation>
         <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2127"/>
         <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2238"/>
         <location filename="src/admin/lister/yeroth-erp-admin-lister-window.cpp" line="2474"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="705"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="715"/>
         <source>&apos; a été supprimé de la base de données !</source>
         <translation>&apos; could be deleted from database !</translation>
     </message>
@@ -2890,22 +2890,22 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <translation>Cancellation of sale (with reference &apos;%1&apos;) unsuccessful !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="2173"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="2181"/>
         <source>terme à rechercher (référence, fournisseur)</source>
         <translation>keyword to search for (reference, supplier)</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="2179"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="2187"/>
         <source>nom du caissier (caissière)</source>
         <translation>cashier name</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3148"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3158"/>
         <source>Cette fonctionnalité n&apos;est pas disponible pour les &apos;services&apos; !</source>
         <translation>Sale cancelation isn&apos;t possible for &apos;services&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3152"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3162"/>
         <source>fonctionnalité pas disponible</source>
         <translation>no sale cancelation</translation>
     </message>
@@ -2929,8 +2929,8 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
     </message>
     <message>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1910"/>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3083"/>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3086"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3093"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3096"/>
         <source>remise (%1)</source>
         <translation>discount (%1)</translation>
     </message>
@@ -4065,7 +4065,7 @@ Please contact an administrator of %1</translation>
     </message>
     <message>
         <location filename="src/utils/yeroth-erp-utils.hpp" line="688"/>
-        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3080"/>
+        <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="3090"/>
         <source>TVA (%1)</source>
         <translation>Tax (%1)</translation>
     </message>
@@ -5281,7 +5281,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp" line="513"/>
         <location filename="src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp" line="574"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="550"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="496"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="506"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="649"/>
         <source> ont été supprimés de la base de données !</source>
         <translation> have been deleted !</translation>
@@ -5296,8 +5296,8 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/stocks/yeroth-erp-modifier-window.cpp" line="1212"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="553"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="668"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="499"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="708"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="509"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="718"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="174"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="742"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="698"/>
@@ -5310,7 +5310,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp" line="523"/>
         <location filename="src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp" line="598"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="571"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="505"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="515"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="659"/>
         <source> n&apos;ont pas pu être supprimés de la base de données !</source>
         <translation> coulnd&apos;t be deleted !</translation>
@@ -5325,8 +5325,8 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/stocks/yeroth-erp-modifier-window.cpp" line="1228"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="574"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="690"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="508"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="717"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="518"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="727"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.cpp" line="187"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="752"/>
         <location filename="src/windows/supplier/yeroth-erp-modifier-fournisseur-window.cpp" line="715"/>
@@ -5351,7 +5351,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.cpp" line="1067"/>
         <location filename="src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.cpp" line="977"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DE-PAIE-hr-window.cpp" line="905"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="960"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="972"/>
         <source>Veuillez saisir une valeur numérique pour la recherche.</source>
         <translation>Type in a numeric value for search.</translation>
     </message>
@@ -5945,8 +5945,8 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="914"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1120"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="783"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="802"/>
-        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="826"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="811"/>
+        <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="835"/>
         <source>détails</source>
         <translation>details</translation>
     </message>
@@ -5956,7 +5956,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>Select a supplier to view its details !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="918"/>
+        <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="929"/>
         <source>terme à rechercher (émail, réprésentant, description de l&apos;entreprise fournisseure)</source>
         <translation>keyword to search for (email, representant, supplier description)</translation>
     </message>
@@ -6485,52 +6485,52 @@ Please, change the maximum member of this CLIENT LOYALTY group to &apos;%3&apos;
         <translation>EMPLOYEE GROUP [hr]</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="392"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="402"/>
         <source>terme à rechercher (DESCRIPTION DU GROUPE D&apos;EMPLOYÉS)</source>
         <translation>KEYWORD TO SEARCH FOR (EMPLOYEE GROUP DESCRIPTION)</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="476"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="486"/>
         <source>SUPPRIMER LES GROUPE D&apos;EMPLOYÉS SÉLECTIONÉS ?</source>
         <translation>DELETE SELECTED EMPLOYEE GROUPS ?</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="489"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="499"/>
         <source>LES GROUPE D&apos;EMPLOYÉS sélectionés</source>
         <translation>SELECTED EMPLOYEE GROUPS</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="568"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="578"/>
         <source>Supprimer le GROUPE D&apos;EMPLOYÉS &apos;%1&apos; ?</source>
         <translation>DELETE EMPLOYEE GROUP &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="677"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="687"/>
         <source>GROUPE DE L&apos;EMPLOYÉ - suppression - échec</source>
         <translation>EMPLOYEE GROUP - DELETION - FAILURE</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="678"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="688"/>
         <source>LES DONNÉES DE GROUPE DE L&apos;EMPLOYÉ &apos;%1&apos; NE POUVAIENT PAS ÊTRE ACTUALISÉES !</source>
         <translation>EMPLOYEE &apos;%1&apos; GROUP DATA COULDN&apos;T BE UPDATED !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="693"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="703"/>
         <source>LE GROUPE D&apos;EMPLOYÉS &apos;%1</source>
         <translation>EMPLOYEE GROUP [hr] &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="714"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="724"/>
         <source> n&apos;a pas été supprimé de la base de données !</source>
         <translation> hasn&apos;t been deleted from database !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="924"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="936"/>
         <source>DÉTAILS D&apos;1 GROUPE D&apos;EMPLOYÉS</source>
         <translation>EMPLOYEE GROUP DETAILS</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="926"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="938"/>
         <source>Sélectionnez un GROUPE D&apos;EMPLOYÉS à afficher les détails !</source>
         <translation>SELECT AN EMPLOYEE GROUP TO VIEW ITS DETAILS !</translation>
     </message>

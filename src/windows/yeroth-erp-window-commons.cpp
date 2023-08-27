@@ -2062,8 +2062,7 @@ void YerothWindowsCommons::
     QModelIndex id_row_qmodelindex_sibling =
                     modelIndex.sibling(selected_row_nr, yerothTableViewColumnIndex_db_VALUE);
 
-    db_VALUE_in_out.
-    append(YerothUtils::get_text(id_row_qmodelindex_sibling.data()));
+    db_VALUE_in_out.append(YerothUtils::get_text(id_row_qmodelindex_sibling.data()));
 }
 
 
@@ -2101,12 +2100,8 @@ void YerothWindowsCommons::setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID()
         return;
     }
 
-    qDebug() << "++ model->_curSqlTableModel: " << model->_curSqlTableModel->sqlTableName();
-
     if (_yerothTableView_FROM_WINDOWS_COMMONS->rowCount() > 0)
     {
-        QDEBUG_STRING_OUTPUT_1("_yerothTableView_FROM_WINDOWS_COMMONS->rowCount() > 0");
-
         QModelIndex aYerothTableViewIndex = model->index(0, 0);
 
         setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(aYerothTableViewIndex);
@@ -2142,7 +2137,6 @@ void YerothWindowsCommons::
         modelIndex.row() >= 0 &&
         modelIndex.column() >= 0)
     {
-        qDebug() << "++ modelIndex:" << modelIndex;
         _yerothTableView_FROM_WINDOWS_COMMONS->setCurrentIndex(modelIndex);
     }
     else
@@ -2156,9 +2150,6 @@ void YerothWindowsCommons::
 
             getQModelIndex_dbID_from_MODEL_INDEX(aYerothTableViewIndex_2,
                                                  db_ID);
-
-            QDEBUG_STRING_OUTPUT_2("db_ID - 2", db_ID);
-            qDebug() << "++ aYerothTableViewIndex_2:" << aYerothTableViewIndex_2;
 
             _yerothTableView_FROM_WINDOWS_COMMONS
                 ->setCurrentIndex(aYerothTableViewIndex_2);
