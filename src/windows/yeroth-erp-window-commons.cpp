@@ -1242,6 +1242,10 @@ void YerothWindowsCommons::handle_some_actions_tools_enabled()
             }
         }
     }
+
+    _yerothTableView_FROM_WINDOWS_COMMONS->resizeRowsToContents();
+
+    _yerothTableView_FROM_WINDOWS_COMMONS->resizeColumnsToContents();
 }
 
 

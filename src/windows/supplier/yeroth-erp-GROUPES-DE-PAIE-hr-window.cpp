@@ -69,8 +69,7 @@ YerothERPGROUPES_DE_PAIE_Window::YerothERPGROUPES_DE_PAIE_Window()
 
     mySetupUi(this);
 
-    setYerothTableView_FROM_WINDOWS_COMMONS
-    (tableView_groupes_de_paie);
+    setYerothTableView_FROM_WINDOWS_COMMONS(tableView_groupes_de_paie);
 
 
     _list_yeroth_pushbutton_to_enable_on_positive_tableview_ROW_COUNT
@@ -348,12 +347,15 @@ void YerothERPGROUPES_DE_PAIE_Window::populateComboBoxes()
 {
     _logger->log("populateComboBoxes");
 
+
     QStringList aQStringList;
 
     aQStringList.append(_varchar_dbtable_column_name_list.values());
 
+
     YerothUtils::REMOVE_QSTRING_LIST(aQStringList,
                                      _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME);
+
 
     aQStringList.removeAll(YerothDatabaseTableColumn::DATE_CREATION);
 
@@ -362,6 +364,10 @@ void YerothERPGROUPES_DE_PAIE_Window::populateComboBoxes()
     aQStringList.removeAll(YerothDatabaseTableColumn::MONTANT_A_PAYER_MENSUEL);
 
     aQStringList.removeAll(YerothDatabaseTableColumn::POURCENTAGE_TAXES_IMPOSABLES);
+
+
+    comboBox_element_string_db->clear();
+
 
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::_tableColumnToUserViewString);
@@ -379,7 +385,11 @@ void YerothERPGROUPES_DE_PAIE_Window::populateComboBoxes()
 		(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
 				(YerothDatabaseTableColumn::POURCENTAGE_TAXES_IMPOSABLES));
 
+
+    comboBox_element->clear();
+
     comboBox_element->addItems(aQStringList);
+
 
     aQStringList.clear();
 
@@ -392,6 +402,9 @@ void YerothERPGROUPES_DE_PAIE_Window::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+
+    comboBox_condition->clear();
 
     comboBox_condition->addItems(aQStringList);
 }
@@ -763,6 +776,8 @@ void YerothERPGROUPES_DE_PAIE_Window::rendreVisible(YerothSqlTableModel *stocksT
 	retranslateUi(this);
 
     YEROTH_INITIALISE_WINDOW_SEARCH_FILTERS_WIDGETS;
+
+    populateComboBoxes();
 
     setupLineEdits();
 

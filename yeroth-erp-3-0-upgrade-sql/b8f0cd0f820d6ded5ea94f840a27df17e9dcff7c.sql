@@ -1,0 +1,1 @@
+alter table groupes_de_paie_hr change reference_groupes_de_paie_hr reference_groupe_de_paie_hr VARCHAR(256); 
