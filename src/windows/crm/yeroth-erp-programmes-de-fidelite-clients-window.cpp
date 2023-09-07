@@ -360,9 +360,11 @@ void YerothERPProgrammesDeFideliteClientsWindow::populateComboBoxes()
                                      _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME);
 
     aQStringList.removeAll(YerothDatabaseTableColumn::DATE_CREATION);
-    aQStringList.removeAll
-    (YerothDatabaseTableColumn::DESCRIPTION_PROGRAMME_DE_FIDELITE_CLIENTS);
+    aQStringList.removeAll(YerothDatabaseTableColumn::DESCRIPTION_PROGRAMME_DE_FIDELITE_CLIENTS);
     aQStringList.removeAll(YerothDatabaseTableColumn::POURCENTAGE_DU_RABAIS);
+
+
+    comboBox_element_string_db->clear();
 
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
@@ -371,12 +373,17 @@ void YerothERPProgrammesDeFideliteClientsWindow::populateComboBoxes()
     comboBox_element_string_db->setCurrentIndex(0);
 
 
+
     aQStringList.clear();
 
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::POURCENTAGE_DU_RABAIS));
 
+    comboBox_element->clear();
+
     comboBox_element->addItems(aQStringList);
+
+
 
     aQStringList.clear();
 
@@ -389,6 +396,8 @@ void YerothERPProgrammesDeFideliteClientsWindow::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+    comboBox_condition->clear();
 
     comboBox_condition->addItems(aQStringList);
 }
@@ -801,14 +810,12 @@ YerothERPProgrammesDeFideliteClientsWindow::contextMenuEvent
 void YerothERPProgrammesDeFideliteClientsWindow::setupShortcuts()
 {
     setupShortcutActionMessageDaide(*actionAppeler_aide);
-    setupShortcutActionPARAMETRER_IMPRESSION_PDF
-    (*action_parametrer_les_impressions);
+    setupShortcutActionPARAMETRER_IMPRESSION_PDF(*action_parametrer_les_impressions);
     setupShortcutActionAfficherPDF(*actionAfficherPDF);
     setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
     setupShortcutActionQuiSuisJe(*actionQui_suis_je);
 
-    actionReinitialiserRecherche->
-    setShortcut(YerothUtils::REINITIALISER_RECHERCHE_QKEYSEQUENCE);
+    actionReinitialiserRecherche->setShortcut(YerothUtils::REINITIALISER_RECHERCHE_QKEYSEQUENCE);
 }
 
 
@@ -822,6 +829,8 @@ void YerothERPProgrammesDeFideliteClientsWindow::rendreVisible(YerothSqlTableMod
 	retranslateUi(this);
 
     YEROTH_INITIALISE_WINDOW_SEARCH_FILTERS_WIDGETS;
+
+    populateComboBoxes();
 
     setupLineEdits();
 

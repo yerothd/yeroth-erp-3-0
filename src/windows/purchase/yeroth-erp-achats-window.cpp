@@ -90,6 +90,8 @@ YerothAchatsWindow::YerothAchatsWindow()
 
 
     MACRO_TO_DEFINE_CURRENT_VIEW_WINDOW_FOR_TABLE_PAGINATION(tableView_achats)
+
+
     QMESSAGE_BOX_STYLE_SHEET =
                     QString("QMessageBox {background-color: rgb(%1);}"
                             "QMessageBox QLabel {color: rgb(%2);}").arg
@@ -102,10 +104,11 @@ YerothAchatsWindow::YerothAchatsWindow()
     _lineEditsToANDContentForSearch.insert(&lineEdit_achats_terme_recherche,
                                            YerothUtils::EMPTY_STRING);
 
-    _yeroth_WINDOW_references_dbColumnString.
-    insert(YerothDatabaseTableColumn::REFERENCE);
-    _yeroth_WINDOW_references_dbColumnString.
-    insert(YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT);
+    _yeroth_WINDOW_references_dbColumnString
+        .insert(YerothDatabaseTableColumn::REFERENCE);
+
+    _yeroth_WINDOW_references_dbColumnString
+        .insert(YerothDatabaseTableColumn::REFERENCE_RECU_DACHAT);
 
     YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION(YerothDatabase::ACHATS);
 
@@ -373,6 +376,9 @@ void YerothAchatsWindow::populateComboBoxes()
 
     aQStringList.removeAll(YerothDatabaseTableColumn::ENREGISTREUR_STOCK);
 
+
+    comboBox_element_string_db->clear();
+
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
                                          _tableColumnToUserViewString);
@@ -397,6 +403,9 @@ void YerothAchatsWindow::populateComboBoxes()
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::QUANTITE_TOTALE));
 
+
+    comboBox_element_achats->clear();
+
     comboBox_element_achats->addItems(aQStringList);
 
 
@@ -411,6 +420,9 @@ void YerothAchatsWindow::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+
+    comboBox_element_achats_condition->clear();
 
     comboBox_element_achats_condition->addItems(aQStringList);
 }
@@ -678,6 +690,8 @@ void YerothAchatsWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 	retranslateUi(this);
 
     YEROTH_INITIALISE_WINDOW_SEARCH_FILTERS_WIDGETS;
+
+    populateComboBoxes();
 
     setupLineEdits();
 

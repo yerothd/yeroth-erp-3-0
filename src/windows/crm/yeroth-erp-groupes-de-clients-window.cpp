@@ -356,18 +356,27 @@ void YerothGroupesDeClientsWindow::populateComboBoxes()
     aQStringList.removeAll(YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES);
     aQStringList.removeAll(YerothDatabaseTableColumn::MEMBRES_DU_GROUPE_db_ID);
 
+
+    comboBox_element_string_db->clear();
+
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::
                                          _tableColumnToUserViewString);
 
     comboBox_element_string_db->setCurrentIndex(0);
 
+
     aQStringList.clear();
 
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::MAXIMUM_DE_MEMBRES));
 
+
+    comboBox_element->clear();
+
     comboBox_element->addItems(aQStringList);
+
+
 
     aQStringList.clear();
 
@@ -380,6 +389,9 @@ void YerothGroupesDeClientsWindow::populateComboBoxes()
     aQStringList.append("<");
 
     aQStringList.append("=");
+
+
+    comboBox_condition->clear();
 
     comboBox_condition->addItems(aQStringList);
 }
@@ -909,6 +921,8 @@ void YerothGroupesDeClientsWindow::rendreVisible(YerothSqlTableModel *stocksTabl
 	retranslateUi(this);
 
     YEROTH_INITIALISE_WINDOW_SEARCH_FILTERS_WIDGETS;
+
+    populateComboBoxes();
 
     setupLineEdits();
 

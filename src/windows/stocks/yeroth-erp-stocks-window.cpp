@@ -836,6 +836,8 @@ void YerothStocksWindow::populateComboBoxes()
 
 //      qDebug() << "++ test: " << aQStringList;
 
+    comboBox_element_string_db->clear();
+
     comboBox_element_string_db->addItems(aQStringList,
                                          YerothDatabaseTableColumn::_tableColumnToUserViewString);
 
@@ -852,6 +854,9 @@ void YerothStocksWindow::populateComboBoxes()
 
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING(YerothDatabaseTableColumn::QUANTITE_TOTALE));
 
+
+    comboBox_stocks_element_de_stock->clear();
+
     comboBox_stocks_element_de_stock->addItems(aQStringList);
 
 
@@ -867,9 +872,14 @@ void YerothStocksWindow::populateComboBoxes()
 
     aQStringList.append("=");
 
+
+    comboBox_stocks_element_de_stock_condition->clear();
+
     comboBox_stocks_element_de_stock_condition->addItems(aQStringList);
 
+
     comboBox_strategie_de_stocks->clear();
+
     comboBox_strategie_de_stocks->addItem(YerothERPConfig::STRATEGIE_VENTE_SORTIE_ALL);
 
     //index 0 of enum enum_comboBoxStrategyIndex
@@ -1296,7 +1306,9 @@ void YerothStocksWindow::rendreVisible(YerothSqlTableModel *stocksTableModel,
 
     _curStocksTableModel = stocksTableModel;
 
-    populateComboBoxes_TYPE_DINVENTAIRE();
+    populateComboBoxes();
+
+    setupLineEdits();
 
     setupLineEditsQCompleters((QObject *) this);
 
