@@ -24020,7 +24020,7 @@ background-color: rgb(0, 0, 0); </string>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>8</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -24031,7 +24031,8 @@ background-color: rgb(0, 0, 0); </string>
      <string>Entrer une
 immobilisation,
 un stock,
-un service</string>
+un service,
+ une CHARGE</string>
     </property>
    </widget>
   </widget>
@@ -26090,10 +26091,10 @@ un service</string>
   </action>
   <action name="actionEntrer">
    <property name="text">
-    <string>Entrer une immobilisation, un stock, un service</string>
+    <string>Entrer une immobilisation, un stock, un service, 1 CHARGE</string>
    </property>
    <property name="toolTip">
-    <string>Entrer une immobilisation, un stock, un service</string>
+    <string>Entrer une immobilisation, un stock, un service, 1 CHARGE</string>
    </property>
    <property name="font">
     <font>
@@ -26156,14 +26157,14 @@ un service</string>
    <header>src/widgets/yeroth-erp-line-edit.hpp</header>
   </customwidget>
   <customwidget>
-   <class>YerothDateTimeEdit</class>
-   <extends>QDateEdit</extends>
-   <header>src/widgets/yeroth-erp-datetime-edit.hpp</header>
-  </customwidget>
-  <customwidget>
    <class>YerothComboBox</class>
    <extends>QComboBox</extends>
    <header>src/widgets/yeroth-erp-combo-box.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>YerothDateTimeEdit</class>
+   <extends>QDateEdit</extends>
+   <header>src/widgets/yeroth-erp-datetime-edit.hpp</header>
   </customwidget>
   <customwidget>
    <class>YerothTextEdit</class>

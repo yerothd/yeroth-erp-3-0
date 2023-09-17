@@ -1382,7 +1382,7 @@ bords</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>8</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -1393,7 +1393,8 @@ bords</string>
      <string>Entrer une
 immobilisation,
 un stock,
-un service</string>
+un service,
+ une CHARGE</string>
     </property>
    </widget>
    <widget class="YerothPushButton" name="pushButton_sortir">
@@ -16438,10 +16439,10 @@ border: none;</string>
   </action>
   <action name="actionEntrer">
    <property name="text">
-    <string>Entrer une immobilisation, un stock, un service</string>
+    <string>Entrer une immobilisation, un stock, un service, 1 CHARGE</string>
    </property>
    <property name="toolTip">
-    <string>Entrer une immobilisation, un stock, un service</string>
+    <string>Entrer une immobilisation, un stock, un service, 1 CHARGE</string>
    </property>
    <property name="font">
     <font>
