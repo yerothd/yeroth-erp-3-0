@@ -15549,7 +15549,7 @@ background-color: rgb(0, 0, 0); </string>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>8</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -15560,7 +15560,8 @@ background-color: rgb(0, 0, 0); </string>
      <string>Entrer une
 immobilisation,
 un stock,
-un service</string>
+un service,
+ une CHARGE</string>
     </property>
    </widget>
    <widget class="YerothPushButton" name="pushButton_add_condition_SEARCH">

@@ -39,7 +39,7 @@ YerothEntrerWindow::YerothEntrerWindow():YerothWindowsCommons(),
 {
     _windowName = QString("%1 - %2")
                 			.arg(GET_YEROTH_ERP_WINDOW_TITLE_MACRO,
-                				 QObject::tr("entrer 1 IMMOBILISATION, OU 1 stock, ou 1 service"));
+                				 QObject::tr("entrer 1 IMMOBILISATION, OU 1 stock, ou 1 service, Ou 1 Charge financière"));
 
     _windowName_WITH_NO_MAINTENANCE = _windowName;
 
@@ -1988,8 +1988,7 @@ void YerothEntrerWindow::rendreVisible(YerothSqlTableModel 	*stocksTableModel,
 
             radioButton_inserer_une_IMMOBILISATION->setYerothEnabled(true);
             radioButton_inserer_un_stock->setYerothEnabled(true);
-            radioButton_service_vente_de_service_au_client->setYerothEnabled
-            (true);
+            radioButton_service_vente_de_service_au_client->setYerothEnabled(true);
             radioButton_INSERER_UNE_CHARGE_FINANCIERE->setYerothEnabled(true);
 
             if (set_choice_sell_TO_CLIENT == choice_insert)
@@ -2151,23 +2150,20 @@ void YerothEntrerWindow::rendreVisible(YerothSqlTableModel 	*stocksTableModel,
 
 void YerothEntrerWindow::handle_HISTORIQUE_CHECKBOX(int aState)
 {
-
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-    if (checkBox_HISTORIQUE->isChecked())
+    if (!YerothMainWindow::LANGUE_ANGLAISE)
     {
-        checkBox_HISTORIQUE->setFont(QFont
-                                     (STRING_APPLICATION_WIDE_FONT_TYPE_YEROTH_ERP_3_0,
-                                      INT_APPLICATION_WIDE_FONT_SIZE_YEROTH_ERP_3_0));
+        if (checkBox_HISTORIQUE->isChecked())
+        {
+            checkBox_HISTORIQUE
+                ->setFont(QFont(STRING_APPLICATION_WIDE_FONT_TYPE_YEROTH_ERP_3_0,
+                          INT_APPLICATION_WIDE_FONT_SIZE_YEROTH_ERP_3_0));
+        }
+        else
+        {
+            checkBox_HISTORIQUE
+                ->setFont(QFont(STRING_APPLICATION_WIDE_FONT_TYPE_YEROTH_ERP_3_0, 9));
+        }
     }
-    else
-    {
-        checkBox_HISTORIQUE->setFont(QFont
-                                     (STRING_APPLICATION_WIDE_FONT_TYPE_YEROTH_ERP_3_0,
-                                      9));
-    }
-
-#endif
 
 
     if (checkBox_HISTORIQUE->isChecked())
@@ -2195,8 +2191,7 @@ void YerothEntrerWindow::handle_POURCENTAGE_PRIX_DACHAT_PRIX_DE_VENTE(int aState
     else
     {
         lineEdit_prix_vente->setYerothEnabled(true);
-        lineEdit_pourcentage_prix_dachat_prix_de_vente->setYerothEnabled
-        (false);
+        lineEdit_pourcentage_prix_dachat_prix_de_vente->setYerothEnabled(false);
     }
 }
 

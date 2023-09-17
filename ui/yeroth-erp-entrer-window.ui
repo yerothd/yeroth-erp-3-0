@@ -461,7 +461,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Yeroth-pgi-3.0 - entrer une immobilisation, un stock,un service</string>
+   <string>Yeroth-pgi-3.0 - entrer une immobilisation, un stock,un service, une CHARGE financière</string>
   </property>
   <property name="locale">
    <locale language="French" country="France"/>

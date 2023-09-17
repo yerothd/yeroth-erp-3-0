@@ -675,7 +675,7 @@ Press m &apos;Cancel&apos; to exit %2</translation>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="230"/>
         <location filename="src/utils/yeroth-erp-database-table-column.cpp" line="523"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3358"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3353"/>
         <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="383"/>
         <source>Référence</source>
         <translation>Reference</translation>
@@ -685,7 +685,7 @@ Press m &apos;Cancel&apos; to exit %2</translation>
         <location filename="src/utils/yeroth-erp-database-table-column.cpp" line="1010"/>
         <location filename="src/widgets/table-view/yeroth-erp-table-view.cpp" line="641"/>
         <location filename="src/widgets/table-view/yeroth-erp-table-view.cpp" line="924"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3353"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3348"/>
         <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="388"/>
         <source>Désignation</source>
         <translation>Designation</translation>
@@ -1825,7 +1825,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/stocks/yeroth-erp-stocks-window.cpp" line="641"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="797"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="286"/>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="387"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="381"/>
         <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="1913"/>
         <source>Veuillez saisir une valeur numérique pour la recherche !</source>
         <oldsource>Veuillez saisir une valeur numérique pour la recherche!</oldsource>
@@ -1843,7 +1843,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.cpp" line="974"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="799"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="288"/>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="389"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="383"/>
         <location filename="src/windows/yeroth-erp-ventes-window.cpp" line="1915"/>
         <source>filtrer</source>
         <translation>filter</translation>
@@ -1869,7 +1869,7 @@ Contacter l&apos;administrateur de Yeroth</oldsource>
         <location filename="src/windows/yeroth-erp-alertes-window.cpp" line="543"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="439"/>
         <location filename="src/windows/yeroth-erp-comptabilite-window.cpp" line="481"/>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="800"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="793"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="317"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="319"/>
         <location filename="src/windows/yeroth-erp-recherche-conditionnelle-window.cpp" line="321"/>
@@ -2985,40 +2985,40 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <translation>client and supplier payment</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="360"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="354"/>
         <source>AFFICHER CLIENTS</source>
         <translation>VIEW CLIENTS</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="367"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="361"/>
         <source>AFFICHER FOURNISSEURS</source>
         <translation>VIEW SUPPLIERS</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="472"/>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="488"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="466"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="482"/>
         <source>Journal des paiements</source>
         <translation>Journal of payments</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="473"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="467"/>
         <source>Journal des paiements (clients)</source>
         <oldsource>Journal des paiements (versements et déboursements aux clients)</oldsource>
         <translation>Journal of payments (clients)</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="489"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="483"/>
         <source>Journal des paiements (fournisseurs)</source>
         <oldsource>Journal des paiements (versements et déboursements aux fournisseurs)</oldsource>
         <translation>Journal of payments (suppliers)</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="1558"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="1551"/>
         <source># clients</source>
         <translation># clients</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="1563"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="1556"/>
         <source># fournisseurs</source>
         <translation># suppliers</translation>
     </message>
@@ -3029,7 +3029,7 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
     </message>
     <message>
         <location filename="src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp" line="761"/>
-        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="797"/>
+        <location filename="src/windows/yeroth-erp-paiements-window.cpp" line="790"/>
         <source>terme à rechercher (notes)</source>
         <oldsource>terme à rechercher (référence reçu de paiement client, notes)</oldsource>
         <translation>keyword to search for (memo)</translation>
@@ -3167,12 +3167,12 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <translation>failing to save article type in merchandise list</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3536"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3531"/>
         <source>Le prix de vente doit être supérieur ou égal au prix d&apos;achat !</source>
         <translation>Selling price must be superior or equal to purchase price !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3570"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3565"/>
         <source>La date de péremption n&apos;est pas postdatée !
 
 Continuer avec l&apos;enregistrement des données du stock (service) ?</source>
@@ -3182,7 +3182,7 @@ Continue with update of the stock (service) ?</translation>
     </message>
     <message>
         <location filename="src/utils/yeroth-erp-utils.cpp" line="1833"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4039"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4034"/>
         <source>Le stock &apos;%1&apos;</source>
         <translation>Stock &apos;%1&apos;</translation>
     </message>
@@ -3209,13 +3209,13 @@ Continue with update of the stock (service) ?</translation>
     </message>
     <message>
         <location filename="src/windows/stocks/yeroth-erp-modifier-window.cpp" line="251"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3538"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3553"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3533"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3548"/>
         <source>pas profitable</source>
         <translation>not profitable</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3576"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3571"/>
         <source>enregistrer un stock</source>
         <translation>save this stock item</translation>
     </message>
@@ -3256,27 +3256,27 @@ Continue with update of the stock (service) ?</translation>
         <location filename="src/windows/stocks/yeroth-erp-modifier-window.cpp" line="154"/>
         <location filename="src/windows/stocks/yeroth-erp-modifier-window.cpp" line="1429"/>
         <location filename="src/windows/stocks/yeroth-erp-stock-detail-window.cpp" line="414"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2175"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2171"/>
         <source>historique actif</source>
         <translation>HISTORY ON</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2181"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2177"/>
         <source>historique désac</source>
         <translation>HISTORY OFF</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2705"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2700"/>
         <source>La marchandise (SERVICE) &apos;%1&apos; est déjà dans la catégorie (&apos;%2&apos;) !</source>
         <translation>Merchandise (SERVICE) &apos;%1&apos; is already in category (&apos;%2&apos;) !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2753"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2748"/>
         <source>Une immobilisation</source>
         <translation>An asset</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2767"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2762"/>
         <source>La date de péremption n&apos;est pas postdatée !
 
 Continuer avec l&apos;enregistrement des données de l&apos;immobilisation ?</source>
@@ -3285,36 +3285,36 @@ Continuer avec l&apos;enregistrement des données de l&apos;immobilisation ?</so
 Continue with update of ASSET ?</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2773"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2768"/>
         <source>enregistrer 1 immobilisation</source>
         <translation>save 1 ASSET</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3099"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3094"/>
         <source>L&apos;immobilisation &apos;%1&apos;</source>
         <translation>ASSET &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3146"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3141"/>
         <source>achat</source>
         <translation>purchase</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="126"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3270"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3265"/>
         <source>LA LIGNE BUDGÉTAIRE &apos;%1&apos; est inexistante !</source>
         <oldsource>LA LIGNE BUDGÉTAIRE %1 est inexistante !</oldsource>
         <translation>BUDGET LINE &apos;%1&apos; IS INEXISTANT !</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="130"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3274"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3269"/>
         <source>enregistrement ACHAT SUR LIGNE BUDGÉTAIRE (1) - échec</source>
         <translation>INSERTION OF FINANCIAL EXPENSE ON budget line (1) - failed</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="148"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3292"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3287"/>
         <source>LA LIGNE BUDGÉTAIRE &apos;%1&apos; DÉTIENT UN 
 MONTANT INSUFFISANT: (&apos;%2&apos;) (requis pour 
 la charge financière !)!</source>
@@ -3325,55 +3325,55 @@ THIS FINANCIAL EXPENSE !)!</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="155"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3299"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3294"/>
         <source>enregistrement ACHAT SUR LIGNE BUDGÉTAIRE (2) - échec</source>
         <translation>INSERTION OF FINANCIAL EXPENSE ON budget line (2) - failed</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="299"/>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="321"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3427"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3454"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3422"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3449"/>
         <source>La charge financière &apos;%1&apos; au fournisseur &apos;%2&apos;</source>
         <oldsource>L&apos;achat du service &apos;%1&apos; au fournisseur &apos;%2&apos;</oldsource>
         <translation>financial expense &apos;%1&apos; to supplier &apos;%2&apos;</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3551"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3546"/>
         <source>Le prix de vente (en gros) doit être supérieur ou égal au prix d&apos;achat !</source>
         <translation>Selling price (whole sale) must be superior or equal to purchase price !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3995"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3990"/>
         <source>L&apos;achat du stock &apos;%1&apos;</source>
         <translation>Purchase of stock &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3081"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3106"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4011"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4053"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3076"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3101"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4006"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4048"/>
         <source> a été enregistré dans la base de données !</source>
         <translation> has been added to the database !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3084"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3110"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4015"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4057"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3079"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3105"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4010"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4052"/>
         <source>enregistrement - succès</source>
         <translation>saving - success</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3089"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3115"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4021"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4062"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3084"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3110"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4016"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4057"/>
         <source> n&apos;a pas pu être enregistré dans la base de données !</source>
         <translation> couldn&apos;t be added to the database !</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2662"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2657"/>
         <source>Cette référence (&apos;%1&apos;) est déjà utilisée par la marchandise (SERVICE) &apos;%2&apos; dans la catégorie (&apos;%3&apos;) !</source>
         <translation>This reference (&apos;%1&apos;) is already used by merchandise &apos;%2&apos; in stock category (&apos;%3) !</translation>
     </message>
@@ -3387,81 +3387,82 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <translation>budget line</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2684"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2679"/>
         <source>La marchandise (SERVICE) &apos;%1&apos; utilise déjà la désignation (&apos;%2&apos;) dans la catégorie (&apos;%3&apos;) !</source>
         <translation>MERCHANDISE (SERVICE) &apos;%1&apos; is already WITH DESIGNATION &apos;%2&apos; in stock category (&apos;%3) !</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="305"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3434"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3429"/>
         <source> a été enregistrée dans la base de données !</source>
         <translation> has been saved to the database !</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="308"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3438"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3433"/>
         <source>ajout d&apos;une charge financière - succès</source>
         <oldsource>ajout d&apos;1 charge financière - succès</oldsource>
         <translation>FINANCIAL EXPENSE REGISTRATION - success</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="313"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3444"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3439"/>
         <source> n&apos;a pas pu être enregistrée dans la base de données !</source>
         <translation> couldn&apos;t be saved to the database !</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="316"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3448"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3443"/>
         <source>ajout d&apos;1 charge financière - échec</source>
         <oldsource>achat d&apos;1 service - échec</oldsource>
         <translation>FINANCIAL EXPENSE REGISTRATION - failure</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3072"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4000"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3067"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3995"/>
         <source>L&apos;achat de l&apos;immobilisation &apos;%1&apos;</source>
         <translation>ASSET PURCHASE &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="42"/>
-        <source>entrer 1 IMMOBILISATION, OU 1 stock, ou 1 service</source>
-        <translation>Check in AN ASSET, a stock, a service</translation>
+        <source>entrer 1 IMMOBILISATION, OU 1 stock, ou 1 service, Ou 1 Charge financière</source>
+        <oldsource>entrer 1 IMMOBILISATION, OU 1 stock, ou 1 service</oldsource>
+        <translation>Check in AN ASSET, a stock, a service, A financial expense</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3092"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3118"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4025"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4065"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3087"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3113"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4020"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4060"/>
         <source>enregistrement - échec</source>
         <translation>saving - failure</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="327"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3461"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3456"/>
         <source> a été répertoriée dans le tableau des paiements !</source>
         <translation> HAS BEEN ADDED TO PAYMENT TABLE !</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="330"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3465"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3460"/>
         <source>ajout d&apos;une charge financière - répertorié - succès</source>
         <translation>FINANCIAL EXPENSE REGISTRATION - success</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="336"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3471"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3466"/>
         <source> n&apos;a pas pu être répertoriée dans le tableau des paiements !</source>
         <translation> couldn&apos;t be saved to the PAYMENT table !</translation>
     </message>
     <message>
         <location filename="src/admin/creer/creer-CHARGE_FINANCIERE.cpp" line="339"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3475"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3470"/>
         <source>ajout d&apos;une charge financière - répertorié - échec</source>
         <translation>FINANCIAL EXPENSE REGISTRATION - failed</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4034"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="4029"/>
         <source>Le service &apos;%1&apos;</source>
         <translation>Service &apos;%1&apos;</translation>
     </message>
@@ -10786,7 +10787,7 @@ stock (service)</translation>
     <name>YerothChargesFinancieresWindow</name>
     <message>
         <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="461"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18816"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18817"/>
         <source>Yeroth-pgi-3.0 - fiche des charges financières</source>
         <oldsource>Yeroth-erp-3.0 - fiche des charges financières</oldsource>
         <translation>Yeroth-erp-3.0 - FINANCIAL EXPENSES LISTING</translation>
@@ -10882,170 +10883,173 @@ stock (service)</translation>
         <source>Entrer une
 immobilisation,
 un stock,
-un service</source>
-        <oldsource>Entrer 
-un 
-stock (service)</oldsource>
+un service,
+ une CHARGE</source>
+        <oldsource>Entrer une
+immobilisation,
+un stock,
+un service</oldsource>
         <translation>Check in
 ASSET, OR
-stock (service)</translation>
+stock (service)
+ financial expense</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="16513"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="16514"/>
         <source>filtres</source>
         <translation>filters</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="17420"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="17421"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="17872"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="17873"/>
         <source>Actions</source>
         <translation>Functions</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18333"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18334"/>
         <source>Outils</source>
         <translation>Tools</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18844"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18845"/>
         <source>À propos</source>
         <translation>About Yeroth-erp-3.0</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18860"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18861"/>
         <source>Changer d&apos;utilisateur</source>
         <translation>Sign in</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18872"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18873"/>
         <source>Fermeture</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18884"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18887"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18885"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18888"/>
         <source>Menu principal</source>
         <translation>Main menu</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18903"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18906"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18904"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18907"/>
         <source>Imprimer la fiche des charges financières</source>
         <translation>Print FINANCIAL EXPENSES LISTING</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18922"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18923"/>
         <source>Message d&apos;aide</source>
         <translation>User tip</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18925"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18926"/>
         <source>Appeler l&apos;aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18941"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18944"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18942"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18945"/>
         <source>Déconnecter l&apos;utilisateur</source>
         <translation>Sign out</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18962"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18965"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18963"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18966"/>
         <source>Alertes</source>
         <translation>Alerts</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18977"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18978"/>
         <source>Réinitialiser la recherche</source>
         <translation>Reset search</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18994"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="18995"/>
         <source>Administration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19006"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19009"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19007"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19010"/>
         <source>Informations sur l&apos;entreprise</source>
         <translation>Company info</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19021"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19022"/>
         <source>Qui suis je ?</source>
         <translation>Who am I?</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19038"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19039"/>
         <source>Exporter au format csv</source>
         <translation>Export as csv file</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19048"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19049"/>
         <source>Réinitialiser les éléments de fitrage</source>
         <translation>reset filter</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19058"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19061"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19059"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19062"/>
         <source>Afficher les détails de cette charge financière</source>
         <oldsource>Afficher les détails de cet achat</oldsource>
         <translation>Show financial expense details</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19078"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19081"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19079"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19082"/>
         <source>Sélectionner les  champs (base de données) visible</source>
         <translation>Select &apos;visible&apos; database table fields</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19096"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19099"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19097"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19100"/>
         <source>Réinitialiser les  champs (base de données) visible</source>
         <translation>Reset &apos;visible&apos; database table fields</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19109"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19112"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19110"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19113"/>
         <source>Lister les paiements</source>
         <translation>View payments</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19124"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19125"/>
         <source>Lister les stocks</source>
         <translation>List stocks</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19134"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19137"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19135"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19138"/>
         <source>Supprimer 1 charge financière</source>
         <oldsource>Supprimer 1 achat au fournisseur</oldsource>
         <translation>Remove a FINANCIAL EXPENSE</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19152"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19155"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19153"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19156"/>
         <source>Paramétrer les impressions PDF</source>
         <translation>Parameterize PDF printing</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19170"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19171"/>
         <source>AUGMENTER LA POLICE DU TABLEAU</source>
         <translation>INCREASE FONT SIZE OF TABLE</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19180"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19181"/>
         <source>diminuer la police du tableau</source>
         <translation>decrease table font size</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19185"/>
-        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19188"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19186"/>
+        <location filename="ui/yeroth-erp-charges-financieres-window.ui" line="19189"/>
         <source>Créer à partir de ceci (CHARGE FINANCIÈRE)</source>
         <translation>CREATE FROM THIS (financial expense)</translation>
     </message>
@@ -15191,9 +15195,9 @@ PROGRAM</translation>
     <name>YerothEntrerWindow</name>
     <message>
         <location filename="ui/yeroth-erp-entrer-window.ui" line="464"/>
-        <source>Yeroth-pgi-3.0 - entrer une immobilisation, un stock,un service</source>
-        <oldsource>Yeroth-pgi-3.0 - entrer un stock (service)</oldsource>
-        <translation>Yeroth-erp-3.0 - check in ASSET, stock, service</translation>
+        <source>Yeroth-pgi-3.0 - entrer une immobilisation, un stock,un service, une CHARGE financière</source>
+        <oldsource>Yeroth-pgi-3.0 - entrer une immobilisation, un stock,un service</oldsource>
+        <translation>Check in AN ASSET, a stock, a service, A financial expense</translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-entrer-window.ui" line="930"/>
@@ -15532,9 +15536,9 @@ Transférer</oldsource>
         <translation>Cancel ASSET, stock, OR SERVICE insertion</translation>
     </message>
     <message>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2734"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3148"/>
-        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3507"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="2729"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3143"/>
+        <location filename="src/windows/yeroth-erp-entrer-window.cpp" line="3502"/>
         <source>Remplisser tous les champs obligatoires !</source>
         <translation>Please, fill out all mandatory text fields!</translation>
     </message>

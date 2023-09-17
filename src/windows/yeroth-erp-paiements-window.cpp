@@ -307,45 +307,39 @@ void YerothPaiementsWindow::handleComboBoxClients_Typedepaiement_TextChanged(con
 
 void YerothPaiementsWindow::handle_ACTION_CHOICE_TYPE_DENTREPRISE()
 {
-    QString
-    cur_type_dentreprise(comboBox_paiements_type_dentreprise->currentText
-                         ());
+    QString cur_type_dentreprise(comboBox_paiements_type_dentreprise->currentText());
 
     QString type_dentreprise;
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
-
-    if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
-                                            YerothPaiementsWindow::
-                                            CLIENT_TEXT_STRING))
+    if (YerothMainWindow::LANGUE_ANGLAISE)
     {
-        type_dentreprise =
-                        YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH;
+        if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
+                                                YerothPaiementsWindow::CLIENT_TEXT_STRING))
+        {
+            type_dentreprise =
+                YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH;
+        }
+        else if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
+                 YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH))
+        {
+            type_dentreprise = YerothPaiementsWindow::CLIENT_TEXT_STRING;
+        }
     }
-    else if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
-                                                 YerothPaiementsWindow::
-                                                 FOURNISSEUR_TEXT_STRING_FRENCH))
+    else
     {
-        type_dentreprise = YerothPaiementsWindow::CLIENT_TEXT_STRING;
-    }
-
-#else //YEROTH_ENGLISH_LANGUAGE
-
-    if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
-                                            YerothPaiementsWindow::
-                                            CLIENT_TEXT_STRING))
-    {
-        type_dentreprise =
-                        YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH;
-    }
-    else if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
-                                                 YerothPaiementsWindow::
-                                                 FOURNISSEUR_TEXT_STRING_ENGLISH))
-    {
-        type_dentreprise = YerothPaiementsWindow::CLIENT_TEXT_STRING;
+        if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
+                                                YerothPaiementsWindow::CLIENT_TEXT_STRING))
+        {
+            type_dentreprise =
+                YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH;
+        }
+        else if (YerothUtils::isEqualCaseInsensitive(cur_type_dentreprise,
+                                                     YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH))
+        {
+            type_dentreprise = YerothPaiementsWindow::CLIENT_TEXT_STRING;
+        }
     }
 
-#endif
 
     comboBox_paiements_type_dentreprise->find_AND_SET_CURRENT_INDEX(type_dentreprise);
 }
@@ -704,20 +698,19 @@ void YerothPaiementsWindow::populateComboBoxes()
 
     aQStringList.append(YerothPaiementsWindow::CLIENT_TEXT_STRING);
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
 
-    _curSupplierText = YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH;
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        _curSupplierText = YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH;
 
-    aQStringList.append(YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH);
+        aQStringList.append(YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH);
+    }
+    else
+    {
+        _curSupplierText = YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH;
 
-#else //YEROTH_ENGLISH_LANGUAGE
-
-    _curSupplierText = YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH;
-
-    aQStringList.append(YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_ENGLISH);
-
-#endif
-
+        aQStringList.append(YerothPaiementsWindow::FOURNISSEUR_TEXT_STRING_FRENCH);
+    }
 
 
     comboBox_paiements_type_dentreprise->clear();
