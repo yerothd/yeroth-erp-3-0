@@ -98,7 +98,11 @@ public:
 
     YEROTH_CLASS_OPERATORS
 
-	YerothUtils();
+	inline YerothUtils()
+	{
+        RELOAD_VIEW_STRINGS();    }
+
+	static void RELOAD_VIEW_STRINGS();
 
     inline ~YerothUtils()
     {
@@ -106,8 +110,7 @@ public:
 
     static void YEROTH_resizeEvent(QWidget &a_current_widget_to_move,
                                    const QSize &a_current_windows_SIZE,
-                                   const QSize &
-                                   a_current_windows_PREVIOUS_SIZE);
+                                   const QSize &a_current_windows_PREVIOUS_SIZE);
 
     template < class classType, typename parameterType >
     static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION

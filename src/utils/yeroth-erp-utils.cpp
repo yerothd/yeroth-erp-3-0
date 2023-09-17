@@ -635,23 +635,47 @@ const QRegExpValidator YerothUtils::STRING_FOR_YEROTH_ERP_3_0_VALIDATOR(
 						"a-zA-Z0-9º:;,~´`@§$£#%\\s\\.\\^\\\\(\\)\\&/\<>\\?\\!\\{\\}\\[\\]\\+\\-\{\}=_'|",
 						"àéèêôîûÀÉÈÊÔÛÎ", "äëöïüÄËÖÏÜ")));
 
+
 const QIntValidator YerothUtils::UINT_VALIDATOR_GREATER_THAN_ZERO(1, 444444444);
+
 
 const QIntValidator YerothUtils::UintValidator(0, 444444444);
 
+
 const QDoubleValidator YerothUtils::DoubleValidator(-444444444, 444444444, 2);
+
 
 const QDoubleValidator YerothUtils::POSITIVE_DoubleValidator(0, 444444444, 2);
 
+
 const QRegExpValidator YerothUtils::PasswordValidator(PasswordRegExp);
 
-YerothUtils::YerothUtils()
+
+
+void YerothUtils::RELOAD_VIEW_STRINGS()
 {
+    YerothUtils::_alerte_OUI_NON_ToUserViewString.clear();
+
+    YerothUtils::_strategieindexToUserViewString.clear();
+
+    YerothUtils::_titreToUserViewString.clear();
+
+    YerothUtils::_roleToUserViewString.clear();
+
+    YerothUtils::_typedoperationfinancieresToUserViewString.clear();
+
+    YerothUtils::_typedeventeToUserViewString.clear();
+
+    YerothUtils::_typedepaiementToUserViewString.clear();
+
+
+
 	YerothUtils::_alerte_OUI_NON_ToUserViewString.insert(
 			YerothUtils::ALERTE_RESOLUE_NON_INDEX, YerothUtils::STRING_NON);
 
 	YerothUtils::_alerte_OUI_NON_ToUserViewString.insert(
 			YerothUtils::ALERTE_RESOLUE_OUI_INDEX, YerothUtils::STRING_OUI);
+
 
 	YerothUtils::_strategieindexToUserViewString.insert(
 			YerothUtils::STRATEGIE_ALL_COMBOBOX_INDEX,
@@ -668,6 +692,7 @@ YerothUtils::YerothUtils()
 	YerothUtils::_strategieindexToUserViewString.insert(
 			YerothUtils::STRATEGIE_LIFO_COMBOBOX_INDEX,
 			YerothERPConfig::STRATEGIE_VENTE_SORTIE_LIFO);
+
 
 	YerothUtils::_titreToUserViewString.insert(YerothUtils::TITRE_DR,
 			QObject::tr("Dr."));
@@ -693,6 +718,7 @@ YerothUtils::YerothUtils()
 	YerothUtils::_titreToUserViewString.insert(YerothUtils::TITRE_INDEFINI,
 			QObject::tr("titre indéfini"));
 
+
 	YerothUtils::_roleToUserViewString.insert(YerothUtils::ROLE_ADMINISTRATEUR,
 			QObject::tr("administrateur"));
 
@@ -715,6 +741,7 @@ YerothUtils::YerothUtils()
 	YerothUtils::_roleToUserViewString.insert(YerothUtils::ROLE_INDEFINI,
 			QObject::tr("role indéfini"));
 
+
 	YerothUtils::_typedoperationfinancieresToUserViewString.insert(
 			YerothUtils::OPERATION_FINANCIERE_VENTE, QObject::tr("vente"));
 
@@ -730,6 +757,7 @@ YerothUtils::YerothUtils()
 			YerothUtils::OPERATION_FINANCIERE_INDEFINI,
 			QObject::tr("indéfini"));
 
+
 	YerothUtils::_typedeventeToUserViewString.insert(
 			YerothUtils::VENTE_COMPTANT, QObject::tr("vente (comptant)"));
 
@@ -743,6 +771,8 @@ YerothUtils::YerothUtils()
 
 	YerothUtils::_typedeventeToUserViewString.insert(
 			YerothUtils::VENTE_INDEFINI, QObject::tr("vente indéfini"));
+
+
 
 	YerothUtils::_typedepaiementToUserViewString.insert(
 			YerothUtils::ENCAISSEMENT_AVANCE_DE_CASH,
@@ -809,9 +839,10 @@ YerothUtils::YerothUtils()
 			QObject::tr("décaissement (fidélité clients)"));
 }
 
+
 void YerothUtils::YEROTH_resizeEvent(QWidget &a_current_widget_to_move,
-		const QSize &a_current_windows_SIZE,
-		const QSize &a_current_windows_PREVIOUS_SIZE)
+                                     const QSize &a_current_windows_SIZE,
+                                     const QSize &a_current_windows_PREVIOUS_SIZE)
 {
 	if (a_current_windows_PREVIOUS_SIZE.width() <= 0
 			|| a_current_windows_PREVIOUS_SIZE.height() <= 0)

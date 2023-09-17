@@ -119,12 +119,11 @@ YerothVentesWindow::YerothVentesWindow()
                                            YerothDatabaseTableColumn::
                                            NOM_CAISSIER);
 
-    _yeroth_WINDOW_references_dbColumnString.
-    insert(YerothDatabaseTableColumn::REFERENCE);
+    _yeroth_WINDOW_references_dbColumnString
+        .insert(YerothDatabaseTableColumn::REFERENCE);
 
     _comboBoxesToANDContentForSearch.insert(&comboBox_ventes_type_de_vente,
-                                            YerothDatabaseTableColumn::
-                                            TYPE_DE_VENTE);
+                                            YerothDatabaseTableColumn::TYPE_DE_VENTE);
 
     YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION
     (YerothDatabase::STOCKS_VENDU);
@@ -2096,12 +2095,17 @@ void YerothVentesWindow::populateComboBoxes()
 {
     _logger->log("populateComboBoxes");
 
+
+    YerothUtils::RELOAD_VIEW_STRINGS();
+
+
     comboBox_ventes_type_de_vente->clear();
 
-    comboBox_ventes_type_de_vente->
-    setupPopulateNORawString(YerothDatabase::TYPE_DE_VENTE,
-                             YerothDatabaseTableColumn::TYPE_DE_VENTE,
-                             &YerothUtils::_typedeventeToUserViewString);
+    comboBox_ventes_type_de_vente
+        ->setupPopulateNORawString(YerothDatabase::TYPE_DE_VENTE,
+                                   YerothDatabaseTableColumn::TYPE_DE_VENTE,
+                                   &YerothUtils::_typedeventeToUserViewString);
+
 
     comboBox_ventes_type_de_vente->populateComboBox();
 

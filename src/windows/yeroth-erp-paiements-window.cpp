@@ -300,8 +300,7 @@ void YerothPaiementsWindow::handleComboBoxClients_Typedepaiement_TextChanged(con
     }
     else
     {
-        comboBox_paiements_intitule_du_compte_bancaire->setYerothEnabled
-        (false);
+        comboBox_paiements_intitule_du_compte_bancaire->setYerothEnabled(false);
     }
 }
 
@@ -348,8 +347,7 @@ void YerothPaiementsWindow::handle_ACTION_CHOICE_TYPE_DENTREPRISE()
 
 #endif
 
-    comboBox_paiements_type_dentreprise->find_AND_SET_CURRENT_INDEX
-    (type_dentreprise);
+    comboBox_paiements_type_dentreprise->find_AND_SET_CURRENT_INDEX(type_dentreprise);
 }
 
 
@@ -359,8 +357,7 @@ void YerothPaiementsWindow::handle_combobox_type_dentreprise(const QString &text
                                             comboBox_paiements_type_dentreprise->
                                             currentText()))
     {
-        action_BASCULER_client_fournisseur->
-        setText(QObject::tr("AFFICHER CLIENTS"));
+        action_BASCULER_client_fournisseur->setText(QObject::tr("AFFICHER CLIENTS"));
 
         update_suppliers_specific_payments_type();
     }
@@ -537,22 +534,18 @@ void YerothPaiementsWindow::update_clients_specific_payments_type()
     QStringList clients_payment_types;
 
     clients_payment_types
-            << YerothUtils::_typedepaiementToUserViewString.
-            value(YerothUtils::ENCAISSEMENT_COMPTANT) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::ENCAISSEMENT_CHEQUE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::ENCAISSEMENT_TELEPHONE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::ENCAISSEMENT_BANCAIRE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::ENCAISSEMENT_VIREMENT_BANCAIRE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::
-                  DECAISSEMENT_POUR_PROGRAMME_DE_FIDELITE_CLIENT) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::DECAISSEMENT_RETOUR_ACHAT_DUN_CLIENT);
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_COMPTANT)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_CHEQUE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_TELEPHONE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_BANCAIRE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_VIREMENT_BANCAIRE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_POUR_PROGRAMME_DE_FIDELITE_CLIENT)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_RETOUR_ACHAT_DUN_CLIENT);
 
+
+    comboBox_paiements_type_de_paiement->clear();
+
+    comboBox_paiements_type_de_paiement->addItem(YerothUtils::EMPTY_STRING);
 
     comboBox_paiements_type_de_paiement->addItems(clients_payment_types);
 
@@ -600,72 +593,56 @@ void YerothPaiementsWindow::update_suppliers_specific_payments_type()
     QStringList suppliers_payment_types;
 
     suppliers_payment_types
-            << YerothUtils::_typedepaiementToUserViewString.
-            value(YerothUtils::DECAISSEMENT_COMPTANT) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::DECAISSEMENT_CHEQUE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::DECAISSEMENT_TELEPHONE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::DECAISSEMENT_BANCAIRE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::DECAISSEMENT_VIREMENT_BANCAIRE) << YerothUtils::
-            _typedepaiementToUserViewString.
-            value(YerothUtils::ENCAISSEMENT_CHARGE_FINANCIERE_ANNULE);
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_COMPTANT)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_CHEQUE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_TELEPHONE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_BANCAIRE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_VIREMENT_BANCAIRE)
+            << YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_CHARGE_FINANCIERE_ANNULE);
 
+
+    comboBox_paiements_type_de_paiement->clear();
+
+    comboBox_paiements_type_de_paiement->addItem(YerothUtils::EMPTY_STRING);
 
     comboBox_paiements_type_de_paiement->addItems(suppliers_payment_types);
 
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             ENCAISSEMENT_COMPTANT));
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_COMPTANT));
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             ENCAISSEMENT_CHEQUE));
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_CHEQUE));
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             ENCAISSEMENT_TELEPHONE));
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_TELEPHONE));
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             ENCAISSEMENT_BANCAIRE));
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_BANCAIRE));
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             ENCAISSEMENT_VIREMENT_BANCAIRE));
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::ENCAISSEMENT_VIREMENT_BANCAIRE));
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             DECAISSEMENT_POUR_PROGRAMME_DE_FIDELITE_CLIENT));
 
-    comboBox_paiements_type_de_paiement->yeroth_remove_item(YerothUtils::
-                                                            _typedepaiementToUserViewString.
-                                                            value
-                                                            (YerothUtils::
-                                                             DECAISSEMENT_RETOUR_ACHAT_DUN_CLIENT));
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_POUR_PROGRAMME_DE_FIDELITE_CLIENT));
+
+    comboBox_paiements_type_de_paiement
+        ->yeroth_remove_item(
+            YerothUtils::_typedepaiementToUserViewString.value(YerothUtils::DECAISSEMENT_RETOUR_ACHAT_DUN_CLIENT));
 }
 
 
 const QString &YerothPaiementsWindow::get_current_table_column_for_company_type_to_HIDE()
 {
     if (YerothUtils::isEqualCaseInsensitive(_curSupplierText,
-                                            comboBox_paiements_type_dentreprise->
-                                            currentText()))
+                                            comboBox_paiements_type_dentreprise->currentText()))
     {
         _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME.append
         (YerothDatabaseTableColumn::
@@ -707,6 +684,10 @@ const QString &YerothPaiementsWindow::get_current_table_column_for_company_type_
 
 void YerothPaiementsWindow::populateComboBoxes()
 {
+
+    YerothUtils::RELOAD_VIEW_STRINGS();
+
+
     int columnIndexTypeDePaiement =
         _dbtablecolumnNameToDBColumnIndex.value(YerothDatabaseTableColumn::TYPE_DE_PAIEMENT);
 
@@ -744,6 +725,8 @@ void YerothPaiementsWindow::populateComboBoxes()
     comboBox_paiements_type_dentreprise->addItems(aQStringList);
 
 
+
+    comboBox_paiements_intitule_du_compte_bancaire->clear();
 
     comboBox_paiements_intitule_du_compte_bancaire->setYerothEnabled(false);
 
@@ -802,22 +785,6 @@ void YerothPaiementsWindow::populateComboBoxes()
     comboBox_paiements_element_de_paiements_condition->clear();
 
     comboBox_paiements_element_de_paiements_condition->addItems(aQStringList);
-}
-
-
-void YerothPaiementsWindow::updateComboBoxes()
-{
-    QString currentText =
-        comboBox_paiements_intitule_du_compte_bancaire->currentText();
-
-    comboBox_paiements_intitule_du_compte_bancaire
-        ->populateComboBoxRawString(YerothDatabase::COMPTES_BANCAIRES,
-                                    YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE);
-
-    int currentTextIdx =
-        comboBox_paiements_intitule_du_compte_bancaire->findText(currentText);
-
-    comboBox_paiements_intitule_du_compte_bancaire->setCurrentIndex(currentTextIdx);
 }
 
 
@@ -1642,9 +1609,6 @@ void YerothPaiementsWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
 
 
     populateComboBoxes();
-
-
-    updateComboBoxes();
 
 
     setupLineEditsQCompleters((QObject *) this);

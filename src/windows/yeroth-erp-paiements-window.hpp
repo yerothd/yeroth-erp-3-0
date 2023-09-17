@@ -89,7 +89,8 @@ public:
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
-    public slots:
+
+public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_paiements)
 
@@ -143,10 +144,13 @@ public:
 
     void resetFilter(YerothSqlTableModel *historiquePaiementsTableModel);
 
+
 protected slots:
+
     virtual void slot_reinitialiser_colones_db_visibles();
 
     virtual void textChangedSearchLineEditsQCompleters();
+
 
 protected:
 
@@ -166,7 +170,9 @@ protected:
 
     virtual void set_filtrer_font();
 
+
 private slots:
+
     void handle_filtres_checkBox(int state);
 
     void handleComboBoxClients_Typedepaiement_TextChanged(const QString &
@@ -177,6 +183,7 @@ private slots:
     void handle_combobox_type_dentreprise(const QString &text);
 
     bool filtrer_paiements();
+
 
 private:
 
@@ -193,8 +200,6 @@ private:
     const QString &get_current_table_column_for_company_type_to_HIDE();
 
     void populateComboBoxes();
-
-    void updateComboBoxes();
 
     void setupLineEdits();
 
