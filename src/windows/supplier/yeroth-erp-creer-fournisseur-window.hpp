@@ -57,6 +57,7 @@ public:
 
     void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
+
 public slots:
 
 	virtual void SWITCH_TO_EMPLOYE_fournisseur(const QString &EMPLOYE_ou_FOURNISSEUR = YerothUtils::EMPTY_STRING);
@@ -77,7 +78,9 @@ public slots:
 
     void deconnecter_utilisateur();
 
+
 protected slots:
+
     inline void supprimer_image_fournisseur()
     {
         YerothWindowsCommons::supprimer_image(*label_image_produit);
@@ -88,18 +91,22 @@ protected slots:
         YerothWindowsCommons::selectionner_image(*label_image_produit);
     }
 
+
 protected:
 
     virtual void setupShortcuts();
 
+
 private slots:
+
     bool creerEnregistrerFournisseur();
+
 
 private:
 
-    static const QString STRING_FOURNISSEUR;
+    static QString STRING_FOURNISSEUR;
 
-    static const QString STRING_EMPLOYE;
+    static QString STRING_EMPLOYE;
 
     bool supplierAlreadyExist();
 
@@ -107,7 +114,11 @@ private:
 
     void clear_all_fields();
 
+
+    void populateCreerFournisseurComboBoxes();
+
     void setupLineEdits();
+
 
     YerothLogger *_logger;
 };

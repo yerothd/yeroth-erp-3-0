@@ -24,19 +24,12 @@
 #include <QtSql/QSqlIndex>
 
 
-#ifdef YEROTH_FRANCAIS_LANGUAGE
 
-	const QString YerothCreerFournisseurWindow::STRING_FOURNISSEUR("FOURNISSEUR");
+QString YerothCreerFournisseurWindow::STRING_FOURNISSEUR("supplier");
 
-	const QString YerothCreerFournisseurWindow::STRING_EMPLOYE("EMPLOYÉ");
+QString YerothCreerFournisseurWindow::STRING_EMPLOYE("employee");
 
-#else //#ifdef YEROTH_ENGLISH_LANGUAGE
 
-	const QString YerothCreerFournisseurWindow::STRING_FOURNISSEUR("supplier");
-
-	const QString YerothCreerFournisseurWindow::STRING_EMPLOYE("employee");
-
-#endif //YEROTH_FRANCAIS_LANGUAGE
 
 YerothCreerFournisseurWindow::YerothCreerFournisseurWindow():YerothWindowsCommons(),
     _logger(new
@@ -58,7 +51,11 @@ YerothCreerFournisseurWindow::YerothCreerFournisseurWindow():YerothWindowsCommon
                     (COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
                      COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
+
     setupLineEdits();
+
+    populateCreerFournisseurComboBoxes();
+
 
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionInformationEntreprise, false);
@@ -121,6 +118,7 @@ YerothCreerFournisseurWindow::YerothCreerFournisseurWindow():YerothWindowsCommon
     setupShortcuts();
 }
 
+
 void YerothCreerFournisseurWindow::deconnecter_utilisateur()
 {
     clear_all_fields();
@@ -129,11 +127,30 @@ void YerothCreerFournisseurWindow::deconnecter_utilisateur()
     rendreInvisible();
 }
 
+
+void YerothCreerFournisseurWindow::populateCreerFournisseurComboBoxes()
+{
+    comboBox_FOURNISSEUR_ou_EMPLOYE->clear();
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        YerothCreerFournisseurWindow::STRING_FOURNISSEUR = "supplier";
+
+        YerothCreerFournisseurWindow::STRING_EMPLOYE = "employee";
+    }
+    else
+    {
+        YerothCreerFournisseurWindow::STRING_FOURNISSEUR = "FOURNISSEUR";
+
+        YerothCreerFournisseurWindow::STRING_EMPLOYE = "EMPLOYÉ";
+    }
+}
+
+
 void YerothCreerFournisseurWindow::setupLineEdits()
 {
     lineEdit_fournisseur_dette_maximale->setYerothEnabled(false);
-    lineEdit_fournisseur_dette_maximale->
-    setValidator(&YerothUtils::POSITIVE_DoubleValidator);
+    lineEdit_fournisseur_dette_maximale->setValidator(&YerothUtils::POSITIVE_DoubleValidator);
 }
 
 
@@ -458,6 +475,10 @@ void YerothCreerFournisseurWindow::rendreVisible(YerothSqlTableModel *stocksTabl
 	retranslateUi(this);
 
     _curStocksTableModel = stocksTableModel;
+
+
+    populateCreerFournisseurComboBoxes();
+
 
     YerothPOSUser *aUser = YerothUtils::getAllWindows()->getUser();
 

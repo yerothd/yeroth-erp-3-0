@@ -2741,7 +2741,7 @@ Continue updating asset or stock ?</translation>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp" line="92"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.hpp" line="95"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp" line="77"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp" line="72"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp" line="73"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp" line="74"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseur-details-window.hpp" line="95"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.hpp" line="90"/>
@@ -3109,7 +3109,7 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp" line="667"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp" line="377"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="384"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="656"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="677"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp" line="640"/>
         <source>&apos; a été créer avec succès !</source>
         <oldsource>&apos; a été créer avec succès!</oldsource>
@@ -3471,7 +3471,7 @@ THIS FINANCIAL EXPENSE !)!</translation>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.hpp" line="75"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.hpp" line="79"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp" line="78"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp" line="74"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.hpp" line="75"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.hpp" line="76"/>
         <source>Remplisser le formulaire, et ensuite cliquer sur enregistrer !</source>
         <oldsource>Remplisser le formulaire, et ensuite cliquer sur enregistrer!</oldsource>
@@ -4664,7 +4664,7 @@ Please contact an administrator</translation>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-groupe-de-clients-window.cpp" line="657"/>
         <location filename="src/windows/crm/creer/yeroth-erp-creer-un-programme-de-fidelite-clients-window.cpp" line="367"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.cpp" line="374"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="646"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="667"/>
         <location filename="src/windows/supplier/yeroth-erp-creer-groupe-DEMPLOYES-hr-window.cpp" line="631"/>
         <source>&apos; n&apos;a pas pu être créer !</source>
         <translation>&apos; couldn&apos;t be created !</translation>
@@ -4733,8 +4733,8 @@ Please contact an administrator</translation>
         <translation>%1&apos; has been created !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="649"/>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="660"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="670"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="681"/>
         <source>Yeroth-pgi-3.0 ~ administration ~ créer ~ fournisseur</source>
         <oldsource>Yeroth-erp-3.0 ~ administration ~ créer ~ fournisseur</oldsource>
         <translation>Yeroth-erp-3.0 ~ administration ~ create ~ supplier</translation>
@@ -5797,29 +5797,29 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>modification failure (%1) </translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="47"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="40"/>
         <source>créer un EMPLOYÉ / fournisseur</source>
         <oldsource>créer un fournisseur</oldsource>
         <translation>create an EMPLOYEE / a supplier</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="402"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="419"/>
         <source>référence du fournisseur</source>
         <oldsource>la référence du fournisseur</oldsource>
         <translation>supplier reference</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="508"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="529"/>
         <source>Nom de l&apos;entreprise</source>
         <translation>Company name</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="520"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="541"/>
         <source>Nom de l&apos;employé(e)</source>
         <translation>Employee name</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="542"/>
+        <location filename="src/windows/supplier/yeroth-erp-creer-fournisseur-window.cpp" line="563"/>
         <source>Le fournisseur &apos;</source>
         <translation>Supplier &apos;</translation>
     </message>
