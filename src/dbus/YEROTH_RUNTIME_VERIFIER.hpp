@@ -30,9 +30,11 @@ public:
 	{
 	}
 
+
 protected:
 
     void timerEvent(QTimerEvent *event);
+
 
 public Q_SLOTS:
 
@@ -58,6 +60,9 @@ public:
 	static QStringList _LAST_SIGNALS_source_target_strings;
 
 	static const QString DBUS_TIME_FORMAT_WITH_MILLISECONDS;
+
+	static const QString YEROTH_ERP_PGI_dbus_verifier_tester_ID;
+
 
 private:
 
