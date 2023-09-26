@@ -34,7 +34,7 @@ YEROTH_RUNTIME_VERIFIER::YEROTH_RUNTIME_VERIFIER()
 
 	a_YR_DB_RUNTIME_VERIF_instance =
 			new com::yeroth::rd::IYRruntimeverification(systemYerothService,
-														"/YR_DB_RUNTIME_VERIF_Main",
+														"/yr_sd_runtime_verif_language_EXAMPLE_realcase",
 														QDBusConnection::systemBus(),
 														this);
 
