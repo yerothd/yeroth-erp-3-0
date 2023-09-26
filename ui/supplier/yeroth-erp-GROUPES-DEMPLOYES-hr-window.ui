@@ -12771,7 +12771,7 @@ background-color: rgb(0, 0, 0); </string>
    <widget class="QLabel" name="label_date_begin">
     <property name="geometry">
      <rect>
-      <x>-60</x>
+      <x>11</x>
       <y>422</y>
       <width>117</width>
       <height>21</height>
