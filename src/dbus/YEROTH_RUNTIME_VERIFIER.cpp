@@ -1,8 +1,7 @@
 /*
  * YEROTH_RUNTIME_VERIFIER.hpp
  *
- *  Created on: Dec 10, 2022
- *      Author: yer
+ *      Author: PROF. DR.-ING. DIPL.-INF. Xavier Noumbissi Noundou
  */
 
 
