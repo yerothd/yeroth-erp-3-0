@@ -65,8 +65,7 @@ public:
 
 private:
 
-	com::yeroth::rd::IYRruntimeverification *a_YR_DB_RUNTIME_VERIF_instance;
-
+    QList<com::yeroth::rd::IYRruntimeverification *> _YR_DB_RUNTIME_VERIF_instances;
 };
 
 

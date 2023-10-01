@@ -27,15 +27,27 @@ const QString YEROTH_RUNTIME_VERIFIER::YEROTH_ERP_PGI_dbus_verifier_tester_ID("y
 
 
 YEROTH_RUNTIME_VERIFIER::YEROTH_RUNTIME_VERIFIER()
-:a_YR_DB_RUNTIME_VERIF_instance(0)
 {
 	QString systemYerothService = "yr.db-runtime.verif";
 
-	a_YR_DB_RUNTIME_VERIF_instance =
+
+	com::yeroth::rd::IYRruntimeverification	*a_YR_DB_RUNTIME_VERIF_instance =
 			new com::yeroth::rd::IYRruntimeverification(systemYerothService,
 														"/yr_sd_runtime_verif_language_EXAMPLE_realcase",
 														QDBusConnection::systemBus(),
 														this);
+
+    _YR_DB_RUNTIME_VERIF_instances.append(a_YR_DB_RUNTIME_VERIF_instance);
+
+
+	com::yeroth::rd::IYRruntimeverification	*a_YR_DB_RUNTIME_VERIF_instance_2 =
+			new com::yeroth::rd::IYRruntimeverification(systemYerothService,
+														"/A_YR_runtime_monitor_SECOND",
+														QDBusConnection::systemBus(),
+														this);
+
+    _YR_DB_RUNTIME_VERIF_instances.append(a_YR_DB_RUNTIME_VERIF_instance_2);
+
 
 	startTimer(3000);
 }
@@ -45,8 +57,18 @@ void YEROTH_RUNTIME_VERIFIER::timerEvent(QTimerEvent *event)
 {
     Q_UNUSED(event);
 
-    if (0 != a_YR_DB_RUNTIME_VERIF_instance &&
-    	a_YR_DB_RUNTIME_VERIF_instance->isValid())
+    if (_YR_DB_RUNTIME_VERIF_instances.size() <= 0)
+    {
+        return ;
+    }
+
+
+    com::yeroth::rd::IYRruntimeverification *currrent_verification_logger_INSTANCE =
+        _YR_DB_RUNTIME_VERIF_instances.at(0);
+
+
+    if (0 != currrent_verification_logger_INSTANCE &&
+    	currrent_verification_logger_INSTANCE->isValid())
     {
         //qDebug() << "connected";
     }
@@ -64,8 +86,21 @@ void YEROTH_RUNTIME_VERIFIER::YR_slot_refresh_DELETE_DB_MYSQL__CALLED(QString in
                         .arg(in0,
                              YEROTH_RUNTIME_VERIFIER::YEROTH_ERP_PGI_dbus_verifier_tester_ID);
 
-	a_YR_DB_RUNTIME_VERIF_instance->YR_slot_refresh_DELETE_DB_MYSQL(yr_in0,
-																	in1);
+
+    com::yeroth::rd::IYRruntimeverification *currrent_verification_logger_INSTANCE = 0;
+
+    for (uint k = 0; k < _YR_DB_RUNTIME_VERIF_instances.size(); ++k)
+    {
+        currrent_verification_logger_INSTANCE = _YR_DB_RUNTIME_VERIF_instances.at(k);
+
+        if (0 != currrent_verification_logger_INSTANCE)
+        {
+            currrent_verification_logger_INSTANCE
+                ->YR_slot_refresh_DELETE_DB_MYSQL(yr_in0,
+                                                  in1);
+        }
+    }
+
 
 	QStringList db_op_INFORMATIONS = in0.split(";", Qt::KeepEmptyParts);
 
@@ -103,8 +138,21 @@ void YEROTH_RUNTIME_VERIFIER::YR_slot_refresh_INSERT_DB_MYSQL__CALLED(QString in
                         .arg(in0,
                              YEROTH_RUNTIME_VERIFIER::YEROTH_ERP_PGI_dbus_verifier_tester_ID);
 
-	a_YR_DB_RUNTIME_VERIF_instance->YR_slot_refresh_INSERT_DB_MYSQL(yr_in0,
-																	in1);
+
+    com::yeroth::rd::IYRruntimeverification *currrent_verification_logger_INSTANCE = 0;
+
+    for (uint k = 0; k < _YR_DB_RUNTIME_VERIF_instances.size(); ++k)
+    {
+        currrent_verification_logger_INSTANCE = _YR_DB_RUNTIME_VERIF_instances.at(k);
+
+        if (0 != currrent_verification_logger_INSTANCE)
+        {
+            currrent_verification_logger_INSTANCE
+                ->YR_slot_refresh_INSERT_DB_MYSQL(yr_in0,
+                                                  in1);
+        }
+    }
+
 
 	QStringList db_op_INFORMATIONS = in0.split(";", Qt::KeepEmptyParts);
 
@@ -142,8 +190,20 @@ void YEROTH_RUNTIME_VERIFIER::YR_slot_refresh_SELECT_DB_MYSQL__CALLED(QString in
                         .arg(in0,
                              YEROTH_RUNTIME_VERIFIER::YEROTH_ERP_PGI_dbus_verifier_tester_ID);
 
-	a_YR_DB_RUNTIME_VERIF_instance->YR_slot_refresh_SELECT_DB_MYSQL(yr_in0,
-																	in1);
+
+    com::yeroth::rd::IYRruntimeverification *currrent_verification_logger_INSTANCE = 0;
+
+    for (uint k = 0; k < _YR_DB_RUNTIME_VERIF_instances.size(); ++k)
+    {
+        currrent_verification_logger_INSTANCE = _YR_DB_RUNTIME_VERIF_instances.at(k);
+
+        if (0 != currrent_verification_logger_INSTANCE)
+        {
+            currrent_verification_logger_INSTANCE
+                ->YR_slot_refresh_SELECT_DB_MYSQL(yr_in0, in1);
+        }
+    }
+
 
 	QStringList db_op_INFORMATIONS = in0.split(";", Qt::KeepEmptyParts);
 
@@ -181,8 +241,21 @@ void YEROTH_RUNTIME_VERIFIER::YR_slot_refresh_UPDATE_DB_MYSQL__CALLED(QString in
                         .arg(in0,
                              YEROTH_RUNTIME_VERIFIER::YEROTH_ERP_PGI_dbus_verifier_tester_ID);
 
-	a_YR_DB_RUNTIME_VERIF_instance->YR_slot_refresh_UPDATE_DB_MYSQL(yr_in0,
-																	in1);
+
+    com::yeroth::rd::IYRruntimeverification *currrent_verification_logger_INSTANCE = 0;
+
+    for (uint k = 0; k < _YR_DB_RUNTIME_VERIF_instances.size(); ++k)
+    {
+        currrent_verification_logger_INSTANCE = _YR_DB_RUNTIME_VERIF_instances.at(k);
+
+        if (0 != currrent_verification_logger_INSTANCE)
+        {
+            currrent_verification_logger_INSTANCE
+                ->YR_slot_refresh_UPDATE_DB_MYSQL(yr_in0,
+                                                  in1);
+        }
+    }
+
 
 	QStringList db_op_INFORMATIONS = in0.split(";", Qt::KeepEmptyParts);
 
