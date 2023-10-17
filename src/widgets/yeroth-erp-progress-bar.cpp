@@ -41,7 +41,7 @@ YerothProgressBar::YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParent
     setStyleSheet(QString("QProgressBar "
                           "{text-align: center; "
                           "border: 2px solid white; "
-                          "border-radius: 1px;}"
+                          "border-radius: 1px; color: rgb(2, 160, 70);}"
                           "QProgressBar::chunk {"
                           "background-color: rgb(%1); "
                           "color: rgb(%2); "
