@@ -436,29 +436,44 @@ void YerothTableauxDeBordWindow::handleTabChanged(int index)
         setWindowTitle(QObject::tr("%1 - bilan comptable").
                        arg(_windowName));
 
-        connect(actionAfficherPDF, SIGNAL(triggered()), this,
-                SLOT(bilanComptable()));
-        connect(actionGenererPDF, SIGNAL(triggered()), this,
-                SLOT(bilanComptable()));
-        connect(actionReinitialiserRecherche, SIGNAL(triggered()), this,
+        connect(actionAfficherPDF,
+                SIGNAL(triggered()),
+                this,
+                SLOT(PRINT_with_Progress_BAR_bilanComptable()));
+
+        connect(actionGenererPDF,
+                SIGNAL(triggered()),
+                this,
+                SLOT(PRINT_with_Progress_BAR_bilanComptable()));
+
+        connect(actionReinitialiserRecherche,
+                SIGNAL(triggered()),
+                this,
                 SLOT(reinitialiser_bilan_comptable()));
 
         check_fields_FINANCIAL_ACCOUNTING_REPORT();
     }
     else if (index == SUJET_ACTION_BUSINESS_TURNOVER_COMPARISON)
     {
-        remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER
-        (comboBox_qualite->currentText());
+        remove_BAR_PIE_CHART_OPTION_FOR_ZERO_BUSINESS_TURNOVER(comboBox_qualite->currentText());
 
         setWindowTitle(QObject::tr
                        ("%1 - PALMARÈS des chiffres d'affaires").arg
                        (_windowName));
 
-        connect(actionAfficherPDF, SIGNAL(triggered()), this,
-                SLOT(generer()));
-        connect(actionGenererPDF, SIGNAL(triggered()), this,
-                SLOT(generer()));
-        connect(actionReinitialiserRecherche, SIGNAL(triggered()), this,
+        connect(actionAfficherPDF,
+                SIGNAL(triggered()),
+                this,
+                SLOT(PRINT_with_Progress_BAR_generer()));
+
+        connect(actionGenererPDF,
+                SIGNAL(triggered()),
+                this,
+                SLOT(PRINT_with_Progress_BAR_generer()));
+
+        connect(actionReinitialiserRecherche,
+                SIGNAL(triggered()),
+                this,
                 SLOT(reinitialiser()));
 
         check_fields_BUSINESS_TURNOVER_COMPARISON();
@@ -473,13 +488,13 @@ void YerothTableauxDeBordWindow::handleTabChanged(int index)
         connect(actionAfficherPDF,
                 SIGNAL(triggered()),
                 this,
-                SLOT(choisirEvolutionDuChiffreDaffaire()));
+                SLOT(PRINT_with_Progress_BAR_choisirEvolutionDuChiffreDaffaire()));
 
 
         connect(actionGenererPDF,
                 SIGNAL(triggered()),
                 this,
-                SLOT(choisirEvolutionDuChiffreDaffaire()));
+                SLOT(PRINT_with_Progress_BAR_choisirEvolutionDuChiffreDaffaire()));
 
 
         connect(actionReinitialiserRecherche,
@@ -945,24 +960,29 @@ void YerothTableauxDeBordWindow::definirManager()
 
     /** Tab One *************************************/
 
-    pushButton_chiffre_affaire_generer->enable(this,
-                                               SLOT(choisirEvolutionDuChiffreDaffaire()));
+    pushButton_chiffre_affaire_generer
+        ->enable(this,
+                 SLOT(PRINT_with_Progress_BAR_choisirEvolutionDuChiffreDaffaire()));
 
-    pushButton_chiffre_affaire_reinitialiser->enable(this,
-                                                     SLOT(reinitialiser_chiffre_affaire()));
+    pushButton_chiffre_affaire_reinitialiser
+        ->enable(this,
+                 SLOT(reinitialiser_chiffre_affaire()));
 
     /** Tab Two *************************************/
 
     pushButton_reinitialiser->enable(this, SLOT(reinitialiser()));
-    pushButton_generer->enable(this, SLOT(generer()));
+
+    pushButton_generer->enable(this, SLOT(PRINT_with_Progress_BAR_generer()));
 
     /** Tab Three *************************************/
 
-    pushButton_bilan_comptable_reinitialiser->enable(this,
-                                                     SLOT
-                                                     (reinitialiser_bilan_comptable
-                                                      ()));
-    pushButton_bilan_comptable_generer->enable(this, SLOT(bilanComptable()));
+    pushButton_bilan_comptable_reinitialiser
+        ->enable(this,
+            SLOT(reinitialiser_bilan_comptable()));
+
+    pushButton_bilan_comptable_generer
+        ->enable(this,
+                 SLOT(PRINT_with_Progress_BAR_bilanComptable()));
 }
 
 
@@ -1012,7 +1032,7 @@ void YerothTableauxDeBordWindow::definirGestionaireDesStocks()
     /** Tab Two *************************************/
 
     pushButton_reinitialiser->enable(this, SLOT(reinitialiser()));
-    pushButton_generer->enable(this, SLOT(generer()));
+    pushButton_generer->enable(this, SLOT(PRINT_with_Progress_BAR_generer()));
 
     /** Tab Three *************************************/
 
@@ -1132,22 +1152,31 @@ void YerothTableauxDeBordWindow::reinitialiser_bilan_comptable()
 }
 
 
-void YerothTableauxDeBordWindow::generer()
+void *YerothTableauxDeBordWindow::generer()
 {
     if (YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE == comboBox_qualite->currentText()  ||
         YerothTableauxDeBordWindow::QUALITE_MOINS_VENDU_PAR_QUANTITE == comboBox_qualite->currentText())
     {
+        emit SIGNAL_INCREMENT_PROGRESS_BAR(50);
+
         compterLesArticlesVendusParQuantite();
     }
     else if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES == comboBox_qualite->currentText() ||
              YerothTableauxDeBordWindow::QUALITE_BENEFICES_MOINS_ELEVES == comboBox_qualite->currentText())
     {
+
+        emit SIGNAL_INCREMENT_PROGRESS_BAR(50);
+
         compterLesArticlesVendusParBENEFICES();
     }
     else
     {
+        emit SIGNAL_INCREMENT_PROGRESS_BAR(50);
+
         rechercher();
     }
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(92);
 }
 
 
@@ -2449,7 +2478,7 @@ void YerothTableauxDeBordWindow::changeLineEditEvolutionObjetsTextSetup(const
 }
 
 
-void YerothTableauxDeBordWindow::bilanComptable()
+void *YerothTableauxDeBordWindow::bilanComptable()
 {
     _logger->log("bilanComptable");
 
@@ -2461,8 +2490,12 @@ void YerothTableauxDeBordWindow::bilanComptable()
                                    ("La date de 'début' doit être"
                                     " antérieure à la date de 'fin' !"));
 
-        return;
+        return 0;
     }
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(12);
+
 
     QSqlQuery query;
 
@@ -2556,6 +2589,10 @@ void YerothTableauxDeBordWindow::bilanComptable()
 
     //CALCUL TVA ENGRANGE POUR SERVICES NON STOCKES.
 
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(20);
+
+
     query.clear();
 
     QString strVentes__SERVICES_NON_STOCKES_charge_TVA__Query =
@@ -2597,6 +2634,8 @@ void YerothTableauxDeBordWindow::bilanComptable()
         montant_TOTAL_TVA_COLLECTE = montant_TOTAL_TVA_COLLECTE + montant_tva;
     }
 
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(40);
 
 
     //VENTES D'ARTICLES PHYSIQUES
@@ -2692,6 +2731,9 @@ void YerothTableauxDeBordWindow::bilanComptable()
     montant_TOTAL_TVA_COLLECTE = -1 * montant_TOTAL_TVA_COLLECTE;
 
 
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(60);
+
+
     //    qDebug() << QString("++ ventesQuerySize: %1, montant_total_vente: %2")
     //                                  .arg(QString::number(ventesQuerySize),
     //                                           QString::number(montant_total_vente, 'f', 2));
@@ -2764,6 +2806,10 @@ void YerothTableauxDeBordWindow::bilanComptable()
 //    qDebug() << QString("++ versementsQuerySize: %1, montant_total_versements: %2")
 //                              .arg(QString::number(versementsQuerySize),
 //                                       QString::number(montant_total_versements, 'f', 2));
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(72);
+
 
     query.clear();
 
@@ -2958,6 +3004,9 @@ void YerothTableauxDeBordWindow::bilanComptable()
     }
 
 
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(80);
+
+
     texDocument.replace("YEROTHBILANCOMPTABLEDEBUT", bilanComptableDateDebut);
 
     texDocument.replace("YEROTHBILANCOMPTABLEFIN", bilanComptableDateFin);
@@ -3054,6 +3103,10 @@ void YerothTableauxDeBordWindow::bilanComptable()
 
     //qDebug() << "++\n" << texDocument;
 
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(98);
+
+
     QFile tmpLatexFile(QString("%1tex").arg(yerothPrefixFileName));
 
     YerothUtils::writeStringToQFilewithUTF8Encoding(tmpLatexFile, texDocument);
@@ -3064,7 +3117,7 @@ void YerothTableauxDeBordWindow::bilanComptable()
 
     if (pdfCustomerDataFileName.isEmpty())
     {
-        return;
+        return 0;
     }
 
     YerothERPProcess::startPdfViewerProcess(pdfCustomerDataFileName);
@@ -3148,6 +3201,10 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
             pdfFileTitle.append("Les ");
         }
     }
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(60);
+
 
     if (YerothTableauxDeBordWindow::QUALITE_BENEFICES_PLUS_ELEVES == comboBox_qualite->currentText())
     {
@@ -3534,6 +3591,10 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
         }
     }
 
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
+
+
     if (_csvFileItemSize <= 0)
     {
         QString retMsg(QObject::tr
@@ -3619,6 +3680,9 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
                                                   tmpFilePrefix));
         }
     }
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(80);
 
 
     QString pdfFile(latexChartFileNamePrefix + ".pdf");
@@ -3713,6 +3777,9 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParBENEFICES()
     latexChartFile.close();
 
 
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(84);
+
+
     progArguments << "-interaction";
     progArguments << "nonstopmode";
     progArguments << latexChartFile.fileName();
@@ -3782,6 +3849,10 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
             pdfFileTitle.append("Les ");
         }
     }
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(60);
+
 
     if (YerothTableauxDeBordWindow::QUALITE_PLUS_VENDU_PAR_QUANTITE ==
             comboBox_qualite->currentText())
@@ -4204,6 +4275,10 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
         }
     }
 
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
+
+
     if (_csvFileItemSize <= 0)
     {
         QString retMsg(QObject::tr("Il n'y a pas de données correspondante à la requête !\n"
@@ -4290,6 +4365,9 @@ void YerothTableauxDeBordWindow::compterLesArticlesVendusParQuantite()
                                                  tmpFilePrefix));
         }
     }
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(84);
 
 
     QString pdfFile(latexChartFileNamePrefix + ".pdf");
@@ -5662,17 +5740,23 @@ void YerothTableauxDeBordWindow::calculer_chiffre_daffaire_mois()
 }
 
 
-void YerothTableauxDeBordWindow::choisirEvolutionDuChiffreDaffaire()
+void *YerothTableauxDeBordWindow::choisirEvolutionDuChiffreDaffaire()
 {
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(10);
+
     if (checkBox_analyse_comparee->isChecked())
     {
         if (radioButton_jour_semaine->isChecked())
         {
             analyse_comparee_jour_semaine();
+
+            emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
         }
         else if (radioButton_mensuel->isChecked())
         {
             analyse_comparee_mensuelle();
+
+            emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
         }
     }
     else
@@ -5680,12 +5764,18 @@ void YerothTableauxDeBordWindow::choisirEvolutionDuChiffreDaffaire()
         if (radioButton_jour_semaine->isChecked())
         {
             calculer_chiffre_daffaire_jour_semaine();
+
+            emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
         }
         else if (radioButton_mensuel->isChecked())
         {
             calculer_chiffre_daffaire_mois();
+
+            emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
         }
     }
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(90);
 }
 
 

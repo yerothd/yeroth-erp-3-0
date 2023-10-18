@@ -12,7 +12,6 @@
 
 #include "yeroth-erp-window-commons.hpp"
 
-
 #include "src/utils/yeroth-erp-database-table-column.hpp"
 
 
@@ -100,7 +99,13 @@ public slots:
         _curStocksVenduTableModel->yerothSetFilter_WITH_where_clause(_searchFilter);
     }
 
-    void generer();
+    virtual inline void PRINT_with_Progress_BAR_generer()
+    {
+        YerothProgressBar(this)(this,
+                                &YerothTableauxDeBordWindow::generer);
+    }
+
+    virtual void *generer();
 
     void quantite_max_benefices(QString fileName,
                                 QString fieldId,
@@ -559,7 +564,14 @@ public slots:
     void changeLineEditEvolutionObjetsTextSetup(const QString &
                                                 comboBoxEvolutionObjetsCurrentText);
 
-    void bilanComptable();
+
+    virtual inline void PRINT_with_Progress_BAR_bilanComptable()
+    {
+        YerothProgressBar(this)(this,
+                                &YerothTableauxDeBordWindow::bilanComptable);
+    }
+
+    virtual void *bilanComptable();
 
     void analyse_comparee_jour_semaine_VENTES_BENEFICES();
 
@@ -596,7 +608,14 @@ public slots:
 
     void calculer_chiffre_daffaire_mois();
 
-    void choisirEvolutionDuChiffreDaffaire();
+
+    virtual inline void PRINT_with_Progress_BAR_choisirEvolutionDuChiffreDaffaire()
+    {
+        YerothProgressBar(this)(this,
+                                &YerothTableauxDeBordWindow::choisirEvolutionDuChiffreDaffaire);
+    }
+
+    virtual void *choisirEvolutionDuChiffreDaffaire();
 
 
 protected:
