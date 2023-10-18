@@ -78,6 +78,10 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
     populateComboBoxes();
 
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, false);
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, false);
 
@@ -122,6 +126,11 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
     		SIGNAL(triggered()),
 			this,
 			SLOT(imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()));
+
+    connect(actionExporter_au_format_csv,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(export_csv_file()));
 
 
     connect(actionAdministration, SIGNAL(triggered()), this, SLOT(administration()));
@@ -169,6 +178,33 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
     comboBox_Groupes_Dun_Employe_recherche->setYerothEditable(true);
 
     comboBox_Groupes_Dun_Employe_recherche->setFocus();
+}
+
+
+bool YerothGROUPES_DUN_EMPLOYE_Window::export_csv_file()
+{
+    bool success = false;
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        success =
+            YerothUtils::SAVE_AS_csv_file(*this,
+                                          *tableWidget_Groupes_Dun_Employe,
+                                          QString("%1-listing-csv-format")
+                                          .arg(_output_print_pdf_latexFileNamePrefix),
+                                          "Employee group export listing");
+    }
+    else
+    {
+        success =
+            YerothUtils::SAVE_AS_csv_file(*this,
+                                          *tableWidget_Groupes_Dun_Employe,
+                                          QString("%1-listing-csv-format")
+                                          .arg(_output_print_pdf_latexFileNamePrefix),
+                                          "FICHE D'EXPORTATION DES groupes d'1 employé");
+    }
+
+    return success;
 }
 
 
@@ -548,7 +584,7 @@ void YerothGROUPES_DUN_EMPLOYE_Window::setupShortcuts()
     setupShortcutActionMessageDaide(*actionAppeler_aide);
     setupShortcutActionPARAMETRER_IMPRESSION_PDF(*action_parametrer_les_impressions);
     setupShortcutActionAfficherPDF(*actionAfficherPDF);
-    //setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
+    setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
     setupShortcutActionQuiSuisJe(*actionQui_suis_je);
 }
 
@@ -1250,6 +1286,8 @@ void YerothGROUPES_DUN_EMPLOYE_Window::enable_yeroth_widgets_ON_POSITIVE_QTABLE_
 
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, true);
 
+	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, true);
+
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, true);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, true);
@@ -1265,6 +1303,8 @@ void YerothGROUPES_DUN_EMPLOYE_Window::disable_yeroth_widgets()
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_parametrer_les_impressions, false);
 
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
+
+	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, false);
 

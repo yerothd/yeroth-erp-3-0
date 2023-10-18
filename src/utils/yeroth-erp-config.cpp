@@ -245,10 +245,7 @@ void YerothERPConfig::initYerothConfig(QString initCfg)
 
 void YerothERPConfig::saveYerothConfig()
 {
-    QFile
-    file
-    (YerothERPConfig::
-     FILE_ABSOLUTEPATH_YEROTH_ERP_3_0_SYSTEM_LOCAL_CONFIGURATION_PROPERTY_FILE);
+    QFile file(YerothERPConfig::FILE_ABSOLUTEPATH_YEROTH_ERP_3_0_SYSTEM_LOCAL_CONFIGURATION_PROPERTY_FILE);
 
     if (!file.open(QFile::WriteOnly))
     {

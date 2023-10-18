@@ -12,6 +12,8 @@
 
 #include "src/windows/yeroth-erp-window-commons.hpp"
 
+#include "src/widgets/widgets-table/yeroth-erp-table-widget.hpp"
+
 #include "src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp"
 
 #include "src/widgets/yeroth-erp-line-edit.hpp"
@@ -4567,9 +4569,139 @@ void YerothUtils::get_RECU_Small_TexDocumentString(QString &texDocumentString_in
 }
 
 
+bool YerothUtils::SAVE_AS_csv_file(YerothWindowsCommons    &aCallingWindow,
+                                   YerothTableWidget       &aTableView,
+                                   const QString           &csvFileName,
+                                   const QString           &strMessage,
+                                   int                     row_MAX_TO_GO_export /* = -1 */)
+{
+	QAbstractItemModel *tableModel = aTableView.model();
+
+	if (0 == tableModel)
+	{
+		return false;
+	}
+
+
+	int tableModelRowCount = tableModel->rowCount();
+
+	int tableModelColumnCount = tableModel->columnCount();
+
+
+	if (tableModelRowCount <= 0  ||
+	    tableModelColumnCount <= 0)
+	{
+        YerothQMessageBox::information(&aCallingWindow,
+                                       QObject::tr("No CSV data"),
+                                       QObject::tr("No CSV data to save out !"));
+		return false;
+	}
+
+
+	QString csvFileContent;
+
+	QHeaderView *a_calling_window_qheaderview = aTableView.horizontalHeader();
+
+	if (0 == a_calling_window_qheaderview)
+	{
+        YerothQMessageBox::information(&aCallingWindow,
+                                       QObject::tr("Bad deployment"),
+                                       QObject::tr("Table bad deployment !"));
+
+		return false;
+	}
+
+
+	QVariant anItem;
+
+	QString anItemText;
+
+	for (int k = 0; k < a_calling_window_qheaderview->count(); ++k)
+	{
+		anItem = tableModel->headerData(k, Qt::Horizontal);
+
+		if (anItem.isValid())
+		{
+			anItemText = anItem.toString();
+
+			csvFileContent.append(QString("\"%1\"%2 ")
+                                    .arg(anItemText,
+                                         YerothUtils::CSV_FILE_SEPARATION_SEMI_COLON_STRING_CHAR));
+		}
+	}
+
+
+	csvFileContent.remove(csvFileContent.size() - 2, 2).append("\n");
+
+
+
+	int MAX_TABLE_MODDEL_ROW_COUNT__to_export = tableModelRowCount;
+
+
+	if (row_MAX_TO_GO_export > -1)
+	{
+        MAX_TABLE_MODDEL_ROW_COUNT__to_export = row_MAX_TO_GO_export;
+	}
+
+
+	QMap<int, QVariant> item_data;
+
+	for (unsigned int j = 0; j < MAX_TABLE_MODDEL_ROW_COUNT__to_export; ++j)
+	{
+		for (unsigned int k = 0; k < tableModelColumnCount; ++k)
+		{
+			item_data = tableModel->itemData(tableModel->index(j, k));
+
+            anItemText = item_data.value(Qt::DisplayRole).toString();
+
+            csvFileContent
+                .append(QString("\"%1\"%2 ")
+                         .arg(anItemText,
+                              YerothUtils::CSV_FILE_SEPARATION_SEMI_COLON_STRING_CHAR));
+		}
+
+		csvFileContent.remove(csvFileContent.size() - 2, 2).append("\n");
+	}
+
+
+	QString yerothStocksListingCSVFileName
+				(QString("%1/%2")
+					.arg(YerothERPConfig::temporaryFilesDir,
+						 csvFileName));
+
+
+	yerothStocksListingCSVFileName =
+				FILE_NAME_USERID_CURRENT_TIME(yerothStocksListingCSVFileName);
+
+
+        yerothStocksListingCSVFileName
+            = QFileDialog::getSaveFileName(&aCallingWindow,
+                             	 	 	   "Type in a '.csv' file name ",
+										   yerothStocksListingCSVFileName,
+										   QString("%1 \"*.csv\" (*.csv)")
+                                             .arg(strMessage));
+
+
+    yerothStocksListingCSVFileName.append(".csv");
+
+    QFile tmpFile(yerothStocksListingCSVFileName);
+
+	if (tmpFile.open(QFile::WriteOnly))
+	{
+		tmpFile.write(csvFileContent.toUtf8());
+	}
+
+	tmpFile.close();
+
+	return true;
+}
+
+
 bool YerothUtils::export_csv_file(YerothWindowsCommons &aCallingWindow,
-		YerothTableView &aTableView, QList<int> databaseTableColumnsToIgnore,
-		const QString &csvFileName, const QString &strMessage)
+                                  YerothTableView &aTableView,
+                                  QList<int> databaseTableColumnsToIgnore,
+                                  const QString &csvFileName,
+                                  const QString &strMessage)
 {
 	YerothPOSQStandardItemModel *tableModel = aTableView.getStandardItemModel();
 	if (0 == tableModel)

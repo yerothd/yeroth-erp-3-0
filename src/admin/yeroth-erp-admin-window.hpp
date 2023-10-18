@@ -35,7 +35,9 @@ class YerothAdminWindow : public YerothPOSAdminWindowsCommons,
 
 public:
 
-    YEROTH_CLASS_OPERATORS enum YerothAdminWindowTabPositionsTypes
+    YEROTH_CLASS_OPERATORS
+
+    enum YerothAdminWindowTabPositionsTypes
     {
         CONNECTER_LOCALISATION = 0,
         DONNEES_ENTREPRISE = 1,

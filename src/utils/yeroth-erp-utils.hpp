@@ -53,6 +53,7 @@
 
 class YerothLogger;
 
+class YerothTableWidget;
 class YerothTableViewWITHpagination;
 class YerothDatabaseTableColumn;
 class YerothDatabase;
@@ -597,6 +598,14 @@ public:
     static void refreshSalesStrategy(YerothSqlTableModel &curStocksTableModel,
                                      YerothLineEdit 	 *lineEdit_recherche_article,
                                      YerothLineEdit 	 *lineEdit_recherche_article_codebar);
+
+
+    static bool SAVE_AS_csv_file(YerothWindowsCommons   &aCallingWindow,
+                                 YerothTableWidget      &aTableView,
+                                 const QString 	        &csvFileName,
+                                 const QString 	        &strMessage,
+                                 int                    row_MAX_TO_GO_export = -1);
+
 
     static bool export_csv_file(YerothWindowsCommons &aCallingWindow,
                                 YerothTableView 	 &aTableView,

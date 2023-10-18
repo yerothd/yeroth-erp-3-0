@@ -20,7 +20,9 @@ class YerothERPConfig
 {
 public:
 
-    YEROTH_CLASS_OPERATORS static QString _db_type;
+    YEROTH_CLASS_OPERATORS
+
+    static QString _db_type;
 
     static QString _db_name;
 

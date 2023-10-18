@@ -91,10 +91,10 @@ YerothERPGroupesDemployesHRWindow::YerothERPGroupesDemployesHRWindow()
 
 
     QMESSAGE_BOX_STYLE_SHEET =
-                    QString("QMessageBox {background-color: rgb(%1);}"
-                            "QMessageBox QLabel {color: rgb(%2);}").arg
-                    (COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
-                     COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+                    QString("QMessageBox {background-color: rgb(%1); color: white;}"
+                            "QMessageBox QLabel {color: rgb(%2);}")
+                        .arg(COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
+                             COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
 
     _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME
@@ -746,6 +746,18 @@ void YerothERPGroupesDemployesHRWindow::
     int rowCount = tableView_GROUPESDEMPLOYES->rowCount();
 
     lineEdit_nombre_de_groupes->setText(GET_NUM_STRING(rowCount));
+
+    if (rowCount > 0)
+    {
+        if (get_INT_last_selected_row_number() > -1)
+        {
+            tableView_GROUPESDEMPLOYES->selectRow(get_INT_last_selected_row_number());
+        }
+        else
+        {
+            tableView_GROUPESDEMPLOYES->selectRow(0);
+        }
+    }
 }
 
 

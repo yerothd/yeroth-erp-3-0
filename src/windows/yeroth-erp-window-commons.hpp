@@ -53,34 +53,34 @@ protected:
 public:
 
     YEROTH_CLASS_OPERATORS inline YerothWindowsCommons(const QString &anOutput_print_pdf_latexFileNamePrefix = "")
-    :_CURRENTLY_APPLYING_USER_FILE_SETTING_TABLE_COLUMN_ORDER(false),
-	 _CURRENT_TABLE_VIEW_font(0),
-        _WRITE_READ_YEROTH_SEMAPHORE_APPLY_USER_SETTING_FILE_PROPERTIES(0),
-        _selectExportDBQDialog(0),
-        _is_pdf_printing_initialized(false),
-        _yeroth_PRINT_UTILITIES_TEX_TABLE(0),
-        _output_print_pdf_latexFileNamePrefix(anOutput_print_pdf_latexFileNamePrefix),
-        _yeroth_QComboBox_SearchDBFieldColumnString(0),
-        _yeroth_QLineEdit_SearchDBFieldColumnString(0),
-		_curStocksTableModel(0),
-        _pagination_nombre_de_ligne_IntValidator(0),
-        _yerothTableView_FROM_WINDOWS_COMMONS(0),
-		_TABLE_FONT_SIZE(5),
-		_page_from(-1),
-		_page_to(-1),
-        _USERSQL_table_row_count(59),
-		_print_table_row_count(20),
-        _QLINEEDIT_nombre_de_lignes_par_page(0),
-		_table_COLUMN_ORDER(""),
-        _a4paper_printing_position(QString("a4paper,landscape")),
-        _first_time_imprimer_pdf_document_call(true),
-        QMESSAGE_BOX_STYLE_SHEET(QString("QMessageBox {background-color: rgb(%1);}")
-        							.arg(COLOUR_RGB_STRING_YEROTH_ORANGE_243_162_0)),
-		_windowName_WITH_NO_MAINTENANCE(YerothUtils::EMPTY_STRING),
-        _windowName(YerothUtils::EMPTY_STRING)
+        :_CURRENTLY_APPLYING_USER_FILE_SETTING_TABLE_COLUMN_ORDER(false),
+         _CURRENT_TABLE_VIEW_font(0),
+         _WRITE_READ_YEROTH_SEMAPHORE_APPLY_USER_SETTING_FILE_PROPERTIES(0),
+         _selectExportDBQDialog(0),
+         _is_pdf_printing_initialized(false),
+         _yeroth_PRINT_UTILITIES_TEX_TABLE(0),
+         _output_print_pdf_latexFileNamePrefix(anOutput_print_pdf_latexFileNamePrefix),
+         _yeroth_QComboBox_SearchDBFieldColumnString(0),
+         _yeroth_QLineEdit_SearchDBFieldColumnString(0),
+         _curStocksTableModel(0),
+         _pagination_nombre_de_ligne_IntValidator(0),
+         _yerothTableView_FROM_WINDOWS_COMMONS(0),
+         _TABLE_FONT_SIZE(5),
+         _page_from(-1),
+         _page_to(-1),
+         _USERSQL_table_row_count(59),
+         _print_table_row_count(20),
+         _QLINEEDIT_nombre_de_lignes_par_page(0),
+         _table_COLUMN_ORDER(""),
+         _a4paper_printing_position(QString("a4paper,landscape")),
+         _first_time_imprimer_pdf_document_call(true),
+         QMESSAGE_BOX_STYLE_SHEET(QString("QMessageBox {background-color: rgb(%1);}")
+                                  .arg(COLOUR_RGB_STRING_YEROTH_ORANGE_243_162_0)),
+         _windowName_WITH_NO_MAINTENANCE(YerothUtils::EMPTY_STRING),
+         _windowName(YerothUtils::EMPTY_STRING)
     {
         _WRITE_READ_YEROTH_SEMAPHORE_APPLY_USER_SETTING_FILE_PROPERTIES =
-                        new QSemaphore(1);
+        new QSemaphore(1);
     }
 
     virtual ~YerothWindowsCommons();

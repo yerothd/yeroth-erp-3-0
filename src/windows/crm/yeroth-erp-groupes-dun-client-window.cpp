@@ -63,6 +63,8 @@ YerothGroupesDunClientWindow::YerothGroupesDunClientWindow()
 
     populateComboBoxes();
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, false);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionInformationEntreprise, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionListerDesGroupesDeClients, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionClients, false);
@@ -99,6 +101,11 @@ YerothGroupesDunClientWindow::YerothGroupesDunClientWindow()
     		SIGNAL(triggered()),
 			this,
 			SLOT(imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()));
+
+    connect(actionExporter_au_format_csv,
+    		SIGNAL(triggered()),
+			this,
+			SLOT(export_csv_file()));
 
 
     connect(actionAdministration, SIGNAL(triggered()), this, SLOT(administration()));
@@ -152,7 +159,7 @@ void YerothGroupesDunClientWindow::setupShortcuts()
     setupShortcutActionMessageDaide(*actionAppeler_aide);
     setupShortcutActionPARAMETRER_IMPRESSION_PDF(*action_parametrer_les_impressions);
     setupShortcutActionAfficherPDF(*actionAfficherPDF);
-    //setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
+    setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
     setupShortcutActionQuiSuisJe(*actionQui_suis_je);
 }
 
@@ -654,6 +661,8 @@ void YerothGroupesDunClientWindow::enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDG
 
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, true);
 
+	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, true);
+
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, true);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, true);
@@ -669,6 +678,8 @@ void YerothGroupesDunClientWindow::disable_yeroth_widgets()
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_parametrer_les_impressions, false);
 
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
+
+	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, false);
 
@@ -812,6 +823,33 @@ void YerothGroupesDunClientWindow::rendreVisible(YerothSqlTableModel *clientTabl
 		->setText(GET_NUM_STRING(tableRowCount));
 
     tableWidget_groupes_dun_client->resizeColumnsToContents();
+}
+
+
+bool YerothGroupesDunClientWindow::export_csv_file()
+{
+    bool success = false;
+
+    if (YerothMainWindow::LANGUE_ANGLAISE)
+    {
+        success =
+            YerothUtils::SAVE_AS_csv_file(*this,
+                                          *tableWidget_groupes_dun_client,
+                                          QString("%1-listing-csv-format")
+                                          .arg(_output_print_pdf_latexFileNamePrefix),
+                                          "Client group export listing");
+    }
+    else
+    {
+        success =
+            YerothUtils::SAVE_AS_csv_file(*this,
+                                          *tableWidget_groupes_dun_client,
+                                          QString("%1-listing-csv-format")
+                                          .arg(_output_print_pdf_latexFileNamePrefix),
+                                          "FICHE D'EXPORTATION DES groupes de fidélité d'1 clients");
+    }
+
+    return success;
 }
 
 

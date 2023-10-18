@@ -76,8 +76,9 @@ public:
 
 public slots:
 
-	virtual bool imprimer_pdf_document();
+    virtual bool export_csv_file();
 
+	virtual bool imprimer_pdf_document();
 
 	virtual void incrementFontSize__OF_TABLE();
 
