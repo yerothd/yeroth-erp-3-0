@@ -2079,7 +2079,10 @@ void YerothAdminListerWindow::supprimer_categorie()
                                             (existing_stock_row_count)),
                                            QMessageBox::Ok);
 
+            //#define YEROTH_DEVEL_TARGET
+            #ifndef YEROTH_DEVEL_TARGET
             return;
+            #endif // YEROTH_DEVEL_TARGET
         }
 
     	/*
@@ -2111,7 +2114,10 @@ void YerothAdminListerWindow::supprimer_categorie()
                                             QString::number(existing_charges_financieres_row_count)),
                                             QMessageBox::Ok);
 
+            //#define YEROTH_DEVEL_TARGET
+            #ifndef YEROTH_DEVEL_TARGET
             return;
+            #endif // YEROTH_DEVEL_TARGET
         }
 
 
@@ -2123,6 +2129,20 @@ void YerothAdminListerWindow::supprimer_categorie()
 
         if (success)
         {
+#ifdef YEROTH_SERVER
+
+        YEROTH_RUNTIME_VERIFIER *dbusServer = _allWindows->dbusServer();
+        if (dbusServer)
+        {
+        	dbusServer->YR_slot_refresh_DELETE_DB_MYSQL__CALLED
+							(QString("%1.%2;%3;%4")
+								.arg(YerothDatabase::CATEGORIES,
+									 categorie,
+									 "src/admin/lister/yeroth-erp-admin-lister-window.cpp",
+									 QString::number(2124)));
+        }
+#endif //YEROTH_SERVER
+
             msg.append(QObject::tr
                        ("' a été supprimé de la base de données !"));
 
@@ -2378,13 +2398,13 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
                                         QMessageBox::Ok))
     {
 
-    	  //TESTING FOR TRIGGERING failure DELETE WITHOUT SELECT
-#ifdef TESTING_YR_DB_RUNTIME_VERIF_ICTSS_ONE
+//#define YEROTH_DEVEL_TARGET
+#ifndef YEROTH_DEVEL_TARGET //FOR SOFTWARE TESTING PURPOSES
     	QString
         SEARCH_IF_STOCK_UNDER_TO_REMOVE_DEPARTMENT_STILL_EXIST
 				(QString("select %1 from %2 where %3='%4'")
 					.arg(YerothDatabaseTableColumn::ID,
-						 YerothDatabase::STOCKS,
+                        YerothDatabase::STOCKS,
 						 YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
 						 nom_departement_produit));
 
@@ -2405,7 +2425,7 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
 								.arg(YerothDatabase::STOCKS,
 									 nom_departement_produit,
 									 "src/admin/lister/yeroth-erp-admin-lister-window.cpp",
-									 QString::number(1570)));
+									 QString::number(2406)));
         }
 #endif
             YerothQMessageBox::information(this,
@@ -2421,8 +2441,8 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
                                            QMessageBox::Ok);
 
             return;
-        }*/
-#endif //TESTING_YR_DB_RUNTIME_VERIF_ICTSS_ONE
+        }
+#endif //YEROTH_DEVEL_TARGET
 
         bool successRemoveDEPARTEMENT = departements_produits_TableModel
         									->removeRow(lastSelectedItemForModification());
@@ -2436,7 +2456,7 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
 								.arg(YerothDatabase::DEPARTEMENTS_PRODUITS,
 									 nom_departement_produit,
 									 "src/admin/lister/yeroth-erp-admin-lister-window.cpp",
-									 QString::number(1603)));
+									 QString::number(2441)));
         }
 #endif
 
@@ -2467,7 +2487,7 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
 								.arg(YerothDatabase::MARCHANDISES,
 									 nom_departement_produit,
 									 "src/admin/lister/yeroth-erp-admin-lister-window.cpp",
-									 QString::number(1659)));
+									 QString::number(2464)));
         }
 #endif
             msg.append(QObject::tr
