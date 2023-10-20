@@ -42,7 +42,7 @@ YEROTH_RUNTIME_VERIFIER::YEROTH_RUNTIME_VERIFIER()
 
 	com::yeroth::rd::IYRruntimeverification	*a_YR_DB_RUNTIME_VERIF_instance_2 =
 			new com::yeroth::rd::IYRruntimeverification(systemYerothService,
-														"/A_YR_runtime_monitor_SECOND",
+														"/YEROTH_QVGE_sample_SAFETY_PROPERY_one",
 														QDBusConnection::systemBus(),
 														this);
 
