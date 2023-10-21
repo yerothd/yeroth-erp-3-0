@@ -40,6 +40,15 @@ YEROTH_RUNTIME_VERIFIER::YEROTH_RUNTIME_VERIFIER()
     _YR_DB_RUNTIME_VERIF_instances.append(a_YR_DB_RUNTIME_VERIF_instance);
 
 
+	com::yeroth::rd::IYRruntimeverification	*a_YR_DB_RUNTIME_VERIF_instance_1 =
+			new com::yeroth::rd::IYRruntimeverification(systemYerothService,
+														"/YEROTH_QVGE_sample_SAFETY_PROPERY_one_Recovery_SAMPLE",
+														QDBusConnection::systemBus(),
+														this);
+
+    _YR_DB_RUNTIME_VERIF_instances.append(a_YR_DB_RUNTIME_VERIF_instance_1);
+
+
 	com::yeroth::rd::IYRruntimeverification	*a_YR_DB_RUNTIME_VERIF_instance_2 =
 			new com::yeroth::rd::IYRruntimeverification(systemYerothService,
 														"/YEROTH_QVGE_sample_SAFETY_PROPERY_one",
