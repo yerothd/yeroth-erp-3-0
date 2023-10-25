@@ -96,6 +96,8 @@ public:
 
 private slots:
 
+    virtual void ON_action_START_YR_QVGE_dynamic_analysis_tool();
+
 	void CHANGER_DE_LANGUE();
 
 

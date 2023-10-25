@@ -6297,6 +6297,7 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-images/yeroth-erp-3.0-export-csv-data-icon.png \
 		yeroth-erp-3-0-images/yeroth-erp-3.0-activate-barcode-reader-icon.png \
 		yeroth-erp-3-0-images/yeroth-erp-3-0-font_size_DOWN.png \
+		yeroth-erp-3-0-images/YR-DB-RUNTIME-VERIF-icon-logo.png \
 		yeroth-erp-3-0-images/yeroth-erp-3.0-alert-signaling.png \
 		yeroth-erp-3-0-images/yeroth-erp-3-0-pdf-print-icon.svg \
 		yeroth-erp-3-0-images/yeroth-erp-3.0-reset-database-table-column-selection-icon.png \

@@ -27,6 +27,30 @@ QProcess *YerothERPProcess::_yr_db_runtime_verif_PROCESS(new QProcess);
 QProcess *YerothERPProcess::_alertDeamonProcess(new QProcess);
 
 
+bool YerothERPProcess::START_yr_db_runtime_verif_GUI()
+{
+    bool GUI_STARTED = false;
+
+    QProcess *GUI_yr_db_runtime_verif_PROCESS = new QProcess;
+
+    if (0 != GUI_yr_db_runtime_verif_PROCESS)
+    {
+        GUI_yr_db_runtime_verif_PROCESS->setStandardErrorFile("/dev/null");
+
+        GUI_yr_db_runtime_verif_PROCESS->setStandardOutputFile("/dev/null");
+
+        QStringList progArguments;
+
+        GUI_STARTED =
+            YerothERPProcess::startDetached(*GUI_yr_db_runtime_verif_PROCESS,
+                                            YerothUtils::GET_YR_DB_RUNTIME_VERIF_EXECUTABLE_FULL_PATH(),
+                                            progArguments);
+    }
+
+    return GUI_STARTED;
+}
+
+
 bool YerothERPProcess::STOP_yr_db_runtime_verif()
 {
 	if (!_yeroth_YR_DB_RUNTIME_VERIF_ProcessFilesSet)
@@ -63,51 +87,56 @@ bool YerothERPProcess::STOP_yr_db_runtime_verif()
 
 bool YerothERPProcess::START_yr_db_runtime_verif()
 {
-	if (!_yeroth_YR_DB_RUNTIME_VERIF_ProcessFilesSet)
-	{
-		_yr_db_runtime_verif_PROCESS->setStandardErrorFile("/dev/null");
+    bool started = false;
 
-		_yr_db_runtime_verif_PROCESS->setStandardOutputFile("/dev/null");
+    if (!_yeroth_YR_DB_RUNTIME_VERIF_ProcessFilesSet)
+    {
+        _yr_db_runtime_verif_PROCESS->setStandardErrorFile("/dev/null");
 
-		_yeroth_YR_DB_RUNTIME_VERIF_ProcessFilesSet = true;
-	}
+        _yr_db_runtime_verif_PROCESS->setStandardOutputFile("/dev/null");
 
-	bool started = YerothProcessInfo::check_Yr_Db_Runtime_Verif_Daemon_Running();
+        _yeroth_YR_DB_RUNTIME_VERIF_ProcessFilesSet = true;
+    }
 
-	QString msg;
 
-	if (!started)
-	{
-		QStringList progArguments;
+    started = YerothProcessInfo::check_Yr_Db_Runtime_Verif_Daemon_Running();
 
-		progArguments << "/usr/bin/systemctl";
 
-		progArguments << "start";
+    QString msg;
 
-		progArguments << "yr-db-runtime-verif";
 
-		started =
-				YerothERPProcess::startDetached(*_yr_db_runtime_verif_PROCESS,
-												"lxqt-sudo",
-												progArguments);
-	}
-	else
-	{
-		msg.clear();
+    if (!started)
+    {
+        QStringList progArguments;
 
-		msg.append(QObject::tr
-							("Le système de vérification en temps "
-							 "d'exécution \"yr-db-runtime-verif\" est "
-							 "déjà en marche !"));
+        progArguments << "/usr/bin/systemctl";
 
-		YerothQMessageBox::information(
-				YerothUtils::getAllWindows()->_adminWindow,
-				QObject::tr("démarrage du système de vérification en temps "
-								"d'exécution - yr-db-runtime-verif"),
-								msg);
-	}
+        progArguments << "start";
 
-	return started;
+        progArguments << "yr-db-runtime-verif";
+
+        started =
+            YerothERPProcess::startDetached(*_yr_db_runtime_verif_PROCESS,
+                                            "lxqt-sudo",
+                                            progArguments);
+    }
+    else
+    {
+        msg.clear();
+
+        msg.append(QObject::tr
+                   ("Le système de vérification en temps "
+                    "d'exécution \"yr-db-runtime-verif\" est "
+                    "déjà en marche !"));
+
+        YerothQMessageBox::information(
+            YerothUtils::getAllWindows()->_adminWindow,
+            QObject::tr("démarrage du système de vérification en temps "
+                        "d'exécution - yr-db-runtime-verif"),
+            msg);
+    }
+
+    return started;
 }
 
 

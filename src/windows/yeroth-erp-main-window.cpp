@@ -69,6 +69,7 @@ _logger(new YerothLogger("YerothMainWindow"))
 
     mySetupUi(this);
 
+
     QMESSAGE_BOX_STYLE_SHEET =
                     QString
                     ("QMessageBox {messagebox-text-interaction-flags: 5; background-color: rgb(%1);}"
@@ -76,9 +77,14 @@ _logger(new YerothLogger("YerothMainWindow"))
                     (COLOUR_RGB_STRING_YEROTH_GREEN_2_160_70,
                      COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
+
     _curStocksTableModel = &_allWindows->getSqlTableModel_stocks();
 
+
     label_display_yeroth->setStyleSheet(YerothUtils::STRING_STYLESHEETS_YEROTH_ERP_3_0);
+
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, false);
 
@@ -149,10 +155,17 @@ _logger(new YerothLogger("YerothMainWindow"))
     _main_window_buttons.push_back(pushButton_vendre);
 
 
+    connect(action_START_YR_QVGE_dynamic_analysis_tool,
+            SIGNAL(triggered()),
+            this,
+            SLOT(ON_action_START_YR_QVGE_dynamic_analysis_tool()));
+
+
     connect(action_TRADUIRE_EN_ANGLAIS,
     		SIGNAL(triggered()),
 			this,
             SLOT(CHANGER_DE_LANGUE()));
+
 
     connect(actionChanger_utilisateur, SIGNAL(triggered()), this,
             SLOT(changer_utilisateur()));
@@ -282,6 +295,9 @@ void YerothMainWindow::definirCaissier()
 {
     _logger->log("definirCaissier");
 
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
@@ -327,6 +343,8 @@ void YerothMainWindow::definirCaissier()
 void YerothMainWindow::definirManager()
 {
     _logger->log("definirManager");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, true);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, true);
 
@@ -392,6 +410,8 @@ void YerothMainWindow::definirVendeur()
 {
     _logger->log("definirVendeur");
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, true);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionDeconnecter_utilisateur,
@@ -448,6 +468,8 @@ void YerothMainWindow::definirVendeur()
 void YerothMainWindow::definirGestionaireDesStocks()
 {
     _logger->log("definirGestionaireDesStocks");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, true);
 
@@ -510,6 +532,8 @@ void YerothMainWindow::definirAdministrateur()
 
     _logger->log("definirAdministrateur");
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, true);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionEntrer, false);
@@ -550,6 +574,8 @@ void YerothMainWindow::definirAdministrateur()
 void YerothMainWindow::definirMagasinier()
 {
     _logger->log("definirMagasinier");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, true);
 
@@ -597,6 +623,8 @@ void YerothMainWindow::definirMagasinier()
 void YerothMainWindow::definirPasDeRole()
 {
     _logger->log("definirPasDeRole");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_START_YR_QVGE_dynamic_analysis_tool, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_TRADUIRE_EN_ANGLAIS, false);
 
@@ -729,6 +757,12 @@ void YerothMainWindow::rendreVisibleLocalTOCLASS(bool isDatabaseOpened /* = fals
 	write_AFTER_SETUP_YEROTH_ERP_3_0_SERVER_PARAMETERS_DISPLAY();
 
     show();
+}
+
+
+void YerothMainWindow::ON_action_START_YR_QVGE_dynamic_analysis_tool()
+{
+    _allWindows->_adminWindow->START_YR_DB_RUNTIME_VERIF_GUI();
 }
 
 
