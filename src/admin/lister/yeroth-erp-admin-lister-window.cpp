@@ -2093,7 +2093,7 @@ void YerothAdminListerWindow::supprimer_categorie()
                                             (existing_stock_row_count)),
                                            QMessageBox::Ok);
 
-            #define YEROTH_DEVEL_TARGET
+            //#define YEROTH_DEVEL_TARGET
             #ifndef YEROTH_DEVEL_TARGET
             return;
             #endif // YEROTH_DEVEL_TARGET
@@ -2128,7 +2128,7 @@ void YerothAdminListerWindow::supprimer_categorie()
                                             QString::number(existing_charges_financieres_row_count)),
                                             QMessageBox::Ok);
 
-            #define YEROTH_DEVEL_TARGET
+            //#define YEROTH_DEVEL_TARGET
             #ifndef YEROTH_DEVEL_TARGET
             return;
             #endif // YEROTH_DEVEL_TARGET
@@ -2412,7 +2412,7 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
                                         QMessageBox::Ok))
     {
 
-#define YEROTH_DEVEL_TARGET
+//#define YEROTH_DEVEL_TARGET
 #ifndef YEROTH_DEVEL_TARGET //FOR SOFTWARE TESTING PURPOSES
     	QString
         SEARCH_IF_STOCK_UNDER_TO_REMOVE_DEPARTMENT_STILL_EXIST
