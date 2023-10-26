@@ -25,9 +25,11 @@ public:
 
     YEROTH_CLASS_OPERATORS
 
-	YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParentAdminWindow);
+	YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParentAdminWindow,
+                      QString PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec = "rgb(255, 255, 255)");
 
-    YerothProgressBar(YerothWindowsCommons *aYerothParentWindow);
+    YerothProgressBar(YerothWindowsCommons *aYerothParentWindow,
+                      QString PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec = "rgb(0, 0, 0)");
 
     inline virtual ~YerothProgressBar()
     {

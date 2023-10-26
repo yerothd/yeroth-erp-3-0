@@ -1064,9 +1064,9 @@
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
+          <red>0</red>
           <green>255</green>
-          <blue>255</blue>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -1210,9 +1210,9 @@
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
+          <red>0</red>
           <green>255</green>
-          <blue>255</blue>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -8100,6 +8100,8 @@ Clients</string>
     <addaction name="separator"/>
     <addaction name="action_START_YR_QVGE_dynamic_analysis_tool"/>
     <addaction name="separator"/>
+    <addaction name="actionFermeture"/>
+    <addaction name="separator"/>
     <addaction name="actionVendre"/>
     <addaction name="actionTableauxDeBords"/>
     <addaction name="actionEntrer"/>
@@ -8113,8 +8115,6 @@ Clients</string>
     <addaction name="actionStocks"/>
     <addaction name="actionVente"/>
     <addaction name="actionSortir"/>
-    <addaction name="separator"/>
-    <addaction name="actionFermeture"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuOutils">
@@ -9425,10 +9425,10 @@ Clients</string>
     </iconset>
    </property>
    <property name="text">
-    <string>START YR-DB-RUNTIME-VERIF </string>
+    <string>START YR-DB-RUNTIME-VERIF</string>
    </property>
    <property name="toolTip">
-    <string> START YR-DB-RUNTIME-VERIF </string>
+    <string> START YR-DB-RUNTIME-VERIF</string>
    </property>
    <property name="font">
     <font>

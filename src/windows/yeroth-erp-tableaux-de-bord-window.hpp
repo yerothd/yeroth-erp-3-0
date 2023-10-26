@@ -101,8 +101,8 @@ public slots:
 
     virtual inline void PRINT_with_Progress_BAR_generer()
     {
-        YerothProgressBar(this)(this,
-                                &YerothTableauxDeBordWindow::generer);
+        YerothProgressBar(this, "rgb(255, 255, 255)")
+                         (this, &YerothTableauxDeBordWindow::generer);
     }
 
     virtual void *generer();
@@ -567,8 +567,8 @@ public slots:
 
     virtual inline void PRINT_with_Progress_BAR_bilanComptable()
     {
-        YerothProgressBar(this)(this,
-                                &YerothTableauxDeBordWindow::bilanComptable);
+        YerothProgressBar(this, "rgb(255, 255, 255)")
+                         (this, &YerothTableauxDeBordWindow::bilanComptable);
     }
 
     virtual void *bilanComptable();
@@ -611,8 +611,8 @@ public slots:
 
     virtual inline void PRINT_with_Progress_BAR_choisirEvolutionDuChiffreDaffaire()
     {
-        YerothProgressBar(this)(this,
-                                &YerothTableauxDeBordWindow::choisirEvolutionDuChiffreDaffaire);
+        YerothProgressBar(this, "rgb(255, 255, 255)")
+                         (this, &YerothTableauxDeBordWindow::choisirEvolutionDuChiffreDaffaire);
     }
 
     virtual void *choisirEvolutionDuChiffreDaffaire();

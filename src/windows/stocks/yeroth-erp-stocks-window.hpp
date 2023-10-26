@@ -75,6 +75,18 @@ public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_stocks)
 
+    virtual void imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR();
+
+    virtual inline void imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR(int pageFROM,
+                                                                         int pageTO)
+    {
+        YerothProgressBar ((YerothWindowsCommons *) this, QString("rgb(%1)").arg(COLOUR_RGB_STRING_YEROTH_GREEN_0_255_0))
+                          ((YerothWindowsCommons *) this,
+                            &pageFROM,
+                            &pageTO,
+                            &YerothWindowsCommons::imprimer_pdf_document_WITH_PAGES_SPECIFICATION);
+    }
+
     void gererChoixStrategieGestionDesStocks();
 
     inline virtual void apropos()

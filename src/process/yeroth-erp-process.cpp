@@ -35,9 +35,9 @@ bool YerothERPProcess::START_yr_db_runtime_verif_GUI()
 
     if (0 != GUI_yr_db_runtime_verif_PROCESS)
     {
-        GUI_yr_db_runtime_verif_PROCESS->setStandardErrorFile("/dev/null");
+        GUI_yr_db_runtime_verif_PROCESS->setStandardErrorFile("/dev/null", QIODevice::Append);
 
-        GUI_yr_db_runtime_verif_PROCESS->setStandardOutputFile("/dev/null");
+        GUI_yr_db_runtime_verif_PROCESS->setStandardOutputFile("/dev/null", QIODevice::Append);
 
         QStringList progArguments;
 

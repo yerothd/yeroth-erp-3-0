@@ -119,7 +119,7 @@ YerothStocksWindow::YerothStocksWindow()
                     QString("QMessageBox {background-color: rgb(%1);}"
                             "QMessageBox QLabel {color: rgb(%2);}").arg
                     (COLOUR_RGB_STRING_YEROTH_ORANGE_243_162_0,
-                     COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
+                     COLOUR_RGB_STRING_YEROTH_GREEN_0_255_0);
 
     _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME
             << YerothDatabaseTableColumn::NOM_ENTREPRISE_CLIENT
@@ -1352,6 +1352,19 @@ void YerothStocksWindow::rendreVisible(YerothSqlTableModel *stocksTableModel,
     								 _curStocksTableModel);
 
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
+}
+
+
+void YerothStocksWindow::imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()
+{
+    if (0 != _yeroth_PRINT_UTILITIES_TEX_TABLE)
+    {
+        _yeroth_PRINT_UTILITIES_TEX_TABLE->RESET_NOMBRE_DE_LIGNES_TABLEAU_STANDARD();
+    }
+
+    YerothProgressBar((YerothWindowsCommons *) this, QString("rgb(%1)").arg(COLOUR_RGB_STRING_YEROTH_GREEN_0_255_0))
+                     ((YerothWindowsCommons *) this,
+                      &YerothWindowsCommons::imprimer_pdf_document);
 }
 
 

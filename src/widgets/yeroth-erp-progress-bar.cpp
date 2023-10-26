@@ -13,7 +13,8 @@
 #include "src/windows/yeroth-erp-window-commons.hpp"
 
 
-YerothProgressBar::YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParentAdminWindow)
+YerothProgressBar::YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParentAdminWindow,
+                                     QString PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec /* = "rgb(0, 255, 70)" */)
 :QProgressBar((QWidget *) aYerothParentAdminWindow),
  _setup(false)
 {
@@ -41,12 +42,13 @@ YerothProgressBar::YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParent
     setStyleSheet(QString("QProgressBar "
                           "{text-align: center; "
                           "border: 2px solid white; "
-                          "border-radius: 1px; color: rgb(2, 160, 70);}"
+                          "border-radius: 1px; color: %1;}"
                           "QProgressBar::chunk {"
-                          "background-color: rgb(%1); "
-                          "color: rgb(%2); "
+                          "background-color: rgb(%2); "
+                          "color: rgb(%3); "
                           "width: 3px;}")
-    				.arg(RGB_COLOR_TO_DISPLAY_AT_YEROTH_PROGRESS_BAR_BACKGROUND,
+    				.arg(PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec,
+                         RGB_COLOR_TO_DISPLAY_AT_YEROTH_PROGRESS_BAR_BACKGROUND,
     					 COLOUR_RGB_STRING_YEROTH_DARK_GREEN_47_67_67));
 
     int width = qCeil(((QMainWindow *) parent())->width() / 2.0);
@@ -61,7 +63,8 @@ YerothProgressBar::YerothProgressBar(YerothPOSAdminWindowsCommons *aYerothParent
 }
 
 
-YerothProgressBar::YerothProgressBar(YerothWindowsCommons *aYerothParentWindow)
+YerothProgressBar::YerothProgressBar(YerothWindowsCommons *aYerothParentWindow,
+                                     QString PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec /* '= "rgb(0, 0, 0)" */)
 :QProgressBar((QWidget *) aYerothParentWindow),
  _setup(false)
 {
@@ -90,12 +93,13 @@ YerothProgressBar::YerothProgressBar(YerothWindowsCommons *aYerothParentWindow)
     setStyleSheet(QString("QProgressBar "
                           "{text-align: center; "
                           "border: 2px solid white; "
-                          "border-radius: 1px;}"
+                          "border-radius: 1px; color: %1;}"
                           "QProgressBar::chunk {"
-                          "background-color: rgb(%1); "
-                          "color: rgb(%2); "
+                          "background-color: rgb(%2); "
+                          "color: rgb(%3); "
                           "width: 3px;}")
-    				.arg(RGB_COLOR_TO_DISPLAY_AT_YEROTH_PROGRESS_BAR_BACKGROUND,
+    				.arg(PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec,
+                         RGB_COLOR_TO_DISPLAY_AT_YEROTH_PROGRESS_BAR_BACKGROUND,
     					 COLOUR_RGB_STRING_YEROTH_DARK_GREEN_47_67_67));
 
     int width = qCeil(((QMainWindow *) parent())->width() / 2.0);

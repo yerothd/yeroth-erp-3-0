@@ -1423,6 +1423,20 @@ void YerothAdminListerWindow::lister_remise(YerothSqlTableModel *aSqlTableModel)
 }
 
 
+void YerothAdminListerWindow::imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()
+{
+    if (0 != _yeroth_PRINT_UTILITIES_TEX_TABLE)
+    {
+        _yeroth_PRINT_UTILITIES_TEX_TABLE->RESET_NOMBRE_DE_LIGNES_TABLEAU_STANDARD();
+    }
+
+    YerothProgressBar((YerothWindowsCommons *) this,
+                       QString("rgb(%1)").arg(COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255))
+                     ((YerothWindowsCommons *) this,
+                       &YerothWindowsCommons::imprimer_pdf_document);
+}
+
+
 void YerothAdminListerWindow::handleCurrentChanged(int index)
 {
 	_allWindows->_adminWindow->_curAdminSujetAction =
@@ -2079,7 +2093,7 @@ void YerothAdminListerWindow::supprimer_categorie()
                                             (existing_stock_row_count)),
                                            QMessageBox::Ok);
 
-            //#define YEROTH_DEVEL_TARGET
+            #define YEROTH_DEVEL_TARGET
             #ifndef YEROTH_DEVEL_TARGET
             return;
             #endif // YEROTH_DEVEL_TARGET
@@ -2114,7 +2128,7 @@ void YerothAdminListerWindow::supprimer_categorie()
                                             QString::number(existing_charges_financieres_row_count)),
                                             QMessageBox::Ok);
 
-            //#define YEROTH_DEVEL_TARGET
+            #define YEROTH_DEVEL_TARGET
             #ifndef YEROTH_DEVEL_TARGET
             return;
             #endif // YEROTH_DEVEL_TARGET
@@ -2398,7 +2412,7 @@ void YerothAdminListerWindow::supprimer_departement_de_produit()
                                         QMessageBox::Ok))
     {
 
-//#define YEROTH_DEVEL_TARGET
+#define YEROTH_DEVEL_TARGET
 #ifndef YEROTH_DEVEL_TARGET //FOR SOFTWARE TESTING PURPOSES
     	QString
         SEARCH_IF_STOCK_UNDER_TO_REMOVE_DEPARTMENT_STILL_EXIST
