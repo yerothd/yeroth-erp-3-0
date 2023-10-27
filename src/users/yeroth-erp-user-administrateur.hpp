@@ -20,7 +20,7 @@ Q_OBJECT public:
         _role = YerothUtils::ROLE_ADMINISTRATEUR;
     }
 
-    inline virtual ~YerothPOSUserAdministrateur()
+    virtual inline ~YerothPOSUserAdministrateur()
     {
     }
 };

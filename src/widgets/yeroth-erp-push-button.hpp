@@ -54,7 +54,7 @@ Q_OBJECT public:
 
     void setAuthorizedForCurrentUser(bool authorized);
 
-    inline virtual void setEnabled(bool enable)
+    virtual inline void setEnabled(bool enable)
     {
         setAuthorizedForCurrentUser(enable);
     }

@@ -41,12 +41,12 @@ public:
 
     virtual ~YerothStocksWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_stocksWindow;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
@@ -66,7 +66,7 @@ public:
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel, bool show_ASSET);
 
-    inline virtual void rendreVisible(YerothSqlTableModel *stocksTableModel)
+    virtual inline void rendreVisible(YerothSqlTableModel *stocksTableModel)
     {
         rendreVisible(stocksTableModel, _show_ASSET);
     }
@@ -89,12 +89,12 @@ public slots:
 
     void gererChoixStrategieGestionDesStocks();
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

@@ -36,7 +36,7 @@ public:
     {
     }
 
-    inline virtual ~YerothCreerUnGroupeDeClientsTableWidget()
+    virtual inline ~YerothCreerUnGroupeDeClientsTableWidget()
     {
     }
 

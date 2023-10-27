@@ -68,12 +68,12 @@ public slots:
 
     void supprimer_ce_stock();
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

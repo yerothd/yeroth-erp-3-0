@@ -62,12 +62,12 @@ public slots:
 
 	virtual void SWITCH_TO_EMPLOYE_fournisseur(const QString &EMPLOYE_ou_FOURNISSEUR = YerothUtils::EMPTY_STRING);
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

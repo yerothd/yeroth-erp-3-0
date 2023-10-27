@@ -72,7 +72,7 @@ public:
         _paiement_compteclient_AVANCE_DE_CASH = aValueCompteClient_AVANCE_DE_CASH;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_venteWindow;
     }
@@ -91,12 +91,12 @@ public:
 
     virtual void definirVendeur();
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -283,12 +283,12 @@ public slots:
         return _curClientName;
     }
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
@@ -325,12 +325,12 @@ private slots:
 
 protected slots:
 
-    inline virtual void disableImprimer()
+    virtual inline void disableImprimer()
     {
         actionAfficherPDF->setVisible(false);
     }
 
-    inline virtual void enableImprimer()
+    virtual inline void enableImprimer()
     {
         actionAfficherPDF->setVisible(true);
     }

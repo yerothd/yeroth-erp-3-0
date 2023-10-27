@@ -41,7 +41,7 @@ public:
 
     YerothTableView(QWidget *parent);
 
-    inline virtual ~YerothTableView()
+    virtual inline ~YerothTableView()
     {
         delete _stdItemModel;
     }
@@ -65,7 +65,7 @@ public:
     virtual void lister_les_elements_du_tableau(YerothSqlTableModel &
                                                 tableModel);
 
-    inline virtual void lister_les_elements_du_tableau(YerothSqlTableModel &
+    virtual inline void lister_les_elements_du_tableau(YerothSqlTableModel &
                                                        tableModel,
                                                        const QString &
                                                        aStockListingStrategy,

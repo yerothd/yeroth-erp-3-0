@@ -28,7 +28,7 @@ public:
 		setRowCount(12);
 	}
 
-	inline virtual ~YerothADMINVerifLoggingTableWidget()
+	virtual inline ~YerothADMINVerifLoggingTableWidget()
 	{
 	}
 

@@ -40,34 +40,34 @@ public:
 
     virtual ~YerothComptabiliteWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_comptabilite_Window;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
 
     virtual void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirAdministrateur()
+    virtual inline void definirAdministrateur()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -83,12 +83,12 @@ public slots:
 
     MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_comptes_doperations_comptables)
 
-	inline virtual void apropos()
+	virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

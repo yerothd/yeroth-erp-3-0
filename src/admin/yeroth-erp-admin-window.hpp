@@ -53,7 +53,7 @@ public:
 
     virtual ~YerothAdminWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_adminWindow;
     }

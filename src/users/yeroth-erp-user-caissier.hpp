@@ -20,7 +20,7 @@ Q_OBJECT public:
         _role = YerothUtils::ROLE_CAISSIER;
     }
 
-    inline virtual ~YerothPOSUserCaissier()
+    virtual inline ~YerothPOSUserCaissier()
     {
     }
 };

@@ -114,7 +114,7 @@ public:
         return _DBFieldNamesToPrintLeftAligned;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return 0;
     }
@@ -134,7 +134,7 @@ public:
         return _windowName;
     }
 
-    inline virtual QString qMessageBoxStyleSheet()
+    virtual inline QString qMessageBoxStyleSheet()
     {
         return QMESSAGE_BOX_STYLE_SHEET;
     }
@@ -159,23 +159,23 @@ public:
         return _curStocksTableModel;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
     }
 
-    inline virtual void definirManager()
+    virtual inline void definirManager()
     {
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
     }
 
-    inline virtual void definirPasDeRole()
+    virtual inline void definirPasDeRole()
     {
     }
 
@@ -334,7 +334,7 @@ public slots:
 	virtual void CLOSE_SELECT_EXPORT_DB_DIALOG(YerothSqlTableModel 			 *aSqlTableModel = 0,
 											   YerothTableViewWITHpagination *a_table_view_to_list_show = 0);
 
-	inline virtual void selectionner_champs_db_visibles_CHARGES_FINANCIERES()
+	virtual inline void selectionner_champs_db_visibles_CHARGES_FINANCIERES()
 	{
 		selectionner_champs_db_visibles(true, true);
 	}
@@ -356,7 +356,7 @@ public slots:
 
     virtual void afficherMarchandises();
 
-    inline virtual void modifier_les_articles()
+    virtual inline void modifier_les_articles()
     {
         stocks();
     }
@@ -385,7 +385,7 @@ public slots:
 
     virtual void clients();
 
-    inline virtual void courrier()
+    virtual inline void courrier()
     {
         alertes();
     }
@@ -435,7 +435,7 @@ public slots:
 
     virtual void deconnecter_utilisateur();
 
-    inline virtual void apropos(YerothWindowsCommons *aCallingWindow)
+    virtual inline void apropos(YerothWindowsCommons *aCallingWindow)
     {
         YerothQMessageBox::about(aCallingWindow,
                                  YerothUtils::APPLICATION_NAME,
@@ -447,7 +447,7 @@ public slots:
         close();
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
     }
 
@@ -461,17 +461,17 @@ public slots:
 //      //TODO: (ACHEVER L'ALGORITHME).
     }
 
-    inline virtual void setYerothTableViewLastPageNumberText(const QString &aLastPageNumberText)
+    virtual inline void setYerothTableViewLastPageNumberText(const QString &aLastPageNumberText)
     {
     }
 
-    inline virtual void setYerothTableViewCurrentPageNumberText(const QString &aNextPageNumberText)
+    virtual inline void setYerothTableViewCurrentPageNumberText(const QString &aNextPageNumberText)
     {
     }
 
     virtual void updateYerothLineEditQCompleter(const QString &currentDBColumnString);
 
-    inline virtual const QStringList &get_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME()
+    virtual inline const QStringList &get_NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME()
     {
         return _NOT_VISIBLE_FOR_USER_DB_TABLE_COLUMN_NAME;
     }
@@ -487,7 +487,7 @@ public slots:
 
     virtual void setLast_YEROTH_TABLE_VIEW_SelectedRow__db_ID(const QModelIndex &modelIndex);
 
-    inline virtual void imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR(int pageFROM,
+    virtual inline void imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR(int pageFROM,
                                                                          int pageTO)
     {
         YerothProgressBar(this)(this,
@@ -496,7 +496,7 @@ public slots:
                                 &YerothWindowsCommons::imprimer_pdf_document_WITH_PAGES_SPECIFICATION);
     }
 
-    inline virtual QString get_latex_template_print_pdf_content()
+    virtual inline QString get_latex_template_print_pdf_content()
     {
         return _latex_template_print_pdf_content;
     }
@@ -535,7 +535,7 @@ protected slots:
      * Exemple d'implementation standard dans la classe
      * 'YerothStocksWindow'.
      */
-    inline virtual void slot_reinitialiser_colones_db_visibles()
+    virtual inline void slot_reinitialiser_colones_db_visibles()
     {
         reinitialiser_colones_db_visibles();
     }
@@ -560,7 +560,7 @@ protected:
 
     void APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 
-    inline virtual void reinitialiser_colones_db_visibles()
+    virtual inline void reinitialiser_colones_db_visibles()
     {
     }
 
@@ -596,7 +596,7 @@ protected:
 
     void mySetupUi(QMainWindow *aWindow);
 
-    inline virtual void setupShortcuts()
+    virtual inline void setupShortcuts()
     {
     }
 
@@ -739,19 +739,19 @@ private:
 
 
 #define MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(X)	\
-		inline virtual void viewYerothTableViewFirstPage(YerothSqlTableModel &curYerothSqlTableModel_IN) \
+		virtual inline void viewYerothTableViewFirstPage(YerothSqlTableModel &curYerothSqlTableModel_IN) \
 		{																								 \
 			X->viewYerothTableViewFirstPage(curYerothSqlTableModel_IN);									 \
 		}																								 \
-		inline virtual void viewYerothTableViewLastPage(YerothSqlTableModel &curYerothSqlTableModel_IN)  \
+		virtual inline void viewYerothTableViewLastPage(YerothSqlTableModel &curYerothSqlTableModel_IN)  \
 		{																								 \
 			X->viewYerothTableViewLastPage(curYerothSqlTableModel_IN);									 \
 		}																								 \
-		inline virtual void viewYerothTableViewPreviousPage(YerothSqlTableModel &curYerothSqlTableModel_IN) \
+		virtual inline void viewYerothTableViewPreviousPage(YerothSqlTableModel &curYerothSqlTableModel_IN) \
 		{																								 \
 			X->viewYerothTableViewPreviousPage(curYerothSqlTableModel_IN);			 					 \
 		}																								 \
-		inline virtual void viewYerothTableViewNextPage(YerothSqlTableModel &curYerothSqlTableModel_IN)	 \
+		virtual inline void viewYerothTableViewNextPage(YerothSqlTableModel &curYerothSqlTableModel_IN)	 \
 		{																								 \
 			X->viewYerothTableViewNextPage(curYerothSqlTableModel_IN);									 \
 		}
@@ -765,12 +765,12 @@ private:
 
 
 #define MACRO_TO_DEFINE_VIEWING_PAGE_NUMBER_FOR_TABLEVIEW(X, Y) 				\
-	inline virtual void setYerothTableViewLastPageNumberText(const QString &aLastPageNumberText) \
+	virtual inline void setYerothTableViewLastPageNumberText(const QString &aLastPageNumberText) \
 	{																							 \
 		X->setText(aLastPageNumberText);						 								 \
 	}																							 \
 																								 \
-	inline virtual void setYerothTableViewCurrentPageNumberText(const QString &aNextPageNumberText) \
+	virtual inline void setYerothTableViewCurrentPageNumberText(const QString &aNextPageNumberText) \
 	{																								\
 		Y->setText(aNextPageNumberText);															\
 	}

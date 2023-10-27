@@ -33,7 +33,7 @@ public:
 
     void clear_current_client_financial_transactions();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_tableauDesTransactionDuClient;
     }

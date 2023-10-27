@@ -49,7 +49,7 @@ public:
     {
     }
 
-    inline virtual ~YerothTableViewWITHpagination()
+    virtual inline ~YerothTableViewWITHpagination()
     {
     }
 

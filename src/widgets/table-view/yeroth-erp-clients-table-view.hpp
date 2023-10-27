@@ -40,7 +40,7 @@ Q_OBJECT public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPClientsTableView()
+    virtual inline ~YerothERPClientsTableView()
     {
     }
 

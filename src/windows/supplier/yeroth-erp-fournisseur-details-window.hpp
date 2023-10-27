@@ -48,24 +48,24 @@ public:
         return toolBar_fournisseurDetailsWindow;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
 
     void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -84,12 +84,12 @@ public slots:
 
     virtual bool imprimer_pdf_document();
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

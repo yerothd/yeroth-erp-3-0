@@ -32,12 +32,12 @@ public:
 
     void showAsModalDialogWithParent(QWidget &parent);
 
-    inline virtual void show()
+    virtual inline void show()
     {
         QDialog::show();
     }
 
-    inline virtual void rendreInvisible()
+    virtual inline void rendreInvisible()
     {
         close();
     }

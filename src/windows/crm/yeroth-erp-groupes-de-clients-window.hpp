@@ -41,29 +41,29 @@ public:
 
     virtual ~YerothGroupesDeClientsWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_groupes_de_clientsWindow;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
 
     virtual void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -81,12 +81,12 @@ public slots:
 
     MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_groupes_de_clients)
 
-	inline virtual void apropos()
+	virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
@@ -107,7 +107,7 @@ public slots:
         afficher_au_detail();
     }
 
-    inline virtual void set_lineEdit_groupes_de_clients_compte_fidelite_clients(double a_view_string_double)
+    virtual inline void set_lineEdit_groupes_de_clients_compte_fidelite_clients(double a_view_string_double)
     {
         lineEdit_groupes_de_clients_compte_fidelite_clients
 			->setText(GET_CURRENCY_STRING_NUM(a_view_string_double));
@@ -152,7 +152,7 @@ protected:
 
     virtual void contextMenuEvent(QContextMenuEvent *event);
 
-    inline virtual void hideEvent(QHideEvent *hideEvent)
+    virtual inline void hideEvent(QHideEvent *hideEvent)
     {
         YerothWindowsCommons::CLOSE_WINDOW_COMMON_FOR_SEARCH_CONDITION_FILTERING_PURPOSE();
     }

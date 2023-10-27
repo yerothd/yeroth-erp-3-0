@@ -49,7 +49,7 @@ public:
 
     ~YerothVentesWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_caisseWindow;
     }
@@ -85,12 +85,12 @@ public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_ventes)
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
@@ -149,7 +149,7 @@ protected:
 
     virtual void contextMenuEvent(QContextMenuEvent *event);
 
-    inline virtual void hideEvent(QHideEvent *hideEvent)
+    virtual inline void hideEvent(QHideEvent *hideEvent)
     {
         YerothWindowsCommons::CLOSE_WINDOW_COMMON_FOR_SEARCH_CONDITION_FILTERING_PURPOSE();
     }

@@ -41,12 +41,12 @@ public:
 
     ~YerothAdminListerWindow();
 
-    inline virtual QTabWidget *get_tabwidget_lister()
+    virtual inline QTabWidget *get_tabwidget_lister()
     {
     	return tabWidget_lister;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_adminListerWindow;
     }

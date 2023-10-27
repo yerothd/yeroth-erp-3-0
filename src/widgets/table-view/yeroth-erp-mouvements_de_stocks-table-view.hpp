@@ -43,7 +43,7 @@ Q_OBJECT public:
     }
 
 
-    inline virtual ~YerothERPMouvementsDeStocksTableView()
+    virtual inline ~YerothERPMouvementsDeStocksTableView()
     {
     }
 

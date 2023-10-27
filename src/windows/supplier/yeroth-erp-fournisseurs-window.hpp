@@ -40,29 +40,29 @@ public:
 
     virtual ~YerothERPFournisseursWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_fournisseursWindow;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
 
     virtual void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -79,12 +79,12 @@ public slots:
 
 	MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_fournisseurs)
 
-	inline virtual void apropos()
+	virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
@@ -146,7 +146,7 @@ private slots:
 
     virtual void afficher_au_detail();
 
-    inline virtual void afficher_au_detail(const QModelIndex &modelIndex)
+    virtual inline void afficher_au_detail(const QModelIndex &modelIndex)
     {
         afficher_au_detail();
     }

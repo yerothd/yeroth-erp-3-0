@@ -43,7 +43,7 @@ public:
     }
 
 
-    inline virtual ~YerothERP_CHARGES_FINANCIERES_TableView()
+    virtual inline ~YerothERP_CHARGES_FINANCIERES_TableView()
     {
     }
 

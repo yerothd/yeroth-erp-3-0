@@ -39,7 +39,7 @@ public:
         return _database;
     }
 
-    inline virtual bool isOpen()
+    virtual inline bool isOpen()
     {
     	return _database.isOpen();
     }

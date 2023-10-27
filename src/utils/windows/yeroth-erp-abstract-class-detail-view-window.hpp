@@ -23,7 +23,7 @@ protected:
     {
     }
 
-    inline virtual ~YerothERPAbstractClassDetailViewFOR_WINDOW()
+    virtual inline ~YerothERPAbstractClassDetailViewFOR_WINDOW()
     {
         _previousBeforeTHISWINDOWEnteringFilter.clear();
     }

@@ -195,37 +195,37 @@ public:
         _titre = titre;
     }
 
-    inline virtual bool isPasDeRole()
+    virtual inline bool isPasDeRole()
     {
         return _role == YerothUtils::ROLE_INDEFINI;
     }
 
-    inline virtual bool isAdmin()
+    virtual inline bool isAdmin()
     {
         return _role == YerothUtils::ROLE_ADMINISTRATEUR;
     }
 
-    inline virtual bool isManager()
+    virtual inline bool isManager()
     {
         return _role == YerothUtils::ROLE_MANAGER;
     }
 
-    inline virtual bool isVendeur()
+    virtual inline bool isVendeur()
     {
         return _role == YerothUtils::ROLE_VENDEUR;
     }
 
-    inline virtual bool isMagasinier()
+    virtual inline bool isMagasinier()
     {
         return _role == YerothUtils::ROLE_MAGASINIER;
     }
 
-    inline virtual bool isGestionaireDesStocks()
+    virtual inline bool isGestionaireDesStocks()
     {
         return _role == YerothUtils::ROLE_GESTIONNAIREDESTOCK;
     }
 
-    inline virtual bool isCaissier()
+    virtual inline bool isCaissier()
     {
         return _role == YerothUtils::ROLE_CAISSIER;
     }

@@ -21,7 +21,7 @@ Q_OBJECT public:
         _role = YerothUtils::ROLE_GESTIONNAIREDESTOCK;
     }
 
-    inline virtual ~YerothPOSUserGestionaireDesStocks()
+    virtual inline ~YerothPOSUserGestionaireDesStocks()
     {
     }
 };

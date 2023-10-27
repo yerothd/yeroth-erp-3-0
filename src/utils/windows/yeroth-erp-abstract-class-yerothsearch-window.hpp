@@ -92,7 +92,7 @@ public slots:
 
 protected slots:
 
-	inline virtual void setupLineEditsQCompleters(QObject *aThis,
+	virtual inline void setupLineEditsQCompleters(QObject *aThis,
 												  bool A_CHARGE_FINANCIERE_window = false)
 	{
 		setupLineEditsQCompleters(aThis, YerothUtils::EMPTY_STRING, A_CHARGE_FINANCIERE_window);
@@ -106,18 +106,18 @@ protected slots:
 
 protected:
 
-    inline virtual void setYerothSqlTableModel(YerothSqlTableModel *
+    virtual inline void setYerothSqlTableModel(YerothSqlTableModel *
                                                aYerothSqlTableModel)
     {
         _yerothSqlTableModel = aYerothSqlTableModel;
     }
 
-    inline virtual void clearSearchFilter()
+    virtual inline void clearSearchFilter()
     {
         _searchFilter.clear();
     }
 
-    inline virtual bool isCurrentlyFiltered()
+    virtual inline bool isCurrentlyFiltered()
     {
         return _currentlyFiltered;
     }
@@ -128,7 +128,7 @@ protected:
 
     virtual void resetLineEditsQCompleters(QObject *aThis);
 
-    inline virtual void set_filtrer_font()
+    virtual inline void set_filtrer_font()
     {
     }
 

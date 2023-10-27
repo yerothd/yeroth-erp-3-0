@@ -31,7 +31,7 @@ public:
     YerothProgressBar(YerothWindowsCommons *aYerothParentWindow,
                       QString PROGRESS_BAR_TEXT_COLOR_RGB_simple_spec = "rgb(0, 0, 0)");
 
-    inline virtual ~YerothProgressBar()
+    virtual inline ~YerothProgressBar()
     {
     }
 

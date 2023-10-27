@@ -35,7 +35,7 @@ public:
     {
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_adminCreateWindow;
     }
@@ -103,7 +103,7 @@ public slots:
     void radioButtons_periode_temps();
 
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr

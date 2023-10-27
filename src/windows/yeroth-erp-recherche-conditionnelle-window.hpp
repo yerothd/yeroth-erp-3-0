@@ -31,7 +31,7 @@ public:
         delete _logger;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_recherche_conditionnelle;
     }

@@ -50,7 +50,7 @@ public:
 
     virtual int yeroth_specify_filter_FROM_SELECT_STATEMENT(const QString &filter);
 
-    inline virtual void yerothSetFilter_WITH_where_clause(const QString &filter)
+    virtual inline void yerothSetFilter_WITH_where_clause(const QString &filter)
     {
         QSqlTableModel::setFilter(filter.trimmed());
     }

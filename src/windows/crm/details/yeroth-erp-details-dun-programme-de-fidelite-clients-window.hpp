@@ -43,24 +43,24 @@ public:
         return toolBar_YerothDetailsDunProgrammeDeFideliteClientsWindow;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
 
     virtual void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
         definirManager();
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -74,12 +74,12 @@ public:
 
 public slots:
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

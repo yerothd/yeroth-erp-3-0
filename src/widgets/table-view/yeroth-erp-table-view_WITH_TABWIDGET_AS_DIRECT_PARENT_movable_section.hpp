@@ -29,7 +29,7 @@ public:
     {
     }
 
-    inline virtual ~YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION()
+    virtual inline ~YerothERP_TABLE_VIEW_WITH_TABWIDGET_AS_DIRECT_PARENT_MOVABLE_SECTION()
     {
     }
 

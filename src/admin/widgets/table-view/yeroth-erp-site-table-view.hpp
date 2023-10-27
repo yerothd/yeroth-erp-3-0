@@ -42,7 +42,7 @@ public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPSiteTableView()
+    virtual inline ~YerothERPSiteTableView()
     {
     }
 };

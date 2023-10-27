@@ -20,7 +20,7 @@ Q_OBJECT public:
         _role = YerothUtils::ROLE_VENDEUR;
     }
 
-    inline virtual ~YerothERPUserVendeur()
+    virtual inline ~YerothERPUserVendeur()
     {
     }
 };

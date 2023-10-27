@@ -43,7 +43,7 @@ public:
 
     ~YerothPOSAdminWindowsCommons();
 
-    inline virtual QString qMessageBoxStyleSheet()
+    virtual inline QString qMessageBoxStyleSheet()
     {
         return QMESSAGE_BOX_STYLE_SHEET;
     }
@@ -55,7 +55,7 @@ public:
 
     virtual QToolBar *getQMainWindowToolBar() = 0;
 
-    inline virtual void YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(QAction 	*anAction,
+    virtual inline void YEROTH_ERP_ADMIN_WRAPPER_QACTION_SET_ENABLED(QAction 	*anAction,
                                                                      bool		aBooleanValue)
     {
         anAction->setVisible(aBooleanValue);
@@ -71,33 +71,33 @@ public:
         _allWindows = allWindows;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
     }
 
-    inline virtual void definirManager()
+    virtual inline void definirManager()
     {
     }
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
     }
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
     }
 
-    inline virtual void definirPasDeRole()
+    virtual inline void definirPasDeRole()
     {
     }
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
-    inline virtual void rendreInvisible()
+    virtual inline void rendreInvisible()
     {
         setVisible(false);
     }
@@ -117,17 +117,17 @@ public slots:
 
     virtual void deconnecter_utilisateur();
 
-    inline virtual YerothSqlTableModel *getStocksTableModel()
+    virtual inline YerothSqlTableModel *getStocksTableModel()
     {
         return _curStocksTableModel;
     }
 
-    inline virtual void fermeture()
+    virtual inline void fermeture()
     {
         close();
     }
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothQMessageBox::about(this,
         						 YerothUtils::APPLICATION_NAME,
@@ -148,7 +148,7 @@ public slots:
 
     virtual void qui_suis_je();
 
-    inline virtual void help()
+    virtual inline void help()
     {
     }
 

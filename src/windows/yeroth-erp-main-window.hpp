@@ -44,7 +44,7 @@ public:
         delete _logger;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_mainWindow;
     }
@@ -103,7 +103,7 @@ private slots:
 
 public slots:
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }

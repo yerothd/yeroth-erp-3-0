@@ -38,7 +38,7 @@ Q_OBJECT public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPStocksTableView()
+    virtual inline ~YerothERPStocksTableView()
     {
     }
 
@@ -47,7 +47,7 @@ Q_OBJECT public:
     													   const QString &aCurYerothTableViewPageFilter = "",
     													   bool DEPRECATED_stocks_lister_view = false);
 
-    inline virtual void lister_les_elements_du_tableau(YerothSqlTableModel &tableModel,
+    virtual inline void lister_les_elements_du_tableau(YerothSqlTableModel &tableModel,
                                                 	   const QString &aStockListingStrategy,
 													   const QString &aCurYerothTableViewPageFilter = "")
     {

@@ -18,7 +18,7 @@ public:
     {
     }
 
-    inline virtual ~YerothUiLoader()
+    virtual inline ~YerothUiLoader()
     {
     }
 

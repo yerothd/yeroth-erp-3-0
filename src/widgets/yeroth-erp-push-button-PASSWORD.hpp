@@ -20,7 +20,7 @@ Q_OBJECT public:
                                                     YerothPushButton *cacher_mot_de_passe = 0,
                                                     YerothPushButton *voir_mot_de_passe = 0);
 
-    inline virtual ~YerothPushButtonPASSWORD()
+    virtual inline ~YerothPushButtonPASSWORD()
     {
     }
 

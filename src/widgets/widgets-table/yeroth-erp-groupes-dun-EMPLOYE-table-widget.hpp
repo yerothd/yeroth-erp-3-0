@@ -31,7 +31,7 @@ public:
         setSelectionMode(QAbstractItemView::ExtendedSelection);
     }
 
-    inline virtual ~YerothGroupesDunEmployeTableWidget()
+    virtual inline ~YerothGroupesDunEmployeTableWidget()
     {
     }
 

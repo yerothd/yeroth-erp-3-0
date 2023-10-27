@@ -28,7 +28,7 @@ public:
     {
     }
 
-    inline virtual ~Yeroth_LIST_map_COMPLEX_ITEM()
+    virtual inline ~Yeroth_LIST_map_COMPLEX_ITEM()
     {
         clear();
     }
@@ -41,23 +41,23 @@ public:
     virtual void insert_item(const QString &an_item_name,
                              double aDOUBLE_value);
 
-    inline virtual void q_sort()
+    virtual inline void q_sort()
     {
         qSort(_my_list_complex_items.begin(),
               _my_list_complex_items.end(), Yeroth_MAP_COMPLEX_Item::lessThan);
     }
 
-    inline virtual int isEmpty()
+    virtual inline int isEmpty()
     {
         return (_my_list_complex_items.size() <= 0);
     }
 
-    inline virtual int size()
+    virtual inline int size()
     {
         return _my_list_complex_items.size();
     }
 
-    inline virtual const QList < Yeroth_MAP_COMPLEX_Item * > &q_list()
+    virtual inline const QList < Yeroth_MAP_COMPLEX_Item * > &q_list()
     {
         return _my_list_complex_items;
     }

@@ -27,7 +27,7 @@ public:
 	{
 	}
 
-    inline virtual ~YerothERPQCheckBox()
+    virtual inline ~YerothERPQCheckBox()
     {
     }
 

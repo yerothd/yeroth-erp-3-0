@@ -37,17 +37,17 @@ public:
 
 	YerothGROUPES_DUN_EMPLOYE_Window();
 
-    inline virtual ~YerothGROUPES_DUN_EMPLOYE_Window()
+    virtual inline ~YerothGROUPES_DUN_EMPLOYE_Window()
     {
         delete _logger;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_menuGROUPES_DE_PAIE_DUN_EMPLOYE_Window;
     }
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
@@ -56,12 +56,12 @@ public:
 
     virtual void definirVendeur();
 
-    inline virtual void definirGestionaireDesStocks()
+    virtual inline void definirGestionaireDesStocks()
     {
         definirPasDeRole();
     }
 
-    inline virtual void definirMagasinier()
+    virtual inline void definirMagasinier()
     {
         definirPasDeRole();
     }
@@ -85,12 +85,12 @@ public slots:
 	virtual void decrementFontSize__OF_TABLE();
 
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

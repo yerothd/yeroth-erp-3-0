@@ -40,21 +40,21 @@ public:
 
     virtual ~YerothSortirWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_sortirWindow;
     }
 
     void deleteArticleVenteInfos();
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
     	definirPasDeRole();
     }
 
     virtual void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
     	definirPasDeRole();
     }
@@ -203,12 +203,12 @@ public slots:
         return _curClientName;
     }
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
@@ -219,12 +219,12 @@ public slots:
     }
 
 protected slots:
-    inline virtual void disableImprimer()
+    virtual inline void disableImprimer()
     {
         actionAfficherPDF->setVisible(false);
     }
 
-    inline virtual void enableImprimer()
+    virtual inline void enableImprimer()
     {
         actionAfficherPDF->setVisible(true);
     }

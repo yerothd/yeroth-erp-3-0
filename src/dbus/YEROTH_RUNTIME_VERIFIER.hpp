@@ -25,7 +25,7 @@ public:
 
 	YEROTH_RUNTIME_VERIFIER();
 
-	inline virtual ~YEROTH_RUNTIME_VERIFIER()
+	virtual inline ~YEROTH_RUNTIME_VERIFIER()
 	{
 	}
 

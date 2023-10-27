@@ -35,12 +35,12 @@ public:
 
 	YerothTableauxDeBordWindow();
 
-    inline virtual ~YerothTableauxDeBordWindow()
+    virtual inline ~YerothTableauxDeBordWindow()
     {
         delete _logger;
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_rapportsWindow;
     }
@@ -73,12 +73,12 @@ public:
 
 public slots:
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

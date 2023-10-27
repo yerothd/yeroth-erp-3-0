@@ -40,11 +40,11 @@ public:
 
 	YerothPayerCompteClientWindow();
 
-    inline virtual ~YerothPayerCompteClientWindow()
+    virtual inline ~YerothPayerCompteClientWindow()
     {
     }
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_payer_compte_clientWindow;
     }
@@ -80,7 +80,7 @@ public:
 
 public slots:
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }

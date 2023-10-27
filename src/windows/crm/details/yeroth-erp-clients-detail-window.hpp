@@ -64,12 +64,12 @@ public slots:
 
     virtual bool imprimer_pdf_document();
 
-    inline virtual void apropos()
+    virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),
@@ -83,7 +83,7 @@ protected:
 
 private slots:
 
-    inline virtual void imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()
+    virtual inline void imprimer_pdf_document_WITH_A_YEROTH_PROGRESS_BAR()
     {
         YerothProgressBar(this)(this,
         						&YerothClientsDetailWindow::imprimer_pdf_document);

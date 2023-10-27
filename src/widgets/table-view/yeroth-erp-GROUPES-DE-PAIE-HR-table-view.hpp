@@ -43,7 +43,7 @@ public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPGroupesDePaieHRTableView()
+    virtual inline ~YerothERPGroupesDePaieHRTableView()
     {
     }
 

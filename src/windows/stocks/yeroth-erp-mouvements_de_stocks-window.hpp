@@ -35,7 +35,7 @@ public:
 
     ~YerothMouvementsDeStocksWindow();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_mouvementsDeStocksWindow;
     }
@@ -47,14 +47,14 @@ public:
 
     void lister_les_elements_du_tableau();
 
-    inline virtual void definirCaissier()
+    virtual inline void definirCaissier()
     {
         definirPasDeRole();
     }
 
     virtual void definirManager();
 
-    inline virtual void definirVendeur()
+    virtual inline void definirVendeur()
     {
         definirPasDeRole();
     }
@@ -69,12 +69,12 @@ public slots:
 
     MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_mouvements_de_stocks)
 
-	inline virtual void apropos()
+	virtual inline void apropos()
     {
         YerothWindowsCommons::apropos(this);
     }
 
-    inline virtual void help()
+    virtual inline void help()
     {
         YerothQMessageBox::information(this,
                                        QObject::tr("aide"),

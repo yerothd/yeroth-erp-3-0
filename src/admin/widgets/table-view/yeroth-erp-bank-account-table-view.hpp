@@ -42,7 +42,7 @@ public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPBankAccountTableView()
+    virtual inline ~YerothERPBankAccountTableView()
     {
     }
 };

@@ -23,11 +23,11 @@ public:
 							QStringList *visibleDBFieldColumnStrList);
 
 
-    inline virtual ~YerothSelectDBQCheckBox()
+    virtual inline ~YerothSelectDBQCheckBox()
     {
     }
 
-    inline virtual void set_visibleDBFieldColumnStrList(QStringList *A_visibleDBFieldColumnStrList)
+    virtual inline void set_visibleDBFieldColumnStrList(QStringList *A_visibleDBFieldColumnStrList)
     {
     	_visibleDBFieldColumnStrList = A_visibleDBFieldColumnStrList;
     }

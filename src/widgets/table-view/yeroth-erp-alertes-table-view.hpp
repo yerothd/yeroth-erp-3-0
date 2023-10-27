@@ -40,7 +40,7 @@ public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPAlertesTableView()
+    virtual inline ~YerothERPAlertesTableView()
     {
     }
 

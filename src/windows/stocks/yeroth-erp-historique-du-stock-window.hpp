@@ -31,7 +31,7 @@ public:
 
     void clear_CURRENT_STOCK_HISTORY();
 
-    inline virtual QToolBar *getQMainWindowToolBar()
+    virtual inline QToolBar *getQMainWindowToolBar()
     {
         return toolBar_historiqueDunStock;
     }

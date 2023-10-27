@@ -26,11 +26,11 @@ Q_OBJECT public:
 
     YEROTH_CLASS_OPERATORS YerothTableWidget(QWidget *parent = 0);
 
-    inline virtual ~YerothTableWidget()
+    virtual inline ~YerothTableWidget()
     {
     }
 
-    inline virtual QString get_DB_ELEMENT_db_ID(int aRow)
+    virtual inline QString get_DB_ELEMENT_db_ID(int aRow)
     {
         return _mapListIdxToElement_db_ID.value(aRow);
     }
@@ -40,7 +40,7 @@ Q_OBJECT public:
         return _mapListIdxToElement_db_ID;
     }
 
-    inline virtual int itemCount()
+    virtual inline int itemCount()
     {
         return _mapListIdxToElement_db_ID.size();
     }
@@ -56,7 +56,7 @@ public slots:
 
 protected:
 
-    inline virtual void set_MY_QStandardItemFlags()
+    virtual inline void set_MY_QStandardItemFlags()
     {
         setQStandardItemFlags(_myQStandardItemFlags);
     }

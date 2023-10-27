@@ -25,7 +25,7 @@ public:
 	YerothERPGenericSelectDBFieldDialog(YerothERPWindows 		*allWindows,
                                         YerothWindowsCommons 	*associatedWindow);
 
-    inline virtual ~YerothERPGenericSelectDBFieldDialog()
+    virtual inline ~YerothERPGenericSelectDBFieldDialog()
     {
         delete _currentPosition;
     }

@@ -29,7 +29,7 @@ public:
 	{
 	}
 
-	inline virtual ~YerothPointDeVenteTableWidget()
+	virtual inline ~YerothPointDeVenteTableWidget()
 	{
 	}
 

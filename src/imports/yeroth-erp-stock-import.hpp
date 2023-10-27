@@ -38,11 +38,11 @@ Q_OBJECT public:
                          YerothERPDatabaseTableColumnInfo *
                          > &anIndexToDatabaseTableColumnInfo);
 
-    inline virtual ~YerothERPStockImport()
+    virtual inline ~YerothERPStockImport()
     {
     }
 
-    inline virtual int import_csv_file()
+    virtual inline int import_csv_file()
     {
         return import();
     }

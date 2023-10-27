@@ -68,7 +68,7 @@ public:
         setCurrentIndex(0);
     }
 
-    inline virtual bool contains(const QString &a_text)
+    virtual inline bool contains(const QString &a_text)
     {
         return (-1 != findText(a_text));
     }
@@ -78,7 +78,7 @@ public:
         return QComboBox::currentText().trimmed();
     }
 
-    inline virtual bool isReadOnly()
+    virtual inline bool isReadOnly()
     {
         return lineEdit()->isReadOnly();
     }

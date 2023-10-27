@@ -40,7 +40,7 @@ Q_OBJECT public:
         _stdItemModel->_curTableView = this;
     }
 
-    inline virtual ~YerothERPComptes_doperations_comptabilite_TableView()
+    virtual inline ~YerothERPComptes_doperations_comptabilite_TableView()
     {
     }
 

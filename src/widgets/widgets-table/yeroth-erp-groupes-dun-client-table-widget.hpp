@@ -27,7 +27,7 @@ public:
     {
     }
 
-    inline virtual ~YerothGroupesDunClientTableWidget()
+    virtual inline ~YerothGroupesDunClientTableWidget()
     {
     }
 
