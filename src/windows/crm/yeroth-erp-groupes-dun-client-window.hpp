@@ -77,6 +77,10 @@ public slots:
 
     virtual bool export_csv_file();
 
+    virtual bool imprimer_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne_WITH_A_YEROTH_PROGRESS_BAR()
+    {
+    }
+
 	virtual bool imprimer_pdf_document();
 
 	virtual void incrementFontSize__OF_TABLE();

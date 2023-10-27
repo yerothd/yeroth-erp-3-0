@@ -97,6 +97,11 @@ YerothGroupesDunClientWindow::YerothGroupesDunClientWindow()
     		this,
             SLOT(decrementFontSize__OF_TABLE()));
 
+    connect(action_IMPRIMER_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne,
+            SIGNAL(triggered()),
+            this,
+            SLOT(imprimer_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne_WITH_A_YEROTH_PROGRESS_BAR()));
+
     connect(actionAfficherPDF,
     		SIGNAL(triggered()),
 			this,
@@ -149,6 +154,7 @@ void YerothGroupesDunClientWindow::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
     menu.setPalette(toolBar_menuGroupesDunClientWindow->palette());
+    menu.addAction(action_IMPRIMER_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne);
     menu.addAction(actionAfficher_ce_groupe_au_detail);
     menu.exec(event->globalPos());
 }
@@ -659,6 +665,9 @@ void YerothGroupesDunClientWindow::enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDG
 {
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_parametrer_les_impressions, true);
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED
+        (action_IMPRIMER_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne, true);
+
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, true);
 
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionExporter_au_format_csv, true);
@@ -676,6 +685,9 @@ void YerothGroupesDunClientWindow::enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDG
 void YerothGroupesDunClientWindow::disable_yeroth_widgets()
 {
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_parametrer_les_impressions, false);
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED
+        (action_IMPRIMER_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne, false);
 
 	YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
 
