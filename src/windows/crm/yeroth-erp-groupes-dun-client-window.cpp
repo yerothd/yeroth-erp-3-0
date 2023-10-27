@@ -691,29 +691,32 @@ void YerothGroupesDunClientWindow::disable_yeroth_widgets()
 }
 
 
-void YerothGroupesDunClientWindow::get_PRINT_OUT_TexTableString(QString &texTable_IN_OUT)
+void YerothGroupesDunClientWindow::get_PRINT_OUT_TexTableString(QString       &texTable_IN_OUT,
+                                                                int           row_MAX_TO_GO_export /* = -1 */)
 {
 	texTable_IN_OUT.append("\\begin{table*}[!htbp]\n"
-						   //"\\resizebox{\\textwidth}{!}{\n"
-						   "\\centering\n"
+                           "\\centering\n"
+						   "\\resizebox{\\textwidth}{!}{\n"
 						   "\\begin{tabular}"
-						   "{|l|l|r|} \\hline");
+						   "{|c|l|l|r|} \\hline");
 
 	if (YerothMainWindow::LANGUE_ANGLAISE)
 	{
-		texTable_IN_OUT.append("& & 				\\\\ \n"
-							   "GROUP NAME			& 	 \n"
-							   "GROUP REFERENCE 	& 	 \n"
-							   "MAX MEMBERS			\\\\ \n"
-							   "& &					\\\\ \\hline \\hline \n");
+		texTable_IN_OUT.append("& & &				        \\\\ \n"
+                               "\\textbf{ID}			    & 	 \n"
+							   "\\textbf{GROUP NAME}		& 	 \n"
+							   "\\textbf{GROUP REFERENCE} 	& 	 \n"
+							   "\\textbf{MAX MEMBERS}		\\\\ \n"
+							   "& &	&				        \\\\ \\hline \\hline \n");
 	}
 	else //FRANCAIS
 	{
-		texTable_IN_OUT.append("& & 						\\\\ \n"
-							   "DÉSIGNATION DU GROUPE		& 	 \n"
-							   "RÉFÉRENCE DU GROUPE 		& 	 \n"
-							   "NOMBRE DE MEMBRES MAXIMUM	\\\\ \n"
-							   "& &							\\\\ \\hline \\hline \n");
+		texTable_IN_OUT.append("& & &						        \\\\ \n"
+                               "\\textbf{ID}			            & 	 \n"
+							   "\\textbf{DÉSIGNATION DU GROUPE}		& 	 \n"
+							   "\\textbf{RÉFÉRENCE DU GROUPE} 		& 	 \n"
+							   "\\textbf{NOMBRE DE MEMBRES MAXIMUM}	\\\\ \n"
+							   "& &	&						        \\\\ \\hline \\hline \n");
 	}
 
 
@@ -721,52 +724,153 @@ void YerothGroupesDunClientWindow::get_PRINT_OUT_TexTableString(QString &texTabl
 
 	int columnCount = tableWidget_groupes_dun_client->columnCount();
 
+
+    int MAX_TABLE_MODDEL_ROW_COUNT__to_export = rowCount;
+
+	if (row_MAX_TO_GO_export > -1)
+	{
+        MAX_TABLE_MODDEL_ROW_COUNT__to_export = row_MAX_TO_GO_export;
+	}
+
+
+
 	bool color_this_row_grey = true;
+
+
+	int LINE_COUNT_PER_PDF_PAGE = 41;
+
 
 	QString cell_text;
 
+
+    int TABLE_COUNT = qFloor(rowCount / LINE_COUNT_PER_PDF_PAGE);
+
+    int current_table_count = 0;
+
+	int current_pdf_page_line_count = 0;
+
+	uint Visual_ID_counter = 0;
+
 	//Tex table body
-	for (int i = 0; i < rowCount; ++i)
+	for (int i = 0;
+         i < MAX_TABLE_MODDEL_ROW_COUNT__to_export && current_pdf_page_line_count <= LINE_COUNT_PER_PDF_PAGE;
+         ++i)
 	{
-		color_this_row_grey = (0 == i%2);
+        color_this_row_grey = (0 == i%2);
 
-		if (color_this_row_grey)
-		{
-			texTable_IN_OUT.append(QString("\\rowcolor{yerothColorGray}"));
-		}
-		else
-		{
-			texTable_IN_OUT.append(QString("\\rowcolor{white}"));
-		}
+        if (color_this_row_grey)
+        {
+            texTable_IN_OUT.append(QString("\\rowcolor{yerothColorGray}"));
+        }
+        else
+        {
+            texTable_IN_OUT.append(QString("\\rowcolor{white}"));
+        }
 
-		for (int j = 0; j < columnCount; ++j)
-		{
-			if (j != 2)
-			{
-				cell_text = tableWidget_groupes_dun_client->item(i, j)->text();
-			}
-			else
-			{
-				cell_text = GET_NUM_STRING(tableWidget_groupes_dun_client->item(i, j)->text().toDouble());
 
-			}
+        //We add a cell for row numbering wioth an ID number.
+        {
+            ++Visual_ID_counter;
 
-			YerothUtils::handleTexTableItemText(columnCount,
-												texTable_IN_OUT,
-												j,
-												cell_text);
-		}
+            QTableWidgetItem *an_item_ID = new QTableWidgetItem(QString::number(Visual_ID_counter));
 
-		if (i < rowCount - 1)
-		{
-			texTable_IN_OUT.append("\\hline\n");
-		}
-	}
+            if (0 != an_item_ID)
+            {
+                YerothUtils::handleTexTableItemText(columnCount,
+                                                    texTable_IN_OUT,
+                                                    0,
+                                                    an_item_ID->text());
+            }
+        }
 
-	texTable_IN_OUT.append("\\hline\n"
-						   //"\\end{tabular}}\n"
-						   "\\end{tabular}\n"
-						   "\\end{table*}\n");
+
+        for (int j = 0; j < columnCount; ++j)
+        {
+            QTableWidgetItem *an_item = 0;
+
+            an_item = tableWidget_groupes_dun_client->item(i, j);
+
+            if (0 != an_item)
+            {
+                if (j != 4)
+                {
+                    cell_text = an_item->text();
+                }
+                else
+                {
+                    cell_text = GET_NUM_STRING(an_item->text().toDouble());
+
+                }
+            }
+
+            YerothUtils::handleTexTableItemText(columnCount,
+                                                texTable_IN_OUT,
+                                                j,
+                                                cell_text);
+        }
+
+        if (i < rowCount - 1)
+        {
+            texTable_IN_OUT.append("\\hline\n");
+        }
+
+
+        ++current_pdf_page_line_count;
+
+
+        if (LINE_COUNT_PER_PDF_PAGE - 1 == current_pdf_page_line_count)
+        {
+            current_pdf_page_line_count = 0;
+
+            if (current_table_count < TABLE_COUNT)
+            {
+                texTable_IN_OUT.append("\\hline\n"
+                                       "\\end{tabular}}\n"
+                                       "\\end{table*}\n");
+
+                texTable_IN_OUT.append("\\newpage\n");
+
+                texTable_IN_OUT.append("\\begin{table*}[!htbp]\n"
+                                       "\\centering\n"
+                                       "\\resizebox{\\textwidth}{!}{\n"
+                                       "\\begin{tabular}"
+                                       "{|c|l|l|r|} \\hline");
+
+                if (YerothMainWindow::LANGUE_ANGLAISE)
+                {
+                    texTable_IN_OUT.append("& & &				        \\\\ \n"
+                                           "\\textbf{ID}			    & 	 \n"
+                                           "\\textbf{GROUP NAME}		& 	 \n"
+                                           "\\textbf{GROUP REFERENCE} 	& 	 \n"
+                                           "\\textbf{MAX MEMBERS}		\\\\ \n"
+                                           "& &	&				        \\\\ \\hline \\hline \n");
+                }
+                else //FRANCAIS
+                {
+                    texTable_IN_OUT.append("& & &						        \\\\ \n"
+                                           "\\textbf{ID}			            & 	 \n"
+                                           "\\textbf{DÉSIGNATION DU GROUPE}		& 	 \n"
+                                           "\\textbf{RÉFÉRENCE DU GROUPE} 		& 	 \n"
+                                           "\\textbf{NOMBRE DE MEMBRES MAXIMUM}	\\\\ \n"
+                                           "& &	&						        \\\\ \\hline \\hline \n");
+                }
+            }
+
+            ++current_table_count;
+
+            if (current_table_count > 0)
+            {
+                LINE_COUNT_PER_PDF_PAGE = 57;
+            }
+        }
+
+    } //for-i
+
+
+    texTable_IN_OUT.append("\\hline\n"
+                           "\\end{tabular}}\n"
+                           "\\end{table*}\n");
+
 }
 
 

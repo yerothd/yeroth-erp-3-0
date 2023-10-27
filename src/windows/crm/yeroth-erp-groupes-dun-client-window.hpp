@@ -135,15 +135,18 @@ private slots:
 
     void afficher_tous_les_groupes_du_client();
 
+
 private slots:
 
     void enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT();
+
 
 private:
 
     void disable_yeroth_widgets();
 
-    void get_PRINT_OUT_TexTableString(QString &texTable_IN_OUT);
+    void get_PRINT_OUT_TexTableString(QString       &texTable_IN_OUT,
+                                      int           row_MAX_TO_GO_export = -1);
 
     inline void setupLineEdits()
     {
