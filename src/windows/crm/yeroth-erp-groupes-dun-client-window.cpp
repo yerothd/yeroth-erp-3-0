@@ -32,6 +32,7 @@
 
 YerothGroupesDunClientWindow::YerothGroupesDunClientWindow()
 :YerothWindowsCommons("yeroth-erp-groupes-dun-client"),
+ _Last_SelectedRow_Row_INDEX(0),
  _logger(new YerothLogger("YerothGroupesDunClientWindow")),
  _curClientsTableModel(0)
 {
@@ -125,6 +126,19 @@ YerothGroupesDunClientWindow::YerothGroupesDunClientWindow()
     connect(actionQui_suis_je, SIGNAL(triggered()), this, SLOT(qui_suis_je()));
     connect(actionAfficher_ce_groupe_au_detail, SIGNAL(triggered()), this, SLOT(afficher_au_detail()));
     connect(actionQui_suis_je, SIGNAL(triggered()), this, SLOT(qui_suis_je()));
+
+
+
+    connect(tableWidget_groupes_dun_client,
+            SIGNAL(clicked(const QModelIndex &)),
+            this,
+            SLOT(setLast_SelectedRow_Row_ID(const QModelIndex &)));
+
+    connect(tableWidget_groupes_dun_client,
+            SIGNAL(pressed(const QModelIndex &)),
+            this,
+            SLOT(setLast_SelectedRow_Row_ID(const QModelIndex &)));
+
 
 
     connect(tableWidget_groupes_dun_client,
@@ -966,6 +980,240 @@ bool YerothGroupesDunClientWindow::export_csv_file()
     }
 
     return success;
+}
+
+
+bool YerothGroupesDunClientWindow::
+        imprimer_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne()
+{
+	if (tableWidget_groupes_dun_client->rowCount() <= 0)
+	{
+		YerothQMessageBox::information(this,
+				QObject::tr("Impression d'1 LISTE de groupes d'1 client"),
+				QObject::tr("PAS DE DONNÉES À Imprimer maintenant !"));
+
+		return false;
+	}
+
+
+    int a_row_FOR_pdf_printing_max = getLast_SelectedRow_Row_ID() + 1;
+
+
+	QString partial_GROUPES_DUN_client__tex_table;
+
+
+	QString PARTIAL__GROUPES_DUN_CLIENT__TexDocument;
+
+
+	get_PRINT_OUT_TexTableString(partial_GROUPES_DUN_client__tex_table,
+                                 a_row_FOR_pdf_printing_max);
+
+
+
+
+
+	YerothUtils::get_GROUPES_DUN_client_TexDocumentString(PARTIAL__GROUPES_DUN_CLIENT__TexDocument,
+														  partial_GROUPES_DUN_client__tex_table);
+
+
+    emit SIGNAL_INCREMENT_PROGRESS_BAR(18);
+
+
+
+    QString NOM_Client(_curClient_NOM_ENTREPRISE);
+
+
+
+	if (YerothMainWindow::LANGUE_ANGLAISE)
+	{
+        PARTIAL__GROUPES_DUN_CLIENT__TexDocument
+            .replace("YEROTHSUBJECT",
+                     QString("client '%1' belonging GROUPS (Excerpt)")
+                        .arg(NOM_Client));
+	}
+	else
+	{
+        PARTIAL__GROUPES_DUN_CLIENT__TexDocument
+            .replace("YEROTHSUBJECT",
+                     QString("Groupes d'appartenance du CLIENT '%1' (Partiel)")
+                        .arg(NOM_Client));
+	}
+
+
+	//qDebug() << PARTIAL__GROUPES_DUN_CLIENT__TexDocument;
+
+
+	emit SIGNAL_INCREMENT_PROGRESS_BAR(40);
+
+
+    PARTIAL__GROUPES_DUN_CLIENT__TexDocument
+            .append(partial_GROUPES_DUN_client__tex_table)
+            .append("\n")
+            .append("\\end{document}");
+
+
+	emit SIGNAL_INCREMENT_PROGRESS_BAR(50);
+
+
+	YerothInfoEntreprise &infoEntreprise = _allWindows->getInfoEntreprise();
+
+
+	QString factureDate(infoEntreprise.getVille_LATEX());
+
+
+	YerothUtils::getCurrentSimplifiedDate(factureDate);
+
+
+    PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHPAPERSPEC",
+											get_PRINTING_PARAMETER_printing_position());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHENTREPRISE", infoEntreprise.getNomCommercial_LATEX());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHACTIVITESENTREPRISE", infoEntreprise.getSecteursActivitesTex());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHBOITEPOSTALE", infoEntreprise.getBoitePostal());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHVILLE", infoEntreprise.getVille_LATEX());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHPAYS", infoEntreprise.getPaysTex());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHEMAIL", infoEntreprise.getEmail_LATEX());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHTELEPHONE", infoEntreprise.getTelephone());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHDATE", factureDate);
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHHEUREVENTE", CURRENT_TIME);
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHCOMPTEBANCAIRENR", infoEntreprise.getNumeroCompteBancaire());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHCONTRIBUABLENR", infoEntreprise.getNumeroDeContribuable());
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHAGENCECOMPTEBANCAIRE", infoEntreprise.getAgenceCompteBancaireTex());
+
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHNOMUTILISATEUR",
+			QString("%1 %2")
+			.arg(YerothUtils::getAllWindows()->getUser()->titre(),
+					YerothUtils::getAllWindows()->getUser()->nom_completTex()));
+
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument
+        .replace("YEROTHSUCCURSALE",
+                 YerothUtils::LATEX_IN_OUT_handleForeignAccents
+                    (YerothERPConfig::THIS_SITE_LOCALISATION_NAME));
+
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHHEUREDIMPRESSION", CURRENT_TIME);
+
+
+
+	YerothSqlTableModel &CLIENT_TableModel = _allWindows->getSqlTableModel_clients();
+
+	CLIENT_TableModel.yerothSetFilter_WITH_where_clause(
+			QString("%1 = '%2'")
+			.arg(YerothDatabaseTableColumn::NOM_ENTREPRISE,
+					NOM_Client));
+
+	PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("YEROTHCLIENT",
+			YerothUtils::LATEX_IN_OUT_handleForeignAccents(NOM_Client));
+
+
+	emit SIGNAL_INCREMENT_PROGRESS_BAR(60);
+
+
+	if (CLIENT_TableModel.easySelect("src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp", 114) > 0)
+	{
+		QSqlRecord record = CLIENT_TableModel.record(0);
+
+		QString Client_Ville(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::VILLE));
+
+		QString Client_POBox(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::BOITE_POSTALE));
+
+		QString Client_Email(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::EMAIL));
+
+		QString Client_Tel(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::NUMERO_TELEPHONE_1));
+
+		if (Client_Tel.isEmpty())
+		{
+			Client_Tel.append(GET_SQL_RECORD_DATA(record, YerothDatabaseTableColumn::NUMERO_TELEPHONE_2));
+		}
+
+		//qDebug() << "++ Client_Email: " << Client_Email;
+
+		if (!Client_Ville.isEmpty())
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument
+			.replace("CLIENTYEROTHCITY",
+					YerothUtils::LATEX_IN_OUT_handleForeignAccents(Client_Ville));
+		}
+		else
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("CLIENTYEROTHCITY", "");
+		}
+
+		if (!Client_POBox.isEmpty())
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("CLIENTYEROTHPOBOX", Client_POBox);
+		}
+		else
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("CLIENTYEROTHPOBOX", "N/a");
+		}
+
+		if (!Client_Email.isEmpty())
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("CLIENTYEROTHMAIL",
+					YerothUtils::LATEX_IN_OUT_handleForeignAccents(Client_Email));
+		}
+		else
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("CLIENTYEROTHMAIL", "");
+		}
+
+		if (!Client_Tel.isEmpty())
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument
+			.replace("CLIENTYEROTHPHONE",
+					YerothUtils::LATEX_IN_OUT_handleForeignAccents(Client_Tel));
+		}
+		else
+		{
+			PARTIAL__GROUPES_DUN_CLIENT__TexDocument.replace("CLIENTYEROTHPHONE", "");
+		}
+
+		CLIENT_TableModel.resetFilter();
+	}
+
+
+	emit SIGNAL_INCREMENT_PROGRESS_BAR(70);
+
+
+    QString prefixFileName;
+
+    prefixFileName
+        .append(YerothUtils::getUniquePrefixFileInTemporaryFilesDir("yeroth-erp-CLIENT-group-hr-PARTIAL-"));
+	//qDebug() << "++\n" << PARTIAL__GROUPES_DUN_CLIENT__TexDocument;
+
+	QFile tmpLatexFile(prefixFileName + "tex");
+
+	if (tmpLatexFile.open(QFile::WriteOnly))
+	{
+		tmpLatexFile.write(PARTIAL__GROUPES_DUN_CLIENT__TexDocument.toUtf8());
+	}
+
+	tmpLatexFile.close();
+
+	QString pdfReceiptFileName = YerothERPProcess::compileLatex(prefixFileName);
+
+	if (!pdfReceiptFileName.isEmpty())
+	{
+		YerothERPProcess::startPdfViewerProcess(pdfReceiptFileName);
+	}
+
+	emit SIGNAL_INCREMENT_PROGRESS_BAR(98);
+
+	return true;
 }
 
 

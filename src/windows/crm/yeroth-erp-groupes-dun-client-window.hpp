@@ -77,8 +77,12 @@ public slots:
 
     virtual bool export_csv_file();
 
+    virtual bool imprimer_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne();
+
     virtual bool imprimer_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne_WITH_A_YEROTH_PROGRESS_BAR()
     {
+        YerothProgressBar(this)(this,
+                                &YerothGroupesDunClientWindow::imprimer_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne);
     }
 
 	virtual bool imprimer_pdf_document();
@@ -102,13 +106,28 @@ public slots:
                                         "cliquer sur l'opération que vous souhaitez réaliser !"));
     }
 
+
 protected:
 
     virtual void contextMenuEvent(QContextMenuEvent *event);
 
     virtual void setupShortcuts();
 
+
+private:
+
+    inline int getLast_SelectedRow_Row_ID()
+    {
+        return _Last_SelectedRow_Row_INDEX;
+    }
+
+
 private slots:
+
+    inline void setLast_SelectedRow_Row_ID(const QModelIndex &a_model_CELL_index)
+    {
+        _Last_SelectedRow_Row_INDEX = a_model_CELL_index.row();
+    }
 
     inline void ajouter_appartenance(const QString &
                                      un_groupe_de_clients)
@@ -159,6 +178,8 @@ private:
 
     void populateComboBoxes();
 
+
+    int _Last_SelectedRow_Row_INDEX;
 
     YerothLogger *_logger;
 

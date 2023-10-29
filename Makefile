@@ -6305,6 +6305,7 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-images/yeroth-erp-3-0-immobilisation-stock-history.png \
 		yeroth-erp-3-0-images/minus.png \
 		yeroth-erp-3-0-images/yeroth-erp-3-0-financial-account-icon.png \
+		yeroth-erp-3-0-images/yeroth-erp-3.0-print-selected-TILL.png \
 		yeroth-erp-3-0-images/yeroth-erp-3-0-page-premiere-image.png \
 		yeroth-erp-3-0-images/yeroth-erp-3-0-page-suivante-image.png \
 		yeroth-erp-3-0-templates/FR_template-comptabilite.tex \

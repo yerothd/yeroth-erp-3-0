@@ -2744,7 +2744,7 @@ Continue updating asset or stock ?</translation>
         <location filename="src/windows/crm/modifier/yeroth-erp-modifier-compte-client-window.hpp" line="70"/>
         <location filename="src/windows/crm/yeroth-erp-clients-window.hpp" line="87"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-de-clients-window.hpp" line="92"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp" line="98"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp" line="102"/>
         <location filename="src/windows/crm/yeroth-erp-programmes-de-fidelite-clients-window.hpp" line="90"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.hpp" line="294"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-detail-window.hpp" line="71"/>
@@ -4344,7 +4344,7 @@ Please contact an administrator of %1</translation>
     <message>
         <location filename="src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp" line="166"/>
         <location filename="src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp" line="356"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="979"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="1227"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1168"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1455"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="1014"/>
@@ -4355,7 +4355,7 @@ Please contact an administrator of %1</translation>
     <message>
         <location filename="src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp" line="167"/>
         <location filename="src/utils/print_latex_pdf/yeroth-erp-print_yeroth_latex_util_pdf.cpp" line="357"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="980"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="1228"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1170"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1457"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="833"/>
@@ -5362,7 +5362,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     </message>
     <message>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="663"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="571"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="585"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1158"/>
         <source>Sélectionnez 1 compte client à afficher les détails.</source>
         <translation>Select a client to view its details.</translation>
@@ -5961,7 +5961,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     </message>
     <message>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="661"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="569"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="583"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="905"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="928"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1156"/>
@@ -6065,16 +6065,16 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>Select an alert trigger in table listing, and then, press the button of the action you would like to perform !</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="40"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="41"/>
         <source>groupes d&apos;1 client</source>
         <translation>a client group</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="229"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="263"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="306"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="333"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="362"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="243"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="277"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="320"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="347"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="376"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="865"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="892"/>
         <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="934"/>
@@ -6084,36 +6084,46 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <translation>add</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="231"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="245"/>
         <source>Le groupe de clients &apos;%1&apos; a déjà atteint son nombre maximum de membres (%2) !</source>
         <oldsource>Le groupe de clients &apos;%1&apos; a déjà atteint son nombre maximum de membres !</oldsource>
         <translation>Client group &apos;%1&apos; has already reached its maximum members (%2) !</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="265"/>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="335"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="279"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="349"/>
         <source>Le client &apos;%1&apos; n&apos;a pas pu être ajouté dans le groupe de clients &apos;%2&apos; !</source>
         <oldsource>Le client &apos;%1&apos; n&apos;a pas pu être ajouté dans le  groupe de clients &apos;%2&apos; !</oldsource>
         <translation>Client &apos;%1&apos; couldn&apos;t be added to client group &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="308"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="322"/>
         <source>Le client &apos;%1&apos; est déjà membre du groupe de clients &apos;%2&apos; !</source>
         <translation>Client &apos;%1&apos; is already a member of client group &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="364"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="378"/>
         <source>Le client &apos;%1&apos; a été ajouté dans le groupe de clients &apos;%2&apos; !</source>
         <oldsource>Le client &apos;%1&apos; a été ajouté dans le  groupe de clients &apos;%2&apos; !</oldsource>
         <translation>Client &apos;%1&apos; has been successfully inserted to client group &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="593"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="607"/>
         <source>Groupes d&apos;appartenance du client (%1)</source>
         <translation>Client group (%1)</translation>
     </message>
     <message>
-        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp" line="100"/>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="992"/>
+        <source>Impression d&apos;1 LISTE de groupes d&apos;1 client</source>
+        <translation>PRINT A CLIENT belonging Group List (EXCERPT)</translation>
+    </message>
+    <message>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="993"/>
+        <source>PAS DE DONNÉES À Imprimer maintenant !</source>
+        <translation>There are no data to print-out!</translation>
+    </message>
+    <message>
+        <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.hpp" line="104"/>
         <source>Sélectionner un compte client dans le tableau des groupes d&apos;1 client, ensuite cliquer sur l&apos;opération que vous souhaitez réaliser !</source>
         <translation>Select a client in table listing, and then press the button of the action you would like to perform !</translation>
     </message>

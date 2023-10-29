@@ -6891,6 +6891,11 @@ background-color: rgb(0, 0, 0); </string>
    </property>
   </action>
   <action name="action_IMPRIMER_UNE_LISTE_DE_groupes_du_client_JUSQUAU_selectionne">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3.0-print-selected-TILL.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>IMPRIMER 1 LISTE DE groupes du client jusqu'au sélectionné</string>
    </property>
