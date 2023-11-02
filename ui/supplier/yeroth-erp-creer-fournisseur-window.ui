@@ -13263,9 +13263,9 @@
           <colorrole role="WindowText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -13317,27 +13317,27 @@
           <colorrole role="Text">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="BrightText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -13427,9 +13427,9 @@
           <colorrole role="WindowText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -13481,27 +13481,27 @@
           <colorrole role="Text">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="BrightText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -13654,9 +13654,9 @@
           <colorrole role="BrightText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>26</red>
-             <green>95</green>
-             <blue>180</blue>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
