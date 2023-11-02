@@ -1017,9 +1017,9 @@
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
+          <red>0</red>
           <green>255</green>
-          <blue>255</blue>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -1163,9 +1163,9 @@
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
+          <red>0</red>
           <green>255</green>
-          <blue>255</blue>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -11378,9 +11378,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -11524,9 +11524,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -11846,9 +11846,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -11992,9 +11992,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -12314,9 +12314,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -12460,9 +12460,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -12782,9 +12782,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -12928,9 +12928,9 @@ background-color: rgb(0, 0, 0); </string>
          <colorrole role="WindowText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>115</red>
-            <green>210</green>
-            <blue>22</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -20209,6 +20209,11 @@ background-color: rgb(0, 0, 0); </string>
    <header>src/widgets/yeroth-erp-line-edit.hpp</header>
   </customwidget>
   <customwidget>
+   <class>YerothComboBox</class>
+   <extends>QComboBox</extends>
+   <header>src/widgets/yeroth-erp-combo-box.hpp</header>
+  </customwidget>
+  <customwidget>
    <class>YerothDateTimeEdit</class>
    <extends>QDateEdit</extends>
    <header>src/widgets/yeroth-erp-datetime-edit.hpp</header>
@@ -20222,11 +20227,6 @@ background-color: rgb(0, 0, 0); </string>
    <class>YerothTextEdit</class>
    <extends>QTextEdit</extends>
    <header>src/widgets/yeroth-erp-text-edit.hpp</header>
-  </customwidget>
-  <customwidget>
-   <class>YerothComboBox</class>
-   <extends>QComboBox</extends>
-   <header>src/widgets/yeroth-erp-combo-box.hpp</header>
   </customwidget>
   <customwidget>
    <class>YerothSpinBox</class>
