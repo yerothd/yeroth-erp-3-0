@@ -4348,7 +4348,7 @@ Please contact an administrator of %1</translation>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1168"/>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1455"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="1014"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="218"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="223"/>
         <source>impression</source>
         <translation>print</translation>
     </message>
@@ -4360,7 +4360,7 @@ Please contact an administrator of %1</translation>
         <location filename="src/windows/pos/yeroth-erp-pointdevente-window.cpp" line="1457"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="833"/>
         <location filename="src/windows/stocks/yeroth-erp-sortir-window.cpp" line="1016"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="219"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="224"/>
         <source>Il n&apos;y a pas de données à imprimer !</source>
         <oldsource>Il n&apos;y a pas de données a imprimer !</oldsource>
         <translation>There are no data to print-out!</translation>
@@ -5363,7 +5363,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
     <message>
         <location filename="src/windows/crm/yeroth-erp-clients-window.cpp" line="663"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="585"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1158"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1177"/>
         <source>Sélectionnez 1 compte client à afficher les détails.</source>
         <translation>Select a client to view its details.</translation>
     </message>
@@ -5964,7 +5964,7 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="583"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="905"/>
         <location filename="src/windows/purchase/yeroth-erp-achats-window.cpp" line="928"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1156"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1175"/>
         <location filename="src/windows/supplier/yeroth-erp-fournisseurs-window.cpp" line="783"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="811"/>
         <location filename="src/windows/yeroth-erp-charges-financieres-window.cpp" line="835"/>
@@ -6075,11 +6075,11 @@ Contactez l&apos;administrateur de Yeroth-erp-3.0 !</oldsource>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="320"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="347"/>
         <location filename="src/windows/crm/yeroth-erp-groupes-dun-client-window.cpp" line="376"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="865"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="892"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="934"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="958"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="984"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="870"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="897"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="939"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="963"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="989"/>
         <source>ajouter</source>
         <translation>add</translation>
     </message>
@@ -6637,78 +6637,78 @@ PLEASE, CHANGE MAX MEMBER COUNT TO &apos;%3&apos; or DECREASE ITS INITIAL MEMBER
         <translation>AN EMPLOYEE GROUP</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="685"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="690"/>
         <source>date de fin AVANT date de début !</source>
         <translation>end date BEFORE begin date !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="686"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="691"/>
         <source>La date de fin [&quot;%1&quot;] d&apos;appartenance au groupe de paie (HR) &apos;%2&apos; DEVRAIT ÊTRE avant la date de début [&quot;%3&quot;] !</source>
         <translation>End date [&quot;%1&quot;], for belonging to PAY GROUP (HR) &apos;%2&apos;MUST BE SET BEFORE begin date [&quot;%3&quot;] !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="699"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="704"/>
         <source>date de début PRÉ-DATÉE !</source>
         <translation>begin date PREDATED !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="700"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="705"/>
         <source>La date de début [&quot;%1&quot;] d&apos;appartenance au groupe de paie (HR) &apos;%2&apos; DEVRAIT ÊTRE daté au minimum à partir de ce jour [&quot;%3&quot;] !</source>
         <translation>Begin date [&quot;%1&quot;], for belonging to PAY GROUP (HR) &apos;%2&apos; MUST BE SET AT LEAST starting this day [&quot;%3&quot;] !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="708"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="713"/>
         <source>NOUVELLES DATES D&apos;APPARTENACE</source>
         <translation>New belonging dates to PAY GROUP</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="709"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="714"/>
         <source>Pour faire de nouvelles dates d&apos;appartenance au groupe de paie (HR) &apos;%1&apos; pour cet employé [&quot;%2&quot;], VOUS DEVEZ LE RETIRER DE CE GROUPE, et ensuite l&apos;y remettre !</source>
         <translation>TO SET NEW BELONGING DATES FOR PAY GROUP [HR] &apos;%1&apos; for this employee [&quot;%2&quot;], YOU MUST REMOVE HIM from pay group, and then insert him anew !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="788"/>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="798"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="793"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="803"/>
         <source>ajouter périodes d&apos;appartenance</source>
         <translation>add belonging time frame</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="789"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="794"/>
         <source>LES DATES D&apos;APPARTENANCE AU GROUPE DE PAIE (HR) &apos;%1&apos; POUR L&apos;EMPLOYÉ [%2] ont été enregistrées avec succès !</source>
         <translation>dates of belonging to employee group (HR) &apos;%1&apos; FOR EMPLOYEE [%2] could be saved sucessfully !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="799"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="804"/>
         <source>LES DATES D&apos;APPARTENANCE AU GROUPE DE PAIE (HR) &apos;%1&apos; POUR L&apos;EMPLOYÉ [%2] N&apos;ONT PAS PU ÊTRE ENREGISTRÉES !</source>
         <translation>dates of belonging to employee group (HR) &apos;%1&apos; FOR EMPLOYEE [%2] couldn&apos;t be saved sucessfully !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="866"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="871"/>
         <source>LE GROUPE D&apos;EMPLOYÉS &apos;%1&apos; a déjà atteint son nombre maximum de membres (%2) !</source>
         <translation>EMPLOYEE GROUP &apos;%1&apos; has already reached its maximum members (%2) !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="894"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="899"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; n&apos;a pas pu être ajouté dans le groupe des employés &apos;%2&apos; !</source>
         <translation>EMPLOYEE &apos;%1&apos; couldn&apos;t be added to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="935"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="940"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; EST DÉJÀ MEMBRE DU GROUPE D&apos;EMPLOYÉS &apos;%2&apos; !</source>
         <translation>Employee &apos;%1&apos; is already a member of employee group &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="959"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="964"/>
         <source>L&apos;employé &apos;%1&apos; n&apos;a pas pu être ajouté dans le GROUPE D&apos;EMPLOYÉS &apos;%2&apos; !</source>
         <translation>EMPLOYEE &apos;%1&apos; couldn&apos;t be added to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="985"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="990"/>
         <source>L&apos;EMPLOYÉ &apos;%1&apos; a été ajouté dans le groupe des employés &apos;%2&apos; !</source>
         <translation>Employee &apos;%1&apos; has been successfully inserted to EMPLOYEE GROUP &apos;%2&apos; !</translation>
     </message>
     <message>
-        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1183"/>
+        <location filename="src/windows/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.cpp" line="1202"/>
         <source>Groupes d&apos;appartenance DE L&apos;EMPLOYÉ (%1)</source>
         <translation>GROUPS of this employee (%1)</translation>
     </message>
@@ -9594,7 +9594,7 @@ stock (service)
         <location filename="ui/yeroth-erp-admin-window.ui" line="47781"/>
         <location filename="ui/yeroth-erp-admin-window.ui" line="48756"/>
         <location filename="ui/yeroth-erp-admin-window.ui" line="50247"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="61642"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="60256"/>
         <source>Supprimer un article</source>
         <translation>Remove stock</translation>
     </message>
@@ -9607,14 +9607,14 @@ stock (service)
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="12752"/>
         <location filename="ui/yeroth-erp-admin-window.ui" line="42722"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="57726"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="56340"/>
         <source>réinitialiser</source>
         <translation>reset</translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="12290"/>
         <location filename="ui/yeroth-erp-admin-window.ui" line="43184"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="58188"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="56802"/>
         <source>enregistrer</source>
         <translation>save</translation>
     </message>
@@ -9669,41 +9669,41 @@ stock (service)
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="32878"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="58643"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="57257"/>
         <source>OFF</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="59139"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="57753"/>
         <source>alertes sur la période (s)</source>
         <translation>alert over time frame (s)</translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="33865"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="56340"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="61189"/>
         <source>arrêter</source>
         <translation>stop</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="59165"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="57779"/>
         <source>alertes sur le quantité (s)</source>
         <translation>alert over stock quantity (s)</translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="32420"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="59101"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="57715"/>
         <source>ON</source>
         <translation></translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="33373"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="56802"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="60727"/>
         <source>démarrer</source>
         <translation>start</translation>
     </message>
     <message>
         <location filename="ui/yeroth-erp-admin-window.ui" line="34357"/>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="57264"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="61651"/>
         <source>rafraîchir le statut</source>
         <translation>refresh status</translation>
     </message>
@@ -10080,13 +10080,13 @@ stock (service)
         <translation>thermal printer system device file</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="60161"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="58775"/>
         <source>PARAMÈTRES DE SAUVEGARDE DE LA BASE DE DONNÉES YEROTH_PGI_3</source>
         <oldsource>PARAMÈTRES DE SAUVEGARDE DE LA BASE DE DONNÉES YEROTH_ERP_3</oldsource>
         <translation>YEROTH_ERP_3 DATABASE BACKUP PARAMETERS</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="60698"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="59312"/>
         <source>répertoire des sauvegardes</source>
         <translation>backup folder</translation>
     </message>
@@ -10125,7 +10125,7 @@ stock (service)
         <translation>default pagination size</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="60183"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="58797"/>
         <source>intervalle de sauvegarde en secondes</source>
         <oldsource>sauvegarde de yeroth_erp_3 (secondes)</oldsource>
         <translation>backup time interval of yerorh_erp_3 (seconds)</translation>
@@ -10156,12 +10156,12 @@ stock (service)
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="59117"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="57731"/>
         <source>ALERTES SUR LES STOCKS (PÉRIODE ET QUANTITÉ)</source>
         <translation>INVENTORY STOCK ALERT (TIME INTERVAL AND QUANTITY)</translation>
     </message>
     <message>
-        <location filename="ui/yeroth-erp-admin-window.ui" line="60675"/>
+        <location filename="ui/yeroth-erp-admin-window.ui" line="59289"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;H heures = H x 3600 secondes !&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;H hours = H x 3600 seconds !&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -16160,8 +16160,8 @@ FOURNISSEURS</source>
         <translation>Export as csv file</translation>
     </message>
     <message>
-        <location filename="ui/crm/yeroth-erp-groupes-dun-client-window.ui" line="6895"/>
-        <location filename="ui/crm/yeroth-erp-groupes-dun-client-window.ui" line="6898"/>
+        <location filename="ui/crm/yeroth-erp-groupes-dun-client-window.ui" line="6900"/>
+        <location filename="ui/crm/yeroth-erp-groupes-dun-client-window.ui" line="6903"/>
         <source>IMPRIMER 1 LISTE DE groupes du client jusqu&apos;au sélectionné</source>
         <translation>PRINT CLIENT GROUP list till selected group</translation>
     </message>

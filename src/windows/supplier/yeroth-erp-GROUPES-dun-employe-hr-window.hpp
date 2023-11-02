@@ -172,10 +172,7 @@ private:
 
     void get_PRINT_OUT_TexTableString(QString &texTable_IN_OUT);
 
-    inline void setupLineEdits()
-    {
-    	lineEdit_Groupes_Dun_Employe_nombre_de_groupes->setYerothEnabled(false);
-    }
+    void setupLineEdits();
 
     void populateComboBoxes();
 

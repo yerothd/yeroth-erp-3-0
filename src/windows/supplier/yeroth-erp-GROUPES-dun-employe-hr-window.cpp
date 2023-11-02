@@ -48,6 +48,10 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
 
     mySetupUi(this);
 
+
+    tableWidget_Groupes_Dun_Employe->setSortingEnabled(true);
+
+
     _CURRENT_TABLE_VIEW_font = const_cast<QFont *>(&tableWidget_Groupes_Dun_Employe->font());
 
     QMESSAGE_BOX_STYLE_SHEET = QString("QMessageBox {background-color: rgb(%1);}"
@@ -74,6 +78,7 @@ YerothGROUPES_DUN_EMPLOYE_Window::YerothGROUPES_DUN_EMPLOYE_Window()
 
 
     setupLineEdits();
+
 
     populateComboBoxes();
 
@@ -1126,15 +1131,29 @@ bool YerothGROUPES_DUN_EMPLOYE_Window::EXECUTER_retirer_cet_employe_du_groupe_se
     {
         enable_yeroth_widgets_ON_POSITIVE_QTABLE_WIDGET_ROW_COUNT();
     }
-    else
+    else // <= 0
     {
+        lineEdit_SALAIRE_CUMULE
+            ->setText(GET_CURRENCY_STRING_NUM(0.0));
+
+
+        lineEdit_SALAIRE_DU_GROUPE_SELECTIONNE
+            ->setText(GET_CURRENCY_STRING_NUM(0.0));
+
+
         disable_yeroth_widgets();
     }
+
 
     lineEdit_Groupes_Dun_Employe_nombre_de_groupes
 		->setText(QString::number(tableWidget_Groupes_Dun_Employe->rowCount()));
 
+
+    afficher_tous_les_groupes_DUN_EMPLOYE_hr();
+
+
     tableWidget_Groupes_Dun_Employe->resizeColumnsToContents();
+
 
     return result;
 }
@@ -1392,6 +1411,23 @@ void YerothGROUPES_DUN_EMPLOYE_Window::get_PRINT_OUT_TexTableString(QString &tex
 						   //"\\end{tabular}}\n"
 						   "\\end{tabular}\n"
 						   "\\end{table*}\n");
+}
+
+
+void YerothGROUPES_DUN_EMPLOYE_Window::setupLineEdits()
+{
+    lineEdit_SALAIRE_DU_GROUPE_SELECTIONNE
+        ->setText(GET_CURRENCY_STRING_NUM(0.0));
+
+    lineEdit_SALAIRE_CUMULE
+        ->setText(GET_CURRENCY_STRING_NUM(0.0));
+
+
+    lineEdit_SALAIRE_CUMULE->setYerothEnabled(false);
+
+    lineEdit_SALAIRE_DU_GROUPE_SELECTIONNE->setYerothEnabled(false);
+
+    lineEdit_Groupes_Dun_Employe_nombre_de_groupes->setYerothEnabled(false);
 }
 
 

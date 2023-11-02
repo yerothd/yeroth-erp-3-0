@@ -5480,9 +5480,9 @@ FOURNISSEURS</string>
          <colorrole role="HighlightedText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>2</red>
-            <green>160</green>
-            <blue>70</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -5644,9 +5644,9 @@ FOURNISSEURS</string>
          <colorrole role="HighlightedText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>2</red>
-            <green>160</green>
-            <blue>70</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -5808,9 +5808,9 @@ FOURNISSEURS</string>
          <colorrole role="HighlightedText">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>2</red>
-            <green>160</green>
-            <blue>70</blue>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
            </color>
           </brush>
          </colorrole>
@@ -9585,14 +9585,14 @@ Paie</string>
    <header>src/widgets/yeroth-erp-line-edit.hpp</header>
   </customwidget>
   <customwidget>
-   <class>YerothComboBox</class>
-   <extends>QComboBox</extends>
-   <header>src/widgets/yeroth-erp-combo-box.hpp</header>
-  </customwidget>
-  <customwidget>
    <class>YerothTextEdit</class>
    <extends>QTextEdit</extends>
    <header>src/widgets/yeroth-erp-text-edit.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>YerothComboBox</class>
+   <extends>QComboBox</extends>
+   <header>src/widgets/yeroth-erp-combo-box.hpp</header>
   </customwidget>
   <customwidget>
    <class>YerothSpinBox</class>

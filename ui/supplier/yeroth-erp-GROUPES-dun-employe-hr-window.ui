@@ -2044,9 +2044,9 @@
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -2208,9 +2208,9 @@
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -2372,9 +2372,9 @@
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -6097,9 +6097,9 @@ background-color: rgb(0, 0, 0); </string>
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -6261,9 +6261,9 @@ background-color: rgb(0, 0, 0); </string>
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -6425,9 +6425,9 @@ background-color: rgb(0, 0, 0); </string>
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -7141,9 +7141,9 @@ background-color: rgb(0, 0, 0); </string>
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -7305,9 +7305,9 @@ background-color: rgb(0, 0, 0); </string>
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -7469,9 +7469,9 @@ background-color: rgb(0, 0, 0); </string>
         <colorrole role="HighlightedText">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>2</red>
-           <green>160</green>
-           <blue>70</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -9686,9 +9686,9 @@ FOURNISSEURS</string>
        <colorrole role="HighlightedText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>2</red>
-          <green>160</green>
-          <blue>70</blue>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -9850,9 +9850,9 @@ FOURNISSEURS</string>
        <colorrole role="HighlightedText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>2</red>
-          <green>160</green>
-          <blue>70</blue>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -10014,9 +10014,9 @@ FOURNISSEURS</string>
        <colorrole role="HighlightedText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>2</red>
-          <green>160</green>
-          <blue>70</blue>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
