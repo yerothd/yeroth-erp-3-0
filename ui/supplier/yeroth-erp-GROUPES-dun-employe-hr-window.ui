@@ -1900,15 +1900,24 @@
       <property name="text">
        <string>Désignation</string>
       </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>GROUPE DE PAIE</string>
       </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
      </column>
      <column>
       <property name="text">
-       <string>Nombre de membres MAXIMAL</string>
+       <string>Membres (Maximum)</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
       </property>
      </column>
     </widget>

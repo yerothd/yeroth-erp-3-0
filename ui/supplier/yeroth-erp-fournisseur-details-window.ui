@@ -13278,9 +13278,9 @@ L'EMPLOYE</string>
           <colorrole role="Text">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>0</red>
-             <green>0</green>
-             <blue>0</blue>
+             <red>53</red>
+             <green>132</green>
+             <blue>228</blue>
             </color>
            </brush>
           </colorrole>
@@ -13329,6 +13329,15 @@ L'EMPLOYE</string>
             </color>
            </brush>
           </colorrole>
+          <colorrole role="HighlightedText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
           <colorrole role="AlternateBase">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
@@ -13357,11 +13366,11 @@ L'EMPLOYE</string>
            </brush>
           </colorrole>
           <colorrole role="PlaceholderText">
-           <brush brushstyle="NoBrush">
+           <brush brushstyle="SolidPattern">
             <color alpha="128">
-             <red>0</red>
-             <green>0</green>
-             <blue>0</blue>
+             <red>53</red>
+             <green>132</green>
+             <blue>228</blue>
             </color>
            </brush>
           </colorrole>
@@ -13424,9 +13433,9 @@ L'EMPLOYE</string>
           <colorrole role="Text">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>0</red>
-             <green>0</green>
-             <blue>0</blue>
+             <red>53</red>
+             <green>132</green>
+             <blue>228</blue>
             </color>
            </brush>
           </colorrole>
@@ -13475,6 +13484,15 @@ L'EMPLOYE</string>
             </color>
            </brush>
           </colorrole>
+          <colorrole role="HighlightedText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
           <colorrole role="AlternateBase">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
@@ -13503,11 +13521,11 @@ L'EMPLOYE</string>
            </brush>
           </colorrole>
           <colorrole role="PlaceholderText">
-           <brush brushstyle="NoBrush">
+           <brush brushstyle="SolidPattern">
             <color alpha="128">
-             <red>0</red>
-             <green>0</green>
-             <blue>0</blue>
+             <red>53</red>
+             <green>132</green>
+             <blue>228</blue>
             </color>
            </brush>
           </colorrole>
@@ -13621,6 +13639,15 @@ L'EMPLOYE</string>
             </color>
            </brush>
           </colorrole>
+          <colorrole role="HighlightedText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
           <colorrole role="AlternateBase">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
@@ -13649,7 +13676,7 @@ L'EMPLOYE</string>
            </brush>
           </colorrole>
           <colorrole role="PlaceholderText">
-           <brush brushstyle="NoBrush">
+           <brush brushstyle="SolidPattern">
             <color alpha="128">
              <red>0</red>
              <green>0</green>
