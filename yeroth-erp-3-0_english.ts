@@ -441,37 +441,37 @@ acknowledgements: JAN PELESKA ! (Universität Bremen in GERMANY)</oldsource>
         <translation>invalid (withdrawal)</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3764"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3776"/>
         <source>%1 - Connection par adresse IP !</source>
         <translation>%1 - connection via IP address !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4595"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4607"/>
         <source>No CSV data</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4596"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4608"/>
         <source>No CSV data to save out !</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4608"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4620"/>
         <source>Bad deployment</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4609"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4621"/>
         <source>Table bad deployment !</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4729"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4741"/>
         <source>MAUVAIS DÉPLOIEMENT</source>
         <translation>WRONG DEPLOYMENT</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4730"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4742"/>
         <source>MAUVAIS DÉPLOIEMENT du tableau!</source>
         <translation>USER TABLE HEADER WRONG DEPLOYMENT!</translation>
     </message>
@@ -607,26 +607,26 @@ Click Cancel to exit.</source>
         <translation>A company with trade registry reference &apos;%1&apos; already exists in database !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3378"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3390"/>
         <source>	[ factures pdf au format: &apos;%1&apos; ]</source>
         <translation>	[ pdf receipt size: &apos;%1&apos; ]</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4407"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4419"/>
         <source>dont total TVA: &amp; &amp; %1\\ 
 </source>
         <translation>with total ATC: &amp; &amp; %1\\ 
 </translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4409"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4421"/>
         <source>Montant re\c{c}u: &amp; &amp; %1\\ 
 </source>
         <translation>Received amount: &amp; &amp; %1\\ 
 </translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4412"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4424"/>
         <source>Montant remi: &amp; &amp; %1\ 
 </source>
         <translation>Due amount: &amp; &amp; %1\ 
@@ -638,43 +638,43 @@ Click Cancel to exit.</source>
         <translation>Company info</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3739"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3751"/>
         <source>La localisation %1 n&apos;a pas d&apos;adresse IP enregistrée !</source>
         <translation>Site %1 doesn&apos;t have a registered IP address !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3742"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3754"/>
         <source>%1 - pas d&apos;adresse IP !</source>
         <translation>%1 - no IP address !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3757"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3769"/>
         <source>La localisation &apos;%1&apos; est déjà connectée par l&apos;adresse IP loopback (&apos;%2&apos;) !</source>
         <oldsource>La localisation &apos;&apos;%1&apos;&apos; est déjà connectée par l&apos;adresse IP loopback (&apos;%2&apos;) !</oldsource>
         <translation>Site &apos;%1&apos; is already connected through the loopback IP address (&apos;%2&apos;) !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3786"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3798"/>
         <source>Connecter à la localisation %1 !</source>
         <translation>Connect site %1 !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3790"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3802"/>
         <source>%1 - Connection à la localisation !</source>
         <translation>%1 - Connection to site !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3802"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3814"/>
         <source>Impossible de se connecter à la localisation %1 !</source>
         <translation>Connection to site %1 cannot be established !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3806"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3818"/>
         <source>%1 - Pas de connection à la localisation !</source>
         <translation>%1 - no connection to site !</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="3837"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="3849"/>
         <source>Impossible de se connecter au serveur &apos;%1&apos; de base de données !
 Contacter l&apos;administrateur de yeroth
 
@@ -3055,13 +3055,13 @@ client PHONE NUMBER: &quot;%5&quot;.</translation>
         <translation>keyword to search for (memo)</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4718"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4730"/>
         <location filename="src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp" line="1029"/>
         <source>pas de données à exporter au format csv</source>
         <translation>there are no data to export in csv format</translation>
     </message>
     <message>
-        <location filename="src/utils/yeroth-erp-utils.cpp" line="4719"/>
+        <location filename="src/utils/yeroth-erp-utils.cpp" line="4731"/>
         <location filename="src/windows/stocks/yeroth-erp-mouvements_de_stocks-window.cpp" line="1031"/>
         <source>Il n&apos;y a pas de données à exporter au format csv !</source>
         <oldsource>Il n&apos;y a pas de données à exporter au format csv!</oldsource>
@@ -15851,188 +15851,187 @@ PAY GROUP</translation>
         <translation>Designation</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="1906"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="1909"/>
         <source>GROUPE DE PAIE</source>
         <oldsource>Référence GROUPE DE PAIE</oldsource>
         <translation>PAY GROUP</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="1911"/>
-        <source>Nombre de membres MAXIMAL</source>
-        <oldsource>Nombre de membres</oldsource>
-        <translation>MAXIMUM Member count</translation>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="1917"/>
+        <source>Membres (Maximum)</source>
+        <translation>Max member count</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="2953"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="2962"/>
         <source># groupes</source>
         <translation># groups</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="3472"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="4931"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="3481"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="4940"/>
         <source>dd/MM/yyyy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="3944"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="3953"/>
         <source>date de début</source>
         <translation>Begin (date)</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="4412"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="4421"/>
         <source>date de fin</source>
         <translation>End (date)</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5400"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5409"/>
         <source>valider</source>
         <translation>ok</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5450"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="5459"/>
         <source>activer</source>
         <translation>ACTIVATE</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="7006"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="7015"/>
         <source>SALAIRE CUMULÉ À DATE</source>
         <oldsource>SALAIRE CUMULÉ</oldsource>
         <translation>CUMULATED SALARY TO DATE</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8050"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8059"/>
         <source>SALAIRE du groupe de paie (HR) sélectionné</source>
         <oldsource>SALAIRE du groupe sélectionné</oldsource>
         <translation>selected PAY GROUP SALARY</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8517"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="8526"/>
         <source>RETOUR</source>
         <translation>BACK</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9034"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9043"/>
         <source>GROUPES 
  D&apos;EMPLOYÉS</source>
         <translation>EMPLOYEE 
  GROUP</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9552"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="9561"/>
         <source>MENU
 DES
 FOURNISSEURS</source>
         <translation>Supplier_HR MENU</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="10586"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="10595"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="11097"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="11106"/>
         <source>Actions</source>
         <translation>Functions</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="11607"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="11616"/>
         <source>Outils</source>
         <translation>Tools</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12125"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12134"/>
         <source>toolBar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12150"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12159"/>
         <source>À propos</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12166"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12175"/>
         <source>Changer d&apos;utilisateur</source>
         <translation>Sign in</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12178"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12187"/>
         <source>Fermeture</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12194"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12203"/>
         <source>Message d&apos;aide</source>
         <translation>User tip</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12197"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12206"/>
         <source>Appeler l&apos;aide</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12213"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12216"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12222"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12225"/>
         <source>Déconnecter l&apos;utilisateur</source>
         <translation>Sign out</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12233"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12242"/>
         <source>Administration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12245"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12254"/>
         <source>Informations sur l&apos;entreprise</source>
         <translation>Company info</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12257"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12266"/>
         <source>Qui suis je ?</source>
         <translation>Who am I?</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12269"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12272"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12278"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12281"/>
         <source>Lister des fournisseurs / EMPLOYÉS</source>
         <translation>VIEW SUPPLIERS / EMPLOYEES</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12277"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12280"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12286"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12289"/>
         <source>Afficher les détails de ce groupe d&apos;EMPLOYÉS</source>
         <translation>SHOW EMPLOYEE GROUP DETAILS</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12292"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12295"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12301"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12304"/>
         <source>Lister des groupes de paie</source>
         <translation>View pay group</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12305"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12314"/>
         <source>AUGMENTER LA POLICE DU TABLEAU</source>
         <translation>INCREASE FONT SIZE OF TABLE</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12315"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12324"/>
         <source>diminuer la police du tableau</source>
         <translation>decrease table font size</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12324"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12327"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12333"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12336"/>
         <source>Imprimer des groupes de l&apos;employé</source>
         <oldsource>Imprimer la fiche des clients</oldsource>
         <translation>PRINT EMPLOYEE GROUP</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12342"/>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12345"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12351"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12354"/>
         <source>Paramétrer les impressions PDF</source>
         <translation>Parameterize PDF printing</translation>
     </message>
     <message>
-        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12360"/>
+        <location filename="ui/supplier/yeroth-erp-GROUPES-dun-employe-hr-window.ui" line="12369"/>
         <source>Exporter au format csv</source>
         <translation>Export as csv file</translation>
     </message>

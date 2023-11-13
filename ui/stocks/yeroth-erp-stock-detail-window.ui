@@ -917,7 +917,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>8</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <underline>false</underline>
@@ -927,7 +927,8 @@
      <string>Entrer une
 immobilisation,
 un stock,
-un service</string>
+un service,
+ une CHARGE</string>
     </property>
    </widget>
    <widget class="YerothPushButton" name="pushButton_retour">
