@@ -354,7 +354,7 @@ const QString YerothUtils::IMPRIMANTE_EPSON_TM_T20ii_RESEAU(
 const unsigned int YerothUtils::PRINT_TIMEOUT(TIMEOUT_PRINT);
 
 const QString YerothUtils::STRING_STYLESHEETS_YEROTH_ERP_3_0(
-		"QLabel { font-size: 17px; color: rgb(0, 255, 100); }");
+		"QLabel { font-size: 17px; color: rgb(53, 132, 228); }");
 
 const QString YerothUtils::STRING_STYLESHEET_COLOR_YEROTHGREEN(
 		"QLabel { color : rgb(0, 255, 100); }");
