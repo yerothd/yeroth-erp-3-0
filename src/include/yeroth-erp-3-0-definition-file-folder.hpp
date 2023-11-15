@@ -40,6 +40,7 @@
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_TITRES 										FOLDER_YEROTH_ERP_3_0_SQL"/create_table_titres.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_LOCALISATIONS 							FOLDER_YEROTH_ERP_3_0_SQL"/create_table_localisations.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_CHARGES_FINANCIERES		FOLDER_YEROTH_ERP_3_0_SQL"/create_table_charges_financieres.sql"
+#define FILE_YEROTH_ERP_3_0_SQL_TABLE_YR_DB_RUNTIME_VERIF 			FOLDER_YEROTH_ERP_3_0_SQL"/create_table_YR_DB_RUNTIME_VERIF.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_ACHATS 										FOLDER_YEROTH_ERP_3_0_SQL"/create_table_achats.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_STOCKS 										FOLDER_YEROTH_ERP_3_0_SQL"/create_table_stocks.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_SERVICES_COMPLETES 				FOLDER_YEROTH_ERP_3_0_SQL"/create_table_services_completes.sql"

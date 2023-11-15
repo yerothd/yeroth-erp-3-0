@@ -22,6 +22,12 @@ const QString YerothDatabaseTableColumn::ID_ALERTE("id_alerte");
 
 const QString YerothDatabaseTableColumn::ID("id");
 
+const QString YerothDatabaseTableColumn::ERROR_ACCEPTED_RUNTIME_MONITOR_NAME("error_accepted_runtime_monitor_NAME");
+
+const QString YerothDatabaseTableColumn::ERROR_ACCEPTED_RUNTIME_MONITOR_NAME_ID("error_accepted_runtime_monitor_name_ID");
+
+const QString YerothDatabaseTableColumn::ERROR_ACCEPTED_RUNTIME_MONITOR_NAME_DESCRIPTION("error_accepted_runtime_monitor_name_DESCRIPTION");
+
 const QString YerothDatabaseTableColumn::REFEREUR_CLIENT("refereur_client");
 
 const QString YerothDatabaseTableColumn::REFEREUR_CLIENT_ID("refereur_client_ID");

@@ -331,7 +331,7 @@ YerothAdminWindow::YerothAdminWindow()
 
     pushButton_REFRESH_STATUS_DB_RUNTIME_VERIFICATOR
 		->enable(this,
-                 SLOT(SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS()));
+                 SLOT(REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS()));
 
     pushButton_START_DB_RUNTIME_VERIFICATOR
 		->enable(this,
@@ -1820,7 +1820,7 @@ void YerothAdminWindow::ENABLE_YR_DB_RUNTIME_VERIF_BUTTONS()
 
     pushButton_REFRESH_STATUS_DB_RUNTIME_VERIFICATOR
 		->enable(this,
-                 SLOT(SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS()));
+                 SLOT(REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS()));
 
     pushButton_START_DB_RUNTIME_VERIFICATOR
 		->enable(this,
@@ -1830,7 +1830,7 @@ void YerothAdminWindow::ENABLE_YR_DB_RUNTIME_VERIF_BUTTONS()
 		->enable(this,
 				 SLOT(STOP_YR_DB_RUNTIME_VERIF_DAEMON_PROCESS()));
 
-    SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS();
+    REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS();
 }
 
 
@@ -3481,10 +3481,19 @@ void YerothAdminWindow::enregistrer_app_parameters_configuration()
 }
 
 
-void YerothAdminWindow::SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS()
+void YerothAdminWindow::REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS()
 {
-    _logger->log
-    ("yeroth-erp-3-0 | YerothAdminWindow::check_Yr_Db_Runtime_Verif_Daemon_Running");
+    _logger
+        ->log("yeroth-erp-3-0 | YerothAdminWindow::check_Yr_Db_Runtime_Verif_SERVICE_Running");
+
+
+    comboBox_QT_DBUS_ERROR_DB_RUNTIME_VERIFICATOR
+        ->populateComboBoxRawString(YerothDatabase::YR_DB_RUNTIME_VERIF,
+                                    YerothDatabaseTableColumn::ERROR_ACCEPTED_RUNTIME_MONITOR_NAME);
+
+
+    comboBox_QT_DBUS_ERROR_DB_RUNTIME_VERIFICATOR->setCurrentIndex(1);
+
 
     bool started =
     		YerothProcessInfo::check_Yr_Db_Runtime_Verif_Daemon_Running(_logger);
@@ -3508,7 +3517,7 @@ void YerothAdminWindow::START_YR_DB_RUNTIME_VERIF_GUI()
 {
     YerothERPProcess::START_yr_db_runtime_verif_GUI();
 
-	SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS();
+	REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS();
 }
 
 
@@ -3516,7 +3525,7 @@ void YerothAdminWindow::START_YR_DB_RUNTIME_VERIF_DAEMON_PROCESS()
 {
     YerothERPProcess::START_yr_db_runtime_verif();
 
-	SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS();
+	REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS();
 }
 
 
@@ -3526,7 +3535,7 @@ void YerothAdminWindow::STOP_YR_DB_RUNTIME_VERIF_DAEMON_PROCESS()
 
     YerothERPProcess::STOP_yr_db_runtime_verif();
 
-	SET_COLOUR_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS_BUTTONS();
+	REFRESH_STATUS_OF_YR_DB_RUNTIME_VERIF_PROCESS();
 }
 
 

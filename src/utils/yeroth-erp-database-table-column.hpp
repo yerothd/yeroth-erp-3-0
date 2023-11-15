@@ -39,6 +39,12 @@ public:
 
     static const QString ID;
 
+    static const QString ERROR_ACCEPTED_RUNTIME_MONITOR_NAME;
+
+    static const QString ERROR_ACCEPTED_RUNTIME_MONITOR_NAME_ID;
+
+    static const QString ERROR_ACCEPTED_RUNTIME_MONITOR_NAME_DESCRIPTION;
+
     static const QString REFEREUR_CLIENT;
 
     static const QString REFEREUR_CLIENT_ID;

@@ -144,6 +144,7 @@ public:
     static const QString COMPTES_BANCAIRES;
     static const QString OPERATIONS_COMPTABLES;
     static const QString COMPTES_DOPERATIONS_COMPTABLES;
+    static const QString YR_DB_RUNTIME_VERIF;
     static const QString ENTREPRISE_INFO;
     static const QString PAIEMENTS;
     static const QString USERS;

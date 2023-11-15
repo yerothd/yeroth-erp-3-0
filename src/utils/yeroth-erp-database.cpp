@@ -23,8 +23,9 @@ const QString
 YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES
 ("comptes_doperations_comptables");
 
-const
-QString YerothDatabase::ENTREPRISE_INFO("entreprise_info");
+const QString YerothDatabase::YR_DB_RUNTIME_VERIF("yr_db_runtime_verif");
+
+const QString YerothDatabase::ENTREPRISE_INFO("entreprise_info");
 
 const QString YerothDatabase::PAIEMENTS("paiements");
 
