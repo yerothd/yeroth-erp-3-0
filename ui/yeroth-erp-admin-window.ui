@@ -31843,7 +31843,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabWidget_maintenance_verification">
        <attribute name="title">
@@ -35095,9 +35095,9 @@
         <widget class="YerothComboBox" name="comboBox_QT_DBUS_ERROR_DB_RUNTIME_VERIFICATOR">
          <property name="geometry">
           <rect>
-           <x>437</x>
+           <x>400</x>
            <y>290</y>
-           <width>312</width>
+           <width>350</width>
            <height>21</height>
           </rect>
          </property>
@@ -35599,7 +35599,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>8</pointsize>
+           <pointsize>7</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -35611,9 +35611,9 @@
         <widget class="QLabel" name="label_RUNTIME_MONITOR_VERIFIER_TESTER">
          <property name="geometry">
           <rect>
-           <x>437</x>
+           <x>400</x>
            <y>266</y>
-           <width>312</width>
+           <width>350</width>
            <height>21</height>
           </rect>
          </property>
@@ -63522,6 +63522,8 @@
     <property name="title">
      <string>Outils</string>
     </property>
+    <addaction name="actionAfficherPDF"/>
+    <addaction name="separator"/>
     <addaction name="actionRafraichir_le_statut"/>
     <addaction name="separator"/>
     <addaction name="actionQui_suis_je"/>
@@ -64002,6 +64004,7 @@
    <addaction name="actionChanger_utilisateur"/>
    <addaction name="actionDeconnecter_utilisateur"/>
    <addaction name="actionAppeler_aide"/>
+   <addaction name="actionAfficherPDF"/>
    <addaction name="actionRetournerMenuPrincipal"/>
   </widget>
   <action name="actionA_propos">
@@ -64195,6 +64198,25 @@
    </property>
    <property name="toolTip">
     <string>Rafraîchir le statut</string>
+   </property>
+  </action>
+  <action name="actionAfficherPDF">
+   <property name="icon">
+    <iconset resource="../yeroth-erp-3-0.qrc">
+     <normaloff>:/yeroth-erp-3-0-images/yeroth-erp-3-0-pdf-print-icon.svg</normaloff>:/yeroth-erp-3-0-images/yeroth-erp-3-0-pdf-print-icon.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Print a dynamic analysis report analytics</string>
+   </property>
+   <property name="toolTip">
+    <string>Print a dynamic analysis report analytics</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
    </property>
   </action>
  </widget>
