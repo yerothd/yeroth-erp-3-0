@@ -1,0 +1,1 @@
+ALTER table type_doperations_financieres ADD column Intitule_compte_doperation_DANS_LIGNE_BUDGETAIRE varchar(256) after type_doperation_financiere;
