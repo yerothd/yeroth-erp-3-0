@@ -79,6 +79,7 @@ public:
 
     virtual void rendreVisible(YerothSqlTableModel *stocksTableModel);
 
+
 public slots:
 
     MACRO_TO_DEFINE_VIEWING_POINTERS_PAGE_SLOTS(tableView_comptes_doperations_comptables)
@@ -105,8 +106,7 @@ public slots:
 
     virtual void deconnecter_utilisateur();
 
-    void afficher_comptes_bancaires(YerothSqlTableModel &
-                                    aYerothSqlTableModel);
+    void afficher_comptes_bancaires(YerothSqlTableModel &aYerothSqlTableModel);
 
     inline void afficher_comptes_bancaires()
     {
@@ -124,12 +124,14 @@ protected:
 
 
 protected slots:
+
     virtual void slot_reinitialiser_colones_db_visibles();
 
     virtual void textChangedSearchLineEditsQCompleters();
 
 
 private slots:
+
     void handle_change_tab(int);
 
     void set_filtrer_font();

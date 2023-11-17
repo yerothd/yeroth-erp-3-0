@@ -17837,6 +17837,9 @@ background-color: rgb(0, 0, 0); </string>
     <addaction name="separator"/>
     <addaction name="actionAdministration"/>
     <addaction name="separator"/>
+    <addaction name="actionAUGMENTER_LA_POLICE_DU_TABLEAU"/>
+    <addaction name="actiondiminuer_la_police_du_tableau"/>
+    <addaction name="separator"/>
     <addaction name="actionChampsDBVisible"/>
     <addaction name="actionReinitialiserChampsDBVisible"/>
     <addaction name="separator"/>
@@ -18347,6 +18350,8 @@ background-color: rgb(0, 0, 0); </string>
    <addaction name="actionChanger_utilisateur"/>
    <addaction name="actionDeconnecter_utilisateur"/>
    <addaction name="actionAppeler_aide"/>
+   <addaction name="actiondiminuer_la_police_du_tableau"/>
+   <addaction name="actionAUGMENTER_LA_POLICE_DU_TABLEAU"/>
    <addaction name="actionChampsDBVisible"/>
    <addaction name="actionReinitialiserChampsDBVisible"/>
    <addaction name="action_parametrer_les_impressions"/>
@@ -18568,6 +18573,26 @@ background-color: rgb(0, 0, 0); </string>
     <font>
      <pointsize>10</pointsize>
     </font>
+   </property>
+  </action>
+  <action name="actionAUGMENTER_LA_POLICE_DU_TABLEAU">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3-0-font_size_UP.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>AUGMENTER LA POLICE DU TABLEAU</string>
+   </property>
+  </action>
+  <action name="actiondiminuer_la_police_du_tableau">
+   <property name="icon">
+    <iconset>
+     <normalon>:/yeroth-erp-3-0-images/yeroth-erp-3-0-font_size_DOWN.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>diminuer la police du tableau</string>
    </property>
   </action>
  </widget>

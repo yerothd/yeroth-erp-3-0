@@ -59,8 +59,10 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
 //              << pushButton_afficher;
 
     _list_actions_to_enable_on_positive_tableview_ROW_COUNT
-            << actionExporter_au_format_csv
-            << action_parametrer_les_impressions << actionAfficherPDF;
+		<< actionAUGMENTER_LA_POLICE_DU_TABLEAU
+		<< actiondiminuer_la_police_du_tableau
+        << actionExporter_au_format_csv
+        << action_parametrer_les_impressions << actionAfficherPDF;
 
     QMESSAGE_BOX_STYLE_SHEET =
                     QString("QMessageBox {background-color: rgb(%1);}"
@@ -101,6 +103,16 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
 
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
     connect(tabWidget_creer, SIGNAL(currentChanged(int)), this, SLOT(handle_change_tab(int)));
+
+    connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,
+    		SIGNAL(triggered()),
+    		this,
+            SLOT(incrementFontSize__OF_TABLE()));
+
+    connect(actiondiminuer_la_police_du_tableau,
+    		SIGNAL(triggered()),
+    		this,
+            SLOT(decrementFontSize__OF_TABLE()));
 
     connect(action_parametrer_les_impressions, SIGNAL(triggered()), this, SLOT(setup_print()));
     connect(actionAfficherPDF, SIGNAL(triggered()), this, SLOT(print_PDF_PREVIOUSLY_SETUP()));
@@ -287,8 +299,19 @@ void YerothComptabiliteWindow::handle_change_tab(int current_tab_index)
 {
     switch (current_tab_index)
     {
+    case 0:
+
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionChampsDBVisible, true);
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionReinitialiserChampsDBVisible, true);
+        break;
+
     case 1:
+
         updateComboBoxes();
+
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionChampsDBVisible, false);
+        YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionReinitialiserChampsDBVisible, false);
+
         break;
 
     default:
@@ -402,6 +425,9 @@ void YerothComptabiliteWindow::definirManager()
 {
     _logger->log("definirManager");
 
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, true);
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, true);
+
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, true);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, true);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionChanger_utilisateur, true);
@@ -423,6 +449,9 @@ void YerothComptabiliteWindow::definirManager()
 void YerothComptabiliteWindow::definirPasDeRole()
 {
     _logger->log("definirPasDeRole");
+
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAUGMENTER_LA_POLICE_DU_TABLEAU, false);
+    YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actiondiminuer_la_police_du_tableau, false);
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAdministration, false);
