@@ -324,12 +324,10 @@ public:
     static const QString getCurrentAdminWindowReceiptsFormatAccordingToLanguage(const QString &
                                                                                 currentFacturesTypeValue);
 
-    static void saveCurrentAdminWindowFacturesTypeAccordingToLanguage(const
-                                                                      QString &
-                                                                      currentFacturesTypeValue);
+    static void saveCurrentAdminWindowFacturesTypeAccordingToLanguage(const QString &currentFacturesTypeValue);
 
     static bool executer_fichier_sql(const QString &fileName,
-                                     YerothLogger *logger = 0);
+                                     YerothLogger  *logger = 0);
 
     inline static QString prepareSqlStr(const QString &aStr)
     {

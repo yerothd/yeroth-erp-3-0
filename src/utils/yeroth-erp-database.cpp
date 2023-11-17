@@ -19,10 +19,6 @@ QString YerothDatabase::COMPTES_BANCAIRES("comptes_bancaires");
 
 const QString YerothDatabase::OPERATIONS_COMPTABLES("operations_comptables");
 
-const QString
-YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES
-("comptes_doperations_comptables");
-
 const QString YerothDatabase::YR_DB_RUNTIME_VERIF("yr_db_runtime_verif");
 
 const QString YerothDatabase::ENTREPRISE_INFO("entreprise_info");

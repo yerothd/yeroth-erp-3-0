@@ -85,7 +85,6 @@
     <file>yeroth-erp-3-0-sql/create_table_GROUPES_DEMPLOYES_HR.sql</file>
     <file>yeroth-erp-3-0-sql/create_table_GROUPES_DE_PAIE_HR.sql</file>
     <file>yeroth-erp-3-0-sql/create_table_services_completes.sql</file>
-    <file>yeroth-erp-3-0-sql/create_table_comptes_doperations_comptables.sql</file>
     <file>yeroth-erp-3-0-sql/create_table_operations_comptables.sql</file>    
 		<file>yeroth-erp-3-0-sql/create_table_comptes_bancaires.sql</file>
     <file>yeroth-erp-3-0-sql/create_table_entreprise_info.sql</file>

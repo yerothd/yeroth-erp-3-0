@@ -117,7 +117,6 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
     _tableModel_periodes_dappartenance_groupes_de_paie_hr(0),
     _tableModel_imprimantereseau_recus_petits(0),
     _tableModel_operations_comptables(0),
-    _tableModel_comptes_doperations_comptables(0),
     _tableModel_comptes_bancaires(0),
     _tableModel_entreprise_info(0),
     _tableModel_historique_paiements(0),
@@ -172,9 +171,6 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
 
     setupSqlTableModelFromName(YerothDatabase::OPERATIONS_COMPTABLES,
                                &_tableModel_operations_comptables);
-
-    setupSqlTableModelFromName(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES,
-                               &_tableModel_comptes_doperations_comptables);
 
     setupSqlTableModelFromName(YerothDatabase::COMPTES_BANCAIRES,
                                &_tableModel_comptes_bancaires);
@@ -428,7 +424,6 @@ void YerothERPWindows::reinitialiseSqlTableModels()
 {
     delete _tableModel_periodes_dappartenance_groupes_de_paie_hr;
     delete _tableModel_imprimantereseau_recus_petits;
-    delete _tableModel_comptes_doperations_comptables;
     delete _tableModel_operations_comptables;
     delete _tableModel_comptes_bancaires;
     delete _tableModel_entreprise_info;
@@ -466,9 +461,6 @@ void YerothERPWindows::reinitialiseSqlTableModels()
 
     _tableModel_operations_comptables =
                     new YerothSqlTableModel(YerothDatabase::OPERATIONS_COMPTABLES);
-
-    _tableModel_comptes_doperations_comptables =
-                    new YerothSqlTableModel(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES);
 
     _tableModel_comptes_bancaires =
                     new YerothSqlTableModel(YerothDatabase::COMPTES_BANCAIRES);
@@ -969,13 +961,6 @@ YerothSqlTableModel &YerothERPWindows::getSqlTableModel_operations_comptables()
 {
     _tableModel_operations_comptables->resetFilter("src/yeroth-erp-windows.cpp", 912);
     return *_tableModel_operations_comptables;
-}
-
-
-YerothSqlTableModel &YerothERPWindows::getSqlTableModel_comptes_doperations_comptables()
-{
-    _tableModel_comptes_doperations_comptables->resetFilter("src/yeroth-erp-windows.cpp", 919);
-    return *_tableModel_comptes_doperations_comptables;
 }
 
 

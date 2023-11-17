@@ -212,8 +212,6 @@ public:
 
     YerothSqlTableModel &getSqlTableModel_operations_comptables();
 
-    YerothSqlTableModel &getSqlTableModel_comptes_doperations_comptables();
-
     YerothSqlTableModel &getSqlTableModel_comptes_bancaires();
 
     YerothSqlTableModel &getSqlTableModel_entreprise_info();
@@ -402,12 +400,6 @@ public:
     {
         return YerothERPWindows::getNextIdFromTable(YerothDatabase::
                                                     OPERATIONS_COMPTABLES);
-    }
-
-    static inline int getNextIdSqlTableModel_comptes_doperations_comptables()
-    {
-        return YerothERPWindows::getNextIdFromTable(YerothDatabase::
-                                                    COMPTES_DOPERATIONS_COMPTABLES);
     }
 
     static inline int getNextIdSqlTableModel_charges_financieres()
@@ -602,7 +594,6 @@ private:
     YerothSqlTableModel *_tableModel_periodes_dappartenance_groupes_de_paie_hr;
     YerothSqlTableModel *_tableModel_imprimantereseau_recus_petits;
     YerothSqlTableModel *_tableModel_operations_comptables;
-    YerothSqlTableModel *_tableModel_comptes_doperations_comptables;
     YerothSqlTableModel *_tableModel_comptes_bancaires;
     YerothSqlTableModel *_tableModel_entreprise_info;
     YerothSqlTableModel *_tableModel_historique_paiements;

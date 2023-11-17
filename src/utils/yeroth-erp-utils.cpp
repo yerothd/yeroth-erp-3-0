@@ -2237,13 +2237,17 @@ void YerothUtils::saveCurrentAdminWindowFacturesTypeAccordingToLanguage(
 //                              .arg(currentFacturesTypeValue_FR);
 }
 
+
 bool YerothUtils::executer_fichier_sql(const QString &fileName,
-		YerothLogger *logger)
+                                       YerothLogger  *logger)
 {
 	QFile file(fileName);
 
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 	{
+		//QDEBUG_STRING_OUTPUT_2("YerothUtils::executer_fichier_sql",
+        //                        fileName);
+
 		QMessageBox::critical(0, QObject::tr("Cannot open file"),
 				QObject::tr(
 						"Unable to open file establish a database connection.\n"

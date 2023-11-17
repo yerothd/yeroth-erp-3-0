@@ -33,11 +33,8 @@
 
 YerothComptabiliteWindow::YerothComptabiliteWindow()
 :YerothWindowsCommons("yeroth-erp-listing-comptabilite"),
- YerothAbstractClassYerothSearchWindow(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES),
- _comptesDoperationsComptablesTransactionFilter(YerothUtils::EMPTY_STRING),
+ YerothAbstractClassYerothSearchWindow(YerothDatabase::LIGNES_BUDGETAIRES),
  _logger(new YerothLogger("YerothComptabiliteWindow")),
- _curCompte_DOPERATIONS_COMPTABLES_SqlTableModel
- 	 (&_allWindows->getSqlTableModel_comptes_doperations_comptables()),
  _pushButton_comptabilite_filtrer_font(0)
 {
     _windowName = QString("%1 - %2")
@@ -49,6 +46,7 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
     setupUi(this);
 
     mySetupUi(this);
+
 
 #ifdef YEROTH_FEATURES_COMPTABILITE_yes
 
@@ -71,9 +69,9 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
                      COLOUR_RGB_STRING_YEROTH_WHITE_255_255_255);
 
 
-    setup_select_configure_dbcolumn(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES);
+    setup_select_configure_dbcolumn(YerothDatabase::LIGNES_BUDGETAIRES);
 
-    YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION(YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES);
+    YEROTH_TABLE_VIEW_AND_SEARCH_CONTENT_CONFIGURATION(YerothDatabase::LIGNES_BUDGETAIRES);
 
     reinitialiser_colones_db_visibles();
 
@@ -87,7 +85,7 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
                     new QFont(pushButton_comptabilite_filtrer->font());
 
     tableView_comptes_doperations_comptables
-    	->setSqlTableName(&YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES);
+    	->setSqlTableName(&YerothDatabase::LIGNES_BUDGETAIRES);
 
 
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionMenu, false);
@@ -99,9 +97,6 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(action_parametrer_les_impressions, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, false);
-
-
-    pushButton_creer_le_compte->disable(this);
 
 
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
@@ -166,9 +161,8 @@ void YerothComptabiliteWindow::reinitialiser_colones_db_visibles()
 
     _visibleDBColumnNameStrList
             << YerothDatabaseTableColumn::TYPE_DOPERATION_FINANCIERE
-            << YerothDatabaseTableColumn::NUMERO_DU_COMPTE_DOPERATION_COMPTABLE
-            << YerothDatabaseTableColumn::RAISON_DOPERATION_COMPTABLE
-            << YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_DOPERATION_COMPTABLE;
+            << YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire
+            << YerothDatabaseTableColumn::DESCRIPTION_ligne_budgetaire;
 }
 
 
@@ -220,10 +214,11 @@ void YerothComptabiliteWindow::textChangedSearchLineEditsQCompleters()
             partSearchTerm = searchTermList.at(k);
             //qDebug() << "++ searchTermList: " << partSearchTerm;
 
-            _searchFilter.append(QString("%1").arg(GENERATE_SQL_LIKE_STMT
-                                                   (YerothDatabaseTableColumn::
-                                                    DESCRIPTION_DU_COMPTE_DOPERATION_COMPTABLE,
-                                                    partSearchTerm)));
+            _searchFilter
+                .append(QString("%1")
+                         .arg(GENERATE_SQL_LIKE_STMT
+                                (YerothDatabaseTableColumn::DESCRIPTION_ligne_budgetaire,
+                                 partSearchTerm)));
 
             if (k != lastIdx)
             {
@@ -271,18 +266,6 @@ void YerothComptabiliteWindow::textChangedSearchLineEditsQCompleters()
         }
     }
 
-    QString finalSearchFilter(_comptesDoperationsComptablesTransactionFilter);
-
-    if (!_searchFilter.isEmpty())
-    {
-        QString searchFilterWithDate(QString("%1 AND (%2)").arg
-                                     (_comptesDoperationsComptablesTransactionFilter,
-                                      _searchFilter));
-
-        finalSearchFilter = searchFilterWithDate;
-    }
-
-    _yerothSqlTableModel->yerothSetFilter_WITH_where_clause(finalSearchFilter);
 
 //    QDEBUG_STRING_OUTPUT_2("finalSearchFilter", finalSearchFilter);
 
@@ -308,10 +291,6 @@ void YerothComptabiliteWindow::handle_change_tab(int current_tab_index)
         updateComboBoxes();
         break;
 
-    case 2:
-        creer_COMPTE_DOPERATION_CHECK_FIELDS();
-        break;
-
     default:
         break;
     }
@@ -333,107 +312,11 @@ void YerothComptabiliteWindow::set_filtrer_font()
 }
 
 
-bool YerothComptabiliteWindow::creer_le_compte_doperation_comptable()
-{
-    if (creer_COMPTE_DOPERATION_CHECK_FIELDS())
-    {
-        YerothSqlTableModel &comptes_doperations_comptables_TableModel =
-                        _allWindows->getSqlTableModel_comptes_doperations_comptables();
-
-        QSqlRecord record = comptes_doperations_comptables_TableModel.record();
-
-        record.setValue(YerothDatabaseTableColumn::ID,
-                        YerothERPWindows::getNextIdSqlTableModel_comptes_doperations_comptables());
-
-        record.setValue(YerothDatabaseTableColumn::NUMERO_DU_COMPTE_DOPERATION_COMPTABLE,
-        				lineEdit_comptabilite_numero_de_compte->text());
-
-        record.setValue(YerothDatabaseTableColumn::RAISON_DOPERATION_COMPTABLE,
-                        lineEdit_comptabilite_RAISON_de_loperation->text());
-
-        record.setValue(YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_DOPERATION_COMPTABLE,
-        				textEdit_comptabilite_DESCRIPTION->toPlainText());
-
-        bool success = comptes_doperations_comptables_TableModel
-        					.insertNewRecord(record,
-        								     this,
-											 "src/windows/yeroth-erp-comptabilite-window.cpp",
-											 355,
-											 lineEdit_comptabilite_RAISON_de_loperation->text());
-
-        QString retMsg(QObject::tr("Le compte d'opération comptable numéro '%1' ")
-        				 .arg(lineEdit_comptabilite_numero_de_compte->text()));
-
-        if (success)
-        {
-            retMsg.append(QObject::tr(" a été créer avec succès !"));
-
-            YerothQMessageBox::information(this,
-                                           QObject::tr
-                                           ("créer 1 compte d'opération comptable"),
-                                           retMsg);
-
-            clear_creer_le_compte_doperation_comptable();
-
-            afficher_comptes_bancaires();
-
-            tabWidget_creer->setCurrentIndex(0);
-
-            return true;
-        }
-        else
-        {
-            retMsg.append(QObject::tr(" n'a pas pu être créer !"));
-
-            YerothQMessageBox::warning(this,
-                                       QObject::tr
-                                       ("créer 1 compte client"), retMsg);
-            return false;
-        }
-    }
-
-    return false;
-}
-
-
-void YerothComptabiliteWindow::clear_creer_le_compte_doperation_comptable()
-{
-    lineEdit_comptabilite_numero_de_compte->clear();
-    lineEdit_comptabilite_RAISON_de_loperation->clear();
-    textEdit_comptabilite_DESCRIPTION->clear();
-}
-
-
 void YerothComptabiliteWindow::refineYerothLineEdits()
 {
-    _comptesDoperationsComptablesTransactionFilter.clear();
-
-//      _comptesDoperationsComptablesTransactionFilter.append(QString(" ( %1 >= '%2' AND %3 <= '%4' ) ")
-//                                                                                                      .arg(YerothDatabaseTableColumn::DATE_PAIEMENT,
-//                                                                                                               DATE_TO_DB_FORMAT_STRING(dateEdit_comptabilite_debut->date()),
-//                                                                                                                       YerothDatabaseTableColumn::DATE_PAIEMENT,
-//                                                                                                                       DATE_TO_DB_FORMAT_STRING(dateEdit_comptabilite_fin->date())));
-//
 //      setupLineEditsQCompleters((QObject *)this);
 
     afficher_comptes_bancaires();
-}
-
-
-bool YerothComptabiliteWindow::creer_COMPTE_DOPERATION_CHECK_FIELDS()
-{
-    bool result = false;
-
-    bool numero_de_compte_doperation_comptable =
-                    lineEdit_comptabilite_numero_de_compte->checkField();
-
-    bool raison_de_loperation_comptable =
-                    lineEdit_comptabilite_RAISON_de_loperation->checkField();
-
-    result = numero_de_compte_doperation_comptable &&
-             raison_de_loperation_comptable;
-
-    return result;
 }
 
 
@@ -443,10 +326,11 @@ void YerothComptabiliteWindow::updateComboBoxes()
 
     comboBox_types_doperations_comptables->clear();
 
-    comboBox_comptes_doperations_comptables->populateComboBoxMissingRawString
-    (YerothDatabaseTableColumn::NUMERO_DU_COMPTE_DOPERATION_COMPTABLE,
-     YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES,
-     YerothUtils::EMPTY_STRING);
+    comboBox_comptes_doperations_comptables
+        ->populateComboBoxMissingRawString
+            (YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire,
+             YerothDatabase::LIGNES_BUDGETAIRES,
+             YerothUtils::EMPTY_STRING);
 
     comboBox_types_doperations_comptables->populateComboBox();
 }
@@ -454,10 +338,11 @@ void YerothComptabiliteWindow::updateComboBoxes()
 
 void YerothComptabiliteWindow::populateComboBoxes()
 {
-    comboBox_comptes_doperations_comptables->populateComboBoxMissingRawString
-    (YerothDatabaseTableColumn::NUMERO_DU_COMPTE_DOPERATION_COMPTABLE,
-     YerothDatabase::COMPTES_DOPERATIONS_COMPTABLES,
-     YerothUtils::EMPTY_STRING);
+    comboBox_comptes_doperations_comptables
+        ->populateComboBoxMissingRawString
+            (YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire,
+             YerothDatabase::LIGNES_BUDGETAIRES,
+             YerothUtils::EMPTY_STRING);
 
 
     comboBox_types_doperations_comptables->setupPopulateNORawString
@@ -499,14 +384,6 @@ void YerothComptabiliteWindow::setupDateTimeEdits()
     setStartDate(YerothERPConfig::GET_YEROTH_PAGING_DEFAULT_START_DATE());
 
     dateEdit_comptabilite_fin->setStartDate(GET_CURRENT_DATE);
-
-    _comptesDoperationsComptablesTransactionFilter.clear();
-
-//      _comptesDoperationsComptablesTransactionFilter.append(QString(" ( %1 >= '%2' AND %3 <= '%4' ) ")
-//                                                                                                      .arg(YerothDatabaseTableColumn::DATE_PAIEMENT,
-//                                                                                                               DATE_TO_DB_FORMAT_STRING(dateEdit_comptabilite_debut->date()),
-//                                                                                                                       YerothDatabaseTableColumn::DATE_PAIEMENT,
-//                                                                                                                       DATE_TO_DB_FORMAT_STRING(dateEdit_comptabilite_fin->date())));
 //
 //    connect(dateEdit_comptabilite_debut,
 //              SIGNAL(dateChanged(const QDate &)),
@@ -539,11 +416,7 @@ void YerothComptabiliteWindow::definirManager()
 
 
     MACRO_TO_ENABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS(this,
-                                                               _curCompte_DOPERATIONS_COMPTABLES_SqlTableModel)
-    pushButton_creer_le_compte->enable(this,
-                                       SLOT
-                                       (creer_le_compte_doperation_comptable
-                                        ()));
+                                                               _curCompte_Lignes_Budgetaires_SqlTableModel)
 }
 
 
@@ -565,7 +438,6 @@ void YerothComptabiliteWindow::definirPasDeRole()
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, false);
 
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
-    pushButton_creer_le_compte->disable(this);
 }
 
 
@@ -576,10 +448,10 @@ void YerothComptabiliteWindow::rendreVisible(YerothSqlTableModel *
 
     _curStocksTableModel = stocksTableModel;
 
-    _curCompte_DOPERATIONS_COMPTABLES_SqlTableModel =
-                    &_allWindows->getSqlTableModel_comptes_doperations_comptables();
+    _curCompte_Lignes_Budgetaires_SqlTableModel =
+                    &_allWindows->getSqlTableModel_lignes_budgetaires();
 
-    setYerothSqlTableModel(_curCompte_DOPERATIONS_COMPTABLES_SqlTableModel);
+    setYerothSqlTableModel(_curCompte_Lignes_Budgetaires_SqlTableModel);
 
     updateComboBoxes();
 
@@ -588,7 +460,7 @@ void YerothComptabiliteWindow::rendreVisible(YerothSqlTableModel *
     afficher_comptes_bancaires();
 
     YEROTH_set_windowName_TRANSLATED(YerothMainWindow::get_TRANSLATED_WindowName("comptabilité"),
-    								 _curCompte_DOPERATIONS_COMPTABLES_SqlTableModel);
+    								 _curCompte_Lignes_Budgetaires_SqlTableModel);
 
     APPLY_USER_LOCAL_SETTINGS_PARAMETERS();
 
@@ -642,6 +514,5 @@ QString YerothComptabiliteWindow::get_latex_template_print_pdf_content()
 
 void YerothComptabiliteWindow::deconnecter_utilisateur()
 {
-    clear_creer_le_compte_doperation_comptable();
     YerothWindowsCommons::deconnecter_utilisateur();
 }

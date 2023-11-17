@@ -26,7 +26,6 @@
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_groupes_de_paie_hr					FOLDER_YEROTH_ERP_3_0_SQL"/create_table_GROUPES_DE_PAIE_HR.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_TYPE_DOPERATIONS_FINANCIERES	FOLDER_YEROTH_ERP_3_0_SQL"/create_table_typedoperations_financieres.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_OPERATIONS_COMPTABLES 			FOLDER_YEROTH_ERP_3_0_SQL"/create_table_operations_comptables.sql"
-#define FILE_YEROTH_ERP_3_0_SQL_TABLE_COMPTES_DOPERATIONS_COMPTABLES FOLDER_YEROTH_ERP_3_0_SQL"/create_table_comptes_doperations_comptables.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_COMPTES_BANCAIRES 					FOLDER_YEROTH_ERP_3_0_SQL"/create_table_comptes_bancaires.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_ENTREPRISE_INFO 						FOLDER_YEROTH_ERP_3_0_SQL"/create_table_entreprise_info.sql"
 #define FILE_YEROTH_ERP_3_0_SQL_TABLE_TYPE_DE_VENTE 							FOLDER_YEROTH_ERP_3_0_SQL"/create_table_typedevente.sql"

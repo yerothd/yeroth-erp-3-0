@@ -380,37 +380,33 @@ const QString YerothDatabaseTableColumn::HEURE_PAIEMENT("heure_paiement");
 const QString YerothDatabaseTableColumn::HEURE_VENTE("heure_vente");
 const QString YerothDatabaseTableColumn::HEURE_SORTIE("heure_sortie");
 const QString YerothDatabaseTableColumn::DESTINATAIRE("destinataire");
-const QString
-YerothDatabaseTableColumn::NOM_COMPLET_DESTINATAIRE
-("nom_complet_destinataire");
-const
-QString YerothDatabaseTableColumn::REMISE_NOTES("remise_notes");
+
+const QString YerothDatabaseTableColumn::NOM_COMPLET_DESTINATAIRE("nom_complet_destinataire");
+
+const QString YerothDatabaseTableColumn::REMISE_NOTES("remise_notes");
+
 const QString YerothDatabaseTableColumn::MESSAGE_ALERTE("message_alerte");
+
 const QString YerothDatabaseTableColumn::DATE_CREATION("date_creation");
-const QString
-YerothDatabaseTableColumn::TYPE_DOPERATION_FINANCIERE
-("type_doperation_financiere");
-const
-QString
-YerothDatabaseTableColumn::NUMERO_DU_COMPTE_DOPERATION_COMPTABLE
-("numero_du_compte_doperation_comptable");
-const
-QString
-YerothDatabaseTableColumn::RAISON_DOPERATION_COMPTABLE
-("raison_doperation_comptable");
-const
-QString
-YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_DOPERATION_COMPTABLE
-("description_du_compte_doperation_comptable");
-const
-QString YerothDatabaseTableColumn::TYPE_DE_PAIEMENT("type_de_paiement");
+
+const QString YerothDatabaseTableColumn::TYPE_DOPERATION_FINANCIERE("type_doperation_financiere");
+
+const QString YerothDatabaseTableColumn::TYPE_DE_PAIEMENT("type_de_paiement");
+
 const QString YerothDatabaseTableColumn::TYPE_DE_VENTE("type_de_vente");
+
 const QString YerothDatabaseTableColumn::NOTIFICATIONS("notifications");
+
 const QString YerothDatabaseTableColumn::REMISE_RESOLUE("remise_resolue");
+
 const QString YerothDatabaseTableColumn::ALERTE_RESOLUE("alerte_resolue");
+
 const QString YerothDatabaseTableColumn::LOCALISATION_SORTIE("localisation_sortie");
+
 const QString YerothDatabaseTableColumn::LOCALISATION_ENTREE("localisation_entree");
+
 const QString YerothDatabaseTableColumn::LOCALISATION_SORTIE_ID("localisation_sortie_id");
+
 const QString YerothDatabaseTableColumn::LOCALISATION_ENTREE_ID("localisation_entree_id");
 
 
@@ -418,10 +414,10 @@ void YerothDatabaseTableColumn::RETRANSLATE()
 {
     _tableColumnToUserViewString.clear();
 
-    _tableColumnToUserViewString.insert
-    (YerothDatabaseTableColumn::MONTANT_RABAIS_PROGRAMME_DE_FIDELITE_CLIENTS,
-     QObject::tr("Rabais FIDÉLITÉ CLIENTS (%1)").
-     arg(YerothERPConfig::currency));
+    _tableColumnToUserViewString
+        .insert(YerothDatabaseTableColumn::MONTANT_RABAIS_PROGRAMME_DE_FIDELITE_CLIENTS,
+                QObject::tr("Rabais FIDÉLITÉ CLIENTS (%1)")
+                  .arg(YerothERPConfig::currency));
 
     _tableColumnToUserViewString.insert(YerothDatabaseTableColumn::SERVICE_SUPPLEMENT_AJOUT_COMMERCIAL,
                                         QObject::tr("Service supplément (ajout commercial)"));
@@ -1088,18 +1084,6 @@ void YerothDatabaseTableColumn::RETRANSLATE()
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::TYPE_DOPERATION_FINANCIERE,
            QObject::tr("Type d'opération comptable"));
-
-    _tableColumnToUserViewString.
-    insert(YerothDatabaseTableColumn::NUMERO_DU_COMPTE_DOPERATION_COMPTABLE,
-           QObject::tr("numéro compte d'opération comptable"));
-
-    _tableColumnToUserViewString.
-    insert(YerothDatabaseTableColumn::RAISON_DOPERATION_COMPTABLE,
-           QObject::tr("raison d'opération comptable"));
-
-    _tableColumnToUserViewString.insert
-    (YerothDatabaseTableColumn::DESCRIPTION_DU_COMPTE_DOPERATION_COMPTABLE,
-     QObject::tr("description du compte d'opération comptable"));
 
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::TYPE_DE_PAIEMENT,

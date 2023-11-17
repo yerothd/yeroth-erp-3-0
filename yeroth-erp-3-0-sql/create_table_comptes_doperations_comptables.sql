@@ -1,1 +1,0 @@
-create table comptes_doperations_comptables (id int primary key, numero_du_compte_doperation_comptable varchar(256) NOT NULL, raison_doperation_comptable varchar(256) NOT NULL, description_du_compte_doperation_comptable varchar(256));

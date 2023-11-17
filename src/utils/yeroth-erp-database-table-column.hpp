@@ -399,12 +399,6 @@ public:
 
     static const QString TYPE_DOPERATION_FINANCIERE;
 
-    static const QString NUMERO_DU_COMPTE_DOPERATION_COMPTABLE;
-
-    static const QString RAISON_DOPERATION_COMPTABLE;
-
-    static const QString DESCRIPTION_DU_COMPTE_DOPERATION_COMPTABLE;
-
     static const QString TYPE_DE_PAIEMENT;
 
     static const QString TYPE_DE_VENTE;

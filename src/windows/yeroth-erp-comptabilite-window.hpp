@@ -113,6 +113,7 @@ public slots:
         textChangedSearchLineEditsQCompleters();
     }
 
+
 protected:
 
     virtual void reinitialiser_colones_db_visibles();
@@ -121,30 +122,22 @@ protected:
 
     virtual void setupShortcuts();
 
+
 protected slots:
     virtual void slot_reinitialiser_colones_db_visibles();
 
     virtual void textChangedSearchLineEditsQCompleters();
+
 
 private slots:
     void handle_change_tab(int);
 
     void set_filtrer_font();
 
-    bool creer_le_compte_doperation_comptable();
-
-    void clear_creer_le_compte_doperation_comptable();
-
-    inline void annuler_creer_le_compte_doperation_comptable()
-    {
-        clear_creer_le_compte_doperation_comptable();
-    }
-
     void refineYerothLineEdits();
 
-private:
 
-    bool creer_COMPTE_DOPERATION_CHECK_FIELDS();
+private:
 
     void updateComboBoxes();
 
@@ -155,13 +148,11 @@ private:
     void setupDateTimeEdits();
 
 
-    QString _comptesDoperationsComptablesTransactionFilter;
+    YerothLogger        *_logger;
 
-    YerothLogger *_logger;
+    YerothSqlTableModel *_curCompte_Lignes_Budgetaires_SqlTableModel;
 
-    YerothSqlTableModel *_curCompte_DOPERATIONS_COMPTABLES_SqlTableModel;
-
-    QFont *_pushButton_comptabilite_filtrer_font;
+    QFont               *_pushButton_comptabilite_filtrer_font;
 };
 
 #endif /* SRC_YEROTH_COMPTES_BANCAIRES_WINDOW_HPP_ */

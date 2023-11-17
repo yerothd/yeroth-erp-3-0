@@ -4690,7 +4690,6 @@ moc/moc_yeroth-erp-comptabilite-window.cpp: src/windows/yeroth-erp-comptabilite-
 		src/utils/yeroth-erp-logger.hpp \
 		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yerith/yeroth-erp-3-0/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yerith/yeroth-erp-3-0 -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/windows/yeroth-erp-comptabilite-window.hpp -o moc/moc_yeroth-erp-comptabilite-window.cpp
@@ -6386,7 +6385,6 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-sql/create_table_courriers_alertes.sql \
 		yeroth-erp-3-0-sql/create_table_typedevente.sql \
 		yeroth-erp-3-0-sql/create_table_departements_produits.sql \
-		yeroth-erp-3-0-sql/create_table_comptes_doperations_comptables.sql \
 		yeroth-erp-3-0-sql/create_table_programmes_de_fidelite_clients.sql \
 		yeroth-erp-3-0-sql/create_table_YR_DB_RUNTIME_VERIF.sql \
 		yeroth-erp-3-0-sql/create_table_services_completes.sql \
@@ -6418,8 +6416,8 @@ qrc_yeroth-erp-3-0.cpp: yeroth-erp-3-0.qrc \
 		yeroth-erp-3-0-sql/create_table_stocks_sorties.sql \
 		yeroth-erp-3-0-sql/create_table_GROUPES_DE_PAIE_HR.sql \
 		yeroth-erp-3-0-sql/create_table_stocks_vendu.sql \
-		yeroth-erp-3-0-sql/create_table_comptes_bancaires.sql \
 		yeroth-erp-3-0-sql/create_table_imprimantereseau_recus_petits.sql \
+		yeroth-erp-3-0-sql/create_table_comptes_bancaires.sql \
 		yeroth-erp-3-0-sql/create_table_conditions_alertes.sql
 	/usr/lib/qt5/bin/rcc -name yeroth-erp-3-0 yeroth-erp-3-0.qrc -o qrc_yeroth-erp-3-0.cpp
 
@@ -6571,7 +6569,6 @@ ui_yeroth-erp-comptabilite-window.h: ui/yeroth-erp-comptabilite-window.ui \
 		src/widgets/yeroth-erp-push-button.hpp \
 		src/widgets/yeroth-erp-line-edit.hpp \
 		src/widgets/yeroth-erp-datetime-edit.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/widgets/yeroth-erp-combo-box.hpp \
 		src/widgets/table-view/yeroth-erp-comptes-doperations-comptabilite-table-view.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
@@ -6633,28 +6630,6 @@ ui_yeroth-erp-comptabilite-window.h: ui/yeroth-erp-comptabilite-window.ui \
 		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
 		src/include/yeroth-erp-3-0-definition-month.hpp \
 		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
-		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
-		src/include/yeroth-erp-3-0-definition-oo-class-operators.hpp \
-		src/include/yeroth-erp-3-0-definition-initial-focus-searchbar.hpp \
-		src/include/yeroth-erp-3-0-definition-file-folder.hpp \
-		src/include/yeroth-erp-3-0-definition-user-manual.hpp \
-		src/include/yeroth-erp-3-0-definition-format-date-time.hpp \
-		src/include/yeroth-erp-3-0-definition-shortcut.hpp \
-		src/include/yeroth-erp-3-0-definition-month.hpp \
-		src/include/yeroth-erp-3-0-definition-colour-rgb.hpp \
-		src/utils/yeroth-erp-utils.hpp \
-		src/utils/yeroth-erp-spell-numbers.hpp \
-		src/utils/yeroth-erp-client-account-sale-info.hpp \
-		src/utils/yeroth-erp-database.hpp \
-		src/utils/yeroth-erp-config.hpp \
-		src/utils/yeroth-erp-database-table-column.hpp \
-		src/widgets/yeroth-erp-qmessage-box.hpp \
-		src/widgets/table-view/yeroth-erp-table-view.hpp \
-		src/widgets/yeroth-erp-qstandard-item-model.hpp \
-		src/utils/yeroth-erp-sqltable-model.hpp \
-		src/utils/yeroth-erp-service-stock-marchandise-data.hpp \
-		src/widgets/yeroth-erp-combo-box.hpp \
 		src/utils/yeroth-erp-utils.hpp \
 		src/include/yeroth-erp-3-0-software.text-configuration.hpp \
 		src/include/yeroth-erp-3-0-definition-special-qt5.7-macro.hpp \
@@ -19901,7 +19876,6 @@ obj/yeroth-erp-comptabilite-window.o: src/windows/yeroth-erp-comptabilite-window
 		src/utils/yeroth-erp-logger.hpp \
 		src/widgets/yeroth-erp-progress-bar.hpp \
 		src/utils/windows/yeroth-erp-abstract-class-yerothsearch-window.hpp \
-		src/widgets/yeroth-erp-text-edit.hpp \
 		src/yeroth-erp-windows.hpp \
 		src/windows/yeroth-erp-main-window.hpp \
 		ui_yeroth-erp-main-window.h \
@@ -19912,6 +19886,7 @@ obj/yeroth-erp-comptabilite-window.o: src/windows/yeroth-erp-comptabilite-window
 		src/widgets/table-view/yeroth-erp-paiements-table-view.hpp \
 		src/widgets/table-view/yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp \
 		src/widgets/widgets-table/yeroth-erp-tab-widget.hpp \
+		src/widgets/yeroth-erp-text-edit.hpp \
 		src/windows/yeroth-erp-tableaux-de-bord-window.hpp \
 		ui_yeroth-erp-tableaux-de-bord-window.h \
 		src/widgets/yeroth-erp-qcheckbox.hpp \
