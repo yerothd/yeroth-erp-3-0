@@ -210,6 +210,8 @@ public:
 
     YerothSqlTableModel &getSqlTableModel_imprimantereseau_recus_petits();
 
+    YerothSqlTableModel &getSqlTableModel_types_doperations_financieres();
+
     YerothSqlTableModel &getSqlTableModel_operations_comptables();
 
     YerothSqlTableModel &getSqlTableModel_comptes_bancaires();
@@ -390,17 +392,27 @@ public:
                                                     COMPTES_BANCAIRES);
     }
 
+
     static inline int getNextIdSqlTableModel_imprimantereseau_recus_petits()
     {
         return YerothERPWindows::getNextIdFromTable(YerothDatabase::
                                                     IMPRIMANTERESEAU_RECUS_PETITS);
     }
 
+
+    static inline int getNextIdSqlTableModel_types_doperations_financieres()
+    {
+        return YerothERPWindows::getNextIdFromTable
+                (YerothDatabase::TYPE_DOPERATIONS_FINANCIERES);
+    }
+
+
     static inline int getNextIdSqlTableModel_operations_comptables()
     {
         return YerothERPWindows::getNextIdFromTable(YerothDatabase::
                                                     OPERATIONS_COMPTABLES);
     }
+
 
     static inline int getNextIdSqlTableModel_charges_financieres()
     {
@@ -593,6 +605,7 @@ private:
 
     YerothSqlTableModel *_tableModel_periodes_dappartenance_groupes_de_paie_hr;
     YerothSqlTableModel *_tableModel_imprimantereseau_recus_petits;
+    YerothSqlTableModel *_tableModel_types_doperations_financieres;
     YerothSqlTableModel *_tableModel_operations_comptables;
     YerothSqlTableModel *_tableModel_comptes_bancaires;
     YerothSqlTableModel *_tableModel_entreprise_info;

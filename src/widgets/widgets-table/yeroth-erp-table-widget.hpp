@@ -22,9 +22,13 @@ class YerothLogger;
 
 class YerothTableWidget:public QTableWidget
 {
-Q_OBJECT public:
+    Q_OBJECT
 
-    YEROTH_CLASS_OPERATORS YerothTableWidget(QWidget *parent = 0);
+public:
+
+    YEROTH_CLASS_OPERATORS
+
+    YerothTableWidget(QWidget *parent = 0);
 
     virtual inline ~YerothTableWidget()
     {
@@ -35,7 +39,7 @@ Q_OBJECT public:
         return _mapListIdxToElement_db_ID.value(aRow);
     }
 
-    inline const QMap < int, QString > &get_mapListIdxToElement_db_ID()
+    inline const QMap<int, QString> &get_mapListIdxToElement_db_ID()
     {
         return _mapListIdxToElement_db_ID;
     }
@@ -49,23 +53,29 @@ Q_OBJECT public:
 
     static const QString QTE_1;
 
+
 public slots:
     virtual void yerothClearTableWidgetContent();
 
     virtual void removeArticle(int tableWidgetRow);
 
+
 protected:
+
+    virtual void resize_columns_AND_rows_to_contents();
 
     virtual inline void set_MY_QStandardItemFlags()
     {
         setQStandardItemFlags(_myQStandardItemFlags);
     }
 
+
 signals:
 
     void addedYerothTableWidget();
 
     void emptiedYerothTableWidget();
+
 
 protected:
 

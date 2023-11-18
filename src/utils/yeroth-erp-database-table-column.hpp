@@ -151,6 +151,8 @@ public:
 
     static const QString INTITULE_DU_COMPTE_BANCAIRE;
 
+    static const QString INTITULE_COMPTE_DOPERATION_DANS_LIGNE_BUDGETAIRE;
+
     static const QString montant_RESTANT_de_la_ligne_budgetaire;
 
     static const QString montant_de_la_ligne_budgetaire;

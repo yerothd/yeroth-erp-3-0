@@ -130,6 +130,9 @@ const QString YerothDatabaseTableColumn::AGENCE_DU_COMPTE_BANCAIRE("agence_du_co
 
 const QString YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE("intitule_du_compte_bancaire");
 
+const QString YerothDatabaseTableColumn::
+        INTITULE_COMPTE_DOPERATION_DANS_LIGNE_BUDGETAIRE("Intitule_compte_doperation_DANS_LIGNE_BUDGETAIRE");
+
 const QString YerothDatabaseTableColumn::montant_RESTANT_de_la_ligne_budgetaire("montant_RESTANT_de_la_ligne_budgetaire");
 
 const QString YerothDatabaseTableColumn::montant_de_la_ligne_budgetaire("montant_de_la_ligne_budgetaire");
@@ -643,6 +646,10 @@ void YerothDatabaseTableColumn::RETRANSLATE()
     _tableColumnToUserViewString.
     insert(YerothDatabaseTableColumn::INTITULE_DU_COMPTE_BANCAIRE,
            QObject::tr("Intitulé compte bancaire"));
+
+    _tableColumnToUserViewString
+		.insert(YerothDatabaseTableColumn::INTITULE_COMPTE_DOPERATION_DANS_LIGNE_BUDGETAIRE,
+           QObject::tr("INTITULÉ LIGNE_BUDGETAIRE"));
 
     _tableColumnToUserViewString
 		.insert(YerothDatabaseTableColumn::montant_RESTANT_de_la_ligne_budgetaire,

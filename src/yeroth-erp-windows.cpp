@@ -116,6 +116,7 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
     _database(0),
     _tableModel_periodes_dappartenance_groupes_de_paie_hr(0),
     _tableModel_imprimantereseau_recus_petits(0),
+    _tableModel_types_doperations_financieres(0),
     _tableModel_operations_comptables(0),
     _tableModel_comptes_bancaires(0),
     _tableModel_entreprise_info(0),
@@ -168,6 +169,9 @@ YerothERPWindows::YerothERPWindows(QDesktopWidget *desktopWidget):_mainWindow(0)
 
     setupSqlTableModelFromName(YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS,
                                &_tableModel_imprimantereseau_recus_petits);
+
+    setupSqlTableModelFromName(YerothDatabase::TYPE_DOPERATIONS_FINANCIERES,
+                               &_tableModel_types_doperations_financieres);
 
     setupSqlTableModelFromName(YerothDatabase::OPERATIONS_COMPTABLES,
                                &_tableModel_operations_comptables);
@@ -424,6 +428,7 @@ void YerothERPWindows::reinitialiseSqlTableModels()
 {
     delete _tableModel_periodes_dappartenance_groupes_de_paie_hr;
     delete _tableModel_imprimantereseau_recus_petits;
+    delete _tableModel_types_doperations_financieres;
     delete _tableModel_operations_comptables;
     delete _tableModel_comptes_bancaires;
     delete _tableModel_entreprise_info;
@@ -459,11 +464,14 @@ void YerothERPWindows::reinitialiseSqlTableModels()
     _tableModel_imprimantereseau_recus_petits =
         new YerothSqlTableModel(YerothDatabase::IMPRIMANTERESEAU_RECUS_PETITS);
 
+    _tableModel_types_doperations_financieres =
+        new YerothSqlTableModel(YerothDatabase::TYPE_DOPERATIONS_FINANCIERES);
+
     _tableModel_operations_comptables =
-                    new YerothSqlTableModel(YerothDatabase::OPERATIONS_COMPTABLES);
+        new YerothSqlTableModel(YerothDatabase::OPERATIONS_COMPTABLES);
 
     _tableModel_comptes_bancaires =
-                    new YerothSqlTableModel(YerothDatabase::COMPTES_BANCAIRES);
+        new YerothSqlTableModel(YerothDatabase::COMPTES_BANCAIRES);
 
     _tableModel_entreprise_info =
                     new YerothSqlTableModel(YerothDatabase::ENTREPRISE_INFO);
@@ -954,6 +962,13 @@ YerothSqlTableModel &YerothERPWindows::getSqlTableModel_imprimantereseau_recus_p
 {
     _tableModel_imprimantereseau_recus_petits->resetFilter("src/yeroth-erp-windows.cpp", 905);
     return *_tableModel_imprimantereseau_recus_petits;
+}
+
+
+YerothSqlTableModel &YerothERPWindows::getSqlTableModel_types_doperations_financieres()
+{
+    _tableModel_types_doperations_financieres->resetFilter("src/yeroth-erp-windows.cpp", 970);
+    return *_tableModel_types_doperations_financieres;
 }
 
 

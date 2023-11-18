@@ -34,6 +34,8 @@ YerothTableWidget::YerothTableWidget(QWidget *parent):QTableWidget(parent),
     setSelectionBehavior(QAbstractItemView::SelectRows);
 
     setSelectionMode(QAbstractItemView::SingleSelection);
+
+    resize_columns_AND_rows_to_contents();
 }
 
 
@@ -89,6 +91,17 @@ void YerothTableWidget::removeArticle(int tableWidgetRow)
 
     _mapListIdxToElement_db_ID.clear();
     _mapListIdxToElement_db_ID = newMapListIdxToItems;
+}
+
+
+void YerothTableWidget::resize_columns_AND_rows_to_contents()
+{
+    if (columnCount() > 1)
+    {
+        resizeColumnsToContents();
+    }
+
+    resizeRowsToContents();
 }
 
 

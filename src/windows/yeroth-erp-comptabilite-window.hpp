@@ -125,6 +125,8 @@ protected:
 
 protected slots:
 
+    virtual bool SLOT_associer_TypeDoperation__CompteDoperation();
+
     virtual void slot_reinitialiser_colones_db_visibles();
 
     virtual void textChangedSearchLineEditsQCompleters();

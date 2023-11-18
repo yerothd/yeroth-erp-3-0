@@ -102,6 +102,10 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
 
 
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
+
+    pushButton_ASSOCIER_TYPE_DOPERATION__compte_doperation
+        ->disable(this);
+
     connect(tabWidget_creer, SIGNAL(currentChanged(int)), this, SLOT(handle_change_tab(int)));
 
     connect(actionAUGMENTER_LA_POLICE_DU_TABLEAU,
@@ -147,7 +151,9 @@ YerothComptabiliteWindow::YerothComptabiliteWindow()
 
 YerothComptabiliteWindow::~YerothComptabiliteWindow()
 {
-    MACRO_TO_DELETE_PAGINATION_INTEGER_VALIDATOR delete _logger;
+    MACRO_TO_DELETE_PAGINATION_INTEGER_VALIDATOR
+
+    delete _logger;
 }
 
 
@@ -187,11 +193,154 @@ void YerothComptabiliteWindow::hideEvent(QHideEvent *hideEvent)
 void YerothComptabiliteWindow::setupShortcuts()
 {
     setupShortcutActionMessageDaide(*actionAppeler_aide);
-    setupShortcutActionPARAMETRER_IMPRESSION_PDF
-    (*action_parametrer_les_impressions);
+    setupShortcutActionPARAMETRER_IMPRESSION_PDF(*action_parametrer_les_impressions);
     setupShortcutActionAfficherPDF(*actionAfficherPDF);
     setupShortcutActionExporterAuFormatCsv(*actionExporter_au_format_csv);
     setupShortcutActionQuiSuisJe(*actionQui_suis_je);
+}
+
+
+bool YerothComptabiliteWindow::SLOT_associer_TypeDoperation__CompteDoperation()
+{
+    QDEBUG_STRING_OUTPUT_1("SLOT_associer_TypeDoperation__CompteDoperation");
+
+    bool association_reussie = false;
+
+    YerothSqlTableModel &type_doperation_SqlTbleModel =
+        _allWindows->getSqlTableModel_types_doperations_financieres();
+
+    int CODE_type_doperation_commerciale =
+        YerothUtils::OPERATION_FINANCIERE_INDEFINI;
+
+    QString current_type_doperation_commerciale =
+        comboBox_types_doperations_comptables->currentText();
+
+
+    if (YerothUtils::isEqualCaseSensitive
+            (YerothUtils::_typedoperationfinancieresToUserViewString.value(YerothUtils::OPERATION_FINANCIERE_VENTE),
+             current_type_doperation_commerciale))
+    {
+        CODE_type_doperation_commerciale = YerothUtils::OPERATION_FINANCIERE_VENTE;
+    }
+    else if (YerothUtils::isEqualCaseSensitive
+            (YerothUtils::_typedoperationfinancieresToUserViewString.value(YerothUtils::OPERATION_FINANCIERE_ACHAT_DE_MARCHANDISES),
+             current_type_doperation_commerciale))
+    {
+        CODE_type_doperation_commerciale = YerothUtils::OPERATION_FINANCIERE_ACHAT_DE_MARCHANDISES;
+    }
+    else if (YerothUtils::isEqualCaseSensitive
+            (YerothUtils::_typedoperationfinancieresToUserViewString.value(YerothUtils::OPERATION_FINANCIERE_CHARGE_FINANCIERE),
+             current_type_doperation_commerciale))
+    {
+        CODE_type_doperation_commerciale = YerothUtils::OPERATION_FINANCIERE_CHARGE_FINANCIERE;
+    }
+    else
+    {
+        YerothQMessageBox::warning(this,
+                                   QObject::tr("TYPE D'OPÉRATION COMMERCIALE inconnue"),
+                                   QObject::tr("TYPE D'OPÉRATION COMMERCIALE inconnue !"));
+        return false;
+    }
+
+
+    QString FILTER_COMMERCIAL_OPERATION_TYPE =
+        QString("%1 = '%2'")
+            .arg(YerothDatabaseTableColumn::TYPE_DOPERATION_FINANCIERE,
+                 QString::number(CODE_type_doperation_commerciale));
+
+
+    type_doperation_SqlTbleModel
+        .yerothSetFilter_WITH_where_clause
+            (FILTER_COMMERCIAL_OPERATION_TYPE);
+
+
+	int rows = type_doperation_SqlTbleModel
+                .easySelect("src/windows/yeroth-erp-comptabilite-window.cpp", 260);
+
+	if (1 == rows)
+	{
+		QSqlRecord record = type_doperation_SqlTbleModel.record(0);
+
+        int Record_type_doperation_integer =
+            GET_SQL_RECORD_DATA(record,
+                                YerothDatabaseTableColumn::TYPE_DOPERATION_FINANCIERE).toInt();
+
+		QString CURRENT_intitule_de_la_ligne_budgetaire =
+            comboBox_comptes_doperations_comptables->currentText();
+
+
+        if (CODE_type_doperation_commerciale == Record_type_doperation_integer &&
+            !CURRENT_intitule_de_la_ligne_budgetaire.isEmpty())
+        {
+            record.setValue(YerothDatabaseTableColumn::INTITULE_COMPTE_DOPERATION_DANS_LIGNE_BUDGETAIRE,
+                            CURRENT_intitule_de_la_ligne_budgetaire);
+
+            bool success = type_doperation_SqlTbleModel
+                            .updateRecord(0,
+                                          record,
+                                          "src/windows/yeroth-erp-comptabilite-window.cpp",
+                                          265);
+
+            QString retMsg =
+                QObject::tr("Le type d'opération commerciale '%1' ")
+                    .arg(YerothUtils::_typedoperationfinancieresToUserViewString
+                            .value(CODE_type_doperation_commerciale));
+
+
+            if (!success)
+            {
+                association_reussie = false;
+
+                retMsg.append
+                    (QObject::tr("n'a pas pu être associé à la "
+                                 "ligne bugétaire intitulée \"%1\"")
+                            .arg(CURRENT_intitule_de_la_ligne_budgetaire));
+
+                YerothQMessageBox::warning(this,
+                                           QObject::tr("échec - ASSIGNATION OPÉRATION, ligne budgétaire"),
+                                           retMsg);
+            }
+            else
+            {
+                association_reussie = true;
+
+                QString current_type_doperation_commerciale_DB_ID =
+                            GET_SQL_RECORD_DATA(record,
+                                                YerothDatabaseTableColumn::ID);
+
+
+                int lastCurRow =
+                    tableWidget_TYPEDOPERATION_UNELIGNEBUDGETAIRE
+                        ->add_an_association
+                            (current_type_doperation_commerciale_DB_ID,
+                             current_type_doperation_commerciale,
+                             CURRENT_intitule_de_la_ligne_budgetaire);
+
+
+                tableWidget_TYPEDOPERATION_UNELIGNEBUDGETAIRE
+                    ->selectRow(lastCurRow);
+
+
+                retMsg.append
+                    (QObject::tr("à été associé à la ligne bugétaire "
+                                 "intitulée \"%1\"")
+                            .arg(CURRENT_intitule_de_la_ligne_budgetaire));
+
+                YerothQMessageBox::information(this,
+                                               QObject::tr("succès - ASSIGNATION OPÉRATION, ligne budgétaire"),
+                                               retMsg);
+            }
+
+            return association_reussie;
+        }
+	}
+
+
+    type_doperation_SqlTbleModel
+        .resetFilter("src/windows/yeroth-erp-comptabilite-window.cpp", 306);
+
+
+    return association_reussie;
 }
 
 
@@ -441,6 +590,11 @@ void YerothComptabiliteWindow::definirManager()
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, true);
 
 
+    pushButton_ASSOCIER_TYPE_DOPERATION__compte_doperation
+        ->enable(this,
+                 SLOT(SLOT_associer_TypeDoperation__CompteDoperation()));
+
+
     MACRO_TO_ENABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS(this,
                                                                _curCompte_Lignes_Budgetaires_SqlTableModel)
 }
@@ -465,6 +619,11 @@ void YerothComptabiliteWindow::definirPasDeRole()
                                            false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionAfficherPDF, false);
     YEROTH_ERP_WRAPPER_QACTION_SET_ENABLED(actionQui_suis_je, false);
+
+
+    pushButton_ASSOCIER_TYPE_DOPERATION__compte_doperation
+        ->disable(this);
+
 
     MACRO_TO_DISABLE_PAGE_FIRST_NEXT_PREVIOUS_LAST_PUSH_BUTTONS
 }

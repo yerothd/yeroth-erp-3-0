@@ -169,6 +169,7 @@ HEADERS = src/include/yeroth-erp-3-0-precompiled-header.hpp \
 			src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.hpp \
 			src/widgets/widgets-table/yeroth-erp-groupes-dun-EMPLOYE-table-widget.hpp \
 			src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.hpp \
+			src/widgets/widgets-table/yeroth-erp-COMPTABILITE-table-widget.hpp \
 			src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.hpp \
 			src/widgets/widgets-table/yeroth-erp-table-widget.hpp \
 			src/widgets/widgets-table/yeroth-erp-qtable-widget-item.hpp \
@@ -355,6 +356,7 @@ SOURCES = src/yeroth-erp-3-0.cpp \
 			src/widgets/widgets-table/yeroth-erp-creer-un-groupe-de-clients-table-widget.cpp \
 			src/widgets/widgets-table/yeroth-erp-groupes-dun-EMPLOYE-table-widget.cpp \
 			src/widgets/widgets-table/yeroth-erp-groupes-dun-client-table-widget.cpp \
+			src/widgets/widgets-table/yeroth-erp-COMPTABILITE-table-widget.cpp \
 			src/widgets/widgets-table/yeroth-erp-point-de-vente-table-widget.cpp \
 			src/widgets/widgets-table/yeroth-erp-table-widget.cpp \
 			src/widgets/widgets-table/yeroth-erp-qtable-widget-item.cpp \
