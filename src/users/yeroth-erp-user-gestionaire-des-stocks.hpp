@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-user-gestionaire-des-stocks.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_ERP_USER_GESTIONAIRE_DES_STOCKS_HPP_

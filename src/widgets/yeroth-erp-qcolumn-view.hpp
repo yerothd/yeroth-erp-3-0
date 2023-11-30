@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-qcolumn-view.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_QCOLUMN_VIEW_HPP_

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-database-table-column.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-database-table-column.hpp"

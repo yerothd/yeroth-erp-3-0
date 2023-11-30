@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-ventes-table-view.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 

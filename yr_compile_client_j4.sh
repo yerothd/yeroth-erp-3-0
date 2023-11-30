@@ -1,5 +1,5 @@
 #!/bin/bash
-#AUTEUR: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+#AUTEUR: Dr.-Ing. XAVIER NOUNDOU
 #EMAIL: yeroth.d@gmail.com
 
 set -x

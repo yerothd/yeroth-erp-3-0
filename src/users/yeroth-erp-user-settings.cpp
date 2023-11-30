@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-user-settings.cpp
  *
- * @author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ * @author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>XAVIER NOUMBISSI NOUNDOU</author>
+ <author>XAVIER NOUNDOU</author>
  <class>YerothAdminListerWindow</class>
  <widget class="QMainWindow" name="YerothAdminListerWindow">
   <property name="geometry">

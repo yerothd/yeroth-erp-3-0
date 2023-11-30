@@ -1,5 +1,5 @@
 #!/bin/bash
-#@author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+#@author: Dr.-Ing. XAVIER NOUNDOU
 
 MAINDB="yeroth_erp_3"
 USER_NAME="yeroth_erp_3"

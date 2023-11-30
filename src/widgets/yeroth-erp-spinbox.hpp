@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-spinbox.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_SPINBOX_HPP_

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-test-utils.hpp
  *
- *      @author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      @author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_TEST_UTILS_HPP_

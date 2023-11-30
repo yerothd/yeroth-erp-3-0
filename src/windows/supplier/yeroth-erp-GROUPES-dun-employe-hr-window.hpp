@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-GROUPES-dun-employe-hr-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WINDOWS_YEROTH_ERP_GROUPES_DE_PAIE_DUN_employe_WINDOW_HPP_

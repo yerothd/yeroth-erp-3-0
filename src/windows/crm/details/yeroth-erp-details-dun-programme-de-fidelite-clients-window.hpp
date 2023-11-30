@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-details-dun-programme-de-fidelite-clients-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WINDOWS_YEROTH_CLIENTS_DETAILS_DUN_PROGRAMME_DE_FIDELITE_CLIENTS_WINDOW_HPP_

@@ -1,7 +1,7 @@
 /**
  * yeroth-erp-admin-window.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-admin-window.hpp"
@@ -663,7 +663,7 @@ void YerothAdminWindow::rendreVisible(YerothSqlTableModel *stocksTableModel)
     if (0 != user && user->isManager())
     {
         if (user->titre() == "Prof." &&
-        	user->nom_complet().startsWith("DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU"))
+        	user->nom_complet().startsWith("DR.-ING. DIPL.-INF. XAVIER NOUNDOU"))
         {
             start_TESTING_MAINTENANCE();
 

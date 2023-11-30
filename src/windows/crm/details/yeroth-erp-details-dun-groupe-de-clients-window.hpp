@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-details-dun-groupe-de-clients-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_CLIENTS_DETAILS_DUN_GROUPE_DE_CLIENTS_WINDOW_HPP_

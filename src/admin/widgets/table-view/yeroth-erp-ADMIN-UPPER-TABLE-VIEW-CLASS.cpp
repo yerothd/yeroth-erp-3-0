@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-ADMIN-UPPER-TABLE-VIEW-CLASS.cpp
  *
- *      Author: XAVIER NOUMBISSI NOUNDOU, DIPL.-INF., PH.D, P.ENG.
+ *      Author: XAVIER NOUNDOU, DIPL.-INF., PH.D, P.ENG.
  */
 
 

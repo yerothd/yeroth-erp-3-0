@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-GROUPES-DE-PAIE-HR-table-view.hpp
  *
- * Author: XAVIER NOUMBISSI NOUNDOU, PH.D., P. ENG.
+ * Author: XAVIER NOUNDOU, PH.D., P. ENG.
  */
 
 #ifndef _SRC_YEROTH_GROUPES_DE_PAIE_HR_TABLE_VIEW_HPP_

@@ -1,7 +1,7 @@
 /*
    * yeroth-erp-ventes-window.cpp
    *
-   *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+   *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
    */
 #include "yeroth-erp-ventes-window.hpp"
 
@@ -2149,6 +2149,9 @@ void YerothVentesWindow::populateComboBoxes()
 
     aQStringList.append(YEROTH_DATABASE_TABLE_COLUMN_TO_USER_VIEW_STRING
                         (YerothDatabaseTableColumn::MONTANT_TVA));
+
+
+    comboBox_ventes_element_de_vente->clear();
 
     comboBox_ventes_element_de_vente->addItems(aQStringList);
 

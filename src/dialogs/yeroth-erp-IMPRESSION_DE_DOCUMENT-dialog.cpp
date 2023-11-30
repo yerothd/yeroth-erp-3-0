@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-IMPRESSION_DE_DOCUMENT-dialog.hpp"

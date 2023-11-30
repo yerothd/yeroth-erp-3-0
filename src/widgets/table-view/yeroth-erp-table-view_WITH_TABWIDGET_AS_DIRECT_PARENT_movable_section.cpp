@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.cpp
  *
- * Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ * Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-table-view_WITH_TABWIDGET_AS_DIRECT_PARENT_movable_section.hpp"

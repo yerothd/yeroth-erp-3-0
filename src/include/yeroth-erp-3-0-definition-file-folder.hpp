@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-3-0-definition-file-folder.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef _YEROTH_ERP_3_0_DEFINITION_FILE_FOLDER_HPP_

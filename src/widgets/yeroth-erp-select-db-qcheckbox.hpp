@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-select-db-qcheckbox.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WIDGETS_YEROTH_SELECT_DB_QCHECKBOX_HPP_

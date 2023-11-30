@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-push-button-PASSWORD.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-push-button-PASSWORD.hpp"

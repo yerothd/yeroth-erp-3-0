@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-programmes-de-fidelite-clients-table-view.hpp
  *
- * Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ * Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_PROGRAMMES_DE_FIDELITE_CLIENTS_TABLE_VIEW_HPP_

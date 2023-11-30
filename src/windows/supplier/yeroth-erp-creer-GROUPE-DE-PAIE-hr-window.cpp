@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-creer-UN-GROUPE-DE-PAIE-hr-window.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-creer-GROUPE-DE-PAIE-hr-window.hpp"

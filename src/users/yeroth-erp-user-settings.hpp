@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-user-settings.hpp
  *
- * @author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ * @author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_USER_YEROTH_ERP_3_0_USER_SETTINGS_HPP_

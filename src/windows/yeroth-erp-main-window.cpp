@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-main-window.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-main-window.hpp"
@@ -867,7 +867,7 @@ void YerothMainWindow::help()
     u->set_nom("Noumbissi Noundou");
     u->set_nom_utilisateur("yeroth-nissi");
     u->set_localisation("Yaoundé");
-    u->set_nom_complet("DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU");
+    u->set_nom_complet("DR.-ING. DIPL.-INF. XAVIER NOUNDOU");
 
     _allWindows->setUser(u);
 

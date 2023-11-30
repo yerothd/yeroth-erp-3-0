@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-achats-detail-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WINDOWS_YEROTH_ACHATS_DETAIL_WINDOW_HPP_

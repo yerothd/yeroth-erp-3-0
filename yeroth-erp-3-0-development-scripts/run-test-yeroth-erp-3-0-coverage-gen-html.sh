@@ -1,5 +1,5 @@
 #!/bin/sh
-#@author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+#@author: Dr.-Ing. XAVIER NOUNDOU
 
 ############################################################################################################
 # You should edit the following 3 paths when necessary

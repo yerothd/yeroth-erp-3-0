@@ -1,6 +1,6 @@
 #!/bin/bash
 # @file: yeroth-erp-3-0-generate-upgrade-sql-script.sh
-# @author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+# @author: Dr.-Ing. XAVIER NOUNDOU
 
 APP="$(basename $0)"
 
@@ -50,7 +50,7 @@ if [ "${CANDIDATE_GIT_COMMIT_IS_ANCESTOR}" -eq 0 ]; then
 						if [ $COUNTER -eq 0 ]; then
 								sql_upgrade_file_generated=1
 								echo -e "-- YEROTH-ERP-3.0: '.sql' file to upgrade database." >> ${SQL_UPGRADE_FILE}
-								echo -e "-- @author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU." >> ${SQL_UPGRADE_FILE}
+								echo -e "-- @author: Dr.-Ing. XAVIER NOUNDOU." >> ${SQL_UPGRADE_FILE}
 								echo -e "-- from LAST BUILD ID: '${LAST_BUILD_ID}' to BUILD ID: '${CANDIDATE_GIT_COMMIT_TO_SQL_UPGRADE}'." >> ${SQL_UPGRADE_FILE}
 								echo -e "" >> ${SQL_UPGRADE_FILE}
 								let COUNTER=COUNTER+1

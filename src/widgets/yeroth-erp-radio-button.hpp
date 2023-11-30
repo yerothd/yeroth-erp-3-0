@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-radio-button.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_ERP_RADIO_BUTTON_HPP_

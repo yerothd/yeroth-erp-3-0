@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-combo-box.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-combo-box.hpp"

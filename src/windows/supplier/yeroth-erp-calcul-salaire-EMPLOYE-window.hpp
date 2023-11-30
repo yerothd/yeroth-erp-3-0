@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-calcul-salaire-EMPLOYE-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_CALCUL_SALAIRE_EMPLOYE_WINDOW_HPP_

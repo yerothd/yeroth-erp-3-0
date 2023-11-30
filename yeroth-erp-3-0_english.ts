@@ -271,7 +271,7 @@ Program executing directory: &quot;%2&quot;.</translation>
 
  par 
 
-(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.
+(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.
 
 LAST BUILD ID: &apos;&apos;.
 
@@ -285,7 +285,7 @@ acknowledgments: JAN PELESKA ! (Universität Bremen in GERMANY)</source>
 
  par 
 
-(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.
+(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.
 
 LAST BUILD ID: &apos;&apos;.
 
@@ -526,7 +526,7 @@ acknowledgements: JAN PELESKA ! (Universität Bremen in GERMANY)</oldsource>
 
  par 
 
-(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.
+(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.
 
 LAST BUILD ID: &apos;&apos;.
 
@@ -540,7 +540,7 @@ acknowledgments: JAN PELESKA ! (Universität Bremen in GERMANY)</source>
 
  par 
 
-(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.
+(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.
 
 LAST BUILD ID: &apos;&apos;.
 

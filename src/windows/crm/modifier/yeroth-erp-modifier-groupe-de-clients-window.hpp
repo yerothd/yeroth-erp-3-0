@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-modifier-groupe-de-clients-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_MODIFIER_GROUPE_DE_CLIENTS_WINDOW_HPP_
