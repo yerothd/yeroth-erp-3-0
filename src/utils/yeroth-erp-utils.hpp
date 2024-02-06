@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-utils.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_UTILS_HPP_
@@ -113,28 +113,33 @@ public:
                                    const QSize &a_current_windows_SIZE,
                                    const QSize &a_current_windows_PREVIOUS_SIZE);
 
-    template < class classType, typename parameterType >
-    static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
-    (classType *aClassInstance,
-     parameterType *aParamValue, void (classType::*func)(parameterType *));
 
-    template < class classType, typename parameterType, typename returnType >
-    static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
-    (classType *aClassInstance,
-     parameterType *aParamValue,
-     returnType(classType::*func)(parameterType *),
-     returnType *aRetValue = 0);
+    template<class classType, typename parameterType>
+    static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION(classType *aClassInstance,
+                                                         parameterType *aParamValue,
+                                                         void (classType::*func)(parameterType *));
 
-    template < class classType >
-    static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK
-    (classType *aClassInstance, bool (classType::*func)(void));
 
-    template < class aTableViewClassType >
+    template<class classType, typename parameterType, typename returnType>
+    static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION(classType *aClassInstance,
+                                                         parameterType *aParamValue,
+                                                         returnType(classType::*func)(parameterType *),
+                                                         returnType *aRetValue = 0);
+
+
+    template<class classType>
+    static void run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK(classType *aClassInstance,
+                                                                       bool (classType::*func)(void));
+
+
+    template<class aTableViewClassType>
     static bool instanceOf__YerothTableViewWITHpagination(aTableViewClassType
                                                           * aTableView);
 
+
     static bool creerNouveauClient(QString &proposedCustomerName_IN_OUT,
                                    YerothWindowsCommons *_callingWindow = 0);
+
 
     static bool creerNouveauFournisseur(QString &
                                         proposedFourisseurName_IN_OUT,
@@ -665,12 +670,16 @@ public:
 
     static QString appendPDFReceiptFormat(QString aStr);
 
+
     static QString GET_LOCALISATION_FOR_EMPLOYEE_PAY_GROUP(const QString &an_employee_PAY_GROUP);
+
 
     static QString GET_LOCALISATION_FOR_CLIENT_LOYALTY_PROGRAM(const QString &client_loyalty_program);
 
+
     static QString getStrategySqlQueryStr(QString aSelectStmt,
                                           QString aStrategy);
+
 
     inline static void YEROTH_PRINT_TO_STDOUT(const QString &aQStringOutput)
     {
@@ -879,19 +888,18 @@ public:
     inline static bool is_montant_payer_au_fournisseur_valide(int
                                                               typeDePaiement)
     {
-        return (YerothUtils::DECAISSEMENT_INDEFINI != typeDePaiement &&
-                YerothUtils::DECAISSEMENT_POUR_PROGRAMME_DE_FIDELITE_CLIENT !=
-                typeDePaiement
-                && YerothUtils::ENCAISSEMENT_AVANCE_DE_CASH != typeDePaiement
-                && YerothUtils::ENCAISSEMENT_COMPTANT != typeDePaiement
-                && YerothUtils::ENCAISSEMENT_CHEQUE != typeDePaiement
-                && YerothUtils::ENCAISSEMENT_TELEPHONE != typeDePaiement
-                && YerothUtils::ENCAISSEMENT_BANCAIRE != typeDePaiement
-                && YerothUtils::ENCAISSEMENT_VIREMENT_BANCAIRE != typeDePaiement
-                && YerothUtils::ENCAISSEMENT_CHARGE_FINANCIERE_ANNULE !=
-                typeDePaiement
-                && YerothUtils::ENCAISSEMENT_INDEFINI !=
-                typeDePaiement) ? true : false;
+        return (YerothUtils::DECAISSEMENT_INDEFINI != typeDePaiement                            &&
+                YerothUtils::DECAISSEMENT_POUR_PROGRAMME_DE_FIDELITE_CLIENT != typeDePaiement   &&
+                YerothUtils::ENCAISSEMENT_AVANCE_DE_CASH != typeDePaiement                      &&
+                YerothUtils::ENCAISSEMENT_COMPTANT != typeDePaiement                            &&
+                YerothUtils::ENCAISSEMENT_CHEQUE != typeDePaiement                              &&
+                YerothUtils::ENCAISSEMENT_TELEPHONE != typeDePaiement                           &&
+                YerothUtils::ENCAISSEMENT_BANCAIRE != typeDePaiement                            &&
+                YerothUtils::ENCAISSEMENT_VIREMENT_BANCAIRE != typeDePaiement                   &&
+                YerothUtils::ENCAISSEMENT_CHARGE_FINANCIERE_ANNULE != typeDePaiement            &&
+                YerothUtils::ENCAISSEMENT_INDEFINI != typeDePaiement)
+                ? true :
+                  false;
     }
 
     inline static bool IS_QSQL_RECORD_AN_ASSET(QSqlRecord &a_qsql_record);
@@ -1780,8 +1788,7 @@ inline double YerothUtils::montant_paye_par_le_client(const QSqlRecord &aPayment
 }
 
 
-inline double YerothUtils::montant_paye_PAR_LE_FOURNISSEUR(const QSqlRecord &
-                                                           aPaymentRecord)
+inline double YerothUtils::montant_paye_PAR_LE_FOURNISSEUR(const QSqlRecord &aPaymentRecord)
 {
     return (YerothUtils::is_montant_payer_PAR_LE_FOURNISSEUR_valide
             (GET_SQL_RECORD_DATA
@@ -1805,10 +1812,10 @@ inline double YerothUtils::montant_paye_au_fournisseur(const QSqlRecord &aPaymen
 }
 
 
-template < class classType, typename parameterType > void
-YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
-(classType *aClassInstance,
- parameterType *aParamValue, void (classType::*func)(parameterType *))
+template<class classType, typename parameterType>
+void YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION(classType *aClassInstance,
+                                                           parameterType *aParamValue,
+                                                           void (classType::*func)(parameterType *))
 {
     YEROTH_ERP_3_0_START_DATABASE_TRANSACTION;
 
@@ -1825,12 +1832,11 @@ YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
 }
 
 
-template < class classType, typename parameterType, typename returnType > void
-YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
-(classType *aClassInstance,
- parameterType *aParamValue,
- returnType(classType::*func)(parameterType *),
- returnType *aRetValue /* = 0 */)
+template<class classType, typename parameterType, typename returnType>
+void YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION(classType *aClassInstance,
+                                                           parameterType *aParamValue,
+                                                           returnType(classType::*func)(parameterType *),
+                                                           returnType *aRetValue /* = 0 */)
 {
     YEROTH_ERP_3_0_START_DATABASE_TRANSACTION;
 
@@ -1841,8 +1847,7 @@ YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
         return;
     }
 
-    returnType
-    YEROTH_retValue = (aClassInstance->*func)(aParamValue);
+    returnType YEROTH_retValue = (aClassInstance->*func)(aParamValue);
 
     if (0 != aRetValue)
     {
@@ -1853,9 +1858,9 @@ YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION
 }
 
 
-template < class classType > void
-YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK
-(classType *aClassInstance, bool (classType::*func)(void))
+template<class classType>
+void YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK(classType *aClassInstance,
+                                                                         bool (classType::*func)(void))
 {
     YEROTH_ERP_3_0_START_DATABASE_TRANSACTION;
 
@@ -1866,8 +1871,7 @@ YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK
         return;
     }
 
-    bool
-    YEROTH_retValue = (aClassInstance->*func)();
+    bool YEROTH_retValue = (aClassInstance->*func)();
 
     if (!YEROTH_retValue)
     {
@@ -1878,13 +1882,12 @@ YerothUtils::run_FUNCTION_ROUNDED_WITH_DB_TRANSACTION_WITH_ROLLBACK
 }
 
 
-template < class aTableViewClassType > bool YerothUtils::instanceOf__YerothTableViewWITHpagination(aTableViewClassType *
-                                                                                                   aTableView)
+template<class aTableViewClassType>
+bool YerothUtils::instanceOf__YerothTableViewWITHpagination(aTableViewClassType *aTableView)
 {
     bool result = false;
 
-    YerothTableViewWITHpagination *aType =
-                    dynamic_cast<YerothTableViewWITHpagination *>(aTableView);
+    YerothTableViewWITHpagination *aType = dynamic_cast<YerothTableViewWITHpagination *>(aTableView);
 
     if (0 != aType)
     {

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-line-edit.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-line-edit.hpp"
@@ -24,16 +24,15 @@
 
 
 YerothLineEdit::YerothLineEdit(QWidget *parent /* = 0 */)
-    :
-
-
-    QLineEdit(parent),
+    :QLineEdit(parent),
     _show_ASSET(true),
     _firstTimeStyleSheetCheck(true),
     _forSearch(false),
     _inputDialog(0),
     _wasMissingRequiredText(false),
-    _sqlTableModel(0), _sqlTableModelView(0), _searchQCompleter(0)
+    _sqlTableModel(0),
+    _sqlTableModelView(0),
+    _searchQCompleter(0)
 {
     setMaxLength(255);
 
@@ -279,14 +278,16 @@ void YerothLineEdit::setupMyQCompleter(QString sqlTableName,
 }
 
 
-void YerothLineEdit::setupMyStaticQCompleter(QString sqlTableName,
-                                             const QString fieldName,
-                                             bool returnPressedSignalActivated /* = true */,
-                                             QString aQSqlConditionStr /* = YerothUtils::EMPTY_STRING */)
+void YerothLineEdit::setupMyStaticQCompleter(QString        sqlTableName,
+                                             const QString  fieldName,
+                                             bool           returnPressedSignalActivated /* = true */,
+                                             QString        aQSqlConditionStr /* = YerothUtils::EMPTY_STRING */,
+                                             Qt::MatchFlags a_filter_mode /* = Qt::MatchStartsWith */)
 {
     YerothUtils::getColumnListString(_currentStaticStringList,
                                      sqlTableName,
-                                     fieldName, aQSqlConditionStr);
+                                     fieldName,
+                                     aQSqlConditionStr);
 
     if (0 != _searchQCompleter)
     {
@@ -295,8 +296,13 @@ void YerothLineEdit::setupMyStaticQCompleter(QString sqlTableName,
 
     _searchQCompleter = new QCompleter(_currentStaticStringList, this);
 
+
     _searchQCompleter->setCaseSensitivity(Qt::CaseInsensitive);
+
+    _searchQCompleter->setFilterMode(a_filter_mode);
+
     _searchQCompleter->setCompletionMode(QCompleter::PopupCompletion);
+
 
     setCompleter(_searchQCompleter);
 
@@ -306,13 +312,15 @@ void YerothLineEdit::setupMyStaticQCompleter(QString sqlTableName,
     {
         connect(this,
                 SIGNAL(returnPressed()),
-                this, SLOT(clearQCompleterText()));
+                this,
+                SLOT(clearQCompleterText()));
     }
     else
     {
         disconnect(this,
                    SIGNAL(returnPressed()),
-                   this, SLOT(clearQCompleterText()));
+                   this,
+                   SLOT(clearQCompleterText()));
     }
 }
 

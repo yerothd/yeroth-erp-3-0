@@ -133,6 +133,17 @@ void YerothComboBox::find_AND_SET_CURRENT_INDEX(const QString &a_text_TO_FIND_IN
 }
 
 
+void YerothComboBox::find_AND_SET_CURRENT_INDEX_No_ADD_NEW_Item(const QString &a_text_TO_FIND_IN)
+{
+    int ret_find = findText(a_text_TO_FIND_IN);
+
+    if (-1 != ret_find)
+    {
+        setCurrentIndex(ret_find);
+    }
+}
+
+
 void YerothComboBox::find_AND_SET_CURRENT_INDEX_NOT_EDITABLE(const QString &
                                                              a_text_TO_FIND_IN)
 {

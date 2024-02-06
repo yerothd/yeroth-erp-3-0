@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-utils.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-utils.hpp"
@@ -356,6 +356,7 @@ const unsigned int YerothUtils::PRINT_TIMEOUT(TIMEOUT_PRINT);
 const QString YerothUtils::STRING_STYLESHEETS_YEROTH_ERP_3_0(
 		"QLabel { font-size: 17px; color: rgb(53, 132, 228); }");
 
+
 const QString YerothUtils::STRING_STYLESHEET_COLOR_YEROTHGREEN(
 		"QLabel { color : rgb(0, 255, 100); }");
 
@@ -486,7 +487,7 @@ const QString YerothUtils::MYSQL_DUMP("mysqldump");
 const QString YerothUtils::APROPOS_MSG("YEROTH-PGI-3.0-SERVER"
 								   "\n(VERSION du YEROTH_BUILD_DATE à YEROTH_BUILD_DATE_TIMESTAMP)"
 								   "\n\n par \n\n"
-								   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.\n\n"
+								   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.\n\n"
 								   "LAST BUILD ID: ''.\n\n"
 								   "ON BUILD_COMPUTER: .\n\n"
 								   "CLIENT DEDICATED COMPANY LOCALISATION SITE: .\n\n"
@@ -499,7 +500,7 @@ const QString YerothUtils::APPLICATION_NAME("YEROTH-PGI-3.0-SERVER");
 const QString YerothUtils::APROPOS_MSG("YEROTH-ERP-3.0-SERVER"
 								   "\n(VERSION of YEROTH_BUILD_DATE at YEROTH_BUILD_DATE_TIMESTAMP)"
 								   "\n\n by \n\n"
-								   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.\n\n"
+								   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.\n\n"
 								   "LAST BUILD ID: ''.\n\n"
 								   "ON BUILD_COMPUTER: .\n\n"
 								   "CLIENT DEDICATED COMPANY LOCALISATION SITE: .\n\n"
@@ -516,7 +517,7 @@ const QString YerothUtils::APROPOS_MSG(QObject::
                                        ("YEROTH-PGI-3.0-CLIENT"
                                         "\n(VERSION du YEROTH_BUILD_DATE à YEROTH_BUILD_DATE_TIMESTAMP)"
                                         "\n\n par \n\n"
-                                        "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.\n\n"
+                                        "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.\n\n"
                                         "LAST BUILD ID: ''.\n\n"
                                         "ON BUILD_COMPUTER: .\n\n"
                                         "CLIENT DEDICATED COMPANY LOCALISATION SITE: .\n\n"
@@ -537,7 +538,7 @@ APPLICATION_NAME
 const QString YerothUtils::APROPOS_MSG("YEROTH-PGI-3.0-STANDALONE"
 									   "\n(VERSION du YEROTH_BUILD_DATE à YEROTH_BUILD_DATE_TIMESTAMP)"
 									   "\n\n par \n\n"
-									   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.\n\n"
+									   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.\n\n"
 									   "LAST BUILD ID: ''.\n\n"
 									   "ON BUILD_COMPUTER: .\n\n"
 									   "CLIENT DEDICATED COMPANY LOCALISATION SITE: .\n\n"
@@ -550,7 +551,7 @@ const QString YerothUtils::APPLICATION_NAME("YEROTH-PGI-3.0-STANDALONE");
 const QString YerothUtils::APROPOS_MSG("YEROTH-ERP-3.0-STANDALONE"
 									   "\n(VERSION of YEROTH_BUILD_DATE at YEROTH_BUILD_DATE_TIMESTAMP)"
 									   "\n\n by \n\n"
-									   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.\n\n"
+									   "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.\n\n"
 									   "LAST BUILD ID: ''.\n\n"
 									   "ON BUILD_COMPUTER: .\n\n"
 									   "CLIENT DEDICATED COMPANY LOCALISATION SITE: .\n\n"
@@ -572,7 +573,7 @@ APROPOS_MSG
  ("YEROTH-PGI-3.0-ACADEMIC_EVALUATION"
   "\n(VERSION du YEROTH_BUILD_DATE à YEROTH_BUILD_DATE_TIMESTAMP)"
   "\n\n par \n\n"
-  "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU.\n\n"
+  "(c) (2015 - ...) DR.-ING. DIPL.-INF. XAVIER NOUNDOU.\n\n"
   "LAST BUILD ID: ''.\n\n"
   "ON BUILD_COMPUTER: .\n\n"
   "CLIENT DEDICATED COMPANY LOCALISATION SITE: .\n\n"
@@ -2783,7 +2784,9 @@ QString YerothUtils::generateSqlLike__AS_IS(QString sqlTableColumn,
 
 	searchStr.replace("'", "''");
 
-	result.append(sqlTableColumn).append(QString(" LIKE '%1'").arg(searchStr));
+	result.append(sqlTableColumn)
+          .append(QString(" LIKE '%1'")
+                    .arg(searchStr));
 
 	return result;
 }
@@ -2794,8 +2797,10 @@ QString YerothUtils::generateSqlLike(QString sqlTableColumn, QString searchStr)
 
 	searchStr.replace("'", "''");
 
-	result.append(sqlTableColumn).append(" LIKE '%").append(searchStr).append(
-			"%' ");
+	result.append(sqlTableColumn)
+          .append(" LIKE '%")
+          .append(searchStr)
+          .append("%' ");
 
 	return result;
 }

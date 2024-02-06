@@ -1,6 +1,6 @@
 /**
  * yeroth-erp-admin-search-form.cpp
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-admin-search-form.hpp"
@@ -46,6 +46,13 @@ YerothAdminSearchForm::YerothAdminSearchForm(YerothERPWindows  	*allWindows,
     setFixedSize(width(),
     			 height());
 
+
+    connect(checkBox_EXACT_STRING_MATCH,
+            SIGNAL(stateChanged(int)),
+			this,
+            SLOT(setupLineEditsQCompleters()));
+
+
     pushButton_annuler->enable(this, SLOT(reinitialiser()));
 }
 
@@ -72,10 +79,55 @@ void YerothAdminSearchForm::rendreInvisible()
 }
 
 
+QString YerothAdminSearchForm::generate_qstring_FILTER(QString corresponding_DB_column_KeyValue,
+                                                       QString aTableColumnFieldContentForSearch)
+{
+    QString qstring_filter;
+
+    if (!checkBox_EXACT_STRING_MATCH->isChecked())
+    {
+        qstring_filter =
+            YerothUtils::generateSqlLike(corresponding_DB_column_KeyValue,
+                                         aTableColumnFieldContentForSearch);
+    }
+    else
+    {
+        qstring_filter =
+            YerothUtils::generateSqlIs(corresponding_DB_column_KeyValue,
+                                       aTableColumnFieldContentForSearch);
+    }
+
+//    QDEBUG_STRING_OUTPUT_2("qstring_filter",
+//                            qstring_filter);
+
+    return qstring_filter;
+}
+
+
+void YerothAdminSearchForm::setupLineEditsQCompleters()
+{
+    setupLineEditsQCompleters(_allWindows
+                                ->_adminListerWindow
+                                    ->current_tabWidget_index());
+}
+
+
 void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
 {
+    Qt::MatchFlags a_filter_mode = Qt::MatchContains;
+
+    if (!checkBox_EXACT_STRING_MATCH->isChecked())
+    {
+        a_filter_mode = Qt::MatchContains;
+    }
+    else
+    {
+        a_filter_mode = Qt::MatchStartsWith;
+    }
+
     switch (tabWidjetListerIdx)
     {
+
     case SUJET_ACTION_ALERTE:
 
         lineEdit_terme_recherche->enableForSearch(QObject::tr("nom de l'alerte"));
@@ -83,7 +135,10 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
 			->setupMyStaticQCompleter(YerothDatabase::ALERTES,
                                 	  YerothDatabaseTableColumn::DESIGNATION_ALERTE,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
+
 
         _curSujetAction = SUJET_ACTION_ALERTE;
 
@@ -96,10 +151,13 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
  			->enableForSearch(QObject::tr("désignation (BON DE COMMANDE)"));
 
+
          lineEdit_terme_recherche
          	->setupMyStaticQCompleter(YerothDatabase::CHARGES_FINANCIERES,
                                  	  YerothDatabaseTableColumn::DESIGNATION,
- 									  false);
+ 									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
          _curSujetAction = SUJET_ACTION_CHARGE_FINANCIERE;
 
@@ -115,7 +173,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
         	->setupMyStaticQCompleter(YerothDatabase::DEPARTEMENTS_PRODUITS,
                                   	  YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS;
 
@@ -131,7 +191,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
         	->setupMyStaticQCompleter(YerothDatabase::CATEGORIES,
                                 	  YerothDatabaseTableColumn::NOM_CATEGORIE,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_CATEGORIE;
 
@@ -147,7 +209,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
 			->setupMyStaticQCompleter(YerothDatabase::LIGNES_BUDGETAIRES,
                                 	  YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_ligne_budgetaire;
 
@@ -163,7 +227,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
 			->setupMyStaticQCompleter(YerothDatabase::COMPTES_BANCAIRES,
                                 	  YerothDatabaseTableColumn::REFERENCE_DU_COMPTE_BANCAIRE,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_COMPTE_BANCAIRE;
 
@@ -179,7 +245,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
 			->setupMyStaticQCompleter(YerothDatabase::USERS,
                                 	  YerothDatabaseTableColumn::NOM_COMPLET,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_COMPTE_UTILISATEUR;
 
@@ -195,7 +263,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
 			->setupMyStaticQCompleter(YerothDatabase::LOCALISATIONS,
                                 	  YerothDatabaseTableColumn::NOM_LOCALISATION,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_LOCALISATION;
 
@@ -211,7 +281,9 @@ void YerothAdminSearchForm::setupLineEditsQCompleters(int tabWidjetListerIdx)
         lineEdit_terme_recherche
 			->setupMyStaticQCompleter(YerothDatabase::REMISES,
                                 	  YerothDatabaseTableColumn::DESIGNATION_REMISE,
-									  false);
+									  false,
+									  YerothUtils::EMPTY_STRING,
+									  a_filter_mode);
 
         _curSujetAction = SUJET_ACTION_REMISE;
 
@@ -258,49 +330,50 @@ void YerothAdminSearchForm::rechercher(const QString &itemName)
     switch (_curSujetAction)
     {
     case SUJET_ACTION_ALERTE:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::DESIGNATION_ALERTE,
-        							  searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::DESIGNATION_ALERTE,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_CHARGE_FINANCIERE:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::DESIGNATION,
-        							  searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::DESIGNATION,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_DEPARTEMENTS_DE_PRODUITS:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
-        							  searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::NOM_DEPARTEMENT_PRODUIT,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_CATEGORIE:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_CATEGORIE,
-                                      searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::NOM_CATEGORIE,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_ligne_budgetaire:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire,
-                                      searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::INTITULE_DE_LA_ligne_budgetaire,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_COMPTE_BANCAIRE:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::REFERENCE_DU_COMPTE_BANCAIRE,
-                         	 	 	  searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::REFERENCE_DU_COMPTE_BANCAIRE,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_COMPTE_UTILISATEUR:
-        filter = GENERATE_SQL_IS_STMT(YerothDatabaseTableColumn::NOM_COMPLET,
-        							  searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::NOM_COMPLET,
+                                         searchString);
         break;
 
 
     case SUJET_ACTION_LOCALISATION:
-        filter = GENERATE_SQL_IS_STMT("nom_localisation", searchString);
+        filter = generate_qstring_FILTER(YerothDatabaseTableColumn::NOM_LOCALISATION,
+                                         searchString);
         break;
 
 
@@ -319,7 +392,7 @@ void YerothAdminSearchForm::rechercher(const QString &itemName)
 
         int curSqlTableModelRows =
         		_curSqlTableModel->easySelect("src/admin/yeroth-erp-admin-search-form.cpp",
-        									  320);
+        									  390);
 
         if (curSqlTableModelRows > 0)
         {

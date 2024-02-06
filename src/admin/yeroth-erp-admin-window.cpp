@@ -1475,6 +1475,9 @@ bool YerothAdminWindow::generate_table_header_mapping_entries_for_csv_import()
             aMappedComboBox->setEnabled(true);
             aMappedComboBox->addItems(_dbTableColumnToType.keys());
 
+           aMappedComboBox
+                ->find_AND_SET_CURRENT_INDEX_No_ADD_NEW_Item(csvHeaderContent.at(i));
+
             csvFileHasVisibleContentToImport = true;
         }
     }

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-admin-search-form.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_ADMIN_SEARCH_FORM_HPP_
@@ -59,10 +59,18 @@ public slots:
 
 protected:
 
+    virtual QString generate_qstring_FILTER(QString corresponding_DB_column_KeyValue,
+                                            QString aTableColumnFieldContentForSearch);
+
     inline void hideEvent(QHideEvent *hideEvent)
     {
         rendreInvisible();
     }
+
+
+private slots:
+
+    virtual void setupLineEditsQCompleters();
 
 
 private:
@@ -73,7 +81,6 @@ private:
     }
 
     void setupLineEditsQCompleters(int tabWidjetListerIdx);
-
 
     enum AdminSujetAction _curSujetAction;
 

@@ -96,6 +96,13 @@ public slots:
                             &YerothWindowsCommons::imprimer_pdf_document_WITH_PAGES_SPECIFICATION);
     }
 
+
+    virtual inline int current_tabWidget_index()
+    {
+        return tabWidget_lister->currentIndex();
+    }
+
+
     void handleCurrentChanged(int index);
 
 

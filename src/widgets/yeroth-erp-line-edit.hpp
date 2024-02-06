@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-line-edit.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WIDGETS_YEROTH_LINE_EDIT_HPP_
@@ -100,19 +100,22 @@ public:
                            enum Qt::SortOrder 	sortOrder,
                            bool 				truncateString = true);
 
-    void setupMyStaticQCompleter(QString 	sqlTableName,
-                                 QString 	fieldName,
-                                 bool 		returnPressedSignalActivated = true,
-                                 QString 	aQSqlConditionStr = YerothUtils::EMPTY_STRING);
+    void setupMyStaticQCompleter(QString 	    sqlTableName,
+                                 QString 	    fieldName,
+                                 bool 		    returnPressedSignalActivated = true,
+                                 QString 	    aQSqlConditionStr = YerothUtils::EMPTY_STRING,
+                                 Qt::MatchFlags a_filter_mode = Qt::MatchStartsWith);
 
-    inline void setupMyStaticQCompleter(QString sqlTableName,
-                                        QString fieldName,
-                                        QString aQSqlConditionStr)
+    inline void setupMyStaticQCompleter(QString         sqlTableName,
+                                        QString         fieldName,
+                                        QString         aQSqlConditionStr,
+                                        Qt::MatchFlags  a_filter_mode = Qt::MatchStartsWith)
     {
         setupMyStaticQCompleter(sqlTableName,
                                 fieldName,
 								true,
-								aQSqlConditionStr);
+								aQSqlConditionStr,
+								a_filter_mode);
     }
 
     void setupMyQCompleterALL(QString sqlTableName);
