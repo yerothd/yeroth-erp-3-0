@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-test-import-csv-file-data.hpp
  *
- *      @author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      @author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_TEST_IMPORT_CSV_FILE_DATA_HPP_

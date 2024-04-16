@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-recherche-conditionnelle-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_RECHERCHE_CONDITIONNELLE_WINDOW_HPP_

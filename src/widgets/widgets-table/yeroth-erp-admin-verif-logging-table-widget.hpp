@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-admin-verif-logging-table-widget.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WIDGETS_YEROTH_ADMIN_VERIF_LOGGING_TABLE_WIDGET_HPP_

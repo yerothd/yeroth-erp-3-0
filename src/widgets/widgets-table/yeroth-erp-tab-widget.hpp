@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-tab-widget.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_ERP_TAB_WIDGET_HPP_

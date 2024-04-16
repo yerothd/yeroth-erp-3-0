@@ -1,5 +1,5 @@
 #!/bin/bash
-# @author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+# @author: Dr.-Ing. XAVIER NOUNDOU
 
 sudo service mysql stop
 

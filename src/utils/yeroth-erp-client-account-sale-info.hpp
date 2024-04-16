@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-client-account-sale-info.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_CLIENT_ACCOUNT_SALE_INFO_HPP_

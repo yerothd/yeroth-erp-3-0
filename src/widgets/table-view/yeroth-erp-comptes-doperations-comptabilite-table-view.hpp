@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-comptes-doperations-comptabilite-table-view.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_COMPTES_DOPERATIONS_COMPTABLE_TABLE_VIEW_HPP_

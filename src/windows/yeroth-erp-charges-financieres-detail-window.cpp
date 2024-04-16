@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-charges-financieres-detail-window.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-charges-financieres-detail-window.hpp"

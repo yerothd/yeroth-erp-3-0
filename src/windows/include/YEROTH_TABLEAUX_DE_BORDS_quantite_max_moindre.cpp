@@ -1,7 +1,7 @@
 /*
  * YEROTH_TABLEAUX_DE_BORDS_quantite_max_moindre.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 

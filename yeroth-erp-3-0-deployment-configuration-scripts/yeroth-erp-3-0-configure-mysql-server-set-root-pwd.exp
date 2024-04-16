@@ -1,5 +1,5 @@
 #!/usr/bin/expect
-# @author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+# @author: Dr.-Ing. XAVIER NOUNDOU
 
 stty -echo
 send_user -- "Enter the password for accessing mysql as root user: "

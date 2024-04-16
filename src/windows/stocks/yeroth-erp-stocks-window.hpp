@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-stocks-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_ERP_STOCKS_WINDOW_HPP_

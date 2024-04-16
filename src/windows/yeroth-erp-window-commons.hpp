@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-windows-commons.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_ERP_WINDOWS_COMMONS_HPP_

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-fournisseurs-table-view.hpp
  *
- * Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ * Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_FOURNISSEURS_TABLE_VIEW_HPP_

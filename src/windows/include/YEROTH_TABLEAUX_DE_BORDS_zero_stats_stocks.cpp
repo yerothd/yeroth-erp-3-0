@@ -1,7 +1,7 @@
 /*
  * YEROTH_TABLEAUX_DE_BORDS_zero_stats_stocks.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-print_yeroth_latex_util_pdf.cpp
  *
- *      DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-print_yeroth_latex_util_pdf.hpp"

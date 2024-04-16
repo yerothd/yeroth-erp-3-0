@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-push-button.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_WIDGETS_YEROTH_PUSH_BUTTON_HPP_

@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-COMPTABILITE-table-widget.cpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #include "yeroth-erp-COMPTABILITE-table-widget.hpp"

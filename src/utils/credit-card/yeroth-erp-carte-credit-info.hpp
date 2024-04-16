@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-credit-card-info.hpp
  *
- *   Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *   Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_ERP_CREDIT_CARD_INFO_HPP_

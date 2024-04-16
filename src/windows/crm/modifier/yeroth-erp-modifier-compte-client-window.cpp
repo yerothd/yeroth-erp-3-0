@@ -1,6 +1,6 @@
 /*
  * yeroth-erp-modifier-compte-client-window.cpp
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 

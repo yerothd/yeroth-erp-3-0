@@ -1,12 +1,12 @@
 #/bin/bash
-#@author: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+#@author: Dr.-Ing. XAVIER NOUNDOU
 
 SCRIPTBASENAME=$(basename $0)
 
 USAGE="
        ------------------------------------------------------------
        'YEROTH-ERP-3.0' Unit Testing Running System
-        @auteur: Dr.-Ing. XAVIER NOUMBISSI NOUNDOU
+        @auteur: Dr.-Ing. XAVIER NOUNDOU
        ------------------------------------------------------------
        Usage: "${SCRIPTBASENAME}"
 	[-h] : help

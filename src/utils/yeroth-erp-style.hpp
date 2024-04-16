@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-style.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_ERP_3_0_STYLE_HPP_

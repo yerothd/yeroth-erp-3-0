@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-abstract-class-yerothsearch-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_UTILS_WINDOWS_YEROTH_ERP_ABSTRACT_CLASS_YEROTHSEARCH_WINDOW_HPP_

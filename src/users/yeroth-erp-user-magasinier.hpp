@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-user-magasinier.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_ERP_USER_MAGASINIER_HPP_

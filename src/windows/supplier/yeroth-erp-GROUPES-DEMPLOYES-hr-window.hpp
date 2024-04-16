@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-GROUPES-DEMPLOYES-hr-window.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef YEROTH_ERP_groupes_demployes_hr_WINDOW_HPP_

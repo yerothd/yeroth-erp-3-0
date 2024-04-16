@@ -1,7 +1,7 @@
 /*
  * yeroth-erp-ui-loader.hpp
  *
- *      Author: DR.-ING. DIPL.-INF. XAVIER NOUMBISSI NOUNDOU
+ *      Author: DR.-ING. DIPL.-INF. XAVIER NOUNDOU
  */
 
 #ifndef SRC_YEROTH_UI_LOADER_HPP_
